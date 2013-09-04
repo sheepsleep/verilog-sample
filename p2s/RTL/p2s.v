@@ -1,0 +1,73 @@
+/****************************************Copyright (c)**************************************************
+**                                      Dongdong   Studio 
+**                                     
+**---------------------------------------File Info-----------------------------------------------------
+** File name:			bin2gray
+** Last modified Date:	2009-10-18
+** Last Version:		1.0
+** Descriptions:		bin 2 gray
+**------------------------------------------------------------------------------------------------------
+** Created by:		    dongdong
+** Created date:		2009-10-18
+** Version:				1.0
+** Descriptions:		The original version
+**
+**------------------------------------------------------------------------------------------------------
+** Modified by:			
+** Modified date:		
+** Version:				
+** Descriptions:		
+**
+**------------------------------------------------------------------------------------------------------
+********************************************************************************************************/
+module p2s ( 
+              //input 
+			  sys_clk,
+		      sys_rst_n,
+              shift_en,
+              data_in,
+
+              //output 
+              srial_data_out
+              );
+
+//input ports
+
+input                    sys_clk;      //system clock;
+input                    sys_rst_n;    //system reset, low is active;
+input                    shift_en;     //shift en signal
+input [WIDTH-1:0]        data_in;      //data in
+//output ports
+output                   srial_data_out;
+//reg define 
+ 
+reg                      srial_data_out;
+
+//wire define 
+
+wire                     shift_en;
+
+//parameter define 
+parameter WIDTH = 8;
+parameter SIZE  = 8;
+
+integer   i;
+/*******************************************************************************************************
+**                              Main Program    
+**  
+********************************************************************************************************/
+
+always @(posedge sys_clk or negedge sys_rst_n) begin 
+        if (sys_rst_n ==1'b0) 
+            srial_data_out <= 1'b0;
+        else if (shift_en == 1'b1) begin
+              for (i = 1'b0;i<WIDTH;i = i +1'b1)
+                  srial_data_out <= data_in[i];
+        end
+        else 
+           srial_data_out <= 1'b0;
+          
+end
+
+endmodule
+//end of RTL code                       

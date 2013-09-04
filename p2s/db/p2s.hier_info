@@ -1,0 +1,15 @@
+|p2s
+sys_clk => srial_data_out~reg0.CLK
+sys_rst_n => srial_data_out~reg0.ACLR
+shift_en => srial_data_out~0.OUTPUTSELECT
+data_in[0] => ~NO_FANOUT~
+data_in[1] => ~NO_FANOUT~
+data_in[2] => ~NO_FANOUT~
+data_in[3] => ~NO_FANOUT~
+data_in[4] => ~NO_FANOUT~
+data_in[5] => ~NO_FANOUT~
+data_in[6] => ~NO_FANOUT~
+data_in[7] => srial_data_out~0.DATAB
+srial_data_out <= srial_data_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

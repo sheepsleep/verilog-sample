@@ -1,0 +1,120 @@
+|lookup_mult
+sys_clk => firsta[1].CLK
+sys_clk => firsta[0].CLK
+sys_clk => seconda[1].CLK
+sys_clk => seconda[0].CLK
+sys_clk => firstb[1].CLK
+sys_clk => firstb[0].CLK
+sys_clk => secondb[1].CLK
+sys_clk => secondb[0].CLK
+sys_clk => out[7]~reg0.CLK
+sys_clk => out[6]~reg0.CLK
+sys_clk => out[5]~reg0.CLK
+sys_clk => out[4]~reg0.CLK
+sys_clk => out[3]~reg0.CLK
+sys_clk => out[2]~reg0.CLK
+sys_clk => out[1]~reg0.CLK
+sys_clk => out[0]~reg0.CLK
+sys_rst_n => sys_rst_n~0.IN4
+a[0] => seconda[0].DATAIN
+a[1] => seconda[1].DATAIN
+a[2] => firsta[0].DATAIN
+a[3] => firsta[1].DATAIN
+b[0] => secondb[0].DATAIN
+b[1] => secondb[1].DATAIN
+b[2] => firstb[0].DATAIN
+b[3] => firstb[1].DATAIN
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lookup_mult|lookup:LOOK_UP_U0
+sys_clk => out[3]~reg0.CLK
+sys_clk => out[2]~reg0.CLK
+sys_clk => out[1]~reg0.CLK
+sys_clk => out[0]~reg0.CLK
+sys_rst_n => out[3]~reg0.ACLR
+sys_rst_n => out[2]~reg0.ACLR
+sys_rst_n => out[1]~reg0.ACLR
+sys_rst_n => out[0]~reg0.ACLR
+a[0] => Decoder1.IN0
+a[0] => Decoder0.IN1
+a[1] => Decoder0.IN0
+b[0] => Decoder1.IN1
+b[0] => Decoder0.IN3
+b[1] => Decoder0.IN2
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lookup_mult|lookup:LOOK_UP_U1
+sys_clk => out[3]~reg0.CLK
+sys_clk => out[2]~reg0.CLK
+sys_clk => out[1]~reg0.CLK
+sys_clk => out[0]~reg0.CLK
+sys_rst_n => out[3]~reg0.ACLR
+sys_rst_n => out[2]~reg0.ACLR
+sys_rst_n => out[1]~reg0.ACLR
+sys_rst_n => out[0]~reg0.ACLR
+a[0] => Decoder1.IN0
+a[0] => Decoder0.IN1
+a[1] => Decoder0.IN0
+b[0] => Decoder1.IN1
+b[0] => Decoder0.IN3
+b[1] => Decoder0.IN2
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lookup_mult|lookup:LOOK_UP_U2
+sys_clk => out[3]~reg0.CLK
+sys_clk => out[2]~reg0.CLK
+sys_clk => out[1]~reg0.CLK
+sys_clk => out[0]~reg0.CLK
+sys_rst_n => out[3]~reg0.ACLR
+sys_rst_n => out[2]~reg0.ACLR
+sys_rst_n => out[1]~reg0.ACLR
+sys_rst_n => out[0]~reg0.ACLR
+a[0] => Decoder1.IN0
+a[0] => Decoder0.IN1
+a[1] => Decoder0.IN0
+b[0] => Decoder1.IN1
+b[0] => Decoder0.IN3
+b[1] => Decoder0.IN2
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lookup_mult|lookup:LOOK_UP_U3
+sys_clk => out[3]~reg0.CLK
+sys_clk => out[2]~reg0.CLK
+sys_clk => out[1]~reg0.CLK
+sys_clk => out[0]~reg0.CLK
+sys_rst_n => out[3]~reg0.ACLR
+sys_rst_n => out[2]~reg0.ACLR
+sys_rst_n => out[1]~reg0.ACLR
+sys_rst_n => out[0]~reg0.ACLR
+a[0] => Decoder1.IN0
+a[0] => Decoder0.IN1
+a[1] => Decoder0.IN0
+b[0] => Decoder1.IN1
+b[0] => Decoder0.IN3
+b[1] => Decoder0.IN2
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
