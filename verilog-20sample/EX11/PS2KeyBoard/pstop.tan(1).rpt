@@ -1,0 +1,286 @@
+Classic Timing Analyzer report for pstop
+Tue Nov 29 09:45:33 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'PS2_CLK2'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                   ;
++------------------------------+-------+---------------+----------------------------------+--------------------+---------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From               ; To                  ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+--------------------+---------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 0.040 ns                         ; rst_n              ; pskey:inst|data[1]  ; --         ; PS2_CLK2 ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 11.358 ns                        ; pskey:inst|data[3] ; led[3]              ; PS2_CLK2   ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 1.481 ns                         ; PS2_DAT2           ; pskey:inst|temp[10] ; --         ; PS2_CLK2 ; 0            ;
+; Clock Setup: 'PS2_CLK2'      ; N/A   ; None          ; 184.71 MHz ( period = 5.414 ns ) ; pskey:inst|cnt4[2] ; pskey:inst|data[1]  ; PS2_CLK2   ; PS2_CLK2 ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                    ;                     ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+--------------------+---------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EPM240T100C5       ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; PS2_CLK2        ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'PS2_CLK2'                                                                                                                                                                                       ;
++-------+------------------------------------------------+---------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                ; To                 ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+---------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 184.71 MHz ( period = 5.414 ns )               ; pskey:inst|cnt4[2]  ; pskey:inst|data[4] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.705 ns                ;
+; N/A   ; 184.71 MHz ( period = 5.414 ns )               ; pskey:inst|cnt4[2]  ; pskey:inst|data[3] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.705 ns                ;
+; N/A   ; 184.71 MHz ( period = 5.414 ns )               ; pskey:inst|cnt4[2]  ; pskey:inst|data[2] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.705 ns                ;
+; N/A   ; 184.71 MHz ( period = 5.414 ns )               ; pskey:inst|cnt4[2]  ; pskey:inst|data[1] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.705 ns                ;
+; N/A   ; 191.46 MHz ( period = 5.223 ns )               ; pskey:inst|cnt4[3]  ; pskey:inst|data[4] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.514 ns                ;
+; N/A   ; 191.46 MHz ( period = 5.223 ns )               ; pskey:inst|cnt4[3]  ; pskey:inst|data[3] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.514 ns                ;
+; N/A   ; 191.46 MHz ( period = 5.223 ns )               ; pskey:inst|cnt4[3]  ; pskey:inst|data[2] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.514 ns                ;
+; N/A   ; 191.46 MHz ( period = 5.223 ns )               ; pskey:inst|cnt4[3]  ; pskey:inst|data[1] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.514 ns                ;
+; N/A   ; 196.97 MHz ( period = 5.077 ns )               ; pskey:inst|cnt4[1]  ; pskey:inst|data[4] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.368 ns                ;
+; N/A   ; 196.97 MHz ( period = 5.077 ns )               ; pskey:inst|cnt4[1]  ; pskey:inst|data[3] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.368 ns                ;
+; N/A   ; 196.97 MHz ( period = 5.077 ns )               ; pskey:inst|cnt4[1]  ; pskey:inst|data[2] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.368 ns                ;
+; N/A   ; 196.97 MHz ( period = 5.077 ns )               ; pskey:inst|cnt4[1]  ; pskey:inst|data[1] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.368 ns                ;
+; N/A   ; 197.94 MHz ( period = 5.052 ns )               ; pskey:inst|cnt4[2]  ; pskey:inst|data[7] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.343 ns                ;
+; N/A   ; 197.94 MHz ( period = 5.052 ns )               ; pskey:inst|cnt4[2]  ; pskey:inst|data[6] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.343 ns                ;
+; N/A   ; 197.94 MHz ( period = 5.052 ns )               ; pskey:inst|cnt4[2]  ; pskey:inst|data[5] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.343 ns                ;
+; N/A   ; 197.94 MHz ( period = 5.052 ns )               ; pskey:inst|cnt4[2]  ; pskey:inst|data[0] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.343 ns                ;
+; N/A   ; 205.72 MHz ( period = 4.861 ns )               ; pskey:inst|cnt4[3]  ; pskey:inst|data[7] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.152 ns                ;
+; N/A   ; 205.72 MHz ( period = 4.861 ns )               ; pskey:inst|cnt4[3]  ; pskey:inst|data[6] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.152 ns                ;
+; N/A   ; 205.72 MHz ( period = 4.861 ns )               ; pskey:inst|cnt4[3]  ; pskey:inst|data[5] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.152 ns                ;
+; N/A   ; 205.72 MHz ( period = 4.861 ns )               ; pskey:inst|cnt4[3]  ; pskey:inst|data[0] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.152 ns                ;
+; N/A   ; 212.09 MHz ( period = 4.715 ns )               ; pskey:inst|cnt4[1]  ; pskey:inst|data[7] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.006 ns                ;
+; N/A   ; 212.09 MHz ( period = 4.715 ns )               ; pskey:inst|cnt4[1]  ; pskey:inst|data[6] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.006 ns                ;
+; N/A   ; 212.09 MHz ( period = 4.715 ns )               ; pskey:inst|cnt4[1]  ; pskey:inst|data[5] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.006 ns                ;
+; N/A   ; 212.09 MHz ( period = 4.715 ns )               ; pskey:inst|cnt4[1]  ; pskey:inst|data[0] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 4.006 ns                ;
+; N/A   ; 212.90 MHz ( period = 4.697 ns )               ; pskey:inst|cnt4[0]  ; pskey:inst|data[4] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 3.988 ns                ;
+; N/A   ; 212.90 MHz ( period = 4.697 ns )               ; pskey:inst|cnt4[0]  ; pskey:inst|data[3] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 3.988 ns                ;
+; N/A   ; 212.90 MHz ( period = 4.697 ns )               ; pskey:inst|cnt4[0]  ; pskey:inst|data[2] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 3.988 ns                ;
+; N/A   ; 212.90 MHz ( period = 4.697 ns )               ; pskey:inst|cnt4[0]  ; pskey:inst|data[1] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 3.988 ns                ;
+; N/A   ; 230.68 MHz ( period = 4.335 ns )               ; pskey:inst|cnt4[0]  ; pskey:inst|data[7] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 3.626 ns                ;
+; N/A   ; 230.68 MHz ( period = 4.335 ns )               ; pskey:inst|cnt4[0]  ; pskey:inst|data[6] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 3.626 ns                ;
+; N/A   ; 230.68 MHz ( period = 4.335 ns )               ; pskey:inst|cnt4[0]  ; pskey:inst|data[5] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 3.626 ns                ;
+; N/A   ; 230.68 MHz ( period = 4.335 ns )               ; pskey:inst|cnt4[0]  ; pskey:inst|data[0] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 3.626 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|temp[8]  ; pskey:inst|data[6] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 2.249 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|temp[8]  ; pskey:inst|temp[7] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 2.225 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|temp[9]  ; pskey:inst|data[7] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 2.156 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|cnt4[2]  ; pskey:inst|cnt4[0] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 2.153 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|cnt4[2]  ; pskey:inst|cnt4[1] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 2.148 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|cnt4[2]  ; pskey:inst|cnt4[3] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 2.146 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|cnt4[2]  ; pskey:inst|cnt4[2] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 2.144 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|cnt4[3]  ; pskey:inst|cnt4[0] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 2.014 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|cnt4[3]  ; pskey:inst|cnt4[1] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 2.006 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|cnt4[3]  ; pskey:inst|cnt4[3] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 2.005 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|cnt4[1]  ; pskey:inst|cnt4[0] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.839 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|cnt4[1]  ; pskey:inst|cnt4[2] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.833 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|cnt4[1]  ; pskey:inst|cnt4[3] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.828 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|cnt4[1]  ; pskey:inst|cnt4[1] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.820 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|temp[7]  ; pskey:inst|data[5] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.606 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|temp[2]  ; pskey:inst|data[0] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.605 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|cnt4[0]  ; pskey:inst|cnt4[1] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.569 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|cnt4[0]  ; pskey:inst|cnt4[3] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.568 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|cnt4[0]  ; pskey:inst|cnt4[2] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.565 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|cnt4[0]  ; pskey:inst|cnt4[0] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.558 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|temp[5]  ; pskey:inst|data[3] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.520 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|temp[5]  ; pskey:inst|temp[4] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.515 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|temp[4]  ; pskey:inst|data[2] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.511 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|temp[7]  ; pskey:inst|temp[6] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.509 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|temp[4]  ; pskey:inst|temp[3] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.506 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|temp[10] ; pskey:inst|temp[9] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.487 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|temp[6]  ; pskey:inst|data[4] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.249 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|temp[3]  ; pskey:inst|data[1] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.245 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|temp[6]  ; pskey:inst|temp[5] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.242 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|temp[3]  ; pskey:inst|temp[2] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.242 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; pskey:inst|temp[9]  ; pskey:inst|temp[8] ; PS2_CLK2   ; PS2_CLK2 ; None                        ; None                      ; 1.224 ns                ;
++-------+------------------------------------------------+---------------------+--------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------+
+; tsu                                                                           ;
++-------+--------------+------------+----------+---------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From     ; To                  ; To Clock ;
++-------+--------------+------------+----------+---------------------+----------+
+; N/A   ; None         ; 0.040 ns   ; rst_n    ; pskey:inst|data[4]  ; PS2_CLK2 ;
+; N/A   ; None         ; 0.040 ns   ; rst_n    ; pskey:inst|data[3]  ; PS2_CLK2 ;
+; N/A   ; None         ; 0.040 ns   ; rst_n    ; pskey:inst|data[2]  ; PS2_CLK2 ;
+; N/A   ; None         ; 0.040 ns   ; rst_n    ; pskey:inst|data[1]  ; PS2_CLK2 ;
+; N/A   ; None         ; -0.322 ns  ; rst_n    ; pskey:inst|data[7]  ; PS2_CLK2 ;
+; N/A   ; None         ; -0.322 ns  ; rst_n    ; pskey:inst|data[6]  ; PS2_CLK2 ;
+; N/A   ; None         ; -0.322 ns  ; rst_n    ; pskey:inst|data[5]  ; PS2_CLK2 ;
+; N/A   ; None         ; -0.322 ns  ; rst_n    ; pskey:inst|data[0]  ; PS2_CLK2 ;
+; N/A   ; None         ; -0.927 ns  ; PS2_DAT2 ; pskey:inst|temp[10] ; PS2_CLK2 ;
++-------+--------------+------------+----------+---------------------+----------+
+
+
++------------------------------------------------------------------------------+
+; tco                                                                          ;
++-------+--------------+------------+--------------------+--------+------------+
+; Slack ; Required tco ; Actual tco ; From               ; To     ; From Clock ;
++-------+--------------+------------+--------------------+--------+------------+
+; N/A   ; None         ; 11.358 ns  ; pskey:inst|data[3] ; led[3] ; PS2_CLK2   ;
+; N/A   ; None         ; 11.241 ns  ; pskey:inst|data[0] ; led[0] ; PS2_CLK2   ;
+; N/A   ; None         ; 11.226 ns  ; pskey:inst|data[4] ; led[4] ; PS2_CLK2   ;
+; N/A   ; None         ; 10.774 ns  ; pskey:inst|data[6] ; led[6] ; PS2_CLK2   ;
+; N/A   ; None         ; 10.142 ns  ; pskey:inst|data[1] ; led[1] ; PS2_CLK2   ;
+; N/A   ; None         ; 10.142 ns  ; pskey:inst|data[2] ; led[2] ; PS2_CLK2   ;
+; N/A   ; None         ; 10.142 ns  ; pskey:inst|data[5] ; led[5] ; PS2_CLK2   ;
+; N/A   ; None         ; 10.135 ns  ; pskey:inst|data[7] ; led[7] ; PS2_CLK2   ;
++-------+--------------+------------+--------------------+--------+------------+
+
+
++-------------------------------------------------------------------------------------+
+; th                                                                                  ;
++---------------+-------------+-----------+----------+---------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From     ; To                  ; To Clock ;
++---------------+-------------+-----------+----------+---------------------+----------+
+; N/A           ; None        ; 1.481 ns  ; PS2_DAT2 ; pskey:inst|temp[10] ; PS2_CLK2 ;
+; N/A           ; None        ; 0.876 ns  ; rst_n    ; pskey:inst|data[7]  ; PS2_CLK2 ;
+; N/A           ; None        ; 0.876 ns  ; rst_n    ; pskey:inst|data[6]  ; PS2_CLK2 ;
+; N/A           ; None        ; 0.876 ns  ; rst_n    ; pskey:inst|data[5]  ; PS2_CLK2 ;
+; N/A           ; None        ; 0.876 ns  ; rst_n    ; pskey:inst|data[0]  ; PS2_CLK2 ;
+; N/A           ; None        ; 0.514 ns  ; rst_n    ; pskey:inst|data[4]  ; PS2_CLK2 ;
+; N/A           ; None        ; 0.514 ns  ; rst_n    ; pskey:inst|data[3]  ; PS2_CLK2 ;
+; N/A           ; None        ; 0.514 ns  ; rst_n    ; pskey:inst|data[2]  ; PS2_CLK2 ;
+; N/A           ; None        ; 0.514 ns  ; rst_n    ; pskey:inst|data[1]  ; PS2_CLK2 ;
++---------------+-------------+-----------+----------+---------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Tue Nov 29 09:45:32 2011
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off pstop -c pstop
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "PS2_CLK2" is an undefined clock
+Info: Clock "PS2_CLK2" has Internal fmax of 184.71 MHz between source register "pskey:inst|cnt4[2]" and destination register "pskey:inst|data[4]" (period= 5.414 ns)
+    Info: + Longest register to register delay is 4.705 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X7_Y1_N4; Fanout = 5; REG Node = 'pskey:inst|cnt4[2]'
+        Info: 2: + IC(0.971 ns) + CELL(0.914 ns) = 1.885 ns; Loc. = LC_X7_Y1_N6; Fanout = 1; COMB Node = 'pskey:inst|Equal0~91'
+        Info: 3: + IC(0.305 ns) + CELL(0.200 ns) = 2.390 ns; Loc. = LC_X7_Y1_N7; Fanout = 8; COMB Node = 'pskey:inst|data[7]~281'
+        Info: 4: + IC(1.072 ns) + CELL(1.243 ns) = 4.705 ns; Loc. = LC_X6_Y1_N7; Fanout = 1; REG Node = 'pskey:inst|data[4]'
+        Info: Total cell delay = 2.357 ns ( 50.10 % )
+        Info: Total interconnect delay = 2.348 ns ( 49.90 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "PS2_CLK2" to destination register is 6.670 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_54; Fanout = 21; CLK Node = 'PS2_CLK2'
+            Info: 2: + IC(4.620 ns) + CELL(0.918 ns) = 6.670 ns; Loc. = LC_X6_Y1_N7; Fanout = 1; REG Node = 'pskey:inst|data[4]'
+            Info: Total cell delay = 2.050 ns ( 30.73 % )
+            Info: Total interconnect delay = 4.620 ns ( 69.27 % )
+        Info: - Longest clock path from clock "PS2_CLK2" to source register is 6.670 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_54; Fanout = 21; CLK Node = 'PS2_CLK2'
+            Info: 2: + IC(4.620 ns) + CELL(0.918 ns) = 6.670 ns; Loc. = LC_X7_Y1_N4; Fanout = 5; REG Node = 'pskey:inst|cnt4[2]'
+            Info: Total cell delay = 2.050 ns ( 30.73 % )
+            Info: Total interconnect delay = 4.620 ns ( 69.27 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Info: tsu for register "pskey:inst|data[4]" (data pin = "rst_n", clock pin = "PS2_CLK2") is 0.040 ns
+    Info: + Longest pin to register delay is 6.377 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_83; Fanout = 14; PIN Node = 'rst_n'
+        Info: 2: + IC(2.190 ns) + CELL(0.740 ns) = 4.062 ns; Loc. = LC_X7_Y1_N7; Fanout = 8; COMB Node = 'pskey:inst|data[7]~281'
+        Info: 3: + IC(1.072 ns) + CELL(1.243 ns) = 6.377 ns; Loc. = LC_X6_Y1_N7; Fanout = 1; REG Node = 'pskey:inst|data[4]'
+        Info: Total cell delay = 3.115 ns ( 48.85 % )
+        Info: Total interconnect delay = 3.262 ns ( 51.15 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "PS2_CLK2" to destination register is 6.670 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_54; Fanout = 21; CLK Node = 'PS2_CLK2'
+        Info: 2: + IC(4.620 ns) + CELL(0.918 ns) = 6.670 ns; Loc. = LC_X6_Y1_N7; Fanout = 1; REG Node = 'pskey:inst|data[4]'
+        Info: Total cell delay = 2.050 ns ( 30.73 % )
+        Info: Total interconnect delay = 4.620 ns ( 69.27 % )
+Info: tco from clock "PS2_CLK2" to destination pin "led[3]" through register "pskey:inst|data[3]" is 11.358 ns
+    Info: + Longest clock path from clock "PS2_CLK2" to source register is 6.670 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_54; Fanout = 21; CLK Node = 'PS2_CLK2'
+        Info: 2: + IC(4.620 ns) + CELL(0.918 ns) = 6.670 ns; Loc. = LC_X6_Y1_N8; Fanout = 1; REG Node = 'pskey:inst|data[3]'
+        Info: Total cell delay = 2.050 ns ( 30.73 % )
+        Info: Total interconnect delay = 4.620 ns ( 69.27 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 4.312 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X6_Y1_N8; Fanout = 1; REG Node = 'pskey:inst|data[3]'
+        Info: 2: + IC(1.990 ns) + CELL(2.322 ns) = 4.312 ns; Loc. = PIN_49; Fanout = 0; PIN Node = 'led[3]'
+        Info: Total cell delay = 2.322 ns ( 53.85 % )
+        Info: Total interconnect delay = 1.990 ns ( 46.15 % )
+Info: th for register "pskey:inst|temp[10]" (data pin = "PS2_DAT2", clock pin = "PS2_CLK2") is 1.481 ns
+    Info: + Longest clock path from clock "PS2_CLK2" to destination register is 6.670 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_54; Fanout = 21; CLK Node = 'PS2_CLK2'
+        Info: 2: + IC(4.620 ns) + CELL(0.918 ns) = 6.670 ns; Loc. = LC_X4_Y1_N2; Fanout = 1; REG Node = 'pskey:inst|temp[10]'
+        Info: Total cell delay = 2.050 ns ( 30.73 % )
+        Info: Total interconnect delay = 4.620 ns ( 69.27 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 5.410 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_55; Fanout = 1; PIN Node = 'PS2_DAT2'
+        Info: 2: + IC(3.998 ns) + CELL(0.280 ns) = 5.410 ns; Loc. = LC_X4_Y1_N2; Fanout = 1; REG Node = 'pskey:inst|temp[10]'
+        Info: Total cell delay = 1.412 ns ( 26.10 % )
+        Info: Total interconnect delay = 3.998 ns ( 73.90 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Allocated 110 megabytes of memory during processing
+    Info: Processing ended: Tue Nov 29 09:45:33 2011
+    Info: Elapsed time: 00:00:01
+
+

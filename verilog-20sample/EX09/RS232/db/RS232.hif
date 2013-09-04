@@ -1,0 +1,154 @@
+Version 7.2 Build 151 09/26/2007 SJ Full Version
+39
+2304
+OFF
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+RS232
+# storage
+db|RS232.(0).cnf
+db|RS232.(0).cnf
+# case_insensitive
+# source_file
+RS232.bdf
+d7981aeece5ca884adf59765b8bd26
+25
+# internal_option {
+BLOCK_DESIGN_NAMING
+OFF
+}
+# hierarchies {
+|
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+async_transmitter
+# storage
+db|RS232.(1).cnf
+db|RS232.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+async_transmitter.v
+8d461b555db9f6b1719019bd9aed7e
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# user_parameter {
+ClkFrequency
+50000000
+PARAMETER_UNKNOWN
+USR
+Baud
+115200
+PARAMETER_UNKNOWN
+USR
+RegisterInputData
+1
+PARAMETER_UNKNOWN
+USR
+BaudGeneratorAccWidth
+16
+PARAMETER_UNKNOWN
+USR
+}
+# hierarchies {
+async_transmitter:inst1
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+async_receiver
+# storage
+db|RS232.(2).cnf
+db|RS232.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+async_receiver.v
+f96e3c02c8eb8f3f9c390da15b2f920
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# user_parameter {
+ClkFrequency
+50000000
+PARAMETER_UNKNOWN
+USR
+Baud
+115200
+PARAMETER_UNKNOWN
+USR
+Baud8
+921600
+PARAMETER_SIGNED_DEC
+DEF
+Baud8GeneratorAccWidth
+16
+PARAMETER_UNKNOWN
+USR
+}
+# hierarchies {
+async_receiver:inst
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# complete
+

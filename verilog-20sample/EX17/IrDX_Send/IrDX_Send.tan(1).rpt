@@ -1,0 +1,562 @@
+Classic Timing Analyzer report for IrDX_Send
+Mon Nov 28 08:56:20 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                    ;
++------------------------------+-------+---------------+----------------------------------+--------------------------------------+------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                 ; To                                 ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+--------------------------------------+------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 1.081 ns                         ; SW[2]                                ; irda_send_loop:inst|clk_cnt_108[2] ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 11.638 ns                        ; irda_send_loop:inst|irda_send        ; IrDA_Tx                            ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 1.181 ns                         ; SW[0]                                ; irda_send_loop:inst|cs.LEADER_9    ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 83.54 MHz ( period = 11.971 ns ) ; irda_send_loop:inst|clk_cnt_0565[14] ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                      ;                                    ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+--------------------------------------+------------------------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EPM240T100C5       ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                                    ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                 ; To                                 ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 83.54 MHz ( period = 11.971 ns )                    ; irda_send_loop:inst|clk_cnt_0565[14] ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 11.262 ns               ;
+; N/A                                     ; 84.27 MHz ( period = 11.867 ns )                    ; irda_send_loop:inst|clk_cnt_169[4]   ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 11.158 ns               ;
+; N/A                                     ; 84.66 MHz ( period = 11.812 ns )                    ; irda_send_loop:inst|clk_cnt_0565[15] ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 11.103 ns               ;
+; N/A                                     ; 85.26 MHz ( period = 11.729 ns )                    ; irda_send_loop:inst|clk_cnt_169[8]   ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 11.020 ns               ;
+; N/A                                     ; 85.59 MHz ( period = 11.683 ns )                    ; irda_send_loop:inst|clk_cnt_169[7]   ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.974 ns               ;
+; N/A                                     ; 85.82 MHz ( period = 11.652 ns )                    ; irda_send_loop:inst|clk_cnt_169[13]  ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.943 ns               ;
+; N/A                                     ; 85.86 MHz ( period = 11.647 ns )                    ; irda_send_loop:inst|clk_cnt_169[3]   ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.938 ns               ;
+; N/A                                     ; 85.92 MHz ( period = 11.639 ns )                    ; irda_send_loop:inst|clk_cnt_0565[12] ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.930 ns               ;
+; N/A                                     ; 85.95 MHz ( period = 11.635 ns )                    ; irda_send_loop:inst|clk_cnt_0565[13] ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.926 ns               ;
+; N/A                                     ; 86.14 MHz ( period = 11.609 ns )                    ; irda_send_loop:inst|clk_cnt_169[11]  ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.900 ns               ;
+; N/A                                     ; 86.15 MHz ( period = 11.607 ns )                    ; irda_send_loop:inst|clk_cnt_169[10]  ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.898 ns               ;
+; N/A                                     ; 86.27 MHz ( period = 11.592 ns )                    ; irda_send_loop:inst|clk_cnt_0565[14] ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.883 ns               ;
+; N/A                                     ; 86.27 MHz ( period = 11.592 ns )                    ; irda_send_loop:inst|clk_cnt_0565[14] ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.883 ns               ;
+; N/A                                     ; 87.05 MHz ( period = 11.488 ns )                    ; irda_send_loop:inst|clk_cnt_169[4]   ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.779 ns               ;
+; N/A                                     ; 87.05 MHz ( period = 11.488 ns )                    ; irda_send_loop:inst|clk_cnt_169[4]   ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.779 ns               ;
+; N/A                                     ; 87.07 MHz ( period = 11.485 ns )                    ; irda_send_loop:inst|clk_cnt_169[5]   ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.776 ns               ;
+; N/A                                     ; 87.10 MHz ( period = 11.481 ns )                    ; irda_send_loop:inst|clk_cnt_169[15]  ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.772 ns               ;
+; N/A                                     ; 87.31 MHz ( period = 11.453 ns )                    ; irda_send_loop:inst|clk_cnt_169[0]   ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.744 ns               ;
+; N/A                                     ; 87.47 MHz ( period = 11.433 ns )                    ; irda_send_loop:inst|clk_cnt_0565[15] ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.724 ns               ;
+; N/A                                     ; 87.47 MHz ( period = 11.433 ns )                    ; irda_send_loop:inst|clk_cnt_0565[15] ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.724 ns               ;
+; N/A                                     ; 87.60 MHz ( period = 11.415 ns )                    ; irda_send_loop:inst|clk_cnt_0565[14] ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.706 ns               ;
+; N/A                                     ; 88.11 MHz ( period = 11.350 ns )                    ; irda_send_loop:inst|clk_cnt_169[8]   ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.641 ns               ;
+; N/A                                     ; 88.11 MHz ( period = 11.350 ns )                    ; irda_send_loop:inst|clk_cnt_169[8]   ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.641 ns               ;
+; N/A                                     ; 88.18 MHz ( period = 11.340 ns )                    ; irda_send_loop:inst|clk_cnt_169[14]  ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.631 ns               ;
+; N/A                                     ; 88.37 MHz ( period = 11.316 ns )                    ; irda_send_loop:inst|clk_cnt_0565[4]  ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.607 ns               ;
+; N/A                                     ; 88.40 MHz ( period = 11.312 ns )                    ; irda_send_loop:inst|clk_cnt_169[12]  ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.603 ns               ;
+; N/A                                     ; 88.41 MHz ( period = 11.311 ns )                    ; irda_send_loop:inst|clk_cnt_169[4]   ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.602 ns               ;
+; N/A                                     ; 88.46 MHz ( period = 11.304 ns )                    ; irda_send_loop:inst|clk_cnt_169[7]   ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.595 ns               ;
+; N/A                                     ; 88.46 MHz ( period = 11.304 ns )                    ; irda_send_loop:inst|clk_cnt_169[7]   ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.595 ns               ;
+; N/A                                     ; 88.55 MHz ( period = 11.293 ns )                    ; irda_send_loop:inst|clk_cnt_169[2]   ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.584 ns               ;
+; N/A                                     ; 88.71 MHz ( period = 11.273 ns )                    ; irda_send_loop:inst|clk_cnt_169[13]  ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.564 ns               ;
+; N/A                                     ; 88.71 MHz ( period = 11.273 ns )                    ; irda_send_loop:inst|clk_cnt_169[13]  ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.564 ns               ;
+; N/A                                     ; 88.75 MHz ( period = 11.268 ns )                    ; irda_send_loop:inst|clk_cnt_169[3]   ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.559 ns               ;
+; N/A                                     ; 88.75 MHz ( period = 11.268 ns )                    ; irda_send_loop:inst|clk_cnt_169[3]   ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.559 ns               ;
+; N/A                                     ; 88.81 MHz ( period = 11.260 ns )                    ; irda_send_loop:inst|clk_cnt_0565[12] ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.551 ns               ;
+; N/A                                     ; 88.81 MHz ( period = 11.260 ns )                    ; irda_send_loop:inst|clk_cnt_0565[12] ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.551 ns               ;
+; N/A                                     ; 88.84 MHz ( period = 11.256 ns )                    ; irda_send_loop:inst|clk_cnt_0565[15] ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.547 ns               ;
+; N/A                                     ; 88.84 MHz ( period = 11.256 ns )                    ; irda_send_loop:inst|clk_cnt_0565[13] ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.547 ns               ;
+; N/A                                     ; 88.84 MHz ( period = 11.256 ns )                    ; irda_send_loop:inst|clk_cnt_0565[13] ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.547 ns               ;
+; N/A                                     ; 88.97 MHz ( period = 11.240 ns )                    ; irda_send_loop:inst|clk_cnt_0565[2]  ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.531 ns               ;
+; N/A                                     ; 89.00 MHz ( period = 11.236 ns )                    ; irda_send_loop:inst|clk_cnt_169[9]   ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.527 ns               ;
+; N/A                                     ; 89.05 MHz ( period = 11.230 ns )                    ; irda_send_loop:inst|clk_cnt_169[11]  ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.521 ns               ;
+; N/A                                     ; 89.05 MHz ( period = 11.230 ns )                    ; irda_send_loop:inst|clk_cnt_169[11]  ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.521 ns               ;
+; N/A                                     ; 89.06 MHz ( period = 11.228 ns )                    ; irda_send_loop:inst|clk_cnt_169[10]  ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.519 ns               ;
+; N/A                                     ; 89.06 MHz ( period = 11.228 ns )                    ; irda_send_loop:inst|clk_cnt_169[10]  ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.519 ns               ;
+; N/A                                     ; 89.29 MHz ( period = 11.199 ns )                    ; irda_send_loop:inst|clk_cnt_0565[14] ; irda_send_loop:inst|data_cnt[5]    ; clk        ; clk      ; None                        ; None                      ; 10.490 ns               ;
+; N/A                                     ; 89.39 MHz ( period = 11.187 ns )                    ; irda_send_loop:inst|clk_cnt_0565[14] ; irda_send_loop:inst|data_cnt[1]    ; clk        ; clk      ; None                        ; None                      ; 10.478 ns               ;
+; N/A                                     ; 89.39 MHz ( period = 11.187 ns )                    ; irda_send_loop:inst|clk_cnt_0565[14] ; irda_send_loop:inst|data_cnt[0]    ; clk        ; clk      ; None                        ; None                      ; 10.478 ns               ;
+; N/A                                     ; 89.39 MHz ( period = 11.187 ns )                    ; irda_send_loop:inst|clk_cnt_0565[14] ; irda_send_loop:inst|data_cnt[2]    ; clk        ; clk      ; None                        ; None                      ; 10.478 ns               ;
+; N/A                                     ; 89.50 MHz ( period = 11.173 ns )                    ; irda_send_loop:inst|clk_cnt_169[8]   ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.464 ns               ;
+; N/A                                     ; 89.71 MHz ( period = 11.147 ns )                    ; irda_send_loop:inst|clk_cnt_169[6]   ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.438 ns               ;
+; N/A                                     ; 89.83 MHz ( period = 11.132 ns )                    ; irda_send_loop:inst|clk_cnt_0565[7]  ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.423 ns               ;
+; N/A                                     ; 89.87 MHz ( period = 11.127 ns )                    ; irda_send_loop:inst|clk_cnt_169[7]   ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.418 ns               ;
+; N/A                                     ; 90.04 MHz ( period = 11.106 ns )                    ; irda_send_loop:inst|clk_cnt_169[5]   ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.397 ns               ;
+; N/A                                     ; 90.04 MHz ( period = 11.106 ns )                    ; irda_send_loop:inst|clk_cnt_169[5]   ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.397 ns               ;
+; N/A                                     ; 90.07 MHz ( period = 11.102 ns )                    ; irda_send_loop:inst|clk_cnt_169[15]  ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.393 ns               ;
+; N/A                                     ; 90.07 MHz ( period = 11.102 ns )                    ; irda_send_loop:inst|clk_cnt_169[15]  ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.393 ns               ;
+; N/A                                     ; 90.12 MHz ( period = 11.096 ns )                    ; irda_send_loop:inst|clk_cnt_169[13]  ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.387 ns               ;
+; N/A                                     ; 90.13 MHz ( period = 11.095 ns )                    ; irda_send_loop:inst|clk_cnt_169[4]   ; irda_send_loop:inst|data_cnt[5]    ; clk        ; clk      ; None                        ; None                      ; 10.386 ns               ;
+; N/A                                     ; 90.16 MHz ( period = 11.091 ns )                    ; irda_send_loop:inst|clk_cnt_169[3]   ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.382 ns               ;
+; N/A                                     ; 90.23 MHz ( period = 11.083 ns )                    ; irda_send_loop:inst|clk_cnt_0565[12] ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.374 ns               ;
+; N/A                                     ; 90.23 MHz ( period = 11.083 ns )                    ; irda_send_loop:inst|clk_cnt_169[4]   ; irda_send_loop:inst|data_cnt[1]    ; clk        ; clk      ; None                        ; None                      ; 10.374 ns               ;
+; N/A                                     ; 90.23 MHz ( period = 11.083 ns )                    ; irda_send_loop:inst|clk_cnt_169[4]   ; irda_send_loop:inst|data_cnt[0]    ; clk        ; clk      ; None                        ; None                      ; 10.374 ns               ;
+; N/A                                     ; 90.23 MHz ( period = 11.083 ns )                    ; irda_send_loop:inst|clk_cnt_169[4]   ; irda_send_loop:inst|data_cnt[2]    ; clk        ; clk      ; None                        ; None                      ; 10.374 ns               ;
+; N/A                                     ; 90.26 MHz ( period = 11.079 ns )                    ; irda_send_loop:inst|clk_cnt_0565[13] ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.370 ns               ;
+; N/A                                     ; 90.30 MHz ( period = 11.074 ns )                    ; irda_send_loop:inst|clk_cnt_169[0]   ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.365 ns               ;
+; N/A                                     ; 90.30 MHz ( period = 11.074 ns )                    ; irda_send_loop:inst|clk_cnt_169[0]   ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.365 ns               ;
+; N/A                                     ; 90.44 MHz ( period = 11.057 ns )                    ; irda_send_loop:inst|clk_cnt_0565[0]  ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.348 ns               ;
+; N/A                                     ; 90.47 MHz ( period = 11.053 ns )                    ; irda_send_loop:inst|clk_cnt_169[11]  ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.344 ns               ;
+; N/A                                     ; 90.49 MHz ( period = 11.051 ns )                    ; irda_send_loop:inst|clk_cnt_169[10]  ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.342 ns               ;
+; N/A                                     ; 90.58 MHz ( period = 11.040 ns )                    ; irda_send_loop:inst|clk_cnt_0565[15] ; irda_send_loop:inst|data_cnt[5]    ; clk        ; clk      ; None                        ; None                      ; 10.331 ns               ;
+; N/A                                     ; 90.68 MHz ( period = 11.028 ns )                    ; irda_send_loop:inst|clk_cnt_0565[15] ; irda_send_loop:inst|data_cnt[1]    ; clk        ; clk      ; None                        ; None                      ; 10.319 ns               ;
+; N/A                                     ; 90.68 MHz ( period = 11.028 ns )                    ; irda_send_loop:inst|clk_cnt_0565[15] ; irda_send_loop:inst|data_cnt[0]    ; clk        ; clk      ; None                        ; None                      ; 10.319 ns               ;
+; N/A                                     ; 90.68 MHz ( period = 11.028 ns )                    ; irda_send_loop:inst|clk_cnt_0565[15] ; irda_send_loop:inst|data_cnt[2]    ; clk        ; clk      ; None                        ; None                      ; 10.319 ns               ;
+; N/A                                     ; 90.71 MHz ( period = 11.024 ns )                    ; irda_send_loop:inst|clk_cnt_108[0]   ; irda_send_loop:inst|clk_cnt_108[0] ; clk        ; clk      ; None                        ; None                      ; 10.315 ns               ;
+; N/A                                     ; 90.71 MHz ( period = 11.024 ns )                    ; irda_send_loop:inst|clk_cnt_108[0]   ; irda_send_loop:inst|clk_cnt_108[1] ; clk        ; clk      ; None                        ; None                      ; 10.315 ns               ;
+; N/A                                     ; 90.71 MHz ( period = 11.024 ns )                    ; irda_send_loop:inst|clk_cnt_108[0]   ; irda_send_loop:inst|clk_cnt_108[5] ; clk        ; clk      ; None                        ; None                      ; 10.315 ns               ;
+; N/A                                     ; 90.71 MHz ( period = 11.024 ns )                    ; irda_send_loop:inst|clk_cnt_108[0]   ; irda_send_loop:inst|clk_cnt_108[4] ; clk        ; clk      ; None                        ; None                      ; 10.315 ns               ;
+; N/A                                     ; 90.71 MHz ( period = 11.024 ns )                    ; irda_send_loop:inst|clk_cnt_108[0]   ; irda_send_loop:inst|clk_cnt_108[3] ; clk        ; clk      ; None                        ; None                      ; 10.315 ns               ;
+; N/A                                     ; 90.71 MHz ( period = 11.024 ns )                    ; irda_send_loop:inst|clk_cnt_108[0]   ; irda_send_loop:inst|clk_cnt_108[2] ; clk        ; clk      ; None                        ; None                      ; 10.315 ns               ;
+; N/A                                     ; 91.23 MHz ( period = 10.961 ns )                    ; irda_send_loop:inst|clk_cnt_169[14]  ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.252 ns               ;
+; N/A                                     ; 91.23 MHz ( period = 10.961 ns )                    ; irda_send_loop:inst|clk_cnt_169[14]  ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.252 ns               ;
+; N/A                                     ; 91.27 MHz ( period = 10.957 ns )                    ; irda_send_loop:inst|clk_cnt_169[8]   ; irda_send_loop:inst|data_cnt[5]    ; clk        ; clk      ; None                        ; None                      ; 10.248 ns               ;
+; N/A                                     ; 91.37 MHz ( period = 10.945 ns )                    ; irda_send_loop:inst|clk_cnt_169[8]   ; irda_send_loop:inst|data_cnt[1]    ; clk        ; clk      ; None                        ; None                      ; 10.236 ns               ;
+; N/A                                     ; 91.37 MHz ( period = 10.945 ns )                    ; irda_send_loop:inst|clk_cnt_169[8]   ; irda_send_loop:inst|data_cnt[0]    ; clk        ; clk      ; None                        ; None                      ; 10.236 ns               ;
+; N/A                                     ; 91.37 MHz ( period = 10.945 ns )                    ; irda_send_loop:inst|clk_cnt_169[8]   ; irda_send_loop:inst|data_cnt[2]    ; clk        ; clk      ; None                        ; None                      ; 10.236 ns               ;
+; N/A                                     ; 91.43 MHz ( period = 10.937 ns )                    ; irda_send_loop:inst|clk_cnt_0565[4]  ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.228 ns               ;
+; N/A                                     ; 91.43 MHz ( period = 10.937 ns )                    ; irda_send_loop:inst|clk_cnt_0565[4]  ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.228 ns               ;
+; N/A                                     ; 91.46 MHz ( period = 10.934 ns )                    ; irda_send_loop:inst|clk_cnt_0565[5]  ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.225 ns               ;
+; N/A                                     ; 91.47 MHz ( period = 10.933 ns )                    ; irda_send_loop:inst|clk_cnt_169[12]  ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.224 ns               ;
+; N/A                                     ; 91.47 MHz ( period = 10.933 ns )                    ; irda_send_loop:inst|clk_cnt_169[12]  ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.224 ns               ;
+; N/A                                     ; 91.50 MHz ( period = 10.929 ns )                    ; irda_send_loop:inst|clk_cnt_169[5]   ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.220 ns               ;
+; N/A                                     ; 91.53 MHz ( period = 10.925 ns )                    ; irda_send_loop:inst|clk_cnt_169[15]  ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.216 ns               ;
+; N/A                                     ; 91.60 MHz ( period = 10.917 ns )                    ; irda_send_loop:inst|clk_cnt_169[1]   ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.208 ns               ;
+; N/A                                     ; 91.63 MHz ( period = 10.914 ns )                    ; irda_send_loop:inst|clk_cnt_169[2]   ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.205 ns               ;
+; N/A                                     ; 91.63 MHz ( period = 10.914 ns )                    ; irda_send_loop:inst|clk_cnt_169[2]   ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.205 ns               ;
+; N/A                                     ; 91.65 MHz ( period = 10.911 ns )                    ; irda_send_loop:inst|clk_cnt_169[7]   ; irda_send_loop:inst|data_cnt[5]    ; clk        ; clk      ; None                        ; None                      ; 10.202 ns               ;
+; N/A                                     ; 91.68 MHz ( period = 10.908 ns )                    ; irda_send_loop:inst|clk_cnt_056[14]  ; irda_send_loop:inst|irda_send      ; clk        ; clk      ; None                        ; None                      ; 10.199 ns               ;
+; N/A                                     ; 91.69 MHz ( period = 10.906 ns )                    ; irda_send_loop:inst|clk_cnt_0565[3]  ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.197 ns               ;
+; N/A                                     ; 91.75 MHz ( period = 10.899 ns )                    ; irda_send_loop:inst|clk_cnt_169[7]   ; irda_send_loop:inst|data_cnt[1]    ; clk        ; clk      ; None                        ; None                      ; 10.190 ns               ;
+; N/A                                     ; 91.75 MHz ( period = 10.899 ns )                    ; irda_send_loop:inst|clk_cnt_169[7]   ; irda_send_loop:inst|data_cnt[0]    ; clk        ; clk      ; None                        ; None                      ; 10.190 ns               ;
+; N/A                                     ; 91.75 MHz ( period = 10.899 ns )                    ; irda_send_loop:inst|clk_cnt_169[7]   ; irda_send_loop:inst|data_cnt[2]    ; clk        ; clk      ; None                        ; None                      ; 10.190 ns               ;
+; N/A                                     ; 91.77 MHz ( period = 10.897 ns )                    ; irda_send_loop:inst|clk_cnt_169[0]   ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.188 ns               ;
+; N/A                                     ; 91.89 MHz ( period = 10.883 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[0]   ; clk        ; clk      ; None                        ; None                      ; 10.174 ns               ;
+; N/A                                     ; 91.89 MHz ( period = 10.883 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[1]   ; clk        ; clk      ; None                        ; None                      ; 10.174 ns               ;
+; N/A                                     ; 91.89 MHz ( period = 10.883 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[2]   ; clk        ; clk      ; None                        ; None                      ; 10.174 ns               ;
+; N/A                                     ; 91.89 MHz ( period = 10.883 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[3]   ; clk        ; clk      ; None                        ; None                      ; 10.174 ns               ;
+; N/A                                     ; 91.89 MHz ( period = 10.883 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[5]   ; clk        ; clk      ; None                        ; None                      ; 10.174 ns               ;
+; N/A                                     ; 91.89 MHz ( period = 10.883 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[4]   ; clk        ; clk      ; None                        ; None                      ; 10.174 ns               ;
+; N/A                                     ; 91.89 MHz ( period = 10.883 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[6]   ; clk        ; clk      ; None                        ; None                      ; 10.174 ns               ;
+; N/A                                     ; 91.89 MHz ( period = 10.883 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[7]   ; clk        ; clk      ; None                        ; None                      ; 10.174 ns               ;
+; N/A                                     ; 91.89 MHz ( period = 10.883 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[8]   ; clk        ; clk      ; None                        ; None                      ; 10.174 ns               ;
+; N/A                                     ; 91.91 MHz ( period = 10.880 ns )                    ; irda_send_loop:inst|clk_cnt_169[13]  ; irda_send_loop:inst|data_cnt[5]    ; clk        ; clk      ; None                        ; None                      ; 10.171 ns               ;
+; N/A                                     ; 91.95 MHz ( period = 10.875 ns )                    ; irda_send_loop:inst|clk_cnt_169[3]   ; irda_send_loop:inst|data_cnt[5]    ; clk        ; clk      ; None                        ; None                      ; 10.166 ns               ;
+; N/A                                     ; 92.01 MHz ( period = 10.868 ns )                    ; irda_send_loop:inst|clk_cnt_169[13]  ; irda_send_loop:inst|data_cnt[1]    ; clk        ; clk      ; None                        ; None                      ; 10.159 ns               ;
+; N/A                                     ; 92.01 MHz ( period = 10.868 ns )                    ; irda_send_loop:inst|clk_cnt_169[13]  ; irda_send_loop:inst|data_cnt[0]    ; clk        ; clk      ; None                        ; None                      ; 10.159 ns               ;
+; N/A                                     ; 92.01 MHz ( period = 10.868 ns )                    ; irda_send_loop:inst|clk_cnt_169[13]  ; irda_send_loop:inst|data_cnt[2]    ; clk        ; clk      ; None                        ; None                      ; 10.159 ns               ;
+; N/A                                     ; 92.02 MHz ( period = 10.867 ns )                    ; irda_send_loop:inst|clk_cnt_0565[12] ; irda_send_loop:inst|data_cnt[5]    ; clk        ; clk      ; None                        ; None                      ; 10.158 ns               ;
+; N/A                                     ; 92.04 MHz ( period = 10.865 ns )                    ; irda_send_loop:inst|clk_cnt_0565[11] ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.156 ns               ;
+; N/A                                     ; 92.06 MHz ( period = 10.863 ns )                    ; irda_send_loop:inst|clk_cnt_0565[13] ; irda_send_loop:inst|data_cnt[5]    ; clk        ; clk      ; None                        ; None                      ; 10.154 ns               ;
+; N/A                                     ; 92.06 MHz ( period = 10.863 ns )                    ; irda_send_loop:inst|clk_cnt_169[3]   ; irda_send_loop:inst|data_cnt[1]    ; clk        ; clk      ; None                        ; None                      ; 10.154 ns               ;
+; N/A                                     ; 92.06 MHz ( period = 10.863 ns )                    ; irda_send_loop:inst|clk_cnt_169[3]   ; irda_send_loop:inst|data_cnt[0]    ; clk        ; clk      ; None                        ; None                      ; 10.154 ns               ;
+; N/A                                     ; 92.06 MHz ( period = 10.863 ns )                    ; irda_send_loop:inst|clk_cnt_169[3]   ; irda_send_loop:inst|data_cnt[2]    ; clk        ; clk      ; None                        ; None                      ; 10.154 ns               ;
+; N/A                                     ; 92.07 MHz ( period = 10.861 ns )                    ; irda_send_loop:inst|clk_cnt_0565[2]  ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.152 ns               ;
+; N/A                                     ; 92.07 MHz ( period = 10.861 ns )                    ; irda_send_loop:inst|clk_cnt_0565[2]  ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.152 ns               ;
+; N/A                                     ; 92.11 MHz ( period = 10.857 ns )                    ; irda_send_loop:inst|clk_cnt_169[9]   ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.148 ns               ;
+; N/A                                     ; 92.11 MHz ( period = 10.857 ns )                    ; irda_send_loop:inst|clk_cnt_169[9]   ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.148 ns               ;
+; N/A                                     ; 92.12 MHz ( period = 10.855 ns )                    ; irda_send_loop:inst|clk_cnt_0565[12] ; irda_send_loop:inst|data_cnt[1]    ; clk        ; clk      ; None                        ; None                      ; 10.146 ns               ;
+; N/A                                     ; 92.12 MHz ( period = 10.855 ns )                    ; irda_send_loop:inst|clk_cnt_0565[12] ; irda_send_loop:inst|data_cnt[0]    ; clk        ; clk      ; None                        ; None                      ; 10.146 ns               ;
+; N/A                                     ; 92.12 MHz ( period = 10.855 ns )                    ; irda_send_loop:inst|clk_cnt_0565[12] ; irda_send_loop:inst|data_cnt[2]    ; clk        ; clk      ; None                        ; None                      ; 10.146 ns               ;
+; N/A                                     ; 92.16 MHz ( period = 10.851 ns )                    ; irda_send_loop:inst|clk_cnt_0565[13] ; irda_send_loop:inst|data_cnt[1]    ; clk        ; clk      ; None                        ; None                      ; 10.142 ns               ;
+; N/A                                     ; 92.16 MHz ( period = 10.851 ns )                    ; irda_send_loop:inst|clk_cnt_0565[13] ; irda_send_loop:inst|data_cnt[0]    ; clk        ; clk      ; None                        ; None                      ; 10.142 ns               ;
+; N/A                                     ; 92.16 MHz ( period = 10.851 ns )                    ; irda_send_loop:inst|clk_cnt_0565[13] ; irda_send_loop:inst|data_cnt[2]    ; clk        ; clk      ; None                        ; None                      ; 10.142 ns               ;
+; N/A                                     ; 92.28 MHz ( period = 10.837 ns )                    ; irda_send_loop:inst|clk_cnt_169[11]  ; irda_send_loop:inst|data_cnt[5]    ; clk        ; clk      ; None                        ; None                      ; 10.128 ns               ;
+; N/A                                     ; 92.29 MHz ( period = 10.835 ns )                    ; irda_send_loop:inst|clk_cnt_169[10]  ; irda_send_loop:inst|data_cnt[5]    ; clk        ; clk      ; None                        ; None                      ; 10.126 ns               ;
+; N/A                                     ; 92.32 MHz ( period = 10.832 ns )                    ; irda_send_loop:inst|clk_cnt_108[13]  ; irda_send_loop:inst|clk_cnt_108[0] ; clk        ; clk      ; None                        ; None                      ; 10.123 ns               ;
+; N/A                                     ; 92.32 MHz ( period = 10.832 ns )                    ; irda_send_loop:inst|clk_cnt_108[13]  ; irda_send_loop:inst|clk_cnt_108[1] ; clk        ; clk      ; None                        ; None                      ; 10.123 ns               ;
+; N/A                                     ; 92.32 MHz ( period = 10.832 ns )                    ; irda_send_loop:inst|clk_cnt_108[13]  ; irda_send_loop:inst|clk_cnt_108[5] ; clk        ; clk      ; None                        ; None                      ; 10.123 ns               ;
+; N/A                                     ; 92.32 MHz ( period = 10.832 ns )                    ; irda_send_loop:inst|clk_cnt_108[13]  ; irda_send_loop:inst|clk_cnt_108[4] ; clk        ; clk      ; None                        ; None                      ; 10.123 ns               ;
+; N/A                                     ; 92.32 MHz ( period = 10.832 ns )                    ; irda_send_loop:inst|clk_cnt_108[13]  ; irda_send_loop:inst|clk_cnt_108[3] ; clk        ; clk      ; None                        ; None                      ; 10.123 ns               ;
+; N/A                                     ; 92.32 MHz ( period = 10.832 ns )                    ; irda_send_loop:inst|clk_cnt_108[13]  ; irda_send_loop:inst|clk_cnt_108[2] ; clk        ; clk      ; None                        ; None                      ; 10.123 ns               ;
+; N/A                                     ; 92.38 MHz ( period = 10.825 ns )                    ; irda_send_loop:inst|clk_cnt_169[11]  ; irda_send_loop:inst|data_cnt[1]    ; clk        ; clk      ; None                        ; None                      ; 10.116 ns               ;
+; N/A                                     ; 92.38 MHz ( period = 10.825 ns )                    ; irda_send_loop:inst|clk_cnt_169[11]  ; irda_send_loop:inst|data_cnt[0]    ; clk        ; clk      ; None                        ; None                      ; 10.116 ns               ;
+; N/A                                     ; 92.38 MHz ( period = 10.825 ns )                    ; irda_send_loop:inst|clk_cnt_169[11]  ; irda_send_loop:inst|data_cnt[2]    ; clk        ; clk      ; None                        ; None                      ; 10.116 ns               ;
+; N/A                                     ; 92.40 MHz ( period = 10.823 ns )                    ; irda_send_loop:inst|clk_cnt_169[10]  ; irda_send_loop:inst|data_cnt[1]    ; clk        ; clk      ; None                        ; None                      ; 10.114 ns               ;
+; N/A                                     ; 92.40 MHz ( period = 10.823 ns )                    ; irda_send_loop:inst|clk_cnt_169[10]  ; irda_send_loop:inst|data_cnt[0]    ; clk        ; clk      ; None                        ; None                      ; 10.114 ns               ;
+; N/A                                     ; 92.40 MHz ( period = 10.823 ns )                    ; irda_send_loop:inst|clk_cnt_169[10]  ; irda_send_loop:inst|data_cnt[2]    ; clk        ; clk      ; None                        ; None                      ; 10.114 ns               ;
+; N/A                                     ; 92.51 MHz ( period = 10.810 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[16]  ; clk        ; clk      ; None                        ; None                      ; 10.101 ns               ;
+; N/A                                     ; 92.51 MHz ( period = 10.810 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[15]  ; clk        ; clk      ; None                        ; None                      ; 10.101 ns               ;
+; N/A                                     ; 92.51 MHz ( period = 10.810 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[13]  ; clk        ; clk      ; None                        ; None                      ; 10.101 ns               ;
+; N/A                                     ; 92.51 MHz ( period = 10.810 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[14]  ; clk        ; clk      ; None                        ; None                      ; 10.101 ns               ;
+; N/A                                     ; 92.51 MHz ( period = 10.810 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[18]  ; clk        ; clk      ; None                        ; None                      ; 10.101 ns               ;
+; N/A                                     ; 92.51 MHz ( period = 10.810 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[17]  ; clk        ; clk      ; None                        ; None                      ; 10.101 ns               ;
+; N/A                                     ; 92.51 MHz ( period = 10.810 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[9]   ; clk        ; clk      ; None                        ; None                      ; 10.101 ns               ;
+; N/A                                     ; 92.51 MHz ( period = 10.810 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[10]  ; clk        ; clk      ; None                        ; None                      ; 10.101 ns               ;
+; N/A                                     ; 92.51 MHz ( period = 10.810 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[11]  ; clk        ; clk      ; None                        ; None                      ; 10.101 ns               ;
+; N/A                                     ; 92.51 MHz ( period = 10.810 ns )                    ; irda_send_loop:inst|clk_cnt_9[4]     ; irda_send_loop:inst|clk_cnt_9[12]  ; clk        ; clk      ; None                        ; None                      ; 10.101 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; irda_send_loop:inst|clk_cnt_108[19]  ; irda_send_loop:inst|clk_cnt_108[0] ; clk        ; clk      ; None                        ; None                      ; 10.096 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; irda_send_loop:inst|clk_cnt_108[19]  ; irda_send_loop:inst|clk_cnt_108[1] ; clk        ; clk      ; None                        ; None                      ; 10.096 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; irda_send_loop:inst|clk_cnt_108[19]  ; irda_send_loop:inst|clk_cnt_108[5] ; clk        ; clk      ; None                        ; None                      ; 10.096 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; irda_send_loop:inst|clk_cnt_108[19]  ; irda_send_loop:inst|clk_cnt_108[4] ; clk        ; clk      ; None                        ; None                      ; 10.096 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; irda_send_loop:inst|clk_cnt_108[19]  ; irda_send_loop:inst|clk_cnt_108[3] ; clk        ; clk      ; None                        ; None                      ; 10.096 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; irda_send_loop:inst|clk_cnt_108[19]  ; irda_send_loop:inst|clk_cnt_108[2] ; clk        ; clk      ; None                        ; None                      ; 10.096 ns               ;
+; N/A                                     ; 92.73 MHz ( period = 10.784 ns )                    ; irda_send_loop:inst|clk_cnt_169[14]  ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.075 ns               ;
+; N/A                                     ; 92.87 MHz ( period = 10.768 ns )                    ; irda_send_loop:inst|clk_cnt_169[6]   ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.059 ns               ;
+; N/A                                     ; 92.87 MHz ( period = 10.768 ns )                    ; irda_send_loop:inst|clk_cnt_169[6]   ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.059 ns               ;
+; N/A                                     ; 92.94 MHz ( period = 10.760 ns )                    ; irda_send_loop:inst|clk_cnt_0565[4]  ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.051 ns               ;
+; N/A                                     ; 92.97 MHz ( period = 10.756 ns )                    ; irda_send_loop:inst|clk_cnt_169[12]  ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.047 ns               ;
+; N/A                                     ; 93.00 MHz ( period = 10.753 ns )                    ; irda_send_loop:inst|clk_cnt_0565[7]  ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 10.044 ns               ;
+; N/A                                     ; 93.00 MHz ( period = 10.753 ns )                    ; irda_send_loop:inst|clk_cnt_0565[7]  ; irda_send_loop:inst|data_cnt[4]    ; clk        ; clk      ; None                        ; None                      ; 10.044 ns               ;
+; N/A                                     ; 93.03 MHz ( period = 10.749 ns )                    ; irda_send_loop:inst|clk_cnt_056[15]  ; irda_send_loop:inst|irda_send      ; clk        ; clk      ; None                        ; None                      ; 10.040 ns               ;
+; N/A                                     ; 93.14 MHz ( period = 10.737 ns )                    ; irda_send_loop:inst|clk_cnt_169[2]   ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 10.028 ns               ;
+; N/A                                     ; 93.21 MHz ( period = 10.729 ns )                    ; irda_send_loop:inst|clk_cnt_108[14]  ; irda_send_loop:inst|clk_cnt_108[0] ; clk        ; clk      ; None                        ; None                      ; 10.020 ns               ;
+; N/A                                     ; 93.21 MHz ( period = 10.729 ns )                    ; irda_send_loop:inst|clk_cnt_108[14]  ; irda_send_loop:inst|clk_cnt_108[1] ; clk        ; clk      ; None                        ; None                      ; 10.020 ns               ;
+; N/A                                     ; 93.21 MHz ( period = 10.729 ns )                    ; irda_send_loop:inst|clk_cnt_108[14]  ; irda_send_loop:inst|clk_cnt_108[5] ; clk        ; clk      ; None                        ; None                      ; 10.020 ns               ;
+; N/A                                     ; 93.21 MHz ( period = 10.729 ns )                    ; irda_send_loop:inst|clk_cnt_108[14]  ; irda_send_loop:inst|clk_cnt_108[4] ; clk        ; clk      ; None                        ; None                      ; 10.020 ns               ;
+; N/A                                     ; 93.21 MHz ( period = 10.729 ns )                    ; irda_send_loop:inst|clk_cnt_108[14]  ; irda_send_loop:inst|clk_cnt_108[3] ; clk        ; clk      ; None                        ; None                      ; 10.020 ns               ;
+; N/A                                     ; 93.21 MHz ( period = 10.729 ns )                    ; irda_send_loop:inst|clk_cnt_108[14]  ; irda_send_loop:inst|clk_cnt_108[2] ; clk        ; clk      ; None                        ; None                      ; 10.020 ns               ;
+; N/A                                     ; 93.22 MHz ( period = 10.727 ns )                    ; irda_send_loop:inst|clk_cnt_0565[9]  ; irda_send_loop:inst|clear_cnt_flag ; clk        ; clk      ; None                        ; None                      ; 10.018 ns               ;
+; N/A                                     ; 93.34 MHz ( period = 10.713 ns )                    ; irda_send_loop:inst|clk_cnt_169[5]   ; irda_send_loop:inst|data_cnt[5]    ; clk        ; clk      ; None                        ; None                      ; 10.004 ns               ;
+; N/A                                     ; 93.38 MHz ( period = 10.709 ns )                    ; irda_send_loop:inst|clk_cnt_169[15]  ; irda_send_loop:inst|data_cnt[5]    ; clk        ; clk      ; None                        ; None                      ; 10.000 ns               ;
+; N/A                                     ; 93.45 MHz ( period = 10.701 ns )                    ; irda_send_loop:inst|clk_cnt_169[5]   ; irda_send_loop:inst|data_cnt[1]    ; clk        ; clk      ; None                        ; None                      ; 9.992 ns                ;
+; N/A                                     ; 93.45 MHz ( period = 10.701 ns )                    ; irda_send_loop:inst|clk_cnt_169[5]   ; irda_send_loop:inst|data_cnt[0]    ; clk        ; clk      ; None                        ; None                      ; 9.992 ns                ;
+; N/A                                     ; 93.45 MHz ( period = 10.701 ns )                    ; irda_send_loop:inst|clk_cnt_169[5]   ; irda_send_loop:inst|data_cnt[2]    ; clk        ; clk      ; None                        ; None                      ; 9.992 ns                ;
+; N/A                                     ; 93.48 MHz ( period = 10.697 ns )                    ; irda_send_loop:inst|clk_cnt_169[15]  ; irda_send_loop:inst|data_cnt[1]    ; clk        ; clk      ; None                        ; None                      ; 9.988 ns                ;
+; N/A                                     ; 93.48 MHz ( period = 10.697 ns )                    ; irda_send_loop:inst|clk_cnt_169[15]  ; irda_send_loop:inst|data_cnt[0]    ; clk        ; clk      ; None                        ; None                      ; 9.988 ns                ;
+; N/A                                     ; 93.48 MHz ( period = 10.697 ns )                    ; irda_send_loop:inst|clk_cnt_169[15]  ; irda_send_loop:inst|data_cnt[2]    ; clk        ; clk      ; None                        ; None                      ; 9.988 ns                ;
+; N/A                                     ; 93.52 MHz ( period = 10.693 ns )                    ; irda_send_loop:inst|clk_cnt_9[2]     ; irda_send_loop:inst|clk_cnt_9[0]   ; clk        ; clk      ; None                        ; None                      ; 9.984 ns                ;
+; N/A                                     ; 93.52 MHz ( period = 10.693 ns )                    ; irda_send_loop:inst|clk_cnt_9[2]     ; irda_send_loop:inst|clk_cnt_9[1]   ; clk        ; clk      ; None                        ; None                      ; 9.984 ns                ;
+; N/A                                     ; 93.52 MHz ( period = 10.693 ns )                    ; irda_send_loop:inst|clk_cnt_9[2]     ; irda_send_loop:inst|clk_cnt_9[2]   ; clk        ; clk      ; None                        ; None                      ; 9.984 ns                ;
+; N/A                                     ; 93.52 MHz ( period = 10.693 ns )                    ; irda_send_loop:inst|clk_cnt_9[2]     ; irda_send_loop:inst|clk_cnt_9[3]   ; clk        ; clk      ; None                        ; None                      ; 9.984 ns                ;
+; N/A                                     ; 93.52 MHz ( period = 10.693 ns )                    ; irda_send_loop:inst|clk_cnt_9[2]     ; irda_send_loop:inst|clk_cnt_9[5]   ; clk        ; clk      ; None                        ; None                      ; 9.984 ns                ;
+; N/A                                     ; 93.52 MHz ( period = 10.693 ns )                    ; irda_send_loop:inst|clk_cnt_9[2]     ; irda_send_loop:inst|clk_cnt_9[4]   ; clk        ; clk      ; None                        ; None                      ; 9.984 ns                ;
+; N/A                                     ; 93.52 MHz ( period = 10.693 ns )                    ; irda_send_loop:inst|clk_cnt_9[2]     ; irda_send_loop:inst|clk_cnt_9[6]   ; clk        ; clk      ; None                        ; None                      ; 9.984 ns                ;
+; N/A                                     ; 93.52 MHz ( period = 10.693 ns )                    ; irda_send_loop:inst|clk_cnt_9[2]     ; irda_send_loop:inst|clk_cnt_9[7]   ; clk        ; clk      ; None                        ; None                      ; 9.984 ns                ;
+; N/A                                     ; 93.52 MHz ( period = 10.693 ns )                    ; irda_send_loop:inst|clk_cnt_9[2]     ; irda_send_loop:inst|clk_cnt_9[8]   ; clk        ; clk      ; None                        ; None                      ; 9.984 ns                ;
+; N/A                                     ; 93.60 MHz ( period = 10.684 ns )                    ; irda_send_loop:inst|clk_cnt_0565[2]  ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 9.975 ns                ;
+; N/A                                     ; 93.62 MHz ( period = 10.681 ns )                    ; irda_send_loop:inst|clk_cnt_169[0]   ; irda_send_loop:inst|data_cnt[5]    ; clk        ; clk      ; None                        ; None                      ; 9.972 ns                ;
+; N/A                                     ; 93.63 MHz ( period = 10.680 ns )                    ; irda_send_loop:inst|clk_cnt_169[9]   ; irda_send_loop:inst|carrier_ok     ; clk        ; clk      ; None                        ; None                      ; 9.971 ns                ;
+; N/A                                     ; 93.65 MHz ( period = 10.678 ns )                    ; irda_send_loop:inst|clk_cnt_0565[0]  ; irda_send_loop:inst|data_cnt[3]    ; clk        ; clk      ; None                        ; None                      ; 9.969 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                      ;                                    ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; tsu                                                                                        ;
++-------+--------------+------------+-------+-------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From  ; To                                  ; To Clock ;
++-------+--------------+------------+-------+-------------------------------------+----------+
+; N/A   ; None         ; 1.081 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[0]  ; clk      ;
+; N/A   ; None         ; 1.081 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[1]  ; clk      ;
+; N/A   ; None         ; 1.081 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[5]  ; clk      ;
+; N/A   ; None         ; 1.081 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[4]  ; clk      ;
+; N/A   ; None         ; 1.081 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[3]  ; clk      ;
+; N/A   ; None         ; 1.081 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[2]  ; clk      ;
+; N/A   ; None         ; 0.647 ns   ; SW[2] ; irda_send_loop:inst|cs.IDLE         ; clk      ;
+; N/A   ; None         ; 0.637 ns   ; SW[1] ; irda_send_loop:inst|clk_cnt_108[0]  ; clk      ;
+; N/A   ; None         ; 0.637 ns   ; SW[1] ; irda_send_loop:inst|clk_cnt_108[1]  ; clk      ;
+; N/A   ; None         ; 0.637 ns   ; SW[1] ; irda_send_loop:inst|clk_cnt_108[5]  ; clk      ;
+; N/A   ; None         ; 0.637 ns   ; SW[1] ; irda_send_loop:inst|clk_cnt_108[4]  ; clk      ;
+; N/A   ; None         ; 0.637 ns   ; SW[1] ; irda_send_loop:inst|clk_cnt_108[3]  ; clk      ;
+; N/A   ; None         ; 0.637 ns   ; SW[1] ; irda_send_loop:inst|clk_cnt_108[2]  ; clk      ;
+; N/A   ; None         ; 0.465 ns   ; SW[0] ; irda_send_loop:inst|clk_cnt_108[0]  ; clk      ;
+; N/A   ; None         ; 0.465 ns   ; SW[0] ; irda_send_loop:inst|clk_cnt_108[1]  ; clk      ;
+; N/A   ; None         ; 0.465 ns   ; SW[0] ; irda_send_loop:inst|clk_cnt_108[5]  ; clk      ;
+; N/A   ; None         ; 0.465 ns   ; SW[0] ; irda_send_loop:inst|clk_cnt_108[4]  ; clk      ;
+; N/A   ; None         ; 0.465 ns   ; SW[0] ; irda_send_loop:inst|clk_cnt_108[3]  ; clk      ;
+; N/A   ; None         ; 0.465 ns   ; SW[0] ; irda_send_loop:inst|clk_cnt_108[2]  ; clk      ;
+; N/A   ; None         ; 0.441 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[6]  ; clk      ;
+; N/A   ; None         ; 0.441 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[7]  ; clk      ;
+; N/A   ; None         ; 0.441 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[8]  ; clk      ;
+; N/A   ; None         ; 0.441 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[10] ; clk      ;
+; N/A   ; None         ; 0.441 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[9]  ; clk      ;
+; N/A   ; None         ; 0.441 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[11] ; clk      ;
+; N/A   ; None         ; 0.441 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[13] ; clk      ;
+; N/A   ; None         ; 0.441 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[12] ; clk      ;
+; N/A   ; None         ; 0.441 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[14] ; clk      ;
+; N/A   ; None         ; 0.441 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[15] ; clk      ;
+; N/A   ; None         ; 0.203 ns   ; SW[1] ; irda_send_loop:inst|cs.IDLE         ; clk      ;
+; N/A   ; None         ; 0.056 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[20] ; clk      ;
+; N/A   ; None         ; 0.056 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[19] ; clk      ;
+; N/A   ; None         ; 0.056 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[18] ; clk      ;
+; N/A   ; None         ; 0.056 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[17] ; clk      ;
+; N/A   ; None         ; 0.056 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[16] ; clk      ;
+; N/A   ; None         ; 0.056 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[22] ; clk      ;
+; N/A   ; None         ; 0.056 ns   ; SW[2] ; irda_send_loop:inst|clk_cnt_108[21] ; clk      ;
+; N/A   ; None         ; 0.031 ns   ; SW[0] ; irda_send_loop:inst|cs.IDLE         ; clk      ;
+; N/A   ; None         ; -0.003 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[6]  ; clk      ;
+; N/A   ; None         ; -0.003 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[7]  ; clk      ;
+; N/A   ; None         ; -0.003 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[8]  ; clk      ;
+; N/A   ; None         ; -0.003 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[10] ; clk      ;
+; N/A   ; None         ; -0.003 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[9]  ; clk      ;
+; N/A   ; None         ; -0.003 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[11] ; clk      ;
+; N/A   ; None         ; -0.003 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[13] ; clk      ;
+; N/A   ; None         ; -0.003 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[12] ; clk      ;
+; N/A   ; None         ; -0.003 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[14] ; clk      ;
+; N/A   ; None         ; -0.003 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[15] ; clk      ;
+; N/A   ; None         ; -0.011 ns  ; SW[2] ; irda_send_loop:inst|cs.LEADER_9     ; clk      ;
+; N/A   ; None         ; -0.175 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[6]  ; clk      ;
+; N/A   ; None         ; -0.175 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[7]  ; clk      ;
+; N/A   ; None         ; -0.175 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[8]  ; clk      ;
+; N/A   ; None         ; -0.175 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[10] ; clk      ;
+; N/A   ; None         ; -0.175 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[9]  ; clk      ;
+; N/A   ; None         ; -0.175 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[11] ; clk      ;
+; N/A   ; None         ; -0.175 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[13] ; clk      ;
+; N/A   ; None         ; -0.175 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[12] ; clk      ;
+; N/A   ; None         ; -0.175 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[14] ; clk      ;
+; N/A   ; None         ; -0.175 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[15] ; clk      ;
+; N/A   ; None         ; -0.388 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[20] ; clk      ;
+; N/A   ; None         ; -0.388 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[19] ; clk      ;
+; N/A   ; None         ; -0.388 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[18] ; clk      ;
+; N/A   ; None         ; -0.388 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[17] ; clk      ;
+; N/A   ; None         ; -0.388 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[16] ; clk      ;
+; N/A   ; None         ; -0.388 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[22] ; clk      ;
+; N/A   ; None         ; -0.388 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[21] ; clk      ;
+; N/A   ; None         ; -0.455 ns  ; SW[1] ; irda_send_loop:inst|cs.LEADER_9     ; clk      ;
+; N/A   ; None         ; -0.560 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[20] ; clk      ;
+; N/A   ; None         ; -0.560 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[19] ; clk      ;
+; N/A   ; None         ; -0.560 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[18] ; clk      ;
+; N/A   ; None         ; -0.560 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[17] ; clk      ;
+; N/A   ; None         ; -0.560 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[16] ; clk      ;
+; N/A   ; None         ; -0.560 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[22] ; clk      ;
+; N/A   ; None         ; -0.560 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[21] ; clk      ;
+; N/A   ; None         ; -0.627 ns  ; SW[0] ; irda_send_loop:inst|cs.LEADER_9     ; clk      ;
++-------+--------------+------------+-------+-------------------------------------+----------+
+
+
++------------------------------------------------------------------------------------------+
+; tco                                                                                      ;
++-------+--------------+------------+-------------------------------+---------+------------+
+; Slack ; Required tco ; Actual tco ; From                          ; To      ; From Clock ;
++-------+--------------+------------+-------------------------------+---------+------------+
+; N/A   ; None         ; 11.638 ns  ; irda_send_loop:inst|irda_send ; IrDA_Tx ; clk        ;
++-------+--------------+------------+-------------------------------+---------+------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; th                                                                                               ;
++---------------+-------------+-----------+-------+-------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From  ; To                                  ; To Clock ;
++---------------+-------------+-----------+-------+-------------------------------------+----------+
+; N/A           ; None        ; 1.181 ns  ; SW[0] ; irda_send_loop:inst|cs.LEADER_9     ; clk      ;
+; N/A           ; None        ; 1.114 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[20] ; clk      ;
+; N/A           ; None        ; 1.114 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[19] ; clk      ;
+; N/A           ; None        ; 1.114 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[18] ; clk      ;
+; N/A           ; None        ; 1.114 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[17] ; clk      ;
+; N/A           ; None        ; 1.114 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[16] ; clk      ;
+; N/A           ; None        ; 1.114 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[22] ; clk      ;
+; N/A           ; None        ; 1.114 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[21] ; clk      ;
+; N/A           ; None        ; 1.009 ns  ; SW[1] ; irda_send_loop:inst|cs.LEADER_9     ; clk      ;
+; N/A           ; None        ; 0.942 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[20] ; clk      ;
+; N/A           ; None        ; 0.942 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[19] ; clk      ;
+; N/A           ; None        ; 0.942 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[18] ; clk      ;
+; N/A           ; None        ; 0.942 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[17] ; clk      ;
+; N/A           ; None        ; 0.942 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[16] ; clk      ;
+; N/A           ; None        ; 0.942 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[22] ; clk      ;
+; N/A           ; None        ; 0.942 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[21] ; clk      ;
+; N/A           ; None        ; 0.729 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[6]  ; clk      ;
+; N/A           ; None        ; 0.729 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[7]  ; clk      ;
+; N/A           ; None        ; 0.729 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[8]  ; clk      ;
+; N/A           ; None        ; 0.729 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[10] ; clk      ;
+; N/A           ; None        ; 0.729 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[9]  ; clk      ;
+; N/A           ; None        ; 0.729 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[11] ; clk      ;
+; N/A           ; None        ; 0.729 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[13] ; clk      ;
+; N/A           ; None        ; 0.729 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[12] ; clk      ;
+; N/A           ; None        ; 0.729 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[14] ; clk      ;
+; N/A           ; None        ; 0.729 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[15] ; clk      ;
+; N/A           ; None        ; 0.565 ns  ; SW[2] ; irda_send_loop:inst|cs.LEADER_9     ; clk      ;
+; N/A           ; None        ; 0.557 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[6]  ; clk      ;
+; N/A           ; None        ; 0.557 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[7]  ; clk      ;
+; N/A           ; None        ; 0.557 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[8]  ; clk      ;
+; N/A           ; None        ; 0.557 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[10] ; clk      ;
+; N/A           ; None        ; 0.557 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[9]  ; clk      ;
+; N/A           ; None        ; 0.557 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[11] ; clk      ;
+; N/A           ; None        ; 0.557 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[13] ; clk      ;
+; N/A           ; None        ; 0.557 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[12] ; clk      ;
+; N/A           ; None        ; 0.557 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[14] ; clk      ;
+; N/A           ; None        ; 0.557 ns  ; SW[1] ; irda_send_loop:inst|clk_cnt_108[15] ; clk      ;
+; N/A           ; None        ; 0.523 ns  ; SW[0] ; irda_send_loop:inst|cs.IDLE         ; clk      ;
+; N/A           ; None        ; 0.498 ns  ; SW[2] ; irda_send_loop:inst|clk_cnt_108[20] ; clk      ;
+; N/A           ; None        ; 0.498 ns  ; SW[2] ; irda_send_loop:inst|clk_cnt_108[19] ; clk      ;
+; N/A           ; None        ; 0.498 ns  ; SW[2] ; irda_send_loop:inst|clk_cnt_108[18] ; clk      ;
+; N/A           ; None        ; 0.498 ns  ; SW[2] ; irda_send_loop:inst|clk_cnt_108[17] ; clk      ;
+; N/A           ; None        ; 0.498 ns  ; SW[2] ; irda_send_loop:inst|clk_cnt_108[16] ; clk      ;
+; N/A           ; None        ; 0.498 ns  ; SW[2] ; irda_send_loop:inst|clk_cnt_108[22] ; clk      ;
+; N/A           ; None        ; 0.498 ns  ; SW[2] ; irda_send_loop:inst|clk_cnt_108[21] ; clk      ;
+; N/A           ; None        ; 0.351 ns  ; SW[1] ; irda_send_loop:inst|cs.IDLE         ; clk      ;
+; N/A           ; None        ; 0.113 ns  ; SW[2] ; irda_send_loop:inst|clk_cnt_108[6]  ; clk      ;
+; N/A           ; None        ; 0.113 ns  ; SW[2] ; irda_send_loop:inst|clk_cnt_108[7]  ; clk      ;
+; N/A           ; None        ; 0.113 ns  ; SW[2] ; irda_send_loop:inst|clk_cnt_108[8]  ; clk      ;
+; N/A           ; None        ; 0.113 ns  ; SW[2] ; irda_send_loop:inst|clk_cnt_108[10] ; clk      ;
+; N/A           ; None        ; 0.113 ns  ; SW[2] ; irda_send_loop:inst|clk_cnt_108[9]  ; clk      ;
+; N/A           ; None        ; 0.113 ns  ; SW[2] ; irda_send_loop:inst|clk_cnt_108[11] ; clk      ;
+; N/A           ; None        ; 0.113 ns  ; SW[2] ; irda_send_loop:inst|clk_cnt_108[13] ; clk      ;
+; N/A           ; None        ; 0.113 ns  ; SW[2] ; irda_send_loop:inst|clk_cnt_108[12] ; clk      ;
+; N/A           ; None        ; 0.113 ns  ; SW[2] ; irda_send_loop:inst|clk_cnt_108[14] ; clk      ;
+; N/A           ; None        ; 0.113 ns  ; SW[2] ; irda_send_loop:inst|clk_cnt_108[15] ; clk      ;
+; N/A           ; None        ; 0.089 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[0]  ; clk      ;
+; N/A           ; None        ; 0.089 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[1]  ; clk      ;
+; N/A           ; None        ; 0.089 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[5]  ; clk      ;
+; N/A           ; None        ; 0.089 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[4]  ; clk      ;
+; N/A           ; None        ; 0.089 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[3]  ; clk      ;
+; N/A           ; None        ; 0.089 ns  ; SW[0] ; irda_send_loop:inst|clk_cnt_108[2]  ; clk      ;
+; N/A           ; None        ; -0.083 ns ; SW[1] ; irda_send_loop:inst|clk_cnt_108[0]  ; clk      ;
+; N/A           ; None        ; -0.083 ns ; SW[1] ; irda_send_loop:inst|clk_cnt_108[1]  ; clk      ;
+; N/A           ; None        ; -0.083 ns ; SW[1] ; irda_send_loop:inst|clk_cnt_108[5]  ; clk      ;
+; N/A           ; None        ; -0.083 ns ; SW[1] ; irda_send_loop:inst|clk_cnt_108[4]  ; clk      ;
+; N/A           ; None        ; -0.083 ns ; SW[1] ; irda_send_loop:inst|clk_cnt_108[3]  ; clk      ;
+; N/A           ; None        ; -0.083 ns ; SW[1] ; irda_send_loop:inst|clk_cnt_108[2]  ; clk      ;
+; N/A           ; None        ; -0.093 ns ; SW[2] ; irda_send_loop:inst|cs.IDLE         ; clk      ;
+; N/A           ; None        ; -0.527 ns ; SW[2] ; irda_send_loop:inst|clk_cnt_108[0]  ; clk      ;
+; N/A           ; None        ; -0.527 ns ; SW[2] ; irda_send_loop:inst|clk_cnt_108[1]  ; clk      ;
+; N/A           ; None        ; -0.527 ns ; SW[2] ; irda_send_loop:inst|clk_cnt_108[5]  ; clk      ;
+; N/A           ; None        ; -0.527 ns ; SW[2] ; irda_send_loop:inst|clk_cnt_108[4]  ; clk      ;
+; N/A           ; None        ; -0.527 ns ; SW[2] ; irda_send_loop:inst|clk_cnt_108[3]  ; clk      ;
+; N/A           ; None        ; -0.527 ns ; SW[2] ; irda_send_loop:inst|clk_cnt_108[2]  ; clk      ;
++---------------+-------------+-----------+-------+-------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Mon Nov 28 08:56:17 2011
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off IrDX_Send -c IrDX_Send
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "irda_send_loop:inst|data_code[12]" is a latch
+    Warning: Node "irda_send_loop:inst|data_code[13]" is a latch
+    Warning: Node "irda_send_loop:inst|data_code[4]" is a latch
+    Warning: Node "irda_send_loop:inst|data_code[5]" is a latch
+    Warning: Node "irda_send_loop:inst|data_code[9]" is a latch
+    Warning: Node "irda_send_loop:inst|data_code[1]" is a latch
+    Warning: Node "irda_send_loop:inst|data_code[0]" is a latch
+    Warning: Node "irda_send_loop:inst|data_code[8]" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 83.54 MHz between source register "irda_send_loop:inst|clk_cnt_0565[14]" and destination register "irda_send_loop:inst|clear_cnt_flag" (period= 11.971 ns)
+    Info: + Longest register to register delay is 11.262 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X5_Y2_N6; Fanout = 4; REG Node = 'irda_send_loop:inst|clk_cnt_0565[14]'
+        Info: 2: + IC(0.917 ns) + CELL(0.914 ns) = 1.831 ns; Loc. = LC_X5_Y2_N9; Fanout = 1; COMB Node = 'irda_send_loop:inst|Equal3~143'
+        Info: 3: + IC(2.182 ns) + CELL(0.914 ns) = 4.927 ns; Loc. = LC_X5_Y1_N4; Fanout = 2; COMB Node = 'irda_send_loop:inst|Equal3~144'
+        Info: 4: + IC(1.895 ns) + CELL(0.511 ns) = 7.333 ns; Loc. = LC_X4_Y3_N3; Fanout = 3; COMB Node = 'irda_send_loop:inst|carrier_ok~346'
+        Info: 5: + IC(1.865 ns) + CELL(0.200 ns) = 9.398 ns; Loc. = LC_X2_Y3_N9; Fanout = 1; COMB Node = 'irda_send_loop:inst|clear_cnt_flag~319'
+        Info: 6: + IC(0.768 ns) + CELL(0.200 ns) = 10.366 ns; Loc. = LC_X2_Y3_N1; Fanout = 1; COMB Node = 'irda_send_loop:inst|clear_cnt_flag~321'
+        Info: 7: + IC(0.305 ns) + CELL(0.591 ns) = 11.262 ns; Loc. = LC_X2_Y3_N2; Fanout = 14; REG Node = 'irda_send_loop:inst|clear_cnt_flag'
+        Info: Total cell delay = 3.330 ns ( 29.57 % )
+        Info: Total interconnect delay = 7.932 ns ( 70.43 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 6.533 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 137; CLK Node = 'clk'
+            Info: 2: + IC(4.483 ns) + CELL(0.918 ns) = 6.533 ns; Loc. = LC_X2_Y3_N2; Fanout = 14; REG Node = 'irda_send_loop:inst|clear_cnt_flag'
+            Info: Total cell delay = 2.050 ns ( 31.38 % )
+            Info: Total interconnect delay = 4.483 ns ( 68.62 % )
+        Info: - Longest clock path from clock "clk" to source register is 6.533 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 137; CLK Node = 'clk'
+            Info: 2: + IC(4.483 ns) + CELL(0.918 ns) = 6.533 ns; Loc. = LC_X5_Y2_N6; Fanout = 4; REG Node = 'irda_send_loop:inst|clk_cnt_0565[14]'
+            Info: Total cell delay = 2.050 ns ( 31.38 % )
+            Info: Total interconnect delay = 4.483 ns ( 68.62 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Info: tsu for register "irda_send_loop:inst|clk_cnt_108[0]" (data pin = "SW[2]", clock pin = "clk") is 1.081 ns
+    Info: + Longest pin to register delay is 7.281 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_75; Fanout = 5; PIN Node = 'SW[2]'
+        Info: 2: + IC(2.154 ns) + CELL(0.511 ns) = 3.797 ns; Loc. = LC_X7_Y4_N9; Fanout = 25; COMB Node = 'irda_send_loop:inst|start~47'
+        Info: 3: + IC(1.724 ns) + CELL(1.760 ns) = 7.281 ns; Loc. = LC_X5_Y4_N4; Fanout = 3; REG Node = 'irda_send_loop:inst|clk_cnt_108[0]'
+        Info: Total cell delay = 3.403 ns ( 46.74 % )
+        Info: Total interconnect delay = 3.878 ns ( 53.26 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 6.533 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 137; CLK Node = 'clk'
+        Info: 2: + IC(4.483 ns) + CELL(0.918 ns) = 6.533 ns; Loc. = LC_X5_Y4_N4; Fanout = 3; REG Node = 'irda_send_loop:inst|clk_cnt_108[0]'
+        Info: Total cell delay = 2.050 ns ( 31.38 % )
+        Info: Total interconnect delay = 4.483 ns ( 68.62 % )
+Info: tco from clock "clk" to destination pin "IrDA_Tx" through register "irda_send_loop:inst|irda_send" is 11.638 ns
+    Info: + Longest clock path from clock "clk" to source register is 6.533 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 137; CLK Node = 'clk'
+        Info: 2: + IC(4.483 ns) + CELL(0.918 ns) = 6.533 ns; Loc. = LC_X2_Y4_N0; Fanout = 3; REG Node = 'irda_send_loop:inst|irda_send'
+        Info: Total cell delay = 2.050 ns ( 31.38 % )
+        Info: Total interconnect delay = 4.483 ns ( 68.62 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 4.729 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X2_Y4_N0; Fanout = 3; REG Node = 'irda_send_loop:inst|irda_send'
+        Info: 2: + IC(2.407 ns) + CELL(2.322 ns) = 4.729 ns; Loc. = PIN_16; Fanout = 0; PIN Node = 'IrDA_Tx'
+        Info: Total cell delay = 2.322 ns ( 49.10 % )
+        Info: Total interconnect delay = 2.407 ns ( 50.90 % )
+Info: th for register "irda_send_loop:inst|cs.LEADER_9" (data pin = "SW[0]", clock pin = "clk") is 1.181 ns
+    Info: + Longest clock path from clock "clk" to destination register is 6.533 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 137; CLK Node = 'clk'
+        Info: 2: + IC(4.483 ns) + CELL(0.918 ns) = 6.533 ns; Loc. = LC_X2_Y4_N4; Fanout = 10; REG Node = 'irda_send_loop:inst|cs.LEADER_9'
+        Info: Total cell delay = 2.050 ns ( 31.38 % )
+        Info: Total interconnect delay = 4.483 ns ( 68.62 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 5.573 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_73; Fanout = 5; PIN Node = 'SW[0]'
+        Info: 2: + IC(1.309 ns) + CELL(0.740 ns) = 3.181 ns; Loc. = LC_X7_Y4_N9; Fanout = 25; COMB Node = 'irda_send_loop:inst|start~47'
+        Info: 3: + IC(1.801 ns) + CELL(0.591 ns) = 5.573 ns; Loc. = LC_X2_Y4_N4; Fanout = 10; REG Node = 'irda_send_loop:inst|cs.LEADER_9'
+        Info: Total cell delay = 2.463 ns ( 44.20 % )
+        Info: Total interconnect delay = 3.110 ns ( 55.80 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 10 warnings
+    Info: Allocated 111 megabytes of memory during processing
+    Info: Processing ended: Mon Nov 28 08:56:20 2011
+    Info: Elapsed time: 00:00:03
+
+

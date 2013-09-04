@@ -1,0 +1,737 @@
+Classic Timing Analyzer report for segment
+Sun Nov 06 19:56:46 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                        ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------------------+-----------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                          ; To                                            ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------------------+-----------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 2.443 ns                         ; sw4                                           ; data[10]                                      ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 22.999 ns                        ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; hc_si                                         ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 2.510 ns                         ; sw2                                           ; data[30]                                      ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 137.51 MHz ( period = 7.272 ns ) ; hc164_driver:hc164_driver_inst|clk_cnt[7]     ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                               ;                                               ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------------------+-----------------------------------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EPM240T100C5       ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                                                     ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------+-----------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                       ; To                                            ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------+-----------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 137.51 MHz ( period = 7.272 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[7]  ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 6.563 ns                ;
+; N/A                                     ; 137.53 MHz ( period = 7.271 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[7]  ; hc164_driver:hc164_driver_inst|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 6.562 ns                ;
+; N/A                                     ; 137.61 MHz ( period = 7.267 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[7]  ; hc164_driver:hc164_driver_inst|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 6.558 ns                ;
+; N/A                                     ; 147.95 MHz ( period = 6.759 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[10] ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 6.050 ns                ;
+; N/A                                     ; 147.97 MHz ( period = 6.758 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[10] ; hc164_driver:hc164_driver_inst|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 6.049 ns                ;
+; N/A                                     ; 148.06 MHz ( period = 6.754 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[10] ; hc164_driver:hc164_driver_inst|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 6.045 ns                ;
+; N/A                                     ; 150.85 MHz ( period = 6.629 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[4]  ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 5.920 ns                ;
+; N/A                                     ; 150.88 MHz ( period = 6.628 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[4]  ; hc164_driver:hc164_driver_inst|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 5.919 ns                ;
+; N/A                                     ; 150.97 MHz ( period = 6.624 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[4]  ; hc164_driver:hc164_driver_inst|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 5.915 ns                ;
+; N/A                                     ; 152.16 MHz ( period = 6.572 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[8]  ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 5.863 ns                ;
+; N/A                                     ; 152.18 MHz ( period = 6.571 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[8]  ; hc164_driver:hc164_driver_inst|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 5.862 ns                ;
+; N/A                                     ; 152.28 MHz ( period = 6.567 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[8]  ; hc164_driver:hc164_driver_inst|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 5.858 ns                ;
+; N/A                                     ; 152.98 MHz ( period = 6.537 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[1]  ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 5.828 ns                ;
+; N/A                                     ; 153.00 MHz ( period = 6.536 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[1]  ; hc164_driver:hc164_driver_inst|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 5.827 ns                ;
+; N/A                                     ; 153.09 MHz ( period = 6.532 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[1]  ; hc164_driver:hc164_driver_inst|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 5.823 ns                ;
+; N/A                                     ; 155.57 MHz ( period = 6.428 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[5]  ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 5.719 ns                ;
+; N/A                                     ; 155.59 MHz ( period = 6.427 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[5]  ; hc164_driver:hc164_driver_inst|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 5.718 ns                ;
+; N/A                                     ; 155.69 MHz ( period = 6.423 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[5]  ; hc164_driver:hc164_driver_inst|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 5.714 ns                ;
+; N/A                                     ; 156.03 MHz ( period = 6.409 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[2]   ; hc164_driver:hc164_driver_inst|tx_cnt[5]      ; clk        ; clk      ; None                        ; None                      ; 5.700 ns                ;
+; N/A                                     ; 156.03 MHz ( period = 6.409 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[2]   ; hc164_driver:hc164_driver_inst|tx_cnt[4]      ; clk        ; clk      ; None                        ; None                      ; 5.700 ns                ;
+; N/A                                     ; 156.57 MHz ( period = 6.387 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[0]  ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 5.678 ns                ;
+; N/A                                     ; 156.59 MHz ( period = 6.386 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[0]  ; hc164_driver:hc164_driver_inst|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 5.677 ns                ;
+; N/A                                     ; 156.69 MHz ( period = 6.382 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[0]  ; hc164_driver:hc164_driver_inst|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 5.673 ns                ;
+; N/A                                     ; 159.03 MHz ( period = 6.288 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[3]  ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 5.579 ns                ;
+; N/A                                     ; 159.06 MHz ( period = 6.287 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[3]  ; hc164_driver:hc164_driver_inst|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 5.578 ns                ;
+; N/A                                     ; 159.16 MHz ( period = 6.283 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[3]  ; hc164_driver:hc164_driver_inst|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 5.574 ns                ;
+; N/A                                     ; 159.77 MHz ( period = 6.259 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[1]   ; hc164_driver:hc164_driver_inst|tx_cnt[5]      ; clk        ; clk      ; None                        ; None                      ; 5.550 ns                ;
+; N/A                                     ; 159.77 MHz ( period = 6.259 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[1]   ; hc164_driver:hc164_driver_inst|tx_cnt[4]      ; clk        ; clk      ; None                        ; None                      ; 5.550 ns                ;
+; N/A                                     ; 160.72 MHz ( period = 6.222 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[9]  ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 5.513 ns                ;
+; N/A                                     ; 160.75 MHz ( period = 6.221 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[9]  ; hc164_driver:hc164_driver_inst|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 5.512 ns                ;
+; N/A                                     ; 160.82 MHz ( period = 6.218 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[2]  ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 5.509 ns                ;
+; N/A                                     ; 160.85 MHz ( period = 6.217 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[2]  ; hc164_driver:hc164_driver_inst|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 5.508 ns                ;
+; N/A                                     ; 160.85 MHz ( period = 6.217 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[9]  ; hc164_driver:hc164_driver_inst|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 5.508 ns                ;
+; N/A                                     ; 160.95 MHz ( period = 6.213 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[2]  ; hc164_driver:hc164_driver_inst|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 5.504 ns                ;
+; N/A                                     ; 161.29 MHz ( period = 6.200 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[15] ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 5.491 ns                ;
+; N/A                                     ; 161.32 MHz ( period = 6.199 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[15] ; hc164_driver:hc164_driver_inst|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 5.490 ns                ;
+; N/A                                     ; 161.42 MHz ( period = 6.195 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[15] ; hc164_driver:hc164_driver_inst|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 5.486 ns                ;
+; N/A                                     ; 162.84 MHz ( period = 6.141 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[15] ; hc164_driver:hc164_driver_inst|tx_cnt[5]      ; clk        ; clk      ; None                        ; None                      ; 5.432 ns                ;
+; N/A                                     ; 162.84 MHz ( period = 6.141 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[15] ; hc164_driver:hc164_driver_inst|tx_cnt[4]      ; clk        ; clk      ; None                        ; None                      ; 5.432 ns                ;
+; N/A                                     ; 163.88 MHz ( period = 6.102 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[14] ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 5.393 ns                ;
+; N/A                                     ; 163.91 MHz ( period = 6.101 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[14] ; hc164_driver:hc164_driver_inst|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 5.392 ns                ;
+; N/A                                     ; 164.02 MHz ( period = 6.097 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[14] ; hc164_driver:hc164_driver_inst|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 5.388 ns                ;
+; N/A                                     ; 164.04 MHz ( period = 6.096 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[4]   ; hc164_driver:hc164_driver_inst|tx_cnt[5]      ; clk        ; clk      ; None                        ; None                      ; 5.387 ns                ;
+; N/A                                     ; 164.04 MHz ( period = 6.096 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[4]   ; hc164_driver:hc164_driver_inst|tx_cnt[4]      ; clk        ; clk      ; None                        ; None                      ; 5.387 ns                ;
+; N/A                                     ; 164.10 MHz ( period = 6.094 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[3]   ; hc164_driver:hc164_driver_inst|tx_cnt[5]      ; clk        ; clk      ; None                        ; None                      ; 5.385 ns                ;
+; N/A                                     ; 164.10 MHz ( period = 6.094 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[3]   ; hc164_driver:hc164_driver_inst|tx_cnt[4]      ; clk        ; clk      ; None                        ; None                      ; 5.385 ns                ;
+; N/A                                     ; 168.29 MHz ( period = 5.942 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[2]   ; hc164_driver:hc164_driver_inst|tx_cnt[3]      ; clk        ; clk      ; None                        ; None                      ; 5.233 ns                ;
+; N/A                                     ; 168.52 MHz ( period = 5.934 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[0]   ; hc164_driver:hc164_driver_inst|tx_cnt[5]      ; clk        ; clk      ; None                        ; None                      ; 5.225 ns                ;
+; N/A                                     ; 168.52 MHz ( period = 5.934 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[0]   ; hc164_driver:hc164_driver_inst|tx_cnt[4]      ; clk        ; clk      ; None                        ; None                      ; 5.225 ns                ;
+; N/A                                     ; 168.80 MHz ( period = 5.924 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[5]   ; hc164_driver:hc164_driver_inst|tx_cnt[5]      ; clk        ; clk      ; None                        ; None                      ; 5.215 ns                ;
+; N/A                                     ; 168.80 MHz ( period = 5.924 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[5]   ; hc164_driver:hc164_driver_inst|tx_cnt[4]      ; clk        ; clk      ; None                        ; None                      ; 5.215 ns                ;
+; N/A                                     ; 169.20 MHz ( period = 5.910 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[6]  ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 5.201 ns                ;
+; N/A                                     ; 169.23 MHz ( period = 5.909 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[6]  ; hc164_driver:hc164_driver_inst|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 5.200 ns                ;
+; N/A                                     ; 169.35 MHz ( period = 5.905 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[6]  ; hc164_driver:hc164_driver_inst|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 5.196 ns                ;
+; N/A                                     ; 170.18 MHz ( period = 5.876 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[13] ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 5.167 ns                ;
+; N/A                                     ; 170.21 MHz ( period = 5.875 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[13] ; hc164_driver:hc164_driver_inst|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 5.166 ns                ;
+; N/A                                     ; 170.33 MHz ( period = 5.871 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[13] ; hc164_driver:hc164_driver_inst|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 5.162 ns                ;
+; N/A                                     ; 171.85 MHz ( period = 5.819 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[2]   ; hc164_driver:hc164_driver_inst|tx_cnt[2]      ; clk        ; clk      ; None                        ; None                      ; 5.110 ns                ;
+; N/A                                     ; 172.65 MHz ( period = 5.792 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[1]   ; hc164_driver:hc164_driver_inst|tx_cnt[3]      ; clk        ; clk      ; None                        ; None                      ; 5.083 ns                ;
+; N/A                                     ; 175.56 MHz ( period = 5.696 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[2]   ; hc164_driver:hc164_driver_inst|tx_cnt[1]      ; clk        ; clk      ; None                        ; None                      ; 4.987 ns                ;
+; N/A                                     ; 176.24 MHz ( period = 5.674 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[15] ; hc164_driver:hc164_driver_inst|tx_cnt[3]      ; clk        ; clk      ; None                        ; None                      ; 4.965 ns                ;
+; N/A                                     ; 176.40 MHz ( period = 5.669 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[1]   ; hc164_driver:hc164_driver_inst|tx_cnt[2]      ; clk        ; clk      ; None                        ; None                      ; 4.960 ns                ;
+; N/A                                     ; 177.65 MHz ( period = 5.629 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[4]   ; hc164_driver:hc164_driver_inst|tx_cnt[3]      ; clk        ; clk      ; None                        ; None                      ; 4.920 ns                ;
+; N/A                                     ; 177.71 MHz ( period = 5.627 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[3]   ; hc164_driver:hc164_driver_inst|tx_cnt[3]      ; clk        ; clk      ; None                        ; None                      ; 4.918 ns                ;
+; N/A                                     ; 180.15 MHz ( period = 5.551 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[15] ; hc164_driver:hc164_driver_inst|tx_cnt[2]      ; clk        ; clk      ; None                        ; None                      ; 4.842 ns                ;
+; N/A                                     ; 180.31 MHz ( period = 5.546 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[1]   ; hc164_driver:hc164_driver_inst|tx_cnt[1]      ; clk        ; clk      ; None                        ; None                      ; 4.837 ns                ;
+; N/A                                     ; 180.51 MHz ( period = 5.540 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[12] ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 4.831 ns                ;
+; N/A                                     ; 180.54 MHz ( period = 5.539 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[12] ; hc164_driver:hc164_driver_inst|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 4.830 ns                ;
+; N/A                                     ; 180.67 MHz ( period = 5.535 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[12] ; hc164_driver:hc164_driver_inst|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 4.826 ns                ;
+; N/A                                     ; 181.62 MHz ( period = 5.506 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[4]   ; hc164_driver:hc164_driver_inst|tx_cnt[2]      ; clk        ; clk      ; None                        ; None                      ; 4.797 ns                ;
+; N/A                                     ; 181.69 MHz ( period = 5.504 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[3]   ; hc164_driver:hc164_driver_inst|tx_cnt[2]      ; clk        ; clk      ; None                        ; None                      ; 4.795 ns                ;
+; N/A                                     ; 182.92 MHz ( period = 5.467 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[0]   ; hc164_driver:hc164_driver_inst|tx_cnt[3]      ; clk        ; clk      ; None                        ; None                      ; 4.758 ns                ;
+; N/A                                     ; 183.25 MHz ( period = 5.457 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[5]   ; hc164_driver:hc164_driver_inst|tx_cnt[3]      ; clk        ; clk      ; None                        ; None                      ; 4.748 ns                ;
+; N/A                                     ; 184.23 MHz ( period = 5.428 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[15] ; hc164_driver:hc164_driver_inst|tx_cnt[1]      ; clk        ; clk      ; None                        ; None                      ; 4.719 ns                ;
+; N/A                                     ; 185.77 MHz ( period = 5.383 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[4]   ; hc164_driver:hc164_driver_inst|tx_cnt[1]      ; clk        ; clk      ; None                        ; None                      ; 4.674 ns                ;
+; N/A                                     ; 185.84 MHz ( period = 5.381 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[3]   ; hc164_driver:hc164_driver_inst|tx_cnt[1]      ; clk        ; clk      ; None                        ; None                      ; 4.672 ns                ;
+; N/A                                     ; 187.13 MHz ( period = 5.344 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[0]   ; hc164_driver:hc164_driver_inst|tx_cnt[2]      ; clk        ; clk      ; None                        ; None                      ; 4.635 ns                ;
+; N/A                                     ; 187.48 MHz ( period = 5.334 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[5]   ; hc164_driver:hc164_driver_inst|tx_cnt[2]      ; clk        ; clk      ; None                        ; None                      ; 4.625 ns                ;
+; N/A                                     ; 191.53 MHz ( period = 5.221 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[0]   ; hc164_driver:hc164_driver_inst|tx_cnt[1]      ; clk        ; clk      ; None                        ; None                      ; 4.512 ns                ;
+; N/A                                     ; 191.90 MHz ( period = 5.211 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[5]   ; hc164_driver:hc164_driver_inst|tx_cnt[1]      ; clk        ; clk      ; None                        ; None                      ; 4.502 ns                ;
+; N/A                                     ; 193.65 MHz ( period = 5.164 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[11] ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 4.455 ns                ;
+; N/A                                     ; 193.69 MHz ( period = 5.163 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[11] ; hc164_driver:hc164_driver_inst|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 4.454 ns                ;
+; N/A                                     ; 193.84 MHz ( period = 5.159 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[11] ; hc164_driver:hc164_driver_inst|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 4.450 ns                ;
+; N/A                                     ; 199.52 MHz ( period = 5.012 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[3]  ; hc164_driver:hc164_driver_inst|clk_cnt[8]     ; clk        ; clk      ; None                        ; None                      ; 4.303 ns                ;
+; N/A                                     ; 199.52 MHz ( period = 5.012 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[3]  ; hc164_driver:hc164_driver_inst|clk_cnt[9]     ; clk        ; clk      ; None                        ; None                      ; 4.303 ns                ;
+; N/A                                     ; 199.52 MHz ( period = 5.012 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[3]  ; hc164_driver:hc164_driver_inst|clk_cnt[10]    ; clk        ; clk      ; None                        ; None                      ; 4.303 ns                ;
+; N/A                                     ; 199.52 MHz ( period = 5.012 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[3]  ; hc164_driver:hc164_driver_inst|clk_cnt[11]    ; clk        ; clk      ; None                        ; None                      ; 4.303 ns                ;
+; N/A                                     ; 199.52 MHz ( period = 5.012 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[3]  ; hc164_driver:hc164_driver_inst|clk_cnt[12]    ; clk        ; clk      ; None                        ; None                      ; 4.303 ns                ;
+; N/A                                     ; 200.04 MHz ( period = 4.999 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[3]  ; hc164_driver:hc164_driver_inst|clk_cnt[15]    ; clk        ; clk      ; None                        ; None                      ; 4.290 ns                ;
+; N/A                                     ; 200.04 MHz ( period = 4.999 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[3]  ; hc164_driver:hc164_driver_inst|clk_cnt[13]    ; clk        ; clk      ; None                        ; None                      ; 4.290 ns                ;
+; N/A                                     ; 200.04 MHz ( period = 4.999 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[3]  ; hc164_driver:hc164_driver_inst|clk_cnt[14]    ; clk        ; clk      ; None                        ; None                      ; 4.290 ns                ;
+; N/A                                     ; 204.42 MHz ( period = 4.892 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[4]  ; hc164_driver:hc164_driver_inst|clk_cnt[8]     ; clk        ; clk      ; None                        ; None                      ; 4.183 ns                ;
+; N/A                                     ; 204.42 MHz ( period = 4.892 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[4]  ; hc164_driver:hc164_driver_inst|clk_cnt[9]     ; clk        ; clk      ; None                        ; None                      ; 4.183 ns                ;
+; N/A                                     ; 204.42 MHz ( period = 4.892 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[4]  ; hc164_driver:hc164_driver_inst|clk_cnt[10]    ; clk        ; clk      ; None                        ; None                      ; 4.183 ns                ;
+; N/A                                     ; 204.42 MHz ( period = 4.892 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[4]  ; hc164_driver:hc164_driver_inst|clk_cnt[11]    ; clk        ; clk      ; None                        ; None                      ; 4.183 ns                ;
+; N/A                                     ; 204.42 MHz ( period = 4.892 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[4]  ; hc164_driver:hc164_driver_inst|clk_cnt[12]    ; clk        ; clk      ; None                        ; None                      ; 4.183 ns                ;
+; N/A                                     ; 204.96 MHz ( period = 4.879 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[4]  ; hc164_driver:hc164_driver_inst|clk_cnt[15]    ; clk        ; clk      ; None                        ; None                      ; 4.170 ns                ;
+; N/A                                     ; 204.96 MHz ( period = 4.879 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[4]  ; hc164_driver:hc164_driver_inst|clk_cnt[13]    ; clk        ; clk      ; None                        ; None                      ; 4.170 ns                ;
+; N/A                                     ; 204.96 MHz ( period = 4.879 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[4]  ; hc164_driver:hc164_driver_inst|clk_cnt[14]    ; clk        ; clk      ; None                        ; None                      ; 4.170 ns                ;
+; N/A                                     ; 206.23 MHz ( period = 4.849 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[2]   ; hc164_driver:hc164_driver_inst|tx_cnt[0]      ; clk        ; clk      ; None                        ; None                      ; 4.140 ns                ;
+; N/A                                     ; 206.78 MHz ( period = 4.836 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[1]  ; hc164_driver:hc164_driver_inst|clk_cnt[8]     ; clk        ; clk      ; None                        ; None                      ; 4.127 ns                ;
+; N/A                                     ; 206.78 MHz ( period = 4.836 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[1]  ; hc164_driver:hc164_driver_inst|clk_cnt[9]     ; clk        ; clk      ; None                        ; None                      ; 4.127 ns                ;
+; N/A                                     ; 206.78 MHz ( period = 4.836 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[1]  ; hc164_driver:hc164_driver_inst|clk_cnt[10]    ; clk        ; clk      ; None                        ; None                      ; 4.127 ns                ;
+; N/A                                     ; 206.78 MHz ( period = 4.836 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[1]  ; hc164_driver:hc164_driver_inst|clk_cnt[11]    ; clk        ; clk      ; None                        ; None                      ; 4.127 ns                ;
+; N/A                                     ; 206.78 MHz ( period = 4.836 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[1]  ; hc164_driver:hc164_driver_inst|clk_cnt[12]    ; clk        ; clk      ; None                        ; None                      ; 4.127 ns                ;
+; N/A                                     ; 207.34 MHz ( period = 4.823 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[1]  ; hc164_driver:hc164_driver_inst|clk_cnt[15]    ; clk        ; clk      ; None                        ; None                      ; 4.114 ns                ;
+; N/A                                     ; 207.34 MHz ( period = 4.823 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[1]  ; hc164_driver:hc164_driver_inst|clk_cnt[13]    ; clk        ; clk      ; None                        ; None                      ; 4.114 ns                ;
+; N/A                                     ; 207.34 MHz ( period = 4.823 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[1]  ; hc164_driver:hc164_driver_inst|clk_cnt[14]    ; clk        ; clk      ; None                        ; None                      ; 4.114 ns                ;
+; N/A                                     ; 212.81 MHz ( period = 4.699 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[1]   ; hc164_driver:hc164_driver_inst|tx_cnt[0]      ; clk        ; clk      ; None                        ; None                      ; 3.990 ns                ;
+; N/A                                     ; 212.99 MHz ( period = 4.695 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[2]  ; hc164_driver:hc164_driver_inst|clk_cnt[8]     ; clk        ; clk      ; None                        ; None                      ; 3.986 ns                ;
+; N/A                                     ; 212.99 MHz ( period = 4.695 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[2]  ; hc164_driver:hc164_driver_inst|clk_cnt[9]     ; clk        ; clk      ; None                        ; None                      ; 3.986 ns                ;
+; N/A                                     ; 212.99 MHz ( period = 4.695 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[2]  ; hc164_driver:hc164_driver_inst|clk_cnt[10]    ; clk        ; clk      ; None                        ; None                      ; 3.986 ns                ;
+; N/A                                     ; 212.99 MHz ( period = 4.695 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[2]  ; hc164_driver:hc164_driver_inst|clk_cnt[11]    ; clk        ; clk      ; None                        ; None                      ; 3.986 ns                ;
+; N/A                                     ; 212.99 MHz ( period = 4.695 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[2]  ; hc164_driver:hc164_driver_inst|clk_cnt[12]    ; clk        ; clk      ; None                        ; None                      ; 3.986 ns                ;
+; N/A                                     ; 213.58 MHz ( period = 4.682 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[2]  ; hc164_driver:hc164_driver_inst|clk_cnt[15]    ; clk        ; clk      ; None                        ; None                      ; 3.973 ns                ;
+; N/A                                     ; 213.58 MHz ( period = 4.682 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[2]  ; hc164_driver:hc164_driver_inst|clk_cnt[13]    ; clk        ; clk      ; None                        ; None                      ; 3.973 ns                ;
+; N/A                                     ; 213.58 MHz ( period = 4.682 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[2]  ; hc164_driver:hc164_driver_inst|clk_cnt[14]    ; clk        ; clk      ; None                        ; None                      ; 3.973 ns                ;
+; N/A                                     ; 215.84 MHz ( period = 4.633 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[0]  ; hc164_driver:hc164_driver_inst|clk_cnt[8]     ; clk        ; clk      ; None                        ; None                      ; 3.924 ns                ;
+; N/A                                     ; 215.84 MHz ( period = 4.633 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[0]  ; hc164_driver:hc164_driver_inst|clk_cnt[9]     ; clk        ; clk      ; None                        ; None                      ; 3.924 ns                ;
+; N/A                                     ; 215.84 MHz ( period = 4.633 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[0]  ; hc164_driver:hc164_driver_inst|clk_cnt[10]    ; clk        ; clk      ; None                        ; None                      ; 3.924 ns                ;
+; N/A                                     ; 215.84 MHz ( period = 4.633 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[0]  ; hc164_driver:hc164_driver_inst|clk_cnt[11]    ; clk        ; clk      ; None                        ; None                      ; 3.924 ns                ;
+; N/A                                     ; 215.84 MHz ( period = 4.633 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[0]  ; hc164_driver:hc164_driver_inst|clk_cnt[12]    ; clk        ; clk      ; None                        ; None                      ; 3.924 ns                ;
+; N/A                                     ; 216.31 MHz ( period = 4.623 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[6]  ; hc164_driver:hc164_driver_inst|clk_cnt[8]     ; clk        ; clk      ; None                        ; None                      ; 3.914 ns                ;
+; N/A                                     ; 216.31 MHz ( period = 4.623 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[6]  ; hc164_driver:hc164_driver_inst|clk_cnt[9]     ; clk        ; clk      ; None                        ; None                      ; 3.914 ns                ;
+; N/A                                     ; 216.31 MHz ( period = 4.623 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[6]  ; hc164_driver:hc164_driver_inst|clk_cnt[10]    ; clk        ; clk      ; None                        ; None                      ; 3.914 ns                ;
+; N/A                                     ; 216.31 MHz ( period = 4.623 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[6]  ; hc164_driver:hc164_driver_inst|clk_cnt[11]    ; clk        ; clk      ; None                        ; None                      ; 3.914 ns                ;
+; N/A                                     ; 216.31 MHz ( period = 4.623 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[6]  ; hc164_driver:hc164_driver_inst|clk_cnt[12]    ; clk        ; clk      ; None                        ; None                      ; 3.914 ns                ;
+; N/A                                     ; 216.45 MHz ( period = 4.620 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[0]  ; hc164_driver:hc164_driver_inst|clk_cnt[15]    ; clk        ; clk      ; None                        ; None                      ; 3.911 ns                ;
+; N/A                                     ; 216.45 MHz ( period = 4.620 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[0]  ; hc164_driver:hc164_driver_inst|clk_cnt[13]    ; clk        ; clk      ; None                        ; None                      ; 3.911 ns                ;
+; N/A                                     ; 216.45 MHz ( period = 4.620 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[0]  ; hc164_driver:hc164_driver_inst|clk_cnt[14]    ; clk        ; clk      ; None                        ; None                      ; 3.911 ns                ;
+; N/A                                     ; 216.92 MHz ( period = 4.610 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[6]  ; hc164_driver:hc164_driver_inst|clk_cnt[15]    ; clk        ; clk      ; None                        ; None                      ; 3.901 ns                ;
+; N/A                                     ; 216.92 MHz ( period = 4.610 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[6]  ; hc164_driver:hc164_driver_inst|clk_cnt[13]    ; clk        ; clk      ; None                        ; None                      ; 3.901 ns                ;
+; N/A                                     ; 216.92 MHz ( period = 4.610 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[6]  ; hc164_driver:hc164_driver_inst|clk_cnt[14]    ; clk        ; clk      ; None                        ; None                      ; 3.901 ns                ;
+; N/A                                     ; 218.29 MHz ( period = 4.581 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[15] ; hc164_driver:hc164_driver_inst|tx_cnt[0]      ; clk        ; clk      ; None                        ; None                      ; 3.872 ns                ;
+; N/A                                     ; 220.46 MHz ( period = 4.536 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[4]   ; hc164_driver:hc164_driver_inst|tx_cnt[0]      ; clk        ; clk      ; None                        ; None                      ; 3.827 ns                ;
+; N/A                                     ; 220.56 MHz ( period = 4.534 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[3]   ; hc164_driver:hc164_driver_inst|tx_cnt[0]      ; clk        ; clk      ; None                        ; None                      ; 3.825 ns                ;
+; N/A                                     ; 221.53 MHz ( period = 4.514 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[5]  ; hc164_driver:hc164_driver_inst|clk_cnt[8]     ; clk        ; clk      ; None                        ; None                      ; 3.805 ns                ;
+; N/A                                     ; 221.53 MHz ( period = 4.514 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[5]  ; hc164_driver:hc164_driver_inst|clk_cnt[9]     ; clk        ; clk      ; None                        ; None                      ; 3.805 ns                ;
+; N/A                                     ; 221.53 MHz ( period = 4.514 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[5]  ; hc164_driver:hc164_driver_inst|clk_cnt[10]    ; clk        ; clk      ; None                        ; None                      ; 3.805 ns                ;
+; N/A                                     ; 221.53 MHz ( period = 4.514 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[5]  ; hc164_driver:hc164_driver_inst|clk_cnt[11]    ; clk        ; clk      ; None                        ; None                      ; 3.805 ns                ;
+; N/A                                     ; 221.53 MHz ( period = 4.514 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[5]  ; hc164_driver:hc164_driver_inst|clk_cnt[12]    ; clk        ; clk      ; None                        ; None                      ; 3.805 ns                ;
+; N/A                                     ; 222.17 MHz ( period = 4.501 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[5]  ; hc164_driver:hc164_driver_inst|clk_cnt[15]    ; clk        ; clk      ; None                        ; None                      ; 3.792 ns                ;
+; N/A                                     ; 222.17 MHz ( period = 4.501 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[5]  ; hc164_driver:hc164_driver_inst|clk_cnt[13]    ; clk        ; clk      ; None                        ; None                      ; 3.792 ns                ;
+; N/A                                     ; 222.17 MHz ( period = 4.501 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[5]  ; hc164_driver:hc164_driver_inst|clk_cnt[14]    ; clk        ; clk      ; None                        ; None                      ; 3.792 ns                ;
+; N/A                                     ; 228.62 MHz ( period = 4.374 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[0]   ; hc164_driver:hc164_driver_inst|tx_cnt[0]      ; clk        ; clk      ; None                        ; None                      ; 3.665 ns                ;
+; N/A                                     ; 228.78 MHz ( period = 4.371 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[8]  ; hc164_driver:hc164_driver_inst|clk_cnt[15]    ; clk        ; clk      ; None                        ; None                      ; 3.662 ns                ;
+; N/A                                     ; 228.78 MHz ( period = 4.371 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[8]  ; hc164_driver:hc164_driver_inst|clk_cnt[13]    ; clk        ; clk      ; None                        ; None                      ; 3.662 ns                ;
+; N/A                                     ; 228.78 MHz ( period = 4.371 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[8]  ; hc164_driver:hc164_driver_inst|clk_cnt[14]    ; clk        ; clk      ; None                        ; None                      ; 3.662 ns                ;
+; N/A                                     ; 229.15 MHz ( period = 4.364 ns )                    ; hc164_driver:hc164_driver_inst|tx_cnt[5]   ; hc164_driver:hc164_driver_inst|tx_cnt[0]      ; clk        ; clk      ; None                        ; None                      ; 3.655 ns                ;
+; N/A                                     ; 229.73 MHz ( period = 4.353 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[7]  ; hc164_driver:hc164_driver_inst|clk_cnt[8]     ; clk        ; clk      ; None                        ; None                      ; 3.644 ns                ;
+; N/A                                     ; 229.73 MHz ( period = 4.353 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[7]  ; hc164_driver:hc164_driver_inst|clk_cnt[9]     ; clk        ; clk      ; None                        ; None                      ; 3.644 ns                ;
+; N/A                                     ; 229.73 MHz ( period = 4.353 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[7]  ; hc164_driver:hc164_driver_inst|clk_cnt[10]    ; clk        ; clk      ; None                        ; None                      ; 3.644 ns                ;
+; N/A                                     ; 229.73 MHz ( period = 4.353 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[7]  ; hc164_driver:hc164_driver_inst|clk_cnt[11]    ; clk        ; clk      ; None                        ; None                      ; 3.644 ns                ;
+; N/A                                     ; 229.73 MHz ( period = 4.353 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[7]  ; hc164_driver:hc164_driver_inst|clk_cnt[12]    ; clk        ; clk      ; None                        ; None                      ; 3.644 ns                ;
+; N/A                                     ; 230.41 MHz ( period = 4.340 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[7]  ; hc164_driver:hc164_driver_inst|clk_cnt[15]    ; clk        ; clk      ; None                        ; None                      ; 3.631 ns                ;
+; N/A                                     ; 230.41 MHz ( period = 4.340 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[7]  ; hc164_driver:hc164_driver_inst|clk_cnt[13]    ; clk        ; clk      ; None                        ; None                      ; 3.631 ns                ;
+; N/A                                     ; 230.41 MHz ( period = 4.340 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[7]  ; hc164_driver:hc164_driver_inst|clk_cnt[14]    ; clk        ; clk      ; None                        ; None                      ; 3.631 ns                ;
+; N/A                                     ; 234.85 MHz ( period = 4.258 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[9]  ; hc164_driver:hc164_driver_inst|clk_cnt[15]    ; clk        ; clk      ; None                        ; None                      ; 3.549 ns                ;
+; N/A                                     ; 234.85 MHz ( period = 4.258 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[9]  ; hc164_driver:hc164_driver_inst|clk_cnt[13]    ; clk        ; clk      ; None                        ; None                      ; 3.549 ns                ;
+; N/A                                     ; 234.85 MHz ( period = 4.258 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[9]  ; hc164_driver:hc164_driver_inst|clk_cnt[14]    ; clk        ; clk      ; None                        ; None                      ; 3.549 ns                ;
+; N/A                                     ; 236.52 MHz ( period = 4.228 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[1]  ; hc164_driver:hc164_driver_inst|clk_cnt[3]     ; clk        ; clk      ; None                        ; None                      ; 3.519 ns                ;
+; N/A                                     ; 236.52 MHz ( period = 4.228 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[1]  ; hc164_driver:hc164_driver_inst|clk_cnt[4]     ; clk        ; clk      ; None                        ; None                      ; 3.519 ns                ;
+; N/A                                     ; 236.52 MHz ( period = 4.228 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[1]  ; hc164_driver:hc164_driver_inst|clk_cnt[5]     ; clk        ; clk      ; None                        ; None                      ; 3.519 ns                ;
+; N/A                                     ; 236.52 MHz ( period = 4.228 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[1]  ; hc164_driver:hc164_driver_inst|clk_cnt[6]     ; clk        ; clk      ; None                        ; None                      ; 3.519 ns                ;
+; N/A                                     ; 236.52 MHz ( period = 4.228 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[1]  ; hc164_driver:hc164_driver_inst|clk_cnt[7]     ; clk        ; clk      ; None                        ; None                      ; 3.519 ns                ;
+; N/A                                     ; 237.59 MHz ( period = 4.209 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[11] ; hc164_driver:hc164_driver_inst|clk_cnt[15]    ; clk        ; clk      ; None                        ; None                      ; 3.500 ns                ;
+; N/A                                     ; 237.59 MHz ( period = 4.209 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[11] ; hc164_driver:hc164_driver_inst|clk_cnt[13]    ; clk        ; clk      ; None                        ; None                      ; 3.500 ns                ;
+; N/A                                     ; 237.59 MHz ( period = 4.209 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[11] ; hc164_driver:hc164_driver_inst|clk_cnt[14]    ; clk        ; clk      ; None                        ; None                      ; 3.500 ns                ;
+; N/A                                     ; 241.08 MHz ( period = 4.148 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[3]  ; hc164_driver:hc164_driver_inst|clk_cnt[7]     ; clk        ; clk      ; None                        ; None                      ; 3.439 ns                ;
+; N/A                                     ; 241.84 MHz ( period = 4.135 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[10] ; hc164_driver:hc164_driver_inst|clk_cnt[15]    ; clk        ; clk      ; None                        ; None                      ; 3.426 ns                ;
+; N/A                                     ; 241.84 MHz ( period = 4.135 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[10] ; hc164_driver:hc164_driver_inst|clk_cnt[13]    ; clk        ; clk      ; None                        ; None                      ; 3.426 ns                ;
+; N/A                                     ; 241.84 MHz ( period = 4.135 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[10] ; hc164_driver:hc164_driver_inst|clk_cnt[14]    ; clk        ; clk      ; None                        ; None                      ; 3.426 ns                ;
+; N/A                                     ; 244.68 MHz ( period = 4.087 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[2]  ; hc164_driver:hc164_driver_inst|clk_cnt[3]     ; clk        ; clk      ; None                        ; None                      ; 3.378 ns                ;
+; N/A                                     ; 244.68 MHz ( period = 4.087 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[2]  ; hc164_driver:hc164_driver_inst|clk_cnt[4]     ; clk        ; clk      ; None                        ; None                      ; 3.378 ns                ;
+; N/A                                     ; 244.68 MHz ( period = 4.087 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[2]  ; hc164_driver:hc164_driver_inst|clk_cnt[5]     ; clk        ; clk      ; None                        ; None                      ; 3.378 ns                ;
+; N/A                                     ; 244.68 MHz ( period = 4.087 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[2]  ; hc164_driver:hc164_driver_inst|clk_cnt[6]     ; clk        ; clk      ; None                        ; None                      ; 3.378 ns                ;
+; N/A                                     ; 244.68 MHz ( period = 4.087 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[2]  ; hc164_driver:hc164_driver_inst|clk_cnt[7]     ; clk        ; clk      ; None                        ; None                      ; 3.378 ns                ;
+; N/A                                     ; 246.00 MHz ( period = 4.065 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[12] ; hc164_driver:hc164_driver_inst|clk_cnt[15]    ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 246.00 MHz ( period = 4.065 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[12] ; hc164_driver:hc164_driver_inst|clk_cnt[13]    ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 246.00 MHz ( period = 4.065 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[12] ; hc164_driver:hc164_driver_inst|clk_cnt[14]    ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 248.26 MHz ( period = 4.028 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[4]  ; hc164_driver:hc164_driver_inst|clk_cnt[7]     ; clk        ; clk      ; None                        ; None                      ; 3.319 ns                ;
+; N/A                                     ; 248.45 MHz ( period = 4.025 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[0]  ; hc164_driver:hc164_driver_inst|clk_cnt[3]     ; clk        ; clk      ; None                        ; None                      ; 3.316 ns                ;
+; N/A                                     ; 248.45 MHz ( period = 4.025 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[0]  ; hc164_driver:hc164_driver_inst|clk_cnt[4]     ; clk        ; clk      ; None                        ; None                      ; 3.316 ns                ;
+; N/A                                     ; 248.45 MHz ( period = 4.025 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[0]  ; hc164_driver:hc164_driver_inst|clk_cnt[5]     ; clk        ; clk      ; None                        ; None                      ; 3.316 ns                ;
+; N/A                                     ; 248.45 MHz ( period = 4.025 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[0]  ; hc164_driver:hc164_driver_inst|clk_cnt[6]     ; clk        ; clk      ; None                        ; None                      ; 3.316 ns                ;
+; N/A                                     ; 248.45 MHz ( period = 4.025 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[3]  ; hc164_driver:hc164_driver_inst|clk_cnt[6]     ; clk        ; clk      ; None                        ; None                      ; 3.316 ns                ;
+; N/A                                     ; 248.45 MHz ( period = 4.025 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[0]  ; hc164_driver:hc164_driver_inst|clk_cnt[7]     ; clk        ; clk      ; None                        ; None                      ; 3.316 ns                ;
+; N/A                                     ; 254.39 MHz ( period = 3.931 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[14] ; hc164_driver:hc164_driver_inst|clk_cnt[15]    ; clk        ; clk      ; None                        ; None                      ; 3.222 ns                ;
+; N/A                                     ; 256.08 MHz ( period = 3.905 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[4]  ; hc164_driver:hc164_driver_inst|clk_cnt[6]     ; clk        ; clk      ; None                        ; None                      ; 3.196 ns                ;
+; N/A                                     ; 256.15 MHz ( period = 3.904 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[8]  ; hc164_driver:hc164_driver_inst|clk_cnt[12]    ; clk        ; clk      ; None                        ; None                      ; 3.195 ns                ;
+; N/A                                     ; 256.28 MHz ( period = 3.902 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[3]  ; hc164_driver:hc164_driver_inst|clk_cnt[5]     ; clk        ; clk      ; None                        ; None                      ; 3.193 ns                ;
+; N/A                                     ; 257.53 MHz ( period = 3.883 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[13] ; hc164_driver:hc164_driver_inst|clk_cnt[15]    ; clk        ; clk      ; None                        ; None                      ; 3.174 ns                ;
+; N/A                                     ; 263.78 MHz ( period = 3.791 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[9]  ; hc164_driver:hc164_driver_inst|clk_cnt[12]    ; clk        ; clk      ; None                        ; None                      ; 3.082 ns                ;
+; N/A                                     ; 264.41 MHz ( period = 3.782 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[4]  ; hc164_driver:hc164_driver_inst|clk_cnt[5]     ; clk        ; clk      ; None                        ; None                      ; 3.073 ns                ;
+; N/A                                     ; 264.48 MHz ( period = 3.781 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[8]  ; hc164_driver:hc164_driver_inst|clk_cnt[11]    ; clk        ; clk      ; None                        ; None                      ; 3.072 ns                ;
+; N/A                                     ; 264.62 MHz ( period = 3.779 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[3]  ; hc164_driver:hc164_driver_inst|clk_cnt[4]     ; clk        ; clk      ; None                        ; None                      ; 3.070 ns                ;
+; N/A                                     ; 265.89 MHz ( period = 3.761 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[1]  ; hc164_driver:hc164_driver_inst|clk_cnt[2]     ; clk        ; clk      ; None                        ; None                      ; 3.052 ns                ;
+; N/A                                     ; 265.96 MHz ( period = 3.760 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[13] ; hc164_driver:hc164_driver_inst|clk_cnt[14]    ; clk        ; clk      ; None                        ; None                      ; 3.051 ns                ;
+; N/A                                     ; 266.03 MHz ( period = 3.759 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[6]  ; hc164_driver:hc164_driver_inst|clk_cnt[7]     ; clk        ; clk      ; None                        ; None                      ; 3.050 ns                ;
+; N/A                                     ; 267.24 MHz ( period = 3.742 ns )                    ; hc164_driver:hc164_driver_inst|clk_cnt[11] ; hc164_driver:hc164_driver_inst|clk_cnt[12]    ; clk        ; clk      ; None                        ; None                      ; 3.033 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                            ;                                               ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------+-----------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------+
+; tsu                                                            ;
++-------+--------------+------------+------+----------+----------+
+; Slack ; Required tsu ; Actual tsu ; From ; To       ; To Clock ;
++-------+--------------+------------+------+----------+----------+
+; N/A   ; None         ; 2.443 ns   ; sw4  ; data[10] ; clk      ;
+; N/A   ; None         ; 2.428 ns   ; sw4  ; data[18] ; clk      ;
+; N/A   ; None         ; 2.428 ns   ; sw4  ; data[22] ; clk      ;
+; N/A   ; None         ; 2.428 ns   ; sw4  ; data[6]  ; clk      ;
+; N/A   ; None         ; 2.428 ns   ; sw4  ; data[15] ; clk      ;
+; N/A   ; None         ; 2.401 ns   ; sw4  ; data[3]  ; clk      ;
+; N/A   ; None         ; 2.358 ns   ; sw4  ; data[28] ; clk      ;
+; N/A   ; None         ; 2.358 ns   ; sw4  ; data[25] ; clk      ;
+; N/A   ; None         ; 2.358 ns   ; sw4  ; data[7]  ; clk      ;
+; N/A   ; None         ; 2.150 ns   ; sw6  ; data[10] ; clk      ;
+; N/A   ; None         ; 2.135 ns   ; sw6  ; data[18] ; clk      ;
+; N/A   ; None         ; 2.135 ns   ; sw6  ; data[22] ; clk      ;
+; N/A   ; None         ; 2.135 ns   ; sw6  ; data[6]  ; clk      ;
+; N/A   ; None         ; 2.135 ns   ; sw6  ; data[15] ; clk      ;
+; N/A   ; None         ; 2.108 ns   ; sw6  ; data[3]  ; clk      ;
+; N/A   ; None         ; 2.065 ns   ; sw6  ; data[28] ; clk      ;
+; N/A   ; None         ; 2.065 ns   ; sw6  ; data[25] ; clk      ;
+; N/A   ; None         ; 2.065 ns   ; sw6  ; data[7]  ; clk      ;
+; N/A   ; None         ; 1.858 ns   ; sw5  ; data[10] ; clk      ;
+; N/A   ; None         ; 1.850 ns   ; sw0  ; data[10] ; clk      ;
+; N/A   ; None         ; 1.843 ns   ; sw5  ; data[18] ; clk      ;
+; N/A   ; None         ; 1.843 ns   ; sw5  ; data[22] ; clk      ;
+; N/A   ; None         ; 1.843 ns   ; sw5  ; data[6]  ; clk      ;
+; N/A   ; None         ; 1.843 ns   ; sw5  ; data[15] ; clk      ;
+; N/A   ; None         ; 1.835 ns   ; sw0  ; data[18] ; clk      ;
+; N/A   ; None         ; 1.835 ns   ; sw0  ; data[22] ; clk      ;
+; N/A   ; None         ; 1.835 ns   ; sw0  ; data[6]  ; clk      ;
+; N/A   ; None         ; 1.835 ns   ; sw0  ; data[15] ; clk      ;
+; N/A   ; None         ; 1.816 ns   ; sw5  ; data[3]  ; clk      ;
+; N/A   ; None         ; 1.808 ns   ; sw0  ; data[3]  ; clk      ;
+; N/A   ; None         ; 1.777 ns   ; sw4  ; data[19] ; clk      ;
+; N/A   ; None         ; 1.777 ns   ; sw4  ; data[11] ; clk      ;
+; N/A   ; None         ; 1.777 ns   ; sw4  ; data[23] ; clk      ;
+; N/A   ; None         ; 1.774 ns   ; sw2  ; data[10] ; clk      ;
+; N/A   ; None         ; 1.773 ns   ; sw5  ; data[28] ; clk      ;
+; N/A   ; None         ; 1.773 ns   ; sw5  ; data[25] ; clk      ;
+; N/A   ; None         ; 1.773 ns   ; sw5  ; data[7]  ; clk      ;
+; N/A   ; None         ; 1.765 ns   ; sw0  ; data[28] ; clk      ;
+; N/A   ; None         ; 1.765 ns   ; sw0  ; data[25] ; clk      ;
+; N/A   ; None         ; 1.765 ns   ; sw0  ; data[7]  ; clk      ;
+; N/A   ; None         ; 1.759 ns   ; sw2  ; data[18] ; clk      ;
+; N/A   ; None         ; 1.759 ns   ; sw2  ; data[22] ; clk      ;
+; N/A   ; None         ; 1.759 ns   ; sw2  ; data[6]  ; clk      ;
+; N/A   ; None         ; 1.759 ns   ; sw2  ; data[15] ; clk      ;
+; N/A   ; None         ; 1.732 ns   ; sw2  ; data[3]  ; clk      ;
+; N/A   ; None         ; 1.703 ns   ; sw3  ; data[10] ; clk      ;
+; N/A   ; None         ; 1.689 ns   ; sw2  ; data[28] ; clk      ;
+; N/A   ; None         ; 1.689 ns   ; sw2  ; data[25] ; clk      ;
+; N/A   ; None         ; 1.689 ns   ; sw2  ; data[7]  ; clk      ;
+; N/A   ; None         ; 1.688 ns   ; sw3  ; data[18] ; clk      ;
+; N/A   ; None         ; 1.688 ns   ; sw3  ; data[22] ; clk      ;
+; N/A   ; None         ; 1.688 ns   ; sw3  ; data[6]  ; clk      ;
+; N/A   ; None         ; 1.688 ns   ; sw3  ; data[15] ; clk      ;
+; N/A   ; None         ; 1.661 ns   ; sw3  ; data[3]  ; clk      ;
+; N/A   ; None         ; 1.618 ns   ; sw3  ; data[28] ; clk      ;
+; N/A   ; None         ; 1.618 ns   ; sw3  ; data[25] ; clk      ;
+; N/A   ; None         ; 1.618 ns   ; sw3  ; data[7]  ; clk      ;
+; N/A   ; None         ; 1.484 ns   ; sw6  ; data[19] ; clk      ;
+; N/A   ; None         ; 1.484 ns   ; sw6  ; data[11] ; clk      ;
+; N/A   ; None         ; 1.484 ns   ; sw6  ; data[23] ; clk      ;
+; N/A   ; None         ; 1.466 ns   ; sw1  ; data[10] ; clk      ;
+; N/A   ; None         ; 1.451 ns   ; sw1  ; data[18] ; clk      ;
+; N/A   ; None         ; 1.451 ns   ; sw1  ; data[22] ; clk      ;
+; N/A   ; None         ; 1.451 ns   ; sw1  ; data[6]  ; clk      ;
+; N/A   ; None         ; 1.451 ns   ; sw1  ; data[15] ; clk      ;
+; N/A   ; None         ; 1.424 ns   ; sw1  ; data[3]  ; clk      ;
+; N/A   ; None         ; 1.381 ns   ; sw1  ; data[28] ; clk      ;
+; N/A   ; None         ; 1.381 ns   ; sw1  ; data[25] ; clk      ;
+; N/A   ; None         ; 1.381 ns   ; sw1  ; data[7]  ; clk      ;
+; N/A   ; None         ; 1.334 ns   ; sw0  ; data[14] ; clk      ;
+; N/A   ; None         ; 1.291 ns   ; sw4  ; data[21] ; clk      ;
+; N/A   ; None         ; 1.291 ns   ; sw4  ; data[29] ; clk      ;
+; N/A   ; None         ; 1.291 ns   ; sw4  ; data[26] ; clk      ;
+; N/A   ; None         ; 1.291 ns   ; sw4  ; data[14] ; clk      ;
+; N/A   ; None         ; 1.291 ns   ; sw4  ; data[30] ; clk      ;
+; N/A   ; None         ; 1.291 ns   ; sw4  ; data[27] ; clk      ;
+; N/A   ; None         ; 1.291 ns   ; sw4  ; data[31] ; clk      ;
+; N/A   ; None         ; 1.192 ns   ; sw5  ; data[19] ; clk      ;
+; N/A   ; None         ; 1.192 ns   ; sw5  ; data[11] ; clk      ;
+; N/A   ; None         ; 1.192 ns   ; sw5  ; data[23] ; clk      ;
+; N/A   ; None         ; 1.184 ns   ; sw0  ; data[19] ; clk      ;
+; N/A   ; None         ; 1.184 ns   ; sw0  ; data[11] ; clk      ;
+; N/A   ; None         ; 1.184 ns   ; sw0  ; data[23] ; clk      ;
+; N/A   ; None         ; 1.136 ns   ; sw7  ; data[10] ; clk      ;
+; N/A   ; None         ; 1.121 ns   ; sw7  ; data[18] ; clk      ;
+; N/A   ; None         ; 1.121 ns   ; sw7  ; data[22] ; clk      ;
+; N/A   ; None         ; 1.121 ns   ; sw7  ; data[6]  ; clk      ;
+; N/A   ; None         ; 1.121 ns   ; sw7  ; data[15] ; clk      ;
+; N/A   ; None         ; 1.108 ns   ; sw2  ; data[19] ; clk      ;
+; N/A   ; None         ; 1.108 ns   ; sw2  ; data[11] ; clk      ;
+; N/A   ; None         ; 1.108 ns   ; sw2  ; data[23] ; clk      ;
+; N/A   ; None         ; 1.094 ns   ; sw7  ; data[3]  ; clk      ;
+; N/A   ; None         ; 1.051 ns   ; sw7  ; data[28] ; clk      ;
+; N/A   ; None         ; 1.051 ns   ; sw7  ; data[25] ; clk      ;
+; N/A   ; None         ; 1.051 ns   ; sw7  ; data[7]  ; clk      ;
+; N/A   ; None         ; 1.037 ns   ; sw3  ; data[19] ; clk      ;
+; N/A   ; None         ; 1.037 ns   ; sw3  ; data[11] ; clk      ;
+; N/A   ; None         ; 1.037 ns   ; sw3  ; data[23] ; clk      ;
+; N/A   ; None         ; 1.017 ns   ; sw5  ; data[21] ; clk      ;
+; N/A   ; None         ; 0.998 ns   ; sw6  ; data[21] ; clk      ;
+; N/A   ; None         ; 0.998 ns   ; sw6  ; data[29] ; clk      ;
+; N/A   ; None         ; 0.998 ns   ; sw6  ; data[26] ; clk      ;
+; N/A   ; None         ; 0.998 ns   ; sw6  ; data[14] ; clk      ;
+; N/A   ; None         ; 0.998 ns   ; sw6  ; data[30] ; clk      ;
+; N/A   ; None         ; 0.998 ns   ; sw6  ; data[27] ; clk      ;
+; N/A   ; None         ; 0.998 ns   ; sw6  ; data[31] ; clk      ;
+; N/A   ; None         ; 0.904 ns   ; sw1  ; data[14] ; clk      ;
+; N/A   ; None         ; 0.800 ns   ; sw1  ; data[19] ; clk      ;
+; N/A   ; None         ; 0.800 ns   ; sw1  ; data[11] ; clk      ;
+; N/A   ; None         ; 0.800 ns   ; sw1  ; data[23] ; clk      ;
+; N/A   ; None         ; 0.706 ns   ; sw5  ; data[29] ; clk      ;
+; N/A   ; None         ; 0.706 ns   ; sw5  ; data[26] ; clk      ;
+; N/A   ; None         ; 0.706 ns   ; sw5  ; data[14] ; clk      ;
+; N/A   ; None         ; 0.706 ns   ; sw5  ; data[30] ; clk      ;
+; N/A   ; None         ; 0.706 ns   ; sw5  ; data[27] ; clk      ;
+; N/A   ; None         ; 0.706 ns   ; sw5  ; data[31] ; clk      ;
+; N/A   ; None         ; 0.698 ns   ; sw0  ; data[21] ; clk      ;
+; N/A   ; None         ; 0.698 ns   ; sw0  ; data[29] ; clk      ;
+; N/A   ; None         ; 0.698 ns   ; sw0  ; data[26] ; clk      ;
+; N/A   ; None         ; 0.698 ns   ; sw0  ; data[30] ; clk      ;
+; N/A   ; None         ; 0.698 ns   ; sw0  ; data[27] ; clk      ;
+; N/A   ; None         ; 0.698 ns   ; sw0  ; data[31] ; clk      ;
+; N/A   ; None         ; 0.622 ns   ; sw2  ; data[21] ; clk      ;
+; N/A   ; None         ; 0.622 ns   ; sw2  ; data[29] ; clk      ;
+; N/A   ; None         ; 0.622 ns   ; sw2  ; data[26] ; clk      ;
+; N/A   ; None         ; 0.622 ns   ; sw2  ; data[14] ; clk      ;
+; N/A   ; None         ; 0.622 ns   ; sw2  ; data[30] ; clk      ;
+; N/A   ; None         ; 0.622 ns   ; sw2  ; data[27] ; clk      ;
+; N/A   ; None         ; 0.622 ns   ; sw2  ; data[31] ; clk      ;
+; N/A   ; None         ; 0.551 ns   ; sw3  ; data[21] ; clk      ;
+; N/A   ; None         ; 0.551 ns   ; sw3  ; data[29] ; clk      ;
+; N/A   ; None         ; 0.551 ns   ; sw3  ; data[26] ; clk      ;
+; N/A   ; None         ; 0.551 ns   ; sw3  ; data[14] ; clk      ;
+; N/A   ; None         ; 0.551 ns   ; sw3  ; data[30] ; clk      ;
+; N/A   ; None         ; 0.551 ns   ; sw3  ; data[27] ; clk      ;
+; N/A   ; None         ; 0.551 ns   ; sw3  ; data[31] ; clk      ;
+; N/A   ; None         ; 0.470 ns   ; sw7  ; data[19] ; clk      ;
+; N/A   ; None         ; 0.470 ns   ; sw7  ; data[11] ; clk      ;
+; N/A   ; None         ; 0.470 ns   ; sw7  ; data[23] ; clk      ;
+; N/A   ; None         ; 0.314 ns   ; sw1  ; data[21] ; clk      ;
+; N/A   ; None         ; 0.314 ns   ; sw1  ; data[29] ; clk      ;
+; N/A   ; None         ; 0.314 ns   ; sw1  ; data[26] ; clk      ;
+; N/A   ; None         ; 0.314 ns   ; sw1  ; data[30] ; clk      ;
+; N/A   ; None         ; 0.314 ns   ; sw1  ; data[27] ; clk      ;
+; N/A   ; None         ; 0.314 ns   ; sw1  ; data[31] ; clk      ;
+; N/A   ; None         ; -0.016 ns  ; sw7  ; data[21] ; clk      ;
+; N/A   ; None         ; -0.016 ns  ; sw7  ; data[29] ; clk      ;
+; N/A   ; None         ; -0.016 ns  ; sw7  ; data[26] ; clk      ;
+; N/A   ; None         ; -0.016 ns  ; sw7  ; data[14] ; clk      ;
+; N/A   ; None         ; -0.016 ns  ; sw7  ; data[30] ; clk      ;
+; N/A   ; None         ; -0.016 ns  ; sw7  ; data[27] ; clk      ;
+; N/A   ; None         ; -0.016 ns  ; sw7  ; data[31] ; clk      ;
++-------+--------------+------------+------+----------+----------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; tco                                                                                                    ;
++-------+--------------+------------+-----------------------------------------------+-------+------------+
+; Slack ; Required tco ; Actual tco ; From                                          ; To    ; From Clock ;
++-------+--------------+------------+-----------------------------------------------+-------+------------+
+; N/A   ; None         ; 22.999 ns  ; hc164_driver:hc164_driver_inst|seg_led_num[1] ; hc_si ; clk        ;
+; N/A   ; None         ; 22.719 ns  ; data[30]                                      ; hc_si ; clk        ;
+; N/A   ; None         ; 22.579 ns  ; hc164_driver:hc164_driver_inst|seg_led_num[2] ; hc_si ; clk        ;
+; N/A   ; None         ; 22.452 ns  ; data[22]                                      ; hc_si ; clk        ;
+; N/A   ; None         ; 22.219 ns  ; data[3]                                       ; hc_si ; clk        ;
+; N/A   ; None         ; 22.107 ns  ; data[27]                                      ; hc_si ; clk        ;
+; N/A   ; None         ; 21.980 ns  ; data[14]                                      ; hc_si ; clk        ;
+; N/A   ; None         ; 21.879 ns  ; data[31]                                      ; hc_si ; clk        ;
+; N/A   ; None         ; 21.817 ns  ; data[6]                                       ; hc_si ; clk        ;
+; N/A   ; None         ; 21.585 ns  ; data[26]                                      ; hc_si ; clk        ;
+; N/A   ; None         ; 21.433 ns  ; data[29]                                      ; hc_si ; clk        ;
+; N/A   ; None         ; 21.390 ns  ; data[15]                                      ; hc_si ; clk        ;
+; N/A   ; None         ; 21.342 ns  ; data[23]                                      ; hc_si ; clk        ;
+; N/A   ; None         ; 21.302 ns  ; data[7]                                       ; hc_si ; clk        ;
+; N/A   ; None         ; 21.275 ns  ; data[21]                                      ; hc_si ; clk        ;
+; N/A   ; None         ; 21.114 ns  ; data[10]                                      ; hc_si ; clk        ;
+; N/A   ; None         ; 21.077 ns  ; hc164_driver:hc164_driver_inst|seg_led_num[0] ; hc_si ; clk        ;
+; N/A   ; None         ; 21.066 ns  ; data[18]                                      ; hc_si ; clk        ;
+; N/A   ; None         ; 20.804 ns  ; data[25]                                      ; hc_si ; clk        ;
+; N/A   ; None         ; 20.614 ns  ; data[19]                                      ; hc_si ; clk        ;
+; N/A   ; None         ; 20.511 ns  ; data[28]                                      ; hc_si ; clk        ;
+; N/A   ; None         ; 20.109 ns  ; data[11]                                      ; hc_si ; clk        ;
+; N/A   ; None         ; 18.961 ns  ; hc164_driver:hc164_driver_inst|tx_cnt[1]      ; hc_si ; clk        ;
+; N/A   ; None         ; 18.746 ns  ; hc164_driver:hc164_driver_inst|tx_cnt[2]      ; hc_si ; clk        ;
+; N/A   ; None         ; 16.215 ns  ; hc164_driver:hc164_driver_inst|tx_cnt[4]      ; hc_si ; clk        ;
+; N/A   ; None         ; 15.864 ns  ; hc164_driver:hc164_driver_inst|tx_cnt[3]      ; hc_si ; clk        ;
+; N/A   ; None         ; 11.058 ns  ; hc164_driver:hc164_driver_inst|hc_cp          ; hc_cp ; clk        ;
++-------+--------------+------------+-----------------------------------------------+-------+------------+
+
+
++----------------------------------------------------------------------+
+; th                                                                   ;
++---------------+-------------+-----------+------+----------+----------+
+; Minimum Slack ; Required th ; Actual th ; From ; To       ; To Clock ;
++---------------+-------------+-----------+------+----------+----------+
+; N/A           ; None        ; 2.510 ns  ; sw2  ; data[30] ; clk      ;
+; N/A           ; None        ; 2.509 ns  ; sw2  ; data[26] ; clk      ;
+; N/A           ; None        ; 2.507 ns  ; sw2  ; data[27] ; clk      ;
+; N/A           ; None        ; 2.461 ns  ; sw3  ; data[29] ; clk      ;
+; N/A           ; None        ; 2.273 ns  ; sw1  ; data[31] ; clk      ;
+; N/A           ; None        ; 2.192 ns  ; sw4  ; data[23] ; clk      ;
+; N/A           ; None        ; 2.110 ns  ; sw1  ; data[21] ; clk      ;
+; N/A           ; None        ; 2.036 ns  ; sw2  ; data[21] ; clk      ;
+; N/A           ; None        ; 2.036 ns  ; sw2  ; data[31] ; clk      ;
+; N/A           ; None        ; 2.031 ns  ; sw2  ; data[14] ; clk      ;
+; N/A           ; None        ; 2.027 ns  ; sw2  ; data[29] ; clk      ;
+; N/A           ; None        ; 1.815 ns  ; sw2  ; data[22] ; clk      ;
+; N/A           ; None        ; 1.813 ns  ; sw2  ; data[15] ; clk      ;
+; N/A           ; None        ; 1.803 ns  ; sw1  ; data[26] ; clk      ;
+; N/A           ; None        ; 1.801 ns  ; sw4  ; data[6]  ; clk      ;
+; N/A           ; None        ; 1.801 ns  ; sw1  ; data[30] ; clk      ;
+; N/A           ; None        ; 1.801 ns  ; sw1  ; data[27] ; clk      ;
+; N/A           ; None        ; 1.793 ns  ; sw1  ; data[29] ; clk      ;
+; N/A           ; None        ; 1.698 ns  ; sw2  ; data[25] ; clk      ;
+; N/A           ; None        ; 1.697 ns  ; sw0  ; data[21] ; clk      ;
+; N/A           ; None        ; 1.679 ns  ; sw1  ; data[15] ; clk      ;
+; N/A           ; None        ; 1.677 ns  ; sw1  ; data[22] ; clk      ;
+; N/A           ; None        ; 1.672 ns  ; sw2  ; data[10] ; clk      ;
+; N/A           ; None        ; 1.669 ns  ; sw1  ; data[6]  ; clk      ;
+; N/A           ; None        ; 1.668 ns  ; sw0  ; data[6]  ; clk      ;
+; N/A           ; None        ; 1.642 ns  ; sw1  ; data[28] ; clk      ;
+; N/A           ; None        ; 1.586 ns  ; sw3  ; data[10] ; clk      ;
+; N/A           ; None        ; 1.586 ns  ; sw3  ; data[22] ; clk      ;
+; N/A           ; None        ; 1.567 ns  ; sw3  ; data[25] ; clk      ;
+; N/A           ; None        ; 1.555 ns  ; sw3  ; data[6]  ; clk      ;
+; N/A           ; None        ; 1.464 ns  ; sw5  ; data[14] ; clk      ;
+; N/A           ; None        ; 1.459 ns  ; sw5  ; data[30] ; clk      ;
+; N/A           ; None        ; 1.458 ns  ; sw5  ; data[31] ; clk      ;
+; N/A           ; None        ; 1.420 ns  ; sw3  ; data[14] ; clk      ;
+; N/A           ; None        ; 1.412 ns  ; sw3  ; data[30] ; clk      ;
+; N/A           ; None        ; 1.410 ns  ; sw3  ; data[26] ; clk      ;
+; N/A           ; None        ; 1.409 ns  ; sw3  ; data[27] ; clk      ;
+; N/A           ; None        ; 1.409 ns  ; sw3  ; data[31] ; clk      ;
+; N/A           ; None        ; 1.392 ns  ; sw0  ; data[7]  ; clk      ;
+; N/A           ; None        ; 1.207 ns  ; sw2  ; data[6]  ; clk      ;
+; N/A           ; None        ; 1.184 ns  ; sw0  ; data[28] ; clk      ;
+; N/A           ; None        ; 1.172 ns  ; sw6  ; data[14] ; clk      ;
+; N/A           ; None        ; 1.167 ns  ; sw6  ; data[30] ; clk      ;
+; N/A           ; None        ; 1.166 ns  ; sw6  ; data[31] ; clk      ;
+; N/A           ; None        ; 1.153 ns  ; sw4  ; data[26] ; clk      ;
+; N/A           ; None        ; 1.152 ns  ; sw4  ; data[27] ; clk      ;
+; N/A           ; None        ; 1.138 ns  ; sw0  ; data[29] ; clk      ;
+; N/A           ; None        ; 1.138 ns  ; sw0  ; data[26] ; clk      ;
+; N/A           ; None        ; 1.138 ns  ; sw0  ; data[30] ; clk      ;
+; N/A           ; None        ; 1.138 ns  ; sw0  ; data[27] ; clk      ;
+; N/A           ; None        ; 1.138 ns  ; sw0  ; data[31] ; clk      ;
+; N/A           ; None        ; 1.117 ns  ; sw1  ; data[19] ; clk      ;
+; N/A           ; None        ; 1.050 ns  ; sw2  ; data[28] ; clk      ;
+; N/A           ; None        ; 1.015 ns  ; sw0  ; data[22] ; clk      ;
+; N/A           ; None        ; 1.015 ns  ; sw0  ; data[15] ; clk      ;
+; N/A           ; None        ; 0.880 ns  ; sw3  ; data[19] ; clk      ;
+; N/A           ; None        ; 0.879 ns  ; sw4  ; data[14] ; clk      ;
+; N/A           ; None        ; 0.874 ns  ; sw4  ; data[30] ; clk      ;
+; N/A           ; None        ; 0.873 ns  ; sw4  ; data[31] ; clk      ;
+; N/A           ; None        ; 0.856 ns  ; sw4  ; data[10] ; clk      ;
+; N/A           ; None        ; 0.809 ns  ; sw2  ; data[19] ; clk      ;
+; N/A           ; None        ; 0.793 ns  ; sw4  ; data[22] ; clk      ;
+; N/A           ; None        ; 0.761 ns  ; sw5  ; data[26] ; clk      ;
+; N/A           ; None        ; 0.760 ns  ; sw5  ; data[27] ; clk      ;
+; N/A           ; None        ; 0.733 ns  ; sw0  ; data[19] ; clk      ;
+; N/A           ; None        ; 0.588 ns  ; sw1  ; data[23] ; clk      ;
+; N/A           ; None        ; 0.570 ns  ; sw7  ; data[21] ; clk      ;
+; N/A           ; None        ; 0.570 ns  ; sw7  ; data[29] ; clk      ;
+; N/A           ; None        ; 0.570 ns  ; sw7  ; data[26] ; clk      ;
+; N/A           ; None        ; 0.570 ns  ; sw7  ; data[14] ; clk      ;
+; N/A           ; None        ; 0.570 ns  ; sw7  ; data[30] ; clk      ;
+; N/A           ; None        ; 0.570 ns  ; sw7  ; data[27] ; clk      ;
+; N/A           ; None        ; 0.570 ns  ; sw7  ; data[31] ; clk      ;
+; N/A           ; None        ; 0.464 ns  ; sw5  ; data[10] ; clk      ;
+; N/A           ; None        ; 0.454 ns  ; sw4  ; data[25] ; clk      ;
+; N/A           ; None        ; 0.351 ns  ; sw3  ; data[23] ; clk      ;
+; N/A           ; None        ; 0.280 ns  ; sw2  ; data[23] ; clk      ;
+; N/A           ; None        ; 0.240 ns  ; sw1  ; data[14] ; clk      ;
+; N/A           ; None        ; 0.231 ns  ; sw5  ; data[29] ; clk      ;
+; N/A           ; None        ; 0.224 ns  ; sw6  ; data[29] ; clk      ;
+; N/A           ; None        ; 0.218 ns  ; sw1  ; data[18] ; clk      ;
+; N/A           ; None        ; 0.209 ns  ; sw6  ; data[21] ; clk      ;
+; N/A           ; None        ; 0.204 ns  ; sw0  ; data[23] ; clk      ;
+; N/A           ; None        ; 0.093 ns  ; sw3  ; data[21] ; clk      ;
+; N/A           ; None        ; 0.084 ns  ; sw7  ; data[19] ; clk      ;
+; N/A           ; None        ; 0.084 ns  ; sw7  ; data[11] ; clk      ;
+; N/A           ; None        ; 0.084 ns  ; sw7  ; data[23] ; clk      ;
+; N/A           ; None        ; 0.062 ns  ; sw5  ; data[25] ; clk      ;
+; N/A           ; None        ; -0.019 ns ; sw3  ; data[18] ; clk      ;
+; N/A           ; None        ; -0.022 ns ; sw1  ; data[10] ; clk      ;
+; N/A           ; None        ; -0.058 ns ; sw1  ; data[11] ; clk      ;
+; N/A           ; None        ; -0.090 ns ; sw2  ; data[18] ; clk      ;
+; N/A           ; None        ; -0.144 ns ; sw0  ; data[14] ; clk      ;
+; N/A           ; None        ; -0.152 ns ; sw5  ; data[21] ; clk      ;
+; N/A           ; None        ; -0.166 ns ; sw0  ; data[18] ; clk      ;
+; N/A           ; None        ; -0.238 ns ; sw4  ; data[29] ; clk      ;
+; N/A           ; None        ; -0.241 ns ; sw4  ; data[21] ; clk      ;
+; N/A           ; None        ; -0.302 ns ; sw1  ; data[25] ; clk      ;
+; N/A           ; None        ; -0.368 ns ; sw6  ; data[28] ; clk      ;
+; N/A           ; None        ; -0.444 ns ; sw6  ; data[26] ; clk      ;
+; N/A           ; None        ; -0.444 ns ; sw6  ; data[27] ; clk      ;
+; N/A           ; None        ; -0.452 ns ; sw0  ; data[10] ; clk      ;
+; N/A           ; None        ; -0.481 ns ; sw3  ; data[28] ; clk      ;
+; N/A           ; None        ; -0.483 ns ; sw3  ; data[11] ; clk      ;
+; N/A           ; None        ; -0.488 ns ; sw0  ; data[11] ; clk      ;
+; N/A           ; None        ; -0.497 ns ; sw7  ; data[28] ; clk      ;
+; N/A           ; None        ; -0.497 ns ; sw7  ; data[25] ; clk      ;
+; N/A           ; None        ; -0.497 ns ; sw7  ; data[7]  ; clk      ;
+; N/A           ; None        ; -0.540 ns ; sw7  ; data[3]  ; clk      ;
+; N/A           ; None        ; -0.554 ns ; sw2  ; data[11] ; clk      ;
+; N/A           ; None        ; -0.567 ns ; sw7  ; data[18] ; clk      ;
+; N/A           ; None        ; -0.567 ns ; sw7  ; data[22] ; clk      ;
+; N/A           ; None        ; -0.567 ns ; sw7  ; data[6]  ; clk      ;
+; N/A           ; None        ; -0.567 ns ; sw7  ; data[15] ; clk      ;
+; N/A           ; None        ; -0.582 ns ; sw7  ; data[10] ; clk      ;
+; N/A           ; None        ; -0.638 ns ; sw5  ; data[19] ; clk      ;
+; N/A           ; None        ; -0.638 ns ; sw5  ; data[11] ; clk      ;
+; N/A           ; None        ; -0.638 ns ; sw5  ; data[23] ; clk      ;
+; N/A           ; None        ; -0.732 ns ; sw0  ; data[25] ; clk      ;
+; N/A           ; None        ; -0.826 ns ; sw4  ; data[28] ; clk      ;
+; N/A           ; None        ; -0.827 ns ; sw1  ; data[7]  ; clk      ;
+; N/A           ; None        ; -0.870 ns ; sw1  ; data[3]  ; clk      ;
+; N/A           ; None        ; -0.930 ns ; sw6  ; data[19] ; clk      ;
+; N/A           ; None        ; -0.930 ns ; sw6  ; data[11] ; clk      ;
+; N/A           ; None        ; -0.930 ns ; sw6  ; data[23] ; clk      ;
+; N/A           ; None        ; -1.042 ns ; sw5  ; data[28] ; clk      ;
+; N/A           ; None        ; -1.064 ns ; sw3  ; data[7]  ; clk      ;
+; N/A           ; None        ; -1.107 ns ; sw3  ; data[3]  ; clk      ;
+; N/A           ; None        ; -1.134 ns ; sw3  ; data[15] ; clk      ;
+; N/A           ; None        ; -1.135 ns ; sw2  ; data[7]  ; clk      ;
+; N/A           ; None        ; -1.178 ns ; sw2  ; data[3]  ; clk      ;
+; N/A           ; None        ; -1.219 ns ; sw5  ; data[7]  ; clk      ;
+; N/A           ; None        ; -1.223 ns ; sw4  ; data[19] ; clk      ;
+; N/A           ; None        ; -1.223 ns ; sw4  ; data[11] ; clk      ;
+; N/A           ; None        ; -1.254 ns ; sw0  ; data[3]  ; clk      ;
+; N/A           ; None        ; -1.262 ns ; sw5  ; data[3]  ; clk      ;
+; N/A           ; None        ; -1.289 ns ; sw5  ; data[18] ; clk      ;
+; N/A           ; None        ; -1.289 ns ; sw5  ; data[22] ; clk      ;
+; N/A           ; None        ; -1.289 ns ; sw5  ; data[6]  ; clk      ;
+; N/A           ; None        ; -1.289 ns ; sw5  ; data[15] ; clk      ;
+; N/A           ; None        ; -1.511 ns ; sw6  ; data[25] ; clk      ;
+; N/A           ; None        ; -1.511 ns ; sw6  ; data[7]  ; clk      ;
+; N/A           ; None        ; -1.554 ns ; sw6  ; data[3]  ; clk      ;
+; N/A           ; None        ; -1.581 ns ; sw6  ; data[18] ; clk      ;
+; N/A           ; None        ; -1.581 ns ; sw6  ; data[22] ; clk      ;
+; N/A           ; None        ; -1.581 ns ; sw6  ; data[6]  ; clk      ;
+; N/A           ; None        ; -1.581 ns ; sw6  ; data[15] ; clk      ;
+; N/A           ; None        ; -1.596 ns ; sw6  ; data[10] ; clk      ;
+; N/A           ; None        ; -1.804 ns ; sw4  ; data[7]  ; clk      ;
+; N/A           ; None        ; -1.847 ns ; sw4  ; data[3]  ; clk      ;
+; N/A           ; None        ; -1.874 ns ; sw4  ; data[18] ; clk      ;
+; N/A           ; None        ; -1.874 ns ; sw4  ; data[15] ; clk      ;
++---------------+-------------+-----------+------+----------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Sun Nov 06 19:56:45 2011
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off segment -c segment
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 137.51 MHz between source register "hc164_driver:hc164_driver_inst|clk_cnt[7]" and destination register "hc164_driver:hc164_driver_inst|seg_led_num[1]" (period= 7.272 ns)
+    Info: + Longest register to register delay is 6.563 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X2_Y2_N9; Fanout = 3; REG Node = 'hc164_driver:hc164_driver_inst|clk_cnt[7]'
+        Info: 2: + IC(1.273 ns) + CELL(0.914 ns) = 2.187 ns; Loc. = LC_X3_Y2_N9; Fanout = 1; COMB Node = 'hc164_driver:hc164_driver_inst|Equal0~148'
+        Info: 3: + IC(2.486 ns) + CELL(0.511 ns) = 5.184 ns; Loc. = LC_X3_Y3_N3; Fanout = 3; COMB Node = 'hc164_driver:hc164_driver_inst|Equal0~150'
+        Info: 4: + IC(0.788 ns) + CELL(0.591 ns) = 6.563 ns; Loc. = LC_X3_Y3_N8; Fanout = 9; REG Node = 'hc164_driver:hc164_driver_inst|seg_led_num[1]'
+        Info: Total cell delay = 2.016 ns ( 30.72 % )
+        Info: Total interconnect delay = 4.547 ns ( 69.28 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 6.479 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 45; CLK Node = 'clk'
+            Info: 2: + IC(4.429 ns) + CELL(0.918 ns) = 6.479 ns; Loc. = LC_X3_Y3_N8; Fanout = 9; REG Node = 'hc164_driver:hc164_driver_inst|seg_led_num[1]'
+            Info: Total cell delay = 2.050 ns ( 31.64 % )
+            Info: Total interconnect delay = 4.429 ns ( 68.36 % )
+        Info: - Longest clock path from clock "clk" to source register is 6.479 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 45; CLK Node = 'clk'
+            Info: 2: + IC(4.429 ns) + CELL(0.918 ns) = 6.479 ns; Loc. = LC_X2_Y2_N9; Fanout = 3; REG Node = 'hc164_driver:hc164_driver_inst|clk_cnt[7]'
+            Info: Total cell delay = 2.050 ns ( 31.64 % )
+            Info: Total interconnect delay = 4.429 ns ( 68.36 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Info: tsu for register "data[10]" (data pin = "sw4", clock pin = "clk") is 2.443 ns
+    Info: + Longest pin to register delay is 8.589 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_77; Fanout = 8; PIN Node = 'sw4'
+        Info: 2: + IC(2.327 ns) + CELL(0.740 ns) = 4.199 ns; Loc. = LC_X6_Y3_N0; Fanout = 4; COMB Node = 'data[0]~2075'
+        Info: 3: + IC(0.815 ns) + CELL(0.511 ns) = 5.525 ns; Loc. = LC_X6_Y3_N3; Fanout = 19; COMB Node = 'data[0]~2076'
+        Info: 4: + IC(1.821 ns) + CELL(1.243 ns) = 8.589 ns; Loc. = LC_X4_Y3_N2; Fanout = 1; REG Node = 'data[10]'
+        Info: Total cell delay = 3.626 ns ( 42.22 % )
+        Info: Total interconnect delay = 4.963 ns ( 57.78 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 6.479 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 45; CLK Node = 'clk'
+        Info: 2: + IC(4.429 ns) + CELL(0.918 ns) = 6.479 ns; Loc. = LC_X4_Y3_N2; Fanout = 1; REG Node = 'data[10]'
+        Info: Total cell delay = 2.050 ns ( 31.64 % )
+        Info: Total interconnect delay = 4.429 ns ( 68.36 % )
+Info: tco from clock "clk" to destination pin "hc_si" through register "hc164_driver:hc164_driver_inst|seg_led_num[1]" is 22.999 ns
+    Info: + Longest clock path from clock "clk" to source register is 6.479 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 45; CLK Node = 'clk'
+        Info: 2: + IC(4.429 ns) + CELL(0.918 ns) = 6.479 ns; Loc. = LC_X3_Y3_N8; Fanout = 9; REG Node = 'hc164_driver:hc164_driver_inst|seg_led_num[1]'
+        Info: Total cell delay = 2.050 ns ( 31.64 % )
+        Info: Total interconnect delay = 4.429 ns ( 68.36 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 16.144 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X3_Y3_N8; Fanout = 9; REG Node = 'hc164_driver:hc164_driver_inst|seg_led_num[1]'
+        Info: 2: + IC(2.066 ns) + CELL(0.914 ns) = 2.980 ns; Loc. = LC_X5_Y3_N3; Fanout = 1; COMB Node = 'hc164_driver:hc164_driver_inst|Mux0~53'
+        Info: 3: + IC(0.305 ns) + CELL(0.200 ns) = 3.485 ns; Loc. = LC_X5_Y3_N4; Fanout = 1; COMB Node = 'hc164_driver:hc164_driver_inst|Mux0~54'
+        Info: 4: + IC(0.767 ns) + CELL(0.511 ns) = 4.763 ns; Loc. = LC_X5_Y3_N1; Fanout = 7; COMB Node = 'hc164_driver:hc164_driver_inst|Mux0~57'
+        Info: 5: + IC(1.239 ns) + CELL(0.914 ns) = 6.916 ns; Loc. = LC_X4_Y3_N5; Fanout = 1; COMB Node = 'hc164_driver:hc164_driver_inst|WideOr2~37'
+        Info: 6: + IC(0.770 ns) + CELL(0.511 ns) = 8.197 ns; Loc. = LC_X4_Y3_N4; Fanout = 1; COMB Node = 'hc164_driver:hc164_driver_inst|Mux5~295'
+        Info: 7: + IC(0.769 ns) + CELL(0.511 ns) = 9.477 ns; Loc. = LC_X4_Y3_N6; Fanout = 1; COMB Node = 'hc164_driver:hc164_driver_inst|Mux5~296'
+        Info: 8: + IC(1.863 ns) + CELL(0.511 ns) = 11.851 ns; Loc. = LC_X2_Y3_N6; Fanout = 1; COMB Node = 'hc164_driver:hc164_driver_inst|Mux5~299'
+        Info: 9: + IC(1.971 ns) + CELL(2.322 ns) = 16.144 ns; Loc. = PIN_26; Fanout = 0; PIN Node = 'hc_si'
+        Info: Total cell delay = 6.394 ns ( 39.61 % )
+        Info: Total interconnect delay = 9.750 ns ( 60.39 % )
+Info: th for register "data[30]" (data pin = "sw2", clock pin = "clk") is 2.510 ns
+    Info: + Longest clock path from clock "clk" to destination register is 6.479 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 45; CLK Node = 'clk'
+        Info: 2: + IC(4.429 ns) + CELL(0.918 ns) = 6.479 ns; Loc. = LC_X6_Y3_N8; Fanout = 1; REG Node = 'data[30]'
+        Info: Total cell delay = 2.050 ns ( 31.64 % )
+        Info: Total interconnect delay = 4.429 ns ( 68.36 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 4.190 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_75; Fanout = 14; PIN Node = 'sw2'
+        Info: 2: + IC(2.467 ns) + CELL(0.591 ns) = 4.190 ns; Loc. = LC_X6_Y3_N8; Fanout = 1; REG Node = 'data[30]'
+        Info: Total cell delay = 1.723 ns ( 41.12 % )
+        Info: Total interconnect delay = 2.467 ns ( 58.88 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Allocated 111 megabytes of memory during processing
+    Info: Processing ended: Sun Nov 06 19:56:46 2011
+    Info: Elapsed time: 00:00:01
+
+

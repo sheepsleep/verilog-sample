@@ -1,0 +1,408 @@
+Classic Timing Analyzer report for RS232
+Sun Nov 27 16:50:18 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                    ;
++------------------------------+-------+---------------+----------------------------------+----------------------------------+----------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                             ; To                                     ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+----------------------------------+----------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 0.932 ns                         ; Uart2_R                          ; async_receiver:inst|RxD_sync_inv[0]    ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 11.838 ns                        ; async_transmitter:inst1|TxD      ; Uart2_T                                ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -0.378 ns                        ; Uart2_R                          ; async_receiver:inst|RxD_sync_inv[0]    ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 121.36 MHz ( period = 8.240 ns ) ; async_transmitter:inst1|state[0] ; async_transmitter:inst1|TxD_dataReg[2] ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                  ;                                        ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+----------------------------------+----------------------------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EPM240T100C5       ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                                                      ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------------------+----------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                         ; To                                           ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------------------+----------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 121.36 MHz ( period = 8.240 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|TxD_dataReg[4]       ; clk        ; clk      ; None                        ; None                      ; 7.531 ns                ;
+; N/A                                     ; 121.36 MHz ( period = 8.240 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|TxD_dataReg[6]       ; clk        ; clk      ; None                        ; None                      ; 7.531 ns                ;
+; N/A                                     ; 121.36 MHz ( period = 8.240 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|TxD_dataReg[7]       ; clk        ; clk      ; None                        ; None                      ; 7.531 ns                ;
+; N/A                                     ; 121.36 MHz ( period = 8.240 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|TxD_dataReg[5]       ; clk        ; clk      ; None                        ; None                      ; 7.531 ns                ;
+; N/A                                     ; 121.36 MHz ( period = 8.240 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|TxD_dataReg[0]       ; clk        ; clk      ; None                        ; None                      ; 7.531 ns                ;
+; N/A                                     ; 121.36 MHz ( period = 8.240 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|TxD_dataReg[1]       ; clk        ; clk      ; None                        ; None                      ; 7.531 ns                ;
+; N/A                                     ; 121.36 MHz ( period = 8.240 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|TxD_dataReg[3]       ; clk        ; clk      ; None                        ; None                      ; 7.531 ns                ;
+; N/A                                     ; 121.36 MHz ( period = 8.240 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|TxD_dataReg[2]       ; clk        ; clk      ; None                        ; None                      ; 7.531 ns                ;
+; N/A                                     ; 123.47 MHz ( period = 8.099 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|TxD_dataReg[4]       ; clk        ; clk      ; None                        ; None                      ; 7.390 ns                ;
+; N/A                                     ; 123.47 MHz ( period = 8.099 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|TxD_dataReg[6]       ; clk        ; clk      ; None                        ; None                      ; 7.390 ns                ;
+; N/A                                     ; 123.47 MHz ( period = 8.099 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|TxD_dataReg[7]       ; clk        ; clk      ; None                        ; None                      ; 7.390 ns                ;
+; N/A                                     ; 123.47 MHz ( period = 8.099 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|TxD_dataReg[5]       ; clk        ; clk      ; None                        ; None                      ; 7.390 ns                ;
+; N/A                                     ; 123.47 MHz ( period = 8.099 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|TxD_dataReg[0]       ; clk        ; clk      ; None                        ; None                      ; 7.390 ns                ;
+; N/A                                     ; 123.47 MHz ( period = 8.099 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|TxD_dataReg[1]       ; clk        ; clk      ; None                        ; None                      ; 7.390 ns                ;
+; N/A                                     ; 123.47 MHz ( period = 8.099 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|TxD_dataReg[3]       ; clk        ; clk      ; None                        ; None                      ; 7.390 ns                ;
+; N/A                                     ; 123.47 MHz ( period = 8.099 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|TxD_dataReg[2]       ; clk        ; clk      ; None                        ; None                      ; 7.390 ns                ;
+; N/A                                     ; 126.42 MHz ( period = 7.910 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|TxD_dataReg[4]       ; clk        ; clk      ; None                        ; None                      ; 7.201 ns                ;
+; N/A                                     ; 126.42 MHz ( period = 7.910 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|TxD_dataReg[6]       ; clk        ; clk      ; None                        ; None                      ; 7.201 ns                ;
+; N/A                                     ; 126.42 MHz ( period = 7.910 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|TxD_dataReg[7]       ; clk        ; clk      ; None                        ; None                      ; 7.201 ns                ;
+; N/A                                     ; 126.42 MHz ( period = 7.910 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|TxD_dataReg[5]       ; clk        ; clk      ; None                        ; None                      ; 7.201 ns                ;
+; N/A                                     ; 126.42 MHz ( period = 7.910 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|TxD_dataReg[0]       ; clk        ; clk      ; None                        ; None                      ; 7.201 ns                ;
+; N/A                                     ; 126.42 MHz ( period = 7.910 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|TxD_dataReg[1]       ; clk        ; clk      ; None                        ; None                      ; 7.201 ns                ;
+; N/A                                     ; 126.42 MHz ( period = 7.910 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|TxD_dataReg[3]       ; clk        ; clk      ; None                        ; None                      ; 7.201 ns                ;
+; N/A                                     ; 126.42 MHz ( period = 7.910 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|TxD_dataReg[2]       ; clk        ; clk      ; None                        ; None                      ; 7.201 ns                ;
+; N/A                                     ; 130.17 MHz ( period = 7.682 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|TxD                  ; clk        ; clk      ; None                        ; None                      ; 6.973 ns                ;
+; N/A                                     ; 132.26 MHz ( period = 7.561 ns )                    ; async_transmitter:inst1|state[2]             ; async_transmitter:inst1|TxD_dataReg[4]       ; clk        ; clk      ; None                        ; None                      ; 6.852 ns                ;
+; N/A                                     ; 132.26 MHz ( period = 7.561 ns )                    ; async_transmitter:inst1|state[2]             ; async_transmitter:inst1|TxD_dataReg[6]       ; clk        ; clk      ; None                        ; None                      ; 6.852 ns                ;
+; N/A                                     ; 132.26 MHz ( period = 7.561 ns )                    ; async_transmitter:inst1|state[2]             ; async_transmitter:inst1|TxD_dataReg[7]       ; clk        ; clk      ; None                        ; None                      ; 6.852 ns                ;
+; N/A                                     ; 132.26 MHz ( period = 7.561 ns )                    ; async_transmitter:inst1|state[2]             ; async_transmitter:inst1|TxD_dataReg[5]       ; clk        ; clk      ; None                        ; None                      ; 6.852 ns                ;
+; N/A                                     ; 132.26 MHz ( period = 7.561 ns )                    ; async_transmitter:inst1|state[2]             ; async_transmitter:inst1|TxD_dataReg[0]       ; clk        ; clk      ; None                        ; None                      ; 6.852 ns                ;
+; N/A                                     ; 132.26 MHz ( period = 7.561 ns )                    ; async_transmitter:inst1|state[2]             ; async_transmitter:inst1|TxD_dataReg[1]       ; clk        ; clk      ; None                        ; None                      ; 6.852 ns                ;
+; N/A                                     ; 132.26 MHz ( period = 7.561 ns )                    ; async_transmitter:inst1|state[2]             ; async_transmitter:inst1|TxD_dataReg[3]       ; clk        ; clk      ; None                        ; None                      ; 6.852 ns                ;
+; N/A                                     ; 132.26 MHz ( period = 7.561 ns )                    ; async_transmitter:inst1|state[2]             ; async_transmitter:inst1|TxD_dataReg[2]       ; clk        ; clk      ; None                        ; None                      ; 6.852 ns                ;
+; N/A                                     ; 133.51 MHz ( period = 7.490 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|TxD                  ; clk        ; clk      ; None                        ; None                      ; 6.781 ns                ;
+; N/A                                     ; 134.72 MHz ( period = 7.423 ns )                    ; async_receiver:inst|bit_spacing[1]           ; async_receiver:inst|RxD_data[7]              ; clk        ; clk      ; None                        ; None                      ; 6.714 ns                ;
+; N/A                                     ; 134.72 MHz ( period = 7.423 ns )                    ; async_receiver:inst|bit_spacing[1]           ; async_receiver:inst|RxD_data[6]              ; clk        ; clk      ; None                        ; None                      ; 6.714 ns                ;
+; N/A                                     ; 134.72 MHz ( period = 7.423 ns )                    ; async_receiver:inst|bit_spacing[1]           ; async_receiver:inst|RxD_data[5]              ; clk        ; clk      ; None                        ; None                      ; 6.714 ns                ;
+; N/A                                     ; 134.72 MHz ( period = 7.423 ns )                    ; async_receiver:inst|bit_spacing[1]           ; async_receiver:inst|RxD_data[4]              ; clk        ; clk      ; None                        ; None                      ; 6.714 ns                ;
+; N/A                                     ; 134.72 MHz ( period = 7.423 ns )                    ; async_receiver:inst|bit_spacing[1]           ; async_receiver:inst|RxD_data[3]              ; clk        ; clk      ; None                        ; None                      ; 6.714 ns                ;
+; N/A                                     ; 134.72 MHz ( period = 7.423 ns )                    ; async_receiver:inst|bit_spacing[1]           ; async_receiver:inst|RxD_data[2]              ; clk        ; clk      ; None                        ; None                      ; 6.714 ns                ;
+; N/A                                     ; 134.72 MHz ( period = 7.423 ns )                    ; async_receiver:inst|bit_spacing[1]           ; async_receiver:inst|RxD_data[1]              ; clk        ; clk      ; None                        ; None                      ; 6.714 ns                ;
+; N/A                                     ; 134.72 MHz ( period = 7.423 ns )                    ; async_receiver:inst|bit_spacing[1]           ; async_receiver:inst|RxD_data[0]              ; clk        ; clk      ; None                        ; None                      ; 6.714 ns                ;
+; N/A                                     ; 141.54 MHz ( period = 7.065 ns )                    ; async_receiver:inst|bit_spacing[1]           ; async_receiver:inst|state[3]                 ; clk        ; clk      ; None                        ; None                      ; 6.356 ns                ;
+; N/A                                     ; 143.95 MHz ( period = 6.947 ns )                    ; async_transmitter:inst1|TxD_dataReg[4]       ; async_transmitter:inst1|TxD                  ; clk        ; clk      ; None                        ; None                      ; 6.238 ns                ;
+; N/A                                     ; 143.99 MHz ( period = 6.945 ns )                    ; async_receiver:inst|bit_spacing[0]           ; async_receiver:inst|RxD_data[7]              ; clk        ; clk      ; None                        ; None                      ; 6.236 ns                ;
+; N/A                                     ; 143.99 MHz ( period = 6.945 ns )                    ; async_receiver:inst|bit_spacing[0]           ; async_receiver:inst|RxD_data[6]              ; clk        ; clk      ; None                        ; None                      ; 6.236 ns                ;
+; N/A                                     ; 143.99 MHz ( period = 6.945 ns )                    ; async_receiver:inst|bit_spacing[0]           ; async_receiver:inst|RxD_data[5]              ; clk        ; clk      ; None                        ; None                      ; 6.236 ns                ;
+; N/A                                     ; 143.99 MHz ( period = 6.945 ns )                    ; async_receiver:inst|bit_spacing[0]           ; async_receiver:inst|RxD_data[4]              ; clk        ; clk      ; None                        ; None                      ; 6.236 ns                ;
+; N/A                                     ; 143.99 MHz ( period = 6.945 ns )                    ; async_receiver:inst|bit_spacing[0]           ; async_receiver:inst|RxD_data[3]              ; clk        ; clk      ; None                        ; None                      ; 6.236 ns                ;
+; N/A                                     ; 143.99 MHz ( period = 6.945 ns )                    ; async_receiver:inst|bit_spacing[0]           ; async_receiver:inst|RxD_data[2]              ; clk        ; clk      ; None                        ; None                      ; 6.236 ns                ;
+; N/A                                     ; 143.99 MHz ( period = 6.945 ns )                    ; async_receiver:inst|bit_spacing[0]           ; async_receiver:inst|RxD_data[1]              ; clk        ; clk      ; None                        ; None                      ; 6.236 ns                ;
+; N/A                                     ; 143.99 MHz ( period = 6.945 ns )                    ; async_receiver:inst|bit_spacing[0]           ; async_receiver:inst|RxD_data[0]              ; clk        ; clk      ; None                        ; None                      ; 6.236 ns                ;
+; N/A                                     ; 146.50 MHz ( period = 6.826 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|state[0]             ; clk        ; clk      ; None                        ; None                      ; 6.117 ns                ;
+; N/A                                     ; 147.95 MHz ( period = 6.759 ns )                    ; async_transmitter:inst1|TxD_dataReg[0]       ; async_transmitter:inst1|TxD                  ; clk        ; clk      ; None                        ; None                      ; 6.050 ns                ;
+; N/A                                     ; 149.68 MHz ( period = 6.681 ns )                    ; async_receiver:inst|bit_spacing[3]           ; async_receiver:inst|RxD_data[7]              ; clk        ; clk      ; None                        ; None                      ; 5.972 ns                ;
+; N/A                                     ; 149.68 MHz ( period = 6.681 ns )                    ; async_receiver:inst|bit_spacing[3]           ; async_receiver:inst|RxD_data[6]              ; clk        ; clk      ; None                        ; None                      ; 5.972 ns                ;
+; N/A                                     ; 149.68 MHz ( period = 6.681 ns )                    ; async_receiver:inst|bit_spacing[3]           ; async_receiver:inst|RxD_data[5]              ; clk        ; clk      ; None                        ; None                      ; 5.972 ns                ;
+; N/A                                     ; 149.68 MHz ( period = 6.681 ns )                    ; async_receiver:inst|bit_spacing[3]           ; async_receiver:inst|RxD_data[4]              ; clk        ; clk      ; None                        ; None                      ; 5.972 ns                ;
+; N/A                                     ; 149.68 MHz ( period = 6.681 ns )                    ; async_receiver:inst|bit_spacing[3]           ; async_receiver:inst|RxD_data[3]              ; clk        ; clk      ; None                        ; None                      ; 5.972 ns                ;
+; N/A                                     ; 149.68 MHz ( period = 6.681 ns )                    ; async_receiver:inst|bit_spacing[3]           ; async_receiver:inst|RxD_data[2]              ; clk        ; clk      ; None                        ; None                      ; 5.972 ns                ;
+; N/A                                     ; 149.68 MHz ( period = 6.681 ns )                    ; async_receiver:inst|bit_spacing[3]           ; async_receiver:inst|RxD_data[1]              ; clk        ; clk      ; None                        ; None                      ; 5.972 ns                ;
+; N/A                                     ; 149.68 MHz ( period = 6.681 ns )                    ; async_receiver:inst|bit_spacing[3]           ; async_receiver:inst|RxD_data[0]              ; clk        ; clk      ; None                        ; None                      ; 5.972 ns                ;
+; N/A                                     ; 150.13 MHz ( period = 6.661 ns )                    ; async_receiver:inst|Baud8GeneratorAcc[16]    ; async_receiver:inst|RxD_data_ready           ; clk        ; clk      ; None                        ; None                      ; 5.952 ns                ;
+; N/A                                     ; 151.13 MHz ( period = 6.617 ns )                    ; async_receiver:inst|bit_spacing[1]           ; async_receiver:inst|state[2]                 ; clk        ; clk      ; None                        ; None                      ; 5.908 ns                ;
+; N/A                                     ; 151.81 MHz ( period = 6.587 ns )                    ; async_receiver:inst|bit_spacing[0]           ; async_receiver:inst|state[3]                 ; clk        ; clk      ; None                        ; None                      ; 5.878 ns                ;
+; N/A                                     ; 152.18 MHz ( period = 6.571 ns )                    ; async_receiver:inst|state[2]                 ; async_receiver:inst|bit_spacing[2]           ; clk        ; clk      ; None                        ; None                      ; 5.862 ns                ;
+; N/A                                     ; 154.18 MHz ( period = 6.486 ns )                    ; async_receiver:inst|Baud8GeneratorAcc[16]    ; async_receiver:inst|bit_spacing[2]           ; clk        ; clk      ; None                        ; None                      ; 5.777 ns                ;
+; N/A                                     ; 155.35 MHz ( period = 6.437 ns )                    ; async_receiver:inst|state[3]                 ; async_receiver:inst|bit_spacing[2]           ; clk        ; clk      ; None                        ; None                      ; 5.728 ns                ;
+; N/A                                     ; 155.91 MHz ( period = 6.414 ns )                    ; async_receiver:inst|state[3]                 ; async_receiver:inst|RxD_data[7]              ; clk        ; clk      ; None                        ; None                      ; 5.705 ns                ;
+; N/A                                     ; 155.91 MHz ( period = 6.414 ns )                    ; async_receiver:inst|state[3]                 ; async_receiver:inst|RxD_data[6]              ; clk        ; clk      ; None                        ; None                      ; 5.705 ns                ;
+; N/A                                     ; 155.91 MHz ( period = 6.414 ns )                    ; async_receiver:inst|state[3]                 ; async_receiver:inst|RxD_data[5]              ; clk        ; clk      ; None                        ; None                      ; 5.705 ns                ;
+; N/A                                     ; 155.91 MHz ( period = 6.414 ns )                    ; async_receiver:inst|state[3]                 ; async_receiver:inst|RxD_data[4]              ; clk        ; clk      ; None                        ; None                      ; 5.705 ns                ;
+; N/A                                     ; 155.91 MHz ( period = 6.414 ns )                    ; async_receiver:inst|state[3]                 ; async_receiver:inst|RxD_data[3]              ; clk        ; clk      ; None                        ; None                      ; 5.705 ns                ;
+; N/A                                     ; 155.91 MHz ( period = 6.414 ns )                    ; async_receiver:inst|state[3]                 ; async_receiver:inst|RxD_data[2]              ; clk        ; clk      ; None                        ; None                      ; 5.705 ns                ;
+; N/A                                     ; 155.91 MHz ( period = 6.414 ns )                    ; async_receiver:inst|state[3]                 ; async_receiver:inst|RxD_data[1]              ; clk        ; clk      ; None                        ; None                      ; 5.705 ns                ;
+; N/A                                     ; 155.91 MHz ( period = 6.414 ns )                    ; async_receiver:inst|state[3]                 ; async_receiver:inst|RxD_data[0]              ; clk        ; clk      ; None                        ; None                      ; 5.705 ns                ;
+; N/A                                     ; 156.49 MHz ( period = 6.390 ns )                    ; async_transmitter:inst1|TxD_dataReg[6]       ; async_transmitter:inst1|TxD                  ; clk        ; clk      ; None                        ; None                      ; 5.681 ns                ;
+; N/A                                     ; 156.76 MHz ( period = 6.379 ns )                    ; async_receiver:inst|bit_spacing[1]           ; async_receiver:inst|state[0]                 ; clk        ; clk      ; None                        ; None                      ; 5.670 ns                ;
+; N/A                                     ; 156.81 MHz ( period = 6.377 ns )                    ; async_receiver:inst|bit_spacing[1]           ; async_receiver:inst|state[1]                 ; clk        ; clk      ; None                        ; None                      ; 5.668 ns                ;
+; N/A                                     ; 158.15 MHz ( period = 6.323 ns )                    ; async_receiver:inst|bit_spacing[3]           ; async_receiver:inst|state[3]                 ; clk        ; clk      ; None                        ; None                      ; 5.614 ns                ;
+; N/A                                     ; 161.32 MHz ( period = 6.199 ns )                    ; async_transmitter:inst1|BaudGeneratorAcc[16] ; async_transmitter:inst1|state[3]             ; clk        ; clk      ; None                        ; None                      ; 5.490 ns                ;
+; N/A                                     ; 161.50 MHz ( period = 6.192 ns )                    ; async_receiver:inst|bit_spacing[2]           ; async_receiver:inst|RxD_data[7]              ; clk        ; clk      ; None                        ; None                      ; 5.483 ns                ;
+; N/A                                     ; 161.50 MHz ( period = 6.192 ns )                    ; async_receiver:inst|bit_spacing[2]           ; async_receiver:inst|RxD_data[6]              ; clk        ; clk      ; None                        ; None                      ; 5.483 ns                ;
+; N/A                                     ; 161.50 MHz ( period = 6.192 ns )                    ; async_receiver:inst|bit_spacing[2]           ; async_receiver:inst|RxD_data[5]              ; clk        ; clk      ; None                        ; None                      ; 5.483 ns                ;
+; N/A                                     ; 161.50 MHz ( period = 6.192 ns )                    ; async_receiver:inst|bit_spacing[2]           ; async_receiver:inst|RxD_data[4]              ; clk        ; clk      ; None                        ; None                      ; 5.483 ns                ;
+; N/A                                     ; 161.50 MHz ( period = 6.192 ns )                    ; async_receiver:inst|bit_spacing[2]           ; async_receiver:inst|RxD_data[3]              ; clk        ; clk      ; None                        ; None                      ; 5.483 ns                ;
+; N/A                                     ; 161.50 MHz ( period = 6.192 ns )                    ; async_receiver:inst|bit_spacing[2]           ; async_receiver:inst|RxD_data[2]              ; clk        ; clk      ; None                        ; None                      ; 5.483 ns                ;
+; N/A                                     ; 161.50 MHz ( period = 6.192 ns )                    ; async_receiver:inst|bit_spacing[2]           ; async_receiver:inst|RxD_data[1]              ; clk        ; clk      ; None                        ; None                      ; 5.483 ns                ;
+; N/A                                     ; 161.50 MHz ( period = 6.192 ns )                    ; async_receiver:inst|bit_spacing[2]           ; async_receiver:inst|RxD_data[0]              ; clk        ; clk      ; None                        ; None                      ; 5.483 ns                ;
+; N/A                                     ; 162.89 MHz ( period = 6.139 ns )                    ; async_receiver:inst|bit_spacing[0]           ; async_receiver:inst|state[2]                 ; clk        ; clk      ; None                        ; None                      ; 5.430 ns                ;
+; N/A                                     ; 163.77 MHz ( period = 6.106 ns )                    ; async_receiver:inst|bit_spacing[1]           ; async_receiver:inst|RxD_data_ready           ; clk        ; clk      ; None                        ; None                      ; 5.397 ns                ;
+; N/A                                     ; 165.02 MHz ( period = 6.060 ns )                    ; async_receiver:inst|state[2]                 ; async_receiver:inst|bit_spacing[1]           ; clk        ; clk      ; None                        ; None                      ; 5.351 ns                ;
+; N/A                                     ; 165.02 MHz ( period = 6.060 ns )                    ; async_receiver:inst|state[2]                 ; async_receiver:inst|bit_spacing[0]           ; clk        ; clk      ; None                        ; None                      ; 5.351 ns                ;
+; N/A                                     ; 166.50 MHz ( period = 6.006 ns )                    ; async_transmitter:inst1|BaudGeneratorAcc[16] ; async_transmitter:inst1|state[1]             ; clk        ; clk      ; None                        ; None                      ; 5.297 ns                ;
+; N/A                                     ; 167.36 MHz ( period = 5.975 ns )                    ; async_receiver:inst|Baud8GeneratorAcc[16]    ; async_receiver:inst|bit_spacing[1]           ; clk        ; clk      ; None                        ; None                      ; 5.266 ns                ;
+; N/A                                     ; 167.36 MHz ( period = 5.975 ns )                    ; async_receiver:inst|Baud8GeneratorAcc[16]    ; async_receiver:inst|bit_spacing[0]           ; clk        ; clk      ; None                        ; None                      ; 5.266 ns                ;
+; N/A                                     ; 168.52 MHz ( period = 5.934 ns )                    ; async_transmitter:inst1|BaudGeneratorAcc[16] ; async_transmitter:inst1|state[2]             ; clk        ; clk      ; None                        ; None                      ; 5.225 ns                ;
+; N/A                                     ; 168.61 MHz ( period = 5.931 ns )                    ; async_receiver:inst|state[1]                 ; async_receiver:inst|bit_spacing[2]           ; clk        ; clk      ; None                        ; None                      ; 5.222 ns                ;
+; N/A                                     ; 168.75 MHz ( period = 5.926 ns )                    ; async_receiver:inst|state[3]                 ; async_receiver:inst|bit_spacing[1]           ; clk        ; clk      ; None                        ; None                      ; 5.217 ns                ;
+; N/A                                     ; 168.75 MHz ( period = 5.926 ns )                    ; async_receiver:inst|state[3]                 ; async_receiver:inst|bit_spacing[0]           ; clk        ; clk      ; None                        ; None                      ; 5.217 ns                ;
+; N/A                                     ; 169.18 MHz ( period = 5.911 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|BaudGeneratorAcc[7]  ; clk        ; clk      ; None                        ; None                      ; 5.202 ns                ;
+; N/A                                     ; 169.18 MHz ( period = 5.911 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|BaudGeneratorAcc[2]  ; clk        ; clk      ; None                        ; None                      ; 5.202 ns                ;
+; N/A                                     ; 169.18 MHz ( period = 5.911 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|BaudGeneratorAcc[6]  ; clk        ; clk      ; None                        ; None                      ; 5.202 ns                ;
+; N/A                                     ; 169.18 MHz ( period = 5.911 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|BaudGeneratorAcc[5]  ; clk        ; clk      ; None                        ; None                      ; 5.202 ns                ;
+; N/A                                     ; 169.18 MHz ( period = 5.911 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|BaudGeneratorAcc[4]  ; clk        ; clk      ; None                        ; None                      ; 5.202 ns                ;
+; N/A                                     ; 169.18 MHz ( period = 5.911 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|BaudGeneratorAcc[3]  ; clk        ; clk      ; None                        ; None                      ; 5.202 ns                ;
+; N/A                                     ; 169.18 MHz ( period = 5.911 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|BaudGeneratorAcc[1]  ; clk        ; clk      ; None                        ; None                      ; 5.202 ns                ;
+; N/A                                     ; 169.46 MHz ( period = 5.901 ns )                    ; async_receiver:inst|bit_spacing[0]           ; async_receiver:inst|state[0]                 ; clk        ; clk      ; None                        ; None                      ; 5.192 ns                ;
+; N/A                                     ; 169.49 MHz ( period = 5.900 ns )                    ; async_transmitter:inst1|state[2]             ; async_transmitter:inst1|state[0]             ; clk        ; clk      ; None                        ; None                      ; 5.191 ns                ;
+; N/A                                     ; 169.52 MHz ( period = 5.899 ns )                    ; async_receiver:inst|bit_spacing[0]           ; async_receiver:inst|state[1]                 ; clk        ; clk      ; None                        ; None                      ; 5.190 ns                ;
+; N/A                                     ; 170.21 MHz ( period = 5.875 ns )                    ; async_receiver:inst|bit_spacing[3]           ; async_receiver:inst|state[2]                 ; clk        ; clk      ; None                        ; None                      ; 5.166 ns                ;
+; N/A                                     ; 171.41 MHz ( period = 5.834 ns )                    ; async_receiver:inst|bit_spacing[2]           ; async_receiver:inst|state[3]                 ; clk        ; clk      ; None                        ; None                      ; 5.125 ns                ;
+; N/A                                     ; 172.00 MHz ( period = 5.814 ns )                    ; async_receiver:inst|RxD_data_ready           ; async_transmitter:inst1|TxD_dataReg[4]       ; clk        ; clk      ; None                        ; None                      ; 5.105 ns                ;
+; N/A                                     ; 172.00 MHz ( period = 5.814 ns )                    ; async_receiver:inst|RxD_data_ready           ; async_transmitter:inst1|TxD_dataReg[6]       ; clk        ; clk      ; None                        ; None                      ; 5.105 ns                ;
+; N/A                                     ; 172.00 MHz ( period = 5.814 ns )                    ; async_receiver:inst|RxD_data_ready           ; async_transmitter:inst1|TxD_dataReg[7]       ; clk        ; clk      ; None                        ; None                      ; 5.105 ns                ;
+; N/A                                     ; 172.00 MHz ( period = 5.814 ns )                    ; async_receiver:inst|RxD_data_ready           ; async_transmitter:inst1|TxD_dataReg[5]       ; clk        ; clk      ; None                        ; None                      ; 5.105 ns                ;
+; N/A                                     ; 172.00 MHz ( period = 5.814 ns )                    ; async_receiver:inst|RxD_data_ready           ; async_transmitter:inst1|TxD_dataReg[0]       ; clk        ; clk      ; None                        ; None                      ; 5.105 ns                ;
+; N/A                                     ; 172.00 MHz ( period = 5.814 ns )                    ; async_receiver:inst|RxD_data_ready           ; async_transmitter:inst1|TxD_dataReg[1]       ; clk        ; clk      ; None                        ; None                      ; 5.105 ns                ;
+; N/A                                     ; 172.00 MHz ( period = 5.814 ns )                    ; async_receiver:inst|RxD_data_ready           ; async_transmitter:inst1|TxD_dataReg[3]       ; clk        ; clk      ; None                        ; None                      ; 5.105 ns                ;
+; N/A                                     ; 172.00 MHz ( period = 5.814 ns )                    ; async_receiver:inst|RxD_data_ready           ; async_transmitter:inst1|TxD_dataReg[2]       ; clk        ; clk      ; None                        ; None                      ; 5.105 ns                ;
+; N/A                                     ; 172.92 MHz ( period = 5.783 ns )                    ; async_receiver:inst|state[3]                 ; async_receiver:inst|RxD_data_ready           ; clk        ; clk      ; None                        ; None                      ; 5.074 ns                ;
+; N/A                                     ; 173.31 MHz ( period = 5.770 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|BaudGeneratorAcc[7]  ; clk        ; clk      ; None                        ; None                      ; 5.061 ns                ;
+; N/A                                     ; 173.31 MHz ( period = 5.770 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|BaudGeneratorAcc[2]  ; clk        ; clk      ; None                        ; None                      ; 5.061 ns                ;
+; N/A                                     ; 173.31 MHz ( period = 5.770 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|BaudGeneratorAcc[6]  ; clk        ; clk      ; None                        ; None                      ; 5.061 ns                ;
+; N/A                                     ; 173.31 MHz ( period = 5.770 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|BaudGeneratorAcc[5]  ; clk        ; clk      ; None                        ; None                      ; 5.061 ns                ;
+; N/A                                     ; 173.31 MHz ( period = 5.770 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|BaudGeneratorAcc[4]  ; clk        ; clk      ; None                        ; None                      ; 5.061 ns                ;
+; N/A                                     ; 173.31 MHz ( period = 5.770 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|BaudGeneratorAcc[3]  ; clk        ; clk      ; None                        ; None                      ; 5.061 ns                ;
+; N/A                                     ; 173.31 MHz ( period = 5.770 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|BaudGeneratorAcc[1]  ; clk        ; clk      ; None                        ; None                      ; 5.061 ns                ;
+; N/A                                     ; 173.49 MHz ( period = 5.764 ns )                    ; async_receiver:inst|state[0]                 ; async_receiver:inst|bit_spacing[2]           ; clk        ; clk      ; None                        ; None                      ; 5.055 ns                ;
+; N/A                                     ; 173.61 MHz ( period = 5.760 ns )                    ; async_receiver:inst|RxD_data_ready           ; async_transmitter:inst1|state[0]             ; clk        ; clk      ; None                        ; None                      ; 5.051 ns                ;
+; N/A                                     ; 175.22 MHz ( period = 5.707 ns )                    ; async_transmitter:inst1|TxD_dataReg[1]       ; async_transmitter:inst1|TxD                  ; clk        ; clk      ; None                        ; None                      ; 4.998 ns                ;
+; N/A                                     ; 177.40 MHz ( period = 5.637 ns )                    ; async_receiver:inst|bit_spacing[3]           ; async_receiver:inst|state[0]                 ; clk        ; clk      ; None                        ; None                      ; 4.928 ns                ;
+; N/A                                     ; 177.46 MHz ( period = 5.635 ns )                    ; async_receiver:inst|bit_spacing[3]           ; async_receiver:inst|state[1]                 ; clk        ; clk      ; None                        ; None                      ; 4.926 ns                ;
+; N/A                                     ; 177.68 MHz ( period = 5.628 ns )                    ; async_receiver:inst|bit_spacing[0]           ; async_receiver:inst|RxD_data_ready           ; clk        ; clk      ; None                        ; None                      ; 4.919 ns                ;
+; N/A                                     ; 179.18 MHz ( period = 5.581 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|BaudGeneratorAcc[7]  ; clk        ; clk      ; None                        ; None                      ; 4.872 ns                ;
+; N/A                                     ; 179.18 MHz ( period = 5.581 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|BaudGeneratorAcc[2]  ; clk        ; clk      ; None                        ; None                      ; 4.872 ns                ;
+; N/A                                     ; 179.18 MHz ( period = 5.581 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|BaudGeneratorAcc[6]  ; clk        ; clk      ; None                        ; None                      ; 4.872 ns                ;
+; N/A                                     ; 179.18 MHz ( period = 5.581 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|BaudGeneratorAcc[5]  ; clk        ; clk      ; None                        ; None                      ; 4.872 ns                ;
+; N/A                                     ; 179.18 MHz ( period = 5.581 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|BaudGeneratorAcc[4]  ; clk        ; clk      ; None                        ; None                      ; 4.872 ns                ;
+; N/A                                     ; 179.18 MHz ( period = 5.581 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|BaudGeneratorAcc[3]  ; clk        ; clk      ; None                        ; None                      ; 4.872 ns                ;
+; N/A                                     ; 179.18 MHz ( period = 5.581 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|BaudGeneratorAcc[1]  ; clk        ; clk      ; None                        ; None                      ; 4.872 ns                ;
+; N/A                                     ; 179.66 MHz ( period = 5.566 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|BaudGeneratorAcc[0]  ; clk        ; clk      ; None                        ; None                      ; 4.857 ns                ;
+; N/A                                     ; 179.76 MHz ( period = 5.563 ns )                    ; async_receiver:inst|state[0]                 ; async_receiver:inst|state[3]                 ; clk        ; clk      ; None                        ; None                      ; 4.854 ns                ;
+; N/A                                     ; 180.12 MHz ( period = 5.552 ns )                    ; async_receiver:inst|state[2]                 ; async_receiver:inst|bit_spacing[3]           ; clk        ; clk      ; None                        ; None                      ; 4.843 ns                ;
+; N/A                                     ; 180.93 MHz ( period = 5.527 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|state[1]             ; clk        ; clk      ; None                        ; None                      ; 4.818 ns                ;
+; N/A                                     ; 183.45 MHz ( period = 5.451 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|BaudGeneratorAcc[16] ; clk        ; clk      ; None                        ; None                      ; 4.742 ns                ;
+; N/A                                     ; 183.45 MHz ( period = 5.451 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|BaudGeneratorAcc[15] ; clk        ; clk      ; None                        ; None                      ; 4.742 ns                ;
+; N/A                                     ; 183.45 MHz ( period = 5.451 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|BaudGeneratorAcc[12] ; clk        ; clk      ; None                        ; None                      ; 4.742 ns                ;
+; N/A                                     ; 183.45 MHz ( period = 5.451 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|BaudGeneratorAcc[14] ; clk        ; clk      ; None                        ; None                      ; 4.742 ns                ;
+; N/A                                     ; 183.45 MHz ( period = 5.451 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|BaudGeneratorAcc[13] ; clk        ; clk      ; None                        ; None                      ; 4.742 ns                ;
+; N/A                                     ; 183.45 MHz ( period = 5.451 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|BaudGeneratorAcc[11] ; clk        ; clk      ; None                        ; None                      ; 4.742 ns                ;
+; N/A                                     ; 183.45 MHz ( period = 5.451 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|BaudGeneratorAcc[10] ; clk        ; clk      ; None                        ; None                      ; 4.742 ns                ;
+; N/A                                     ; 183.45 MHz ( period = 5.451 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|BaudGeneratorAcc[9]  ; clk        ; clk      ; None                        ; None                      ; 4.742 ns                ;
+; N/A                                     ; 183.45 MHz ( period = 5.451 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|BaudGeneratorAcc[8]  ; clk        ; clk      ; None                        ; None                      ; 4.742 ns                ;
+; N/A                                     ; 184.33 MHz ( period = 5.425 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|BaudGeneratorAcc[0]  ; clk        ; clk      ; None                        ; None                      ; 4.716 ns                ;
+; N/A                                     ; 184.50 MHz ( period = 5.420 ns )                    ; async_receiver:inst|state[1]                 ; async_receiver:inst|bit_spacing[1]           ; clk        ; clk      ; None                        ; None                      ; 4.711 ns                ;
+; N/A                                     ; 184.50 MHz ( period = 5.420 ns )                    ; async_receiver:inst|state[1]                 ; async_receiver:inst|bit_spacing[0]           ; clk        ; clk      ; None                        ; None                      ; 4.711 ns                ;
+; N/A                                     ; 184.57 MHz ( period = 5.418 ns )                    ; async_receiver:inst|state[3]                 ; async_receiver:inst|bit_spacing[3]           ; clk        ; clk      ; None                        ; None                      ; 4.709 ns                ;
+; N/A                                     ; 185.67 MHz ( period = 5.386 ns )                    ; async_receiver:inst|bit_spacing[2]           ; async_receiver:inst|state[2]                 ; clk        ; clk      ; None                        ; None                      ; 4.677 ns                ;
+; N/A                                     ; 186.43 MHz ( period = 5.364 ns )                    ; async_receiver:inst|bit_spacing[3]           ; async_receiver:inst|RxD_data_ready           ; clk        ; clk      ; None                        ; None                      ; 4.655 ns                ;
+; N/A                                     ; 187.62 MHz ( period = 5.330 ns )                    ; async_transmitter:inst1|TxD_dataReg[3]       ; async_transmitter:inst1|TxD                  ; clk        ; clk      ; None                        ; None                      ; 4.621 ns                ;
+; N/A                                     ; 188.32 MHz ( period = 5.310 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|BaudGeneratorAcc[16] ; clk        ; clk      ; None                        ; None                      ; 4.601 ns                ;
+; N/A                                     ; 188.32 MHz ( period = 5.310 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|BaudGeneratorAcc[15] ; clk        ; clk      ; None                        ; None                      ; 4.601 ns                ;
+; N/A                                     ; 188.32 MHz ( period = 5.310 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|BaudGeneratorAcc[12] ; clk        ; clk      ; None                        ; None                      ; 4.601 ns                ;
+; N/A                                     ; 188.32 MHz ( period = 5.310 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|BaudGeneratorAcc[14] ; clk        ; clk      ; None                        ; None                      ; 4.601 ns                ;
+; N/A                                     ; 188.32 MHz ( period = 5.310 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|BaudGeneratorAcc[13] ; clk        ; clk      ; None                        ; None                      ; 4.601 ns                ;
+; N/A                                     ; 188.32 MHz ( period = 5.310 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|BaudGeneratorAcc[11] ; clk        ; clk      ; None                        ; None                      ; 4.601 ns                ;
+; N/A                                     ; 188.32 MHz ( period = 5.310 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|BaudGeneratorAcc[10] ; clk        ; clk      ; None                        ; None                      ; 4.601 ns                ;
+; N/A                                     ; 188.32 MHz ( period = 5.310 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|BaudGeneratorAcc[9]  ; clk        ; clk      ; None                        ; None                      ; 4.601 ns                ;
+; N/A                                     ; 188.32 MHz ( period = 5.310 ns )                    ; async_transmitter:inst1|state[1]             ; async_transmitter:inst1|BaudGeneratorAcc[8]  ; clk        ; clk      ; None                        ; None                      ; 4.601 ns                ;
+; N/A                                     ; 190.37 MHz ( period = 5.253 ns )                    ; async_receiver:inst|state[0]                 ; async_receiver:inst|bit_spacing[1]           ; clk        ; clk      ; None                        ; None                      ; 4.544 ns                ;
+; N/A                                     ; 190.37 MHz ( period = 5.253 ns )                    ; async_receiver:inst|state[0]                 ; async_receiver:inst|bit_spacing[0]           ; clk        ; clk      ; None                        ; None                      ; 4.544 ns                ;
+; N/A                                     ; 190.40 MHz ( period = 5.252 ns )                    ; async_receiver:inst|state[1]                 ; async_receiver:inst|state[0]                 ; clk        ; clk      ; None                        ; None                      ; 4.543 ns                ;
+; N/A                                     ; 190.99 MHz ( period = 5.236 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|BaudGeneratorAcc[0]  ; clk        ; clk      ; None                        ; None                      ; 4.527 ns                ;
+; N/A                                     ; 191.13 MHz ( period = 5.232 ns )                    ; async_transmitter:inst1|state[2]             ; async_transmitter:inst1|BaudGeneratorAcc[7]  ; clk        ; clk      ; None                        ; None                      ; 4.523 ns                ;
+; N/A                                     ; 191.13 MHz ( period = 5.232 ns )                    ; async_transmitter:inst1|state[2]             ; async_transmitter:inst1|BaudGeneratorAcc[2]  ; clk        ; clk      ; None                        ; None                      ; 4.523 ns                ;
+; N/A                                     ; 191.13 MHz ( period = 5.232 ns )                    ; async_transmitter:inst1|state[2]             ; async_transmitter:inst1|BaudGeneratorAcc[6]  ; clk        ; clk      ; None                        ; None                      ; 4.523 ns                ;
+; N/A                                     ; 191.13 MHz ( period = 5.232 ns )                    ; async_transmitter:inst1|state[2]             ; async_transmitter:inst1|BaudGeneratorAcc[5]  ; clk        ; clk      ; None                        ; None                      ; 4.523 ns                ;
+; N/A                                     ; 191.13 MHz ( period = 5.232 ns )                    ; async_transmitter:inst1|state[2]             ; async_transmitter:inst1|BaudGeneratorAcc[4]  ; clk        ; clk      ; None                        ; None                      ; 4.523 ns                ;
+; N/A                                     ; 191.13 MHz ( period = 5.232 ns )                    ; async_transmitter:inst1|state[2]             ; async_transmitter:inst1|BaudGeneratorAcc[3]  ; clk        ; clk      ; None                        ; None                      ; 4.523 ns                ;
+; N/A                                     ; 191.13 MHz ( period = 5.232 ns )                    ; async_transmitter:inst1|state[2]             ; async_transmitter:inst1|BaudGeneratorAcc[1]  ; clk        ; clk      ; None                        ; None                      ; 4.523 ns                ;
+; N/A                                     ; 192.31 MHz ( period = 5.200 ns )                    ; async_transmitter:inst1|state[0]             ; async_transmitter:inst1|state[2]             ; clk        ; clk      ; None                        ; None                      ; 4.491 ns                ;
+; N/A                                     ; 194.25 MHz ( period = 5.148 ns )                    ; async_receiver:inst|bit_spacing[2]           ; async_receiver:inst|state[0]                 ; clk        ; clk      ; None                        ; None                      ; 4.439 ns                ;
+; N/A                                     ; 194.33 MHz ( period = 5.146 ns )                    ; async_receiver:inst|bit_spacing[2]           ; async_receiver:inst|state[1]                 ; clk        ; clk      ; None                        ; None                      ; 4.437 ns                ;
+; N/A                                     ; 194.59 MHz ( period = 5.139 ns )                    ; async_receiver:inst|bit_spacing[2]           ; async_receiver:inst|bit_spacing[3]           ; clk        ; clk      ; None                        ; None                      ; 4.430 ns                ;
+; N/A                                     ; 195.27 MHz ( period = 5.121 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|BaudGeneratorAcc[16] ; clk        ; clk      ; None                        ; None                      ; 4.412 ns                ;
+; N/A                                     ; 195.27 MHz ( period = 5.121 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|BaudGeneratorAcc[15] ; clk        ; clk      ; None                        ; None                      ; 4.412 ns                ;
+; N/A                                     ; 195.27 MHz ( period = 5.121 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|BaudGeneratorAcc[12] ; clk        ; clk      ; None                        ; None                      ; 4.412 ns                ;
+; N/A                                     ; 195.27 MHz ( period = 5.121 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|BaudGeneratorAcc[14] ; clk        ; clk      ; None                        ; None                      ; 4.412 ns                ;
+; N/A                                     ; 195.27 MHz ( period = 5.121 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|BaudGeneratorAcc[13] ; clk        ; clk      ; None                        ; None                      ; 4.412 ns                ;
+; N/A                                     ; 195.27 MHz ( period = 5.121 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|BaudGeneratorAcc[11] ; clk        ; clk      ; None                        ; None                      ; 4.412 ns                ;
+; N/A                                     ; 195.27 MHz ( period = 5.121 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|BaudGeneratorAcc[10] ; clk        ; clk      ; None                        ; None                      ; 4.412 ns                ;
+; N/A                                     ; 195.27 MHz ( period = 5.121 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|BaudGeneratorAcc[9]  ; clk        ; clk      ; None                        ; None                      ; 4.412 ns                ;
+; N/A                                     ; 195.27 MHz ( period = 5.121 ns )                    ; async_transmitter:inst1|state[3]             ; async_transmitter:inst1|BaudGeneratorAcc[8]  ; clk        ; clk      ; None                        ; None                      ; 4.412 ns                ;
+; N/A                                     ; 195.54 MHz ( period = 5.114 ns )                    ; async_receiver:inst|state[0]                 ; async_receiver:inst|RxD_data_ready           ; clk        ; clk      ; None                        ; None                      ; 4.405 ns                ;
+; N/A                                     ; 196.35 MHz ( period = 5.093 ns )                    ; async_receiver:inst|Baud8GeneratorAcc[16]    ; async_receiver:inst|RxD_data[5]              ; clk        ; clk      ; None                        ; None                      ; 4.384 ns                ;
+; N/A                                     ; 196.35 MHz ( period = 5.093 ns )                    ; async_receiver:inst|Baud8GeneratorAcc[16]    ; async_receiver:inst|RxD_data[4]              ; clk        ; clk      ; None                        ; None                      ; 4.384 ns                ;
+; N/A                                     ; 196.35 MHz ( period = 5.093 ns )                    ; async_receiver:inst|Baud8GeneratorAcc[16]    ; async_receiver:inst|RxD_data[3]              ; clk        ; clk      ; None                        ; None                      ; 4.384 ns                ;
+; N/A                                     ; 196.35 MHz ( period = 5.093 ns )                    ; async_receiver:inst|Baud8GeneratorAcc[16]    ; async_receiver:inst|RxD_data[2]              ; clk        ; clk      ; None                        ; None                      ; 4.384 ns                ;
+; N/A                                     ; 196.35 MHz ( period = 5.093 ns )                    ; async_receiver:inst|Baud8GeneratorAcc[16]    ; async_receiver:inst|RxD_data[1]              ; clk        ; clk      ; None                        ; None                      ; 4.384 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                              ;                                              ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------------------+----------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; tsu                                                                                          ;
++-------+--------------+------------+---------+-------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From    ; To                                  ; To Clock ;
++-------+--------------+------------+---------+-------------------------------------+----------+
+; N/A   ; None         ; 0.932 ns   ; Uart2_R ; async_receiver:inst|RxD_sync_inv[0] ; clk      ;
++-------+--------------+------------+---------+-------------------------------------+----------+
+
+
++--------------------------------------------------------------------------------------------+
+; tco                                                                                        ;
++-------+--------------+------------+---------------------------------+---------+------------+
+; Slack ; Required tco ; Actual tco ; From                            ; To      ; From Clock ;
++-------+--------------+------------+---------------------------------+---------+------------+
+; N/A   ; None         ; 11.838 ns  ; async_transmitter:inst1|TxD     ; Uart2_T ; clk        ;
+; N/A   ; None         ; 11.744 ns  ; async_receiver:inst|RxD_data[2] ; led[2]  ; clk        ;
+; N/A   ; None         ; 11.664 ns  ; async_receiver:inst|RxD_data[4] ; led[4]  ; clk        ;
+; N/A   ; None         ; 11.608 ns  ; async_receiver:inst|RxD_data[1] ; led[1]  ; clk        ;
+; N/A   ; None         ; 11.591 ns  ; async_receiver:inst|RxD_data[5] ; led[5]  ; clk        ;
+; N/A   ; None         ; 11.571 ns  ; async_receiver:inst|RxD_data[0] ; led[0]  ; clk        ;
+; N/A   ; None         ; 11.567 ns  ; async_receiver:inst|RxD_data[3] ; led[3]  ; clk        ;
+; N/A   ; None         ; 11.122 ns  ; async_receiver:inst|RxD_data[6] ; led[6]  ; clk        ;
+; N/A   ; None         ; 11.120 ns  ; async_receiver:inst|RxD_data[7] ; led[7]  ; clk        ;
++-------+--------------+------------+---------------------------------+---------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; th                                                                                                 ;
++---------------+-------------+-----------+---------+-------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From    ; To                                  ; To Clock ;
++---------------+-------------+-----------+---------+-------------------------------------+----------+
+; N/A           ; None        ; -0.378 ns ; Uart2_R ; async_receiver:inst|RxD_sync_inv[0] ; clk      ;
++---------------+-------------+-----------+---------+-------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Sun Nov 27 16:50:17 2011
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off RS232 -c RS232
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 121.36 MHz between source register "async_transmitter:inst1|state[0]" and destination register "async_transmitter:inst1|TxD_dataReg[4]" (period= 8.24 ns)
+    Info: + Longest register to register delay is 7.531 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X4_Y2_N8; Fanout = 9; REG Node = 'async_transmitter:inst1|state[0]'
+        Info: 2: + IC(1.906 ns) + CELL(0.914 ns) = 2.820 ns; Loc. = LC_X4_Y3_N9; Fanout = 18; COMB Node = 'async_transmitter:inst1|Equal0~75'
+        Info: 3: + IC(1.233 ns) + CELL(0.511 ns) = 4.564 ns; Loc. = LC_X3_Y3_N0; Fanout = 8; COMB Node = 'async_transmitter:inst1|always1~0'
+        Info: 4: + IC(1.724 ns) + CELL(1.243 ns) = 7.531 ns; Loc. = LC_X4_Y2_N3; Fanout = 1; REG Node = 'async_transmitter:inst1|TxD_dataReg[4]'
+        Info: Total cell delay = 2.668 ns ( 35.43 % )
+        Info: Total interconnect delay = 4.863 ns ( 64.57 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 6.471 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 66; CLK Node = 'clk'
+            Info: 2: + IC(4.421 ns) + CELL(0.918 ns) = 6.471 ns; Loc. = LC_X4_Y2_N3; Fanout = 1; REG Node = 'async_transmitter:inst1|TxD_dataReg[4]'
+            Info: Total cell delay = 2.050 ns ( 31.68 % )
+            Info: Total interconnect delay = 4.421 ns ( 68.32 % )
+        Info: - Longest clock path from clock "clk" to source register is 6.471 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 66; CLK Node = 'clk'
+            Info: 2: + IC(4.421 ns) + CELL(0.918 ns) = 6.471 ns; Loc. = LC_X4_Y2_N8; Fanout = 9; REG Node = 'async_transmitter:inst1|state[0]'
+            Info: Total cell delay = 2.050 ns ( 31.68 % )
+            Info: Total interconnect delay = 4.421 ns ( 68.32 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Info: tsu for register "async_receiver:inst|RxD_sync_inv[0]" (data pin = "Uart2_R", clock pin = "clk") is 0.932 ns
+    Info: + Longest pin to register delay is 7.070 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_20; Fanout = 1; PIN Node = 'Uart2_R'
+        Info: 2: + IC(5.347 ns) + CELL(0.591 ns) = 7.070 ns; Loc. = LC_X6_Y2_N0; Fanout = 1; REG Node = 'async_receiver:inst|RxD_sync_inv[0]'
+        Info: Total cell delay = 1.723 ns ( 24.37 % )
+        Info: Total interconnect delay = 5.347 ns ( 75.63 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 6.471 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 66; CLK Node = 'clk'
+        Info: 2: + IC(4.421 ns) + CELL(0.918 ns) = 6.471 ns; Loc. = LC_X6_Y2_N0; Fanout = 1; REG Node = 'async_receiver:inst|RxD_sync_inv[0]'
+        Info: Total cell delay = 2.050 ns ( 31.68 % )
+        Info: Total interconnect delay = 4.421 ns ( 68.32 % )
+Info: tco from clock "clk" to destination pin "Uart2_T" through register "async_transmitter:inst1|TxD" is 11.838 ns
+    Info: + Longest clock path from clock "clk" to source register is 6.471 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 66; CLK Node = 'clk'
+        Info: 2: + IC(4.421 ns) + CELL(0.918 ns) = 6.471 ns; Loc. = LC_X4_Y2_N5; Fanout = 1; REG Node = 'async_transmitter:inst1|TxD'
+        Info: Total cell delay = 2.050 ns ( 31.68 % )
+        Info: Total interconnect delay = 4.421 ns ( 68.32 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 4.991 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X4_Y2_N5; Fanout = 1; REG Node = 'async_transmitter:inst1|TxD'
+        Info: 2: + IC(2.669 ns) + CELL(2.322 ns) = 4.991 ns; Loc. = PIN_19; Fanout = 0; PIN Node = 'Uart2_T'
+        Info: Total cell delay = 2.322 ns ( 46.52 % )
+        Info: Total interconnect delay = 2.669 ns ( 53.48 % )
+Info: th for register "async_receiver:inst|RxD_sync_inv[0]" (data pin = "Uart2_R", clock pin = "clk") is -0.378 ns
+    Info: + Longest clock path from clock "clk" to destination register is 6.471 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 66; CLK Node = 'clk'
+        Info: 2: + IC(4.421 ns) + CELL(0.918 ns) = 6.471 ns; Loc. = LC_X6_Y2_N0; Fanout = 1; REG Node = 'async_receiver:inst|RxD_sync_inv[0]'
+        Info: Total cell delay = 2.050 ns ( 31.68 % )
+        Info: Total interconnect delay = 4.421 ns ( 68.32 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 7.070 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_20; Fanout = 1; PIN Node = 'Uart2_R'
+        Info: 2: + IC(5.347 ns) + CELL(0.591 ns) = 7.070 ns; Loc. = LC_X6_Y2_N0; Fanout = 1; REG Node = 'async_receiver:inst|RxD_sync_inv[0]'
+        Info: Total cell delay = 1.723 ns ( 24.37 % )
+        Info: Total interconnect delay = 5.347 ns ( 75.63 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Allocated 111 megabytes of memory during processing
+    Info: Processing ended: Sun Nov 27 16:50:19 2011
+    Info: Elapsed time: 00:00:02
+
+

@@ -1,0 +1,16 @@
+
+State Machine - |UART|rs232rx:rs232_rx_block|m1_state
+Name m1_state.m1_all_low m1_state.m1_under_run m1_state.m1_shift m1_state.m1_over_run m1_state.m1_start m1_state.m1_idle 
+m1_state.m1_idle 0 0 0 0 0 0 
+m1_state.m1_start 0 0 0 0 1 1 
+m1_state.m1_over_run 0 0 0 1 0 1 
+m1_state.m1_shift 0 0 1 0 0 1 
+m1_state.m1_under_run 0 1 0 0 0 1 
+m1_state.m1_all_low 1 0 0 0 0 1 
+
+State Machine - |UART|rs232tx:rs232_tx_block|m1_state
+Name m1_state.m1_sending m1_state.m1_sending_last_bit m1_state.m1_waiting m1_state.m1_idle 
+m1_state.m1_idle 0 0 0 0 
+m1_state.m1_waiting 0 0 1 1 
+m1_state.m1_sending_last_bit 0 1 0 1 
+m1_state.m1_sending 1 0 0 1 

@@ -1,0 +1,120 @@
+|vga
+VGA_R <= vga_IC:inst1.vga_r0
+clk => vga_IC:inst1.clk
+rst_n => vga_IC:inst1.rst_n
+VGA_G <= vga_IC:inst1.vga_g0
+VGA_B <= vga_IC:inst1.vga_b0
+VGA_VSYNC <= vga_IC:inst1.vga_vs
+VGA_HSYNC <= vga_IC:inst1.vga_hs
+
+
+|vga|vga_IC:inst1
+clk => clk~0.IN1
+rst_n => rst_n~0.IN1
+vga_hs <= sync_gen_50m:sync_gen_50m_int.hsync
+vga_vs <= sync_gen_50m:sync_gen_50m_int.vsync
+vga_r0 <= vga_r0~1.DB_MAX_OUTPUT_PORT_TYPE
+vga_g0 <= vga_g0~1.DB_MAX_OUTPUT_PORT_TYPE
+vga_b0 <= vga_b0~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vga|vga_IC:inst1|sync_gen_50m:sync_gen_50m_int
+clk => x_cnt[9]~reg0.CLK
+clk => x_cnt[8]~reg0.CLK
+clk => x_cnt[7]~reg0.CLK
+clk => x_cnt[6]~reg0.CLK
+clk => x_cnt[5]~reg0.CLK
+clk => x_cnt[4]~reg0.CLK
+clk => x_cnt[3]~reg0.CLK
+clk => x_cnt[2]~reg0.CLK
+clk => x_cnt[1]~reg0.CLK
+clk => x_cnt[0]~reg0.CLK
+clk => y_cnt[9]~reg0.CLK
+clk => y_cnt[8]~reg0.CLK
+clk => y_cnt[7]~reg0.CLK
+clk => y_cnt[6]~reg0.CLK
+clk => y_cnt[5]~reg0.CLK
+clk => y_cnt[4]~reg0.CLK
+clk => y_cnt[3]~reg0.CLK
+clk => y_cnt[2]~reg0.CLK
+clk => y_cnt[1]~reg0.CLK
+clk => y_cnt[0]~reg0.CLK
+clk => hsync~reg0.CLK
+clk => vsync~reg0.CLK
+clk => valid~reg0.CLK
+rst_n => y_cnt[0]~reg0.ACLR
+rst_n => y_cnt[1]~reg0.ACLR
+rst_n => y_cnt[2]~reg0.ACLR
+rst_n => y_cnt[3]~reg0.ACLR
+rst_n => y_cnt[4]~reg0.ACLR
+rst_n => y_cnt[5]~reg0.ACLR
+rst_n => y_cnt[6]~reg0.ACLR
+rst_n => y_cnt[7]~reg0.ACLR
+rst_n => y_cnt[8]~reg0.ACLR
+rst_n => y_cnt[9]~reg0.ACLR
+rst_n => vsync~reg0.ACLR
+rst_n => hsync~reg0.ACLR
+rst_n => valid~reg0.ACLR
+rst_n => x_cnt[9]~reg0.ACLR
+rst_n => x_cnt[8]~reg0.ACLR
+rst_n => x_cnt[7]~reg0.ACLR
+rst_n => x_cnt[6]~reg0.ACLR
+rst_n => x_cnt[5]~reg0.ACLR
+rst_n => x_cnt[4]~reg0.ACLR
+rst_n => x_cnt[3]~reg0.ACLR
+rst_n => x_cnt[2]~reg0.ACLR
+rst_n => x_cnt[1]~reg0.ACLR
+rst_n => x_cnt[0]~reg0.ACLR
+hsync <= hsync~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vsync <= vsync~reg0.DB_MAX_OUTPUT_PORT_TYPE
+valid <= valid~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_cnt[0] <= x_cnt[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_cnt[1] <= x_cnt[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_cnt[2] <= x_cnt[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_cnt[3] <= x_cnt[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_cnt[4] <= x_cnt[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_cnt[5] <= x_cnt[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_cnt[6] <= x_cnt[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_cnt[7] <= x_cnt[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_cnt[8] <= x_cnt[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+x_cnt[9] <= x_cnt[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+y_cnt[0] <= y_cnt[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+y_cnt[1] <= y_cnt[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+y_cnt[2] <= y_cnt[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+y_cnt[3] <= y_cnt[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+y_cnt[4] <= y_cnt[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+y_cnt[5] <= y_cnt[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+y_cnt[6] <= y_cnt[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+y_cnt[7] <= y_cnt[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+y_cnt[8] <= y_cnt[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+y_cnt[9] <= y_cnt[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vga|vga_IC:inst1|char_rom:char_rom_inst
+addr[0] => Decoder0.IN8
+addr[1] => Decoder0.IN7
+addr[2] => Decoder0.IN6
+addr[3] => Decoder0.IN5
+addr[4] => Decoder0.IN4
+addr[5] => Decoder0.IN3
+addr[6] => Decoder0.IN2
+addr[7] => Decoder0.IN1
+addr[8] => Decoder0.IN0
+data[0] <= <GND>
+data[1] <= WideOr14.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= WideOr13.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= WideOr12.DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= WideOr11.DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= WideOr10.DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= WideOr9.DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
+data[8] <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+data[9] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+data[10] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+data[11] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+data[12] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+data[13] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+data[14] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+data[15] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

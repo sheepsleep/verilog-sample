@@ -1,0 +1,27 @@
+library ieee;
+use     ieee.std_logic_1164.all;
+use     ieee.std_logic_unsigned.all;
+
+entity leddriver is
+	port( 
+	      datain    : in std_logic_vector(7 downto 0);
+		  reset_n   : in std_logic;
+		  clkin     : in std_logic;
+		  en        : in std_logic;
+		  led       : out std_logic_vector(7 downto 0)
+		);
+end leddriver;
+
+Architecture fun of leddriver is
+Begin
+  led_driver:Process(clkin,reset_n,en)
+	Begin
+		if reset_n='0' then
+			led<=(others=>'1');
+		elsif clkin'event and clkin='1' then
+			if en='1' then
+				led<= datain;
+			end if;
+		end if;
+	end process led_driver;
+end fun; 

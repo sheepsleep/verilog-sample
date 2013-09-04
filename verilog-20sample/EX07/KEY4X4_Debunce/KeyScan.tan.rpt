@@ -1,0 +1,574 @@
+Classic Timing Analyzer report for KeyScan
+Thu Mar 15 23:16:17 2012
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                          ;
++------------------------------+-------+---------------+----------------------------------+------------------------------+----------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                         ; To                               ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+------------------------------+----------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 2.361 ns                         ; KEY_H[2]                     ; mat_keyscan:inst|key_data[7]     ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 19.363 ns                        ; mat_keyscan:inst|seg_data[2] ; HC_SI                            ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 3.328 ns                         ; KEY_H[2]                     ; mat_keyscan:inst|key_data_buf[1] ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 118.27 MHz ( period = 8.455 ns ) ; mat_keyscan:inst|key_data[1] ; mat_keyscan:inst|seg_data[2]     ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                              ;                                  ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+------------------------------+----------------------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EPM240T100C5       ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                               ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------+-----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                             ; To                                ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------+-----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 118.27 MHz ( period = 8.455 ns )                    ; mat_keyscan:inst|key_data[1]     ; mat_keyscan:inst|seg_data[1]      ; clk        ; clk      ; None                        ; None                      ; 7.746 ns                ;
+; N/A                                     ; 118.27 MHz ( period = 8.455 ns )                    ; mat_keyscan:inst|key_data[1]     ; mat_keyscan:inst|seg_data[2]      ; clk        ; clk      ; None                        ; None                      ; 7.746 ns                ;
+; N/A                                     ; 118.39 MHz ( period = 8.447 ns )                    ; mat_keyscan:inst|col[1]          ; mat_keyscan:inst|key_data[0]      ; clk        ; clk      ; None                        ; None                      ; 7.738 ns                ;
+; N/A                                     ; 118.39 MHz ( period = 8.447 ns )                    ; mat_keyscan:inst|col[1]          ; mat_keyscan:inst|key_data[6]      ; clk        ; clk      ; None                        ; None                      ; 7.738 ns                ;
+; N/A                                     ; 118.39 MHz ( period = 8.447 ns )                    ; mat_keyscan:inst|col[1]          ; mat_keyscan:inst|key_data[4]      ; clk        ; clk      ; None                        ; None                      ; 7.738 ns                ;
+; N/A                                     ; 118.39 MHz ( period = 8.447 ns )                    ; mat_keyscan:inst|col[1]          ; mat_keyscan:inst|key_data[2]      ; clk        ; clk      ; None                        ; None                      ; 7.738 ns                ;
+; N/A                                     ; 118.39 MHz ( period = 8.447 ns )                    ; mat_keyscan:inst|col[1]          ; mat_keyscan:inst|key_data[7]      ; clk        ; clk      ; None                        ; None                      ; 7.738 ns                ;
+; N/A                                     ; 118.76 MHz ( period = 8.420 ns )                    ; mat_keyscan:inst|key_data[1]     ; mat_keyscan:inst|seg_data[4]      ; clk        ; clk      ; None                        ; None                      ; 7.711 ns                ;
+; N/A                                     ; 118.76 MHz ( period = 8.420 ns )                    ; mat_keyscan:inst|key_data[1]     ; mat_keyscan:inst|seg_data[0]      ; clk        ; clk      ; None                        ; None                      ; 7.711 ns                ;
+; N/A                                     ; 118.76 MHz ( period = 8.420 ns )                    ; mat_keyscan:inst|key_data[1]     ; mat_keyscan:inst|seg_data[3]      ; clk        ; clk      ; None                        ; None                      ; 7.711 ns                ;
+; N/A                                     ; 119.16 MHz ( period = 8.392 ns )                    ; mat_keyscan:inst|key_data[5]     ; mat_keyscan:inst|seg_data[1]      ; clk        ; clk      ; None                        ; None                      ; 7.683 ns                ;
+; N/A                                     ; 119.16 MHz ( period = 8.392 ns )                    ; mat_keyscan:inst|key_data[5]     ; mat_keyscan:inst|seg_data[2]      ; clk        ; clk      ; None                        ; None                      ; 7.683 ns                ;
+; N/A                                     ; 119.66 MHz ( period = 8.357 ns )                    ; mat_keyscan:inst|key_data[5]     ; mat_keyscan:inst|seg_data[4]      ; clk        ; clk      ; None                        ; None                      ; 7.648 ns                ;
+; N/A                                     ; 119.66 MHz ( period = 8.357 ns )                    ; mat_keyscan:inst|key_data[5]     ; mat_keyscan:inst|seg_data[0]      ; clk        ; clk      ; None                        ; None                      ; 7.648 ns                ;
+; N/A                                     ; 119.66 MHz ( period = 8.357 ns )                    ; mat_keyscan:inst|key_data[5]     ; mat_keyscan:inst|seg_data[3]      ; clk        ; clk      ; None                        ; None                      ; 7.648 ns                ;
+; N/A                                     ; 120.18 MHz ( period = 8.321 ns )                    ; mat_keyscan:inst|key_data[2]     ; mat_keyscan:inst|seg_data[1]      ; clk        ; clk      ; None                        ; None                      ; 7.612 ns                ;
+; N/A                                     ; 120.18 MHz ( period = 8.321 ns )                    ; mat_keyscan:inst|key_data[2]     ; mat_keyscan:inst|seg_data[2]      ; clk        ; clk      ; None                        ; None                      ; 7.612 ns                ;
+; N/A                                     ; 120.69 MHz ( period = 8.286 ns )                    ; mat_keyscan:inst|key_data[2]     ; mat_keyscan:inst|seg_data[4]      ; clk        ; clk      ; None                        ; None                      ; 7.577 ns                ;
+; N/A                                     ; 120.69 MHz ( period = 8.286 ns )                    ; mat_keyscan:inst|key_data[2]     ; mat_keyscan:inst|seg_data[0]      ; clk        ; clk      ; None                        ; None                      ; 7.577 ns                ;
+; N/A                                     ; 120.69 MHz ( period = 8.286 ns )                    ; mat_keyscan:inst|key_data[2]     ; mat_keyscan:inst|seg_data[3]      ; clk        ; clk      ; None                        ; None                      ; 7.577 ns                ;
+; N/A                                     ; 123.21 MHz ( period = 8.116 ns )                    ; mat_keyscan:inst|key_data[6]     ; mat_keyscan:inst|seg_data[1]      ; clk        ; clk      ; None                        ; None                      ; 7.407 ns                ;
+; N/A                                     ; 123.21 MHz ( period = 8.116 ns )                    ; mat_keyscan:inst|key_data[6]     ; mat_keyscan:inst|seg_data[2]      ; clk        ; clk      ; None                        ; None                      ; 7.407 ns                ;
+; N/A                                     ; 123.33 MHz ( period = 8.108 ns )                    ; mat_keyscan:inst|col[3]          ; mat_keyscan:inst|key_data[0]      ; clk        ; clk      ; None                        ; None                      ; 7.399 ns                ;
+; N/A                                     ; 123.33 MHz ( period = 8.108 ns )                    ; mat_keyscan:inst|col[3]          ; mat_keyscan:inst|key_data[6]      ; clk        ; clk      ; None                        ; None                      ; 7.399 ns                ;
+; N/A                                     ; 123.33 MHz ( period = 8.108 ns )                    ; mat_keyscan:inst|col[3]          ; mat_keyscan:inst|key_data[4]      ; clk        ; clk      ; None                        ; None                      ; 7.399 ns                ;
+; N/A                                     ; 123.33 MHz ( period = 8.108 ns )                    ; mat_keyscan:inst|col[3]          ; mat_keyscan:inst|key_data[2]      ; clk        ; clk      ; None                        ; None                      ; 7.399 ns                ;
+; N/A                                     ; 123.33 MHz ( period = 8.108 ns )                    ; mat_keyscan:inst|col[3]          ; mat_keyscan:inst|key_data[7]      ; clk        ; clk      ; None                        ; None                      ; 7.399 ns                ;
+; N/A                                     ; 123.75 MHz ( period = 8.081 ns )                    ; mat_keyscan:inst|key_data[6]     ; mat_keyscan:inst|seg_data[4]      ; clk        ; clk      ; None                        ; None                      ; 7.372 ns                ;
+; N/A                                     ; 123.75 MHz ( period = 8.081 ns )                    ; mat_keyscan:inst|key_data[6]     ; mat_keyscan:inst|seg_data[0]      ; clk        ; clk      ; None                        ; None                      ; 7.372 ns                ;
+; N/A                                     ; 123.75 MHz ( period = 8.081 ns )                    ; mat_keyscan:inst|key_data[6]     ; mat_keyscan:inst|seg_data[3]      ; clk        ; clk      ; None                        ; None                      ; 7.372 ns                ;
+; N/A                                     ; 125.55 MHz ( period = 7.965 ns )                    ; mat_keyscan:inst|col[2]          ; mat_keyscan:inst|key_data[0]      ; clk        ; clk      ; None                        ; None                      ; 7.256 ns                ;
+; N/A                                     ; 125.55 MHz ( period = 7.965 ns )                    ; mat_keyscan:inst|col[2]          ; mat_keyscan:inst|key_data[6]      ; clk        ; clk      ; None                        ; None                      ; 7.256 ns                ;
+; N/A                                     ; 125.55 MHz ( period = 7.965 ns )                    ; mat_keyscan:inst|col[2]          ; mat_keyscan:inst|key_data[4]      ; clk        ; clk      ; None                        ; None                      ; 7.256 ns                ;
+; N/A                                     ; 125.55 MHz ( period = 7.965 ns )                    ; mat_keyscan:inst|col[2]          ; mat_keyscan:inst|key_data[2]      ; clk        ; clk      ; None                        ; None                      ; 7.256 ns                ;
+; N/A                                     ; 125.55 MHz ( period = 7.965 ns )                    ; mat_keyscan:inst|col[2]          ; mat_keyscan:inst|key_data[7]      ; clk        ; clk      ; None                        ; None                      ; 7.256 ns                ;
+; N/A                                     ; 126.90 MHz ( period = 7.880 ns )                    ; mat_keyscan:inst|key_data[0]     ; mat_keyscan:inst|seg_data[1]      ; clk        ; clk      ; None                        ; None                      ; 7.171 ns                ;
+; N/A                                     ; 126.90 MHz ( period = 7.880 ns )                    ; mat_keyscan:inst|key_data[0]     ; mat_keyscan:inst|seg_data[2]      ; clk        ; clk      ; None                        ; None                      ; 7.171 ns                ;
+; N/A                                     ; 127.39 MHz ( period = 7.850 ns )                    ; mat_keyscan:inst|key_data[4]     ; mat_keyscan:inst|seg_data[1]      ; clk        ; clk      ; None                        ; None                      ; 7.141 ns                ;
+; N/A                                     ; 127.39 MHz ( period = 7.850 ns )                    ; mat_keyscan:inst|key_data[4]     ; mat_keyscan:inst|seg_data[2]      ; clk        ; clk      ; None                        ; None                      ; 7.141 ns                ;
+; N/A                                     ; 127.45 MHz ( period = 7.846 ns )                    ; mat_keyscan:inst|clk_20ms_r[2]   ; mat_keyscan:inst|clk_20ms_r[9]    ; clk        ; clk      ; None                        ; None                      ; 7.137 ns                ;
+; N/A                                     ; 127.47 MHz ( period = 7.845 ns )                    ; mat_keyscan:inst|key_data[0]     ; mat_keyscan:inst|seg_data[4]      ; clk        ; clk      ; None                        ; None                      ; 7.136 ns                ;
+; N/A                                     ; 127.47 MHz ( period = 7.845 ns )                    ; mat_keyscan:inst|key_data[0]     ; mat_keyscan:inst|seg_data[0]      ; clk        ; clk      ; None                        ; None                      ; 7.136 ns                ;
+; N/A                                     ; 127.47 MHz ( period = 7.845 ns )                    ; mat_keyscan:inst|key_data[0]     ; mat_keyscan:inst|seg_data[3]      ; clk        ; clk      ; None                        ; None                      ; 7.136 ns                ;
+; N/A                                     ; 127.52 MHz ( period = 7.842 ns )                    ; mat_keyscan:inst|clk_20ms_r[2]   ; mat_keyscan:inst|clk_20ms_r[6]    ; clk        ; clk      ; None                        ; None                      ; 7.133 ns                ;
+; N/A                                     ; 127.55 MHz ( period = 7.840 ns )                    ; mat_keyscan:inst|clk_20ms_r[2]   ; mat_keyscan:inst|clk_20ms_r[0]    ; clk        ; clk      ; None                        ; None                      ; 7.131 ns                ;
+; N/A                                     ; 127.58 MHz ( period = 7.838 ns )                    ; hc164_driver:inst1|clk_cnt[14]   ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 7.129 ns                ;
+; N/A                                     ; 127.96 MHz ( period = 7.815 ns )                    ; mat_keyscan:inst|key_data[4]     ; mat_keyscan:inst|seg_data[4]      ; clk        ; clk      ; None                        ; None                      ; 7.106 ns                ;
+; N/A                                     ; 127.96 MHz ( period = 7.815 ns )                    ; mat_keyscan:inst|key_data[4]     ; mat_keyscan:inst|seg_data[0]      ; clk        ; clk      ; None                        ; None                      ; 7.106 ns                ;
+; N/A                                     ; 127.96 MHz ( period = 7.815 ns )                    ; mat_keyscan:inst|key_data[4]     ; mat_keyscan:inst|seg_data[3]      ; clk        ; clk      ; None                        ; None                      ; 7.106 ns                ;
+; N/A                                     ; 128.21 MHz ( period = 7.800 ns )                    ; mat_keyscan:inst|key_data_buf[6] ; mat_keyscan:inst|key_data[0]      ; clk        ; clk      ; None                        ; None                      ; 7.091 ns                ;
+; N/A                                     ; 128.21 MHz ( period = 7.800 ns )                    ; mat_keyscan:inst|key_data_buf[6] ; mat_keyscan:inst|key_data[6]      ; clk        ; clk      ; None                        ; None                      ; 7.091 ns                ;
+; N/A                                     ; 128.21 MHz ( period = 7.800 ns )                    ; mat_keyscan:inst|key_data_buf[6] ; mat_keyscan:inst|key_data[4]      ; clk        ; clk      ; None                        ; None                      ; 7.091 ns                ;
+; N/A                                     ; 128.21 MHz ( period = 7.800 ns )                    ; mat_keyscan:inst|key_data_buf[6] ; mat_keyscan:inst|key_data[2]      ; clk        ; clk      ; None                        ; None                      ; 7.091 ns                ;
+; N/A                                     ; 128.21 MHz ( period = 7.800 ns )                    ; mat_keyscan:inst|key_data_buf[6] ; mat_keyscan:inst|key_data[7]      ; clk        ; clk      ; None                        ; None                      ; 7.091 ns                ;
+; N/A                                     ; 129.17 MHz ( period = 7.742 ns )                    ; mat_keyscan:inst|clk_20ms_r[2]   ; mat_keyscan:inst|clk_20ms_r[19]   ; clk        ; clk      ; None                        ; None                      ; 7.033 ns                ;
+; N/A                                     ; 129.75 MHz ( period = 7.707 ns )                    ; mat_keyscan:inst|clk_20ms_r[1]   ; mat_keyscan:inst|clk_20ms_r[19]   ; clk        ; clk      ; None                        ; None                      ; 6.998 ns                ;
+; N/A                                     ; 130.12 MHz ( period = 7.685 ns )                    ; mat_keyscan:inst|clk_20ms_r[2]   ; mat_keyscan:inst|clk_20ms_r[10]   ; clk        ; clk      ; None                        ; None                      ; 6.976 ns                ;
+; N/A                                     ; 130.72 MHz ( period = 7.650 ns )                    ; mat_keyscan:inst|clk_20ms_r[1]   ; mat_keyscan:inst|clk_20ms_r[10]   ; clk        ; clk      ; None                        ; None                      ; 6.941 ns                ;
+; N/A                                     ; 130.80 MHz ( period = 7.645 ns )                    ; mat_keyscan:inst|clk_20ms_r[9]   ; mat_keyscan:inst|clk_20ms_r[9]    ; clk        ; clk      ; None                        ; None                      ; 6.936 ns                ;
+; N/A                                     ; 130.87 MHz ( period = 7.641 ns )                    ; hc164_driver:inst1|clk_cnt[13]   ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 6.932 ns                ;
+; N/A                                     ; 130.87 MHz ( period = 7.641 ns )                    ; mat_keyscan:inst|clk_20ms_r[9]   ; mat_keyscan:inst|clk_20ms_r[6]    ; clk        ; clk      ; None                        ; None                      ; 6.932 ns                ;
+; N/A                                     ; 130.91 MHz ( period = 7.639 ns )                    ; mat_keyscan:inst|clk_20ms_r[9]   ; mat_keyscan:inst|clk_20ms_r[0]    ; clk        ; clk      ; None                        ; None                      ; 6.930 ns                ;
+; N/A                                     ; 131.41 MHz ( period = 7.610 ns )                    ; mat_keyscan:inst|clk_20ms_r[13]  ; mat_keyscan:inst|clk_20ms_r[9]    ; clk        ; clk      ; None                        ; None                      ; 6.901 ns                ;
+; N/A                                     ; 131.46 MHz ( period = 7.607 ns )                    ; mat_keyscan:inst|key_data_buf[5] ; mat_keyscan:inst|key_data[0]      ; clk        ; clk      ; None                        ; None                      ; 6.898 ns                ;
+; N/A                                     ; 131.46 MHz ( period = 7.607 ns )                    ; mat_keyscan:inst|key_data_buf[5] ; mat_keyscan:inst|key_data[6]      ; clk        ; clk      ; None                        ; None                      ; 6.898 ns                ;
+; N/A                                     ; 131.46 MHz ( period = 7.607 ns )                    ; mat_keyscan:inst|key_data_buf[5] ; mat_keyscan:inst|key_data[4]      ; clk        ; clk      ; None                        ; None                      ; 6.898 ns                ;
+; N/A                                     ; 131.46 MHz ( period = 7.607 ns )                    ; mat_keyscan:inst|key_data_buf[5] ; mat_keyscan:inst|key_data[2]      ; clk        ; clk      ; None                        ; None                      ; 6.898 ns                ;
+; N/A                                     ; 131.46 MHz ( period = 7.607 ns )                    ; mat_keyscan:inst|key_data_buf[5] ; mat_keyscan:inst|key_data[7]      ; clk        ; clk      ; None                        ; None                      ; 6.898 ns                ;
+; N/A                                     ; 131.48 MHz ( period = 7.606 ns )                    ; mat_keyscan:inst|clk_20ms_r[13]  ; mat_keyscan:inst|clk_20ms_r[6]    ; clk        ; clk      ; None                        ; None                      ; 6.897 ns                ;
+; N/A                                     ; 131.51 MHz ( period = 7.604 ns )                    ; mat_keyscan:inst|clk_20ms_r[13]  ; mat_keyscan:inst|clk_20ms_r[0]    ; clk        ; clk      ; None                        ; None                      ; 6.895 ns                ;
+; N/A                                     ; 132.35 MHz ( period = 7.556 ns )                    ; mat_keyscan:inst|clk_20ms_r[10]  ; mat_keyscan:inst|clk_20ms_r[19]   ; clk        ; clk      ; None                        ; None                      ; 6.847 ns                ;
+; N/A                                     ; 132.64 MHz ( period = 7.539 ns )                    ; mat_keyscan:inst|clk_20ms_r[2]   ; mat_keyscan:inst|clk_20ms_r[15]   ; clk        ; clk      ; None                        ; None                      ; 6.830 ns                ;
+; N/A                                     ; 132.87 MHz ( period = 7.526 ns )                    ; mat_keyscan:inst|clk_20ms_r[2]   ; mat_keyscan:inst|clk_20ms_r[11]   ; clk        ; clk      ; None                        ; None                      ; 6.817 ns                ;
+; N/A                                     ; 132.89 MHz ( period = 7.525 ns )                    ; mat_keyscan:inst|key_data_buf[7] ; mat_keyscan:inst|key_data[0]      ; clk        ; clk      ; None                        ; None                      ; 6.816 ns                ;
+; N/A                                     ; 132.89 MHz ( period = 7.525 ns )                    ; mat_keyscan:inst|key_data_buf[7] ; mat_keyscan:inst|key_data[6]      ; clk        ; clk      ; None                        ; None                      ; 6.816 ns                ;
+; N/A                                     ; 132.89 MHz ( period = 7.525 ns )                    ; mat_keyscan:inst|key_data_buf[7] ; mat_keyscan:inst|key_data[4]      ; clk        ; clk      ; None                        ; None                      ; 6.816 ns                ;
+; N/A                                     ; 132.89 MHz ( period = 7.525 ns )                    ; mat_keyscan:inst|key_data_buf[7] ; mat_keyscan:inst|key_data[2]      ; clk        ; clk      ; None                        ; None                      ; 6.816 ns                ;
+; N/A                                     ; 132.89 MHz ( period = 7.525 ns )                    ; mat_keyscan:inst|key_data_buf[7] ; mat_keyscan:inst|key_data[7]      ; clk        ; clk      ; None                        ; None                      ; 6.816 ns                ;
+; N/A                                     ; 133.26 MHz ( period = 7.504 ns )                    ; mat_keyscan:inst|clk_20ms_r[1]   ; mat_keyscan:inst|clk_20ms_r[15]   ; clk        ; clk      ; None                        ; None                      ; 6.795 ns                ;
+; N/A                                     ; 133.35 MHz ( period = 7.499 ns )                    ; mat_keyscan:inst|clk_20ms_r[8]   ; mat_keyscan:inst|clk_20ms_r[9]    ; clk        ; clk      ; None                        ; None                      ; 6.790 ns                ;
+; N/A                                     ; 133.42 MHz ( period = 7.495 ns )                    ; mat_keyscan:inst|clk_20ms_r[8]   ; mat_keyscan:inst|clk_20ms_r[6]    ; clk        ; clk      ; None                        ; None                      ; 6.786 ns                ;
+; N/A                                     ; 133.46 MHz ( period = 7.493 ns )                    ; mat_keyscan:inst|clk_20ms_r[8]   ; mat_keyscan:inst|clk_20ms_r[0]    ; clk        ; clk      ; None                        ; None                      ; 6.784 ns                ;
+; N/A                                     ; 133.49 MHz ( period = 7.491 ns )                    ; mat_keyscan:inst|clk_20ms_r[1]   ; mat_keyscan:inst|clk_20ms_r[11]   ; clk        ; clk      ; None                        ; None                      ; 6.782 ns                ;
+; N/A                                     ; 133.62 MHz ( period = 7.484 ns )                    ; mat_keyscan:inst|clk_20ms_r[2]   ; mat_keyscan:inst|clk_20ms_r[16]   ; clk        ; clk      ; None                        ; None                      ; 6.775 ns                ;
+; N/A                                     ; 133.76 MHz ( period = 7.476 ns )                    ; mat_keyscan:inst|clk_20ms_r[2]   ; mat_keyscan:inst|clk_20ms_r[13]   ; clk        ; clk      ; None                        ; None                      ; 6.767 ns                ;
+; N/A                                     ; 133.85 MHz ( period = 7.471 ns )                    ; hc164_driver:inst1|clk_cnt[5]    ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 6.762 ns                ;
+; N/A                                     ; 134.10 MHz ( period = 7.457 ns )                    ; mat_keyscan:inst|clk_20ms_r[2]   ; mat_keyscan:inst|clk_20ms_r[18]   ; clk        ; clk      ; None                        ; None                      ; 6.748 ns                ;
+; N/A                                     ; 134.25 MHz ( period = 7.449 ns )                    ; hc164_driver:inst1|clk_cnt[9]    ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 6.740 ns                ;
+; N/A                                     ; 134.25 MHz ( period = 7.449 ns )                    ; mat_keyscan:inst|clk_20ms_r[1]   ; mat_keyscan:inst|clk_20ms_r[16]   ; clk        ; clk      ; None                        ; None                      ; 6.740 ns                ;
+; N/A                                     ; 134.39 MHz ( period = 7.441 ns )                    ; mat_keyscan:inst|clk_20ms_r[1]   ; mat_keyscan:inst|clk_20ms_r[13]   ; clk        ; clk      ; None                        ; None                      ; 6.732 ns                ;
+; N/A                                     ; 134.41 MHz ( period = 7.440 ns )                    ; hc164_driver:inst1|clk_cnt[7]    ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 6.731 ns                ;
+; N/A                                     ; 134.52 MHz ( period = 7.434 ns )                    ; mat_keyscan:inst|clk_20ms_r[4]   ; mat_keyscan:inst|clk_20ms_r[9]    ; clk        ; clk      ; None                        ; None                      ; 6.725 ns                ;
+; N/A                                     ; 134.55 MHz ( period = 7.432 ns )                    ; mat_keyscan:inst|col[0]          ; mat_keyscan:inst|key_data[0]      ; clk        ; clk      ; None                        ; None                      ; 6.723 ns                ;
+; N/A                                     ; 134.55 MHz ( period = 7.432 ns )                    ; mat_keyscan:inst|col[0]          ; mat_keyscan:inst|key_data[6]      ; clk        ; clk      ; None                        ; None                      ; 6.723 ns                ;
+; N/A                                     ; 134.55 MHz ( period = 7.432 ns )                    ; mat_keyscan:inst|col[0]          ; mat_keyscan:inst|key_data[4]      ; clk        ; clk      ; None                        ; None                      ; 6.723 ns                ;
+; N/A                                     ; 134.55 MHz ( period = 7.432 ns )                    ; mat_keyscan:inst|col[0]          ; mat_keyscan:inst|key_data[2]      ; clk        ; clk      ; None                        ; None                      ; 6.723 ns                ;
+; N/A                                     ; 134.55 MHz ( period = 7.432 ns )                    ; mat_keyscan:inst|col[0]          ; mat_keyscan:inst|key_data[7]      ; clk        ; clk      ; None                        ; None                      ; 6.723 ns                ;
+; N/A                                     ; 134.59 MHz ( period = 7.430 ns )                    ; mat_keyscan:inst|clk_20ms_r[4]   ; mat_keyscan:inst|clk_20ms_r[6]    ; clk        ; clk      ; None                        ; None                      ; 6.721 ns                ;
+; N/A                                     ; 134.63 MHz ( period = 7.428 ns )                    ; mat_keyscan:inst|clk_20ms_r[4]   ; mat_keyscan:inst|clk_20ms_r[0]    ; clk        ; clk      ; None                        ; None                      ; 6.719 ns                ;
+; N/A                                     ; 134.73 MHz ( period = 7.422 ns )                    ; mat_keyscan:inst|clk_20ms_r[1]   ; mat_keyscan:inst|clk_20ms_r[18]   ; clk        ; clk      ; None                        ; None                      ; 6.713 ns                ;
+; N/A                                     ; 135.94 MHz ( period = 7.356 ns )                    ; mat_keyscan:inst|delay[1]        ; mat_keyscan:inst|key_data[0]      ; clk        ; clk      ; None                        ; None                      ; 6.647 ns                ;
+; N/A                                     ; 135.94 MHz ( period = 7.356 ns )                    ; mat_keyscan:inst|delay[1]        ; mat_keyscan:inst|key_data[6]      ; clk        ; clk      ; None                        ; None                      ; 6.647 ns                ;
+; N/A                                     ; 135.94 MHz ( period = 7.356 ns )                    ; mat_keyscan:inst|delay[1]        ; mat_keyscan:inst|key_data[4]      ; clk        ; clk      ; None                        ; None                      ; 6.647 ns                ;
+; N/A                                     ; 135.94 MHz ( period = 7.356 ns )                    ; mat_keyscan:inst|delay[1]        ; mat_keyscan:inst|key_data[2]      ; clk        ; clk      ; None                        ; None                      ; 6.647 ns                ;
+; N/A                                     ; 135.94 MHz ( period = 7.356 ns )                    ; mat_keyscan:inst|delay[1]        ; mat_keyscan:inst|key_data[7]      ; clk        ; clk      ; None                        ; None                      ; 6.647 ns                ;
+; N/A                                     ; 136.00 MHz ( period = 7.353 ns )                    ; mat_keyscan:inst|clk_20ms_r[10]  ; mat_keyscan:inst|clk_20ms_r[15]   ; clk        ; clk      ; None                        ; None                      ; 6.644 ns                ;
+; N/A                                     ; 136.63 MHz ( period = 7.319 ns )                    ; mat_keyscan:inst|col[1]          ; mat_keyscan:inst|key_data[5]      ; clk        ; clk      ; None                        ; None                      ; 6.610 ns                ;
+; N/A                                     ; 136.63 MHz ( period = 7.319 ns )                    ; mat_keyscan:inst|col[1]          ; mat_keyscan:inst|key_data[1]      ; clk        ; clk      ; None                        ; None                      ; 6.610 ns                ;
+; N/A                                     ; 136.63 MHz ( period = 7.319 ns )                    ; mat_keyscan:inst|col[1]          ; mat_keyscan:inst|key_data[3]      ; clk        ; clk      ; None                        ; None                      ; 6.610 ns                ;
+; N/A                                     ; 136.95 MHz ( period = 7.302 ns )                    ; hc164_driver:inst1|clk_cnt[12]   ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 6.593 ns                ;
+; N/A                                     ; 136.97 MHz ( period = 7.301 ns )                    ; mat_keyscan:inst|clk_20ms_r[1]   ; mat_keyscan:inst|clk_20ms_r[6]    ; clk        ; clk      ; None                        ; None                      ; 6.592 ns                ;
+; N/A                                     ; 137.02 MHz ( period = 7.298 ns )                    ; mat_keyscan:inst|clk_20ms_r[10]  ; mat_keyscan:inst|clk_20ms_r[16]   ; clk        ; clk      ; None                        ; None                      ; 6.589 ns                ;
+; N/A                                     ; 137.36 MHz ( period = 7.280 ns )                    ; mat_keyscan:inst|clk_20ms_r[5]   ; mat_keyscan:inst|clk_20ms_r[9]    ; clk        ; clk      ; None                        ; None                      ; 6.571 ns                ;
+; N/A                                     ; 137.44 MHz ( period = 7.276 ns )                    ; mat_keyscan:inst|clk_20ms_r[5]   ; mat_keyscan:inst|clk_20ms_r[6]    ; clk        ; clk      ; None                        ; None                      ; 6.567 ns                ;
+; N/A                                     ; 137.48 MHz ( period = 7.274 ns )                    ; mat_keyscan:inst|clk_20ms_r[5]   ; mat_keyscan:inst|clk_20ms_r[0]    ; clk        ; clk      ; None                        ; None                      ; 6.565 ns                ;
+; N/A                                     ; 137.53 MHz ( period = 7.271 ns )                    ; mat_keyscan:inst|clk_20ms_r[10]  ; mat_keyscan:inst|clk_20ms_r[18]   ; clk        ; clk      ; None                        ; None                      ; 6.562 ns                ;
+; N/A                                     ; 137.80 MHz ( period = 7.257 ns )                    ; mat_keyscan:inst|clk_20ms_r[9]   ; mat_keyscan:inst|clk_20ms_r[16]   ; clk        ; clk      ; None                        ; None                      ; 6.548 ns                ;
+; N/A                                     ; 137.82 MHz ( period = 7.256 ns )                    ; mat_keyscan:inst|clk_20ms_r[9]   ; mat_keyscan:inst|clk_20ms_r[18]   ; clk        ; clk      ; None                        ; None                      ; 6.547 ns                ;
+; N/A                                     ; 137.84 MHz ( period = 7.255 ns )                    ; mat_keyscan:inst|clk_20ms_r[2]   ; mat_keyscan:inst|clk_20ms_r[12]   ; clk        ; clk      ; None                        ; None                      ; 6.546 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; mat_keyscan:inst|clk_20ms_r[9]   ; mat_keyscan:inst|clk_20ms_r[19]   ; clk        ; clk      ; None                        ; None                      ; 6.545 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; mat_keyscan:inst|key_data_buf[4] ; mat_keyscan:inst|key_data[0]      ; clk        ; clk      ; None                        ; None                      ; 6.535 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; mat_keyscan:inst|key_data_buf[4] ; mat_keyscan:inst|key_data[6]      ; clk        ; clk      ; None                        ; None                      ; 6.535 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; mat_keyscan:inst|key_data_buf[4] ; mat_keyscan:inst|key_data[4]      ; clk        ; clk      ; None                        ; None                      ; 6.535 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; mat_keyscan:inst|key_data_buf[4] ; mat_keyscan:inst|key_data[2]      ; clk        ; clk      ; None                        ; None                      ; 6.535 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; mat_keyscan:inst|key_data_buf[4] ; mat_keyscan:inst|key_data[7]      ; clk        ; clk      ; None                        ; None                      ; 6.535 ns                ;
+; N/A                                     ; 138.47 MHz ( period = 7.222 ns )                    ; mat_keyscan:inst|clk_20ms_r[13]  ; mat_keyscan:inst|clk_20ms_r[16]   ; clk        ; clk      ; None                        ; None                      ; 6.513 ns                ;
+; N/A                                     ; 138.48 MHz ( period = 7.221 ns )                    ; mat_keyscan:inst|clk_20ms_r[13]  ; mat_keyscan:inst|clk_20ms_r[18]   ; clk        ; clk      ; None                        ; None                      ; 6.512 ns                ;
+; N/A                                     ; 138.50 MHz ( period = 7.220 ns )                    ; mat_keyscan:inst|clk_20ms_r[1]   ; mat_keyscan:inst|clk_20ms_r[12]   ; clk        ; clk      ; None                        ; None                      ; 6.511 ns                ;
+; N/A                                     ; 138.52 MHz ( period = 7.219 ns )                    ; mat_keyscan:inst|clk_20ms_r[13]  ; mat_keyscan:inst|clk_20ms_r[19]   ; clk        ; clk      ; None                        ; None                      ; 6.510 ns                ;
+; N/A                                     ; 138.54 MHz ( period = 7.218 ns )                    ; mat_keyscan:inst|clk_20ms_r[0]   ; mat_keyscan:inst|clk_20ms_r[19]   ; clk        ; clk      ; None                        ; None                      ; 6.509 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; mat_keyscan:inst|clk_20ms_r[19]  ; mat_keyscan:inst|clk_20ms_r[9]    ; clk        ; clk      ; None                        ; None                      ; 6.491 ns                ;
+; N/A                                     ; 138.97 MHz ( period = 7.196 ns )                    ; mat_keyscan:inst|clk_20ms_r[19]  ; mat_keyscan:inst|clk_20ms_r[6]    ; clk        ; clk      ; None                        ; None                      ; 6.487 ns                ;
+; N/A                                     ; 138.99 MHz ( period = 7.195 ns )                    ; mat_keyscan:inst|clk_20ms_r[2]   ; mat_keyscan:inst|clk_20ms_r[17]   ; clk        ; clk      ; None                        ; None                      ; 6.486 ns                ;
+; N/A                                     ; 139.00 MHz ( period = 7.194 ns )                    ; mat_keyscan:inst|clk_20ms_r[19]  ; mat_keyscan:inst|clk_20ms_r[0]    ; clk        ; clk      ; None                        ; None                      ; 6.485 ns                ;
+; N/A                                     ; 139.16 MHz ( period = 7.186 ns )                    ; mat_keyscan:inst|clk_20ms_r[1]   ; mat_keyscan:inst|clk_20ms_r[9]    ; clk        ; clk      ; None                        ; None                      ; 6.477 ns                ;
+; N/A                                     ; 139.18 MHz ( period = 7.185 ns )                    ; mat_keyscan:inst|clk_20ms_r[2]   ; mat_keyscan:inst|clk_20ms_r[14]   ; clk        ; clk      ; None                        ; None                      ; 6.476 ns                ;
+; N/A                                     ; 139.28 MHz ( period = 7.180 ns )                    ; mat_keyscan:inst|clk_20ms_r[1]   ; mat_keyscan:inst|clk_20ms_r[0]    ; clk        ; clk      ; None                        ; None                      ; 6.471 ns                ;
+; N/A                                     ; 139.65 MHz ( period = 7.161 ns )                    ; mat_keyscan:inst|clk_20ms_r[0]   ; mat_keyscan:inst|clk_20ms_r[10]   ; clk        ; clk      ; None                        ; None                      ; 6.452 ns                ;
+; N/A                                     ; 139.66 MHz ( period = 7.160 ns )                    ; mat_keyscan:inst|clk_20ms_r[1]   ; mat_keyscan:inst|clk_20ms_r[17]   ; clk        ; clk      ; None                        ; None                      ; 6.451 ns                ;
+; N/A                                     ; 139.74 MHz ( period = 7.156 ns )                    ; hc164_driver:inst1|clk_cnt[4]    ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 6.447 ns                ;
+; N/A                                     ; 139.86 MHz ( period = 7.150 ns )                    ; mat_keyscan:inst|clk_20ms_r[1]   ; mat_keyscan:inst|clk_20ms_r[14]   ; clk        ; clk      ; None                        ; None                      ; 6.441 ns                ;
+; N/A                                     ; 139.96 MHz ( period = 7.145 ns )                    ; mat_keyscan:inst|clk_20ms_r[14]  ; mat_keyscan:inst|clk_20ms_r[9]    ; clk        ; clk      ; None                        ; None                      ; 6.436 ns                ;
+; N/A                                     ; 140.04 MHz ( period = 7.141 ns )                    ; mat_keyscan:inst|clk_20ms_r[14]  ; mat_keyscan:inst|clk_20ms_r[6]    ; clk        ; clk      ; None                        ; None                      ; 6.432 ns                ;
+; N/A                                     ; 140.08 MHz ( period = 7.139 ns )                    ; mat_keyscan:inst|clk_20ms_r[14]  ; mat_keyscan:inst|clk_20ms_r[0]    ; clk        ; clk      ; None                        ; None                      ; 6.430 ns                ;
+; N/A                                     ; 140.37 MHz ( period = 7.124 ns )                    ; hc164_driver:inst1|clk_cnt[10]   ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 6.415 ns                ;
+; N/A                                     ; 140.49 MHz ( period = 7.118 ns )                    ; mat_keyscan:inst|clk_20ms_r[11]  ; mat_keyscan:inst|clk_20ms_r[19]   ; clk        ; clk      ; None                        ; None                      ; 6.409 ns                ;
+; N/A                                     ; 140.53 MHz ( period = 7.116 ns )                    ; hc164_driver:inst1|clk_cnt[6]    ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 6.407 ns                ;
+; N/A                                     ; 140.63 MHz ( period = 7.111 ns )                    ; mat_keyscan:inst|clk_20ms_r[8]   ; mat_keyscan:inst|clk_20ms_r[16]   ; clk        ; clk      ; None                        ; None                      ; 6.402 ns                ;
+; N/A                                     ; 140.65 MHz ( period = 7.110 ns )                    ; mat_keyscan:inst|clk_20ms_r[8]   ; mat_keyscan:inst|clk_20ms_r[18]   ; clk        ; clk      ; None                        ; None                      ; 6.401 ns                ;
+; N/A                                     ; 140.69 MHz ( period = 7.108 ns )                    ; mat_keyscan:inst|clk_20ms_r[8]   ; mat_keyscan:inst|clk_20ms_r[19]   ; clk        ; clk      ; None                        ; None                      ; 6.399 ns                ;
+; N/A                                     ; 140.94 MHz ( period = 7.095 ns )                    ; mat_keyscan:inst|clk_20ms_r[6]   ; mat_keyscan:inst|clk_20ms_r[19]   ; clk        ; clk      ; None                        ; None                      ; 6.386 ns                ;
+; N/A                                     ; 141.48 MHz ( period = 7.068 ns )                    ; mat_keyscan:inst|clk_20ms_r[3]   ; mat_keyscan:inst|clk_20ms_r[19]   ; clk        ; clk      ; None                        ; None                      ; 6.359 ns                ;
+; N/A                                     ; 141.92 MHz ( period = 7.046 ns )                    ; mat_keyscan:inst|clk_20ms_r[4]   ; mat_keyscan:inst|clk_20ms_r[16]   ; clk        ; clk      ; None                        ; None                      ; 6.337 ns                ;
+; N/A                                     ; 141.94 MHz ( period = 7.045 ns )                    ; mat_keyscan:inst|clk_20ms_r[4]   ; mat_keyscan:inst|clk_20ms_r[18]   ; clk        ; clk      ; None                        ; None                      ; 6.336 ns                ;
+; N/A                                     ; 141.98 MHz ( period = 7.043 ns )                    ; mat_keyscan:inst|clk_20ms_r[4]   ; mat_keyscan:inst|clk_20ms_r[19]   ; clk        ; clk      ; None                        ; None                      ; 6.334 ns                ;
+; N/A                                     ; 142.05 MHz ( period = 7.040 ns )                    ; mat_keyscan:inst|clk_20ms_r[5]   ; mat_keyscan:inst|clk_20ms_r[19]   ; clk        ; clk      ; None                        ; None                      ; 6.331 ns                ;
+; N/A                                     ; 142.09 MHz ( period = 7.038 ns )                    ; mat_keyscan:inst|clk_20ms_r[6]   ; mat_keyscan:inst|clk_20ms_r[10]   ; clk        ; clk      ; None                        ; None                      ; 6.329 ns                ;
+; N/A                                     ; 142.55 MHz ( period = 7.015 ns )                    ; mat_keyscan:inst|clk_20ms_r[0]   ; mat_keyscan:inst|clk_20ms_r[15]   ; clk        ; clk      ; None                        ; None                      ; 6.306 ns                ;
+; N/A                                     ; 142.63 MHz ( period = 7.011 ns )                    ; mat_keyscan:inst|clk_20ms_r[3]   ; mat_keyscan:inst|clk_20ms_r[10]   ; clk        ; clk      ; None                        ; None                      ; 6.302 ns                ;
+; N/A                                     ; 142.63 MHz ( period = 7.011 ns )                    ; mat_keyscan:inst|clk_20ms_r[2]   ; mat_keyscan:inst|clk_20ms_r[7]    ; clk        ; clk      ; None                        ; None                      ; 6.302 ns                ;
+; N/A                                     ; 142.65 MHz ( period = 7.010 ns )                    ; mat_keyscan:inst|clk_20ms_r[7]   ; mat_keyscan:inst|clk_20ms_r[19]   ; clk        ; clk      ; None                        ; None                      ; 6.301 ns                ;
+; N/A                                     ; 142.67 MHz ( period = 7.009 ns )                    ; mat_keyscan:inst|clk_20ms_r[10]  ; mat_keyscan:inst|clk_20ms_r[17]   ; clk        ; clk      ; None                        ; None                      ; 6.300 ns                ;
+; N/A                                     ; 142.80 MHz ( period = 7.003 ns )                    ; hc164_driver:inst1|clk_cnt[8]    ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 6.294 ns                ;
+; N/A                                     ; 142.82 MHz ( period = 7.002 ns )                    ; mat_keyscan:inst|clk_20ms_r[0]   ; mat_keyscan:inst|clk_20ms_r[11]   ; clk        ; clk      ; None                        ; None                      ; 6.293 ns                ;
+; N/A                                     ; 143.02 MHz ( period = 6.992 ns )                    ; mat_keyscan:inst|clk_20ms_r[12]  ; mat_keyscan:inst|clk_20ms_r[9]    ; clk        ; clk      ; None                        ; None                      ; 6.283 ns                ;
+; N/A                                     ; 143.10 MHz ( period = 6.988 ns )                    ; mat_keyscan:inst|clk_20ms_r[12]  ; mat_keyscan:inst|clk_20ms_r[6]    ; clk        ; clk      ; None                        ; None                      ; 6.279 ns                ;
+; N/A                                     ; 143.14 MHz ( period = 6.986 ns )                    ; mat_keyscan:inst|clk_20ms_r[12]  ; mat_keyscan:inst|clk_20ms_r[0]    ; clk        ; clk      ; None                        ; None                      ; 6.277 ns                ;
+; N/A                                     ; 143.20 MHz ( period = 6.983 ns )                    ; mat_keyscan:inst|clk_20ms_r[5]   ; mat_keyscan:inst|clk_20ms_r[10]   ; clk        ; clk      ; None                        ; None                      ; 6.274 ns                ;
+; N/A                                     ; 143.27 MHz ( period = 6.980 ns )                    ; mat_keyscan:inst|col[3]          ; mat_keyscan:inst|key_data[5]      ; clk        ; clk      ; None                        ; None                      ; 6.271 ns                ;
+; N/A                                     ; 143.27 MHz ( period = 6.980 ns )                    ; mat_keyscan:inst|col[3]          ; mat_keyscan:inst|key_data[1]      ; clk        ; clk      ; None                        ; None                      ; 6.271 ns                ;
+; N/A                                     ; 143.27 MHz ( period = 6.980 ns )                    ; mat_keyscan:inst|col[3]          ; mat_keyscan:inst|key_data[3]      ; clk        ; clk      ; None                        ; None                      ; 6.271 ns                ;
+; N/A                                     ; 143.35 MHz ( period = 6.976 ns )                    ; mat_keyscan:inst|delay[0]        ; mat_keyscan:inst|key_data[0]      ; clk        ; clk      ; None                        ; None                      ; 6.267 ns                ;
+; N/A                                     ; 143.35 MHz ( period = 6.976 ns )                    ; mat_keyscan:inst|delay[0]        ; mat_keyscan:inst|key_data[6]      ; clk        ; clk      ; None                        ; None                      ; 6.267 ns                ;
+; N/A                                     ; 143.35 MHz ( period = 6.976 ns )                    ; mat_keyscan:inst|delay[0]        ; mat_keyscan:inst|key_data[4]      ; clk        ; clk      ; None                        ; None                      ; 6.267 ns                ;
+; N/A                                     ; 143.35 MHz ( period = 6.976 ns )                    ; mat_keyscan:inst|delay[0]        ; mat_keyscan:inst|key_data[2]      ; clk        ; clk      ; None                        ; None                      ; 6.267 ns                ;
+; N/A                                     ; 143.35 MHz ( period = 6.976 ns )                    ; mat_keyscan:inst|delay[0]        ; mat_keyscan:inst|key_data[7]      ; clk        ; clk      ; None                        ; None                      ; 6.267 ns                ;
+; N/A                                     ; 143.35 MHz ( period = 6.976 ns )                    ; mat_keyscan:inst|clk_20ms_r[1]   ; mat_keyscan:inst|clk_20ms_r[7]    ; clk        ; clk      ; None                        ; None                      ; 6.267 ns                ;
+; N/A                                     ; 143.62 MHz ( period = 6.963 ns )                    ; mat_keyscan:inst|clk_20ms_r[10]  ; mat_keyscan:inst|clk_20ms_r[9]    ; clk        ; clk      ; None                        ; None                      ; 6.254 ns                ;
+; N/A                                     ; 143.68 MHz ( period = 6.960 ns )                    ; mat_keyscan:inst|clk_20ms_r[0]   ; mat_keyscan:inst|clk_20ms_r[16]   ; clk        ; clk      ; None                        ; None                      ; 6.251 ns                ;
+; N/A                                     ; 143.70 MHz ( period = 6.959 ns )                    ; mat_keyscan:inst|clk_20ms_r[10]  ; mat_keyscan:inst|clk_20ms_r[6]    ; clk        ; clk      ; None                        ; None                      ; 6.250 ns                ;
+; N/A                                     ; 143.74 MHz ( period = 6.957 ns )                    ; mat_keyscan:inst|clk_20ms_r[10]  ; mat_keyscan:inst|clk_20ms_r[0]    ; clk        ; clk      ; None                        ; None                      ; 6.248 ns                ;
+; N/A                                     ; 143.82 MHz ( period = 6.953 ns )                    ; mat_keyscan:inst|clk_20ms_r[7]   ; mat_keyscan:inst|clk_20ms_r[10]   ; clk        ; clk      ; None                        ; None                      ; 6.244 ns                ;
+; N/A                                     ; 143.84 MHz ( period = 6.952 ns )                    ; mat_keyscan:inst|clk_20ms_r[0]   ; mat_keyscan:inst|clk_20ms_r[13]   ; clk        ; clk      ; None                        ; None                      ; 6.243 ns                ;
+; N/A                                     ; 144.24 MHz ( period = 6.933 ns )                    ; mat_keyscan:inst|clk_20ms_r[0]   ; mat_keyscan:inst|clk_20ms_r[18]   ; clk        ; clk      ; None                        ; None                      ; 6.224 ns                ;
+; N/A                                     ; 144.26 MHz ( period = 6.932 ns )                    ; mat_keyscan:inst|clk_20ms_r[9]   ; mat_keyscan:inst|clk_20ms_r[14]   ; clk        ; clk      ; None                        ; None                      ; 6.223 ns                ;
+; N/A                                     ; 144.28 MHz ( period = 6.931 ns )                    ; hc164_driver:inst1|clk_cnt[15]   ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 6.222 ns                ;
+; N/A                                     ; 144.55 MHz ( period = 6.918 ns )                    ; hc164_driver:inst1|clk_cnt[11]   ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 6.209 ns                ;
+; N/A                                     ; 144.55 MHz ( period = 6.918 ns )                    ; mat_keyscan:inst|clk_20ms_r[9]   ; mat_keyscan:inst|clk_20ms_r[17]   ; clk        ; clk      ; None                        ; None                      ; 6.209 ns                ;
+; N/A                                     ; 144.61 MHz ( period = 6.915 ns )                    ; mat_keyscan:inst|clk_20ms_r[11]  ; mat_keyscan:inst|clk_20ms_r[15]   ; clk        ; clk      ; None                        ; None                      ; 6.206 ns                ;
+; N/A                                     ; 144.99 MHz ( period = 6.897 ns )                    ; mat_keyscan:inst|clk_20ms_r[13]  ; mat_keyscan:inst|clk_20ms_r[14]   ; clk        ; clk      ; None                        ; None                      ; 6.188 ns                ;
+; N/A                                     ; 145.10 MHz ( period = 6.892 ns )                    ; mat_keyscan:inst|clk_20ms_r[5]   ; mat_keyscan:inst|clk_20ms_r[16]   ; clk        ; clk      ; None                        ; None                      ; 6.183 ns                ;
+; N/A                                     ; 145.10 MHz ( period = 6.892 ns )                    ; mat_keyscan:inst|clk_20ms_r[6]   ; mat_keyscan:inst|clk_20ms_r[15]   ; clk        ; clk      ; None                        ; None                      ; 6.183 ns                ;
+; N/A                                     ; 145.12 MHz ( period = 6.891 ns )                    ; mat_keyscan:inst|clk_20ms_r[5]   ; mat_keyscan:inst|clk_20ms_r[18]   ; clk        ; clk      ; None                        ; None                      ; 6.182 ns                ;
+; N/A                                     ; 145.29 MHz ( period = 6.883 ns )                    ; mat_keyscan:inst|clk_20ms_r[13]  ; mat_keyscan:inst|clk_20ms_r[17]   ; clk        ; clk      ; None                        ; None                      ; 6.174 ns                ;
+; N/A                                     ; 145.37 MHz ( period = 6.879 ns )                    ; mat_keyscan:inst|clk_20ms_r[6]   ; mat_keyscan:inst|clk_20ms_r[11]   ; clk        ; clk      ; None                        ; None                      ; 6.170 ns                ;
+; N/A                                     ; 145.50 MHz ( period = 6.873 ns )                    ; hc164_driver:inst1|clk_cnt[15]   ; hc164_driver:inst1|tx_cnt[5]      ; clk        ; clk      ; None                        ; None                      ; 6.164 ns                ;
+; N/A                                     ; 145.50 MHz ( period = 6.873 ns )                    ; hc164_driver:inst1|clk_cnt[15]   ; hc164_driver:inst1|tx_cnt[4]      ; clk        ; clk      ; None                        ; None                      ; 6.164 ns                ;
+; N/A                                     ; 145.67 MHz ( period = 6.865 ns )                    ; mat_keyscan:inst|clk_20ms_r[3]   ; mat_keyscan:inst|clk_20ms_r[15]   ; clk        ; clk      ; None                        ; None                      ; 6.156 ns                ;
+; N/A                                     ; 145.77 MHz ( period = 6.860 ns )                    ; mat_keyscan:inst|clk_20ms_r[11]  ; mat_keyscan:inst|clk_20ms_r[16]   ; clk        ; clk      ; None                        ; None                      ; 6.151 ns                ;
+; N/A                                     ; 145.94 MHz ( period = 6.852 ns )                    ; mat_keyscan:inst|clk_20ms_r[3]   ; mat_keyscan:inst|clk_20ms_r[11]   ; clk        ; clk      ; None                        ; None                      ; 6.143 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                  ;                                   ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------+-----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; tsu                                                                                        ;
++-------+--------------+------------+----------+----------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From     ; To                               ; To Clock ;
++-------+--------------+------------+----------+----------------------------------+----------+
+; N/A   ; None         ; 2.361 ns   ; KEY_H[2] ; mat_keyscan:inst|key_data[0]     ; clk      ;
+; N/A   ; None         ; 2.361 ns   ; KEY_H[2] ; mat_keyscan:inst|key_data[6]     ; clk      ;
+; N/A   ; None         ; 2.361 ns   ; KEY_H[2] ; mat_keyscan:inst|key_data[4]     ; clk      ;
+; N/A   ; None         ; 2.361 ns   ; KEY_H[2] ; mat_keyscan:inst|key_data[2]     ; clk      ;
+; N/A   ; None         ; 2.361 ns   ; KEY_H[2] ; mat_keyscan:inst|key_data[7]     ; clk      ;
+; N/A   ; None         ; 2.295 ns   ; KEY_H[4] ; mat_keyscan:inst|key_data[0]     ; clk      ;
+; N/A   ; None         ; 2.295 ns   ; KEY_H[4] ; mat_keyscan:inst|key_data[6]     ; clk      ;
+; N/A   ; None         ; 2.295 ns   ; KEY_H[4] ; mat_keyscan:inst|key_data[4]     ; clk      ;
+; N/A   ; None         ; 2.295 ns   ; KEY_H[4] ; mat_keyscan:inst|key_data[2]     ; clk      ;
+; N/A   ; None         ; 2.295 ns   ; KEY_H[4] ; mat_keyscan:inst|key_data[7]     ; clk      ;
+; N/A   ; None         ; 2.190 ns   ; KEY_H[3] ; mat_keyscan:inst|key_data[0]     ; clk      ;
+; N/A   ; None         ; 2.190 ns   ; KEY_H[3] ; mat_keyscan:inst|key_data[6]     ; clk      ;
+; N/A   ; None         ; 2.190 ns   ; KEY_H[3] ; mat_keyscan:inst|key_data[4]     ; clk      ;
+; N/A   ; None         ; 2.190 ns   ; KEY_H[3] ; mat_keyscan:inst|key_data[2]     ; clk      ;
+; N/A   ; None         ; 2.190 ns   ; KEY_H[3] ; mat_keyscan:inst|key_data[7]     ; clk      ;
+; N/A   ; None         ; 1.983 ns   ; KEY_H[1] ; mat_keyscan:inst|key_data[0]     ; clk      ;
+; N/A   ; None         ; 1.983 ns   ; KEY_H[1] ; mat_keyscan:inst|key_data[6]     ; clk      ;
+; N/A   ; None         ; 1.983 ns   ; KEY_H[1] ; mat_keyscan:inst|key_data[4]     ; clk      ;
+; N/A   ; None         ; 1.983 ns   ; KEY_H[1] ; mat_keyscan:inst|key_data[2]     ; clk      ;
+; N/A   ; None         ; 1.983 ns   ; KEY_H[1] ; mat_keyscan:inst|key_data[7]     ; clk      ;
+; N/A   ; None         ; 1.364 ns   ; rst_n    ; mat_keyscan:inst|key_data[0]     ; clk      ;
+; N/A   ; None         ; 1.364 ns   ; rst_n    ; mat_keyscan:inst|key_data[6]     ; clk      ;
+; N/A   ; None         ; 1.364 ns   ; rst_n    ; mat_keyscan:inst|key_data[4]     ; clk      ;
+; N/A   ; None         ; 1.364 ns   ; rst_n    ; mat_keyscan:inst|key_data[2]     ; clk      ;
+; N/A   ; None         ; 1.364 ns   ; rst_n    ; mat_keyscan:inst|key_data[7]     ; clk      ;
+; N/A   ; None         ; 1.233 ns   ; KEY_H[2] ; mat_keyscan:inst|key_data[5]     ; clk      ;
+; N/A   ; None         ; 1.233 ns   ; KEY_H[2] ; mat_keyscan:inst|key_data[1]     ; clk      ;
+; N/A   ; None         ; 1.233 ns   ; KEY_H[2] ; mat_keyscan:inst|key_data[3]     ; clk      ;
+; N/A   ; None         ; 1.167 ns   ; KEY_H[4] ; mat_keyscan:inst|key_data[5]     ; clk      ;
+; N/A   ; None         ; 1.167 ns   ; KEY_H[4] ; mat_keyscan:inst|key_data[1]     ; clk      ;
+; N/A   ; None         ; 1.167 ns   ; KEY_H[4] ; mat_keyscan:inst|key_data[3]     ; clk      ;
+; N/A   ; None         ; 1.062 ns   ; KEY_H[3] ; mat_keyscan:inst|key_data[5]     ; clk      ;
+; N/A   ; None         ; 1.062 ns   ; KEY_H[3] ; mat_keyscan:inst|key_data[1]     ; clk      ;
+; N/A   ; None         ; 1.062 ns   ; KEY_H[3] ; mat_keyscan:inst|key_data[3]     ; clk      ;
+; N/A   ; None         ; 0.855 ns   ; KEY_H[1] ; mat_keyscan:inst|key_data[5]     ; clk      ;
+; N/A   ; None         ; 0.855 ns   ; KEY_H[1] ; mat_keyscan:inst|key_data[1]     ; clk      ;
+; N/A   ; None         ; 0.855 ns   ; KEY_H[1] ; mat_keyscan:inst|key_data[3]     ; clk      ;
+; N/A   ; None         ; 0.654 ns   ; KEY_H[2] ; mat_keyscan:inst|state.col0      ; clk      ;
+; N/A   ; None         ; 0.653 ns   ; KEY_H[2] ; mat_keyscan:inst|state.coln      ; clk      ;
+; N/A   ; None         ; 0.652 ns   ; KEY_H[2] ; mat_keyscan:inst|state.col3      ; clk      ;
+; N/A   ; None         ; 0.648 ns   ; KEY_H[2] ; mat_keyscan:inst|state.col2      ; clk      ;
+; N/A   ; None         ; 0.643 ns   ; KEY_H[2] ; mat_keyscan:inst|state.col1      ; clk      ;
+; N/A   ; None         ; 0.588 ns   ; KEY_H[4] ; mat_keyscan:inst|state.col0      ; clk      ;
+; N/A   ; None         ; 0.587 ns   ; KEY_H[4] ; mat_keyscan:inst|state.coln      ; clk      ;
+; N/A   ; None         ; 0.586 ns   ; KEY_H[4] ; mat_keyscan:inst|state.col3      ; clk      ;
+; N/A   ; None         ; 0.582 ns   ; KEY_H[4] ; mat_keyscan:inst|state.col2      ; clk      ;
+; N/A   ; None         ; 0.577 ns   ; KEY_H[4] ; mat_keyscan:inst|state.col1      ; clk      ;
+; N/A   ; None         ; 0.483 ns   ; KEY_H[3] ; mat_keyscan:inst|state.col0      ; clk      ;
+; N/A   ; None         ; 0.482 ns   ; KEY_H[3] ; mat_keyscan:inst|state.coln      ; clk      ;
+; N/A   ; None         ; 0.481 ns   ; KEY_H[3] ; mat_keyscan:inst|state.col3      ; clk      ;
+; N/A   ; None         ; 0.477 ns   ; KEY_H[3] ; mat_keyscan:inst|state.col2      ; clk      ;
+; N/A   ; None         ; 0.472 ns   ; KEY_H[3] ; mat_keyscan:inst|state.col1      ; clk      ;
+; N/A   ; None         ; 0.276 ns   ; KEY_H[1] ; mat_keyscan:inst|state.col0      ; clk      ;
+; N/A   ; None         ; 0.275 ns   ; KEY_H[1] ; mat_keyscan:inst|state.coln      ; clk      ;
+; N/A   ; None         ; 0.274 ns   ; KEY_H[1] ; mat_keyscan:inst|state.col3      ; clk      ;
+; N/A   ; None         ; 0.270 ns   ; KEY_H[1] ; mat_keyscan:inst|state.col2      ; clk      ;
+; N/A   ; None         ; 0.265 ns   ; KEY_H[1] ; mat_keyscan:inst|state.col1      ; clk      ;
+; N/A   ; None         ; 0.243 ns   ; rst_n    ; mat_keyscan:inst|key_data_buf[0] ; clk      ;
+; N/A   ; None         ; 0.243 ns   ; rst_n    ; mat_keyscan:inst|key_data_buf[1] ; clk      ;
+; N/A   ; None         ; 0.243 ns   ; rst_n    ; mat_keyscan:inst|key_data_buf[2] ; clk      ;
+; N/A   ; None         ; 0.243 ns   ; rst_n    ; mat_keyscan:inst|key_data_buf[3] ; clk      ;
+; N/A   ; None         ; 0.243 ns   ; rst_n    ; mat_keyscan:inst|key_data_buf[7] ; clk      ;
+; N/A   ; None         ; 0.236 ns   ; rst_n    ; mat_keyscan:inst|key_data[5]     ; clk      ;
+; N/A   ; None         ; 0.236 ns   ; rst_n    ; mat_keyscan:inst|key_data[1]     ; clk      ;
+; N/A   ; None         ; 0.236 ns   ; rst_n    ; mat_keyscan:inst|key_data[3]     ; clk      ;
+; N/A   ; None         ; -0.170 ns  ; rst_n    ; mat_keyscan:inst|key_data_buf[6] ; clk      ;
+; N/A   ; None         ; -0.170 ns  ; rst_n    ; mat_keyscan:inst|key_data_buf[5] ; clk      ;
+; N/A   ; None         ; -0.170 ns  ; rst_n    ; mat_keyscan:inst|key_data_buf[4] ; clk      ;
+; N/A   ; None         ; -1.711 ns  ; rst_n    ; mat_keyscan:inst|clk_20ms        ; clk      ;
+; N/A   ; None         ; -2.050 ns  ; KEY_H[4] ; mat_keyscan:inst|key_data_buf[3] ; clk      ;
+; N/A   ; None         ; -2.156 ns  ; KEY_H[3] ; mat_keyscan:inst|key_data_buf[2] ; clk      ;
+; N/A   ; None         ; -2.721 ns  ; KEY_H[1] ; mat_keyscan:inst|key_data_buf[0] ; clk      ;
+; N/A   ; None         ; -2.774 ns  ; KEY_H[2] ; mat_keyscan:inst|key_data_buf[1] ; clk      ;
++-------+--------------+------------+----------+----------------------------------+----------+
+
+
++-----------------------------------------------------------------------------------------------+
+; tco                                                                                           ;
++-------+--------------+------------+-----------------------------------+----------+------------+
+; Slack ; Required tco ; Actual tco ; From                              ; To       ; From Clock ;
++-------+--------------+------------+-----------------------------------+----------+------------+
+; N/A   ; None         ; 19.363 ns  ; mat_keyscan:inst|seg_data[2]      ; HC_SI    ; clk        ;
+; N/A   ; None         ; 18.445 ns  ; mat_keyscan:inst|seg_data[3]      ; HC_SI    ; clk        ;
+; N/A   ; None         ; 18.225 ns  ; hc164_driver:inst1|seg_led_num[0] ; HC_SI    ; clk        ;
+; N/A   ; None         ; 18.221 ns  ; mat_keyscan:inst|seg_data[0]      ; HC_SI    ; clk        ;
+; N/A   ; None         ; 18.165 ns  ; mat_keyscan:inst|seg_data[1]      ; HC_SI    ; clk        ;
+; N/A   ; None         ; 17.699 ns  ; hc164_driver:inst1|seg_led_num[2] ; HC_SI    ; clk        ;
+; N/A   ; None         ; 17.435 ns  ; mat_keyscan:inst|seg_data[4]      ; HC_SI    ; clk        ;
+; N/A   ; None         ; 17.408 ns  ; hc164_driver:inst1|seg_led_num[1] ; HC_SI    ; clk        ;
+; N/A   ; None         ; 17.241 ns  ; hc164_driver:inst1|tx_cnt[2]      ; HC_SI    ; clk        ;
+; N/A   ; None         ; 16.562 ns  ; hc164_driver:inst1|tx_cnt[1]      ; HC_SI    ; clk        ;
+; N/A   ; None         ; 16.545 ns  ; hc164_driver:inst1|tx_cnt[3]      ; HC_SI    ; clk        ;
+; N/A   ; None         ; 16.334 ns  ; hc164_driver:inst1|tx_cnt[4]      ; HC_SI    ; clk        ;
+; N/A   ; None         ; 11.782 ns  ; mat_keyscan:inst|col[2]           ; KEY_V[3] ; clk        ;
+; N/A   ; None         ; 11.747 ns  ; hc164_driver:inst1|hc_cp          ; HC_CP    ; clk        ;
+; N/A   ; None         ; 11.737 ns  ; mat_keyscan:inst|seg_data[3]      ; led[3]   ; clk        ;
+; N/A   ; None         ; 11.733 ns  ; mat_keyscan:inst|seg_data[0]      ; led[0]   ; clk        ;
+; N/A   ; None         ; 11.723 ns  ; mat_keyscan:inst|col[0]           ; KEY_V[1] ; clk        ;
+; N/A   ; None         ; 11.713 ns  ; mat_keyscan:inst|seg_data[1]      ; led[1]   ; clk        ;
+; N/A   ; None         ; 11.644 ns  ; mat_keyscan:inst|col[1]           ; KEY_V[2] ; clk        ;
+; N/A   ; None         ; 11.596 ns  ; mat_keyscan:inst|seg_data[4]      ; led[4]   ; clk        ;
+; N/A   ; None         ; 11.261 ns  ; mat_keyscan:inst|col[3]           ; KEY_V[4] ; clk        ;
+; N/A   ; None         ; 11.175 ns  ; mat_keyscan:inst|seg_data[2]      ; led[2]   ; clk        ;
++-------+--------------+------------+-----------------------------------+----------+------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; th                                                                                               ;
++---------------+-------------+-----------+----------+----------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From     ; To                               ; To Clock ;
++---------------+-------------+-----------+----------+----------------------------------+----------+
+; N/A           ; None        ; 3.328 ns  ; KEY_H[2] ; mat_keyscan:inst|key_data_buf[1] ; clk      ;
+; N/A           ; None        ; 3.275 ns  ; KEY_H[1] ; mat_keyscan:inst|key_data_buf[0] ; clk      ;
+; N/A           ; None        ; 2.710 ns  ; KEY_H[3] ; mat_keyscan:inst|key_data_buf[2] ; clk      ;
+; N/A           ; None        ; 2.604 ns  ; KEY_H[4] ; mat_keyscan:inst|key_data_buf[3] ; clk      ;
+; N/A           ; None        ; 2.265 ns  ; rst_n    ; mat_keyscan:inst|clk_20ms        ; clk      ;
+; N/A           ; None        ; 0.724 ns  ; rst_n    ; mat_keyscan:inst|key_data_buf[6] ; clk      ;
+; N/A           ; None        ; 0.724 ns  ; rst_n    ; mat_keyscan:inst|key_data_buf[5] ; clk      ;
+; N/A           ; None        ; 0.724 ns  ; rst_n    ; mat_keyscan:inst|key_data_buf[4] ; clk      ;
+; N/A           ; None        ; 0.318 ns  ; rst_n    ; mat_keyscan:inst|key_data[5]     ; clk      ;
+; N/A           ; None        ; 0.318 ns  ; rst_n    ; mat_keyscan:inst|key_data[1]     ; clk      ;
+; N/A           ; None        ; 0.318 ns  ; rst_n    ; mat_keyscan:inst|key_data[3]     ; clk      ;
+; N/A           ; None        ; 0.311 ns  ; rst_n    ; mat_keyscan:inst|key_data_buf[0] ; clk      ;
+; N/A           ; None        ; 0.311 ns  ; rst_n    ; mat_keyscan:inst|key_data_buf[1] ; clk      ;
+; N/A           ; None        ; 0.311 ns  ; rst_n    ; mat_keyscan:inst|key_data_buf[2] ; clk      ;
+; N/A           ; None        ; 0.311 ns  ; rst_n    ; mat_keyscan:inst|key_data_buf[3] ; clk      ;
+; N/A           ; None        ; 0.311 ns  ; rst_n    ; mat_keyscan:inst|key_data_buf[7] ; clk      ;
+; N/A           ; None        ; 0.289 ns  ; KEY_H[1] ; mat_keyscan:inst|state.col1      ; clk      ;
+; N/A           ; None        ; 0.284 ns  ; KEY_H[1] ; mat_keyscan:inst|state.col2      ; clk      ;
+; N/A           ; None        ; 0.280 ns  ; KEY_H[1] ; mat_keyscan:inst|state.col3      ; clk      ;
+; N/A           ; None        ; 0.279 ns  ; KEY_H[1] ; mat_keyscan:inst|state.coln      ; clk      ;
+; N/A           ; None        ; 0.278 ns  ; KEY_H[1] ; mat_keyscan:inst|state.col0      ; clk      ;
+; N/A           ; None        ; 0.082 ns  ; KEY_H[3] ; mat_keyscan:inst|state.col1      ; clk      ;
+; N/A           ; None        ; 0.077 ns  ; KEY_H[3] ; mat_keyscan:inst|state.col2      ; clk      ;
+; N/A           ; None        ; 0.073 ns  ; KEY_H[3] ; mat_keyscan:inst|state.col3      ; clk      ;
+; N/A           ; None        ; 0.072 ns  ; KEY_H[3] ; mat_keyscan:inst|state.coln      ; clk      ;
+; N/A           ; None        ; 0.071 ns  ; KEY_H[3] ; mat_keyscan:inst|state.col0      ; clk      ;
+; N/A           ; None        ; -0.023 ns ; KEY_H[4] ; mat_keyscan:inst|state.col1      ; clk      ;
+; N/A           ; None        ; -0.028 ns ; KEY_H[4] ; mat_keyscan:inst|state.col2      ; clk      ;
+; N/A           ; None        ; -0.032 ns ; KEY_H[4] ; mat_keyscan:inst|state.col3      ; clk      ;
+; N/A           ; None        ; -0.033 ns ; KEY_H[4] ; mat_keyscan:inst|state.coln      ; clk      ;
+; N/A           ; None        ; -0.034 ns ; KEY_H[4] ; mat_keyscan:inst|state.col0      ; clk      ;
+; N/A           ; None        ; -0.089 ns ; KEY_H[2] ; mat_keyscan:inst|state.col1      ; clk      ;
+; N/A           ; None        ; -0.094 ns ; KEY_H[2] ; mat_keyscan:inst|state.col2      ; clk      ;
+; N/A           ; None        ; -0.098 ns ; KEY_H[2] ; mat_keyscan:inst|state.col3      ; clk      ;
+; N/A           ; None        ; -0.099 ns ; KEY_H[2] ; mat_keyscan:inst|state.coln      ; clk      ;
+; N/A           ; None        ; -0.100 ns ; KEY_H[2] ; mat_keyscan:inst|state.col0      ; clk      ;
+; N/A           ; None        ; -0.301 ns ; KEY_H[1] ; mat_keyscan:inst|key_data[5]     ; clk      ;
+; N/A           ; None        ; -0.301 ns ; KEY_H[1] ; mat_keyscan:inst|key_data[1]     ; clk      ;
+; N/A           ; None        ; -0.301 ns ; KEY_H[1] ; mat_keyscan:inst|key_data[3]     ; clk      ;
+; N/A           ; None        ; -0.508 ns ; KEY_H[3] ; mat_keyscan:inst|key_data[5]     ; clk      ;
+; N/A           ; None        ; -0.508 ns ; KEY_H[3] ; mat_keyscan:inst|key_data[1]     ; clk      ;
+; N/A           ; None        ; -0.508 ns ; KEY_H[3] ; mat_keyscan:inst|key_data[3]     ; clk      ;
+; N/A           ; None        ; -0.613 ns ; KEY_H[4] ; mat_keyscan:inst|key_data[5]     ; clk      ;
+; N/A           ; None        ; -0.613 ns ; KEY_H[4] ; mat_keyscan:inst|key_data[1]     ; clk      ;
+; N/A           ; None        ; -0.613 ns ; KEY_H[4] ; mat_keyscan:inst|key_data[3]     ; clk      ;
+; N/A           ; None        ; -0.679 ns ; KEY_H[2] ; mat_keyscan:inst|key_data[5]     ; clk      ;
+; N/A           ; None        ; -0.679 ns ; KEY_H[2] ; mat_keyscan:inst|key_data[1]     ; clk      ;
+; N/A           ; None        ; -0.679 ns ; KEY_H[2] ; mat_keyscan:inst|key_data[3]     ; clk      ;
+; N/A           ; None        ; -0.810 ns ; rst_n    ; mat_keyscan:inst|key_data[0]     ; clk      ;
+; N/A           ; None        ; -0.810 ns ; rst_n    ; mat_keyscan:inst|key_data[6]     ; clk      ;
+; N/A           ; None        ; -0.810 ns ; rst_n    ; mat_keyscan:inst|key_data[4]     ; clk      ;
+; N/A           ; None        ; -0.810 ns ; rst_n    ; mat_keyscan:inst|key_data[2]     ; clk      ;
+; N/A           ; None        ; -0.810 ns ; rst_n    ; mat_keyscan:inst|key_data[7]     ; clk      ;
+; N/A           ; None        ; -1.429 ns ; KEY_H[1] ; mat_keyscan:inst|key_data[0]     ; clk      ;
+; N/A           ; None        ; -1.429 ns ; KEY_H[1] ; mat_keyscan:inst|key_data[6]     ; clk      ;
+; N/A           ; None        ; -1.429 ns ; KEY_H[1] ; mat_keyscan:inst|key_data[4]     ; clk      ;
+; N/A           ; None        ; -1.429 ns ; KEY_H[1] ; mat_keyscan:inst|key_data[2]     ; clk      ;
+; N/A           ; None        ; -1.429 ns ; KEY_H[1] ; mat_keyscan:inst|key_data[7]     ; clk      ;
+; N/A           ; None        ; -1.636 ns ; KEY_H[3] ; mat_keyscan:inst|key_data[0]     ; clk      ;
+; N/A           ; None        ; -1.636 ns ; KEY_H[3] ; mat_keyscan:inst|key_data[6]     ; clk      ;
+; N/A           ; None        ; -1.636 ns ; KEY_H[3] ; mat_keyscan:inst|key_data[4]     ; clk      ;
+; N/A           ; None        ; -1.636 ns ; KEY_H[3] ; mat_keyscan:inst|key_data[2]     ; clk      ;
+; N/A           ; None        ; -1.636 ns ; KEY_H[3] ; mat_keyscan:inst|key_data[7]     ; clk      ;
+; N/A           ; None        ; -1.741 ns ; KEY_H[4] ; mat_keyscan:inst|key_data[0]     ; clk      ;
+; N/A           ; None        ; -1.741 ns ; KEY_H[4] ; mat_keyscan:inst|key_data[6]     ; clk      ;
+; N/A           ; None        ; -1.741 ns ; KEY_H[4] ; mat_keyscan:inst|key_data[4]     ; clk      ;
+; N/A           ; None        ; -1.741 ns ; KEY_H[4] ; mat_keyscan:inst|key_data[2]     ; clk      ;
+; N/A           ; None        ; -1.741 ns ; KEY_H[4] ; mat_keyscan:inst|key_data[7]     ; clk      ;
+; N/A           ; None        ; -1.807 ns ; KEY_H[2] ; mat_keyscan:inst|key_data[0]     ; clk      ;
+; N/A           ; None        ; -1.807 ns ; KEY_H[2] ; mat_keyscan:inst|key_data[6]     ; clk      ;
+; N/A           ; None        ; -1.807 ns ; KEY_H[2] ; mat_keyscan:inst|key_data[4]     ; clk      ;
+; N/A           ; None        ; -1.807 ns ; KEY_H[2] ; mat_keyscan:inst|key_data[2]     ; clk      ;
+; N/A           ; None        ; -1.807 ns ; KEY_H[2] ; mat_keyscan:inst|key_data[7]     ; clk      ;
++---------------+-------------+-----------+----------+----------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Thu Mar 15 23:16:15 2012
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off KeyScan -c KeyScan
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 118.27 MHz between source register "mat_keyscan:inst|key_data[1]" and destination register "mat_keyscan:inst|seg_data[1]" (period= 8.455 ns)
+    Info: + Longest register to register delay is 7.746 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X4_Y3_N9; Fanout = 5; REG Node = 'mat_keyscan:inst|key_data[1]'
+        Info: 2: + IC(1.989 ns) + CELL(0.914 ns) = 2.903 ns; Loc. = LC_X4_Y3_N3; Fanout = 1; COMB Node = 'mat_keyscan:inst|seg_data[0]~1976'
+        Info: 3: + IC(1.737 ns) + CELL(0.200 ns) = 4.840 ns; Loc. = LC_X4_Y2_N7; Fanout = 5; COMB Node = 'mat_keyscan:inst|seg_data[0]~1978'
+        Info: 4: + IC(1.663 ns) + CELL(1.243 ns) = 7.746 ns; Loc. = LC_X5_Y1_N4; Fanout = 8; REG Node = 'mat_keyscan:inst|seg_data[1]'
+        Info: Total cell delay = 2.357 ns ( 30.43 % )
+        Info: Total interconnect delay = 5.389 ns ( 69.57 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 6.479 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 79; CLK Node = 'clk'
+            Info: 2: + IC(4.429 ns) + CELL(0.918 ns) = 6.479 ns; Loc. = LC_X5_Y1_N4; Fanout = 8; REG Node = 'mat_keyscan:inst|seg_data[1]'
+            Info: Total cell delay = 2.050 ns ( 31.64 % )
+            Info: Total interconnect delay = 4.429 ns ( 68.36 % )
+        Info: - Longest clock path from clock "clk" to source register is 6.479 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 79; CLK Node = 'clk'
+            Info: 2: + IC(4.429 ns) + CELL(0.918 ns) = 6.479 ns; Loc. = LC_X4_Y3_N9; Fanout = 5; REG Node = 'mat_keyscan:inst|key_data[1]'
+            Info: Total cell delay = 2.050 ns ( 31.64 % )
+            Info: Total interconnect delay = 4.429 ns ( 68.36 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Info: tsu for register "mat_keyscan:inst|key_data[0]" (data pin = "KEY_H[2]", clock pin = "clk") is 2.361 ns
+    Info: + Longest pin to register delay is 8.507 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_7; Fanout = 2; PIN Node = 'KEY_H[2]'
+        Info: 2: + IC(2.003 ns) + CELL(0.200 ns) = 3.335 ns; Loc. = LC_X4_Y3_N4; Fanout = 1; COMB Node = 'mat_keyscan:inst|Equal2~72'
+        Info: 3: + IC(0.703 ns) + CELL(0.914 ns) = 4.952 ns; Loc. = LC_X4_Y3_N7; Fanout = 6; COMB Node = 'mat_keyscan:inst|Equal2~76'
+        Info: 4: + IC(0.305 ns) + CELL(0.200 ns) = 5.457 ns; Loc. = LC_X4_Y3_N8; Fanout = 8; COMB Node = 'mat_keyscan:inst|key_data[6]~226'
+        Info: 5: + IC(1.807 ns) + CELL(1.243 ns) = 8.507 ns; Loc. = LC_X4_Y1_N5; Fanout = 6; REG Node = 'mat_keyscan:inst|key_data[0]'
+        Info: Total cell delay = 3.689 ns ( 43.36 % )
+        Info: Total interconnect delay = 4.818 ns ( 56.64 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 6.479 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 79; CLK Node = 'clk'
+        Info: 2: + IC(4.429 ns) + CELL(0.918 ns) = 6.479 ns; Loc. = LC_X4_Y1_N5; Fanout = 6; REG Node = 'mat_keyscan:inst|key_data[0]'
+        Info: Total cell delay = 2.050 ns ( 31.64 % )
+        Info: Total interconnect delay = 4.429 ns ( 68.36 % )
+Info: tco from clock "clk" to destination pin "HC_SI" through register "mat_keyscan:inst|seg_data[2]" is 19.363 ns
+    Info: + Longest clock path from clock "clk" to source register is 6.479 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 79; CLK Node = 'clk'
+        Info: 2: + IC(4.429 ns) + CELL(0.918 ns) = 6.479 ns; Loc. = LC_X5_Y1_N6; Fanout = 8; REG Node = 'mat_keyscan:inst|seg_data[2]'
+        Info: Total cell delay = 2.050 ns ( 31.64 % )
+        Info: Total interconnect delay = 4.429 ns ( 68.36 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 12.508 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X5_Y1_N6; Fanout = 8; REG Node = 'mat_keyscan:inst|seg_data[2]'
+        Info: 2: + IC(2.902 ns) + CELL(0.511 ns) = 3.413 ns; Loc. = LC_X3_Y1_N7; Fanout = 1; COMB Node = 'hc164_driver:inst1|WideOr3~38'
+        Info: 3: + IC(0.305 ns) + CELL(0.200 ns) = 3.918 ns; Loc. = LC_X3_Y1_N8; Fanout = 1; COMB Node = 'hc164_driver:inst1|WideOr3~39'
+        Info: 4: + IC(0.747 ns) + CELL(0.200 ns) = 4.865 ns; Loc. = LC_X3_Y1_N6; Fanout = 1; COMB Node = 'hc164_driver:inst1|WideOr3~40'
+        Info: 5: + IC(0.776 ns) + CELL(0.511 ns) = 6.152 ns; Loc. = LC_X3_Y1_N9; Fanout = 1; COMB Node = 'hc164_driver:inst1|Mux5~134'
+        Info: 6: + IC(0.721 ns) + CELL(0.200 ns) = 7.073 ns; Loc. = LC_X3_Y1_N4; Fanout = 1; COMB Node = 'hc164_driver:inst1|Mux5~135'
+        Info: 7: + IC(0.777 ns) + CELL(0.511 ns) = 8.361 ns; Loc. = LC_X3_Y1_N0; Fanout = 1; COMB Node = 'hc164_driver:inst1|Mux5~136'
+        Info: 8: + IC(1.825 ns) + CELL(2.322 ns) = 12.508 ns; Loc. = PIN_26; Fanout = 0; PIN Node = 'HC_SI'
+        Info: Total cell delay = 4.455 ns ( 35.62 % )
+        Info: Total interconnect delay = 8.053 ns ( 64.38 % )
+Info: th for register "mat_keyscan:inst|key_data_buf[1]" (data pin = "KEY_H[2]", clock pin = "clk") is 3.328 ns
+    Info: + Longest clock path from clock "clk" to destination register is 6.479 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 79; CLK Node = 'clk'
+        Info: 2: + IC(4.429 ns) + CELL(0.918 ns) = 6.479 ns; Loc. = LC_X4_Y3_N4; Fanout = 2; REG Node = 'mat_keyscan:inst|key_data_buf[1]'
+        Info: Total cell delay = 2.050 ns ( 31.64 % )
+        Info: Total interconnect delay = 4.429 ns ( 68.36 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 3.372 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_7; Fanout = 2; PIN Node = 'KEY_H[2]'
+        Info: 2: + IC(1.960 ns) + CELL(0.280 ns) = 3.372 ns; Loc. = LC_X4_Y3_N4; Fanout = 2; REG Node = 'mat_keyscan:inst|key_data_buf[1]'
+        Info: Total cell delay = 1.412 ns ( 41.87 % )
+        Info: Total interconnect delay = 1.960 ns ( 58.13 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Allocated 111 megabytes of memory during processing
+    Info: Processing ended: Thu Mar 15 23:16:17 2012
+    Info: Elapsed time: 00:00:02
+
+

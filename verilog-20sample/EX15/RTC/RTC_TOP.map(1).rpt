@@ -1,0 +1,508 @@
+Analysis & Synthesis report for RTC_TOP
+Mon Nov 28 08:39:15 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |RTC_TOP|code_ctl
+  8. State Machine - |RTC_TOP|i2c_drive:i2c_drive|cstate
+  9. State Machine - |RTC_TOP|i2c_drive:i2c_drive|cnt
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: Top-level Entity: |RTC_TOP
+ 16. Parameter Settings for User Entity Instance: i2c_drive:i2c_drive
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Mon Nov 28 08:39:15 2011    ;
+; Quartus II Version          ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name               ; RTC_TOP                                  ;
+; Top-level Entity Name       ; RTC_TOP                                  ;
+; Family                      ; MAX II                                   ;
+; Total logic elements        ; 229                                      ;
+; Total pins                  ; 6                                        ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 0                                        ;
+; DSP block 9-bit elements    ; 0                                        ;
+; Total PLLs                  ; 0                                        ;
+; Total DLLs                  ; 0                                        ;
++-----------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EPM240T100C5       ;                    ;
+; Top-level entity name                                                          ; RTC_TOP            ; RTC_TOP            ;
+; Family name                                                                    ; MAX II             ; Stratix II         ;
+; Optimization Technique -- MAX II                                               ; Area               ; Balanced           ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                              ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                          ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+
+; RTC_TOP.v                        ; yes             ; User Verilog HDL File  ; D:/EPM240_570/EPM240_570_DVD/HDL Code/verilog/EX15/RTC/RTC_TOP.v      ;
+; hc164_driver.v                   ; yes             ; User Verilog HDL File  ; D:/EPM240_570/EPM240_570_DVD/HDL Code/verilog/EX15/RTC/hc164_driver.v ;
+; i2c_drive.v                      ; yes             ; User Verilog HDL File  ; D:/EPM240_570/EPM240_570_DVD/HDL Code/verilog/EX15/RTC/i2c_drive.v    ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 229   ;
+;     -- Combinational with no register       ; 123   ;
+;     -- Register only                        ; 30    ;
+;     -- Combinational with a register        ; 76    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 104   ;
+;     -- 3 input functions                    ; 23    ;
+;     -- 2 input functions                    ; 68    ;
+;     -- 1 input functions                    ; 4     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 186   ;
+;     -- arithmetic mode                      ; 43    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 6     ;
+;     -- asynchronous clear/load mode         ; 103   ;
+;                                             ;       ;
+; Total registers                             ; 106   ;
+; Total logic cells in carry chains           ; 47    ;
+; I/O pins                                    ; 6     ;
+; Maximum fan-out node                        ; rst_n ;
+; Maximum fan-out                             ; 104   ;
+; Total fan-out                               ; 907   ;
+; Average fan-out                             ; 3.86  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                 ;
++-------------------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------+--------------+
+; Compilation Hierarchy Node          ; Logic Cells ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                     ; Library Name ;
++-------------------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------+--------------+
+; |RTC_TOP                            ; 229 (32)    ; 106          ; 0           ; 0            ; 0       ; 0         ; 0         ; 6    ; 0            ; 123 (0)      ; 30 (28)           ; 76 (4)           ; 47 (0)          ; 0 (0)      ; |RTC_TOP                                ; work         ;
+;    |hc164_driver:hc164_driver_inst| ; 78 (78)     ; 25           ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 53 (53)      ; 0 (0)             ; 25 (25)          ; 20 (20)         ; 0 (0)      ; |RTC_TOP|hc164_driver:hc164_driver_inst ; work         ;
+;    |i2c_drive:i2c_drive|            ; 119 (119)   ; 49           ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 70 (70)      ; 2 (2)             ; 47 (47)          ; 27 (27)         ; 0 (0)      ; |RTC_TOP|i2c_drive:i2c_drive            ; work         ;
++-------------------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |RTC_TOP|code_ctl                                                                 ;
++-------------------+-------------------+-------------------+-------------------+-------------------+
+; Name              ; code_ctl.DAY_TIME ; code_ctl.HUR_TIME ; code_ctl.MNT_TIME ; code_ctl.SEC_TIME ;
++-------------------+-------------------+-------------------+-------------------+-------------------+
+; code_ctl.SEC_TIME ; 0                 ; 0                 ; 0                 ; 0                 ;
+; code_ctl.MNT_TIME ; 0                 ; 0                 ; 1                 ; 1                 ;
+; code_ctl.HUR_TIME ; 0                 ; 1                 ; 0                 ; 1                 ;
+; code_ctl.DAY_TIME ; 1                 ; 0                 ; 0                 ; 1                 ;
++-------------------+-------------------+-------------------+-------------------+-------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |RTC_TOP|i2c_drive:i2c_drive|cstate                                                                                                                                                       ;
++---------------+--------------+--------------+-------------+-------------+-------------+-------------+---------------+-------------+-------------+-------------+-------------+---------------+-------------+
+; Name          ; cstate.STOP2 ; cstate.STOP1 ; cstate.ACK4 ; cstate.DATA ; cstate.ACK3 ; cstate.ADD3 ; cstate.START2 ; cstate.ACK2 ; cstate.ADD2 ; cstate.ACK1 ; cstate.ADD1 ; cstate.START1 ; cstate.IDLE ;
++---------------+--------------+--------------+-------------+-------------+-------------+-------------+---------------+-------------+-------------+-------------+-------------+---------------+-------------+
+; cstate.IDLE   ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 0           ;
+; cstate.START1 ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0             ; 0           ; 0           ; 0           ; 0           ; 1             ; 1           ;
+; cstate.ADD1   ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0             ; 0           ; 0           ; 0           ; 1           ; 0             ; 1           ;
+; cstate.ACK1   ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0             ; 0           ; 0           ; 1           ; 0           ; 0             ; 1           ;
+; cstate.ADD2   ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0             ; 0           ; 1           ; 0           ; 0           ; 0             ; 1           ;
+; cstate.ACK2   ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0             ; 1           ; 0           ; 0           ; 0           ; 0             ; 1           ;
+; cstate.START2 ; 0            ; 0            ; 0           ; 0           ; 0           ; 0           ; 1             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1           ;
+; cstate.ADD3   ; 0            ; 0            ; 0           ; 0           ; 0           ; 1           ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1           ;
+; cstate.ACK3   ; 0            ; 0            ; 0           ; 0           ; 1           ; 0           ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1           ;
+; cstate.DATA   ; 0            ; 0            ; 0           ; 1           ; 0           ; 0           ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1           ;
+; cstate.ACK4   ; 0            ; 0            ; 1           ; 0           ; 0           ; 0           ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1           ;
+; cstate.STOP1  ; 0            ; 1            ; 0           ; 0           ; 0           ; 0           ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1           ;
+; cstate.STOP2  ; 1            ; 0            ; 0           ; 0           ; 0           ; 0           ; 0             ; 0           ; 0           ; 0           ; 0           ; 0             ; 1           ;
++---------------+--------------+--------------+-------------+-------------+-------------+-------------+---------------+-------------+-------------+-------------+-------------+---------------+-------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------+
+; State Machine - |RTC_TOP|i2c_drive:i2c_drive|cnt          ;
++---------+---------+---------+---------+---------+---------+
+; Name    ; cnt.000 ; cnt.011 ; cnt.010 ; cnt.001 ; cnt.101 ;
++---------+---------+---------+---------+---------+---------+
+; cnt.101 ; 0       ; 0       ; 0       ; 0       ; 0       ;
+; cnt.001 ; 0       ; 0       ; 0       ; 1       ; 1       ;
+; cnt.010 ; 0       ; 0       ; 1       ; 0       ; 1       ;
+; cnt.011 ; 0       ; 1       ; 0       ; 0       ; 1       ;
+; cnt.000 ; 1       ; 0       ; 0       ; 0       ; 1       ;
++---------+---------+---------+---------+---------+---------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                              ;
++----------------------------------------+--------------------------------------------------------+
+; Register name                          ; Reason for Removal                                     ;
++----------------------------------------+--------------------------------------------------------+
+; addr[3..7]                             ; Stuck at GND due to stuck port data_in                 ;
+; sec[7]                                 ; Stuck at GND due to stuck port data_in                 ;
+; hur[6..7]                              ; Stuck at GND due to stuck port data_in                 ;
+; min[7]                                 ; Stuck at GND due to stuck port data_in                 ;
+; day[6..7]                              ; Stuck at GND due to stuck port data_in                 ;
+; addr[1]                                ; Merged with addr[2]                                    ;
+; i2c_drive:i2c_drive|cnt_20ms[0]        ; Merged with hc164_driver:hc164_driver_inst|clk_cnt[0]  ;
+; i2c_drive:i2c_drive|db_r[5]            ; Merged with i2c_drive:i2c_drive|db_r[7]                ;
+; i2c_drive:i2c_drive|db_r[3..4]         ; Merged with i2c_drive:i2c_drive|db_r[6]                ;
+; i2c_drive:i2c_drive|cnt_20ms[1]        ; Merged with hc164_driver:hc164_driver_inst|clk_cnt[1]  ;
+; i2c_drive:i2c_drive|cnt_20ms[2]        ; Merged with hc164_driver:hc164_driver_inst|clk_cnt[2]  ;
+; i2c_drive:i2c_drive|cnt_20ms[3]        ; Merged with hc164_driver:hc164_driver_inst|clk_cnt[3]  ;
+; i2c_drive:i2c_drive|cnt_20ms[4]        ; Merged with hc164_driver:hc164_driver_inst|clk_cnt[4]  ;
+; i2c_drive:i2c_drive|cnt_20ms[5]        ; Merged with hc164_driver:hc164_driver_inst|clk_cnt[5]  ;
+; i2c_drive:i2c_drive|cnt_20ms[6]        ; Merged with hc164_driver:hc164_driver_inst|clk_cnt[6]  ;
+; i2c_drive:i2c_drive|cnt_20ms[7]        ; Merged with hc164_driver:hc164_driver_inst|clk_cnt[7]  ;
+; i2c_drive:i2c_drive|cnt_20ms[8]        ; Merged with hc164_driver:hc164_driver_inst|clk_cnt[8]  ;
+; i2c_drive:i2c_drive|cnt_20ms[9]        ; Merged with hc164_driver:hc164_driver_inst|clk_cnt[9]  ;
+; i2c_drive:i2c_drive|cnt_20ms[10]       ; Merged with hc164_driver:hc164_driver_inst|clk_cnt[10] ;
+; i2c_drive:i2c_drive|cnt_20ms[11]       ; Merged with hc164_driver:hc164_driver_inst|clk_cnt[11] ;
+; i2c_drive:i2c_drive|cnt_20ms[12]       ; Merged with hc164_driver:hc164_driver_inst|clk_cnt[12] ;
+; i2c_drive:i2c_drive|cnt_20ms[13]       ; Merged with hc164_driver:hc164_driver_inst|clk_cnt[13] ;
+; i2c_drive:i2c_drive|cnt_20ms[14]       ; Merged with hc164_driver:hc164_driver_inst|clk_cnt[14] ;
+; i2c_drive:i2c_drive|sw1_r              ; Stuck at VCC due to stuck port data_in                 ;
+; i2c_drive:i2c_drive|db_r[6]            ; Stuck at GND due to stuck port data_in                 ;
+; i2c_drive:i2c_drive|cnt.101            ; Lost fanout                                            ;
+; code_ctl~14                            ; Lost fanout                                            ;
+; code_ctl~15                            ; Lost fanout                                            ;
+; i2c_drive:i2c_drive|cstate~123         ; Lost fanout                                            ;
+; i2c_drive:i2c_drive|cstate~124         ; Lost fanout                                            ;
+; i2c_drive:i2c_drive|cstate~125         ; Lost fanout                                            ;
+; i2c_drive:i2c_drive|cstate~126         ; Lost fanout                                            ;
+; i2c_drive:i2c_drive|cnt~14             ; Lost fanout                                            ;
+; i2c_drive:i2c_drive|cnt~15             ; Lost fanout                                            ;
+; i2c_drive:i2c_drive|cnt_delay[0]       ; Merged with hc164_driver:hc164_driver_inst|clk_cnt[0]  ;
+; i2c_drive:i2c_drive|cnt_delay[1]       ; Merged with hc164_driver:hc164_driver_inst|clk_cnt[1]  ;
+; i2c_drive:i2c_drive|db_r[2]            ; Merged with i2c_drive:i2c_drive|db_r[1]                ;
+; Total Number of Removed Registers = 44 ;                                                        ;
++----------------------------------------+--------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                        ;
++---------------+---------------------------+----------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------+---------------------------+----------------------------------------+
+; addr[6]       ; Stuck at GND              ; i2c_drive:i2c_drive|db_r[6]            ;
+;               ; due to stuck port data_in ;                                        ;
++---------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 106   ;
+; Number of registers using Synchronous Clear  ; 6     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 103   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; i2c_drive:i2c_drive|sw2_r              ; 10      ;
+; i2c_drive:i2c_drive|sda_r              ; 7       ;
+; addr[0]                                ; 1       ;
+; addr[2]                                ; 1       ;
+; Total number of inverted registers = 4 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |RTC_TOP|i2c_drive:i2c_drive|db_r[7]         ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |RTC_TOP|i2c_drive:i2c_drive|db_r[1]         ;
+; 13:1               ; 4 bits    ; 32 LEs        ; 4 LEs                ; 28 LEs                 ; Yes        ; |RTC_TOP|i2c_drive:i2c_drive|num[3]          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |RTC_TOP|i2c_drive:i2c_drive|sw1_r           ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |RTC_TOP|hc164_driver:hc164_driver_inst|Mux3 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |RTC_TOP ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; SEC_TIME       ; 00    ; Unsigned Binary                                ;
+; MNT_TIME       ; 01    ; Unsigned Binary                                ;
+; HUR_TIME       ; 10    ; Unsigned Binary                                ;
+; DAY_TIME       ; 11    ; Unsigned Binary                                ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: i2c_drive:i2c_drive ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; IDLE           ; 0000  ; Unsigned Binary                         ;
+; START1         ; 0001  ; Unsigned Binary                         ;
+; ADD1           ; 0010  ; Unsigned Binary                         ;
+; ACK1           ; 0011  ; Unsigned Binary                         ;
+; ADD2           ; 0100  ; Unsigned Binary                         ;
+; ACK2           ; 0101  ; Unsigned Binary                         ;
+; START2         ; 0110  ; Unsigned Binary                         ;
+; ADD3           ; 0111  ; Unsigned Binary                         ;
+; ACK3           ; 1000  ; Unsigned Binary                         ;
+; DATA           ; 1001  ; Unsigned Binary                         ;
+; ACK4           ; 1010  ; Unsigned Binary                         ;
+; STOP1          ; 1011  ; Unsigned Binary                         ;
+; STOP2          ; 1100  ; Unsigned Binary                         ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Mon Nov 28 08:39:10 2011
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RTC_TOP -c RTC_TOP
+Warning (10238): Verilog Module Declaration warning at RTC_TOP.v(24): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "RTC_TOP"
+Info: Found 1 design units, including 1 entities, in source file RTC_TOP.v
+    Info: Found entity 1: RTC_TOP
+Info: Found 1 design units, including 1 entities, in source file hc164_driver.v
+    Info: Found entity 1: hc164_driver
+Info: Found 1 design units, including 1 entities, in source file i2c_drive.v
+    Info: Found entity 1: i2c_drive
+Info: Elaborating entity "RTC_TOP" for the top level hierarchy
+Info: Elaborating entity "i2c_drive" for hierarchy "i2c_drive:i2c_drive"
+Info: Elaborating entity "hc164_driver" for hierarchy "hc164_driver:hc164_driver_inst"
+Warning (14130): Reduced register "addr[7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "addr[6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "addr[5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "addr[4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "addr[3]" with stuck data_in port to stuck value GND
+Warning: Converted TRI buffer or tri-state bus to logic, or removed OPNDRN
+    Warning: Converting TRI node "i2c_drive:i2c_drive|read_data[6]" that feeds logic to a wire
+    Warning: Converting TRI node "i2c_drive:i2c_drive|read_data[5]" that feeds logic to a wire
+    Warning: Converting TRI node "i2c_drive:i2c_drive|read_data[4]" that feeds logic to a wire
+    Warning: Converting TRI node "i2c_drive:i2c_drive|read_data[3]" that feeds logic to a wire
+    Warning: Converting TRI node "i2c_drive:i2c_drive|read_data[2]" that feeds logic to a wire
+    Warning: Converting TRI node "i2c_drive:i2c_drive|read_data[1]" that feeds logic to a wire
+    Warning: Converting TRI node "i2c_drive:i2c_drive|read_data[0]" that feeds logic to a wire
+Warning (14130): Reduced register "sec[7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "hur[7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "hur[6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "min[7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "day[7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "day[6]" with stuck data_in port to stuck value GND
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "addr[1]" merged to single register "addr[2]", power-up level changed
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "i2c_drive:i2c_drive|cnt_20ms[0]" merged to single register "hc164_driver:hc164_driver_inst|clk_cnt[0]"
+    Info: Duplicate register "i2c_drive:i2c_drive|db_r[5]" merged to single register "i2c_drive:i2c_drive|db_r[7]"
+    Info: Duplicate register "i2c_drive:i2c_drive|db_r[4]" merged to single register "i2c_drive:i2c_drive|db_r[6]"
+    Info: Duplicate register "i2c_drive:i2c_drive|db_r[3]" merged to single register "i2c_drive:i2c_drive|db_r[6]"
+    Info: Duplicate register "i2c_drive:i2c_drive|cnt_20ms[1]" merged to single register "hc164_driver:hc164_driver_inst|clk_cnt[1]"
+    Info: Duplicate register "i2c_drive:i2c_drive|cnt_20ms[2]" merged to single register "hc164_driver:hc164_driver_inst|clk_cnt[2]"
+    Info: Duplicate register "i2c_drive:i2c_drive|cnt_20ms[3]" merged to single register "hc164_driver:hc164_driver_inst|clk_cnt[3]"
+    Info: Duplicate register "i2c_drive:i2c_drive|cnt_20ms[4]" merged to single register "hc164_driver:hc164_driver_inst|clk_cnt[4]"
+    Info: Duplicate register "i2c_drive:i2c_drive|cnt_20ms[5]" merged to single register "hc164_driver:hc164_driver_inst|clk_cnt[5]"
+    Info: Duplicate register "i2c_drive:i2c_drive|cnt_20ms[6]" merged to single register "hc164_driver:hc164_driver_inst|clk_cnt[6]"
+    Info: Duplicate register "i2c_drive:i2c_drive|cnt_20ms[7]" merged to single register "hc164_driver:hc164_driver_inst|clk_cnt[7]"
+    Info: Duplicate register "i2c_drive:i2c_drive|cnt_20ms[8]" merged to single register "hc164_driver:hc164_driver_inst|clk_cnt[8]"
+    Info: Duplicate register "i2c_drive:i2c_drive|cnt_20ms[9]" merged to single register "hc164_driver:hc164_driver_inst|clk_cnt[9]"
+    Info: Duplicate register "i2c_drive:i2c_drive|cnt_20ms[10]" merged to single register "hc164_driver:hc164_driver_inst|clk_cnt[10]"
+    Info: Duplicate register "i2c_drive:i2c_drive|cnt_20ms[11]" merged to single register "hc164_driver:hc164_driver_inst|clk_cnt[11]"
+    Info: Duplicate register "i2c_drive:i2c_drive|cnt_20ms[12]" merged to single register "hc164_driver:hc164_driver_inst|clk_cnt[12]"
+    Info: Duplicate register "i2c_drive:i2c_drive|cnt_20ms[13]" merged to single register "hc164_driver:hc164_driver_inst|clk_cnt[13]"
+    Info: Duplicate register "i2c_drive:i2c_drive|cnt_20ms[14]" merged to single register "hc164_driver:hc164_driver_inst|clk_cnt[14]"
+Info: Power-up level of register "i2c_drive:i2c_drive|sw1_r" is not specified -- using power-up level of High to minimize register
+Warning (14130): Reduced register "i2c_drive:i2c_drive|sw1_r" with stuck data_in port to stuck value VCC
+Warning (14130): Reduced register "i2c_drive:i2c_drive|db_r[6]" with stuck data_in port to stuck value GND
+Info: State machine "|RTC_TOP|code_ctl" contains 4 states
+Info: State machine "|RTC_TOP|i2c_drive:i2c_drive|cstate" contains 13 states
+Info: State machine "|RTC_TOP|i2c_drive:i2c_drive|cnt" contains 5 states
+Info: Selected Auto state machine encoding method for state machine "|RTC_TOP|code_ctl"
+Info: Encoding result for state machine "|RTC_TOP|code_ctl"
+    Info: Completed encoding using 4 state bits
+        Info: Encoded state bit "code_ctl.DAY_TIME"
+        Info: Encoded state bit "code_ctl.HUR_TIME"
+        Info: Encoded state bit "code_ctl.MNT_TIME"
+        Info: Encoded state bit "code_ctl.SEC_TIME"
+    Info: State "|RTC_TOP|code_ctl.SEC_TIME" uses code string "0000"
+    Info: State "|RTC_TOP|code_ctl.MNT_TIME" uses code string "0011"
+    Info: State "|RTC_TOP|code_ctl.HUR_TIME" uses code string "0101"
+    Info: State "|RTC_TOP|code_ctl.DAY_TIME" uses code string "1001"
+Info: Selected Auto state machine encoding method for state machine "|RTC_TOP|i2c_drive:i2c_drive|cstate"
+Info: Encoding result for state machine "|RTC_TOP|i2c_drive:i2c_drive|cstate"
+    Info: Completed encoding using 13 state bits
+        Info: Encoded state bit "i2c_drive:i2c_drive|cstate.STOP2"
+        Info: Encoded state bit "i2c_drive:i2c_drive|cstate.STOP1"
+        Info: Encoded state bit "i2c_drive:i2c_drive|cstate.ACK4"
+        Info: Encoded state bit "i2c_drive:i2c_drive|cstate.DATA"
+        Info: Encoded state bit "i2c_drive:i2c_drive|cstate.ACK3"
+        Info: Encoded state bit "i2c_drive:i2c_drive|cstate.ADD3"
+        Info: Encoded state bit "i2c_drive:i2c_drive|cstate.START2"
+        Info: Encoded state bit "i2c_drive:i2c_drive|cstate.ACK2"
+        Info: Encoded state bit "i2c_drive:i2c_drive|cstate.ADD2"
+        Info: Encoded state bit "i2c_drive:i2c_drive|cstate.ACK1"
+        Info: Encoded state bit "i2c_drive:i2c_drive|cstate.ADD1"
+        Info: Encoded state bit "i2c_drive:i2c_drive|cstate.START1"
+        Info: Encoded state bit "i2c_drive:i2c_drive|cstate.IDLE"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cstate.IDLE" uses code string "0000000000000"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cstate.START1" uses code string "0000000000011"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cstate.ADD1" uses code string "0000000000101"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cstate.ACK1" uses code string "0000000001001"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cstate.ADD2" uses code string "0000000010001"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cstate.ACK2" uses code string "0000000100001"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cstate.START2" uses code string "0000001000001"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cstate.ADD3" uses code string "0000010000001"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cstate.ACK3" uses code string "0000100000001"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cstate.DATA" uses code string "0001000000001"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cstate.ACK4" uses code string "0010000000001"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cstate.STOP1" uses code string "0100000000001"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cstate.STOP2" uses code string "1000000000001"
+Info: Selected Auto state machine encoding method for state machine "|RTC_TOP|i2c_drive:i2c_drive|cnt"
+Info: Encoding result for state machine "|RTC_TOP|i2c_drive:i2c_drive|cnt"
+    Info: Completed encoding using 5 state bits
+        Info: Encoded state bit "i2c_drive:i2c_drive|cnt.000"
+        Info: Encoded state bit "i2c_drive:i2c_drive|cnt.011"
+        Info: Encoded state bit "i2c_drive:i2c_drive|cnt.010"
+        Info: Encoded state bit "i2c_drive:i2c_drive|cnt.001"
+        Info: Encoded state bit "i2c_drive:i2c_drive|cnt.101"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cnt.101" uses code string "00000"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cnt.001" uses code string "00011"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cnt.010" uses code string "00101"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cnt.011" uses code string "01001"
+    Info: State "|RTC_TOP|i2c_drive:i2c_drive|cnt.000" uses code string "10001"
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "i2c_drive:i2c_drive|cnt_delay[0]" merged to single register "hc164_driver:hc164_driver_inst|clk_cnt[0]"
+    Info: Duplicate register "i2c_drive:i2c_drive|cnt_delay[1]" merged to single register "hc164_driver:hc164_driver_inst|clk_cnt[1]"
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "i2c_drive:i2c_drive|db_r[2]" merged to single register "i2c_drive:i2c_drive|db_r[1]", power-up level changed
+Info: Registers with preset signals will power-up high
+Info: 9 registers lost all their fanouts during netlist optimizations. The first 9 are displayed below.
+    Info: Register "i2c_drive:i2c_drive|cnt.101" lost all its fanouts during netlist optimizations.
+    Info: Register "code_ctl~14" lost all its fanouts during netlist optimizations.
+    Info: Register "code_ctl~15" lost all its fanouts during netlist optimizations.
+    Info: Register "i2c_drive:i2c_drive|cstate~123" lost all its fanouts during netlist optimizations.
+    Info: Register "i2c_drive:i2c_drive|cstate~124" lost all its fanouts during netlist optimizations.
+    Info: Register "i2c_drive:i2c_drive|cstate~125" lost all its fanouts during netlist optimizations.
+    Info: Register "i2c_drive:i2c_drive|cstate~126" lost all its fanouts during netlist optimizations.
+    Info: Register "i2c_drive:i2c_drive|cnt~14" lost all its fanouts during netlist optimizations.
+    Info: Register "i2c_drive:i2c_drive|cnt~15" lost all its fanouts during netlist optimizations.
+Info: Implemented 235 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 3 output pins
+    Info: Implemented 1 bidirectional pins
+    Info: Implemented 229 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 22 warnings
+    Info: Allocated 142 megabytes of memory during processing
+    Info: Processing ended: Mon Nov 28 08:39:15 2011
+    Info: Elapsed time: 00:00:05
+
+

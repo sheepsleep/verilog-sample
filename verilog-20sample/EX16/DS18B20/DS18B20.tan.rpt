@@ -1,0 +1,708 @@
+Classic Timing Analyzer report for DS18B20
+Mon Nov 28 08:41:08 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                        ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------+-------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                          ; To                            ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------+-------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 0.913 ns                         ; DS18B20_DAT                   ; DS18B20:inst2|CountRstStep[1] ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 15.679 ns                        ; DS18B20:inst2|Result[4]       ; led[4]                        ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 4.394 ns                         ; DS18B20_DAT                   ; DS18B20:inst2|temp            ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 79.46 MHz ( period = 12.585 ns ) ; DS18B20:inst2|CountRstStep[9] ; DS18B20:inst2|CountRstStep[1] ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                               ;                               ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------+-------------------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EPM240T100C5       ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                               ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------------+--------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                ; To                             ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------------+--------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 79.46 MHz ( period = 12.585 ns )                    ; DS18B20:inst2|CountRstStep[9]       ; DS18B20:inst2|CountRstStep[8]  ; clk        ; clk      ; None                        ; None                      ; 11.876 ns               ;
+; N/A                                     ; 79.46 MHz ( period = 12.585 ns )                    ; DS18B20:inst2|CountRstStep[9]       ; DS18B20:inst2|CountRstStep[10] ; clk        ; clk      ; None                        ; None                      ; 11.876 ns               ;
+; N/A                                     ; 79.46 MHz ( period = 12.585 ns )                    ; DS18B20:inst2|CountRstStep[9]       ; DS18B20:inst2|CountRstStep[9]  ; clk        ; clk      ; None                        ; None                      ; 11.876 ns               ;
+; N/A                                     ; 79.46 MHz ( period = 12.585 ns )                    ; DS18B20:inst2|CountRstStep[9]       ; DS18B20:inst2|CountRstStep[4]  ; clk        ; clk      ; None                        ; None                      ; 11.876 ns               ;
+; N/A                                     ; 79.46 MHz ( period = 12.585 ns )                    ; DS18B20:inst2|CountRstStep[9]       ; DS18B20:inst2|CountRstStep[5]  ; clk        ; clk      ; None                        ; None                      ; 11.876 ns               ;
+; N/A                                     ; 79.46 MHz ( period = 12.585 ns )                    ; DS18B20:inst2|CountRstStep[9]       ; DS18B20:inst2|CountRstStep[7]  ; clk        ; clk      ; None                        ; None                      ; 11.876 ns               ;
+; N/A                                     ; 79.46 MHz ( period = 12.585 ns )                    ; DS18B20:inst2|CountRstStep[9]       ; DS18B20:inst2|CountRstStep[6]  ; clk        ; clk      ; None                        ; None                      ; 11.876 ns               ;
+; N/A                                     ; 79.46 MHz ( period = 12.585 ns )                    ; DS18B20:inst2|CountRstStep[9]       ; DS18B20:inst2|CountRstStep[3]  ; clk        ; clk      ; None                        ; None                      ; 11.876 ns               ;
+; N/A                                     ; 79.46 MHz ( period = 12.585 ns )                    ; DS18B20:inst2|CountRstStep[9]       ; DS18B20:inst2|CountRstStep[2]  ; clk        ; clk      ; None                        ; None                      ; 11.876 ns               ;
+; N/A                                     ; 79.46 MHz ( period = 12.585 ns )                    ; DS18B20:inst2|CountRstStep[9]       ; DS18B20:inst2|CountRstStep[1]  ; clk        ; clk      ; None                        ; None                      ; 11.876 ns               ;
+; N/A                                     ; 80.81 MHz ( period = 12.374 ns )                    ; DS18B20:inst2|CountRstStep[1]       ; DS18B20:inst2|CountRstStep[8]  ; clk        ; clk      ; None                        ; None                      ; 11.665 ns               ;
+; N/A                                     ; 80.81 MHz ( period = 12.374 ns )                    ; DS18B20:inst2|CountRstStep[1]       ; DS18B20:inst2|CountRstStep[10] ; clk        ; clk      ; None                        ; None                      ; 11.665 ns               ;
+; N/A                                     ; 80.81 MHz ( period = 12.374 ns )                    ; DS18B20:inst2|CountRstStep[1]       ; DS18B20:inst2|CountRstStep[9]  ; clk        ; clk      ; None                        ; None                      ; 11.665 ns               ;
+; N/A                                     ; 80.81 MHz ( period = 12.374 ns )                    ; DS18B20:inst2|CountRstStep[1]       ; DS18B20:inst2|CountRstStep[4]  ; clk        ; clk      ; None                        ; None                      ; 11.665 ns               ;
+; N/A                                     ; 80.81 MHz ( period = 12.374 ns )                    ; DS18B20:inst2|CountRstStep[1]       ; DS18B20:inst2|CountRstStep[5]  ; clk        ; clk      ; None                        ; None                      ; 11.665 ns               ;
+; N/A                                     ; 80.81 MHz ( period = 12.374 ns )                    ; DS18B20:inst2|CountRstStep[1]       ; DS18B20:inst2|CountRstStep[7]  ; clk        ; clk      ; None                        ; None                      ; 11.665 ns               ;
+; N/A                                     ; 80.81 MHz ( period = 12.374 ns )                    ; DS18B20:inst2|CountRstStep[1]       ; DS18B20:inst2|CountRstStep[6]  ; clk        ; clk      ; None                        ; None                      ; 11.665 ns               ;
+; N/A                                     ; 80.81 MHz ( period = 12.374 ns )                    ; DS18B20:inst2|CountRstStep[1]       ; DS18B20:inst2|CountRstStep[3]  ; clk        ; clk      ; None                        ; None                      ; 11.665 ns               ;
+; N/A                                     ; 80.81 MHz ( period = 12.374 ns )                    ; DS18B20:inst2|CountRstStep[1]       ; DS18B20:inst2|CountRstStep[2]  ; clk        ; clk      ; None                        ; None                      ; 11.665 ns               ;
+; N/A                                     ; 80.81 MHz ( period = 12.374 ns )                    ; DS18B20:inst2|CountRstStep[1]       ; DS18B20:inst2|CountRstStep[1]  ; clk        ; clk      ; None                        ; None                      ; 11.665 ns               ;
+; N/A                                     ; 80.91 MHz ( period = 12.359 ns )                    ; DS18B20:inst2|CountRstStep[2]       ; DS18B20:inst2|CountRstStep[8]  ; clk        ; clk      ; None                        ; None                      ; 11.650 ns               ;
+; N/A                                     ; 80.91 MHz ( period = 12.359 ns )                    ; DS18B20:inst2|CountRstStep[2]       ; DS18B20:inst2|CountRstStep[10] ; clk        ; clk      ; None                        ; None                      ; 11.650 ns               ;
+; N/A                                     ; 80.91 MHz ( period = 12.359 ns )                    ; DS18B20:inst2|CountRstStep[2]       ; DS18B20:inst2|CountRstStep[9]  ; clk        ; clk      ; None                        ; None                      ; 11.650 ns               ;
+; N/A                                     ; 80.91 MHz ( period = 12.359 ns )                    ; DS18B20:inst2|CountRstStep[2]       ; DS18B20:inst2|CountRstStep[4]  ; clk        ; clk      ; None                        ; None                      ; 11.650 ns               ;
+; N/A                                     ; 80.91 MHz ( period = 12.359 ns )                    ; DS18B20:inst2|CountRstStep[2]       ; DS18B20:inst2|CountRstStep[5]  ; clk        ; clk      ; None                        ; None                      ; 11.650 ns               ;
+; N/A                                     ; 80.91 MHz ( period = 12.359 ns )                    ; DS18B20:inst2|CountRstStep[2]       ; DS18B20:inst2|CountRstStep[7]  ; clk        ; clk      ; None                        ; None                      ; 11.650 ns               ;
+; N/A                                     ; 80.91 MHz ( period = 12.359 ns )                    ; DS18B20:inst2|CountRstStep[2]       ; DS18B20:inst2|CountRstStep[6]  ; clk        ; clk      ; None                        ; None                      ; 11.650 ns               ;
+; N/A                                     ; 80.91 MHz ( period = 12.359 ns )                    ; DS18B20:inst2|CountRstStep[2]       ; DS18B20:inst2|CountRstStep[3]  ; clk        ; clk      ; None                        ; None                      ; 11.650 ns               ;
+; N/A                                     ; 80.91 MHz ( period = 12.359 ns )                    ; DS18B20:inst2|CountRstStep[2]       ; DS18B20:inst2|CountRstStep[2]  ; clk        ; clk      ; None                        ; None                      ; 11.650 ns               ;
+; N/A                                     ; 80.91 MHz ( period = 12.359 ns )                    ; DS18B20:inst2|CountRstStep[2]       ; DS18B20:inst2|CountRstStep[1]  ; clk        ; clk      ; None                        ; None                      ; 11.650 ns               ;
+; N/A                                     ; 80.97 MHz ( period = 12.351 ns )                    ; DS18B20:inst2|CountRstStep[5]       ; DS18B20:inst2|CountRstStep[8]  ; clk        ; clk      ; None                        ; None                      ; 11.642 ns               ;
+; N/A                                     ; 80.97 MHz ( period = 12.351 ns )                    ; DS18B20:inst2|CountRstStep[5]       ; DS18B20:inst2|CountRstStep[10] ; clk        ; clk      ; None                        ; None                      ; 11.642 ns               ;
+; N/A                                     ; 80.97 MHz ( period = 12.351 ns )                    ; DS18B20:inst2|CountRstStep[5]       ; DS18B20:inst2|CountRstStep[9]  ; clk        ; clk      ; None                        ; None                      ; 11.642 ns               ;
+; N/A                                     ; 80.97 MHz ( period = 12.351 ns )                    ; DS18B20:inst2|CountRstStep[5]       ; DS18B20:inst2|CountRstStep[4]  ; clk        ; clk      ; None                        ; None                      ; 11.642 ns               ;
+; N/A                                     ; 80.97 MHz ( period = 12.351 ns )                    ; DS18B20:inst2|CountRstStep[5]       ; DS18B20:inst2|CountRstStep[5]  ; clk        ; clk      ; None                        ; None                      ; 11.642 ns               ;
+; N/A                                     ; 80.97 MHz ( period = 12.351 ns )                    ; DS18B20:inst2|CountRstStep[5]       ; DS18B20:inst2|CountRstStep[7]  ; clk        ; clk      ; None                        ; None                      ; 11.642 ns               ;
+; N/A                                     ; 80.97 MHz ( period = 12.351 ns )                    ; DS18B20:inst2|CountRstStep[5]       ; DS18B20:inst2|CountRstStep[6]  ; clk        ; clk      ; None                        ; None                      ; 11.642 ns               ;
+; N/A                                     ; 80.97 MHz ( period = 12.351 ns )                    ; DS18B20:inst2|CountRstStep[5]       ; DS18B20:inst2|CountRstStep[3]  ; clk        ; clk      ; None                        ; None                      ; 11.642 ns               ;
+; N/A                                     ; 80.97 MHz ( period = 12.351 ns )                    ; DS18B20:inst2|CountRstStep[5]       ; DS18B20:inst2|CountRstStep[2]  ; clk        ; clk      ; None                        ; None                      ; 11.642 ns               ;
+; N/A                                     ; 80.97 MHz ( period = 12.351 ns )                    ; DS18B20:inst2|CountRstStep[5]       ; DS18B20:inst2|CountRstStep[1]  ; clk        ; clk      ; None                        ; None                      ; 11.642 ns               ;
+; N/A                                     ; 82.05 MHz ( period = 12.188 ns )                    ; DS18B20:inst2|CountRstStep[10]      ; DS18B20:inst2|CountRstStep[8]  ; clk        ; clk      ; None                        ; None                      ; 11.479 ns               ;
+; N/A                                     ; 82.05 MHz ( period = 12.188 ns )                    ; DS18B20:inst2|CountRstStep[10]      ; DS18B20:inst2|CountRstStep[10] ; clk        ; clk      ; None                        ; None                      ; 11.479 ns               ;
+; N/A                                     ; 82.05 MHz ( period = 12.188 ns )                    ; DS18B20:inst2|CountRstStep[10]      ; DS18B20:inst2|CountRstStep[9]  ; clk        ; clk      ; None                        ; None                      ; 11.479 ns               ;
+; N/A                                     ; 82.05 MHz ( period = 12.188 ns )                    ; DS18B20:inst2|CountRstStep[10]      ; DS18B20:inst2|CountRstStep[4]  ; clk        ; clk      ; None                        ; None                      ; 11.479 ns               ;
+; N/A                                     ; 82.05 MHz ( period = 12.188 ns )                    ; DS18B20:inst2|CountRstStep[10]      ; DS18B20:inst2|CountRstStep[5]  ; clk        ; clk      ; None                        ; None                      ; 11.479 ns               ;
+; N/A                                     ; 82.05 MHz ( period = 12.188 ns )                    ; DS18B20:inst2|CountRstStep[10]      ; DS18B20:inst2|CountRstStep[7]  ; clk        ; clk      ; None                        ; None                      ; 11.479 ns               ;
+; N/A                                     ; 82.05 MHz ( period = 12.188 ns )                    ; DS18B20:inst2|CountRstStep[10]      ; DS18B20:inst2|CountRstStep[6]  ; clk        ; clk      ; None                        ; None                      ; 11.479 ns               ;
+; N/A                                     ; 82.05 MHz ( period = 12.188 ns )                    ; DS18B20:inst2|CountRstStep[10]      ; DS18B20:inst2|CountRstStep[3]  ; clk        ; clk      ; None                        ; None                      ; 11.479 ns               ;
+; N/A                                     ; 82.05 MHz ( period = 12.188 ns )                    ; DS18B20:inst2|CountRstStep[10]      ; DS18B20:inst2|CountRstStep[2]  ; clk        ; clk      ; None                        ; None                      ; 11.479 ns               ;
+; N/A                                     ; 82.05 MHz ( period = 12.188 ns )                    ; DS18B20:inst2|CountRstStep[10]      ; DS18B20:inst2|CountRstStep[1]  ; clk        ; clk      ; None                        ; None                      ; 11.479 ns               ;
+; N/A                                     ; 83.15 MHz ( period = 12.027 ns )                    ; DS18B20:inst2|CountRstStep[4]       ; DS18B20:inst2|CountRstStep[8]  ; clk        ; clk      ; None                        ; None                      ; 11.318 ns               ;
+; N/A                                     ; 83.15 MHz ( period = 12.027 ns )                    ; DS18B20:inst2|CountRstStep[4]       ; DS18B20:inst2|CountRstStep[10] ; clk        ; clk      ; None                        ; None                      ; 11.318 ns               ;
+; N/A                                     ; 83.15 MHz ( period = 12.027 ns )                    ; DS18B20:inst2|CountRstStep[4]       ; DS18B20:inst2|CountRstStep[9]  ; clk        ; clk      ; None                        ; None                      ; 11.318 ns               ;
+; N/A                                     ; 83.15 MHz ( period = 12.027 ns )                    ; DS18B20:inst2|CountRstStep[4]       ; DS18B20:inst2|CountRstStep[4]  ; clk        ; clk      ; None                        ; None                      ; 11.318 ns               ;
+; N/A                                     ; 83.15 MHz ( period = 12.027 ns )                    ; DS18B20:inst2|CountRstStep[4]       ; DS18B20:inst2|CountRstStep[5]  ; clk        ; clk      ; None                        ; None                      ; 11.318 ns               ;
+; N/A                                     ; 83.15 MHz ( period = 12.027 ns )                    ; DS18B20:inst2|CountRstStep[4]       ; DS18B20:inst2|CountRstStep[7]  ; clk        ; clk      ; None                        ; None                      ; 11.318 ns               ;
+; N/A                                     ; 83.15 MHz ( period = 12.027 ns )                    ; DS18B20:inst2|CountRstStep[4]       ; DS18B20:inst2|CountRstStep[6]  ; clk        ; clk      ; None                        ; None                      ; 11.318 ns               ;
+; N/A                                     ; 83.15 MHz ( period = 12.027 ns )                    ; DS18B20:inst2|CountRstStep[4]       ; DS18B20:inst2|CountRstStep[3]  ; clk        ; clk      ; None                        ; None                      ; 11.318 ns               ;
+; N/A                                     ; 83.15 MHz ( period = 12.027 ns )                    ; DS18B20:inst2|CountRstStep[4]       ; DS18B20:inst2|CountRstStep[2]  ; clk        ; clk      ; None                        ; None                      ; 11.318 ns               ;
+; N/A                                     ; 83.15 MHz ( period = 12.027 ns )                    ; DS18B20:inst2|CountRstStep[4]       ; DS18B20:inst2|CountRstStep[1]  ; clk        ; clk      ; None                        ; None                      ; 11.318 ns               ;
+; N/A                                     ; 83.81 MHz ( period = 11.932 ns )                    ; DS18B20:inst2|CountRstStep[3]       ; DS18B20:inst2|CountRstStep[8]  ; clk        ; clk      ; None                        ; None                      ; 11.223 ns               ;
+; N/A                                     ; 83.81 MHz ( period = 11.932 ns )                    ; DS18B20:inst2|CountRstStep[3]       ; DS18B20:inst2|CountRstStep[10] ; clk        ; clk      ; None                        ; None                      ; 11.223 ns               ;
+; N/A                                     ; 83.81 MHz ( period = 11.932 ns )                    ; DS18B20:inst2|CountRstStep[3]       ; DS18B20:inst2|CountRstStep[9]  ; clk        ; clk      ; None                        ; None                      ; 11.223 ns               ;
+; N/A                                     ; 83.81 MHz ( period = 11.932 ns )                    ; DS18B20:inst2|CountRstStep[3]       ; DS18B20:inst2|CountRstStep[4]  ; clk        ; clk      ; None                        ; None                      ; 11.223 ns               ;
+; N/A                                     ; 83.81 MHz ( period = 11.932 ns )                    ; DS18B20:inst2|CountRstStep[3]       ; DS18B20:inst2|CountRstStep[5]  ; clk        ; clk      ; None                        ; None                      ; 11.223 ns               ;
+; N/A                                     ; 83.81 MHz ( period = 11.932 ns )                    ; DS18B20:inst2|CountRstStep[3]       ; DS18B20:inst2|CountRstStep[7]  ; clk        ; clk      ; None                        ; None                      ; 11.223 ns               ;
+; N/A                                     ; 83.81 MHz ( period = 11.932 ns )                    ; DS18B20:inst2|CountRstStep[3]       ; DS18B20:inst2|CountRstStep[6]  ; clk        ; clk      ; None                        ; None                      ; 11.223 ns               ;
+; N/A                                     ; 83.81 MHz ( period = 11.932 ns )                    ; DS18B20:inst2|CountRstStep[3]       ; DS18B20:inst2|CountRstStep[3]  ; clk        ; clk      ; None                        ; None                      ; 11.223 ns               ;
+; N/A                                     ; 83.81 MHz ( period = 11.932 ns )                    ; DS18B20:inst2|CountRstStep[3]       ; DS18B20:inst2|CountRstStep[2]  ; clk        ; clk      ; None                        ; None                      ; 11.223 ns               ;
+; N/A                                     ; 83.81 MHz ( period = 11.932 ns )                    ; DS18B20:inst2|CountRstStep[3]       ; DS18B20:inst2|CountRstStep[1]  ; clk        ; clk      ; None                        ; None                      ; 11.223 ns               ;
+; N/A                                     ; 84.99 MHz ( period = 11.766 ns )                    ; DS18B20:inst2|CountRstStep[8]       ; DS18B20:inst2|CountRstStep[8]  ; clk        ; clk      ; None                        ; None                      ; 11.057 ns               ;
+; N/A                                     ; 84.99 MHz ( period = 11.766 ns )                    ; DS18B20:inst2|CountRstStep[8]       ; DS18B20:inst2|CountRstStep[10] ; clk        ; clk      ; None                        ; None                      ; 11.057 ns               ;
+; N/A                                     ; 84.99 MHz ( period = 11.766 ns )                    ; DS18B20:inst2|CountRstStep[8]       ; DS18B20:inst2|CountRstStep[9]  ; clk        ; clk      ; None                        ; None                      ; 11.057 ns               ;
+; N/A                                     ; 84.99 MHz ( period = 11.766 ns )                    ; DS18B20:inst2|CountRstStep[8]       ; DS18B20:inst2|CountRstStep[4]  ; clk        ; clk      ; None                        ; None                      ; 11.057 ns               ;
+; N/A                                     ; 84.99 MHz ( period = 11.766 ns )                    ; DS18B20:inst2|CountRstStep[8]       ; DS18B20:inst2|CountRstStep[5]  ; clk        ; clk      ; None                        ; None                      ; 11.057 ns               ;
+; N/A                                     ; 84.99 MHz ( period = 11.766 ns )                    ; DS18B20:inst2|CountRstStep[8]       ; DS18B20:inst2|CountRstStep[7]  ; clk        ; clk      ; None                        ; None                      ; 11.057 ns               ;
+; N/A                                     ; 84.99 MHz ( period = 11.766 ns )                    ; DS18B20:inst2|CountRstStep[8]       ; DS18B20:inst2|CountRstStep[6]  ; clk        ; clk      ; None                        ; None                      ; 11.057 ns               ;
+; N/A                                     ; 84.99 MHz ( period = 11.766 ns )                    ; DS18B20:inst2|CountRstStep[8]       ; DS18B20:inst2|CountRstStep[3]  ; clk        ; clk      ; None                        ; None                      ; 11.057 ns               ;
+; N/A                                     ; 84.99 MHz ( period = 11.766 ns )                    ; DS18B20:inst2|CountRstStep[8]       ; DS18B20:inst2|CountRstStep[2]  ; clk        ; clk      ; None                        ; None                      ; 11.057 ns               ;
+; N/A                                     ; 84.99 MHz ( period = 11.766 ns )                    ; DS18B20:inst2|CountRstStep[8]       ; DS18B20:inst2|CountRstStep[1]  ; clk        ; clk      ; None                        ; None                      ; 11.057 ns               ;
+; N/A                                     ; 85.37 MHz ( period = 11.714 ns )                    ; DS18B20:inst2|CountRstStep[7]       ; DS18B20:inst2|CountRstStep[8]  ; clk        ; clk      ; None                        ; None                      ; 11.005 ns               ;
+; N/A                                     ; 85.37 MHz ( period = 11.714 ns )                    ; DS18B20:inst2|CountRstStep[7]       ; DS18B20:inst2|CountRstStep[10] ; clk        ; clk      ; None                        ; None                      ; 11.005 ns               ;
+; N/A                                     ; 85.37 MHz ( period = 11.714 ns )                    ; DS18B20:inst2|CountRstStep[7]       ; DS18B20:inst2|CountRstStep[9]  ; clk        ; clk      ; None                        ; None                      ; 11.005 ns               ;
+; N/A                                     ; 85.37 MHz ( period = 11.714 ns )                    ; DS18B20:inst2|CountRstStep[7]       ; DS18B20:inst2|CountRstStep[4]  ; clk        ; clk      ; None                        ; None                      ; 11.005 ns               ;
+; N/A                                     ; 85.37 MHz ( period = 11.714 ns )                    ; DS18B20:inst2|CountRstStep[7]       ; DS18B20:inst2|CountRstStep[5]  ; clk        ; clk      ; None                        ; None                      ; 11.005 ns               ;
+; N/A                                     ; 85.37 MHz ( period = 11.714 ns )                    ; DS18B20:inst2|CountRstStep[7]       ; DS18B20:inst2|CountRstStep[7]  ; clk        ; clk      ; None                        ; None                      ; 11.005 ns               ;
+; N/A                                     ; 85.37 MHz ( period = 11.714 ns )                    ; DS18B20:inst2|CountRstStep[7]       ; DS18B20:inst2|CountRstStep[6]  ; clk        ; clk      ; None                        ; None                      ; 11.005 ns               ;
+; N/A                                     ; 85.37 MHz ( period = 11.714 ns )                    ; DS18B20:inst2|CountRstStep[7]       ; DS18B20:inst2|CountRstStep[3]  ; clk        ; clk      ; None                        ; None                      ; 11.005 ns               ;
+; N/A                                     ; 85.37 MHz ( period = 11.714 ns )                    ; DS18B20:inst2|CountRstStep[7]       ; DS18B20:inst2|CountRstStep[2]  ; clk        ; clk      ; None                        ; None                      ; 11.005 ns               ;
+; N/A                                     ; 85.37 MHz ( period = 11.714 ns )                    ; DS18B20:inst2|CountRstStep[7]       ; DS18B20:inst2|CountRstStep[1]  ; clk        ; clk      ; None                        ; None                      ; 11.005 ns               ;
+; N/A                                     ; 85.87 MHz ( period = 11.645 ns )                    ; DS18B20:inst2|CountWbitStep[7]      ; DS18B20:inst2|icdata~en        ; clk        ; clk      ; None                        ; None                      ; 10.936 ns               ;
+; N/A                                     ; 85.87 MHz ( period = 11.645 ns )                    ; DS18B20:inst2|CountWbitStep[7]      ; DS18B20:inst2|icdata~reg0      ; clk        ; clk      ; None                        ; None                      ; 10.936 ns               ;
+; N/A                                     ; 85.97 MHz ( period = 11.632 ns )                    ; DS18B20:inst2|CountRstStep[6]       ; DS18B20:inst2|CountRstStep[8]  ; clk        ; clk      ; None                        ; None                      ; 10.923 ns               ;
+; N/A                                     ; 85.97 MHz ( period = 11.632 ns )                    ; DS18B20:inst2|CountRstStep[6]       ; DS18B20:inst2|CountRstStep[10] ; clk        ; clk      ; None                        ; None                      ; 10.923 ns               ;
+; N/A                                     ; 85.97 MHz ( period = 11.632 ns )                    ; DS18B20:inst2|CountRstStep[6]       ; DS18B20:inst2|CountRstStep[9]  ; clk        ; clk      ; None                        ; None                      ; 10.923 ns               ;
+; N/A                                     ; 85.97 MHz ( period = 11.632 ns )                    ; DS18B20:inst2|CountRstStep[6]       ; DS18B20:inst2|CountRstStep[4]  ; clk        ; clk      ; None                        ; None                      ; 10.923 ns               ;
+; N/A                                     ; 85.97 MHz ( period = 11.632 ns )                    ; DS18B20:inst2|CountRstStep[6]       ; DS18B20:inst2|CountRstStep[5]  ; clk        ; clk      ; None                        ; None                      ; 10.923 ns               ;
+; N/A                                     ; 85.97 MHz ( period = 11.632 ns )                    ; DS18B20:inst2|CountRstStep[6]       ; DS18B20:inst2|CountRstStep[7]  ; clk        ; clk      ; None                        ; None                      ; 10.923 ns               ;
+; N/A                                     ; 85.97 MHz ( period = 11.632 ns )                    ; DS18B20:inst2|CountRstStep[6]       ; DS18B20:inst2|CountRstStep[6]  ; clk        ; clk      ; None                        ; None                      ; 10.923 ns               ;
+; N/A                                     ; 85.97 MHz ( period = 11.632 ns )                    ; DS18B20:inst2|CountRstStep[6]       ; DS18B20:inst2|CountRstStep[3]  ; clk        ; clk      ; None                        ; None                      ; 10.923 ns               ;
+; N/A                                     ; 85.97 MHz ( period = 11.632 ns )                    ; DS18B20:inst2|CountRstStep[6]       ; DS18B20:inst2|CountRstStep[2]  ; clk        ; clk      ; None                        ; None                      ; 10.923 ns               ;
+; N/A                                     ; 85.97 MHz ( period = 11.632 ns )                    ; DS18B20:inst2|CountRstStep[6]       ; DS18B20:inst2|CountRstStep[1]  ; clk        ; clk      ; None                        ; None                      ; 10.923 ns               ;
+; N/A                                     ; 87.97 MHz ( period = 11.367 ns )                    ; clk_div:inst1|count[3]              ; clk_div:inst1|count[4]         ; clk        ; clk      ; None                        ; None                      ; 10.658 ns               ;
+; N/A                                     ; 88.49 MHz ( period = 11.301 ns )                    ; DS18B20:inst2|CmdSETstate.state_0   ; DS18B20:inst2|icdata~en        ; clk        ; clk      ; None                        ; None                      ; 10.592 ns               ;
+; N/A                                     ; 88.49 MHz ( period = 11.301 ns )                    ; DS18B20:inst2|CmdSETstate.state_0   ; DS18B20:inst2|icdata~reg0      ; clk        ; clk      ; None                        ; None                      ; 10.592 ns               ;
+; N/A                                     ; 88.95 MHz ( period = 11.242 ns )                    ; DS18B20:inst2|ReadBitstate.state_0  ; DS18B20:inst2|icdata~en        ; clk        ; clk      ; None                        ; None                      ; 10.533 ns               ;
+; N/A                                     ; 88.95 MHz ( period = 11.242 ns )                    ; DS18B20:inst2|ReadBitstate.state_0  ; DS18B20:inst2|icdata~reg0      ; clk        ; clk      ; None                        ; None                      ; 10.533 ns               ;
+; N/A                                     ; 89.05 MHz ( period = 11.230 ns )                    ; DS18B20:inst2|i[3]                  ; DS18B20:inst2|icdata~en        ; clk        ; clk      ; None                        ; None                      ; 10.521 ns               ;
+; N/A                                     ; 89.05 MHz ( period = 11.230 ns )                    ; DS18B20:inst2|i[3]                  ; DS18B20:inst2|icdata~reg0      ; clk        ; clk      ; None                        ; None                      ; 10.521 ns               ;
+; N/A                                     ; 89.54 MHz ( period = 11.168 ns )                    ; DS18B20:inst2|CountWbitStep[3]      ; DS18B20:inst2|icdata~en        ; clk        ; clk      ; None                        ; None                      ; 10.459 ns               ;
+; N/A                                     ; 89.54 MHz ( period = 11.168 ns )                    ; DS18B20:inst2|CountWbitStep[3]      ; DS18B20:inst2|icdata~reg0      ; clk        ; clk      ; None                        ; None                      ; 10.459 ns               ;
+; N/A                                     ; 89.62 MHz ( period = 11.158 ns )                    ; DS18B20:inst2|CmdSETstate.state_5   ; DS18B20:inst2|icdata~en        ; clk        ; clk      ; None                        ; None                      ; 10.449 ns               ;
+; N/A                                     ; 89.62 MHz ( period = 11.158 ns )                    ; DS18B20:inst2|CmdSETstate.state_5   ; DS18B20:inst2|icdata~reg0      ; clk        ; clk      ; None                        ; None                      ; 10.449 ns               ;
+; N/A                                     ; 90.01 MHz ( period = 11.110 ns )                    ; DS18B20:inst2|WriteBitstate.state_3 ; DS18B20:inst2|icdata~en        ; clk        ; clk      ; None                        ; None                      ; 10.401 ns               ;
+; N/A                                     ; 90.01 MHz ( period = 11.110 ns )                    ; DS18B20:inst2|WriteBitstate.state_3 ; DS18B20:inst2|icdata~reg0      ; clk        ; clk      ; None                        ; None                      ; 10.401 ns               ;
+; N/A                                     ; 90.60 MHz ( period = 11.037 ns )                    ; DS18B20:inst2|CountWbitStep[8]      ; DS18B20:inst2|icdata~en        ; clk        ; clk      ; None                        ; None                      ; 10.328 ns               ;
+; N/A                                     ; 90.60 MHz ( period = 11.037 ns )                    ; DS18B20:inst2|CountWbitStep[8]      ; DS18B20:inst2|icdata~reg0      ; clk        ; clk      ; None                        ; None                      ; 10.328 ns               ;
+; N/A                                     ; 92.27 MHz ( period = 10.838 ns )                    ; clk_div:inst1|count[1]              ; clk_div:inst1|count[4]         ; clk        ; clk      ; None                        ; None                      ; 10.129 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; DS18B20:inst2|Rststate.state_6      ; DS18B20:inst2|CountRstStep[8]  ; clk        ; clk      ; None                        ; None                      ; 10.096 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; DS18B20:inst2|Rststate.state_6      ; DS18B20:inst2|CountRstStep[10] ; clk        ; clk      ; None                        ; None                      ; 10.096 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; DS18B20:inst2|Rststate.state_6      ; DS18B20:inst2|CountRstStep[9]  ; clk        ; clk      ; None                        ; None                      ; 10.096 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; DS18B20:inst2|Rststate.state_6      ; DS18B20:inst2|CountRstStep[4]  ; clk        ; clk      ; None                        ; None                      ; 10.096 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; DS18B20:inst2|Rststate.state_6      ; DS18B20:inst2|CountRstStep[5]  ; clk        ; clk      ; None                        ; None                      ; 10.096 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; DS18B20:inst2|Rststate.state_6      ; DS18B20:inst2|CountRstStep[7]  ; clk        ; clk      ; None                        ; None                      ; 10.096 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; DS18B20:inst2|Rststate.state_6      ; DS18B20:inst2|CountRstStep[6]  ; clk        ; clk      ; None                        ; None                      ; 10.096 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; DS18B20:inst2|Rststate.state_6      ; DS18B20:inst2|CountRstStep[3]  ; clk        ; clk      ; None                        ; None                      ; 10.096 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; DS18B20:inst2|Rststate.state_6      ; DS18B20:inst2|CountRstStep[2]  ; clk        ; clk      ; None                        ; None                      ; 10.096 ns               ;
+; N/A                                     ; 92.55 MHz ( period = 10.805 ns )                    ; DS18B20:inst2|Rststate.state_6      ; DS18B20:inst2|CountRstStep[1]  ; clk        ; clk      ; None                        ; None                      ; 10.096 ns               ;
+; N/A                                     ; 93.30 MHz ( period = 10.718 ns )                    ; DS18B20:inst2|CountWbitStep[7]      ; DS18B20:inst2|CountWbitStep[2] ; clk        ; clk      ; None                        ; None                      ; 10.009 ns               ;
+; N/A                                     ; 93.30 MHz ( period = 10.718 ns )                    ; DS18B20:inst2|CountWbitStep[7]      ; DS18B20:inst2|CountWbitStep[1] ; clk        ; clk      ; None                        ; None                      ; 10.009 ns               ;
+; N/A                                     ; 93.30 MHz ( period = 10.718 ns )                    ; DS18B20:inst2|CountWbitStep[7]      ; DS18B20:inst2|CountWbitStep[7] ; clk        ; clk      ; None                        ; None                      ; 10.009 ns               ;
+; N/A                                     ; 93.30 MHz ( period = 10.718 ns )                    ; DS18B20:inst2|CountWbitStep[7]      ; DS18B20:inst2|CountWbitStep[6] ; clk        ; clk      ; None                        ; None                      ; 10.009 ns               ;
+; N/A                                     ; 93.30 MHz ( period = 10.718 ns )                    ; DS18B20:inst2|CountWbitStep[7]      ; DS18B20:inst2|CountWbitStep[5] ; clk        ; clk      ; None                        ; None                      ; 10.009 ns               ;
+; N/A                                     ; 93.30 MHz ( period = 10.718 ns )                    ; DS18B20:inst2|CountWbitStep[7]      ; DS18B20:inst2|CountWbitStep[8] ; clk        ; clk      ; None                        ; None                      ; 10.009 ns               ;
+; N/A                                     ; 93.30 MHz ( period = 10.718 ns )                    ; DS18B20:inst2|CountWbitStep[7]      ; DS18B20:inst2|CountWbitStep[4] ; clk        ; clk      ; None                        ; None                      ; 10.009 ns               ;
+; N/A                                     ; 93.30 MHz ( period = 10.718 ns )                    ; DS18B20:inst2|CountWbitStep[7]      ; DS18B20:inst2|CountWbitStep[3] ; clk        ; clk      ; None                        ; None                      ; 10.009 ns               ;
+; N/A                                     ; 93.36 MHz ( period = 10.711 ns )                    ; DS18B20:inst2|CmdSETstate.state_8   ; DS18B20:inst2|icdata~en        ; clk        ; clk      ; None                        ; None                      ; 10.002 ns               ;
+; N/A                                     ; 93.36 MHz ( period = 10.711 ns )                    ; DS18B20:inst2|CmdSETstate.state_8   ; DS18B20:inst2|icdata~reg0      ; clk        ; clk      ; None                        ; None                      ; 10.002 ns               ;
+; N/A                                     ; 93.76 MHz ( period = 10.665 ns )                    ; DS18B20:inst2|Writestate.state_1    ; DS18B20:inst2|icdata~en        ; clk        ; clk      ; None                        ; None                      ; 9.956 ns                ;
+; N/A                                     ; 93.76 MHz ( period = 10.665 ns )                    ; DS18B20:inst2|Writestate.state_1    ; DS18B20:inst2|icdata~reg0      ; clk        ; clk      ; None                        ; None                      ; 9.956 ns                ;
+; N/A                                     ; 94.00 MHz ( period = 10.638 ns )                    ; DS18B20:inst2|CmdSETstate.state_9   ; DS18B20:inst2|icdata~en        ; clk        ; clk      ; None                        ; None                      ; 9.929 ns                ;
+; N/A                                     ; 94.00 MHz ( period = 10.638 ns )                    ; DS18B20:inst2|CmdSETstate.state_9   ; DS18B20:inst2|icdata~reg0      ; clk        ; clk      ; None                        ; None                      ; 9.929 ns                ;
+; N/A                                     ; 94.26 MHz ( period = 10.609 ns )                    ; clk_div:inst1|count[3]              ; clk_div:inst1|clk_out          ; clk        ; clk      ; None                        ; None                      ; 9.900 ns                ;
+; N/A                                     ; 94.28 MHz ( period = 10.607 ns )                    ; clk_div:inst1|count[3]              ; clk_div:inst1|count[3]         ; clk        ; clk      ; None                        ; None                      ; 9.898 ns                ;
+; N/A                                     ; 95.81 MHz ( period = 10.437 ns )                    ; DS18B20:inst2|CountWbitStep[4]      ; DS18B20:inst2|icdata~en        ; clk        ; clk      ; None                        ; None                      ; 9.728 ns                ;
+; N/A                                     ; 95.81 MHz ( period = 10.437 ns )                    ; DS18B20:inst2|CountWbitStep[4]      ; DS18B20:inst2|icdata~reg0      ; clk        ; clk      ; None                        ; None                      ; 9.728 ns                ;
+; N/A                                     ; 95.83 MHz ( period = 10.435 ns )                    ; DS18B20:inst2|CountWbitStep[6]      ; DS18B20:inst2|icdata~en        ; clk        ; clk      ; None                        ; None                      ; 9.726 ns                ;
+; N/A                                     ; 95.83 MHz ( period = 10.435 ns )                    ; DS18B20:inst2|CountWbitStep[6]      ; DS18B20:inst2|icdata~reg0      ; clk        ; clk      ; None                        ; None                      ; 9.726 ns                ;
+; N/A                                     ; 96.05 MHz ( period = 10.411 ns )                    ; clk_div:inst1|count[2]              ; clk_div:inst1|count[4]         ; clk        ; clk      ; None                        ; None                      ; 9.702 ns                ;
+; N/A                                     ; 96.91 MHz ( period = 10.319 ns )                    ; DS18B20:inst2|Rststate.state_2      ; DS18B20:inst2|CountRstStep[8]  ; clk        ; clk      ; None                        ; None                      ; 9.610 ns                ;
+; N/A                                     ; 96.91 MHz ( period = 10.319 ns )                    ; DS18B20:inst2|Rststate.state_2      ; DS18B20:inst2|CountRstStep[10] ; clk        ; clk      ; None                        ; None                      ; 9.610 ns                ;
+; N/A                                     ; 96.91 MHz ( period = 10.319 ns )                    ; DS18B20:inst2|Rststate.state_2      ; DS18B20:inst2|CountRstStep[9]  ; clk        ; clk      ; None                        ; None                      ; 9.610 ns                ;
+; N/A                                     ; 96.91 MHz ( period = 10.319 ns )                    ; DS18B20:inst2|Rststate.state_2      ; DS18B20:inst2|CountRstStep[4]  ; clk        ; clk      ; None                        ; None                      ; 9.610 ns                ;
+; N/A                                     ; 96.91 MHz ( period = 10.319 ns )                    ; DS18B20:inst2|Rststate.state_2      ; DS18B20:inst2|CountRstStep[5]  ; clk        ; clk      ; None                        ; None                      ; 9.610 ns                ;
+; N/A                                     ; 96.91 MHz ( period = 10.319 ns )                    ; DS18B20:inst2|Rststate.state_2      ; DS18B20:inst2|CountRstStep[7]  ; clk        ; clk      ; None                        ; None                      ; 9.610 ns                ;
+; N/A                                     ; 96.91 MHz ( period = 10.319 ns )                    ; DS18B20:inst2|Rststate.state_2      ; DS18B20:inst2|CountRstStep[6]  ; clk        ; clk      ; None                        ; None                      ; 9.610 ns                ;
+; N/A                                     ; 96.91 MHz ( period = 10.319 ns )                    ; DS18B20:inst2|Rststate.state_2      ; DS18B20:inst2|CountRstStep[3]  ; clk        ; clk      ; None                        ; None                      ; 9.610 ns                ;
+; N/A                                     ; 96.91 MHz ( period = 10.319 ns )                    ; DS18B20:inst2|Rststate.state_2      ; DS18B20:inst2|CountRstStep[2]  ; clk        ; clk      ; None                        ; None                      ; 9.610 ns                ;
+; N/A                                     ; 96.91 MHz ( period = 10.319 ns )                    ; DS18B20:inst2|Rststate.state_2      ; DS18B20:inst2|CountRstStep[1]  ; clk        ; clk      ; None                        ; None                      ; 9.610 ns                ;
+; N/A                                     ; 97.85 MHz ( period = 10.220 ns )                    ; DS18B20:inst2|CountWbitStep[5]      ; DS18B20:inst2|icdata~en        ; clk        ; clk      ; None                        ; None                      ; 9.511 ns                ;
+; N/A                                     ; 97.85 MHz ( period = 10.220 ns )                    ; DS18B20:inst2|CountWbitStep[5]      ; DS18B20:inst2|icdata~reg0      ; clk        ; clk      ; None                        ; None                      ; 9.511 ns                ;
+; N/A                                     ; 98.91 MHz ( period = 10.110 ns )                    ; DS18B20:inst2|CountWbitStep[8]      ; DS18B20:inst2|CountWbitStep[2] ; clk        ; clk      ; None                        ; None                      ; 9.401 ns                ;
+; N/A                                     ; 98.91 MHz ( period = 10.110 ns )                    ; DS18B20:inst2|CountWbitStep[8]      ; DS18B20:inst2|CountWbitStep[1] ; clk        ; clk      ; None                        ; None                      ; 9.401 ns                ;
+; N/A                                     ; 98.91 MHz ( period = 10.110 ns )                    ; DS18B20:inst2|CountWbitStep[8]      ; DS18B20:inst2|CountWbitStep[7] ; clk        ; clk      ; None                        ; None                      ; 9.401 ns                ;
+; N/A                                     ; 98.91 MHz ( period = 10.110 ns )                    ; DS18B20:inst2|CountWbitStep[8]      ; DS18B20:inst2|CountWbitStep[6] ; clk        ; clk      ; None                        ; None                      ; 9.401 ns                ;
+; N/A                                     ; 98.91 MHz ( period = 10.110 ns )                    ; DS18B20:inst2|CountWbitStep[8]      ; DS18B20:inst2|CountWbitStep[5] ; clk        ; clk      ; None                        ; None                      ; 9.401 ns                ;
+; N/A                                     ; 98.91 MHz ( period = 10.110 ns )                    ; DS18B20:inst2|CountWbitStep[8]      ; DS18B20:inst2|CountWbitStep[8] ; clk        ; clk      ; None                        ; None                      ; 9.401 ns                ;
+; N/A                                     ; 98.91 MHz ( period = 10.110 ns )                    ; DS18B20:inst2|CountWbitStep[8]      ; DS18B20:inst2|CountWbitStep[4] ; clk        ; clk      ; None                        ; None                      ; 9.401 ns                ;
+; N/A                                     ; 98.91 MHz ( period = 10.110 ns )                    ; DS18B20:inst2|CountWbitStep[8]      ; DS18B20:inst2|CountWbitStep[3] ; clk        ; clk      ; None                        ; None                      ; 9.401 ns                ;
+; N/A                                     ; 99.10 MHz ( period = 10.091 ns )                    ; DS18B20:inst2|Rststate.state_5      ; DS18B20:inst2|icdata~en        ; clk        ; clk      ; None                        ; None                      ; 9.382 ns                ;
+; N/A                                     ; 99.10 MHz ( period = 10.091 ns )                    ; DS18B20:inst2|Rststate.state_5      ; DS18B20:inst2|icdata~reg0      ; clk        ; clk      ; None                        ; None                      ; 9.382 ns                ;
+; N/A                                     ; 99.21 MHz ( period = 10.080 ns )                    ; clk_div:inst1|count[1]              ; clk_div:inst1|clk_out          ; clk        ; clk      ; None                        ; None                      ; 9.371 ns                ;
+; N/A                                     ; 99.23 MHz ( period = 10.078 ns )                    ; clk_div:inst1|count[1]              ; clk_div:inst1|count[3]         ; clk        ; clk      ; None                        ; None                      ; 9.369 ns                ;
+; N/A                                     ; 99.49 MHz ( period = 10.051 ns )                    ; DS18B20:inst2|Rststate.state_7      ; DS18B20:inst2|CountRstStep[8]  ; clk        ; clk      ; None                        ; None                      ; 9.342 ns                ;
+; N/A                                     ; 99.49 MHz ( period = 10.051 ns )                    ; DS18B20:inst2|Rststate.state_7      ; DS18B20:inst2|CountRstStep[10] ; clk        ; clk      ; None                        ; None                      ; 9.342 ns                ;
+; N/A                                     ; 99.49 MHz ( period = 10.051 ns )                    ; DS18B20:inst2|Rststate.state_7      ; DS18B20:inst2|CountRstStep[9]  ; clk        ; clk      ; None                        ; None                      ; 9.342 ns                ;
+; N/A                                     ; 99.49 MHz ( period = 10.051 ns )                    ; DS18B20:inst2|Rststate.state_7      ; DS18B20:inst2|CountRstStep[4]  ; clk        ; clk      ; None                        ; None                      ; 9.342 ns                ;
+; N/A                                     ; 99.49 MHz ( period = 10.051 ns )                    ; DS18B20:inst2|Rststate.state_7      ; DS18B20:inst2|CountRstStep[5]  ; clk        ; clk      ; None                        ; None                      ; 9.342 ns                ;
+; N/A                                     ; 99.49 MHz ( period = 10.051 ns )                    ; DS18B20:inst2|Rststate.state_7      ; DS18B20:inst2|CountRstStep[7]  ; clk        ; clk      ; None                        ; None                      ; 9.342 ns                ;
+; N/A                                     ; 99.49 MHz ( period = 10.051 ns )                    ; DS18B20:inst2|Rststate.state_7      ; DS18B20:inst2|CountRstStep[6]  ; clk        ; clk      ; None                        ; None                      ; 9.342 ns                ;
+; N/A                                     ; 99.49 MHz ( period = 10.051 ns )                    ; DS18B20:inst2|Rststate.state_7      ; DS18B20:inst2|CountRstStep[3]  ; clk        ; clk      ; None                        ; None                      ; 9.342 ns                ;
+; N/A                                     ; 99.49 MHz ( period = 10.051 ns )                    ; DS18B20:inst2|Rststate.state_7      ; DS18B20:inst2|CountRstStep[2]  ; clk        ; clk      ; None                        ; None                      ; 9.342 ns                ;
+; N/A                                     ; 99.49 MHz ( period = 10.051 ns )                    ; DS18B20:inst2|Rststate.state_7      ; DS18B20:inst2|CountRstStep[1]  ; clk        ; clk      ; None                        ; None                      ; 9.342 ns                ;
+; N/A                                     ; 100.09 MHz ( period = 9.991 ns )                    ; DS18B20:inst2|CountRbitStep[2]      ; DS18B20:inst2|CountRbitStep[4] ; clk        ; clk      ; None                        ; None                      ; 9.282 ns                ;
+; N/A                                     ; 100.09 MHz ( period = 9.991 ns )                    ; DS18B20:inst2|CountRbitStep[2]      ; DS18B20:inst2|CountRbitStep[3] ; clk        ; clk      ; None                        ; None                      ; 9.282 ns                ;
+; N/A                                     ; 100.09 MHz ( period = 9.991 ns )                    ; DS18B20:inst2|CountRbitStep[2]      ; DS18B20:inst2|CountRbitStep[2] ; clk        ; clk      ; None                        ; None                      ; 9.282 ns                ;
+; N/A                                     ; 100.09 MHz ( period = 9.991 ns )                    ; DS18B20:inst2|CountRbitStep[2]      ; DS18B20:inst2|CountRbitStep[1] ; clk        ; clk      ; None                        ; None                      ; 9.282 ns                ;
+; N/A                                     ; 100.09 MHz ( period = 9.991 ns )                    ; DS18B20:inst2|CountRbitStep[2]      ; DS18B20:inst2|CountRbitStep[5] ; clk        ; clk      ; None                        ; None                      ; 9.282 ns                ;
+; N/A                                     ; 100.09 MHz ( period = 9.991 ns )                    ; DS18B20:inst2|CountRbitStep[2]      ; DS18B20:inst2|CountRbitStep[6] ; clk        ; clk      ; None                        ; None                      ; 9.282 ns                ;
+; N/A                                     ; 100.38 MHz ( period = 9.962 ns )                    ; DS18B20:inst2|Rststate.state_6      ; DS18B20:inst2|icdata~en        ; clk        ; clk      ; None                        ; None                      ; 9.253 ns                ;
+; N/A                                     ; 100.38 MHz ( period = 9.962 ns )                    ; DS18B20:inst2|Rststate.state_6      ; DS18B20:inst2|icdata~reg0      ; clk        ; clk      ; None                        ; None                      ; 9.253 ns                ;
+; N/A                                     ; 100.79 MHz ( period = 9.922 ns )                    ; clk_div:inst1|count[3]              ; clk_div:inst1|count[1]         ; clk        ; clk      ; None                        ; None                      ; 9.213 ns                ;
+; N/A                                     ; 100.80 MHz ( period = 9.921 ns )                    ; DS18B20:inst2|CountWbitStep[3]      ; DS18B20:inst2|CountWbitStep[2] ; clk        ; clk      ; None                        ; None                      ; 9.212 ns                ;
+; N/A                                     ; 100.80 MHz ( period = 9.921 ns )                    ; DS18B20:inst2|CountWbitStep[3]      ; DS18B20:inst2|CountWbitStep[1] ; clk        ; clk      ; None                        ; None                      ; 9.212 ns                ;
+; N/A                                     ; 100.80 MHz ( period = 9.921 ns )                    ; DS18B20:inst2|CountWbitStep[3]      ; DS18B20:inst2|CountWbitStep[7] ; clk        ; clk      ; None                        ; None                      ; 9.212 ns                ;
+; N/A                                     ; 100.80 MHz ( period = 9.921 ns )                    ; DS18B20:inst2|CountWbitStep[3]      ; DS18B20:inst2|CountWbitStep[6] ; clk        ; clk      ; None                        ; None                      ; 9.212 ns                ;
+; N/A                                     ; 100.80 MHz ( period = 9.921 ns )                    ; DS18B20:inst2|CountWbitStep[3]      ; DS18B20:inst2|CountWbitStep[5] ; clk        ; clk      ; None                        ; None                      ; 9.212 ns                ;
+; N/A                                     ; 100.80 MHz ( period = 9.921 ns )                    ; DS18B20:inst2|CountWbitStep[3]      ; DS18B20:inst2|CountWbitStep[8] ; clk        ; clk      ; None                        ; None                      ; 9.212 ns                ;
+; N/A                                     ; 100.80 MHz ( period = 9.921 ns )                    ; DS18B20:inst2|CountWbitStep[3]      ; DS18B20:inst2|CountWbitStep[4] ; clk        ; clk      ; None                        ; None                      ; 9.212 ns                ;
+; N/A                                     ; 100.80 MHz ( period = 9.921 ns )                    ; DS18B20:inst2|CountWbitStep[3]      ; DS18B20:inst2|CountWbitStep[3] ; clk        ; clk      ; None                        ; None                      ; 9.212 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                     ;                                ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------------+--------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; tsu                                                                                                ;
++-------+--------------+------------+-------------+---------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From        ; To                                    ; To Clock ;
++-------+--------------+------------+-------------+---------------------------------------+----------+
+; N/A   ; None         ; 0.913 ns   ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[8]         ; clk      ;
+; N/A   ; None         ; 0.913 ns   ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[10]        ; clk      ;
+; N/A   ; None         ; 0.913 ns   ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[9]         ; clk      ;
+; N/A   ; None         ; 0.913 ns   ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[4]         ; clk      ;
+; N/A   ; None         ; 0.913 ns   ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[5]         ; clk      ;
+; N/A   ; None         ; 0.913 ns   ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[7]         ; clk      ;
+; N/A   ; None         ; 0.913 ns   ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[6]         ; clk      ;
+; N/A   ; None         ; 0.913 ns   ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[3]         ; clk      ;
+; N/A   ; None         ; 0.913 ns   ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[2]         ; clk      ;
+; N/A   ; None         ; 0.913 ns   ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[1]         ; clk      ;
+; N/A   ; None         ; -0.057 ns  ; rst_n       ; DS18B20:inst2|Resulth[3]              ; clk      ;
+; N/A   ; None         ; -0.057 ns  ; rst_n       ; DS18B20:inst2|Resulth[2]              ; clk      ;
+; N/A   ; None         ; -0.057 ns  ; rst_n       ; DS18B20:inst2|Resulth[1]              ; clk      ;
+; N/A   ; None         ; -0.227 ns  ; rst_n       ; DS18B20:inst2|Resultl[7]              ; clk      ;
+; N/A   ; None         ; -0.227 ns  ; rst_n       ; DS18B20:inst2|Resultl[6]              ; clk      ;
+; N/A   ; None         ; -0.227 ns  ; rst_n       ; DS18B20:inst2|Resultl[5]              ; clk      ;
+; N/A   ; None         ; -0.227 ns  ; rst_n       ; DS18B20:inst2|Resultl[4]              ; clk      ;
+; N/A   ; None         ; -0.291 ns  ; rst_n       ; DS18B20:inst2|Result[7]               ; clk      ;
+; N/A   ; None         ; -0.339 ns  ; rst_n       ; DS18B20:inst2|icdata~en               ; clk      ;
+; N/A   ; None         ; -0.339 ns  ; rst_n       ; DS18B20:inst2|icdata~reg0             ; clk      ;
+; N/A   ; None         ; -0.511 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[8]         ; clk      ;
+; N/A   ; None         ; -0.511 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[10]        ; clk      ;
+; N/A   ; None         ; -0.511 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[9]         ; clk      ;
+; N/A   ; None         ; -0.511 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[4]         ; clk      ;
+; N/A   ; None         ; -0.511 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[5]         ; clk      ;
+; N/A   ; None         ; -0.511 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[7]         ; clk      ;
+; N/A   ; None         ; -0.511 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[6]         ; clk      ;
+; N/A   ; None         ; -0.511 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[3]         ; clk      ;
+; N/A   ; None         ; -0.511 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[2]         ; clk      ;
+; N/A   ; None         ; -0.511 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[1]         ; clk      ;
+; N/A   ; None         ; -0.599 ns  ; rst_n       ; DS18B20:inst2|Readstate.state_1       ; clk      ;
+; N/A   ; None         ; -0.599 ns  ; rst_n       ; DS18B20:inst2|j[3]                    ; clk      ;
+; N/A   ; None         ; -0.599 ns  ; rst_n       ; DS18B20:inst2|Readstate.state_2       ; clk      ;
+; N/A   ; None         ; -0.599 ns  ; rst_n       ; DS18B20:inst2|ResultDS18B20[4]        ; clk      ;
+; N/A   ; None         ; -0.599 ns  ; rst_n       ; DS18B20:inst2|j[2]                    ; clk      ;
+; N/A   ; None         ; -0.599 ns  ; rst_n       ; DS18B20:inst2|j[1]                    ; clk      ;
+; N/A   ; None         ; -0.599 ns  ; rst_n       ; DS18B20:inst2|j[0]                    ; clk      ;
+; N/A   ; None         ; -0.602 ns  ; rst_n       ; DS18B20:inst2|ResultDS18B20[2]        ; clk      ;
+; N/A   ; None         ; -0.616 ns  ; rst_n       ; DS18B20:inst2|Readstate.state_0       ; clk      ;
+; N/A   ; None         ; -0.616 ns  ; rst_n       ; DS18B20:inst2|ResultDS18B20[0]        ; clk      ;
+; N/A   ; None         ; -0.651 ns  ; rst_n       ; DS18B20:inst2|Resulth[0]              ; clk      ;
+; N/A   ; None         ; -0.710 ns  ; rst_n       ; DS18B20:inst2|ReadBitstate.state_3    ; clk      ;
+; N/A   ; None         ; -0.710 ns  ; rst_n       ; DS18B20:inst2|ReadBitstate.state_2    ; clk      ;
+; N/A   ; None         ; -0.710 ns  ; rst_n       ; DS18B20:inst2|ReadBitstate.state_1    ; clk      ;
+; N/A   ; None         ; -0.853 ns  ; rst_n       ; DS18B20:inst2|ReadBitstate.state_4    ; clk      ;
+; N/A   ; None         ; -0.984 ns  ; rst_n       ; DS18B20:inst2|Rststate.state_3        ; clk      ;
+; N/A   ; None         ; -0.984 ns  ; rst_n       ; DS18B20:inst2|Rststate.state_1        ; clk      ;
+; N/A   ; None         ; -0.984 ns  ; rst_n       ; DS18B20:inst2|Rststate.state_0        ; clk      ;
+; N/A   ; None         ; -0.984 ns  ; rst_n       ; DS18B20:inst2|Flag_Rst                ; clk      ;
+; N/A   ; None         ; -0.984 ns  ; rst_n       ; DS18B20:inst2|Rststate.state_7        ; clk      ;
+; N/A   ; None         ; -0.984 ns  ; rst_n       ; DS18B20:inst2|Rststate.state_6        ; clk      ;
+; N/A   ; None         ; -0.984 ns  ; rst_n       ; DS18B20:inst2|Rststate.state_5        ; clk      ;
+; N/A   ; None         ; -0.984 ns  ; rst_n       ; DS18B20:inst2|Rststate.state_4        ; clk      ;
+; N/A   ; None         ; -0.984 ns  ; rst_n       ; DS18B20:inst2|Rststate.state_2        ; clk      ;
+; N/A   ; None         ; -1.010 ns  ; rst_n       ; DS18B20:inst2|temp                    ; clk      ;
+; N/A   ; None         ; -1.011 ns  ; rst_n       ; DS18B20:inst2|Flag_rBit               ; clk      ;
+; N/A   ; None         ; -1.039 ns  ; rst_n       ; DS18B20:inst2|Result[2]               ; clk      ;
+; N/A   ; None         ; -1.251 ns  ; rst_n       ; DS18B20:inst2|WriteBitstate.state_0   ; clk      ;
+; N/A   ; None         ; -1.251 ns  ; rst_n       ; DS18B20:inst2|WriteBitstate.state_2   ; clk      ;
+; N/A   ; None         ; -1.251 ns  ; rst_n       ; DS18B20:inst2|WriteBitstate.state_1   ; clk      ;
+; N/A   ; None         ; -1.251 ns  ; rst_n       ; DS18B20:inst2|WriteBitstate.state_5   ; clk      ;
+; N/A   ; None         ; -1.251 ns  ; rst_n       ; DS18B20:inst2|WriteBitstate.state_4   ; clk      ;
+; N/A   ; None         ; -1.251 ns  ; rst_n       ; DS18B20:inst2|WriteBitstate.state_6   ; clk      ;
+; N/A   ; None         ; -1.251 ns  ; rst_n       ; DS18B20:inst2|WriteBitstate.state_3   ; clk      ;
+; N/A   ; None         ; -1.404 ns  ; rst_n       ; DS18B20:inst2|Result[6]               ; clk      ;
+; N/A   ; None         ; -1.404 ns  ; rst_n       ; DS18B20:inst2|Result[1]               ; clk      ;
+; N/A   ; None         ; -1.404 ns  ; rst_n       ; DS18B20:inst2|Result[0]               ; clk      ;
+; N/A   ; None         ; -1.409 ns  ; rst_n       ; DS18B20:inst2|Flag_Read               ; clk      ;
+; N/A   ; None         ; -1.409 ns  ; rst_n       ; DS18B20:inst2|ResultDS18B20[3]        ; clk      ;
+; N/A   ; None         ; -1.409 ns  ; rst_n       ; DS18B20:inst2|ResultDS18B20[1]        ; clk      ;
+; N/A   ; None         ; -1.409 ns  ; rst_n       ; DS18B20:inst2|ResultDS18B20[7]        ; clk      ;
+; N/A   ; None         ; -1.409 ns  ; rst_n       ; DS18B20:inst2|ResultDS18B20[6]        ; clk      ;
+; N/A   ; None         ; -1.409 ns  ; rst_n       ; DS18B20:inst2|ResultDS18B20[5]        ; clk      ;
+; N/A   ; None         ; -1.539 ns  ; rst_n       ; DS18B20:inst2|i[2]                    ; clk      ;
+; N/A   ; None         ; -1.539 ns  ; rst_n       ; DS18B20:inst2|i[1]                    ; clk      ;
+; N/A   ; None         ; -1.539 ns  ; rst_n       ; DS18B20:inst2|i[0]                    ; clk      ;
+; N/A   ; None         ; -1.803 ns  ; rst_n       ; DS18B20:inst2|Count65535[1]           ; clk      ;
+; N/A   ; None         ; -1.803 ns  ; rst_n       ; DS18B20:inst2|Count65535[2]           ; clk      ;
+; N/A   ; None         ; -1.803 ns  ; rst_n       ; DS18B20:inst2|Count65535[3]           ; clk      ;
+; N/A   ; None         ; -1.803 ns  ; rst_n       ; DS18B20:inst2|Count65535[4]           ; clk      ;
+; N/A   ; None         ; -1.803 ns  ; rst_n       ; DS18B20:inst2|Count65535[5]           ; clk      ;
+; N/A   ; None         ; -1.803 ns  ; rst_n       ; DS18B20:inst2|Count65535[6]           ; clk      ;
+; N/A   ; None         ; -1.803 ns  ; rst_n       ; DS18B20:inst2|Count65535[7]           ; clk      ;
+; N/A   ; None         ; -1.803 ns  ; rst_n       ; DS18B20:inst2|Count65535[8]           ; clk      ;
+; N/A   ; None         ; -1.908 ns  ; rst_n       ; DS18B20:inst2|ReadBitstate.state_0    ; clk      ;
+; N/A   ; None         ; -1.908 ns  ; rst_n       ; DS18B20:inst2|CountRbitStep[4]        ; clk      ;
+; N/A   ; None         ; -1.908 ns  ; rst_n       ; DS18B20:inst2|CountRbitStep[3]        ; clk      ;
+; N/A   ; None         ; -1.908 ns  ; rst_n       ; DS18B20:inst2|CountRbitStep[2]        ; clk      ;
+; N/A   ; None         ; -1.908 ns  ; rst_n       ; DS18B20:inst2|CountRbitStep[1]        ; clk      ;
+; N/A   ; None         ; -1.908 ns  ; rst_n       ; DS18B20:inst2|CountRbitStep[5]        ; clk      ;
+; N/A   ; None         ; -1.908 ns  ; rst_n       ; DS18B20:inst2|CountRbitStep[6]        ; clk      ;
+; N/A   ; None         ; -2.020 ns  ; rst_n       ; DS18B20:inst2|CountWbitStep[2]        ; clk      ;
+; N/A   ; None         ; -2.020 ns  ; rst_n       ; DS18B20:inst2|CountWbitStep[1]        ; clk      ;
+; N/A   ; None         ; -2.020 ns  ; rst_n       ; DS18B20:inst2|CountWbitStep[7]        ; clk      ;
+; N/A   ; None         ; -2.020 ns  ; rst_n       ; DS18B20:inst2|CountWbitStep[6]        ; clk      ;
+; N/A   ; None         ; -2.020 ns  ; rst_n       ; DS18B20:inst2|CountWbitStep[5]        ; clk      ;
+; N/A   ; None         ; -2.020 ns  ; rst_n       ; DS18B20:inst2|CountWbitStep[8]        ; clk      ;
+; N/A   ; None         ; -2.020 ns  ; rst_n       ; DS18B20:inst2|CountWbitStep[4]        ; clk      ;
+; N/A   ; None         ; -2.020 ns  ; rst_n       ; DS18B20:inst2|CountWbitStep[3]        ; clk      ;
+; N/A   ; None         ; -2.050 ns  ; rst_n       ; DS18B20:inst2|Count12[4]              ; clk      ;
+; N/A   ; None         ; -2.050 ns  ; rst_n       ; DS18B20:inst2|Count12[1]              ; clk      ;
+; N/A   ; None         ; -2.050 ns  ; rst_n       ; DS18B20:inst2|Count12[3]              ; clk      ;
+; N/A   ; None         ; -2.081 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_7     ; clk      ;
+; N/A   ; None         ; -2.081 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_2     ; clk      ;
+; N/A   ; None         ; -2.089 ns  ; rst_n       ; DS18B20:inst2|Write_DS18B20.indcmd[0] ; clk      ;
+; N/A   ; None         ; -2.089 ns  ; rst_n       ; DS18B20:inst2|Write_DS18B20.indcmd[2] ; clk      ;
+; N/A   ; None         ; -2.089 ns  ; rst_n       ; DS18B20:inst2|Write_DS18B20.indcmd[3] ; clk      ;
+; N/A   ; None         ; -2.205 ns  ; rst_n       ; DS18B20:inst2|Count65535[9]           ; clk      ;
+; N/A   ; None         ; -2.205 ns  ; rst_n       ; DS18B20:inst2|Count65535[10]          ; clk      ;
+; N/A   ; None         ; -2.205 ns  ; rst_n       ; DS18B20:inst2|Count65535[11]          ; clk      ;
+; N/A   ; None         ; -2.205 ns  ; rst_n       ; DS18B20:inst2|Count65535[12]          ; clk      ;
+; N/A   ; None         ; -2.205 ns  ; rst_n       ; DS18B20:inst2|Count65535[13]          ; clk      ;
+; N/A   ; None         ; -2.205 ns  ; rst_n       ; DS18B20:inst2|Count65535[14]          ; clk      ;
+; N/A   ; None         ; -2.205 ns  ; rst_n       ; DS18B20:inst2|Count65535[15]          ; clk      ;
+; N/A   ; None         ; -2.205 ns  ; rst_n       ; DS18B20:inst2|Count65535[16]          ; clk      ;
+; N/A   ; None         ; -2.491 ns  ; DS18B20_DAT ; DS18B20:inst2|Rststate.state_0        ; clk      ;
+; N/A   ; None         ; -2.501 ns  ; DS18B20_DAT ; DS18B20:inst2|Rststate.state_6        ; clk      ;
+; N/A   ; None         ; -2.513 ns  ; rst_n       ; DS18B20:inst2|Result[5]               ; clk      ;
+; N/A   ; None         ; -2.513 ns  ; rst_n       ; DS18B20:inst2|Result[4]               ; clk      ;
+; N/A   ; None         ; -2.513 ns  ; rst_n       ; DS18B20:inst2|Result[3]               ; clk      ;
+; N/A   ; None         ; -2.525 ns  ; rst_n       ; DS18B20:inst2|Flag_Write              ; clk      ;
+; N/A   ; None         ; -2.525 ns  ; rst_n       ; DS18B20:inst2|Writestate.state_2      ; clk      ;
+; N/A   ; None         ; -2.525 ns  ; rst_n       ; DS18B20:inst2|Writestate.state_1      ; clk      ;
+; N/A   ; None         ; -2.525 ns  ; rst_n       ; DS18B20:inst2|Writestate.state_0      ; clk      ;
+; N/A   ; None         ; -2.525 ns  ; rst_n       ; DS18B20:inst2|i[3]                    ; clk      ;
+; N/A   ; None         ; -2.525 ns  ; rst_n       ; DS18B20:inst2|Write_DS18B20.indcmd[1] ; clk      ;
+; N/A   ; None         ; -2.525 ns  ; rst_n       ; DS18B20:inst2|Write_DS18B20.indcmd[4] ; clk      ;
+; N/A   ; None         ; -2.525 ns  ; rst_n       ; DS18B20:inst2|Write_DS18B20.indcmd[5] ; clk      ;
+; N/A   ; None         ; -2.525 ns  ; rst_n       ; DS18B20:inst2|Write_DS18B20.indcmd[7] ; clk      ;
+; N/A   ; None         ; -2.866 ns  ; DS18B20_DAT ; DS18B20:inst2|Rststate.state_5        ; clk      ;
+; N/A   ; None         ; -2.881 ns  ; rst_n       ; DS18B20:inst2|Flag_wBit               ; clk      ;
+; N/A   ; None         ; -3.349 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_0     ; clk      ;
+; N/A   ; None         ; -3.349 ns  ; rst_n       ; DS18B20:inst2|Write_DS18B20.indcmd[6] ; clk      ;
+; N/A   ; None         ; -3.357 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_8     ; clk      ;
+; N/A   ; None         ; -3.357 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_5     ; clk      ;
+; N/A   ; None         ; -3.357 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_4     ; clk      ;
+; N/A   ; None         ; -3.357 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_1     ; clk      ;
+; N/A   ; None         ; -3.357 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_6     ; clk      ;
+; N/A   ; None         ; -3.357 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_3     ; clk      ;
+; N/A   ; None         ; -3.382 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_9     ; clk      ;
+; N/A   ; None         ; -3.428 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_11    ; clk      ;
+; N/A   ; None         ; -3.479 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_10    ; clk      ;
+; N/A   ; None         ; -3.692 ns  ; rst_n       ; DS18B20:inst2|Count12[2]              ; clk      ;
+; N/A   ; None         ; -3.840 ns  ; DS18B20_DAT ; DS18B20:inst2|temp                    ; clk      ;
++-------+--------------+------------+-------------+---------------------------------------+----------+
+
+
++------------------------------------------------------------------------------------------+
+; tco                                                                                      ;
++-------+--------------+------------+---------------------------+-------------+------------+
+; Slack ; Required tco ; Actual tco ; From                      ; To          ; From Clock ;
++-------+--------------+------------+---------------------------+-------------+------------+
+; N/A   ; None         ; 15.679 ns  ; DS18B20:inst2|Result[4]   ; led[4]      ; clk        ;
+; N/A   ; None         ; 15.426 ns  ; DS18B20:inst2|Result[3]   ; led[3]      ; clk        ;
+; N/A   ; None         ; 15.414 ns  ; DS18B20:inst2|Result[5]   ; led[5]      ; clk        ;
+; N/A   ; None         ; 15.300 ns  ; DS18B20:inst2|Result[6]   ; led[6]      ; clk        ;
+; N/A   ; None         ; 15.270 ns  ; DS18B20:inst2|Result[2]   ; led[2]      ; clk        ;
+; N/A   ; None         ; 15.185 ns  ; DS18B20:inst2|Result[0]   ; led[0]      ; clk        ;
+; N/A   ; None         ; 15.172 ns  ; DS18B20:inst2|Result[1]   ; led[1]      ; clk        ;
+; N/A   ; None         ; 15.158 ns  ; DS18B20:inst2|icdata~reg0 ; DS18B20_DAT ; clk        ;
+; N/A   ; None         ; 15.155 ns  ; DS18B20:inst2|Result[7]   ; led[7]      ; clk        ;
+; N/A   ; None         ; 14.019 ns  ; DS18B20:inst2|icdata~en   ; DS18B20_DAT ; clk        ;
++-------+--------------+------------+---------------------------+-------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; th                                                                                                       ;
++---------------+-------------+-----------+-------------+---------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From        ; To                                    ; To Clock ;
++---------------+-------------+-----------+-------------+---------------------------------------+----------+
+; N/A           ; None        ; 4.394 ns  ; DS18B20_DAT ; DS18B20:inst2|temp                    ; clk      ;
+; N/A           ; None        ; 4.246 ns  ; rst_n       ; DS18B20:inst2|Count12[2]              ; clk      ;
+; N/A           ; None        ; 4.033 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_10    ; clk      ;
+; N/A           ; None        ; 3.982 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_11    ; clk      ;
+; N/A           ; None        ; 3.936 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_9     ; clk      ;
+; N/A           ; None        ; 3.911 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_8     ; clk      ;
+; N/A           ; None        ; 3.911 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_5     ; clk      ;
+; N/A           ; None        ; 3.911 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_4     ; clk      ;
+; N/A           ; None        ; 3.911 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_1     ; clk      ;
+; N/A           ; None        ; 3.911 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_6     ; clk      ;
+; N/A           ; None        ; 3.911 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_3     ; clk      ;
+; N/A           ; None        ; 3.903 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_0     ; clk      ;
+; N/A           ; None        ; 3.903 ns  ; rst_n       ; DS18B20:inst2|Write_DS18B20.indcmd[6] ; clk      ;
+; N/A           ; None        ; 3.435 ns  ; rst_n       ; DS18B20:inst2|Flag_wBit               ; clk      ;
+; N/A           ; None        ; 3.420 ns  ; DS18B20_DAT ; DS18B20:inst2|Rststate.state_5        ; clk      ;
+; N/A           ; None        ; 3.079 ns  ; rst_n       ; DS18B20:inst2|Flag_Write              ; clk      ;
+; N/A           ; None        ; 3.079 ns  ; rst_n       ; DS18B20:inst2|Writestate.state_2      ; clk      ;
+; N/A           ; None        ; 3.079 ns  ; rst_n       ; DS18B20:inst2|Writestate.state_1      ; clk      ;
+; N/A           ; None        ; 3.079 ns  ; rst_n       ; DS18B20:inst2|Writestate.state_0      ; clk      ;
+; N/A           ; None        ; 3.079 ns  ; rst_n       ; DS18B20:inst2|i[3]                    ; clk      ;
+; N/A           ; None        ; 3.079 ns  ; rst_n       ; DS18B20:inst2|Write_DS18B20.indcmd[1] ; clk      ;
+; N/A           ; None        ; 3.079 ns  ; rst_n       ; DS18B20:inst2|Write_DS18B20.indcmd[4] ; clk      ;
+; N/A           ; None        ; 3.079 ns  ; rst_n       ; DS18B20:inst2|Write_DS18B20.indcmd[5] ; clk      ;
+; N/A           ; None        ; 3.079 ns  ; rst_n       ; DS18B20:inst2|Write_DS18B20.indcmd[7] ; clk      ;
+; N/A           ; None        ; 3.067 ns  ; rst_n       ; DS18B20:inst2|Result[5]               ; clk      ;
+; N/A           ; None        ; 3.067 ns  ; rst_n       ; DS18B20:inst2|Result[4]               ; clk      ;
+; N/A           ; None        ; 3.067 ns  ; rst_n       ; DS18B20:inst2|Result[3]               ; clk      ;
+; N/A           ; None        ; 3.055 ns  ; DS18B20_DAT ; DS18B20:inst2|Rststate.state_6        ; clk      ;
+; N/A           ; None        ; 3.045 ns  ; DS18B20_DAT ; DS18B20:inst2|Rststate.state_0        ; clk      ;
+; N/A           ; None        ; 2.759 ns  ; rst_n       ; DS18B20:inst2|Count65535[9]           ; clk      ;
+; N/A           ; None        ; 2.759 ns  ; rst_n       ; DS18B20:inst2|Count65535[10]          ; clk      ;
+; N/A           ; None        ; 2.759 ns  ; rst_n       ; DS18B20:inst2|Count65535[11]          ; clk      ;
+; N/A           ; None        ; 2.759 ns  ; rst_n       ; DS18B20:inst2|Count65535[12]          ; clk      ;
+; N/A           ; None        ; 2.759 ns  ; rst_n       ; DS18B20:inst2|Count65535[13]          ; clk      ;
+; N/A           ; None        ; 2.759 ns  ; rst_n       ; DS18B20:inst2|Count65535[14]          ; clk      ;
+; N/A           ; None        ; 2.759 ns  ; rst_n       ; DS18B20:inst2|Count65535[15]          ; clk      ;
+; N/A           ; None        ; 2.759 ns  ; rst_n       ; DS18B20:inst2|Count65535[16]          ; clk      ;
+; N/A           ; None        ; 2.643 ns  ; rst_n       ; DS18B20:inst2|Write_DS18B20.indcmd[0] ; clk      ;
+; N/A           ; None        ; 2.643 ns  ; rst_n       ; DS18B20:inst2|Write_DS18B20.indcmd[2] ; clk      ;
+; N/A           ; None        ; 2.643 ns  ; rst_n       ; DS18B20:inst2|Write_DS18B20.indcmd[3] ; clk      ;
+; N/A           ; None        ; 2.635 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_7     ; clk      ;
+; N/A           ; None        ; 2.635 ns  ; rst_n       ; DS18B20:inst2|CmdSETstate.state_2     ; clk      ;
+; N/A           ; None        ; 2.604 ns  ; rst_n       ; DS18B20:inst2|Count12[4]              ; clk      ;
+; N/A           ; None        ; 2.604 ns  ; rst_n       ; DS18B20:inst2|Count12[1]              ; clk      ;
+; N/A           ; None        ; 2.604 ns  ; rst_n       ; DS18B20:inst2|Count12[3]              ; clk      ;
+; N/A           ; None        ; 2.574 ns  ; rst_n       ; DS18B20:inst2|CountWbitStep[2]        ; clk      ;
+; N/A           ; None        ; 2.574 ns  ; rst_n       ; DS18B20:inst2|CountWbitStep[1]        ; clk      ;
+; N/A           ; None        ; 2.574 ns  ; rst_n       ; DS18B20:inst2|CountWbitStep[7]        ; clk      ;
+; N/A           ; None        ; 2.574 ns  ; rst_n       ; DS18B20:inst2|CountWbitStep[6]        ; clk      ;
+; N/A           ; None        ; 2.574 ns  ; rst_n       ; DS18B20:inst2|CountWbitStep[5]        ; clk      ;
+; N/A           ; None        ; 2.574 ns  ; rst_n       ; DS18B20:inst2|CountWbitStep[8]        ; clk      ;
+; N/A           ; None        ; 2.574 ns  ; rst_n       ; DS18B20:inst2|CountWbitStep[4]        ; clk      ;
+; N/A           ; None        ; 2.574 ns  ; rst_n       ; DS18B20:inst2|CountWbitStep[3]        ; clk      ;
+; N/A           ; None        ; 2.462 ns  ; rst_n       ; DS18B20:inst2|ReadBitstate.state_0    ; clk      ;
+; N/A           ; None        ; 2.462 ns  ; rst_n       ; DS18B20:inst2|CountRbitStep[4]        ; clk      ;
+; N/A           ; None        ; 2.462 ns  ; rst_n       ; DS18B20:inst2|CountRbitStep[3]        ; clk      ;
+; N/A           ; None        ; 2.462 ns  ; rst_n       ; DS18B20:inst2|CountRbitStep[2]        ; clk      ;
+; N/A           ; None        ; 2.462 ns  ; rst_n       ; DS18B20:inst2|CountRbitStep[1]        ; clk      ;
+; N/A           ; None        ; 2.462 ns  ; rst_n       ; DS18B20:inst2|CountRbitStep[5]        ; clk      ;
+; N/A           ; None        ; 2.462 ns  ; rst_n       ; DS18B20:inst2|CountRbitStep[6]        ; clk      ;
+; N/A           ; None        ; 2.357 ns  ; rst_n       ; DS18B20:inst2|Count65535[1]           ; clk      ;
+; N/A           ; None        ; 2.357 ns  ; rst_n       ; DS18B20:inst2|Count65535[2]           ; clk      ;
+; N/A           ; None        ; 2.357 ns  ; rst_n       ; DS18B20:inst2|Count65535[3]           ; clk      ;
+; N/A           ; None        ; 2.357 ns  ; rst_n       ; DS18B20:inst2|Count65535[4]           ; clk      ;
+; N/A           ; None        ; 2.357 ns  ; rst_n       ; DS18B20:inst2|Count65535[5]           ; clk      ;
+; N/A           ; None        ; 2.357 ns  ; rst_n       ; DS18B20:inst2|Count65535[6]           ; clk      ;
+; N/A           ; None        ; 2.357 ns  ; rst_n       ; DS18B20:inst2|Count65535[7]           ; clk      ;
+; N/A           ; None        ; 2.357 ns  ; rst_n       ; DS18B20:inst2|Count65535[8]           ; clk      ;
+; N/A           ; None        ; 2.093 ns  ; rst_n       ; DS18B20:inst2|i[2]                    ; clk      ;
+; N/A           ; None        ; 2.093 ns  ; rst_n       ; DS18B20:inst2|i[1]                    ; clk      ;
+; N/A           ; None        ; 2.093 ns  ; rst_n       ; DS18B20:inst2|i[0]                    ; clk      ;
+; N/A           ; None        ; 1.963 ns  ; rst_n       ; DS18B20:inst2|Flag_Read               ; clk      ;
+; N/A           ; None        ; 1.963 ns  ; rst_n       ; DS18B20:inst2|ResultDS18B20[3]        ; clk      ;
+; N/A           ; None        ; 1.963 ns  ; rst_n       ; DS18B20:inst2|ResultDS18B20[1]        ; clk      ;
+; N/A           ; None        ; 1.963 ns  ; rst_n       ; DS18B20:inst2|ResultDS18B20[7]        ; clk      ;
+; N/A           ; None        ; 1.963 ns  ; rst_n       ; DS18B20:inst2|ResultDS18B20[6]        ; clk      ;
+; N/A           ; None        ; 1.963 ns  ; rst_n       ; DS18B20:inst2|ResultDS18B20[5]        ; clk      ;
+; N/A           ; None        ; 1.958 ns  ; rst_n       ; DS18B20:inst2|Result[6]               ; clk      ;
+; N/A           ; None        ; 1.958 ns  ; rst_n       ; DS18B20:inst2|Result[1]               ; clk      ;
+; N/A           ; None        ; 1.958 ns  ; rst_n       ; DS18B20:inst2|Result[0]               ; clk      ;
+; N/A           ; None        ; 1.805 ns  ; rst_n       ; DS18B20:inst2|WriteBitstate.state_0   ; clk      ;
+; N/A           ; None        ; 1.805 ns  ; rst_n       ; DS18B20:inst2|WriteBitstate.state_2   ; clk      ;
+; N/A           ; None        ; 1.805 ns  ; rst_n       ; DS18B20:inst2|WriteBitstate.state_1   ; clk      ;
+; N/A           ; None        ; 1.805 ns  ; rst_n       ; DS18B20:inst2|WriteBitstate.state_5   ; clk      ;
+; N/A           ; None        ; 1.805 ns  ; rst_n       ; DS18B20:inst2|WriteBitstate.state_4   ; clk      ;
+; N/A           ; None        ; 1.805 ns  ; rst_n       ; DS18B20:inst2|WriteBitstate.state_6   ; clk      ;
+; N/A           ; None        ; 1.805 ns  ; rst_n       ; DS18B20:inst2|WriteBitstate.state_3   ; clk      ;
+; N/A           ; None        ; 1.593 ns  ; rst_n       ; DS18B20:inst2|Result[2]               ; clk      ;
+; N/A           ; None        ; 1.565 ns  ; rst_n       ; DS18B20:inst2|Flag_rBit               ; clk      ;
+; N/A           ; None        ; 1.564 ns  ; rst_n       ; DS18B20:inst2|temp                    ; clk      ;
+; N/A           ; None        ; 1.538 ns  ; rst_n       ; DS18B20:inst2|Rststate.state_3        ; clk      ;
+; N/A           ; None        ; 1.538 ns  ; rst_n       ; DS18B20:inst2|Rststate.state_1        ; clk      ;
+; N/A           ; None        ; 1.538 ns  ; rst_n       ; DS18B20:inst2|Rststate.state_0        ; clk      ;
+; N/A           ; None        ; 1.538 ns  ; rst_n       ; DS18B20:inst2|Flag_Rst                ; clk      ;
+; N/A           ; None        ; 1.538 ns  ; rst_n       ; DS18B20:inst2|Rststate.state_7        ; clk      ;
+; N/A           ; None        ; 1.538 ns  ; rst_n       ; DS18B20:inst2|Rststate.state_6        ; clk      ;
+; N/A           ; None        ; 1.538 ns  ; rst_n       ; DS18B20:inst2|Rststate.state_5        ; clk      ;
+; N/A           ; None        ; 1.538 ns  ; rst_n       ; DS18B20:inst2|Rststate.state_4        ; clk      ;
+; N/A           ; None        ; 1.538 ns  ; rst_n       ; DS18B20:inst2|Rststate.state_2        ; clk      ;
+; N/A           ; None        ; 1.407 ns  ; rst_n       ; DS18B20:inst2|ReadBitstate.state_4    ; clk      ;
+; N/A           ; None        ; 1.264 ns  ; rst_n       ; DS18B20:inst2|ReadBitstate.state_3    ; clk      ;
+; N/A           ; None        ; 1.264 ns  ; rst_n       ; DS18B20:inst2|ReadBitstate.state_2    ; clk      ;
+; N/A           ; None        ; 1.264 ns  ; rst_n       ; DS18B20:inst2|ReadBitstate.state_1    ; clk      ;
+; N/A           ; None        ; 1.205 ns  ; rst_n       ; DS18B20:inst2|Resulth[0]              ; clk      ;
+; N/A           ; None        ; 1.170 ns  ; rst_n       ; DS18B20:inst2|Readstate.state_0       ; clk      ;
+; N/A           ; None        ; 1.170 ns  ; rst_n       ; DS18B20:inst2|ResultDS18B20[0]        ; clk      ;
+; N/A           ; None        ; 1.156 ns  ; rst_n       ; DS18B20:inst2|ResultDS18B20[2]        ; clk      ;
+; N/A           ; None        ; 1.153 ns  ; rst_n       ; DS18B20:inst2|Readstate.state_1       ; clk      ;
+; N/A           ; None        ; 1.153 ns  ; rst_n       ; DS18B20:inst2|j[3]                    ; clk      ;
+; N/A           ; None        ; 1.153 ns  ; rst_n       ; DS18B20:inst2|Readstate.state_2       ; clk      ;
+; N/A           ; None        ; 1.153 ns  ; rst_n       ; DS18B20:inst2|ResultDS18B20[4]        ; clk      ;
+; N/A           ; None        ; 1.153 ns  ; rst_n       ; DS18B20:inst2|j[2]                    ; clk      ;
+; N/A           ; None        ; 1.153 ns  ; rst_n       ; DS18B20:inst2|j[1]                    ; clk      ;
+; N/A           ; None        ; 1.153 ns  ; rst_n       ; DS18B20:inst2|j[0]                    ; clk      ;
+; N/A           ; None        ; 1.065 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[8]         ; clk      ;
+; N/A           ; None        ; 1.065 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[10]        ; clk      ;
+; N/A           ; None        ; 1.065 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[9]         ; clk      ;
+; N/A           ; None        ; 1.065 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[4]         ; clk      ;
+; N/A           ; None        ; 1.065 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[5]         ; clk      ;
+; N/A           ; None        ; 1.065 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[7]         ; clk      ;
+; N/A           ; None        ; 1.065 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[6]         ; clk      ;
+; N/A           ; None        ; 1.065 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[3]         ; clk      ;
+; N/A           ; None        ; 1.065 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[2]         ; clk      ;
+; N/A           ; None        ; 1.065 ns  ; rst_n       ; DS18B20:inst2|CountRstStep[1]         ; clk      ;
+; N/A           ; None        ; 0.893 ns  ; rst_n       ; DS18B20:inst2|icdata~en               ; clk      ;
+; N/A           ; None        ; 0.893 ns  ; rst_n       ; DS18B20:inst2|icdata~reg0             ; clk      ;
+; N/A           ; None        ; 0.845 ns  ; rst_n       ; DS18B20:inst2|Result[7]               ; clk      ;
+; N/A           ; None        ; 0.781 ns  ; rst_n       ; DS18B20:inst2|Resultl[7]              ; clk      ;
+; N/A           ; None        ; 0.781 ns  ; rst_n       ; DS18B20:inst2|Resultl[6]              ; clk      ;
+; N/A           ; None        ; 0.781 ns  ; rst_n       ; DS18B20:inst2|Resultl[5]              ; clk      ;
+; N/A           ; None        ; 0.781 ns  ; rst_n       ; DS18B20:inst2|Resultl[4]              ; clk      ;
+; N/A           ; None        ; 0.611 ns  ; rst_n       ; DS18B20:inst2|Resulth[3]              ; clk      ;
+; N/A           ; None        ; 0.611 ns  ; rst_n       ; DS18B20:inst2|Resulth[2]              ; clk      ;
+; N/A           ; None        ; 0.611 ns  ; rst_n       ; DS18B20:inst2|Resulth[1]              ; clk      ;
+; N/A           ; None        ; -0.359 ns ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[8]         ; clk      ;
+; N/A           ; None        ; -0.359 ns ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[10]        ; clk      ;
+; N/A           ; None        ; -0.359 ns ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[9]         ; clk      ;
+; N/A           ; None        ; -0.359 ns ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[4]         ; clk      ;
+; N/A           ; None        ; -0.359 ns ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[5]         ; clk      ;
+; N/A           ; None        ; -0.359 ns ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[7]         ; clk      ;
+; N/A           ; None        ; -0.359 ns ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[6]         ; clk      ;
+; N/A           ; None        ; -0.359 ns ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[3]         ; clk      ;
+; N/A           ; None        ; -0.359 ns ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[2]         ; clk      ;
+; N/A           ; None        ; -0.359 ns ; DS18B20_DAT ; DS18B20:inst2|CountRstStep[1]         ; clk      ;
++---------------+-------------+-----------+-------------+---------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Mon Nov 28 08:41:06 2011
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off DS18B20 -c DS18B20
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "clk_div:inst1|clk_out" as buffer
+Info: Clock "clk" has Internal fmax of 79.46 MHz between source register "DS18B20:inst2|CountRstStep[9]" and destination register "DS18B20:inst2|CountRstStep[8]" (period= 12.585 ns)
+    Info: + Longest register to register delay is 11.876 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X2_Y4_N8; Fanout = 7; REG Node = 'DS18B20:inst2|CountRstStep[9]'
+        Info: 2: + IC(3.321 ns) + CELL(0.511 ns) = 3.832 ns; Loc. = LC_X3_Y2_N7; Fanout = 1; COMB Node = 'DS18B20:inst2|LessThan1~133'
+        Info: 3: + IC(0.769 ns) + CELL(0.511 ns) = 5.112 ns; Loc. = LC_X3_Y2_N4; Fanout = 3; COMB Node = 'DS18B20:inst2|LessThan1~135'
+        Info: 4: + IC(1.130 ns) + CELL(0.740 ns) = 6.982 ns; Loc. = LC_X2_Y2_N5; Fanout = 1; COMB Node = 'DS18B20:inst2|CountRstStep[7]~466'
+        Info: 5: + IC(0.773 ns) + CELL(0.511 ns) = 8.266 ns; Loc. = LC_X2_Y2_N0; Fanout = 10; COMB Node = 'DS18B20:inst2|CountRstStep[7]~467'
+        Info: 6: + IC(1.850 ns) + CELL(1.760 ns) = 11.876 ns; Loc. = LC_X2_Y4_N7; Fanout = 7; REG Node = 'DS18B20:inst2|CountRstStep[8]'
+        Info: Total cell delay = 4.033 ns ( 33.96 % )
+        Info: Total interconnect delay = 7.843 ns ( 66.04 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 10.533 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 26; CLK Node = 'clk'
+            Info: 2: + IC(4.448 ns) + CELL(1.294 ns) = 6.874 ns; Loc. = LC_X2_Y3_N8; Fanout = 131; REG Node = 'clk_div:inst1|clk_out'
+            Info: 3: + IC(2.741 ns) + CELL(0.918 ns) = 10.533 ns; Loc. = LC_X2_Y4_N7; Fanout = 7; REG Node = 'DS18B20:inst2|CountRstStep[8]'
+            Info: Total cell delay = 3.344 ns ( 31.75 % )
+            Info: Total interconnect delay = 7.189 ns ( 68.25 % )
+        Info: - Longest clock path from clock "clk" to source register is 10.533 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 26; CLK Node = 'clk'
+            Info: 2: + IC(4.448 ns) + CELL(1.294 ns) = 6.874 ns; Loc. = LC_X2_Y3_N8; Fanout = 131; REG Node = 'clk_div:inst1|clk_out'
+            Info: 3: + IC(2.741 ns) + CELL(0.918 ns) = 10.533 ns; Loc. = LC_X2_Y4_N8; Fanout = 7; REG Node = 'DS18B20:inst2|CountRstStep[9]'
+            Info: Total cell delay = 3.344 ns ( 31.75 % )
+            Info: Total interconnect delay = 7.189 ns ( 68.25 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Info: tsu for register "DS18B20:inst2|CountRstStep[8]" (data pin = "DS18B20_DAT", clock pin = "clk") is 0.913 ns
+    Info: + Longest pin to register delay is 11.113 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = PIN_68; Fanout = 1; PIN Node = 'DS18B20_DAT'
+        Info: 2: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = IOC_X8_Y3_N1; Fanout = 5; COMB Node = 'DS18B20_DAT~0'
+        Info: 3: + IC(5.244 ns) + CELL(0.200 ns) = 6.576 ns; Loc. = LC_X2_Y2_N1; Fanout = 1; COMB Node = 'DS18B20:inst2|CountRstStep[7]~465'
+        Info: 4: + IC(0.727 ns) + CELL(0.200 ns) = 7.503 ns; Loc. = LC_X2_Y2_N0; Fanout = 10; COMB Node = 'DS18B20:inst2|CountRstStep[7]~467'
+        Info: 5: + IC(1.850 ns) + CELL(1.760 ns) = 11.113 ns; Loc. = LC_X2_Y4_N7; Fanout = 7; REG Node = 'DS18B20:inst2|CountRstStep[8]'
+        Info: Total cell delay = 3.292 ns ( 29.62 % )
+        Info: Total interconnect delay = 7.821 ns ( 70.38 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 10.533 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 26; CLK Node = 'clk'
+        Info: 2: + IC(4.448 ns) + CELL(1.294 ns) = 6.874 ns; Loc. = LC_X2_Y3_N8; Fanout = 131; REG Node = 'clk_div:inst1|clk_out'
+        Info: 3: + IC(2.741 ns) + CELL(0.918 ns) = 10.533 ns; Loc. = LC_X2_Y4_N7; Fanout = 7; REG Node = 'DS18B20:inst2|CountRstStep[8]'
+        Info: Total cell delay = 3.344 ns ( 31.75 % )
+        Info: Total interconnect delay = 7.189 ns ( 68.25 % )
+Info: tco from clock "clk" to destination pin "led[4]" through register "DS18B20:inst2|Result[4]" is 15.679 ns
+    Info: + Longest clock path from clock "clk" to source register is 10.533 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 26; CLK Node = 'clk'
+        Info: 2: + IC(4.448 ns) + CELL(1.294 ns) = 6.874 ns; Loc. = LC_X2_Y3_N8; Fanout = 131; REG Node = 'clk_div:inst1|clk_out'
+        Info: 3: + IC(2.741 ns) + CELL(0.918 ns) = 10.533 ns; Loc. = LC_X6_Y3_N8; Fanout = 1; REG Node = 'DS18B20:inst2|Result[4]'
+        Info: Total cell delay = 3.344 ns ( 31.75 % )
+        Info: Total interconnect delay = 7.189 ns ( 68.25 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 4.770 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X6_Y3_N8; Fanout = 1; REG Node = 'DS18B20:inst2|Result[4]'
+        Info: 2: + IC(2.448 ns) + CELL(2.322 ns) = 4.770 ns; Loc. = PIN_50; Fanout = 0; PIN Node = 'led[4]'
+        Info: Total cell delay = 2.322 ns ( 48.68 % )
+        Info: Total interconnect delay = 2.448 ns ( 51.32 % )
+Info: th for register "DS18B20:inst2|temp" (data pin = "DS18B20_DAT", clock pin = "clk") is 4.394 ns
+    Info: + Longest clock path from clock "clk" to destination register is 10.533 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 26; CLK Node = 'clk'
+        Info: 2: + IC(4.448 ns) + CELL(1.294 ns) = 6.874 ns; Loc. = LC_X2_Y3_N8; Fanout = 131; REG Node = 'clk_div:inst1|clk_out'
+        Info: 3: + IC(2.741 ns) + CELL(0.918 ns) = 10.533 ns; Loc. = LC_X3_Y3_N6; Fanout = 5; REG Node = 'DS18B20:inst2|temp'
+        Info: Total cell delay = 3.344 ns ( 31.75 % )
+        Info: Total interconnect delay = 7.189 ns ( 68.25 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 6.360 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = PIN_68; Fanout = 1; PIN Node = 'DS18B20_DAT'
+        Info: 2: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = IOC_X8_Y3_N1; Fanout = 5; COMB Node = 'DS18B20_DAT~0'
+        Info: 3: + IC(4.167 ns) + CELL(1.061 ns) = 6.360 ns; Loc. = LC_X3_Y3_N6; Fanout = 5; REG Node = 'DS18B20:inst2|temp'
+        Info: Total cell delay = 2.193 ns ( 34.48 % )
+        Info: Total interconnect delay = 4.167 ns ( 65.52 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Allocated 111 megabytes of memory during processing
+    Info: Processing ended: Mon Nov 28 08:41:08 2011
+    Info: Elapsed time: 00:00:02
+
+

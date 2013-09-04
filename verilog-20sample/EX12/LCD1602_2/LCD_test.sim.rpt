@@ -1,0 +1,793 @@
+Simulator report for LCD_test
+Wed Nov 16 12:20:49 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 318 nodes    ;
+; Simulation Coverage         ;      14.24 % ;
+; Total Number of Transitions ; 2173         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; MAX II       ;
++-----------------------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                         ;
++--------------------------------------------------------------------------------------------+---------------+---------------+
+; Option                                                                                     ; Setting       ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------+---------------+
+; Simulation mode                                                                            ; Functional    ; Timing        ;
+; Start time                                                                                 ; 0 ns          ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF          ;               ;
+; Vector input source                                                                        ; autoreset.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On            ; On            ;
+; Check outputs                                                                              ; Off           ; Off           ;
+; Report simulation coverage                                                                 ; On            ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On            ; On            ;
+; Display missing 1-value coverage report                                                    ; On            ; On            ;
+; Display missing 0-value coverage report                                                    ; On            ; On            ;
+; Detect setup and hold time violations                                                      ; Off           ; Off           ;
+; Detect glitches                                                                            ; Off           ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off           ; Off           ;
+; Generate Signal Activity File                                                              ; Off           ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off           ; Off           ;
+; Group bus channels in simulation results                                                   ; Off           ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On            ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE    ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off           ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off           ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto          ; Auto          ;
++--------------------------------------------------------------------------------------------+---------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      14.24 % ;
+; Total nodes checked                                 ; 318          ;
+; Total output ports checked                          ; 344          ;
+; Total output ports with complete 1/0-value coverage ; 49           ;
+; Total output ports with no 1/0-value coverage       ; 289          ;
+; Total output ports with no 1-value coverage         ; 289          ;
+; Total output ports with no 0-value coverage         ; 295          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                        ;
++--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------------------+
+; Node Name                                                                      ; Output Port Name                                                               ; Output Port Type ;
++--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------------------+
+; |autoreset|cnt[1]                                                              ; |autoreset|cnt[1]                                                              ; regout           ;
+; |autoreset|count~23                                                            ; |autoreset|count~23                                                            ; out              ;
+; |autoreset|count~24                                                            ; |autoreset|count~24                                                            ; out              ;
+; |autoreset|cnt[0]                                                              ; |autoreset|cnt[0]                                                              ; regout           ;
+; |autoreset|clk_1HZ                                                             ; |autoreset|clk_1HZ                                                             ; regout           ;
+; |autoreset|count[0]                                                            ; |autoreset|count[0]                                                            ; regout           ;
+; |autoreset|count[1]                                                            ; |autoreset|count[1]                                                            ; regout           ;
+; |autoreset|clk_in                                                              ; |autoreset|clk_in                                                              ; out              ;
+; |autoreset|LessThan0~12                                                        ; |autoreset|LessThan0~12                                                        ; out0             ;
+; |autoreset|LessThan0~13                                                        ; |autoreset|LessThan0~13                                                        ; out0             ;
+; |autoreset|Equal0~33                                                           ; |autoreset|Equal0~33                                                           ; out0             ;
+; |autoreset|lpm_add_sub:Add1|result_node[0]                                     ; |autoreset|lpm_add_sub:Add1|result_node[0]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add1|result_node[1]                                     ; |autoreset|lpm_add_sub:Add1|result_node[1]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add1|result_node[2]                                     ; |autoreset|lpm_add_sub:Add1|result_node[2]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|unreg_res_node[0]~0                  ; |autoreset|lpm_add_sub:Add1|addcore:adder|unreg_res_node[0]~0                  ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|unreg_res_node[0]                    ; |autoreset|lpm_add_sub:Add1|addcore:adder|unreg_res_node[0]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|_~0                                  ; |autoreset|lpm_add_sub:Add1|addcore:adder|_~0                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|_~3                                  ; |autoreset|lpm_add_sub:Add1|addcore:adder|_~3                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|unreg_res_node[1]~2                  ; |autoreset|lpm_add_sub:Add1|addcore:adder|unreg_res_node[1]~2                  ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|unreg_res_node[2]                    ; |autoreset|lpm_add_sub:Add1|addcore:adder|unreg_res_node[2]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|unreg_res_node[1]                    ; |autoreset|lpm_add_sub:Add1|addcore:adder|unreg_res_node[1]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|_~7                                  ; |autoreset|lpm_add_sub:Add1|addcore:adder|_~7                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|_~8                                  ; |autoreset|lpm_add_sub:Add1|addcore:adder|_~8                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|_~9                                  ; |autoreset|lpm_add_sub:Add1|addcore:adder|_~9                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|_~10                                 ; |autoreset|lpm_add_sub:Add1|addcore:adder|_~10                                 ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|_~11                                 ; |autoreset|lpm_add_sub:Add1|addcore:adder|_~11                                 ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[2] ; |autoreset|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[2] ; sout             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[1] ; |autoreset|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cout[1]      ; cout             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[1] ; |autoreset|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[1] ; sout             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[0] ; |autoreset|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cout[0]      ; cout             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[0] ; |autoreset|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[0] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|result_node[0]                                     ; |autoreset|lpm_add_sub:Add0|result_node[0]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[1]                                     ; |autoreset|lpm_add_sub:Add0|result_node[1]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[2]                                     ; |autoreset|lpm_add_sub:Add0|result_node[2]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[0]~0                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[0]~0                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[0]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[0]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~0                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~0                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~3                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~3                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[1]~24                 ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[1]~24                 ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[2]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[2]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[1]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[1]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~51                                 ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~51                                 ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~75                                 ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~75                                 ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~99                                 ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~99                                 ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[2] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[2] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[1] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[1]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[1] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[1] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[0] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[0]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[0] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[0] ; sout             ;
++--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                                             ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+; Node Name                                                                       ; Output Port Name                                                                ; Output Port Type ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+; |autoreset|count~0                                                              ; |autoreset|count~0                                                              ; out              ;
+; |autoreset|count~1                                                              ; |autoreset|count~1                                                              ; out              ;
+; |autoreset|count~2                                                              ; |autoreset|count~2                                                              ; out              ;
+; |autoreset|count~3                                                              ; |autoreset|count~3                                                              ; out              ;
+; |autoreset|count~4                                                              ; |autoreset|count~4                                                              ; out              ;
+; |autoreset|count~5                                                              ; |autoreset|count~5                                                              ; out              ;
+; |autoreset|count~6                                                              ; |autoreset|count~6                                                              ; out              ;
+; |autoreset|count~7                                                              ; |autoreset|count~7                                                              ; out              ;
+; |autoreset|count~8                                                              ; |autoreset|count~8                                                              ; out              ;
+; |autoreset|count~9                                                              ; |autoreset|count~9                                                              ; out              ;
+; |autoreset|count~10                                                             ; |autoreset|count~10                                                             ; out              ;
+; |autoreset|count~11                                                             ; |autoreset|count~11                                                             ; out              ;
+; |autoreset|count~12                                                             ; |autoreset|count~12                                                             ; out              ;
+; |autoreset|count~13                                                             ; |autoreset|count~13                                                             ; out              ;
+; |autoreset|count~14                                                             ; |autoreset|count~14                                                             ; out              ;
+; |autoreset|count~15                                                             ; |autoreset|count~15                                                             ; out              ;
+; |autoreset|count~16                                                             ; |autoreset|count~16                                                             ; out              ;
+; |autoreset|count~17                                                             ; |autoreset|count~17                                                             ; out              ;
+; |autoreset|count~18                                                             ; |autoreset|count~18                                                             ; out              ;
+; |autoreset|count~19                                                             ; |autoreset|count~19                                                             ; out              ;
+; |autoreset|count~20                                                             ; |autoreset|count~20                                                             ; out              ;
+; |autoreset|count~21                                                             ; |autoreset|count~21                                                             ; out              ;
+; |autoreset|count~22                                                             ; |autoreset|count~22                                                             ; out              ;
+; |autoreset|count[2]                                                             ; |autoreset|count[2]                                                             ; regout           ;
+; |autoreset|count[3]                                                             ; |autoreset|count[3]                                                             ; regout           ;
+; |autoreset|count[4]                                                             ; |autoreset|count[4]                                                             ; regout           ;
+; |autoreset|count[5]                                                             ; |autoreset|count[5]                                                             ; regout           ;
+; |autoreset|count[6]                                                             ; |autoreset|count[6]                                                             ; regout           ;
+; |autoreset|count[7]                                                             ; |autoreset|count[7]                                                             ; regout           ;
+; |autoreset|count[8]                                                             ; |autoreset|count[8]                                                             ; regout           ;
+; |autoreset|count[9]                                                             ; |autoreset|count[9]                                                             ; regout           ;
+; |autoreset|count[10]                                                            ; |autoreset|count[10]                                                            ; regout           ;
+; |autoreset|count[11]                                                            ; |autoreset|count[11]                                                            ; regout           ;
+; |autoreset|count[12]                                                            ; |autoreset|count[12]                                                            ; regout           ;
+; |autoreset|count[13]                                                            ; |autoreset|count[13]                                                            ; regout           ;
+; |autoreset|count[14]                                                            ; |autoreset|count[14]                                                            ; regout           ;
+; |autoreset|count[15]                                                            ; |autoreset|count[15]                                                            ; regout           ;
+; |autoreset|count[16]                                                            ; |autoreset|count[16]                                                            ; regout           ;
+; |autoreset|count[17]                                                            ; |autoreset|count[17]                                                            ; regout           ;
+; |autoreset|count[18]                                                            ; |autoreset|count[18]                                                            ; regout           ;
+; |autoreset|count[19]                                                            ; |autoreset|count[19]                                                            ; regout           ;
+; |autoreset|count[20]                                                            ; |autoreset|count[20]                                                            ; regout           ;
+; |autoreset|count[21]                                                            ; |autoreset|count[21]                                                            ; regout           ;
+; |autoreset|count[22]                                                            ; |autoreset|count[22]                                                            ; regout           ;
+; |autoreset|count[23]                                                            ; |autoreset|count[23]                                                            ; regout           ;
+; |autoreset|count[24]                                                            ; |autoreset|count[24]                                                            ; regout           ;
+; |autoreset|rst_n_in                                                             ; |autoreset|rst_n_in                                                             ; out              ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[0]~0                       ; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[0]~0                       ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[0]                         ; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[0]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|_~1                                   ; |autoreset|lpm_add_sub:Add1|addcore:adder|_~1                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|_~2                                   ; |autoreset|lpm_add_sub:Add1|addcore:adder|_~2                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[2]~1                       ; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[2]~1                       ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[2]                         ; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[2]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[1]                         ; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[1]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|_~4                                   ; |autoreset|lpm_add_sub:Add1|addcore:adder|_~4                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|_~5                                   ; |autoreset|lpm_add_sub:Add1|addcore:adder|_~5                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[3]                                      ; |autoreset|lpm_add_sub:Add0|result_node[3]                                      ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[4]                                      ; |autoreset|lpm_add_sub:Add0|result_node[4]                                      ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[5]                                      ; |autoreset|lpm_add_sub:Add0|result_node[5]                                      ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[6]                                      ; |autoreset|lpm_add_sub:Add0|result_node[6]                                      ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[7]                                      ; |autoreset|lpm_add_sub:Add0|result_node[7]                                      ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[8]                                      ; |autoreset|lpm_add_sub:Add0|result_node[8]                                      ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[9]                                      ; |autoreset|lpm_add_sub:Add0|result_node[9]                                      ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[10]                                     ; |autoreset|lpm_add_sub:Add0|result_node[10]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[11]                                     ; |autoreset|lpm_add_sub:Add0|result_node[11]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[12]                                     ; |autoreset|lpm_add_sub:Add0|result_node[12]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[13]                                     ; |autoreset|lpm_add_sub:Add0|result_node[13]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[14]                                     ; |autoreset|lpm_add_sub:Add0|result_node[14]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[15]                                     ; |autoreset|lpm_add_sub:Add0|result_node[15]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[16]                                     ; |autoreset|lpm_add_sub:Add0|result_node[16]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[17]                                     ; |autoreset|lpm_add_sub:Add0|result_node[17]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[18]                                     ; |autoreset|lpm_add_sub:Add0|result_node[18]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[19]                                     ; |autoreset|lpm_add_sub:Add0|result_node[19]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[20]                                     ; |autoreset|lpm_add_sub:Add0|result_node[20]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[21]                                     ; |autoreset|lpm_add_sub:Add0|result_node[21]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[22]                                     ; |autoreset|lpm_add_sub:Add0|result_node[22]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[23]                                     ; |autoreset|lpm_add_sub:Add0|result_node[23]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[24]                                     ; |autoreset|lpm_add_sub:Add0|result_node[24]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[0]~0                       ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[0]~0                       ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[0]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[0]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~1                                   ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~1                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~2                                   ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~2                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[24]~1                      ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[24]~1                      ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[24]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[24]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[23]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[23]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[22]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[22]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[21]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[21]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[20]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[20]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[19]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[19]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[18]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[18]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[17]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[17]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[16]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[16]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[15]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[15]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[14]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[14]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[13]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[13]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[12]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[12]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[11]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[11]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[10]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[10]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[9]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[9]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[8]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[8]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[7]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[7]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[6]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[6]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[5]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[5]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[4]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[4]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[3]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[3]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[2]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[2]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[1]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[1]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[24]~1                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[24]~1                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[23]~2                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[23]~2                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[22]~3                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[22]~3                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[21]~4                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[21]~4                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[20]~5                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[20]~5                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[19]~6                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[19]~6                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[18]~7                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[18]~7                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[17]~8                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[17]~8                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[16]~9                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[16]~9                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[15]~10                 ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[15]~10                 ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[14]~11                 ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[14]~11                 ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[13]~12                 ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[13]~12                 ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[12]~13                 ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[12]~13                 ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[11]~14                 ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[11]~14                 ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[10]~15                 ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[10]~15                 ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[9]~16                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[9]~16                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[8]~17                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[8]~17                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[7]~18                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[7]~18                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[6]~19                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[6]~19                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[5]~20                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[5]~20                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[4]~21                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[4]~21                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[3]~22                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[3]~22                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[2]~23                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[2]~23                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[24]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[24]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[23]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[23]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[22]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[22]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[21]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[21]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[20]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[20]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[19]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[19]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[18]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[18]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[17]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[17]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[16]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[16]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[15]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[15]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[14]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[14]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[13]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[13]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[12]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[12]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[11]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[11]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[10]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[10]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[9]                     ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[9]                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[8]                     ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[8]                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[7]                     ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[7]                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[6]                     ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[6]                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[5]                     ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[5]                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[4]                     ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[4]                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[3]                     ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[3]                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~4                                   ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~4                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~5                                   ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~5                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~6                                   ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~6                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~7                                   ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~7                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~8                                   ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~8                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~9                                   ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~9                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~10                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~10                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~11                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~11                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~12                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~12                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~13                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~13                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~14                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~14                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~15                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~15                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~16                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~16                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~17                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~17                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~18                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~18                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~19                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~19                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~20                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~20                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~21                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~21                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~22                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~22                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~23                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~23                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~24                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~24                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~25                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~25                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~26                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~26                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~27                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~27                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~28                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~28                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~29                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~29                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~30                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~30                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~31                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~31                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~32                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~32                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~33                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~33                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~34                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~34                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~35                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~35                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~36                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~36                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~37                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~37                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~38                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~38                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~39                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~39                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~40                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~40                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~41                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~41                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~42                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~42                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~43                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~43                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~44                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~44                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~45                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~45                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~46                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~46                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~47                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~47                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~48                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~48                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~49                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~49                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~50                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~50                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~52                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~52                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~53                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~53                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~54                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~54                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~55                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~55                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~56                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~56                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~57                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~57                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~58                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~58                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~59                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~59                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~60                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~60                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~61                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~61                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~62                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~62                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~63                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~63                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~64                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~64                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~65                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~65                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~66                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~66                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~67                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~67                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~68                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~68                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~69                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~69                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~70                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~70                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~71                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~71                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~72                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~72                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~73                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~73                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~74                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~74                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~76                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~76                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~77                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~77                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~78                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~78                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~79                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~79                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~80                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~80                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~81                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~81                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~82                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~82                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~83                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~83                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~84                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~84                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~85                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~85                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~86                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~86                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~87                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~87                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~88                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~88                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~89                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~89                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~90                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~90                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~91                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~91                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~92                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~92                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~93                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~93                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~94                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~94                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~95                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~95                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~96                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~96                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~97                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~97                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~98                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~98                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[24] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[24] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[23] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[23]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[23] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[23] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[22] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[22]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[22] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[22] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[21] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[21]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[21] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[21] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[20] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[20]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[20] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[20] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[19] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[19]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[19] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[19] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[18] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[18]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[18] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[18] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[17] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[17]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[17] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[17] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[16] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[16]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[16] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[16] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[15] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[15]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[15] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[15] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[14] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[14]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[14] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[14] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[13] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[13]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[13] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[13] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[12] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[12]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[12] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[12] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[11] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[11]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[11] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[11] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[10] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[10]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[10] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[10] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[9]       ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]  ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[8]       ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]  ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[7]       ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]  ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[6]       ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]  ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[5]       ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]  ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[4]       ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]  ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[3]       ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]  ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[2]       ; cout             ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                                             ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+; Node Name                                                                       ; Output Port Name                                                                ; Output Port Type ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+; |autoreset|count~0                                                              ; |autoreset|count~0                                                              ; out              ;
+; |autoreset|count~1                                                              ; |autoreset|count~1                                                              ; out              ;
+; |autoreset|count~2                                                              ; |autoreset|count~2                                                              ; out              ;
+; |autoreset|count~3                                                              ; |autoreset|count~3                                                              ; out              ;
+; |autoreset|count~4                                                              ; |autoreset|count~4                                                              ; out              ;
+; |autoreset|count~5                                                              ; |autoreset|count~5                                                              ; out              ;
+; |autoreset|count~6                                                              ; |autoreset|count~6                                                              ; out              ;
+; |autoreset|count~7                                                              ; |autoreset|count~7                                                              ; out              ;
+; |autoreset|count~8                                                              ; |autoreset|count~8                                                              ; out              ;
+; |autoreset|count~9                                                              ; |autoreset|count~9                                                              ; out              ;
+; |autoreset|count~10                                                             ; |autoreset|count~10                                                             ; out              ;
+; |autoreset|count~11                                                             ; |autoreset|count~11                                                             ; out              ;
+; |autoreset|count~12                                                             ; |autoreset|count~12                                                             ; out              ;
+; |autoreset|count~13                                                             ; |autoreset|count~13                                                             ; out              ;
+; |autoreset|count~14                                                             ; |autoreset|count~14                                                             ; out              ;
+; |autoreset|count~15                                                             ; |autoreset|count~15                                                             ; out              ;
+; |autoreset|count~16                                                             ; |autoreset|count~16                                                             ; out              ;
+; |autoreset|count~17                                                             ; |autoreset|count~17                                                             ; out              ;
+; |autoreset|count~18                                                             ; |autoreset|count~18                                                             ; out              ;
+; |autoreset|count~19                                                             ; |autoreset|count~19                                                             ; out              ;
+; |autoreset|count~20                                                             ; |autoreset|count~20                                                             ; out              ;
+; |autoreset|count~21                                                             ; |autoreset|count~21                                                             ; out              ;
+; |autoreset|count~22                                                             ; |autoreset|count~22                                                             ; out              ;
+; |autoreset|rst_n_out~0                                                          ; |autoreset|rst_n_out~0                                                          ; out0             ;
+; |autoreset|cnt[2]                                                               ; |autoreset|cnt[2]                                                               ; regout           ;
+; |autoreset|rst_tmp                                                              ; |autoreset|rst_tmp                                                              ; regout           ;
+; |autoreset|count[2]                                                             ; |autoreset|count[2]                                                             ; regout           ;
+; |autoreset|count[3]                                                             ; |autoreset|count[3]                                                             ; regout           ;
+; |autoreset|count[4]                                                             ; |autoreset|count[4]                                                             ; regout           ;
+; |autoreset|count[5]                                                             ; |autoreset|count[5]                                                             ; regout           ;
+; |autoreset|count[6]                                                             ; |autoreset|count[6]                                                             ; regout           ;
+; |autoreset|count[7]                                                             ; |autoreset|count[7]                                                             ; regout           ;
+; |autoreset|count[8]                                                             ; |autoreset|count[8]                                                             ; regout           ;
+; |autoreset|count[9]                                                             ; |autoreset|count[9]                                                             ; regout           ;
+; |autoreset|count[10]                                                            ; |autoreset|count[10]                                                            ; regout           ;
+; |autoreset|count[11]                                                            ; |autoreset|count[11]                                                            ; regout           ;
+; |autoreset|count[12]                                                            ; |autoreset|count[12]                                                            ; regout           ;
+; |autoreset|count[13]                                                            ; |autoreset|count[13]                                                            ; regout           ;
+; |autoreset|count[14]                                                            ; |autoreset|count[14]                                                            ; regout           ;
+; |autoreset|count[15]                                                            ; |autoreset|count[15]                                                            ; regout           ;
+; |autoreset|count[16]                                                            ; |autoreset|count[16]                                                            ; regout           ;
+; |autoreset|count[17]                                                            ; |autoreset|count[17]                                                            ; regout           ;
+; |autoreset|count[18]                                                            ; |autoreset|count[18]                                                            ; regout           ;
+; |autoreset|count[19]                                                            ; |autoreset|count[19]                                                            ; regout           ;
+; |autoreset|count[20]                                                            ; |autoreset|count[20]                                                            ; regout           ;
+; |autoreset|count[21]                                                            ; |autoreset|count[21]                                                            ; regout           ;
+; |autoreset|count[22]                                                            ; |autoreset|count[22]                                                            ; regout           ;
+; |autoreset|count[23]                                                            ; |autoreset|count[23]                                                            ; regout           ;
+; |autoreset|count[24]                                                            ; |autoreset|count[24]                                                            ; regout           ;
+; |autoreset|rst_n_in                                                             ; |autoreset|rst_n_in                                                             ; out              ;
+; |autoreset|rst_n_out                                                            ; |autoreset|rst_n_out                                                            ; pin_out          ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[0]~0                       ; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[0]~0                       ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[0]                         ; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[0]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|_~1                                   ; |autoreset|lpm_add_sub:Add1|addcore:adder|_~1                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|_~2                                   ; |autoreset|lpm_add_sub:Add1|addcore:adder|_~2                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[2]~1                       ; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[2]~1                       ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[2]                         ; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[2]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[1]                         ; |autoreset|lpm_add_sub:Add1|addcore:adder|datab_node[1]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|unreg_res_node[2]~1                   ; |autoreset|lpm_add_sub:Add1|addcore:adder|unreg_res_node[2]~1                   ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|_~4                                   ; |autoreset|lpm_add_sub:Add1|addcore:adder|_~4                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|_~5                                   ; |autoreset|lpm_add_sub:Add1|addcore:adder|_~5                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add1|addcore:adder|_~6                                   ; |autoreset|lpm_add_sub:Add1|addcore:adder|_~6                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[3]                                      ; |autoreset|lpm_add_sub:Add0|result_node[3]                                      ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[4]                                      ; |autoreset|lpm_add_sub:Add0|result_node[4]                                      ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[5]                                      ; |autoreset|lpm_add_sub:Add0|result_node[5]                                      ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[6]                                      ; |autoreset|lpm_add_sub:Add0|result_node[6]                                      ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[7]                                      ; |autoreset|lpm_add_sub:Add0|result_node[7]                                      ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[8]                                      ; |autoreset|lpm_add_sub:Add0|result_node[8]                                      ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[9]                                      ; |autoreset|lpm_add_sub:Add0|result_node[9]                                      ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[10]                                     ; |autoreset|lpm_add_sub:Add0|result_node[10]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[11]                                     ; |autoreset|lpm_add_sub:Add0|result_node[11]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[12]                                     ; |autoreset|lpm_add_sub:Add0|result_node[12]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[13]                                     ; |autoreset|lpm_add_sub:Add0|result_node[13]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[14]                                     ; |autoreset|lpm_add_sub:Add0|result_node[14]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[15]                                     ; |autoreset|lpm_add_sub:Add0|result_node[15]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[16]                                     ; |autoreset|lpm_add_sub:Add0|result_node[16]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[17]                                     ; |autoreset|lpm_add_sub:Add0|result_node[17]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[18]                                     ; |autoreset|lpm_add_sub:Add0|result_node[18]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[19]                                     ; |autoreset|lpm_add_sub:Add0|result_node[19]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[20]                                     ; |autoreset|lpm_add_sub:Add0|result_node[20]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[21]                                     ; |autoreset|lpm_add_sub:Add0|result_node[21]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[22]                                     ; |autoreset|lpm_add_sub:Add0|result_node[22]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[23]                                     ; |autoreset|lpm_add_sub:Add0|result_node[23]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|result_node[24]                                     ; |autoreset|lpm_add_sub:Add0|result_node[24]                                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[0]~0                       ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[0]~0                       ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[0]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[0]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~1                                   ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~1                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~2                                   ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~2                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[24]~1                      ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[24]~1                      ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[24]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[24]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[23]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[23]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[22]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[22]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[21]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[21]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[20]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[20]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[19]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[19]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[18]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[18]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[17]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[17]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[16]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[16]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[15]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[15]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[14]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[14]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[13]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[13]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[12]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[12]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[11]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[11]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[10]                        ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[10]                        ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[9]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[9]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[8]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[8]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[7]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[7]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[6]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[6]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[5]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[5]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[4]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[4]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[3]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[3]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[2]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[2]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[1]                         ; |autoreset|lpm_add_sub:Add0|addcore:adder|datab_node[1]                         ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[24]~1                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[24]~1                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[23]~2                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[23]~2                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[22]~3                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[22]~3                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[21]~4                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[21]~4                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[20]~5                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[20]~5                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[19]~6                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[19]~6                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[18]~7                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[18]~7                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[17]~8                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[17]~8                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[16]~9                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[16]~9                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[15]~10                 ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[15]~10                 ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[14]~11                 ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[14]~11                 ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[13]~12                 ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[13]~12                 ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[12]~13                 ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[12]~13                 ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[11]~14                 ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[11]~14                 ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[10]~15                 ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[10]~15                 ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[9]~16                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[9]~16                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[8]~17                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[8]~17                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[7]~18                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[7]~18                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[6]~19                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[6]~19                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[5]~20                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[5]~20                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[4]~21                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[4]~21                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[3]~22                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[3]~22                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[2]~23                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[2]~23                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[24]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[24]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[23]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[23]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[22]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[22]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[21]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[21]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[20]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[20]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[19]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[19]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[18]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[18]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[17]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[17]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[16]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[16]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[15]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[15]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[14]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[14]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[13]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[13]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[12]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[12]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[11]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[11]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[10]                    ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[10]                    ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[9]                     ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[9]                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[8]                     ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[8]                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[7]                     ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[7]                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[6]                     ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[6]                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[5]                     ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[5]                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[4]                     ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[4]                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[3]                     ; |autoreset|lpm_add_sub:Add0|addcore:adder|unreg_res_node[3]                     ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~4                                   ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~4                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~5                                   ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~5                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~6                                   ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~6                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~7                                   ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~7                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~8                                   ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~8                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~9                                   ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~9                                   ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~10                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~10                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~11                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~11                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~12                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~12                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~13                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~13                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~14                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~14                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~15                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~15                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~16                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~16                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~17                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~17                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~18                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~18                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~19                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~19                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~20                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~20                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~21                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~21                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~22                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~22                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~23                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~23                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~24                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~24                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~25                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~25                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~26                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~26                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~27                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~27                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~28                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~28                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~29                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~29                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~30                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~30                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~31                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~31                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~32                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~32                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~33                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~33                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~34                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~34                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~35                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~35                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~36                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~36                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~37                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~37                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~38                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~38                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~39                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~39                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~40                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~40                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~41                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~41                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~42                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~42                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~43                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~43                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~44                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~44                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~45                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~45                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~46                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~46                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~47                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~47                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~48                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~48                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~49                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~49                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~50                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~50                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~52                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~52                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~53                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~53                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~54                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~54                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~55                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~55                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~56                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~56                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~57                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~57                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~58                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~58                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~59                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~59                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~60                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~60                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~61                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~61                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~62                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~62                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~63                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~63                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~64                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~64                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~65                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~65                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~66                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~66                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~67                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~67                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~68                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~68                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~69                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~69                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~70                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~70                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~71                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~71                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~72                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~72                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~73                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~73                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~74                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~74                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~76                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~76                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~77                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~77                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~78                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~78                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~79                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~79                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~80                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~80                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~81                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~81                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~82                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~82                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~83                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~83                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~84                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~84                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~85                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~85                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~86                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~86                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~87                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~87                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~88                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~88                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~89                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~89                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~90                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~90                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~91                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~91                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~92                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~92                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~93                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~93                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~94                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~94                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~95                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~95                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~96                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~96                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~97                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~97                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|_~98                                  ; |autoreset|lpm_add_sub:Add0|addcore:adder|_~98                                  ; out0             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[24] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[24] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[23] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[23]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[23] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[23] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[22] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[22]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[22] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[22] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[21] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[21]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[21] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[21] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[20] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[20]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[20] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[20] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[19] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[19]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[19] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[19] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[18] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[18]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[18] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[18] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[17] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[17]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[17] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[17] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[16] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[16]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[16] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[16] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[15] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[15]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[15] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[15] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[14] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[14]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[14] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[14] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[13] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[13]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[13] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[13] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[12] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[12]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[12] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[12] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[11] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[11]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[11] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[11] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[10] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[10]      ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[10] ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[10] ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[9]       ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[9]  ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[8]       ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[8]  ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[7]       ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[7]  ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[6]       ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]  ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[5]       ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]  ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[4]       ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]  ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[3]       ; cout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]  ; sout             ;
+; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]  ; |autoreset|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cout[2]       ; cout             ;
++---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Wed Nov 16 12:20:48 2011
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off LCD_test -c LCD_test
+Info: Using vector source file "C:/altera/work/EX12/LCD1602_1/autoreset.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      14.24 %
+Info: Number of transitions in simulation is 2173
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Allocated 97 megabytes of memory during processing
+    Info: Processing ended: Wed Nov 16 12:20:49 2011
+    Info: Elapsed time: 00:00:01
+
+

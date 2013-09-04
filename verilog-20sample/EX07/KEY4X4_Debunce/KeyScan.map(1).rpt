@@ -1,0 +1,328 @@
+Analysis & Synthesis report for KeyScan
+Thu Mar 15 23:16:09 2012
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |keyScan|mat_keyscan:inst|state
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: mat_keyscan:inst
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Mar 15 23:16:09 2012    ;
+; Quartus II Version          ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name               ; KeyScan                                  ;
+; Top-level Entity Name       ; keyScan                                  ;
+; Family                      ; MAX II                                   ;
+; Total logic elements        ; 156                                      ;
+; Total pins                  ; 20                                       ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 0                                        ;
+; DSP block 9-bit elements    ; 0                                        ;
+; Total PLLs                  ; 0                                        ;
+; Total DLLs                  ; 0                                        ;
++-----------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EPM240T100C5       ;                    ;
+; Top-level entity name                                                          ; keyScan            ; KeyScan            ;
+; Family name                                                                    ; MAX II             ; Stratix II         ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Optimization Technique -- MAX II                                               ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                       ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+
+; hc164_driver.v                   ; yes             ; User Verilog HDL File              ; D:/product/EPM240_570/EPM240_570_DVD/KEY4X4_Debunce/hc164_driver.v ;
+; keyScan.bdf                      ; yes             ; User Block Diagram/Schematic File  ; D:/product/EPM240_570/EPM240_570_DVD/KEY4X4_Debunce/keyScan.bdf    ;
+; mat_keyscan.v                    ; yes             ; User Verilog HDL File              ; D:/product/EPM240_570/EPM240_570_DVD/KEY4X4_Debunce/mat_keyscan.v  ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 156   ;
+;     -- Combinational with no register       ; 77    ;
+;     -- Register only                        ; 29    ;
+;     -- Combinational with a register        ; 50    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 49    ;
+;     -- 3 input functions                    ; 16    ;
+;     -- 2 input functions                    ; 56    ;
+;     -- 1 input functions                    ; 6     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 118   ;
+;     -- arithmetic mode                      ; 38    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 8     ;
+;     -- asynchronous clear/load mode         ; 62    ;
+;                                             ;       ;
+; Total registers                             ; 79    ;
+; Total logic cells in carry chains           ; 41    ;
+; I/O pins                                    ; 20    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 79    ;
+; Total fan-out                               ; 581   ;
+; Average fan-out                             ; 3.30  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                            ;
++----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name         ; Library Name ;
++----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------+--------------+
+; |keyScan                   ; 156 (0)     ; 79           ; 0           ; 0            ; 0       ; 0         ; 0         ; 20   ; 0            ; 77 (0)       ; 29 (0)            ; 50 (0)           ; 41 (0)          ; 0 (0)      ; |keyScan                    ; work         ;
+;    |hc164_driver:inst1|    ; 57 (57)     ; 26           ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 31 (31)      ; 0 (0)             ; 26 (26)          ; 21 (21)         ; 0 (0)      ; |keyScan|hc164_driver:inst1 ; work         ;
+;    |mat_keyscan:inst|      ; 99 (99)     ; 53           ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 46 (46)      ; 29 (29)           ; 24 (24)          ; 20 (20)         ; 0 (0)      ; |keyScan|mat_keyscan:inst   ; work         ;
++----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------+
+; State Machine - |keyScan|mat_keyscan:inst|state                             ;
++------------+------------+------------+------------+------------+------------+
+; Name       ; state.col3 ; state.col2 ; state.col1 ; state.col0 ; state.coln ;
++------------+------------+------------+------------+------------+------------+
+; state.coln ; 0          ; 0          ; 0          ; 0          ; 0          ;
+; state.col0 ; 0          ; 0          ; 0          ; 1          ; 1          ;
+; state.col1 ; 0          ; 0          ; 1          ; 0          ; 1          ;
+; state.col2 ; 0          ; 1          ; 0          ; 0          ; 1          ;
+; state.col3 ; 1          ; 0          ; 0          ; 0          ; 1          ;
++------------+------------+------------+------------+------------+------------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; mat_keyscan:inst|seg_data[5..7]       ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 3 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 79    ;
+; Number of registers using Synchronous Clear  ; 6     ;
+; Number of registers using Synchronous Load   ; 2     ;
+; Number of registers using Asynchronous Clear ; 62    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 28    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; mat_keyscan:inst|col[3]                ; 3       ;
+; mat_keyscan:inst|col[2]                ; 3       ;
+; mat_keyscan:inst|col[1]                ; 3       ;
+; mat_keyscan:inst|col[0]                ; 3       ;
+; Total number of inverted registers = 4 ;         ;
++----------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |keyScan|mat_keyscan:inst|delay[1]    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |keyScan|mat_keyscan:inst|key_data[7] ;
+; 256:1              ; 5 bits    ; 850 LEs       ; 50 LEs               ; 800 LEs                ; Yes        ; |keyScan|mat_keyscan:inst|seg_data[0] ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 9 LEs                ; 6 LEs                  ; No         ; |keyScan|hc164_driver:inst1|Mux0      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mat_keyscan:inst ;
++----------------+----------+-----------------------------------+
+; Parameter Name ; Value    ; Type                              ;
++----------------+----------+-----------------------------------+
+; clk_20ms_par   ; 1000000  ; Untyped                           ;
+; coln           ; 00001    ; Unsigned Binary                   ;
+; col0           ; 00010    ; Unsigned Binary                   ;
+; col1           ; 00100    ; Unsigned Binary                   ;
+; col2           ; 01000    ; Unsigned Binary                   ;
+; col3           ; 10000    ; Unsigned Binary                   ;
+; dis_0          ; 00000000 ; Unsigned Binary                   ;
+; dis_1          ; 00000001 ; Unsigned Binary                   ;
+; dis_2          ; 00000010 ; Unsigned Binary                   ;
+; dis_3          ; 00000011 ; Unsigned Binary                   ;
+; dis_4          ; 00000100 ; Unsigned Binary                   ;
+; dis_5          ; 00000101 ; Unsigned Binary                   ;
+; dis_6          ; 00000110 ; Unsigned Binary                   ;
+; dis_7          ; 00000111 ; Unsigned Binary                   ;
+; dis_8          ; 00001000 ; Unsigned Binary                   ;
+; dis_9          ; 00001001 ; Unsigned Binary                   ;
+; dis_a          ; 00010000 ; Unsigned Binary                   ;
+; dis_b          ; 00010001 ; Unsigned Binary                   ;
+; dis_c          ; 00010010 ; Unsigned Binary                   ;
+; dis_d          ; 00010011 ; Unsigned Binary                   ;
+; dis_e          ; 00010100 ; Unsigned Binary                   ;
+; dis_f          ; 00010101 ; Unsigned Binary                   ;
+; dis_k          ; 00010110 ; Unsigned Binary                   ;
++----------------+----------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Thu Mar 15 23:16:05 2012
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off KeyScan -c KeyScan
+Warning: Ignored duplicate of assignment XR_ROOT_REGION for node ""
+Warning: Ignored duplicate of assignment XR_MEMBER_STATE for node ""
+Warning: Ignored duplicate of assignment XR_ROOT_REGION for node ""
+Warning: Ignored duplicate of assignment XR_MEMBER_STATE for node ""
+Info: Found 1 design units, including 1 entities, in source file hc164_driver.v
+    Info: Found entity 1: hc164_driver
+Info: Found 1 design units, including 1 entities, in source file keyScan.bdf
+    Info: Found entity 1: keyScan
+Info: Found 1 design units, including 1 entities, in source file mat_keyscan.v
+    Info: Found entity 1: mat_keyscan
+Info: Elaborating entity "keyScan" for the top level hierarchy
+Info: Elaborating entity "hc164_driver" for hierarchy "hc164_driver:inst1"
+Info: Elaborating entity "mat_keyscan" for hierarchy "mat_keyscan:inst"
+Warning (14130): Reduced register "mat_keyscan:inst|seg_data[7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "mat_keyscan:inst|seg_data[6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "mat_keyscan:inst|seg_data[5]" with stuck data_in port to stuck value GND
+Info: State machine "|keyScan|mat_keyscan:inst|state" contains 5 states
+Info: Selected Auto state machine encoding method for state machine "|keyScan|mat_keyscan:inst|state"
+Info: Encoding result for state machine "|keyScan|mat_keyscan:inst|state"
+    Info: Completed encoding using 5 state bits
+        Info: Encoded state bit "mat_keyscan:inst|state.col3"
+        Info: Encoded state bit "mat_keyscan:inst|state.col2"
+        Info: Encoded state bit "mat_keyscan:inst|state.col1"
+        Info: Encoded state bit "mat_keyscan:inst|state.col0"
+        Info: Encoded state bit "mat_keyscan:inst|state.coln"
+    Info: State "|keyScan|mat_keyscan:inst|state.coln" uses code string "00000"
+    Info: State "|keyScan|mat_keyscan:inst|state.col0" uses code string "00011"
+    Info: State "|keyScan|mat_keyscan:inst|state.col1" uses code string "00101"
+    Info: State "|keyScan|mat_keyscan:inst|state.col2" uses code string "01001"
+    Info: State "|keyScan|mat_keyscan:inst|state.col3" uses code string "10001"
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "led[7]" stuck at VCC
+    Warning (13410): Pin "led[6]" stuck at VCC
+    Warning (13410): Pin "led[5]" stuck at VCC
+Info: Registers with preset signals will power-up high
+Info: Implemented 176 device resources after synthesis - the final resource count might be different
+    Info: Implemented 6 input pins
+    Info: Implemented 14 output pins
+    Info: Implemented 156 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Allocated 141 megabytes of memory during processing
+    Info: Processing ended: Thu Mar 15 23:16:09 2012
+    Info: Elapsed time: 00:00:04
+
+

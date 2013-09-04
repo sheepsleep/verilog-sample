@@ -1,0 +1,440 @@
+Classic Timing Analyzer report for LCD_test
+Sun Nov 27 16:53:28 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. Clock Hold: 'clk'
+  7. tco
+  8. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                               ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-------------------------+-------------------------+------------+----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From                    ; To                      ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-------------------------+-------------------------+------------+----------+--------------+
+; Worst-case tco               ; N/A                                      ; None          ; 22.000 ns                        ; LCD1602:inst|data[0]    ; lcd_data[0]             ; clk        ; --       ; 0            ;
+; Clock Setup: 'clk'           ; N/A                                      ; None          ; 77.09 MHz ( period = 12.972 ns ) ; LCD1602:inst|counter[0] ; LCD1602:inst|counter[4] ; clk        ; clk      ; 0            ;
+; Clock Hold: 'clk'            ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; LCD1602:inst|state.init ; LCD1602:inst|state.init ; clk        ; clk      ; 26           ;
+; Total number of failed paths ;                                          ;               ;                                  ;                         ;                         ;            ;          ; 26           ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-------------------------+-------------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EPM240T100C5       ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                                     ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------------+--------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                ; To                                   ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------------+--------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 77.09 MHz ( period = 12.972 ns )                    ; LCD1602:inst|counter[0]             ; LCD1602:inst|counter[4]              ; clk        ; clk      ; None                        ; None                      ; 9.008 ns                ;
+; N/A                                     ; 78.12 MHz ( period = 12.801 ns )                    ; LCD1602:inst|counter[1]             ; LCD1602:inst|counter[4]              ; clk        ; clk      ; None                        ; None                      ; 8.837 ns                ;
+; N/A                                     ; 79.48 MHz ( period = 12.581 ns )                    ; LCD1602:inst|counter[0]             ; LCD1602:inst|counter[1]              ; clk        ; clk      ; None                        ; None                      ; 8.617 ns                ;
+; N/A                                     ; 79.62 MHz ( period = 12.559 ns )                    ; LCD1602:inst|counter[3]             ; LCD1602:inst|counter[4]              ; clk        ; clk      ; None                        ; None                      ; 8.595 ns                ;
+; N/A                                     ; 80.58 MHz ( period = 12.410 ns )                    ; LCD1602:inst|counter[1]             ; LCD1602:inst|counter[1]              ; clk        ; clk      ; None                        ; None                      ; 8.446 ns                ;
+; N/A                                     ; 81.54 MHz ( period = 12.264 ns )                    ; LCD1602:inst|counter[2]             ; LCD1602:inst|counter[4]              ; clk        ; clk      ; None                        ; None                      ; 8.300 ns                ;
+; N/A                                     ; 81.55 MHz ( period = 12.263 ns )                    ; LCD1602:inst|counter[4]             ; LCD1602:inst|counter[4]              ; clk        ; clk      ; None                        ; None                      ; 8.299 ns                ;
+; N/A                                     ; 81.75 MHz ( period = 12.233 ns )                    ; LCD1602:inst|counter[0]             ; LCD1602:inst|counter[3]              ; clk        ; clk      ; None                        ; None                      ; 8.269 ns                ;
+; N/A                                     ; 82.14 MHz ( period = 12.174 ns )                    ; LCD1602:inst|count[2]               ; LCD1602:inst|clkr                    ; clk        ; clk      ; None                        ; None                      ; 8.210 ns                ;
+; N/A                                     ; 82.16 MHz ( period = 12.172 ns )                    ; LCD1602:inst|count[7]               ; LCD1602:inst|clkr                    ; clk        ; clk      ; None                        ; None                      ; 8.208 ns                ;
+; N/A                                     ; 82.18 MHz ( period = 12.168 ns )                    ; LCD1602:inst|counter[3]             ; LCD1602:inst|counter[1]              ; clk        ; clk      ; None                        ; None                      ; 8.204 ns                ;
+; N/A                                     ; 82.56 MHz ( period = 12.112 ns )                    ; LCD1602:inst|counter[0]             ; LCD1602:inst|counter[2]              ; clk        ; clk      ; None                        ; None                      ; 8.148 ns                ;
+; N/A                                     ; 82.90 MHz ( period = 12.062 ns )                    ; LCD1602:inst|counter[1]             ; LCD1602:inst|counter[3]              ; clk        ; clk      ; None                        ; None                      ; 8.098 ns                ;
+; N/A                                     ; 82.99 MHz ( period = 12.050 ns )                    ; LCD1602:inst|count[3]               ; LCD1602:inst|clkr                    ; clk        ; clk      ; None                        ; None                      ; 8.086 ns                ;
+; N/A                                     ; 83.15 MHz ( period = 12.027 ns )                    ; LCD1602:inst|count[0]               ; LCD1602:inst|clkr                    ; clk        ; clk      ; None                        ; None                      ; 8.063 ns                ;
+; N/A                                     ; 83.33 MHz ( period = 12.000 ns )                    ; LCD1602:inst|count[5]               ; LCD1602:inst|clkr                    ; clk        ; clk      ; None                        ; None                      ; 8.036 ns                ;
+; N/A                                     ; 83.75 MHz ( period = 11.941 ns )                    ; LCD1602:inst|counter[1]             ; LCD1602:inst|counter[2]              ; clk        ; clk      ; None                        ; None                      ; 7.977 ns                ;
+; N/A                                     ; 83.81 MHz ( period = 11.932 ns )                    ; LCD1602:inst|count[4]               ; LCD1602:inst|clkr                    ; clk        ; clk      ; None                        ; None                      ; 7.968 ns                ;
+; N/A                                     ; 84.01 MHz ( period = 11.903 ns )                    ; LCD1602:inst|count[1]               ; LCD1602:inst|clkr                    ; clk        ; clk      ; None                        ; None                      ; 7.939 ns                ;
+; N/A                                     ; 84.01 MHz ( period = 11.903 ns )                    ; LCD1602:inst|count[6]               ; LCD1602:inst|clkr                    ; clk        ; clk      ; None                        ; None                      ; 7.939 ns                ;
+; N/A                                     ; 84.22 MHz ( period = 11.873 ns )                    ; LCD1602:inst|counter[2]             ; LCD1602:inst|counter[1]              ; clk        ; clk      ; None                        ; None                      ; 7.909 ns                ;
+; N/A                                     ; 84.23 MHz ( period = 11.872 ns )                    ; LCD1602:inst|counter[4]             ; LCD1602:inst|counter[1]              ; clk        ; clk      ; None                        ; None                      ; 7.908 ns                ;
+; N/A                                     ; 84.60 MHz ( period = 11.820 ns )                    ; LCD1602:inst|counter[3]             ; LCD1602:inst|counter[3]              ; clk        ; clk      ; None                        ; None                      ; 7.856 ns                ;
+; N/A                                     ; 84.93 MHz ( period = 11.774 ns )                    ; LCD1602:inst|counter[2]             ; LCD1602:inst|data[5]                 ; clk        ; clk      ; None                        ; None                      ; 7.810 ns                ;
+; N/A                                     ; 85.41 MHz ( period = 11.708 ns )                    ; LCD1602:inst|data[1]                ; LCD1602:inst|data[1]                 ; clk        ; clk      ; None                        ; None                      ; 7.744 ns                ;
+; N/A                                     ; 85.48 MHz ( period = 11.699 ns )                    ; LCD1602:inst|counter[3]             ; LCD1602:inst|counter[2]              ; clk        ; clk      ; None                        ; None                      ; 7.735 ns                ;
+; N/A                                     ; 86.67 MHz ( period = 11.538 ns )                    ; LCD1602:inst|count[13]              ; LCD1602:inst|clkr                    ; clk        ; clk      ; None                        ; None                      ; 7.574 ns                ;
+; N/A                                     ; 86.77 MHz ( period = 11.525 ns )                    ; LCD1602:inst|counter[2]             ; LCD1602:inst|counter[3]              ; clk        ; clk      ; None                        ; None                      ; 7.561 ns                ;
+; N/A                                     ; 86.78 MHz ( period = 11.524 ns )                    ; LCD1602:inst|counter[4]             ; LCD1602:inst|counter[3]              ; clk        ; clk      ; None                        ; None                      ; 7.560 ns                ;
+; N/A                                     ; 86.94 MHz ( period = 11.502 ns )                    ; LCD1602:inst|counter[0]             ; LCD1602:inst|data[5]                 ; clk        ; clk      ; None                        ; None                      ; 7.538 ns                ;
+; N/A                                     ; 87.63 MHz ( period = 11.412 ns )                    ; LCD1602:inst|counter[0]             ; LCD1602:inst|data[1]                 ; clk        ; clk      ; None                        ; None                      ; 7.448 ns                ;
+; N/A                                     ; 87.69 MHz ( period = 11.404 ns )                    ; LCD1602:inst|counter[2]             ; LCD1602:inst|counter[2]              ; clk        ; clk      ; None                        ; None                      ; 7.440 ns                ;
+; N/A                                     ; 87.70 MHz ( period = 11.403 ns )                    ; LCD1602:inst|counter[4]             ; LCD1602:inst|counter[2]              ; clk        ; clk      ; None                        ; None                      ; 7.439 ns                ;
+; N/A                                     ; 87.72 MHz ( period = 11.400 ns )                    ; LCD1602:inst|counter[4]             ; LCD1602:inst|data[3]                 ; clk        ; clk      ; None                        ; None                      ; 7.436 ns                ;
+; N/A                                     ; 87.77 MHz ( period = 11.393 ns )                    ; LCD1602:inst|counter[2]             ; LCD1602:inst|data[6]                 ; clk        ; clk      ; None                        ; None                      ; 7.429 ns                ;
+; N/A                                     ; 87.98 MHz ( period = 11.366 ns )                    ; LCD1602:inst|data[0]                ; LCD1602:inst|data[0]                 ; clk        ; clk      ; None                        ; None                      ; 7.402 ns                ;
+; N/A                                     ; 88.07 MHz ( period = 11.354 ns )                    ; LCD1602:inst|counter[1]             ; LCD1602:inst|data[5]                 ; clk        ; clk      ; None                        ; None                      ; 7.390 ns                ;
+; N/A                                     ; 88.18 MHz ( period = 11.341 ns )                    ; LCD1602:inst|counter[3]             ; LCD1602:inst|data[5]                 ; clk        ; clk      ; None                        ; None                      ; 7.377 ns                ;
+; N/A                                     ; 88.42 MHz ( period = 11.310 ns )                    ; LCD1602:inst|count[7]               ; LCD1602:inst|count[12]               ; clk        ; clk      ; None                        ; None                      ; 7.346 ns                ;
+; N/A                                     ; 88.68 MHz ( period = 11.276 ns )                    ; LCD1602:inst|count[12]              ; LCD1602:inst|clkr                    ; clk        ; clk      ; None                        ; None                      ; 7.312 ns                ;
+; N/A                                     ; 89.03 MHz ( period = 11.232 ns )                    ; LCD1602:inst|counter[3]             ; LCD1602:inst|data[2]                 ; clk        ; clk      ; None                        ; None                      ; 7.268 ns                ;
+; N/A                                     ; 89.18 MHz ( period = 11.213 ns )                    ; LCD1602:inst|counter[0]             ; LCD1602:inst|data[2]                 ; clk        ; clk      ; None                        ; None                      ; 7.249 ns                ;
+; N/A                                     ; 89.25 MHz ( period = 11.204 ns )                    ; LCD1602:inst|counter[2]             ; LCD1602:inst|data[4]                 ; clk        ; clk      ; None                        ; None                      ; 7.240 ns                ;
+; N/A                                     ; 89.30 MHz ( period = 11.198 ns )                    ; LCD1602:inst|counter[4]             ; LCD1602:inst|data[1]                 ; clk        ; clk      ; None                        ; None                      ; 7.234 ns                ;
+; N/A                                     ; 89.38 MHz ( period = 11.188 ns )                    ; LCD1602:inst|count[3]               ; LCD1602:inst|count[12]               ; clk        ; clk      ; None                        ; None                      ; 7.224 ns                ;
+; N/A                                     ; 89.45 MHz ( period = 11.179 ns )                    ; LCD1602:inst|counter[0]             ; LCD1602:inst|counter[0]              ; clk        ; clk      ; None                        ; None                      ; 7.215 ns                ;
+; N/A                                     ; 89.54 MHz ( period = 11.168 ns )                    ; LCD1602:inst|counter[0]             ; LCD1602:inst|data[3]                 ; clk        ; clk      ; None                        ; None                      ; 7.204 ns                ;
+; N/A                                     ; 89.57 MHz ( period = 11.164 ns )                    ; LCD1602:inst|counter[2]             ; LCD1602:inst|data[2]                 ; clk        ; clk      ; None                        ; None                      ; 7.200 ns                ;
+; N/A                                     ; 89.78 MHz ( period = 11.138 ns )                    ; LCD1602:inst|count[5]               ; LCD1602:inst|count[12]               ; clk        ; clk      ; None                        ; None                      ; 7.174 ns                ;
+; N/A                                     ; 89.81 MHz ( period = 11.135 ns )                    ; LCD1602:inst|counter[1]             ; LCD1602:inst|data[0]                 ; clk        ; clk      ; None                        ; None                      ; 7.171 ns                ;
+; N/A                                     ; 90.01 MHz ( period = 11.110 ns )                    ; LCD1602:inst|counter[0]             ; LCD1602:inst|data[6]                 ; clk        ; clk      ; None                        ; None                      ; 7.146 ns                ;
+; N/A                                     ; 90.12 MHz ( period = 11.096 ns )                    ; LCD1602:inst|data[4]                ; LCD1602:inst|data[4]                 ; clk        ; clk      ; None                        ; None                      ; 7.132 ns                ;
+; N/A                                     ; 90.24 MHz ( period = 11.082 ns )                    ; LCD1602:inst|state.init             ; LCD1602:inst|data[0]                 ; clk        ; clk      ; None                        ; None                      ; 7.118 ns                ;
+; N/A                                     ; 90.33 MHz ( period = 11.070 ns )                    ; LCD1602:inst|counter[0]             ; LCD1602:inst|data[4]                 ; clk        ; clk      ; None                        ; None                      ; 7.106 ns                ;
+; N/A                                     ; 90.33 MHz ( period = 11.070 ns )                    ; LCD1602:inst|count[4]               ; LCD1602:inst|count[12]               ; clk        ; clk      ; None                        ; None                      ; 7.106 ns                ;
+; N/A                                     ; 90.42 MHz ( period = 11.060 ns )                    ; LCD1602:inst|counter[1]             ; LCD1602:inst|data[1]                 ; clk        ; clk      ; None                        ; None                      ; 7.096 ns                ;
+; N/A                                     ; 90.57 MHz ( period = 11.041 ns )                    ; LCD1602:inst|count[6]               ; LCD1602:inst|count[12]               ; clk        ; clk      ; None                        ; None                      ; 7.077 ns                ;
+; N/A                                     ; 90.64 MHz ( period = 11.033 ns )                    ; LCD1602:inst|count[9]               ; LCD1602:inst|clkr                    ; clk        ; clk      ; None                        ; None                      ; 7.069 ns                ;
+; N/A                                     ; 90.69 MHz ( period = 11.026 ns )                    ; LCD1602:inst|counter[3]             ; LCD1602:inst|data[1]                 ; clk        ; clk      ; None                        ; None                      ; 7.062 ns                ;
+; N/A                                     ; 90.75 MHz ( period = 11.019 ns )                    ; LCD1602:inst|counter[3]             ; LCD1602:inst|data[3]                 ; clk        ; clk      ; None                        ; None                      ; 7.055 ns                ;
+; N/A                                     ; 90.84 MHz ( period = 11.008 ns )                    ; LCD1602:inst|counter[1]             ; LCD1602:inst|counter[0]              ; clk        ; clk      ; None                        ; None                      ; 7.044 ns                ;
+; N/A                                     ; 90.84 MHz ( period = 11.008 ns )                    ; LCD1602:inst|counter[4]             ; LCD1602:inst|data[0]                 ; clk        ; clk      ; None                        ; None                      ; 7.044 ns                ;
+; N/A                                     ; 90.93 MHz ( period = 10.997 ns )                    ; LCD1602:inst|counter[1]             ; LCD1602:inst|data[3]                 ; clk        ; clk      ; None                        ; None                      ; 7.033 ns                ;
+; N/A                                     ; 91.16 MHz ( period = 10.970 ns )                    ; LCD1602:inst|count[8]               ; LCD1602:inst|clkr                    ; clk        ; clk      ; None                        ; None                      ; 7.006 ns                ;
+; N/A                                     ; 91.26 MHz ( period = 10.958 ns )                    ; LCD1602:inst|count[2]               ; LCD1602:inst|count[12]               ; clk        ; clk      ; None                        ; None                      ; 6.994 ns                ;
+; N/A                                     ; 91.28 MHz ( period = 10.955 ns )                    ; LCD1602:inst|counter[1]             ; LCD1602:inst|data[6]                 ; clk        ; clk      ; None                        ; None                      ; 6.991 ns                ;
+; N/A                                     ; 91.35 MHz ( period = 10.947 ns )                    ; LCD1602:inst|counter[2]             ; LCD1602:inst|data[3]                 ; clk        ; clk      ; None                        ; None                      ; 6.983 ns                ;
+; N/A                                     ; 91.81 MHz ( period = 10.892 ns )                    ; LCD1602:inst|counter[4]             ; LCD1602:inst|counter[0]              ; clk        ; clk      ; None                        ; None                      ; 6.928 ns                ;
+; N/A                                     ; 91.93 MHz ( period = 10.878 ns )                    ; LCD1602:inst|counter[2]             ; LCD1602:inst|data[1]                 ; clk        ; clk      ; None                        ; None                      ; 6.914 ns                ;
+; N/A                                     ; 92.17 MHz ( period = 10.850 ns )                    ; LCD1602:inst|state.init             ; LCD1602:inst|data[5]                 ; clk        ; clk      ; None                        ; None                      ; 6.886 ns                ;
+; N/A                                     ; 92.31 MHz ( period = 10.833 ns )                    ; LCD1602:inst|counter[1]             ; LCD1602:inst|data[4]                 ; clk        ; clk      ; None                        ; None                      ; 6.869 ns                ;
+; N/A                                     ; 92.35 MHz ( period = 10.828 ns )                    ; LCD1602:inst|counter[0]             ; LCD1602:inst|data[7]                 ; clk        ; clk      ; None                        ; None                      ; 6.864 ns                ;
+; N/A                                     ; 92.87 MHz ( period = 10.768 ns )                    ; LCD1602:inst|counter[1]             ; LCD1602:inst|data[2]                 ; clk        ; clk      ; None                        ; None                      ; 6.804 ns                ;
+; N/A                                     ; 92.89 MHz ( period = 10.766 ns )                    ; LCD1602:inst|counter[3]             ; LCD1602:inst|counter[0]              ; clk        ; clk      ; None                        ; None                      ; 6.802 ns                ;
+; N/A                                     ; 93.03 MHz ( period = 10.749 ns )                    ; LCD1602:inst|counter[4]             ; LCD1602:inst|data[4]                 ; clk        ; clk      ; None                        ; None                      ; 6.785 ns                ;
+; N/A                                     ; 93.05 MHz ( period = 10.747 ns )                    ; LCD1602:inst|count[0]               ; LCD1602:inst|count[12]               ; clk        ; clk      ; None                        ; None                      ; 6.783 ns                ;
+; N/A                                     ; 93.23 MHz ( period = 10.726 ns )                    ; LCD1602:inst|counter[2]             ; LCD1602:inst|rs                      ; clk        ; clk      ; None                        ; None                      ; 6.762 ns                ;
+; N/A                                     ; 93.35 MHz ( period = 10.712 ns )                    ; LCD1602:inst|counter[3]             ; LCD1602:inst|data[0]                 ; clk        ; clk      ; None                        ; None                      ; 6.748 ns                ;
+; N/A                                     ; 93.48 MHz ( period = 10.697 ns )                    ; LCD1602:inst|counter[3]             ; LCD1602:inst|data[6]                 ; clk        ; clk      ; None                        ; None                      ; 6.733 ns                ;
+; N/A                                     ; 93.55 MHz ( period = 10.689 ns )                    ; LCD1602:inst|count[10]              ; LCD1602:inst|clkr                    ; clk        ; clk      ; None                        ; None                      ; 6.725 ns                ;
+; N/A                                     ; 93.84 MHz ( period = 10.657 ns )                    ; LCD1602:inst|counter[1]             ; LCD1602:inst|data[7]                 ; clk        ; clk      ; None                        ; None                      ; 6.693 ns                ;
+; N/A                                     ; 94.06 MHz ( period = 10.632 ns )                    ; LCD1602:inst|count[7]               ; LCD1602:inst|count[13]               ; clk        ; clk      ; None                        ; None                      ; 6.668 ns                ;
+; N/A                                     ; 94.09 MHz ( period = 10.628 ns )                    ; LCD1602:inst|count[14]              ; LCD1602:inst|clkr                    ; clk        ; clk      ; None                        ; None                      ; 6.664 ns                ;
+; N/A                                     ; 94.11 MHz ( period = 10.626 ns )                    ; LCD1602:inst|count[1]               ; LCD1602:inst|count[12]               ; clk        ; clk      ; None                        ; None                      ; 6.662 ns                ;
+; N/A                                     ; 94.30 MHz ( period = 10.605 ns )                    ; LCD1602:inst|counter[3]             ; LCD1602:inst|data[4]                 ; clk        ; clk      ; None                        ; None                      ; 6.641 ns                ;
+; N/A                                     ; 94.41 MHz ( period = 10.592 ns )                    ; LCD1602:inst|counter[2]             ; LCD1602:inst|state.write_second_data ; clk        ; clk      ; None                        ; None                      ; 6.628 ns                ;
+; N/A                                     ; 94.69 MHz ( period = 10.561 ns )                    ; LCD1602:inst|count[12]              ; LCD1602:inst|count[13]               ; clk        ; clk      ; None                        ; None                      ; 6.597 ns                ;
+; N/A                                     ; 94.89 MHz ( period = 10.539 ns )                    ; LCD1602:inst|counter[4]             ; LCD1602:inst|state.write_second_data ; clk        ; clk      ; None                        ; None                      ; 6.575 ns                ;
+; N/A                                     ; 95.15 MHz ( period = 10.510 ns )                    ; LCD1602:inst|count[3]               ; LCD1602:inst|count[13]               ; clk        ; clk      ; None                        ; None                      ; 6.546 ns                ;
+; N/A                                     ; 95.39 MHz ( period = 10.483 ns )                    ; LCD1602:inst|count[11]              ; LCD1602:inst|clkr                    ; clk        ; clk      ; None                        ; None                      ; 6.519 ns                ;
+; N/A                                     ; 95.50 MHz ( period = 10.471 ns )                    ; LCD1602:inst|counter[2]             ; LCD1602:inst|counter[0]              ; clk        ; clk      ; None                        ; None                      ; 6.507 ns                ;
+; N/A                                     ; 95.52 MHz ( period = 10.469 ns )                    ; LCD1602:inst|counter[1]             ; LCD1602:inst|state.write_second_data ; clk        ; clk      ; None                        ; None                      ; 6.505 ns                ;
+; N/A                                     ; 95.60 MHz ( period = 10.460 ns )                    ; LCD1602:inst|count[5]               ; LCD1602:inst|count[13]               ; clk        ; clk      ; None                        ; None                      ; 6.496 ns                ;
+; N/A                                     ; 95.62 MHz ( period = 10.458 ns )                    ; LCD1602:inst|count[9]               ; LCD1602:inst|count[12]               ; clk        ; clk      ; None                        ; None                      ; 6.494 ns                ;
+; N/A                                     ; 95.80 MHz ( period = 10.438 ns )                    ; LCD1602:inst|counter[0]             ; LCD1602:inst|rs                      ; clk        ; clk      ; None                        ; None                      ; 6.474 ns                ;
+; N/A                                     ; 95.83 MHz ( period = 10.435 ns )                    ; LCD1602:inst|count[13]              ; LCD1602:inst|count[15]               ; clk        ; clk      ; None                        ; None                      ; 6.471 ns                ;
+; N/A                                     ; 96.02 MHz ( period = 10.415 ns )                    ; LCD1602:inst|counter[3]             ; LCD1602:inst|data[7]                 ; clk        ; clk      ; None                        ; None                      ; 6.451 ns                ;
+; N/A                                     ; 96.20 MHz ( period = 10.395 ns )                    ; LCD1602:inst|count[8]               ; LCD1602:inst|count[12]               ; clk        ; clk      ; None                        ; None                      ; 6.431 ns                ;
+; N/A                                     ; 96.23 MHz ( period = 10.392 ns )                    ; LCD1602:inst|count[4]               ; LCD1602:inst|count[13]               ; clk        ; clk      ; None                        ; None                      ; 6.428 ns                ;
+; N/A                                     ; 96.24 MHz ( period = 10.391 ns )                    ; LCD1602:inst|state.write_first_data ; LCD1602:inst|data[5]                 ; clk        ; clk      ; None                        ; None                      ; 6.427 ns                ;
+; N/A                                     ; 96.50 MHz ( period = 10.363 ns )                    ; LCD1602:inst|count[6]               ; LCD1602:inst|count[13]               ; clk        ; clk      ; None                        ; None                      ; 6.399 ns                ;
+; N/A                                     ; 96.96 MHz ( period = 10.313 ns )                    ; LCD1602:inst|counter[0]             ; LCD1602:inst|state.write_second_data ; clk        ; clk      ; None                        ; None                      ; 6.349 ns                ;
+; N/A                                     ; 97.20 MHz ( period = 10.288 ns )                    ; LCD1602:inst|counter[1]             ; LCD1602:inst|rs                      ; clk        ; clk      ; None                        ; None                      ; 6.324 ns                ;
+; N/A                                     ; 97.28 MHz ( period = 10.280 ns )                    ; LCD1602:inst|count[2]               ; LCD1602:inst|count[13]               ; clk        ; clk      ; None                        ; None                      ; 6.316 ns                ;
+; N/A                                     ; 97.60 MHz ( period = 10.246 ns )                    ; LCD1602:inst|counter[2]             ; LCD1602:inst|data[0]                 ; clk        ; clk      ; None                        ; None                      ; 6.282 ns                ;
+; N/A                                     ; 97.62 MHz ( period = 10.244 ns )                    ; LCD1602:inst|count[7]               ; LCD1602:inst|count[15]               ; clk        ; clk      ; None                        ; None                      ; 6.280 ns                ;
+; N/A                                     ; 97.77 MHz ( period = 10.228 ns )                    ; LCD1602:inst|counter[4]             ; LCD1602:inst|data[2]                 ; clk        ; clk      ; None                        ; None                      ; 6.264 ns                ;
+; N/A                                     ; 97.90 MHz ( period = 10.214 ns )                    ; LCD1602:inst|count[9]               ; LCD1602:inst|count[13]               ; clk        ; clk      ; None                        ; None                      ; 6.250 ns                ;
+; N/A                                     ; 98.22 MHz ( period = 10.181 ns )                    ; LCD1602:inst|count[13]              ; LCD1602:inst|count[14]               ; clk        ; clk      ; None                        ; None                      ; 6.217 ns                ;
+; N/A                                     ; 98.30 MHz ( period = 10.173 ns )                    ; LCD1602:inst|count[12]              ; LCD1602:inst|count[15]               ; clk        ; clk      ; None                        ; None                      ; 6.209 ns                ;
+; N/A                                     ; 98.51 MHz ( period = 10.151 ns )                    ; LCD1602:inst|count[8]               ; LCD1602:inst|count[13]               ; clk        ; clk      ; None                        ; None                      ; 6.187 ns                ;
+; N/A                                     ; 98.79 MHz ( period = 10.122 ns )                    ; LCD1602:inst|count[3]               ; LCD1602:inst|count[15]               ; clk        ; clk      ; None                        ; None                      ; 6.158 ns                ;
+; N/A                                     ; 98.81 MHz ( period = 10.120 ns )                    ; LCD1602:inst|counter[2]             ; LCD1602:inst|data[7]                 ; clk        ; clk      ; None                        ; None                      ; 6.156 ns                ;
+; N/A                                     ; 98.87 MHz ( period = 10.114 ns )                    ; LCD1602:inst|count[10]              ; LCD1602:inst|count[12]               ; clk        ; clk      ; None                        ; None                      ; 6.150 ns                ;
+; N/A                                     ; 98.88 MHz ( period = 10.113 ns )                    ; LCD1602:inst|count[7]               ; LCD1602:inst|count[14]               ; clk        ; clk      ; None                        ; None                      ; 6.149 ns                ;
+; N/A                                     ; 99.13 MHz ( period = 10.088 ns )                    ; LCD1602:inst|count[12]              ; LCD1602:inst|count[12]               ; clk        ; clk      ; None                        ; None                      ; 6.124 ns                ;
+; N/A                                     ; 99.29 MHz ( period = 10.072 ns )                    ; LCD1602:inst|count[5]               ; LCD1602:inst|count[15]               ; clk        ; clk      ; None                        ; None                      ; 6.108 ns                ;
+; N/A                                     ; 99.31 MHz ( period = 10.069 ns )                    ; LCD1602:inst|count[0]               ; LCD1602:inst|count[13]               ; clk        ; clk      ; None                        ; None                      ; 6.105 ns                ;
+; N/A                                     ; 99.58 MHz ( period = 10.042 ns )                    ; LCD1602:inst|count[12]              ; LCD1602:inst|count[14]               ; clk        ; clk      ; None                        ; None                      ; 6.078 ns                ;
+; N/A                                     ; 99.88 MHz ( period = 10.012 ns )                    ; LCD1602:inst|count[11]              ; LCD1602:inst|count[12]               ; clk        ; clk      ; None                        ; None                      ; 6.048 ns                ;
+; N/A                                     ; 99.91 MHz ( period = 10.009 ns )                    ; LCD1602:inst|state.write_first_data ; LCD1602:inst|data[0]                 ; clk        ; clk      ; None                        ; None                      ; 6.045 ns                ;
+; N/A                                     ; 99.96 MHz ( period = 10.004 ns )                    ; LCD1602:inst|count[4]               ; LCD1602:inst|count[15]               ; clk        ; clk      ; None                        ; None                      ; 6.040 ns                ;
+; N/A                                     ; 100.09 MHz ( period = 9.991 ns )                    ; LCD1602:inst|count[3]               ; LCD1602:inst|count[14]               ; clk        ; clk      ; None                        ; None                      ; 6.027 ns                ;
+; N/A                                     ; 100.25 MHz ( period = 9.975 ns )                    ; LCD1602:inst|count[6]               ; LCD1602:inst|count[15]               ; clk        ; clk      ; None                        ; None                      ; 6.011 ns                ;
+; N/A                                     ; 100.52 MHz ( period = 9.948 ns )                    ; LCD1602:inst|count[1]               ; LCD1602:inst|count[13]               ; clk        ; clk      ; None                        ; None                      ; 5.984 ns                ;
+; N/A                                     ; 100.59 MHz ( period = 9.941 ns )                    ; LCD1602:inst|count[5]               ; LCD1602:inst|count[14]               ; clk        ; clk      ; None                        ; None                      ; 5.977 ns                ;
+; N/A                                     ; 101.00 MHz ( period = 9.901 ns )                    ; LCD1602:inst|counter[4]             ; LCD1602:inst|data[5]                 ; clk        ; clk      ; None                        ; None                      ; 5.937 ns                ;
+; N/A                                     ; 101.09 MHz ( period = 9.892 ns )                    ; LCD1602:inst|count[7]               ; LCD1602:inst|count[8]                ; clk        ; clk      ; None                        ; None                      ; 5.928 ns                ;
+; N/A                                     ; 101.09 MHz ( period = 9.892 ns )                    ; LCD1602:inst|count[2]               ; LCD1602:inst|count[15]               ; clk        ; clk      ; None                        ; None                      ; 5.928 ns                ;
+; N/A                                     ; 101.21 MHz ( period = 9.880 ns )                    ; LCD1602:inst|count[7]               ; LCD1602:inst|count[11]               ; clk        ; clk      ; None                        ; None                      ; 5.916 ns                ;
+; N/A                                     ; 101.24 MHz ( period = 9.878 ns )                    ; LCD1602:inst|count[7]               ; LCD1602:inst|count[10]               ; clk        ; clk      ; None                        ; None                      ; 5.914 ns                ;
+; N/A                                     ; 101.29 MHz ( period = 9.873 ns )                    ; LCD1602:inst|count[4]               ; LCD1602:inst|count[14]               ; clk        ; clk      ; None                        ; None                      ; 5.909 ns                ;
+; N/A                                     ; 101.32 MHz ( period = 9.870 ns )                    ; LCD1602:inst|count[10]              ; LCD1602:inst|count[13]               ; clk        ; clk      ; None                        ; None                      ; 5.906 ns                ;
+; N/A                                     ; 101.46 MHz ( period = 9.856 ns )                    ; LCD1602:inst|counter[3]             ; LCD1602:inst|state.write_second_data ; clk        ; clk      ; None                        ; None                      ; 5.892 ns                ;
+; N/A                                     ; 101.58 MHz ( period = 9.844 ns )                    ; LCD1602:inst|count[6]               ; LCD1602:inst|count[14]               ; clk        ; clk      ; None                        ; None                      ; 5.880 ns                ;
+; N/A                                     ; 101.71 MHz ( period = 9.832 ns )                    ; LCD1602:inst|counter[4]             ; LCD1602:inst|state.write_first_data  ; clk        ; clk      ; None                        ; None                      ; 5.868 ns                ;
+; N/A                                     ; 101.77 MHz ( period = 9.826 ns )                    ; LCD1602:inst|count[9]               ; LCD1602:inst|count[15]               ; clk        ; clk      ; None                        ; None                      ; 5.862 ns                ;
+; N/A                                     ; 101.82 MHz ( period = 9.821 ns )                    ; LCD1602:inst|count[13]              ; LCD1602:inst|count[13]               ; clk        ; clk      ; None                        ; None                      ; 5.857 ns                ;
+; N/A                                     ; 102.35 MHz ( period = 9.770 ns )                    ; LCD1602:inst|count[3]               ; LCD1602:inst|count[8]                ; clk        ; clk      ; None                        ; None                      ; 5.806 ns                ;
+; N/A                                     ; 102.38 MHz ( period = 9.768 ns )                    ; LCD1602:inst|count[11]              ; LCD1602:inst|count[13]               ; clk        ; clk      ; None                        ; None                      ; 5.804 ns                ;
+; N/A                                     ; 102.43 MHz ( period = 9.763 ns )                    ; LCD1602:inst|count[8]               ; LCD1602:inst|count[15]               ; clk        ; clk      ; None                        ; None                      ; 5.799 ns                ;
+; N/A                                     ; 102.44 MHz ( period = 9.762 ns )                    ; LCD1602:inst|counter[1]             ; LCD1602:inst|state.write_first_data  ; clk        ; clk      ; None                        ; None                      ; 5.798 ns                ;
+; N/A                                     ; 102.45 MHz ( period = 9.761 ns )                    ; LCD1602:inst|count[2]               ; LCD1602:inst|count[14]               ; clk        ; clk      ; None                        ; None                      ; 5.797 ns                ;
+; N/A                                     ; 102.48 MHz ( period = 9.758 ns )                    ; LCD1602:inst|count[3]               ; LCD1602:inst|count[11]               ; clk        ; clk      ; None                        ; None                      ; 5.794 ns                ;
+; N/A                                     ; 102.50 MHz ( period = 9.756 ns )                    ; LCD1602:inst|count[3]               ; LCD1602:inst|count[10]               ; clk        ; clk      ; None                        ; None                      ; 5.792 ns                ;
+; N/A                                     ; 102.88 MHz ( period = 9.720 ns )                    ; LCD1602:inst|count[5]               ; LCD1602:inst|count[8]                ; clk        ; clk      ; None                        ; None                      ; 5.756 ns                ;
+; N/A                                     ; 103.01 MHz ( period = 9.708 ns )                    ; LCD1602:inst|count[5]               ; LCD1602:inst|count[11]               ; clk        ; clk      ; None                        ; None                      ; 5.744 ns                ;
+; N/A                                     ; 103.03 MHz ( period = 9.706 ns )                    ; LCD1602:inst|count[5]               ; LCD1602:inst|count[10]               ; clk        ; clk      ; None                        ; None                      ; 5.742 ns                ;
+; N/A                                     ; 103.15 MHz ( period = 9.695 ns )                    ; LCD1602:inst|count[9]               ; LCD1602:inst|count[14]               ; clk        ; clk      ; None                        ; None                      ; 5.731 ns                ;
+; N/A                                     ; 103.30 MHz ( period = 9.681 ns )                    ; LCD1602:inst|count[0]               ; LCD1602:inst|count[15]               ; clk        ; clk      ; None                        ; None                      ; 5.717 ns                ;
+; N/A                                     ; 103.61 MHz ( period = 9.652 ns )                    ; LCD1602:inst|count[4]               ; LCD1602:inst|count[8]                ; clk        ; clk      ; None                        ; None                      ; 5.688 ns                ;
+; N/A                                     ; 103.62 MHz ( period = 9.651 ns )                    ; clkdelay:inst1|count[10]            ; clkdelay:inst1|count[24]             ; clk        ; clk      ; None                        ; None                      ; 8.942 ns                ;
+; N/A                                     ; 103.62 MHz ( period = 9.651 ns )                    ; clkdelay:inst1|count[10]            ; clkdelay:inst1|count[18]             ; clk        ; clk      ; None                        ; None                      ; 8.942 ns                ;
+; N/A                                     ; 103.62 MHz ( period = 9.651 ns )                    ; clkdelay:inst1|count[10]            ; clkdelay:inst1|count[19]             ; clk        ; clk      ; None                        ; None                      ; 8.942 ns                ;
+; N/A                                     ; 103.62 MHz ( period = 9.651 ns )                    ; clkdelay:inst1|count[10]            ; clkdelay:inst1|count[20]             ; clk        ; clk      ; None                        ; None                      ; 8.942 ns                ;
+; N/A                                     ; 103.62 MHz ( period = 9.651 ns )                    ; clkdelay:inst1|count[10]            ; clkdelay:inst1|count[21]             ; clk        ; clk      ; None                        ; None                      ; 8.942 ns                ;
+; N/A                                     ; 103.62 MHz ( period = 9.651 ns )                    ; clkdelay:inst1|count[10]            ; clkdelay:inst1|count[22]             ; clk        ; clk      ; None                        ; None                      ; 8.942 ns                ;
+; N/A                                     ; 103.62 MHz ( period = 9.651 ns )                    ; clkdelay:inst1|count[10]            ; clkdelay:inst1|count[23]             ; clk        ; clk      ; None                        ; None                      ; 8.942 ns                ;
+; N/A                                     ; 103.70 MHz ( period = 9.643 ns )                    ; clkdelay:inst1|count[10]            ; clkdelay:inst1|count[11]             ; clk        ; clk      ; None                        ; None                      ; 8.934 ns                ;
+; N/A                                     ; 103.70 MHz ( period = 9.643 ns )                    ; clkdelay:inst1|count[10]            ; clkdelay:inst1|count[10]             ; clk        ; clk      ; None                        ; None                      ; 8.934 ns                ;
+; N/A                                     ; 103.70 MHz ( period = 9.643 ns )                    ; clkdelay:inst1|count[10]            ; clkdelay:inst1|count[9]              ; clk        ; clk      ; None                        ; None                      ; 8.934 ns                ;
+; N/A                                     ; 103.70 MHz ( period = 9.643 ns )                    ; clkdelay:inst1|count[10]            ; clkdelay:inst1|count[8]              ; clk        ; clk      ; None                        ; None                      ; 8.934 ns                ;
+; N/A                                     ; 103.70 MHz ( period = 9.643 ns )                    ; clkdelay:inst1|count[10]            ; clkdelay:inst1|count[12]             ; clk        ; clk      ; None                        ; None                      ; 8.934 ns                ;
+; N/A                                     ; 103.70 MHz ( period = 9.643 ns )                    ; clkdelay:inst1|count[10]            ; clkdelay:inst1|count[13]             ; clk        ; clk      ; None                        ; None                      ; 8.934 ns                ;
+; N/A                                     ; 103.70 MHz ( period = 9.643 ns )                    ; clkdelay:inst1|count[10]            ; clkdelay:inst1|count[14]             ; clk        ; clk      ; None                        ; None                      ; 8.934 ns                ;
+; N/A                                     ; 103.70 MHz ( period = 9.643 ns )                    ; clkdelay:inst1|count[10]            ; clkdelay:inst1|count[15]             ; clk        ; clk      ; None                        ; None                      ; 8.934 ns                ;
+; N/A                                     ; 103.70 MHz ( period = 9.643 ns )                    ; clkdelay:inst1|count[10]            ; clkdelay:inst1|count[16]             ; clk        ; clk      ; None                        ; None                      ; 8.934 ns                ;
+; N/A                                     ; 103.70 MHz ( period = 9.643 ns )                    ; clkdelay:inst1|count[10]            ; clkdelay:inst1|count[17]             ; clk        ; clk      ; None                        ; None                      ; 8.934 ns                ;
+; N/A                                     ; 103.73 MHz ( period = 9.640 ns )                    ; LCD1602:inst|count[4]               ; LCD1602:inst|count[11]               ; clk        ; clk      ; None                        ; None                      ; 5.676 ns                ;
+; N/A                                     ; 103.76 MHz ( period = 9.638 ns )                    ; LCD1602:inst|counter[4]             ; LCD1602:inst|data[7]                 ; clk        ; clk      ; None                        ; None                      ; 5.674 ns                ;
+; N/A                                     ; 103.76 MHz ( period = 9.638 ns )                    ; LCD1602:inst|count[4]               ; LCD1602:inst|count[10]               ; clk        ; clk      ; None                        ; None                      ; 5.674 ns                ;
+; N/A                                     ; 103.82 MHz ( period = 9.632 ns )                    ; LCD1602:inst|count[8]               ; LCD1602:inst|count[14]               ; clk        ; clk      ; None                        ; None                      ; 5.668 ns                ;
+; N/A                                     ; 103.85 MHz ( period = 9.629 ns )                    ; clkdelay:inst1|count[8]             ; clkdelay:inst1|count[24]             ; clk        ; clk      ; None                        ; None                      ; 8.920 ns                ;
+; N/A                                     ; 103.85 MHz ( period = 9.629 ns )                    ; clkdelay:inst1|count[8]             ; clkdelay:inst1|count[18]             ; clk        ; clk      ; None                        ; None                      ; 8.920 ns                ;
+; N/A                                     ; 103.85 MHz ( period = 9.629 ns )                    ; clkdelay:inst1|count[8]             ; clkdelay:inst1|count[19]             ; clk        ; clk      ; None                        ; None                      ; 8.920 ns                ;
+; N/A                                     ; 103.85 MHz ( period = 9.629 ns )                    ; clkdelay:inst1|count[8]             ; clkdelay:inst1|count[20]             ; clk        ; clk      ; None                        ; None                      ; 8.920 ns                ;
+; N/A                                     ; 103.85 MHz ( period = 9.629 ns )                    ; clkdelay:inst1|count[8]             ; clkdelay:inst1|count[21]             ; clk        ; clk      ; None                        ; None                      ; 8.920 ns                ;
+; N/A                                     ; 103.85 MHz ( period = 9.629 ns )                    ; clkdelay:inst1|count[8]             ; clkdelay:inst1|count[22]             ; clk        ; clk      ; None                        ; None                      ; 8.920 ns                ;
+; N/A                                     ; 103.85 MHz ( period = 9.629 ns )                    ; clkdelay:inst1|count[8]             ; clkdelay:inst1|count[23]             ; clk        ; clk      ; None                        ; None                      ; 8.920 ns                ;
+; N/A                                     ; 103.89 MHz ( period = 9.626 ns )                    ; LCD1602:inst|count[7]               ; LCD1602:inst|count[9]                ; clk        ; clk      ; None                        ; None                      ; 5.662 ns                ;
+; N/A                                     ; 103.92 MHz ( period = 9.623 ns )                    ; LCD1602:inst|count[6]               ; LCD1602:inst|count[8]                ; clk        ; clk      ; None                        ; None                      ; 5.659 ns                ;
+; N/A                                     ; 103.94 MHz ( period = 9.621 ns )                    ; clkdelay:inst1|count[8]             ; clkdelay:inst1|count[11]             ; clk        ; clk      ; None                        ; None                      ; 8.912 ns                ;
+; N/A                                     ; 103.94 MHz ( period = 9.621 ns )                    ; clkdelay:inst1|count[8]             ; clkdelay:inst1|count[10]             ; clk        ; clk      ; None                        ; None                      ; 8.912 ns                ;
+; N/A                                     ; 103.94 MHz ( period = 9.621 ns )                    ; clkdelay:inst1|count[8]             ; clkdelay:inst1|count[9]              ; clk        ; clk      ; None                        ; None                      ; 8.912 ns                ;
+; N/A                                     ; 103.94 MHz ( period = 9.621 ns )                    ; clkdelay:inst1|count[8]             ; clkdelay:inst1|count[8]              ; clk        ; clk      ; None                        ; None                      ; 8.912 ns                ;
+; N/A                                     ; 103.94 MHz ( period = 9.621 ns )                    ; clkdelay:inst1|count[8]             ; clkdelay:inst1|count[12]             ; clk        ; clk      ; None                        ; None                      ; 8.912 ns                ;
+; N/A                                     ; 103.94 MHz ( period = 9.621 ns )                    ; clkdelay:inst1|count[8]             ; clkdelay:inst1|count[13]             ; clk        ; clk      ; None                        ; None                      ; 8.912 ns                ;
+; N/A                                     ; 103.94 MHz ( period = 9.621 ns )                    ; clkdelay:inst1|count[8]             ; clkdelay:inst1|count[14]             ; clk        ; clk      ; None                        ; None                      ; 8.912 ns                ;
+; N/A                                     ; 103.94 MHz ( period = 9.621 ns )                    ; clkdelay:inst1|count[8]             ; clkdelay:inst1|count[15]             ; clk        ; clk      ; None                        ; None                      ; 8.912 ns                ;
+; N/A                                     ; 103.94 MHz ( period = 9.621 ns )                    ; clkdelay:inst1|count[8]             ; clkdelay:inst1|count[16]             ; clk        ; clk      ; None                        ; None                      ; 8.912 ns                ;
+; N/A                                     ; 103.94 MHz ( period = 9.621 ns )                    ; clkdelay:inst1|count[8]             ; clkdelay:inst1|count[17]             ; clk        ; clk      ; None                        ; None                      ; 8.912 ns                ;
+; N/A                                     ; 104.05 MHz ( period = 9.611 ns )                    ; LCD1602:inst|count[6]               ; LCD1602:inst|count[11]               ; clk        ; clk      ; None                        ; None                      ; 5.647 ns                ;
+; N/A                                     ; 104.07 MHz ( period = 9.609 ns )                    ; LCD1602:inst|count[6]               ; LCD1602:inst|count[10]               ; clk        ; clk      ; None                        ; None                      ; 5.645 ns                ;
+; N/A                                     ; 104.60 MHz ( period = 9.560 ns )                    ; LCD1602:inst|count[1]               ; LCD1602:inst|count[15]               ; clk        ; clk      ; None                        ; None                      ; 5.596 ns                ;
+; N/A                                     ; 104.71 MHz ( period = 9.550 ns )                    ; LCD1602:inst|count[0]               ; LCD1602:inst|count[14]               ; clk        ; clk      ; None                        ; None                      ; 5.586 ns                ;
+; N/A                                     ; 104.79 MHz ( period = 9.543 ns )                    ; LCD1602:inst|counter[4]             ; LCD1602:inst|rs                      ; clk        ; clk      ; None                        ; None                      ; 5.579 ns                ;
+; N/A                                     ; 104.82 MHz ( period = 9.540 ns )                    ; LCD1602:inst|count[2]               ; LCD1602:inst|count[8]                ; clk        ; clk      ; None                        ; None                      ; 5.576 ns                ;
+; N/A                                     ; 104.95 MHz ( period = 9.528 ns )                    ; LCD1602:inst|count[2]               ; LCD1602:inst|count[11]               ; clk        ; clk      ; None                        ; None                      ; 5.564 ns                ;
+; N/A                                     ; 104.98 MHz ( period = 9.526 ns )                    ; LCD1602:inst|count[2]               ; LCD1602:inst|count[10]               ; clk        ; clk      ; None                        ; None                      ; 5.562 ns                ;
+; N/A                                     ; 104.99 MHz ( period = 9.525 ns )                    ; LCD1602:inst|count[14]              ; LCD1602:inst|count[15]               ; clk        ; clk      ; None                        ; None                      ; 5.561 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                     ;                                      ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------------+--------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'clk'                                                                                                                                                                                                                   ;
++------------------------------------------+--------------------------------------+--------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                                 ; To                                   ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+--------------------------------------+--------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|state.init              ; LCD1602:inst|state.init              ; clk        ; clk      ; None                       ; None                       ; 0.923 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|state.write_first_data  ; LCD1602:inst|state.write_first_data  ; clk        ; clk      ; None                       ; None                       ; 1.529 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|counter[4]              ; LCD1602:inst|counter[4]              ; clk        ; clk      ; None                       ; None                       ; 1.536 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|counter[2]              ; LCD1602:inst|counter[2]              ; clk        ; clk      ; None                       ; None                       ; 1.989 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|state.write_first_data  ; LCD1602:inst|state.write_second_data ; clk        ; clk      ; None                       ; None                       ; 2.037 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|clkr                    ; LCD1602:inst|clkr                    ; clk        ; clk      ; None                       ; None                       ; 2.057 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|state.write_second_data ; LCD1602:inst|state.write_second_data ; clk        ; clk      ; None                       ; None                       ; 2.087 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|state.write_second_data ; LCD1602:inst|state.write_first_data  ; clk        ; clk      ; None                       ; None                       ; 2.088 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|counter[3]              ; LCD1602:inst|counter[3]              ; clk        ; clk      ; None                       ; None                       ; 2.139 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|counter[1]              ; LCD1602:inst|counter[1]              ; clk        ; clk      ; None                       ; None                       ; 2.158 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|counter[0]              ; LCD1602:inst|counter[0]              ; clk        ; clk      ; None                       ; None                       ; 2.159 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|state.init              ; LCD1602:inst|state.write_second_data ; clk        ; clk      ; None                       ; None                       ; 2.167 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|data[7]                 ; LCD1602:inst|data[7]                 ; clk        ; clk      ; None                       ; None                       ; 2.396 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|data[1]                 ; LCD1602:inst|data[1]                 ; clk        ; clk      ; None                       ; None                       ; 2.562 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|data[2]                 ; LCD1602:inst|data[2]                 ; clk        ; clk      ; None                       ; None                       ; 2.607 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|state.init              ; LCD1602:inst|data[5]                 ; clk        ; clk      ; None                       ; None                       ; 2.659 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|data[3]                 ; LCD1602:inst|data[3]                 ; clk        ; clk      ; None                       ; None                       ; 2.751 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|data[5]                 ; LCD1602:inst|data[5]                 ; clk        ; clk      ; None                       ; None                       ; 2.783 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|counter[2]              ; LCD1602:inst|counter[3]              ; clk        ; clk      ; None                       ; None                       ; 2.821 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|data[4]                 ; LCD1602:inst|data[4]                 ; clk        ; clk      ; None                       ; None                       ; 2.893 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|counter[2]              ; LCD1602:inst|counter[4]              ; clk        ; clk      ; None                       ; None                       ; 2.932 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|count[0]                ; LCD1602:inst|count[0]                ; clk        ; clk      ; None                       ; None                       ; 2.952 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|count[1]                ; LCD1602:inst|count[1]                ; clk        ; clk      ; None                       ; None                       ; 2.955 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|counter[3]              ; LCD1602:inst|counter[4]              ; clk        ; clk      ; None                       ; None                       ; 3.079 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|counter[1]              ; LCD1602:inst|counter[2]              ; clk        ; clk      ; None                       ; None                       ; 3.098 ns                 ;
+; Not operational: Clock Skew > Data Delay ; LCD1602:inst|counter[0]              ; LCD1602:inst|counter[1]              ; clk        ; clk      ; None                       ; None                       ; 3.099 ns                 ;
++------------------------------------------+--------------------------------------+--------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; tco                                                                                 ;
++-------+--------------+------------+----------------------+-------------+------------+
+; Slack ; Required tco ; Actual tco ; From                 ; To          ; From Clock ;
++-------+--------------+------------+----------------------+-------------+------------+
+; N/A   ; None         ; 22.000 ns  ; LCD1602:inst|data[0] ; lcd_data[0] ; clk        ;
+; N/A   ; None         ; 21.699 ns  ; LCD1602:inst|data[4] ; lcd_data[4] ; clk        ;
+; N/A   ; None         ; 21.675 ns  ; LCD1602:inst|data[2] ; lcd_data[2] ; clk        ;
+; N/A   ; None         ; 21.553 ns  ; LCD1602:inst|rs      ; lcd_rs      ; clk        ;
+; N/A   ; None         ; 21.544 ns  ; LCD1602:inst|data[6] ; lcd_data[6] ; clk        ;
+; N/A   ; None         ; 21.515 ns  ; LCD1602:inst|data[1] ; lcd_data[1] ; clk        ;
+; N/A   ; None         ; 21.441 ns  ; LCD1602:inst|data[3] ; lcd_data[3] ; clk        ;
+; N/A   ; None         ; 21.408 ns  ; LCD1602:inst|data[7] ; lcd_data[7] ; clk        ;
+; N/A   ; None         ; 20.318 ns  ; LCD1602:inst|data[5] ; lcd_data[5] ; clk        ;
+; N/A   ; None         ; 17.165 ns  ; LCD1602:inst|clkr    ; lcd_en      ; clk        ;
++-------+--------------+------------+----------------------+-------------+------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Sun Nov 27 16:53:26 2011
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off LCD_test -c LCD_test
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Warning: Found 3 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "clkdelay:inst1|clk_delay" as buffer
+    Info: Detected gated clock "clkdelay:inst1|clkout" as buffer
+    Info: Detected ripple clock "LCD1602:inst|clkr" as buffer
+Info: Clock "clk" has Internal fmax of 77.09 MHz between source register "LCD1602:inst|counter[0]" and destination register "LCD1602:inst|counter[4]" (period= 12.972 ns)
+    Info: + Longest register to register delay is 9.008 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X6_Y2_N5; Fanout = 32; REG Node = 'LCD1602:inst|counter[0]'
+        Info: 2: + IC(1.446 ns) + CELL(0.914 ns) = 2.360 ns; Loc. = LC_X7_Y2_N8; Fanout = 5; COMB Node = 'LCD1602:inst|Selector1~167'
+        Info: 3: + IC(0.747 ns) + CELL(0.200 ns) = 3.307 ns; Loc. = LC_X7_Y2_N5; Fanout = 13; COMB Node = 'LCD1602:inst|WideOr11~70'
+        Info: 4: + IC(1.691 ns) + CELL(0.747 ns) = 5.745 ns; Loc. = LC_X7_Y2_N0; Fanout = 2; COMB Node = 'LCD1602:inst|Add2~108'
+        Info: 5: + IC(0.000 ns) + CELL(0.123 ns) = 5.868 ns; Loc. = LC_X7_Y2_N1; Fanout = 2; COMB Node = 'LCD1602:inst|Add2~110'
+        Info: 6: + IC(0.000 ns) + CELL(0.123 ns) = 5.991 ns; Loc. = LC_X7_Y2_N2; Fanout = 2; COMB Node = 'LCD1602:inst|Add2~106'
+        Info: 7: + IC(0.000 ns) + CELL(0.123 ns) = 6.114 ns; Loc. = LC_X7_Y2_N3; Fanout = 1; COMB Node = 'LCD1602:inst|Add2~112'
+        Info: 8: + IC(0.000 ns) + CELL(0.815 ns) = 6.929 ns; Loc. = LC_X7_Y2_N4; Fanout = 1; COMB Node = 'LCD1602:inst|Add2~103'
+        Info: 9: + IC(1.799 ns) + CELL(0.280 ns) = 9.008 ns; Loc. = LC_X6_Y2_N9; Fanout = 31; REG Node = 'LCD1602:inst|counter[4]'
+        Info: Total cell delay = 3.325 ns ( 36.91 % )
+        Info: Total interconnect delay = 5.683 ns ( 63.09 % )
+    Info: - Smallest clock skew is -3.255 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 13.597 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 27; CLK Node = 'clk'
+            Info: 2: + IC(3.085 ns) + CELL(0.511 ns) = 4.728 ns; Loc. = LC_X2_Y4_N3; Fanout = 17; COMB Node = 'clkdelay:inst1|clkout'
+            Info: 3: + IC(3.356 ns) + CELL(1.294 ns) = 9.378 ns; Loc. = LC_X4_Y3_N8; Fanout = 19; REG Node = 'LCD1602:inst|clkr'
+            Info: 4: + IC(3.301 ns) + CELL(0.918 ns) = 13.597 ns; Loc. = LC_X6_Y2_N9; Fanout = 31; REG Node = 'LCD1602:inst|counter[4]'
+            Info: Total cell delay = 3.855 ns ( 28.35 % )
+            Info: Total interconnect delay = 9.742 ns ( 71.65 % )
+        Info: - Longest clock path from clock "clk" to source register is 16.852 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 27; CLK Node = 'clk'
+            Info: 2: + IC(4.450 ns) + CELL(1.294 ns) = 6.876 ns; Loc. = LC_X2_Y4_N9; Fanout = 1; REG Node = 'clkdelay:inst1|clk_delay'
+            Info: 3: + IC(0.907 ns) + CELL(0.200 ns) = 7.983 ns; Loc. = LC_X2_Y4_N3; Fanout = 17; COMB Node = 'clkdelay:inst1|clkout'
+            Info: 4: + IC(3.356 ns) + CELL(1.294 ns) = 12.633 ns; Loc. = LC_X4_Y3_N8; Fanout = 19; REG Node = 'LCD1602:inst|clkr'
+            Info: 5: + IC(3.301 ns) + CELL(0.918 ns) = 16.852 ns; Loc. = LC_X6_Y2_N5; Fanout = 32; REG Node = 'LCD1602:inst|counter[0]'
+            Info: Total cell delay = 4.838 ns ( 28.71 % )
+            Info: Total interconnect delay = 12.014 ns ( 71.29 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Warning: Circuit may not operate. Detected 26 non-operational path(s) clocked by clock "clk" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "LCD1602:inst|state.init" and destination pin or register "LCD1602:inst|state.init" for clock "clk" (Hold time is 2.177 ns)
+    Info: + Largest clock skew is 3.255 ns
+        Info: + Longest clock path from clock "clk" to destination register is 16.852 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 27; CLK Node = 'clk'
+            Info: 2: + IC(4.450 ns) + CELL(1.294 ns) = 6.876 ns; Loc. = LC_X2_Y4_N9; Fanout = 1; REG Node = 'clkdelay:inst1|clk_delay'
+            Info: 3: + IC(0.907 ns) + CELL(0.200 ns) = 7.983 ns; Loc. = LC_X2_Y4_N3; Fanout = 17; COMB Node = 'clkdelay:inst1|clkout'
+            Info: 4: + IC(3.356 ns) + CELL(1.294 ns) = 12.633 ns; Loc. = LC_X4_Y3_N8; Fanout = 19; REG Node = 'LCD1602:inst|clkr'
+            Info: 5: + IC(3.301 ns) + CELL(0.918 ns) = 16.852 ns; Loc. = LC_X6_Y1_N0; Fanout = 23; REG Node = 'LCD1602:inst|state.init'
+            Info: Total cell delay = 4.838 ns ( 28.71 % )
+            Info: Total interconnect delay = 12.014 ns ( 71.29 % )
+        Info: - Shortest clock path from clock "clk" to source register is 13.597 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 27; CLK Node = 'clk'
+            Info: 2: + IC(3.085 ns) + CELL(0.511 ns) = 4.728 ns; Loc. = LC_X2_Y4_N3; Fanout = 17; COMB Node = 'clkdelay:inst1|clkout'
+            Info: 3: + IC(3.356 ns) + CELL(1.294 ns) = 9.378 ns; Loc. = LC_X4_Y3_N8; Fanout = 19; REG Node = 'LCD1602:inst|clkr'
+            Info: 4: + IC(3.301 ns) + CELL(0.918 ns) = 13.597 ns; Loc. = LC_X6_Y1_N0; Fanout = 23; REG Node = 'LCD1602:inst|state.init'
+            Info: Total cell delay = 3.855 ns ( 28.35 % )
+            Info: Total interconnect delay = 9.742 ns ( 71.65 % )
+    Info: - Micro clock to output delay of source is 0.376 ns
+    Info: - Shortest register to register delay is 0.923 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X6_Y1_N0; Fanout = 23; REG Node = 'LCD1602:inst|state.init'
+        Info: 2: + IC(0.000 ns) + CELL(0.923 ns) = 0.923 ns; Loc. = LC_X6_Y1_N0; Fanout = 23; REG Node = 'LCD1602:inst|state.init'
+        Info: Total cell delay = 0.923 ns ( 100.00 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+Info: tco from clock "clk" to destination pin "lcd_data[0]" through register "LCD1602:inst|data[0]" is 22.000 ns
+    Info: + Longest clock path from clock "clk" to source register is 16.852 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 27; CLK Node = 'clk'
+        Info: 2: + IC(4.450 ns) + CELL(1.294 ns) = 6.876 ns; Loc. = LC_X2_Y4_N9; Fanout = 1; REG Node = 'clkdelay:inst1|clk_delay'
+        Info: 3: + IC(0.907 ns) + CELL(0.200 ns) = 7.983 ns; Loc. = LC_X2_Y4_N3; Fanout = 17; COMB Node = 'clkdelay:inst1|clkout'
+        Info: 4: + IC(3.356 ns) + CELL(1.294 ns) = 12.633 ns; Loc. = LC_X4_Y3_N8; Fanout = 19; REG Node = 'LCD1602:inst|clkr'
+        Info: 5: + IC(3.301 ns) + CELL(0.918 ns) = 16.852 ns; Loc. = LC_X6_Y1_N8; Fanout = 3; REG Node = 'LCD1602:inst|data[0]'
+        Info: Total cell delay = 4.838 ns ( 28.71 % )
+        Info: Total interconnect delay = 12.014 ns ( 71.29 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 4.772 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X6_Y1_N8; Fanout = 3; REG Node = 'LCD1602:inst|data[0]'
+        Info: 2: + IC(2.450 ns) + CELL(2.322 ns) = 4.772 ns; Loc. = PIN_35; Fanout = 0; PIN Node = 'lcd_data[0]'
+        Info: Total cell delay = 2.322 ns ( 48.66 % )
+        Info: Total interconnect delay = 2.450 ns ( 51.34 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Allocated 111 megabytes of memory during processing
+    Info: Processing ended: Sun Nov 27 16:53:28 2011
+    Info: Elapsed time: 00:00:02
+
+

@@ -1,0 +1,515 @@
+Classic Timing Analyzer report for buzzer
+Sun Nov 27 16:42:04 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. Clock Hold: 'clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                           ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-------------------------------------+-----------------------------------------+------------+----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From                                ; To                                      ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-------------------------------------+-----------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A                                      ; None          ; -0.553 ns                        ; rst_n                               ; song_top:inst|clk_cnt1[7]               ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 23.616 ns                        ; song_top:inst|song:song_inst|sp     ; Buzzer                                  ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; 1.145 ns                         ; rst_n                               ; song_top:inst|clk_cnt1[17]              ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A                                      ; None          ; 76.08 MHz ( period = 13.144 ns ) ; song_top:inst|song:song_inst|med[0] ; song_top:inst|song:song_inst|origin[10] ; clk        ; clk      ; 0            ;
+; Clock Hold: 'clk'            ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; song_top:inst|song:song_inst|sp     ; song_top:inst|song:song_inst|sp         ; clk        ; clk      ; 1            ;
+; Total number of failed paths ;                                          ;               ;                                  ;                                     ;                                         ;            ;          ; 1            ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-------------------------------------+-----------------------------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EPM240T100C5       ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                                              ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------------+------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                     ; To                                       ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------------+------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 76.08 MHz ( period = 13.144 ns )                    ; song_top:inst|song:song_inst|med[0]      ; song_top:inst|song:song_inst|origin[10]  ; clk        ; clk      ; None                        ; None                      ; 12.435 ns               ;
+; N/A                                     ; 76.09 MHz ( period = 13.143 ns )                    ; song_top:inst|song:song_inst|med[0]      ; song_top:inst|song:song_inst|origin[1]   ; clk        ; clk      ; None                        ; None                      ; 12.434 ns               ;
+; N/A                                     ; 76.09 MHz ( period = 13.142 ns )                    ; song_top:inst|song:song_inst|med[0]      ; song_top:inst|song:song_inst|origin[7]   ; clk        ; clk      ; None                        ; None                      ; 12.433 ns               ;
+; N/A                                     ; 76.11 MHz ( period = 13.139 ns )                    ; song_top:inst|song:song_inst|med[0]      ; song_top:inst|song:song_inst|origin[0]   ; clk        ; clk      ; None                        ; None                      ; 12.430 ns               ;
+; N/A                                     ; 76.15 MHz ( period = 13.132 ns )                    ; song_top:inst|song:song_inst|med[0]      ; song_top:inst|song:song_inst|origin[9]   ; clk        ; clk      ; None                        ; None                      ; 12.423 ns               ;
+; N/A                                     ; 76.17 MHz ( period = 13.128 ns )                    ; song_top:inst|song:song_inst|med[0]      ; song_top:inst|song:song_inst|origin[4]   ; clk        ; clk      ; None                        ; None                      ; 12.419 ns               ;
+; N/A                                     ; 76.22 MHz ( period = 13.120 ns )                    ; song_top:inst|song:song_inst|med[0]      ; song_top:inst|song:song_inst|origin[8]   ; clk        ; clk      ; None                        ; None                      ; 12.411 ns               ;
+; N/A                                     ; 76.86 MHz ( period = 13.010 ns )                    ; song_top:inst|song:song_inst|med[2]      ; song_top:inst|song:song_inst|origin[10]  ; clk        ; clk      ; None                        ; None                      ; 12.301 ns               ;
+; N/A                                     ; 76.87 MHz ( period = 13.009 ns )                    ; song_top:inst|song:song_inst|med[2]      ; song_top:inst|song:song_inst|origin[1]   ; clk        ; clk      ; None                        ; None                      ; 12.300 ns               ;
+; N/A                                     ; 76.88 MHz ( period = 13.008 ns )                    ; song_top:inst|song:song_inst|med[2]      ; song_top:inst|song:song_inst|origin[7]   ; clk        ; clk      ; None                        ; None                      ; 12.299 ns               ;
+; N/A                                     ; 76.89 MHz ( period = 13.005 ns )                    ; song_top:inst|song:song_inst|med[2]      ; song_top:inst|song:song_inst|origin[0]   ; clk        ; clk      ; None                        ; None                      ; 12.296 ns               ;
+; N/A                                     ; 76.93 MHz ( period = 12.998 ns )                    ; song_top:inst|song:song_inst|med[2]      ; song_top:inst|song:song_inst|origin[9]   ; clk        ; clk      ; None                        ; None                      ; 12.289 ns               ;
+; N/A                                     ; 76.96 MHz ( period = 12.994 ns )                    ; song_top:inst|song:song_inst|med[2]      ; song_top:inst|song:song_inst|origin[4]   ; clk        ; clk      ; None                        ; None                      ; 12.285 ns               ;
+; N/A                                     ; 77.01 MHz ( period = 12.986 ns )                    ; song_top:inst|song:song_inst|med[2]      ; song_top:inst|song:song_inst|origin[8]   ; clk        ; clk      ; None                        ; None                      ; 12.277 ns               ;
+; N/A                                     ; 78.36 MHz ( period = 12.761 ns )                    ; song_top:inst|song:song_inst|med[0]      ; song_top:inst|song:song_inst|origin[2]   ; clk        ; clk      ; None                        ; None                      ; 12.052 ns               ;
+; N/A                                     ; 78.36 MHz ( period = 12.761 ns )                    ; song_top:inst|song:song_inst|med[1]      ; song_top:inst|song:song_inst|origin[10]  ; clk        ; clk      ; None                        ; None                      ; 12.052 ns               ;
+; N/A                                     ; 78.37 MHz ( period = 12.760 ns )                    ; song_top:inst|song:song_inst|med[1]      ; song_top:inst|song:song_inst|origin[1]   ; clk        ; clk      ; None                        ; None                      ; 12.051 ns               ;
+; N/A                                     ; 78.38 MHz ( period = 12.759 ns )                    ; song_top:inst|song:song_inst|med[1]      ; song_top:inst|song:song_inst|origin[7]   ; clk        ; clk      ; None                        ; None                      ; 12.050 ns               ;
+; N/A                                     ; 78.39 MHz ( period = 12.756 ns )                    ; song_top:inst|song:song_inst|med[1]      ; song_top:inst|song:song_inst|origin[0]   ; clk        ; clk      ; None                        ; None                      ; 12.047 ns               ;
+; N/A                                     ; 78.44 MHz ( period = 12.749 ns )                    ; song_top:inst|song:song_inst|med[1]      ; song_top:inst|song:song_inst|origin[9]   ; clk        ; clk      ; None                        ; None                      ; 12.040 ns               ;
+; N/A                                     ; 78.46 MHz ( period = 12.745 ns )                    ; song_top:inst|song:song_inst|med[1]      ; song_top:inst|song:song_inst|origin[4]   ; clk        ; clk      ; None                        ; None                      ; 12.036 ns               ;
+; N/A                                     ; 78.51 MHz ( period = 12.737 ns )                    ; song_top:inst|song:song_inst|med[1]      ; song_top:inst|song:song_inst|origin[8]   ; clk        ; clk      ; None                        ; None                      ; 12.028 ns               ;
+; N/A                                     ; 79.20 MHz ( period = 12.627 ns )                    ; song_top:inst|song:song_inst|med[2]      ; song_top:inst|song:song_inst|origin[2]   ; clk        ; clk      ; None                        ; None                      ; 11.918 ns               ;
+; N/A                                     ; 79.44 MHz ( period = 12.588 ns )                    ; song_top:inst|song:song_inst|low[0]      ; song_top:inst|song:song_inst|origin[10]  ; clk        ; clk      ; None                        ; None                      ; 11.879 ns               ;
+; N/A                                     ; 79.45 MHz ( period = 12.587 ns )                    ; song_top:inst|song:song_inst|low[0]      ; song_top:inst|song:song_inst|origin[1]   ; clk        ; clk      ; None                        ; None                      ; 11.878 ns               ;
+; N/A                                     ; 79.45 MHz ( period = 12.586 ns )                    ; song_top:inst|song:song_inst|low[0]      ; song_top:inst|song:song_inst|origin[7]   ; clk        ; clk      ; None                        ; None                      ; 11.877 ns               ;
+; N/A                                     ; 79.47 MHz ( period = 12.583 ns )                    ; song_top:inst|song:song_inst|low[0]      ; song_top:inst|song:song_inst|origin[0]   ; clk        ; clk      ; None                        ; None                      ; 11.874 ns               ;
+; N/A                                     ; 79.52 MHz ( period = 12.576 ns )                    ; song_top:inst|song:song_inst|low[0]      ; song_top:inst|song:song_inst|origin[9]   ; clk        ; clk      ; None                        ; None                      ; 11.867 ns               ;
+; N/A                                     ; 79.54 MHz ( period = 12.572 ns )                    ; song_top:inst|song:song_inst|low[0]      ; song_top:inst|song:song_inst|origin[4]   ; clk        ; clk      ; None                        ; None                      ; 11.863 ns               ;
+; N/A                                     ; 79.59 MHz ( period = 12.564 ns )                    ; song_top:inst|song:song_inst|low[0]      ; song_top:inst|song:song_inst|origin[8]   ; clk        ; clk      ; None                        ; None                      ; 11.855 ns               ;
+; N/A                                     ; 79.83 MHz ( period = 12.527 ns )                    ; song_top:inst|song:song_inst|med[0]      ; song_top:inst|song:song_inst|origin[3]   ; clk        ; clk      ; None                        ; None                      ; 11.818 ns               ;
+; N/A                                     ; 79.89 MHz ( period = 12.517 ns )                    ; song_top:inst|song:song_inst|med[0]      ; song_top:inst|song:song_inst|origin[5]   ; clk        ; clk      ; None                        ; None                      ; 11.808 ns               ;
+; N/A                                     ; 79.92 MHz ( period = 12.512 ns )                    ; song_top:inst|song:song_inst|med[0]      ; song_top:inst|song:song_inst|origin[11]  ; clk        ; clk      ; None                        ; None                      ; 11.803 ns               ;
+; N/A                                     ; 79.96 MHz ( period = 12.506 ns )                    ; song_top:inst|song:song_inst|med[0]      ; song_top:inst|song:song_inst|origin[6]   ; clk        ; clk      ; None                        ; None                      ; 11.797 ns               ;
+; N/A                                     ; 80.44 MHz ( period = 12.432 ns )                    ; song_top:inst|song:song_inst|high[0]     ; song_top:inst|song:song_inst|origin[10]  ; clk        ; clk      ; None                        ; None                      ; 11.723 ns               ;
+; N/A                                     ; 80.44 MHz ( period = 12.431 ns )                    ; song_top:inst|song:song_inst|high[0]     ; song_top:inst|song:song_inst|origin[1]   ; clk        ; clk      ; None                        ; None                      ; 11.722 ns               ;
+; N/A                                     ; 80.45 MHz ( period = 12.430 ns )                    ; song_top:inst|song:song_inst|high[0]     ; song_top:inst|song:song_inst|origin[7]   ; clk        ; clk      ; None                        ; None                      ; 11.721 ns               ;
+; N/A                                     ; 80.47 MHz ( period = 12.427 ns )                    ; song_top:inst|song:song_inst|high[0]     ; song_top:inst|song:song_inst|origin[0]   ; clk        ; clk      ; None                        ; None                      ; 11.718 ns               ;
+; N/A                                     ; 80.52 MHz ( period = 12.420 ns )                    ; song_top:inst|song:song_inst|high[0]     ; song_top:inst|song:song_inst|origin[9]   ; clk        ; clk      ; None                        ; None                      ; 11.711 ns               ;
+; N/A                                     ; 80.54 MHz ( period = 12.416 ns )                    ; song_top:inst|song:song_inst|high[0]     ; song_top:inst|song:song_inst|origin[4]   ; clk        ; clk      ; None                        ; None                      ; 11.707 ns               ;
+; N/A                                     ; 80.59 MHz ( period = 12.408 ns )                    ; song_top:inst|song:song_inst|high[0]     ; song_top:inst|song:song_inst|origin[8]   ; clk        ; clk      ; None                        ; None                      ; 11.699 ns               ;
+; N/A                                     ; 80.69 MHz ( period = 12.393 ns )                    ; song_top:inst|song:song_inst|med[2]      ; song_top:inst|song:song_inst|origin[3]   ; clk        ; clk      ; None                        ; None                      ; 11.684 ns               ;
+; N/A                                     ; 80.76 MHz ( period = 12.383 ns )                    ; song_top:inst|song:song_inst|med[2]      ; song_top:inst|song:song_inst|origin[5]   ; clk        ; clk      ; None                        ; None                      ; 11.674 ns               ;
+; N/A                                     ; 80.79 MHz ( period = 12.378 ns )                    ; song_top:inst|song:song_inst|med[1]      ; song_top:inst|song:song_inst|origin[2]   ; clk        ; clk      ; None                        ; None                      ; 11.669 ns               ;
+; N/A                                     ; 80.79 MHz ( period = 12.378 ns )                    ; song_top:inst|song:song_inst|med[2]      ; song_top:inst|song:song_inst|origin[11]  ; clk        ; clk      ; None                        ; None                      ; 11.669 ns               ;
+; N/A                                     ; 80.83 MHz ( period = 12.372 ns )                    ; song_top:inst|song:song_inst|med[2]      ; song_top:inst|song:song_inst|origin[6]   ; clk        ; clk      ; None                        ; None                      ; 11.663 ns               ;
+; N/A                                     ; 80.98 MHz ( period = 12.349 ns )                    ; song_top:inst|song:song_inst|med[0]      ; song_top:inst|song:song_inst|origin[12]  ; clk        ; clk      ; None                        ; None                      ; 11.640 ns               ;
+; N/A                                     ; 81.56 MHz ( period = 12.261 ns )                    ; song_top:inst|song:song_inst|low[2]      ; song_top:inst|song:song_inst|origin[10]  ; clk        ; clk      ; None                        ; None                      ; 11.552 ns               ;
+; N/A                                     ; 81.57 MHz ( period = 12.260 ns )                    ; song_top:inst|song:song_inst|low[2]      ; song_top:inst|song:song_inst|origin[1]   ; clk        ; clk      ; None                        ; None                      ; 11.551 ns               ;
+; N/A                                     ; 81.57 MHz ( period = 12.259 ns )                    ; song_top:inst|song:song_inst|low[2]      ; song_top:inst|song:song_inst|origin[7]   ; clk        ; clk      ; None                        ; None                      ; 11.550 ns               ;
+; N/A                                     ; 81.59 MHz ( period = 12.256 ns )                    ; song_top:inst|song:song_inst|low[2]      ; song_top:inst|song:song_inst|origin[0]   ; clk        ; clk      ; None                        ; None                      ; 11.547 ns               ;
+; N/A                                     ; 81.64 MHz ( period = 12.249 ns )                    ; song_top:inst|song:song_inst|low[2]      ; song_top:inst|song:song_inst|origin[9]   ; clk        ; clk      ; None                        ; None                      ; 11.540 ns               ;
+; N/A                                     ; 81.67 MHz ( period = 12.245 ns )                    ; song_top:inst|song:song_inst|low[2]      ; song_top:inst|song:song_inst|origin[4]   ; clk        ; clk      ; None                        ; None                      ; 11.536 ns               ;
+; N/A                                     ; 81.72 MHz ( period = 12.237 ns )                    ; song_top:inst|song:song_inst|low[2]      ; song_top:inst|song:song_inst|origin[8]   ; clk        ; clk      ; None                        ; None                      ; 11.528 ns               ;
+; N/A                                     ; 81.87 MHz ( period = 12.215 ns )                    ; song_top:inst|song:song_inst|med[2]      ; song_top:inst|song:song_inst|origin[12]  ; clk        ; clk      ; None                        ; None                      ; 11.506 ns               ;
+; N/A                                     ; 81.93 MHz ( period = 12.205 ns )                    ; song_top:inst|song:song_inst|low[0]      ; song_top:inst|song:song_inst|origin[2]   ; clk        ; clk      ; None                        ; None                      ; 11.496 ns               ;
+; N/A                                     ; 82.35 MHz ( period = 12.144 ns )                    ; song_top:inst|song:song_inst|med[1]      ; song_top:inst|song:song_inst|origin[3]   ; clk        ; clk      ; None                        ; None                      ; 11.435 ns               ;
+; N/A                                     ; 82.41 MHz ( period = 12.134 ns )                    ; song_top:inst|song:song_inst|med[1]      ; song_top:inst|song:song_inst|origin[5]   ; clk        ; clk      ; None                        ; None                      ; 11.425 ns               ;
+; N/A                                     ; 82.45 MHz ( period = 12.129 ns )                    ; song_top:inst|song:song_inst|med[1]      ; song_top:inst|song:song_inst|origin[11]  ; clk        ; clk      ; None                        ; None                      ; 11.420 ns               ;
+; N/A                                     ; 82.49 MHz ( period = 12.123 ns )                    ; song_top:inst|song:song_inst|med[1]      ; song_top:inst|song:song_inst|origin[6]   ; clk        ; clk      ; None                        ; None                      ; 11.414 ns               ;
+; N/A                                     ; 82.99 MHz ( period = 12.049 ns )                    ; song_top:inst|song:song_inst|high[0]     ; song_top:inst|song:song_inst|origin[2]   ; clk        ; clk      ; None                        ; None                      ; 11.340 ns               ;
+; N/A                                     ; 83.54 MHz ( period = 11.971 ns )                    ; song_top:inst|song:song_inst|low[0]      ; song_top:inst|song:song_inst|origin[3]   ; clk        ; clk      ; None                        ; None                      ; 11.262 ns               ;
+; N/A                                     ; 83.57 MHz ( period = 11.966 ns )                    ; song_top:inst|song:song_inst|med[1]      ; song_top:inst|song:song_inst|origin[12]  ; clk        ; clk      ; None                        ; None                      ; 11.257 ns               ;
+; N/A                                     ; 83.61 MHz ( period = 11.961 ns )                    ; song_top:inst|song:song_inst|low[0]      ; song_top:inst|song:song_inst|origin[5]   ; clk        ; clk      ; None                        ; None                      ; 11.252 ns               ;
+; N/A                                     ; 83.64 MHz ( period = 11.956 ns )                    ; song_top:inst|song:song_inst|low[0]      ; song_top:inst|song:song_inst|origin[11]  ; clk        ; clk      ; None                        ; None                      ; 11.247 ns               ;
+; N/A                                     ; 83.68 MHz ( period = 11.950 ns )                    ; song_top:inst|song:song_inst|low[0]      ; song_top:inst|song:song_inst|origin[6]   ; clk        ; clk      ; None                        ; None                      ; 11.241 ns               ;
+; N/A                                     ; 84.19 MHz ( period = 11.878 ns )                    ; song_top:inst|song:song_inst|low[2]      ; song_top:inst|song:song_inst|origin[2]   ; clk        ; clk      ; None                        ; None                      ; 11.169 ns               ;
+; N/A                                     ; 84.64 MHz ( period = 11.815 ns )                    ; song_top:inst|song:song_inst|high[0]     ; song_top:inst|song:song_inst|origin[3]   ; clk        ; clk      ; None                        ; None                      ; 11.106 ns               ;
+; N/A                                     ; 84.71 MHz ( period = 11.805 ns )                    ; song_top:inst|song:song_inst|high[0]     ; song_top:inst|song:song_inst|origin[5]   ; clk        ; clk      ; None                        ; None                      ; 11.096 ns               ;
+; N/A                                     ; 84.75 MHz ( period = 11.800 ns )                    ; song_top:inst|song:song_inst|high[0]     ; song_top:inst|song:song_inst|origin[11]  ; clk        ; clk      ; None                        ; None                      ; 11.091 ns               ;
+; N/A                                     ; 84.79 MHz ( period = 11.794 ns )                    ; song_top:inst|song:song_inst|high[0]     ; song_top:inst|song:song_inst|origin[6]   ; clk        ; clk      ; None                        ; None                      ; 11.085 ns               ;
+; N/A                                     ; 84.80 MHz ( period = 11.793 ns )                    ; song_top:inst|song:song_inst|low[0]      ; song_top:inst|song:song_inst|origin[12]  ; clk        ; clk      ; None                        ; None                      ; 11.084 ns               ;
+; N/A                                     ; 85.57 MHz ( period = 11.686 ns )                    ; song_top:inst|song:song_inst|low[1]      ; song_top:inst|song:song_inst|origin[10]  ; clk        ; clk      ; None                        ; None                      ; 10.977 ns               ;
+; N/A                                     ; 85.58 MHz ( period = 11.685 ns )                    ; song_top:inst|song:song_inst|low[1]      ; song_top:inst|song:song_inst|origin[1]   ; clk        ; clk      ; None                        ; None                      ; 10.976 ns               ;
+; N/A                                     ; 85.59 MHz ( period = 11.684 ns )                    ; song_top:inst|song:song_inst|low[1]      ; song_top:inst|song:song_inst|origin[7]   ; clk        ; clk      ; None                        ; None                      ; 10.975 ns               ;
+; N/A                                     ; 85.61 MHz ( period = 11.681 ns )                    ; song_top:inst|song:song_inst|low[1]      ; song_top:inst|song:song_inst|origin[0]   ; clk        ; clk      ; None                        ; None                      ; 10.972 ns               ;
+; N/A                                     ; 85.66 MHz ( period = 11.674 ns )                    ; song_top:inst|song:song_inst|low[1]      ; song_top:inst|song:song_inst|origin[9]   ; clk        ; clk      ; None                        ; None                      ; 10.965 ns               ;
+; N/A                                     ; 85.69 MHz ( period = 11.670 ns )                    ; song_top:inst|song:song_inst|low[1]      ; song_top:inst|song:song_inst|origin[4]   ; clk        ; clk      ; None                        ; None                      ; 10.961 ns               ;
+; N/A                                     ; 85.75 MHz ( period = 11.662 ns )                    ; song_top:inst|song:song_inst|low[1]      ; song_top:inst|song:song_inst|origin[8]   ; clk        ; clk      ; None                        ; None                      ; 10.953 ns               ;
+; N/A                                     ; 85.88 MHz ( period = 11.644 ns )                    ; song_top:inst|song:song_inst|low[2]      ; song_top:inst|song:song_inst|origin[3]   ; clk        ; clk      ; None                        ; None                      ; 10.935 ns               ;
+; N/A                                     ; 85.93 MHz ( period = 11.637 ns )                    ; song_top:inst|song:song_inst|high[0]     ; song_top:inst|song:song_inst|origin[12]  ; clk        ; clk      ; None                        ; None                      ; 10.928 ns               ;
+; N/A                                     ; 85.95 MHz ( period = 11.634 ns )                    ; song_top:inst|song:song_inst|low[2]      ; song_top:inst|song:song_inst|origin[5]   ; clk        ; clk      ; None                        ; None                      ; 10.925 ns               ;
+; N/A                                     ; 85.99 MHz ( period = 11.629 ns )                    ; song_top:inst|song:song_inst|low[2]      ; song_top:inst|song:song_inst|origin[11]  ; clk        ; clk      ; None                        ; None                      ; 10.920 ns               ;
+; N/A                                     ; 86.04 MHz ( period = 11.623 ns )                    ; song_top:inst|song:song_inst|low[2]      ; song_top:inst|song:song_inst|origin[6]   ; clk        ; clk      ; None                        ; None                      ; 10.914 ns               ;
+; N/A                                     ; 87.21 MHz ( period = 11.466 ns )                    ; song_top:inst|song:song_inst|low[2]      ; song_top:inst|song:song_inst|origin[12]  ; clk        ; clk      ; None                        ; None                      ; 10.757 ns               ;
+; N/A                                     ; 87.45 MHz ( period = 11.435 ns )                    ; song_top:inst|song:song_inst|med[0]      ; song_top:inst|song:song_inst|origin[13]  ; clk        ; clk      ; None                        ; None                      ; 10.726 ns               ;
+; N/A                                     ; 88.47 MHz ( period = 11.303 ns )                    ; song_top:inst|song:song_inst|low[1]      ; song_top:inst|song:song_inst|origin[2]   ; clk        ; clk      ; None                        ; None                      ; 10.594 ns               ;
+; N/A                                     ; 88.49 MHz ( period = 11.301 ns )                    ; song_top:inst|song:song_inst|med[2]      ; song_top:inst|song:song_inst|origin[13]  ; clk        ; clk      ; None                        ; None                      ; 10.592 ns               ;
+; N/A                                     ; 90.34 MHz ( period = 11.069 ns )                    ; song_top:inst|song:song_inst|low[1]      ; song_top:inst|song:song_inst|origin[3]   ; clk        ; clk      ; None                        ; None                      ; 10.360 ns               ;
+; N/A                                     ; 90.42 MHz ( period = 11.059 ns )                    ; song_top:inst|song:song_inst|low[1]      ; song_top:inst|song:song_inst|origin[5]   ; clk        ; clk      ; None                        ; None                      ; 10.350 ns               ;
+; N/A                                     ; 90.46 MHz ( period = 11.054 ns )                    ; song_top:inst|song:song_inst|low[1]      ; song_top:inst|song:song_inst|origin[11]  ; clk        ; clk      ; None                        ; None                      ; 10.345 ns               ;
+; N/A                                     ; 90.48 MHz ( period = 11.052 ns )                    ; song_top:inst|song:song_inst|med[1]      ; song_top:inst|song:song_inst|origin[13]  ; clk        ; clk      ; None                        ; None                      ; 10.343 ns               ;
+; N/A                                     ; 90.51 MHz ( period = 11.048 ns )                    ; song_top:inst|song:song_inst|low[1]      ; song_top:inst|song:song_inst|origin[6]   ; clk        ; clk      ; None                        ; None                      ; 10.339 ns               ;
+; N/A                                     ; 91.64 MHz ( period = 10.912 ns )                    ; song_top:inst|song:song_inst|counter[3]  ; song_top:inst|song:song_inst|low[1]      ; clk        ; clk      ; None                        ; None                      ; 10.203 ns               ;
+; N/A                                     ; 91.82 MHz ( period = 10.891 ns )                    ; song_top:inst|song:song_inst|low[1]      ; song_top:inst|song:song_inst|origin[12]  ; clk        ; clk      ; None                        ; None                      ; 10.182 ns               ;
+; N/A                                     ; 91.92 MHz ( period = 10.879 ns )                    ; song_top:inst|song:song_inst|low[0]      ; song_top:inst|song:song_inst|origin[13]  ; clk        ; clk      ; None                        ; None                      ; 10.170 ns               ;
+; N/A                                     ; 93.26 MHz ( period = 10.723 ns )                    ; song_top:inst|song:song_inst|high[0]     ; song_top:inst|song:song_inst|origin[13]  ; clk        ; clk      ; None                        ; None                      ; 10.014 ns               ;
+; N/A                                     ; 94.77 MHz ( period = 10.552 ns )                    ; song_top:inst|song:song_inst|low[2]      ; song_top:inst|song:song_inst|origin[13]  ; clk        ; clk      ; None                        ; None                      ; 9.843 ns                ;
+; N/A                                     ; 97.57 MHz ( period = 10.249 ns )                    ; song_top:inst|song:song_inst|counter[2]  ; song_top:inst|song:song_inst|low[1]      ; clk        ; clk      ; None                        ; None                      ; 9.540 ns                ;
+; N/A                                     ; 98.92 MHz ( period = 10.109 ns )                    ; song_top:inst|song:song_inst|counter[0]  ; song_top:inst|song:song_inst|low[1]      ; clk        ; clk      ; None                        ; None                      ; 9.400 ns                ;
+; N/A                                     ; 100.23 MHz ( period = 9.977 ns )                    ; song_top:inst|song:song_inst|low[1]      ; song_top:inst|song:song_inst|origin[13]  ; clk        ; clk      ; None                        ; None                      ; 9.268 ns                ;
+; N/A                                     ; 101.31 MHz ( period = 9.871 ns )                    ; song_top:inst|song:song_inst|counter[1]  ; song_top:inst|song:song_inst|low[1]      ; clk        ; clk      ; None                        ; None                      ; 9.162 ns                ;
+; N/A                                     ; 101.36 MHz ( period = 9.866 ns )                    ; song_top:inst|song:song_inst|counter[6]  ; song_top:inst|song:song_inst|low[1]      ; clk        ; clk      ; None                        ; None                      ; 9.157 ns                ;
+; N/A                                     ; 103.97 MHz ( period = 9.618 ns )                    ; song_top:inst|song:song_inst|counter[3]  ; song_top:inst|song:song_inst|low[0]      ; clk        ; clk      ; None                        ; None                      ; 8.909 ns                ;
+; N/A                                     ; 105.23 MHz ( period = 9.503 ns )                    ; song_top:inst|song:song_inst|counter[5]  ; song_top:inst|song:song_inst|low[1]      ; clk        ; clk      ; None                        ; None                      ; 8.794 ns                ;
+; N/A                                     ; 106.50 MHz ( period = 9.390 ns )                    ; song_top:inst|song:song_inst|counter[7]  ; song_top:inst|song:song_inst|low[1]      ; clk        ; clk      ; None                        ; None                      ; 8.681 ns                ;
+; N/A                                     ; 110.11 MHz ( period = 9.082 ns )                    ; song_top:inst|song:song_inst|counter[4]  ; song_top:inst|song:song_inst|low[1]      ; clk        ; clk      ; None                        ; None                      ; 8.373 ns                ;
+; N/A                                     ; 110.11 MHz ( period = 9.082 ns )                    ; song_top:inst|song:song_inst|counter[0]  ; song_top:inst|song:song_inst|counter[0]  ; clk        ; clk      ; None                        ; None                      ; 8.373 ns                ;
+; N/A                                     ; 110.11 MHz ( period = 9.082 ns )                    ; song_top:inst|song:song_inst|counter[0]  ; song_top:inst|song:song_inst|counter[5]  ; clk        ; clk      ; None                        ; None                      ; 8.373 ns                ;
+; N/A                                     ; 110.22 MHz ( period = 9.073 ns )                    ; song_top:inst|song:song_inst|counter[0]  ; song_top:inst|song:song_inst|counter[1]  ; clk        ; clk      ; None                        ; None                      ; 8.364 ns                ;
+; N/A                                     ; 110.24 MHz ( period = 9.071 ns )                    ; song_top:inst|song:song_inst|counter[0]  ; song_top:inst|song:song_inst|counter[4]  ; clk        ; clk      ; None                        ; None                      ; 8.362 ns                ;
+; N/A                                     ; 111.67 MHz ( period = 8.955 ns )                    ; song_top:inst|song:song_inst|counter[2]  ; song_top:inst|song:song_inst|low[0]      ; clk        ; clk      ; None                        ; None                      ; 8.246 ns                ;
+; N/A                                     ; 113.44 MHz ( period = 8.815 ns )                    ; song_top:inst|song:song_inst|counter[0]  ; song_top:inst|song:song_inst|low[0]      ; clk        ; clk      ; None                        ; None                      ; 8.106 ns                ;
+; N/A                                     ; 113.78 MHz ( period = 8.789 ns )                    ; song_top:inst|song:song_inst|counter[2]  ; song_top:inst|song:song_inst|counter[0]  ; clk        ; clk      ; None                        ; None                      ; 8.080 ns                ;
+; N/A                                     ; 113.78 MHz ( period = 8.789 ns )                    ; song_top:inst|song:song_inst|counter[2]  ; song_top:inst|song:song_inst|counter[5]  ; clk        ; clk      ; None                        ; None                      ; 8.080 ns                ;
+; N/A                                     ; 113.90 MHz ( period = 8.780 ns )                    ; song_top:inst|song:song_inst|counter[2]  ; song_top:inst|song:song_inst|counter[1]  ; clk        ; clk      ; None                        ; None                      ; 8.071 ns                ;
+; N/A                                     ; 113.92 MHz ( period = 8.778 ns )                    ; song_top:inst|song:song_inst|counter[2]  ; song_top:inst|song:song_inst|counter[4]  ; clk        ; clk      ; None                        ; None                      ; 8.069 ns                ;
+; N/A                                     ; 114.03 MHz ( period = 8.770 ns )                    ; song_top:inst|song:song_inst|counter[6]  ; song_top:inst|song:song_inst|counter[0]  ; clk        ; clk      ; None                        ; None                      ; 8.061 ns                ;
+; N/A                                     ; 114.03 MHz ( period = 8.770 ns )                    ; song_top:inst|song:song_inst|counter[6]  ; song_top:inst|song:song_inst|counter[5]  ; clk        ; clk      ; None                        ; None                      ; 8.061 ns                ;
+; N/A                                     ; 114.14 MHz ( period = 8.761 ns )                    ; song_top:inst|song:song_inst|counter[6]  ; song_top:inst|song:song_inst|counter[1]  ; clk        ; clk      ; None                        ; None                      ; 8.052 ns                ;
+; N/A                                     ; 114.17 MHz ( period = 8.759 ns )                    ; song_top:inst|song:song_inst|counter[6]  ; song_top:inst|song:song_inst|counter[4]  ; clk        ; clk      ; None                        ; None                      ; 8.050 ns                ;
+; N/A                                     ; 116.59 MHz ( period = 8.577 ns )                    ; song_top:inst|song:song_inst|counter[1]  ; song_top:inst|song:song_inst|low[0]      ; clk        ; clk      ; None                        ; None                      ; 7.868 ns                ;
+; N/A                                     ; 116.66 MHz ( period = 8.572 ns )                    ; song_top:inst|song:song_inst|counter[6]  ; song_top:inst|song:song_inst|low[0]      ; clk        ; clk      ; None                        ; None                      ; 7.863 ns                ;
+; N/A                                     ; 116.97 MHz ( period = 8.549 ns )                    ; song_top:inst|song:song_inst|counter[1]  ; song_top:inst|song:song_inst|counter[0]  ; clk        ; clk      ; None                        ; None                      ; 7.840 ns                ;
+; N/A                                     ; 116.97 MHz ( period = 8.549 ns )                    ; song_top:inst|song:song_inst|counter[1]  ; song_top:inst|song:song_inst|counter[5]  ; clk        ; clk      ; None                        ; None                      ; 7.840 ns                ;
+; N/A                                     ; 117.10 MHz ( period = 8.540 ns )                    ; song_top:inst|song:song_inst|counter[1]  ; song_top:inst|song:song_inst|counter[1]  ; clk        ; clk      ; None                        ; None                      ; 7.831 ns                ;
+; N/A                                     ; 117.12 MHz ( period = 8.538 ns )                    ; song_top:inst|song:song_inst|counter[1]  ; song_top:inst|song:song_inst|counter[4]  ; clk        ; clk      ; None                        ; None                      ; 7.829 ns                ;
+; N/A                                     ; 117.52 MHz ( period = 8.509 ns )                    ; song_top:inst|song:song_inst|counter[6]  ; song_top:inst|song:song_inst|med[2]      ; clk        ; clk      ; None                        ; None                      ; 7.800 ns                ;
+; N/A                                     ; 119.79 MHz ( period = 8.348 ns )                    ; song_top:inst|song:song_inst|counter[6]  ; song_top:inst|song:song_inst|med[0]      ; clk        ; clk      ; None                        ; None                      ; 7.639 ns                ;
+; N/A                                     ; 121.82 MHz ( period = 8.209 ns )                    ; song_top:inst|song:song_inst|counter[5]  ; song_top:inst|song:song_inst|low[0]      ; clk        ; clk      ; None                        ; None                      ; 7.500 ns                ;
+; N/A                                     ; 122.22 MHz ( period = 8.182 ns )                    ; song_top:inst|song:song_inst|counter[1]  ; song_top:inst|song:song_inst|med[1]      ; clk        ; clk      ; None                        ; None                      ; 7.473 ns                ;
+; N/A                                     ; 123.52 MHz ( period = 8.096 ns )                    ; song_top:inst|song:song_inst|counter[7]  ; song_top:inst|song:song_inst|low[0]      ; clk        ; clk      ; None                        ; None                      ; 7.387 ns                ;
+; N/A                                     ; 125.83 MHz ( period = 7.947 ns )                    ; song_top:inst|song:song_inst|divider[7]  ; song_top:inst|song:song_inst|divider[0]  ; clk        ; clk      ; None                        ; None                      ; 7.238 ns                ;
+; N/A                                     ; 125.83 MHz ( period = 7.947 ns )                    ; song_top:inst|song:song_inst|divider[7]  ; song_top:inst|song:song_inst|divider[1]  ; clk        ; clk      ; None                        ; None                      ; 7.238 ns                ;
+; N/A                                     ; 125.83 MHz ( period = 7.947 ns )                    ; song_top:inst|song:song_inst|divider[7]  ; song_top:inst|song:song_inst|divider[2]  ; clk        ; clk      ; None                        ; None                      ; 7.238 ns                ;
+; N/A                                     ; 125.83 MHz ( period = 7.947 ns )                    ; song_top:inst|song:song_inst|divider[7]  ; song_top:inst|song:song_inst|divider[3]  ; clk        ; clk      ; None                        ; None                      ; 7.238 ns                ;
+; N/A                                     ; 125.83 MHz ( period = 7.947 ns )                    ; song_top:inst|song:song_inst|divider[7]  ; song_top:inst|song:song_inst|divider[4]  ; clk        ; clk      ; None                        ; None                      ; 7.238 ns                ;
+; N/A                                     ; 125.83 MHz ( period = 7.947 ns )                    ; song_top:inst|song:song_inst|divider[7]  ; song_top:inst|song:song_inst|divider[5]  ; clk        ; clk      ; None                        ; None                      ; 7.238 ns                ;
+; N/A                                     ; 125.83 MHz ( period = 7.947 ns )                    ; song_top:inst|song:song_inst|divider[7]  ; song_top:inst|song:song_inst|divider[6]  ; clk        ; clk      ; None                        ; None                      ; 7.238 ns                ;
+; N/A                                     ; 127.96 MHz ( period = 7.815 ns )                    ; song_top:inst|song:song_inst|counter[4]  ; song_top:inst|song:song_inst|med[0]      ; clk        ; clk      ; None                        ; None                      ; 7.106 ns                ;
+; N/A                                     ; 128.40 MHz ( period = 7.788 ns )                    ; song_top:inst|song:song_inst|counter[4]  ; song_top:inst|song:song_inst|low[0]      ; clk        ; clk      ; None                        ; None                      ; 7.079 ns                ;
+; N/A                                     ; 130.57 MHz ( period = 7.659 ns )                    ; song_top:inst|song:song_inst|divider[3]  ; song_top:inst|song:song_inst|divider[0]  ; clk        ; clk      ; None                        ; None                      ; 6.950 ns                ;
+; N/A                                     ; 130.57 MHz ( period = 7.659 ns )                    ; song_top:inst|song:song_inst|divider[3]  ; song_top:inst|song:song_inst|divider[1]  ; clk        ; clk      ; None                        ; None                      ; 6.950 ns                ;
+; N/A                                     ; 130.57 MHz ( period = 7.659 ns )                    ; song_top:inst|song:song_inst|divider[3]  ; song_top:inst|song:song_inst|divider[2]  ; clk        ; clk      ; None                        ; None                      ; 6.950 ns                ;
+; N/A                                     ; 130.57 MHz ( period = 7.659 ns )                    ; song_top:inst|song:song_inst|divider[3]  ; song_top:inst|song:song_inst|divider[3]  ; clk        ; clk      ; None                        ; None                      ; 6.950 ns                ;
+; N/A                                     ; 130.57 MHz ( period = 7.659 ns )                    ; song_top:inst|song:song_inst|divider[3]  ; song_top:inst|song:song_inst|divider[4]  ; clk        ; clk      ; None                        ; None                      ; 6.950 ns                ;
+; N/A                                     ; 130.57 MHz ( period = 7.659 ns )                    ; song_top:inst|song:song_inst|divider[3]  ; song_top:inst|song:song_inst|divider[5]  ; clk        ; clk      ; None                        ; None                      ; 6.950 ns                ;
+; N/A                                     ; 130.57 MHz ( period = 7.659 ns )                    ; song_top:inst|song:song_inst|divider[3]  ; song_top:inst|song:song_inst|divider[6]  ; clk        ; clk      ; None                        ; None                      ; 6.950 ns                ;
+; N/A                                     ; 130.72 MHz ( period = 7.650 ns )                    ; song_top:inst|song:song_inst|counter[5]  ; song_top:inst|song:song_inst|counter[0]  ; clk        ; clk      ; None                        ; None                      ; 6.941 ns                ;
+; N/A                                     ; 130.72 MHz ( period = 7.650 ns )                    ; song_top:inst|song:song_inst|counter[5]  ; song_top:inst|song:song_inst|counter[5]  ; clk        ; clk      ; None                        ; None                      ; 6.941 ns                ;
+; N/A                                     ; 130.87 MHz ( period = 7.641 ns )                    ; song_top:inst|song:song_inst|counter[5]  ; song_top:inst|song:song_inst|counter[1]  ; clk        ; clk      ; None                        ; None                      ; 6.932 ns                ;
+; N/A                                     ; 130.91 MHz ( period = 7.639 ns )                    ; song_top:inst|song:song_inst|counter[5]  ; song_top:inst|song:song_inst|counter[4]  ; clk        ; clk      ; None                        ; None                      ; 6.930 ns                ;
+; N/A                                     ; 131.23 MHz ( period = 7.620 ns )                    ; song_top:inst|song:song_inst|counter[4]  ; song_top:inst|song:song_inst|counter[0]  ; clk        ; clk      ; None                        ; None                      ; 6.911 ns                ;
+; N/A                                     ; 131.23 MHz ( period = 7.620 ns )                    ; song_top:inst|song:song_inst|counter[4]  ; song_top:inst|song:song_inst|counter[5]  ; clk        ; clk      ; None                        ; None                      ; 6.911 ns                ;
+; N/A                                     ; 131.39 MHz ( period = 7.611 ns )                    ; song_top:inst|song:song_inst|counter[4]  ; song_top:inst|song:song_inst|counter[1]  ; clk        ; clk      ; None                        ; None                      ; 6.902 ns                ;
+; N/A                                     ; 131.42 MHz ( period = 7.609 ns )                    ; song_top:inst|song:song_inst|counter[4]  ; song_top:inst|song:song_inst|counter[4]  ; clk        ; clk      ; None                        ; None                      ; 6.900 ns                ;
+; N/A                                     ; 132.50 MHz ( period = 7.547 ns )                    ; song_top:inst|song:song_inst|counter[0]  ; song_top:inst|song:song_inst|med[0]      ; clk        ; clk      ; None                        ; None                      ; 6.838 ns                ;
+; N/A                                     ; 132.86 MHz ( period = 7.527 ns )                    ; song_top:inst|song:song_inst|divider[7]  ; song_top:inst|song:song_inst|divider[7]  ; clk        ; clk      ; None                        ; None                      ; 6.818 ns                ;
+; N/A                                     ; 132.86 MHz ( period = 7.527 ns )                    ; song_top:inst|song:song_inst|divider[7]  ; song_top:inst|song:song_inst|divider[8]  ; clk        ; clk      ; None                        ; None                      ; 6.818 ns                ;
+; N/A                                     ; 132.86 MHz ( period = 7.527 ns )                    ; song_top:inst|song:song_inst|divider[7]  ; song_top:inst|song:song_inst|divider[9]  ; clk        ; clk      ; None                        ; None                      ; 6.818 ns                ;
+; N/A                                     ; 132.86 MHz ( period = 7.527 ns )                    ; song_top:inst|song:song_inst|divider[7]  ; song_top:inst|song:song_inst|divider[10] ; clk        ; clk      ; None                        ; None                      ; 6.818 ns                ;
+; N/A                                     ; 132.86 MHz ( period = 7.527 ns )                    ; song_top:inst|song:song_inst|divider[7]  ; song_top:inst|song:song_inst|divider[11] ; clk        ; clk      ; None                        ; None                      ; 6.818 ns                ;
+; N/A                                     ; 132.86 MHz ( period = 7.527 ns )                    ; song_top:inst|song:song_inst|divider[7]  ; song_top:inst|song:song_inst|divider[12] ; clk        ; clk      ; None                        ; None                      ; 6.818 ns                ;
+; N/A                                     ; 132.86 MHz ( period = 7.527 ns )                    ; song_top:inst|song:song_inst|divider[7]  ; song_top:inst|song:song_inst|divider[13] ; clk        ; clk      ; None                        ; None                      ; 6.818 ns                ;
+; N/A                                     ; 134.79 MHz ( period = 7.419 ns )                    ; song_top:inst|song:song_inst|divider[2]  ; song_top:inst|song:song_inst|divider[0]  ; clk        ; clk      ; None                        ; None                      ; 6.710 ns                ;
+; N/A                                     ; 134.79 MHz ( period = 7.419 ns )                    ; song_top:inst|song:song_inst|divider[2]  ; song_top:inst|song:song_inst|divider[1]  ; clk        ; clk      ; None                        ; None                      ; 6.710 ns                ;
+; N/A                                     ; 134.79 MHz ( period = 7.419 ns )                    ; song_top:inst|song:song_inst|divider[2]  ; song_top:inst|song:song_inst|divider[2]  ; clk        ; clk      ; None                        ; None                      ; 6.710 ns                ;
+; N/A                                     ; 134.79 MHz ( period = 7.419 ns )                    ; song_top:inst|song:song_inst|divider[2]  ; song_top:inst|song:song_inst|divider[3]  ; clk        ; clk      ; None                        ; None                      ; 6.710 ns                ;
+; N/A                                     ; 134.79 MHz ( period = 7.419 ns )                    ; song_top:inst|song:song_inst|divider[2]  ; song_top:inst|song:song_inst|divider[4]  ; clk        ; clk      ; None                        ; None                      ; 6.710 ns                ;
+; N/A                                     ; 134.79 MHz ( period = 7.419 ns )                    ; song_top:inst|song:song_inst|divider[2]  ; song_top:inst|song:song_inst|divider[5]  ; clk        ; clk      ; None                        ; None                      ; 6.710 ns                ;
+; N/A                                     ; 134.79 MHz ( period = 7.419 ns )                    ; song_top:inst|song:song_inst|divider[2]  ; song_top:inst|song:song_inst|divider[6]  ; clk        ; clk      ; None                        ; None                      ; 6.710 ns                ;
+; N/A                                     ; 134.84 MHz ( period = 7.416 ns )                    ; song_top:inst|song:song_inst|counter[5]  ; song_top:inst|song:song_inst|med[2]      ; clk        ; clk      ; None                        ; None                      ; 6.707 ns                ;
+; N/A                                     ; 134.95 MHz ( period = 7.410 ns )                    ; song_top:inst|song:song_inst|counter[6]  ; song_top:inst|song:song_inst|low[2]      ; clk        ; clk      ; None                        ; None                      ; 6.701 ns                ;
+; N/A                                     ; 134.99 MHz ( period = 7.408 ns )                    ; song_top:inst|song:song_inst|counter[4]  ; song_top:inst|song:song_inst|med[2]      ; clk        ; clk      ; None                        ; None                      ; 6.699 ns                ;
+; N/A                                     ; 135.21 MHz ( period = 7.396 ns )                    ; song_top:inst|song:song_inst|counter[3]  ; song_top:inst|song:song_inst|counter[0]  ; clk        ; clk      ; None                        ; None                      ; 6.687 ns                ;
+; N/A                                     ; 135.21 MHz ( period = 7.396 ns )                    ; song_top:inst|song:song_inst|counter[3]  ; song_top:inst|song:song_inst|counter[5]  ; clk        ; clk      ; None                        ; None                      ; 6.687 ns                ;
+; N/A                                     ; 135.23 MHz ( period = 7.395 ns )                    ; song_top:inst|song:song_inst|divider[6]  ; song_top:inst|song:song_inst|divider[0]  ; clk        ; clk      ; None                        ; None                      ; 6.686 ns                ;
+; N/A                                     ; 135.23 MHz ( period = 7.395 ns )                    ; song_top:inst|song:song_inst|divider[6]  ; song_top:inst|song:song_inst|divider[1]  ; clk        ; clk      ; None                        ; None                      ; 6.686 ns                ;
+; N/A                                     ; 135.23 MHz ( period = 7.395 ns )                    ; song_top:inst|song:song_inst|divider[6]  ; song_top:inst|song:song_inst|divider[2]  ; clk        ; clk      ; None                        ; None                      ; 6.686 ns                ;
+; N/A                                     ; 135.23 MHz ( period = 7.395 ns )                    ; song_top:inst|song:song_inst|divider[6]  ; song_top:inst|song:song_inst|divider[3]  ; clk        ; clk      ; None                        ; None                      ; 6.686 ns                ;
+; N/A                                     ; 135.23 MHz ( period = 7.395 ns )                    ; song_top:inst|song:song_inst|divider[6]  ; song_top:inst|song:song_inst|divider[4]  ; clk        ; clk      ; None                        ; None                      ; 6.686 ns                ;
+; N/A                                     ; 135.23 MHz ( period = 7.395 ns )                    ; song_top:inst|song:song_inst|divider[6]  ; song_top:inst|song:song_inst|divider[5]  ; clk        ; clk      ; None                        ; None                      ; 6.686 ns                ;
+; N/A                                     ; 135.23 MHz ( period = 7.395 ns )                    ; song_top:inst|song:song_inst|divider[6]  ; song_top:inst|song:song_inst|divider[6]  ; clk        ; clk      ; None                        ; None                      ; 6.686 ns                ;
+; N/A                                     ; 135.37 MHz ( period = 7.387 ns )                    ; song_top:inst|song:song_inst|counter[3]  ; song_top:inst|song:song_inst|counter[1]  ; clk        ; clk      ; None                        ; None                      ; 6.678 ns                ;
+; N/A                                     ; 135.41 MHz ( period = 7.385 ns )                    ; song_top:inst|song:song_inst|counter[3]  ; song_top:inst|song:song_inst|counter[4]  ; clk        ; clk      ; None                        ; None                      ; 6.676 ns                ;
+; N/A                                     ; 136.67 MHz ( period = 7.317 ns )                    ; song_top:inst|song:song_inst|divider[8]  ; song_top:inst|song:song_inst|divider[0]  ; clk        ; clk      ; None                        ; None                      ; 6.608 ns                ;
+; N/A                                     ; 136.67 MHz ( period = 7.317 ns )                    ; song_top:inst|song:song_inst|divider[8]  ; song_top:inst|song:song_inst|divider[1]  ; clk        ; clk      ; None                        ; None                      ; 6.608 ns                ;
+; N/A                                     ; 136.67 MHz ( period = 7.317 ns )                    ; song_top:inst|song:song_inst|divider[8]  ; song_top:inst|song:song_inst|divider[2]  ; clk        ; clk      ; None                        ; None                      ; 6.608 ns                ;
+; N/A                                     ; 136.67 MHz ( period = 7.317 ns )                    ; song_top:inst|song:song_inst|divider[8]  ; song_top:inst|song:song_inst|divider[3]  ; clk        ; clk      ; None                        ; None                      ; 6.608 ns                ;
+; N/A                                     ; 136.67 MHz ( period = 7.317 ns )                    ; song_top:inst|song:song_inst|divider[8]  ; song_top:inst|song:song_inst|divider[4]  ; clk        ; clk      ; None                        ; None                      ; 6.608 ns                ;
+; N/A                                     ; 136.67 MHz ( period = 7.317 ns )                    ; song_top:inst|song:song_inst|divider[8]  ; song_top:inst|song:song_inst|divider[5]  ; clk        ; clk      ; None                        ; None                      ; 6.608 ns                ;
+; N/A                                     ; 136.67 MHz ( period = 7.317 ns )                    ; song_top:inst|song:song_inst|divider[8]  ; song_top:inst|song:song_inst|divider[6]  ; clk        ; clk      ; None                        ; None                      ; 6.608 ns                ;
+; N/A                                     ; 136.76 MHz ( period = 7.312 ns )                    ; song_top:inst|song:song_inst|counter[0]  ; song_top:inst|song:song_inst|counter[6]  ; clk        ; clk      ; None                        ; None                      ; 6.603 ns                ;
+; N/A                                     ; 136.86 MHz ( period = 7.307 ns )                    ; song_top:inst|song:song_inst|counter[7]  ; song_top:inst|song:song_inst|med[2]      ; clk        ; clk      ; None                        ; None                      ; 6.598 ns                ;
+; N/A                                     ; 136.99 MHz ( period = 7.300 ns )                    ; song_top:inst|song:song_inst|counter[1]  ; song_top:inst|song:song_inst|counter[6]  ; clk        ; clk      ; None                        ; None                      ; 6.591 ns                ;
+; N/A                                     ; 137.06 MHz ( period = 7.296 ns )                    ; song_top:inst|song:song_inst|counter[7]  ; song_top:inst|song:song_inst|med[0]      ; clk        ; clk      ; None                        ; None                      ; 6.587 ns                ;
+; N/A                                     ; 137.10 MHz ( period = 7.294 ns )                    ; song_top:inst|song:song_inst|counter[2]  ; song_top:inst|song:song_inst|med[1]      ; clk        ; clk      ; None                        ; None                      ; 6.585 ns                ;
+; N/A                                     ; 137.17 MHz ( period = 7.290 ns )                    ; song_top:inst|song:song_inst|divider[11] ; song_top:inst|song:song_inst|divider[3]  ; clk        ; clk      ; None                        ; None                      ; 6.581 ns                ;
+; N/A                                     ; 137.17 MHz ( period = 7.290 ns )                    ; song_top:inst|song:song_inst|divider[11] ; song_top:inst|song:song_inst|divider[4]  ; clk        ; clk      ; None                        ; None                      ; 6.581 ns                ;
+; N/A                                     ; 137.17 MHz ( period = 7.290 ns )                    ; song_top:inst|song:song_inst|divider[11] ; song_top:inst|song:song_inst|divider[5]  ; clk        ; clk      ; None                        ; None                      ; 6.581 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                          ;                                          ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------------+------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'clk'                                                                                                                                                                                                         ;
++------------------------------------------+---------------------------------+---------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                            ; To                              ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+---------------------------------+---------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; song_top:inst|song:song_inst|sp ; song_top:inst|song:song_inst|sp ; clk        ; clk      ; None                       ; None                       ; 1.485 ns                 ;
++------------------------------------------+---------------------------------+---------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; tsu                                                                               ;
++-------+--------------+------------+-------+----------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From  ; To                         ; To Clock ;
++-------+--------------+------------+-------+----------------------------+----------+
+; N/A   ; None         ; -0.553 ns  ; rst_n ; song_top:inst|clk_cnt1[16] ; clk      ;
+; N/A   ; None         ; -0.553 ns  ; rst_n ; song_top:inst|clk_cnt1[11] ; clk      ;
+; N/A   ; None         ; -0.553 ns  ; rst_n ; song_top:inst|clk_cnt1[15] ; clk      ;
+; N/A   ; None         ; -0.553 ns  ; rst_n ; song_top:inst|clk_cnt1[14] ; clk      ;
+; N/A   ; None         ; -0.553 ns  ; rst_n ; song_top:inst|clk_cnt1[13] ; clk      ;
+; N/A   ; None         ; -0.553 ns  ; rst_n ; song_top:inst|clk_cnt1[12] ; clk      ;
+; N/A   ; None         ; -0.553 ns  ; rst_n ; song_top:inst|clk_cnt1[10] ; clk      ;
+; N/A   ; None         ; -0.553 ns  ; rst_n ; song_top:inst|clk_cnt1[9]  ; clk      ;
+; N/A   ; None         ; -0.553 ns  ; rst_n ; song_top:inst|clk_cnt1[8]  ; clk      ;
+; N/A   ; None         ; -0.553 ns  ; rst_n ; song_top:inst|clk_cnt1[7]  ; clk      ;
+; N/A   ; None         ; -0.586 ns  ; rst_n ; song_top:inst|clk_cnt1[2]  ; clk      ;
+; N/A   ; None         ; -0.586 ns  ; rst_n ; song_top:inst|clk_cnt1[1]  ; clk      ;
+; N/A   ; None         ; -0.586 ns  ; rst_n ; song_top:inst|clk_cnt1[0]  ; clk      ;
+; N/A   ; None         ; -0.586 ns  ; rst_n ; song_top:inst|clk_cnt1[6]  ; clk      ;
+; N/A   ; None         ; -0.586 ns  ; rst_n ; song_top:inst|clk_cnt1[5]  ; clk      ;
+; N/A   ; None         ; -0.586 ns  ; rst_n ; song_top:inst|clk_cnt1[4]  ; clk      ;
+; N/A   ; None         ; -0.586 ns  ; rst_n ; song_top:inst|clk_cnt1[3]  ; clk      ;
+; N/A   ; None         ; -0.591 ns  ; rst_n ; song_top:inst|clk_cnt1[23] ; clk      ;
+; N/A   ; None         ; -0.591 ns  ; rst_n ; song_top:inst|clk_cnt1[22] ; clk      ;
+; N/A   ; None         ; -0.591 ns  ; rst_n ; song_top:inst|clk_cnt1[21] ; clk      ;
+; N/A   ; None         ; -0.591 ns  ; rst_n ; song_top:inst|clk_cnt1[20] ; clk      ;
+; N/A   ; None         ; -0.591 ns  ; rst_n ; song_top:inst|clk_cnt1[19] ; clk      ;
+; N/A   ; None         ; -0.591 ns  ; rst_n ; song_top:inst|clk_cnt1[18] ; clk      ;
+; N/A   ; None         ; -0.591 ns  ; rst_n ; song_top:inst|clk_cnt1[17] ; clk      ;
++-------+--------------+------------+-------+----------------------------+----------+
+
+
++-------------------------------------------------------------------------------------------+
+; tco                                                                                       ;
++-------+--------------+------------+---------------------------------+--------+------------+
+; Slack ; Required tco ; Actual tco ; From                            ; To     ; From Clock ;
++-------+--------------+------------+---------------------------------+--------+------------+
+; N/A   ; None         ; 23.616 ns  ; song_top:inst|song:song_inst|sp ; Buzzer ; clk        ;
++-------+--------------+------------+---------------------------------+--------+------------+
+
+
++-----------------------------------------------------------------------------------------+
+; th                                                                                      ;
++---------------+-------------+-----------+-------+----------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From  ; To                         ; To Clock ;
++---------------+-------------+-----------+-------+----------------------------+----------+
+; N/A           ; None        ; 1.145 ns  ; rst_n ; song_top:inst|clk_cnt1[23] ; clk      ;
+; N/A           ; None        ; 1.145 ns  ; rst_n ; song_top:inst|clk_cnt1[22] ; clk      ;
+; N/A           ; None        ; 1.145 ns  ; rst_n ; song_top:inst|clk_cnt1[21] ; clk      ;
+; N/A           ; None        ; 1.145 ns  ; rst_n ; song_top:inst|clk_cnt1[20] ; clk      ;
+; N/A           ; None        ; 1.145 ns  ; rst_n ; song_top:inst|clk_cnt1[19] ; clk      ;
+; N/A           ; None        ; 1.145 ns  ; rst_n ; song_top:inst|clk_cnt1[18] ; clk      ;
+; N/A           ; None        ; 1.145 ns  ; rst_n ; song_top:inst|clk_cnt1[17] ; clk      ;
+; N/A           ; None        ; 1.140 ns  ; rst_n ; song_top:inst|clk_cnt1[2]  ; clk      ;
+; N/A           ; None        ; 1.140 ns  ; rst_n ; song_top:inst|clk_cnt1[1]  ; clk      ;
+; N/A           ; None        ; 1.140 ns  ; rst_n ; song_top:inst|clk_cnt1[0]  ; clk      ;
+; N/A           ; None        ; 1.140 ns  ; rst_n ; song_top:inst|clk_cnt1[6]  ; clk      ;
+; N/A           ; None        ; 1.140 ns  ; rst_n ; song_top:inst|clk_cnt1[5]  ; clk      ;
+; N/A           ; None        ; 1.140 ns  ; rst_n ; song_top:inst|clk_cnt1[4]  ; clk      ;
+; N/A           ; None        ; 1.140 ns  ; rst_n ; song_top:inst|clk_cnt1[3]  ; clk      ;
+; N/A           ; None        ; 1.107 ns  ; rst_n ; song_top:inst|clk_cnt1[16] ; clk      ;
+; N/A           ; None        ; 1.107 ns  ; rst_n ; song_top:inst|clk_cnt1[11] ; clk      ;
+; N/A           ; None        ; 1.107 ns  ; rst_n ; song_top:inst|clk_cnt1[15] ; clk      ;
+; N/A           ; None        ; 1.107 ns  ; rst_n ; song_top:inst|clk_cnt1[14] ; clk      ;
+; N/A           ; None        ; 1.107 ns  ; rst_n ; song_top:inst|clk_cnt1[13] ; clk      ;
+; N/A           ; None        ; 1.107 ns  ; rst_n ; song_top:inst|clk_cnt1[12] ; clk      ;
+; N/A           ; None        ; 1.107 ns  ; rst_n ; song_top:inst|clk_cnt1[10] ; clk      ;
+; N/A           ; None        ; 1.107 ns  ; rst_n ; song_top:inst|clk_cnt1[9]  ; clk      ;
+; N/A           ; None        ; 1.107 ns  ; rst_n ; song_top:inst|clk_cnt1[8]  ; clk      ;
+; N/A           ; None        ; 1.107 ns  ; rst_n ; song_top:inst|clk_cnt1[7]  ; clk      ;
++---------------+-------------+-----------+-------+----------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Sun Nov 27 16:42:02 2011
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off buzzer -c buzzer
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Warning: Found 20 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "song_top:inst|clk_cnt1[23]" as buffer
+    Info: Detected ripple clock "song_top:inst|song:song_inst|divider[13]" as buffer
+    Info: Detected ripple clock "song_top:inst|song:song_inst|divider[12]" as buffer
+    Info: Detected ripple clock "song_top:inst|song:song_inst|divider[11]" as buffer
+    Info: Detected ripple clock "song_top:inst|song:song_inst|divider[10]" as buffer
+    Info: Detected ripple clock "song_top:inst|song:song_inst|divider[9]" as buffer
+    Info: Detected ripple clock "song_top:inst|song:song_inst|divider[8]" as buffer
+    Info: Detected ripple clock "song_top:inst|song:song_inst|divider[7]" as buffer
+    Info: Detected ripple clock "song_top:inst|song:song_inst|divider[6]" as buffer
+    Info: Detected ripple clock "song_top:inst|song:song_inst|divider[5]" as buffer
+    Info: Detected ripple clock "song_top:inst|song:song_inst|divider[4]" as buffer
+    Info: Detected ripple clock "song_top:inst|song:song_inst|divider[3]" as buffer
+    Info: Detected ripple clock "song_top:inst|song:song_inst|divider[2]" as buffer
+    Info: Detected ripple clock "song_top:inst|song:song_inst|divider[1]" as buffer
+    Info: Detected ripple clock "song_top:inst|clk_cnt1[2]" as buffer
+    Info: Detected gated clock "song_top:inst|song:song_inst|Equal0~166" as buffer
+    Info: Detected gated clock "song_top:inst|song:song_inst|Equal0~165" as buffer
+    Info: Detected gated clock "song_top:inst|song:song_inst|Equal0~163" as buffer
+    Info: Detected gated clock "song_top:inst|song:song_inst|Equal0~164" as buffer
+    Info: Detected ripple clock "song_top:inst|song:song_inst|divider[0]" as buffer
+Info: Clock "clk" has Internal fmax of 76.08 MHz between source register "song_top:inst|song:song_inst|med[0]" and destination register "song_top:inst|song:song_inst|origin[10]" (period= 13.144 ns)
+    Info: + Longest register to register delay is 12.435 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X5_Y3_N7; Fanout = 9; REG Node = 'song_top:inst|song:song_inst|med[0]'
+        Info: 2: + IC(1.335 ns) + CELL(0.740 ns) = 2.075 ns; Loc. = LC_X6_Y3_N5; Fanout = 5; COMB Node = 'song_top:inst|song:song_inst|Equal1~156'
+        Info: 3: + IC(2.410 ns) + CELL(0.200 ns) = 4.685 ns; Loc. = LC_X5_Y4_N3; Fanout = 4; COMB Node = 'song_top:inst|song:song_inst|Equal1~157'
+        Info: 4: + IC(1.158 ns) + CELL(0.740 ns) = 6.583 ns; Loc. = LC_X6_Y4_N4; Fanout = 2; COMB Node = 'song_top:inst|song:song_inst|Selector12~179'
+        Info: 5: + IC(0.719 ns) + CELL(0.914 ns) = 8.216 ns; Loc. = LC_X6_Y4_N9; Fanout = 3; COMB Node = 'song_top:inst|song:song_inst|WideNor0~63'
+        Info: 6: + IC(0.734 ns) + CELL(0.200 ns) = 9.150 ns; Loc. = LC_X6_Y4_N1; Fanout = 12; COMB Node = 'song_top:inst|song:song_inst|WideNor0'
+        Info: 7: + IC(2.694 ns) + CELL(0.591 ns) = 12.435 ns; Loc. = LC_X5_Y2_N6; Fanout = 2; REG Node = 'song_top:inst|song:song_inst|origin[10]'
+        Info: Total cell delay = 3.385 ns ( 27.22 % )
+        Info: Total interconnect delay = 9.050 ns ( 72.78 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 11.058 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 24; CLK Node = 'clk'
+            Info: 2: + IC(4.444 ns) + CELL(1.294 ns) = 6.870 ns; Loc. = LC_X4_Y3_N6; Fanout = 30; REG Node = 'song_top:inst|clk_cnt1[23]'
+            Info: 3: + IC(3.270 ns) + CELL(0.918 ns) = 11.058 ns; Loc. = LC_X5_Y2_N6; Fanout = 2; REG Node = 'song_top:inst|song:song_inst|origin[10]'
+            Info: Total cell delay = 3.344 ns ( 30.24 % )
+            Info: Total interconnect delay = 7.714 ns ( 69.76 % )
+        Info: - Longest clock path from clock "clk" to source register is 11.058 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 24; CLK Node = 'clk'
+            Info: 2: + IC(4.444 ns) + CELL(1.294 ns) = 6.870 ns; Loc. = LC_X4_Y3_N6; Fanout = 30; REG Node = 'song_top:inst|clk_cnt1[23]'
+            Info: 3: + IC(3.270 ns) + CELL(0.918 ns) = 11.058 ns; Loc. = LC_X5_Y3_N7; Fanout = 9; REG Node = 'song_top:inst|song:song_inst|med[0]'
+            Info: Total cell delay = 3.344 ns ( 30.24 % )
+            Info: Total interconnect delay = 7.714 ns ( 69.76 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Warning: Circuit may not operate. Detected 1 non-operational path(s) clocked by clock "clk" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "song_top:inst|song:song_inst|sp" and destination pin or register "song_top:inst|song:song_inst|sp" for clock "clk" (Hold time is 576 ps)
+    Info: + Largest clock skew is 2.216 ns
+        Info: + Longest clock path from clock "clk" to destination register is 18.426 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 24; CLK Node = 'clk'
+            Info: 2: + IC(4.444 ns) + CELL(1.294 ns) = 6.870 ns; Loc. = LC_X2_Y3_N5; Fanout = 17; REG Node = 'song_top:inst|clk_cnt1[2]'
+            Info: 3: + IC(3.359 ns) + CELL(1.294 ns) = 11.523 ns; Loc. = LC_X7_Y2_N0; Fanout = 4; REG Node = 'song_top:inst|song:song_inst|divider[7]'
+            Info: 4: + IC(1.304 ns) + CELL(0.914 ns) = 13.741 ns; Loc. = LC_X6_Y2_N0; Fanout = 1; COMB Node = 'song_top:inst|song:song_inst|Equal0~164'
+            Info: 5: + IC(1.099 ns) + CELL(0.914 ns) = 15.754 ns; Loc. = LC_X7_Y2_N8; Fanout = 15; COMB Node = 'song_top:inst|song:song_inst|Equal0'
+            Info: 6: + IC(1.754 ns) + CELL(0.918 ns) = 18.426 ns; Loc. = LC_X7_Y1_N2; Fanout = 2; REG Node = 'song_top:inst|song:song_inst|sp'
+            Info: Total cell delay = 6.466 ns ( 35.09 % )
+            Info: Total interconnect delay = 11.960 ns ( 64.91 % )
+        Info: - Shortest clock path from clock "clk" to source register is 16.210 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 24; CLK Node = 'clk'
+            Info: 2: + IC(4.444 ns) + CELL(1.294 ns) = 6.870 ns; Loc. = LC_X2_Y3_N5; Fanout = 17; REG Node = 'song_top:inst|clk_cnt1[2]'
+            Info: 3: + IC(3.359 ns) + CELL(1.294 ns) = 11.523 ns; Loc. = LC_X7_Y2_N5; Fanout = 4; REG Node = 'song_top:inst|song:song_inst|divider[12]'
+            Info: 4: + IC(0.999 ns) + CELL(0.511 ns) = 13.033 ns; Loc. = LC_X7_Y2_N7; Fanout = 1; COMB Node = 'song_top:inst|song:song_inst|Equal0~166'
+            Info: 5: + IC(0.305 ns) + CELL(0.200 ns) = 13.538 ns; Loc. = LC_X7_Y2_N8; Fanout = 15; COMB Node = 'song_top:inst|song:song_inst|Equal0'
+            Info: 6: + IC(1.754 ns) + CELL(0.918 ns) = 16.210 ns; Loc. = LC_X7_Y1_N2; Fanout = 2; REG Node = 'song_top:inst|song:song_inst|sp'
+            Info: Total cell delay = 5.349 ns ( 33.00 % )
+            Info: Total interconnect delay = 10.861 ns ( 67.00 % )
+    Info: - Micro clock to output delay of source is 0.376 ns
+    Info: - Shortest register to register delay is 1.485 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X7_Y1_N2; Fanout = 2; REG Node = 'song_top:inst|song:song_inst|sp'
+        Info: 2: + IC(0.894 ns) + CELL(0.591 ns) = 1.485 ns; Loc. = LC_X7_Y1_N2; Fanout = 2; REG Node = 'song_top:inst|song:song_inst|sp'
+        Info: Total cell delay = 0.591 ns ( 39.80 % )
+        Info: Total interconnect delay = 0.894 ns ( 60.20 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+Info: tsu for register "song_top:inst|clk_cnt1[16]" (data pin = "rst_n", clock pin = "clk") is -0.553 ns
+    Info: + Longest pin to register delay is 5.608 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_83; Fanout = 24; PIN Node = 'rst_n'
+        Info: 2: + IC(2.716 ns) + CELL(1.760 ns) = 5.608 ns; Loc. = LC_X3_Y3_N9; Fanout = 2; REG Node = 'song_top:inst|clk_cnt1[16]'
+        Info: Total cell delay = 2.892 ns ( 51.57 % )
+        Info: Total interconnect delay = 2.716 ns ( 48.43 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 6.494 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 24; CLK Node = 'clk'
+        Info: 2: + IC(4.444 ns) + CELL(0.918 ns) = 6.494 ns; Loc. = LC_X3_Y3_N9; Fanout = 2; REG Node = 'song_top:inst|clk_cnt1[16]'
+        Info: Total cell delay = 2.050 ns ( 31.57 % )
+        Info: Total interconnect delay = 4.444 ns ( 68.43 % )
+Info: tco from clock "clk" to destination pin "Buzzer" through register "song_top:inst|song:song_inst|sp" is 23.616 ns
+    Info: + Longest clock path from clock "clk" to source register is 18.426 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 24; CLK Node = 'clk'
+        Info: 2: + IC(4.444 ns) + CELL(1.294 ns) = 6.870 ns; Loc. = LC_X2_Y3_N5; Fanout = 17; REG Node = 'song_top:inst|clk_cnt1[2]'
+        Info: 3: + IC(3.359 ns) + CELL(1.294 ns) = 11.523 ns; Loc. = LC_X7_Y2_N0; Fanout = 4; REG Node = 'song_top:inst|song:song_inst|divider[7]'
+        Info: 4: + IC(1.304 ns) + CELL(0.914 ns) = 13.741 ns; Loc. = LC_X6_Y2_N0; Fanout = 1; COMB Node = 'song_top:inst|song:song_inst|Equal0~164'
+        Info: 5: + IC(1.099 ns) + CELL(0.914 ns) = 15.754 ns; Loc. = LC_X7_Y2_N8; Fanout = 15; COMB Node = 'song_top:inst|song:song_inst|Equal0'
+        Info: 6: + IC(1.754 ns) + CELL(0.918 ns) = 18.426 ns; Loc. = LC_X7_Y1_N2; Fanout = 2; REG Node = 'song_top:inst|song:song_inst|sp'
+        Info: Total cell delay = 6.466 ns ( 35.09 % )
+        Info: Total interconnect delay = 11.960 ns ( 64.91 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 4.814 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X7_Y1_N2; Fanout = 2; REG Node = 'song_top:inst|song:song_inst|sp'
+        Info: 2: + IC(2.492 ns) + CELL(2.322 ns) = 4.814 ns; Loc. = PIN_21; Fanout = 0; PIN Node = 'Buzzer'
+        Info: Total cell delay = 2.322 ns ( 48.23 % )
+        Info: Total interconnect delay = 2.492 ns ( 51.77 % )
+Info: th for register "song_top:inst|clk_cnt1[23]" (data pin = "rst_n", clock pin = "clk") is 1.145 ns
+    Info: + Longest clock path from clock "clk" to destination register is 6.494 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 24; CLK Node = 'clk'
+        Info: 2: + IC(4.444 ns) + CELL(0.918 ns) = 6.494 ns; Loc. = LC_X4_Y3_N6; Fanout = 30; REG Node = 'song_top:inst|clk_cnt1[23]'
+        Info: Total cell delay = 2.050 ns ( 31.57 % )
+        Info: Total interconnect delay = 4.444 ns ( 68.43 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 5.570 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_83; Fanout = 24; PIN Node = 'rst_n'
+        Info: 2: + IC(2.678 ns) + CELL(1.760 ns) = 5.570 ns; Loc. = LC_X4_Y3_N6; Fanout = 30; REG Node = 'song_top:inst|clk_cnt1[23]'
+        Info: Total cell delay = 2.892 ns ( 51.92 % )
+        Info: Total interconnect delay = 2.678 ns ( 48.08 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Allocated 111 megabytes of memory during processing
+    Info: Processing ended: Sun Nov 27 16:42:04 2011
+    Info: Elapsed time: 00:00:02
+
+

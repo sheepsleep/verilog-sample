@@ -1,0 +1,771 @@
+Analysis & Synthesis report for MAXII_PicoBlaze
+Sat Sep 10 20:47:31 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Registers Removed During Synthesis
+  8. Removed Registers Triggering Further Register Optimizations
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers
+ 12. Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit
+ 13. Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:1:data_register_bit
+ 14. Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:2:data_register_bit
+ 15. Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:3:data_register_bit
+ 16. Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:4:data_register_bit
+ 17. Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:5:data_register_bit
+ 18. Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:6:data_register_bit
+ 19. Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:7:data_register_bit
+ 20. Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory
+ 21. Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:0:stack_ram_bit
+ 22. Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:1:stack_ram_bit
+ 23. Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:2:stack_ram_bit
+ 24. Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:3:stack_ram_bit
+ 25. Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:4:stack_ram_bit
+ 26. Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:5:stack_ram_bit
+ 27. Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:6:stack_ram_bit
+ 28. Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:7:stack_ram_bit
+ 29. Parameter Settings for User Entity Instance: picoblaze:processor|stack_counter:stack_control
+ 30. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat Sep 10 20:47:31 2011    ;
+; Quartus II Version          ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name               ; MAXII_PicoBlaze                          ;
+; Top-level Entity Name       ; MAXII_PicoBlaze                          ;
+; Family                      ; MAX II                                   ;
+; Total logic elements        ; 179                                      ;
+; Total pins                  ; 10                                       ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 0                                        ;
+; DSP block 9-bit elements    ; 0                                        ;
+; Total PLLs                  ; 0                                        ;
+; Total DLLs                  ; 0                                        ;
++-----------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EPM240T100C5       ;                    ;
+; Top-level entity name                                                          ; MAXII_PicoBlaze    ; MAXII_PicoBlaze    ;
+; Family name                                                                    ; MAX II             ; Stratix            ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Optimization Technique -- MAX II                                               ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                             ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                                ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------+
+; MAXII_PicoBlaze.vhd              ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/MAXII_PicoBlaze.vhd          ;
+; clkdiv.vhd                       ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/clkdiv.vhd                   ;
+; ROM_test.vhd                     ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/ROM_test.vhd                 ;
+; picoblaze.vhd                    ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/picoblaze.vhd                ;
+; arithmatic.vhd                   ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/arithmatic.vhd               ;
+; carry_flag_logic.vhd             ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/carry_flag_logic.vhd         ;
+; interrupt_capture.vhd            ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/interrupt_capture.vhd        ;
+; interrupt_logic.vhd              ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/interrupt_logic.vhd          ;
+; IO_strobe_logic.vhd              ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/IO_strobe_logic.vhd          ;
+; logical_bus_processing.vhd       ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/logical_bus_processing.vhd   ;
+; program_counter.vhd              ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/program_counter.vhd          ;
+; register_and_flag_enable.vhd     ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/register_and_flag_enable.vhd ;
+; register_bank.vhd                ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/register_bank.vhd            ;
+; shift_rotate.vhd                 ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/shift_rotate.vhd             ;
+; stack_counter.vhd                ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/stack_counter.vhd            ;
+; stack_ram.vhd                    ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/stack_ram.vhd                ;
+; T_state_and_Reset.vhd            ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/T_state_and_Reset.vhd        ;
+; zero_flag_logic.vhd              ; yes             ; User VHDL File  ; C:/altera/work/MAXII240T100C5N/Coolrunner II version of Picoblaze/exsample/MAXII_PicoBlaze_OK2/zero_flag_logic.vhd          ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                              ;
++---------------------------------------------+----------------------------+
+; Resource                                    ; Usage                      ;
++---------------------------------------------+----------------------------+
+; Total logic elements                        ; 179                        ;
+;     -- Combinational with no register       ; 81                         ;
+;     -- Register only                        ; 43                         ;
+;     -- Combinational with a register        ; 55                         ;
+;                                             ;                            ;
+; Logic element usage by number of LUT inputs ;                            ;
+;     -- 4 input functions                    ; 62                         ;
+;     -- 3 input functions                    ; 33                         ;
+;     -- 2 input functions                    ; 37                         ;
+;     -- 1 input functions                    ; 3                          ;
+;     -- 0 input functions                    ; 1                          ;
+;                                             ;                            ;
+; Logic elements by mode                      ;                            ;
+;     -- normal mode                          ; 152                        ;
+;     -- arithmetic mode                      ; 27                         ;
+;     -- qfbk mode                            ; 0                          ;
+;     -- register cascade mode                ; 0                          ;
+;     -- synchronous clear/load mode          ; 23                         ;
+;     -- asynchronous clear/load mode         ; 24                         ;
+;                                             ;                            ;
+; Total registers                             ; 98                         ;
+; Total logic cells in carry chains           ; 29                         ;
+; I/O pins                                    ; 10                         ;
+; Maximum fan-out node                        ; picoblaze:processor|cpuclk ;
+; Maximum fan-out                             ; 58                         ;
+; Total fan-out                               ; 656                        ;
+; Average fan-out                             ; 3.47                       ;
++---------------------------------------------+----------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                          ;
++--------------------------------------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                             ; Logic Cells ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                           ; Library Name ;
++--------------------------------------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------+--------------+
+; |MAXII_PicoBlaze                                       ; 179 (9)     ; 98           ; 0           ; 0            ; 0       ; 0         ; 0         ; 10   ; 0            ; 81 (1)       ; 43 (8)            ; 55 (0)           ; 29 (0)          ; 0 (0)      ; |MAXII_PicoBlaze                                                                                              ; work         ;
+;    |ROM_test:program|                                  ; 13 (13)     ; 8            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 5 (5)        ; 2 (2)             ; 6 (6)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|ROM_test:program                                                                             ; work         ;
+;    |clkdiv:clk_div|                                    ; 49 (49)     ; 22           ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 27 (27)      ; 14 (14)           ; 8 (8)            ; 21 (21)         ; 0 (0)      ; |MAXII_PicoBlaze|clkdiv:clk_div                                                                               ; work         ;
+;    |picoblaze:processor|                               ; 108 (26)    ; 60           ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 48 (24)      ; 19 (1)            ; 41 (1)           ; 8 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor                                                                          ; work         ;
+;       |IO_strobe_logic:IO_strobes|                     ; 1 (1)       ; 1            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|IO_strobe_logic:IO_strobes                                               ; work         ;
+;       |T_state_and_Reset:basic_control|                ; 3 (3)       ; 3            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|T_state_and_Reset:basic_control                                          ; work         ;
+;       |arithmetic_process:arithmetic_group|            ; 17 (2)      ; 9            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 8 (1)        ; 0 (0)             ; 9 (1)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|arithmetic_process:arithmetic_group                                      ; work         ;
+;          |addsub8:add_sub_module|                      ; 15 (15)     ; 8            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|arithmetic_process:arithmetic_group|addsub8:add_sub_module               ; work         ;
+;       |carry_flag_logic:carry_logic|                   ; 1 (1)       ; 1            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|carry_flag_logic:carry_logic                                             ; work         ;
+;       |logical_bus_processing:logical_group|           ; 14 (14)     ; 8            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|logical_bus_processing:logical_group                                     ; work         ;
+;       |program_counter:prog_count|                     ; 13 (13)     ; 8            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 8 (8)            ; 8 (8)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|program_counter:prog_count                                               ; work         ;
+;       |register_and_flag_enable:reg_and_flag_enables|  ; 3 (3)       ; 3            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|register_and_flag_enable:reg_and_flag_enables                            ; work         ;
+;       |register_bank:data_registers|                   ; 19 (0)      ; 16           ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 3 (0)        ; 16 (0)            ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|register_bank:data_registers                                             ; work         ;
+;          |ram_Nx1:\bus_width_loop:0:data_register_bit| ; 4 (4)       ; 2            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 2 (2)        ; 2 (2)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit ; work         ;
+;          |ram_Nx1:\bus_width_loop:1:data_register_bit| ; 2 (2)       ; 2            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:1:data_register_bit ; work         ;
+;          |ram_Nx1:\bus_width_loop:2:data_register_bit| ; 2 (2)       ; 2            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:2:data_register_bit ; work         ;
+;          |ram_Nx1:\bus_width_loop:3:data_register_bit| ; 2 (2)       ; 2            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:3:data_register_bit ; work         ;
+;          |ram_Nx1:\bus_width_loop:4:data_register_bit| ; 2 (2)       ; 2            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:4:data_register_bit ; work         ;
+;          |ram_Nx1:\bus_width_loop:5:data_register_bit| ; 2 (2)       ; 2            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:5:data_register_bit ; work         ;
+;          |ram_Nx1:\bus_width_loop:6:data_register_bit| ; 2 (2)       ; 2            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:6:data_register_bit ; work         ;
+;          |ram_Nx1:\bus_width_loop:7:data_register_bit| ; 3 (3)       ; 2            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 1 (1)        ; 2 (2)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:7:data_register_bit ; work         ;
+;       |shift_rotate:shift_group|                       ; 10 (10)     ; 9            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 1 (1)        ; 1 (1)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|shift_rotate:shift_group                                                 ; work         ;
+;       |zero_flag_logic:zero_logic|                     ; 1 (1)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |MAXII_PicoBlaze|picoblaze:processor|zero_flag_logic:zero_logic                                               ; work         ;
++--------------------------------------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                      ;
++-----------------------------------------------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                                                             ; Reason for Removal                          ;
++-----------------------------------------------------------------------------------------------------------+---------------------------------------------+
+; ROM_test:program|dout[1,4..7]                                                                             ; Stuck at GND due to stuck port data_in      ;
+; picoblaze:processor|interrupt_capture:get_interrupt|clean_interrupt                                       ; Stuck at GND due to stuck port data_in      ;
+; picoblaze:processor|interrupt_capture:get_interrupt|active_interrupt_pulse                                ; Stuck at GND due to stuck port data_in      ;
+; picoblaze:processor|interrupt_logic:interrupt_control|shaddow_carry                                       ; Stuck at GND due to stuck port clock_enable ;
+; picoblaze:processor|interrupt_logic:interrupt_control|shaddow_zero                                        ; Stuck at GND due to stuck port clock_enable ;
+; picoblaze:processor|interrupt_logic:interrupt_control|interrupt_enable                                    ; Lost fanout                                 ;
+; ROM_test:program|dout[9..10]                                                                              ; Merged with ROM_test:program|dout[8]        ;
+; ROM_test:program|dout[14]                                                                                 ; Merged with ROM_test:program|dout[12]       ;
+; picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:7:data_register_bit|rambit[1..6] ; Stuck at GND due to stuck port clock_enable ;
+; picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:6:data_register_bit|rambit[1..6] ; Stuck at GND due to stuck port clock_enable ;
+; picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:5:data_register_bit|rambit[1..6] ; Stuck at GND due to stuck port clock_enable ;
+; picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:4:data_register_bit|rambit[1..6] ; Stuck at GND due to stuck port clock_enable ;
+; picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:3:data_register_bit|rambit[1..6] ; Stuck at GND due to stuck port clock_enable ;
+; picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:2:data_register_bit|rambit[1..6] ; Stuck at GND due to stuck port clock_enable ;
+; picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:1:data_register_bit|rambit[1..6] ; Stuck at GND due to stuck port clock_enable ;
+; picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit|rambit[1..6] ; Stuck at GND due to stuck port clock_enable ;
+; picoblaze:processor|stack_ram:stack_memory|Dout[1,4..7]                                                   ; Lost fanout                                 ;
+; picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:1:stack_ram_bit|rambit[0..3]           ; Lost fanout                                 ;
+; picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:4:stack_ram_bit|rambit[0..3]           ; Lost fanout                                 ;
+; picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:5:stack_ram_bit|rambit[0..3]           ; Lost fanout                                 ;
+; picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:6:stack_ram_bit|rambit[0..3]           ; Lost fanout                                 ;
+; picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:7:stack_ram_bit|rambit[0..3]           ; Lost fanout                                 ;
+; picoblaze:processor|stack_ram:stack_memory|Dout[0,2..3]                                                   ; Lost fanout                                 ;
+; picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:0:stack_ram_bit|rambit[0..3]           ; Lost fanout                                 ;
+; picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:2:stack_ram_bit|rambit[0..3]           ; Lost fanout                                 ;
+; picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:3:stack_ram_bit|rambit[0..3]           ; Lost fanout                                 ;
+; picoblaze:processor|stack_counter:stack_control|count_value[0..1]                                         ; Lost fanout                                 ;
+; Total Number of Removed Registers = 103                                                                   ;                                             ;
++-----------------------------------------------------------------------------------------------------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                   ;
++---------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------+
+; Register name                                                       ; Reason for Removal        ; Registers Removed due to This Register                                      ;
++---------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------+
+; picoblaze:processor|interrupt_capture:get_interrupt|clean_interrupt ; Stuck at GND              ; picoblaze:processor|interrupt_capture:get_interrupt|active_interrupt_pulse, ;
+;                                                                     ; due to stuck port data_in ; picoblaze:processor|interrupt_logic:interrupt_control|shaddow_carry,        ;
+;                                                                     ;                           ; picoblaze:processor|interrupt_logic:interrupt_control|shaddow_zero,         ;
+;                                                                     ;                           ; picoblaze:processor|interrupt_logic:interrupt_control|interrupt_enable,     ;
+;                                                                     ;                           ; picoblaze:processor|stack_ram:stack_memory|Dout[0],                         ;
+;                                                                     ;                           ; picoblaze:processor|stack_ram:stack_memory|Dout[2],                         ;
+;                                                                     ;                           ; picoblaze:processor|stack_ram:stack_memory|Dout[3]                          ;
+; ROM_test:program|dout[1]                                            ; Stuck at GND              ; picoblaze:processor|stack_ram:stack_memory|Dout[1]                          ;
+;                                                                     ; due to stuck port data_in ;                                                                             ;
+; ROM_test:program|dout[4]                                            ; Stuck at GND              ; picoblaze:processor|stack_ram:stack_memory|Dout[4]                          ;
+;                                                                     ; due to stuck port data_in ;                                                                             ;
+; ROM_test:program|dout[5]                                            ; Stuck at GND              ; picoblaze:processor|stack_ram:stack_memory|Dout[5]                          ;
+;                                                                     ; due to stuck port data_in ;                                                                             ;
+; ROM_test:program|dout[6]                                            ; Stuck at GND              ; picoblaze:processor|stack_ram:stack_memory|Dout[6]                          ;
+;                                                                     ; due to stuck port data_in ;                                                                             ;
+; ROM_test:program|dout[7]                                            ; Stuck at GND              ; picoblaze:processor|stack_ram:stack_memory|Dout[7]                          ;
+;                                                                     ; due to stuck port data_in ;                                                                             ;
+; picoblaze:processor|stack_counter:stack_control|count_value[1]      ; Lost Fanouts              ; picoblaze:processor|stack_counter:stack_control|count_value[0]              ;
++---------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 98    ;
+; Number of registers using Synchronous Clear  ; 15    ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 24    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 33    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |MAXII_PicoBlaze|picoblaze:processor|logical_bus_processing:logical_group|Y[0] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |MAXII_PicoBlaze|picoblaze:processor|stack_ram:stack_memory|Dout[0]            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |MAXII_PicoBlaze|picoblaze:processor|zero_flag_logic:zero_logic|zero_flag      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |MAXII_PicoBlaze|picoblaze:processor|program_counter:prog_count|count_value[7] ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |MAXII_PicoBlaze|picoblaze:processor|program_counter:prog_count|Add0           ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |MAXII_PicoBlaze|picoblaze:processor|program_counter:prog_count|Add0           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; m              ; 3     ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                             ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; m              ; 3     ; Signed Integer                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:1:data_register_bit ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                             ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; m              ; 3     ; Signed Integer                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:2:data_register_bit ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                             ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; m              ; 3     ; Signed Integer                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:3:data_register_bit ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                             ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; m              ; 3     ; Signed Integer                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:4:data_register_bit ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                             ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; m              ; 3     ; Signed Integer                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:5:data_register_bit ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                             ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; m              ; 3     ; Signed Integer                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:6:data_register_bit ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                             ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; m              ; 3     ; Signed Integer                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:7:data_register_bit ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                             ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+; m              ; 3     ; Signed Integer                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; m              ; 2     ; Signed Integer                                                 ;
+; n              ; 8     ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:0:stack_ram_bit ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; m              ; 2     ; Signed Integer                                                                                         ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:1:stack_ram_bit ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; m              ; 2     ; Signed Integer                                                                                         ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:2:stack_ram_bit ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; m              ; 2     ; Signed Integer                                                                                         ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:3:stack_ram_bit ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; m              ; 2     ; Signed Integer                                                                                         ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:4:stack_ram_bit ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; m              ; 2     ; Signed Integer                                                                                         ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:5:stack_ram_bit ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; m              ; 2     ; Signed Integer                                                                                         ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:6:stack_ram_bit ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; m              ; 2     ; Signed Integer                                                                                         ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:7:stack_ram_bit ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; m              ; 2     ; Signed Integer                                                                                         ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: picoblaze:processor|stack_counter:stack_control ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; n              ; 2     ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Sat Sep 10 20:47:25 2011
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MAXII_PicoBlaze -c MAXII_PicoBlaze
+Info: Found 2 design units, including 1 entities, in source file MAXII_PicoBlaze.vhd
+    Info: Found design unit 1: MAXII_PicoBlaze-Behavioral
+    Info: Found entity 1: MAXII_PicoBlaze
+Info: Found 2 design units, including 1 entities, in source file clkdiv.vhd
+    Info: Found design unit 1: clkdiv-fun
+    Info: Found entity 1: clkdiv
+Info: Found 2 design units, including 1 entities, in source file ROM_test.vhd
+    Info: Found design unit 1: ROM_test-v1
+    Info: Found entity 1: ROM_test
+Info: Found 2 design units, including 1 entities, in source file picoblaze.vhd
+    Info: Found design unit 1: picoblaze-Behavioral
+    Info: Found entity 1: picoblaze
+Info: Found 4 design units, including 2 entities, in source file arithmatic.vhd
+    Info: Found design unit 1: arithmetic_process-low_level_definition
+    Info: Found design unit 2: addsub8-low_level_definition
+    Info: Found entity 1: arithmetic_process
+    Info: Found entity 2: addsub8
+Info: Found 2 design units, including 1 entities, in source file carry_flag_logic.vhd
+    Info: Found design unit 1: carry_flag_logic-low_level_definition
+    Info: Found entity 1: carry_flag_logic
+Info: Found 2 design units, including 1 entities, in source file flip.vhd
+    Info: Found design unit 1: flip-low_level_definition
+    Info: Found entity 1: flip
+Info: Found 2 design units, including 1 entities, in source file interrupt_capture.vhd
+    Info: Found design unit 1: interrupt_capture-low_level_definition
+    Info: Found entity 1: interrupt_capture
+Info: Found 2 design units, including 1 entities, in source file interrupt_logic.vhd
+    Info: Found design unit 1: interrupt_logic-low_level_definition
+    Info: Found entity 1: interrupt_logic
+Info: Found 2 design units, including 1 entities, in source file IO_strobe_logic.vhd
+    Info: Found design unit 1: IO_strobe_logic-low_level_definition
+    Info: Found entity 1: IO_strobe_logic
+Info: Found 2 design units, including 1 entities, in source file logical_bus_processing.vhd
+    Info: Found design unit 1: logical_bus_processing-low_level_definition
+    Info: Found entity 1: logical_bus_processing
+Info: Found 2 design units, including 1 entities, in source file program_counter.vhd
+    Info: Found design unit 1: program_counter-low_level_definition
+    Info: Found entity 1: program_counter
+Info: Found 2 design units, including 1 entities, in source file register_and_flag_enable.vhd
+    Info: Found design unit 1: register_and_flag_enable-low_level_definition
+    Info: Found entity 1: register_and_flag_enable
+Info: Found 4 design units, including 2 entities, in source file register_bank.vhd
+    Info: Found design unit 1: register_bank-Behavioral
+    Info: Found design unit 2: ram_Nx1-Behavioral
+    Info: Found entity 1: register_bank
+    Info: Found entity 2: ram_Nx1
+Info: Found 2 design units, including 1 entities, in source file shift_rotate.vhd
+    Info: Found design unit 1: shift_rotate-low_level_definition
+    Info: Found entity 1: shift_rotate
+Info: Found 2 design units, including 1 entities, in source file stack_counter.vhd
+    Info: Found design unit 1: stack_counter-low_level_definition
+    Info: Found entity 1: stack_counter
+Info: Found 4 design units, including 2 entities, in source file stack_ram.vhd
+    Info: Found design unit 1: stack_ram-low_level_definition
+    Info: Found design unit 2: ram_x1s-Behavioral
+    Info: Found entity 1: stack_ram
+    Info: Found entity 2: ram_x1s
+Info: Found 2 design units, including 1 entities, in source file T_state_and_Reset.vhd
+    Info: Found design unit 1: T_state_and_Reset-low_level_definition
+    Info: Found entity 1: T_state_and_Reset
+Info: Found 2 design units, including 1 entities, in source file zero_flag_logic.vhd
+    Info: Found design unit 1: zero_flag_logic-low_level_definition
+    Info: Found entity 1: zero_flag_logic
+Info: Elaborating entity "MAXII_PicoBlaze" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at MAXII_PicoBlaze.vhd(72): object "read_strobe" assigned a value but never read
+Info: Elaborating entity "clkdiv" for hierarchy "clkdiv:clk_div"
+Info: Elaborating entity "picoblaze" for hierarchy "picoblaze:processor"
+Info: Elaborating entity "IO_strobe_logic" for hierarchy "picoblaze:processor|IO_strobe_logic:IO_strobes"
+Info: Elaborating entity "arithmetic_process" for hierarchy "picoblaze:processor|arithmetic_process:arithmetic_group"
+Info: Elaborating entity "addsub8" for hierarchy "picoblaze:processor|arithmetic_process:arithmetic_group|addsub8:add_sub_module"
+Info: Elaborating entity "shift_rotate" for hierarchy "picoblaze:processor|shift_rotate:shift_group"
+Info: Elaborating entity "logical_bus_processing" for hierarchy "picoblaze:processor|logical_bus_processing:logical_group"
+Warning (10036): Verilog HDL or VHDL warning at logical_bus_processing.vhd(35): object "sel" assigned a value but never read
+Info: Elaborating entity "T_state_and_Reset" for hierarchy "picoblaze:processor|T_state_and_Reset:basic_control"
+Info: Elaborating entity "register_and_flag_enable" for hierarchy "picoblaze:processor|register_and_flag_enable:reg_and_flag_enables"
+Info: Elaborating entity "carry_flag_logic" for hierarchy "picoblaze:processor|carry_flag_logic:carry_logic"
+Info: Elaborating entity "zero_flag_logic" for hierarchy "picoblaze:processor|zero_flag_logic:zero_logic"
+Info: Elaborating entity "program_counter" for hierarchy "picoblaze:processor|program_counter:prog_count"
+Info: Elaborating entity "register_bank" for hierarchy "picoblaze:processor|register_bank:data_registers"
+Info: Elaborating entity "ram_Nx1" for hierarchy "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit"
+Info: Elaborating entity "stack_ram" for hierarchy "picoblaze:processor|stack_ram:stack_memory"
+Info: Elaborating entity "ram_x1s" for hierarchy "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:0:stack_ram_bit"
+Info: Elaborating entity "stack_counter" for hierarchy "picoblaze:processor|stack_counter:stack_control"
+Info: Elaborating entity "interrupt_capture" for hierarchy "picoblaze:processor|interrupt_capture:get_interrupt"
+Info: Elaborating entity "interrupt_logic" for hierarchy "picoblaze:processor|interrupt_logic:interrupt_control"
+Info: Elaborating entity "ROM_test" for hierarchy "ROM_test:program"
+Warning (14130): Reduced register "ROM_test:program|dout[1]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "ROM_test:program|dout[4]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "ROM_test:program|dout[5]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "ROM_test:program|dout[6]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "ROM_test:program|dout[7]" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "picoblaze:processor|interrupt_capture:get_interrupt|clean_interrupt" with stuck data_in port to stuck value GND
+Warning (14130): Reduced register "picoblaze:processor|interrupt_capture:get_interrupt|active_interrupt_pulse" with stuck data_in port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|interrupt_logic:interrupt_control|shaddow_carry" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|interrupt_logic:interrupt_control|shaddow_carry" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|interrupt_logic:interrupt_control|shaddow_zero" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|interrupt_logic:interrupt_control|shaddow_zero" with stuck clock_enable port to stuck value GND
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "ROM_test:program|dout[9]" merged to single register "ROM_test:program|dout[8]"
+    Info: Duplicate register "ROM_test:program|dout[10]" merged to single register "ROM_test:program|dout[8]"
+    Info: Duplicate register "ROM_test:program|dout[14]" merged to single register "ROM_test:program|dout[12]"
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:7:data_register_bit|rambit[1]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:7:data_register_bit|rambit[1]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:7:data_register_bit|rambit[2]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:7:data_register_bit|rambit[2]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:7:data_register_bit|rambit[3]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:7:data_register_bit|rambit[3]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:7:data_register_bit|rambit[4]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:7:data_register_bit|rambit[4]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:7:data_register_bit|rambit[5]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:7:data_register_bit|rambit[5]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:7:data_register_bit|rambit[6]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:7:data_register_bit|rambit[6]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:6:data_register_bit|rambit[1]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:6:data_register_bit|rambit[1]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:6:data_register_bit|rambit[2]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:6:data_register_bit|rambit[2]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:6:data_register_bit|rambit[3]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:6:data_register_bit|rambit[3]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:6:data_register_bit|rambit[4]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:6:data_register_bit|rambit[4]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:6:data_register_bit|rambit[5]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:6:data_register_bit|rambit[5]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:6:data_register_bit|rambit[6]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:6:data_register_bit|rambit[6]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:5:data_register_bit|rambit[1]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:5:data_register_bit|rambit[1]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:5:data_register_bit|rambit[2]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:5:data_register_bit|rambit[2]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:5:data_register_bit|rambit[3]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:5:data_register_bit|rambit[3]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:5:data_register_bit|rambit[4]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:5:data_register_bit|rambit[4]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:5:data_register_bit|rambit[5]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:5:data_register_bit|rambit[5]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:5:data_register_bit|rambit[6]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:5:data_register_bit|rambit[6]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:4:data_register_bit|rambit[1]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:4:data_register_bit|rambit[1]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:4:data_register_bit|rambit[2]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:4:data_register_bit|rambit[2]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:4:data_register_bit|rambit[3]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:4:data_register_bit|rambit[3]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:4:data_register_bit|rambit[4]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:4:data_register_bit|rambit[4]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:4:data_register_bit|rambit[5]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:4:data_register_bit|rambit[5]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:4:data_register_bit|rambit[6]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:4:data_register_bit|rambit[6]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:3:data_register_bit|rambit[1]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:3:data_register_bit|rambit[1]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:3:data_register_bit|rambit[2]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:3:data_register_bit|rambit[2]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:3:data_register_bit|rambit[3]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:3:data_register_bit|rambit[3]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:3:data_register_bit|rambit[4]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:3:data_register_bit|rambit[4]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:3:data_register_bit|rambit[5]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:3:data_register_bit|rambit[5]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:3:data_register_bit|rambit[6]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:3:data_register_bit|rambit[6]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:2:data_register_bit|rambit[1]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:2:data_register_bit|rambit[1]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:2:data_register_bit|rambit[2]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:2:data_register_bit|rambit[2]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:2:data_register_bit|rambit[3]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:2:data_register_bit|rambit[3]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:2:data_register_bit|rambit[4]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:2:data_register_bit|rambit[4]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:2:data_register_bit|rambit[5]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:2:data_register_bit|rambit[5]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:2:data_register_bit|rambit[6]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:2:data_register_bit|rambit[6]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:1:data_register_bit|rambit[1]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:1:data_register_bit|rambit[1]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:1:data_register_bit|rambit[2]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:1:data_register_bit|rambit[2]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:1:data_register_bit|rambit[3]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:1:data_register_bit|rambit[3]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:1:data_register_bit|rambit[4]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:1:data_register_bit|rambit[4]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:1:data_register_bit|rambit[5]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:1:data_register_bit|rambit[5]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:1:data_register_bit|rambit[6]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:1:data_register_bit|rambit[6]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit|rambit[1]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit|rambit[1]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit|rambit[2]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit|rambit[2]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit|rambit[3]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit|rambit[3]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit|rambit[4]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit|rambit[4]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit|rambit[5]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit|rambit[5]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit|rambit[6]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit|rambit[6]" with stuck clock_enable port to stuck value GND
+Info: 43 registers lost all their fanouts during netlist optimizations. The first 43 are displayed below.
+    Info: Register "picoblaze:processor|interrupt_logic:interrupt_control|interrupt_enable" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|Dout[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|Dout[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|Dout[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|Dout[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|Dout[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:1:stack_ram_bit|rambit[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:1:stack_ram_bit|rambit[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:1:stack_ram_bit|rambit[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:1:stack_ram_bit|rambit[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:4:stack_ram_bit|rambit[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:4:stack_ram_bit|rambit[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:4:stack_ram_bit|rambit[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:4:stack_ram_bit|rambit[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:5:stack_ram_bit|rambit[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:5:stack_ram_bit|rambit[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:5:stack_ram_bit|rambit[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:5:stack_ram_bit|rambit[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:6:stack_ram_bit|rambit[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:6:stack_ram_bit|rambit[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:6:stack_ram_bit|rambit[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:6:stack_ram_bit|rambit[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:7:stack_ram_bit|rambit[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:7:stack_ram_bit|rambit[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:7:stack_ram_bit|rambit[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:7:stack_ram_bit|rambit[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|Dout[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|Dout[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|Dout[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:0:stack_ram_bit|rambit[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:0:stack_ram_bit|rambit[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:0:stack_ram_bit|rambit[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:0:stack_ram_bit|rambit[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:2:stack_ram_bit|rambit[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:2:stack_ram_bit|rambit[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:2:stack_ram_bit|rambit[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:2:stack_ram_bit|rambit[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:3:stack_ram_bit|rambit[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:3:stack_ram_bit|rambit[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:3:stack_ram_bit|rambit[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:3:stack_ram_bit|rambit[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_counter:stack_control|count_value[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "picoblaze:processor|stack_counter:stack_control|count_value[0]" lost all its fanouts during netlist optimizations.
+Info: Implemented 189 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 8 output pins
+    Info: Implemented 179 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 109 warnings
+    Info: Allocated 160 megabytes of memory during processing
+    Info: Processing ended: Sat Sep 10 20:47:31 2011
+    Info: Elapsed time: 00:00:06
+
+

@@ -1,0 +1,96 @@
+|LCD_test
+lcd_rs <= LCD1602:inst.rs
+clk => autoreset:inst1.clk
+rst_n => autoreset:inst1.rst_n
+lcd_rw <= LCD1602:inst.rw
+lcd_en <= LCD1602:inst.en
+lcd_data[0] <= LCD1602:inst.data[0]
+lcd_data[1] <= LCD1602:inst.data[1]
+lcd_data[2] <= LCD1602:inst.data[2]
+lcd_data[3] <= LCD1602:inst.data[3]
+lcd_data[4] <= LCD1602:inst.data[4]
+lcd_data[5] <= LCD1602:inst.data[5]
+lcd_data[6] <= LCD1602:inst.data[6]
+lcd_data[7] <= LCD1602:inst.data[7]
+
+
+|LCD_test|LCD1602:inst
+clk => count[15].CLK
+clk => count[14].CLK
+clk => count[13].CLK
+clk => count[12].CLK
+clk => count[11].CLK
+clk => count[10].CLK
+clk => count[9].CLK
+clk => count[8].CLK
+clk => count[7].CLK
+clk => count[6].CLK
+clk => count[5].CLK
+clk => count[4].CLK
+clk => count[3].CLK
+clk => count[2].CLK
+clk => count[1].CLK
+clk => count[0].CLK
+clk => clkr.CLK
+rst_n => counter[4].ACLR
+rst_n => counter[3].ACLR
+rst_n => counter[2].ACLR
+rst_n => counter[1].ACLR
+rst_n => counter[0].ACLR
+rst_n => data[0]~reg0.ENA
+rst_n => rs~reg0.ENA
+rst_n => rw~reg0.ENA
+rst_n => data[7]~reg0.ENA
+rst_n => data[6]~reg0.ENA
+rst_n => data[5]~reg0.ENA
+rst_n => data[4]~reg0.ENA
+rst_n => data[3]~reg0.ENA
+rst_n => data[2]~reg0.ENA
+rst_n => data[1]~reg0.ENA
+rst_n => state~9.IN1
+rs <= rs~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rw <= rw~reg0.DB_MAX_OUTPUT_PORT_TYPE
+en <= clkr.DB_MAX_OUTPUT_PORT_TYPE
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|LCD_test|autoreset:inst1
+clk => count[24].CLK
+clk => count[23].CLK
+clk => count[22].CLK
+clk => count[21].CLK
+clk => count[20].CLK
+clk => count[19].CLK
+clk => count[18].CLK
+clk => count[17].CLK
+clk => count[16].CLK
+clk => count[15].CLK
+clk => count[14].CLK
+clk => count[13].CLK
+clk => count[12].CLK
+clk => count[11].CLK
+clk => count[10].CLK
+clk => count[9].CLK
+clk => count[8].CLK
+clk => count[7].CLK
+clk => count[6].CLK
+clk => count[5].CLK
+clk => count[4].CLK
+clk => count[3].CLK
+clk => count[2].CLK
+clk => count[1].CLK
+clk => count[0].CLK
+clk => clk_div.CLK
+clk => clkout~0.IN1
+rst_n => arst_n~0.IN1
+clkout <= clkout~0.DB_MAX_OUTPUT_PORT_TYPE
+arst_n <= arst_n~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

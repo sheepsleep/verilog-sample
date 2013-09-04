@@ -1,0 +1,46 @@
+|LCD12864_TOP
+lcd_rs <= LCD12864:inst.rs
+clk => LCD12864:inst.clk
+lcd_rw <= LCD12864:inst.rw
+lcd_en <= LCD12864:inst.en
+lcd_data[0] <= LCD12864:inst.dat[0]
+lcd_data[1] <= LCD12864:inst.dat[1]
+lcd_data[2] <= LCD12864:inst.dat[2]
+lcd_data[3] <= LCD12864:inst.dat[3]
+lcd_data[4] <= LCD12864:inst.dat[4]
+lcd_data[5] <= LCD12864:inst.dat[5]
+lcd_data[6] <= LCD12864:inst.dat[6]
+lcd_data[7] <= LCD12864:inst.dat[7]
+
+
+|LCD12864_TOP|LCD12864:inst
+clk => counter[15].CLK
+clk => counter[14].CLK
+clk => counter[13].CLK
+clk => counter[12].CLK
+clk => counter[11].CLK
+clk => counter[10].CLK
+clk => counter[9].CLK
+clk => counter[8].CLK
+clk => counter[7].CLK
+clk => counter[6].CLK
+clk => counter[5].CLK
+clk => counter[4].CLK
+clk => counter[3].CLK
+clk => counter[2].CLK
+clk => counter[1].CLK
+clk => counter[0].CLK
+clk => clkr.CLK
+rs <= rs~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rw <= <GND>
+en <= en~0.DB_MAX_OUTPUT_PORT_TYPE
+dat[0] <= dat[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dat[1] <= dat[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dat[2] <= dat[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dat[3] <= dat[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dat[4] <= dat[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dat[5] <= dat[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dat[6] <= dat[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dat[7] <= dat[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
