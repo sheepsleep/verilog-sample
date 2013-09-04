@@ -1,0 +1,111 @@
+Flow report for edgechk
+Fri Oct 23 00:37:42 2009
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++------------------------------------+------------------------------------------+
+; Flow Status                        ; Successful - Fri Oct 23 00:37:42 2009    ;
+; Quartus II Version                 ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name                      ; edgechk                                  ;
+; Top-level Entity Name              ; edgechk                                  ;
+; Family                             ; Cyclone II                               ;
+; Device                             ; EP2C5T144C8                              ;
+; Timing Models                      ; Final                                    ;
+; Met timing requirements            ; Yes                                      ;
+; Total logic elements               ; 3 / 4,608 ( < 1 % )                      ;
+;     Total combinational functions  ; 3 / 4,608 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 2 / 4,608 ( < 1 % )                      ;
+; Total registers                    ; 2                                        ;
+; Total pins                         ; 6 / 89 ( 7 % )                           ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0 / 119,808 ( 0 % )                      ;
+; Embedded Multiplier 9-bit elements ; 0 / 26 ( 0 % )                           ;
+; Total PLLs                         ; 0 / 2 ( 0 % )                            ;
++------------------------------------+------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 10/23/2009 00:37:33 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; edgechk             ;
++-------------------+---------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                             ;
++------------------------------------+--------------------+---------------+-------------+----------------------+
+; Assignment Name                    ; Value              ; Default Value ; Entity Name ; Section Id           ;
++------------------------------------+--------------------+---------------+-------------+----------------------+
+; EDA_INPUT_DATA_FORMAT              ; Edif               ; --            ; --          ; eda_design_synthesis ;
+; EDA_INPUT_VCC_NAME                 ; Vdd                ; --            ; --          ; eda_design_synthesis ;
+; EDA_OUTPUT_DATA_FORMAT             ; Verilog            ; --            ; --          ; eda_simulation       ;
+; EDA_SIMULATION_TOOL                ; ModelSim (Verilog) ; <None>        ; --          ; --                   ;
+; EDA_TIME_SCALE                     ; 1 ps               ; --            ; --          ; eda_simulation       ;
+; PARTITION_COLOR                    ; 2147039            ; --            ; --          ; Top                  ;
+; PARTITION_NETLIST_TYPE             ; SOURCE             ; --            ; --          ; Top                  ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                ; --            ; --          ; eda_palace           ;
++------------------------------------+--------------------+---------------+-------------+----------------------+
+
+
++------------------------------------------------------------------+
+; Flow Elapsed Time                                                ;
++-------------------------+--------------+-------------------------+
+; Module Name             ; Elapsed Time ; Average Processors Used ;
++-------------------------+--------------+-------------------------+
+; Analysis & Synthesis    ; 00:00:02     ; 1.0                     ;
+; Fitter                  ; 00:00:02     ; 1.0                     ;
+; Assembler               ; 00:00:02     ; 1.0                     ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ;
+; EDA Netlist Writer      ; 00:00:00     ; 1.0                     ;
+; Total                   ; 00:00:07     ; --                      ;
++-------------------------+--------------+-------------------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off edgechk -c edgechk
+quartus_fit --read_settings_files=off --write_settings_files=off edgechk -c edgechk
+quartus_asm --read_settings_files=off --write_settings_files=off edgechk -c edgechk
+quartus_tan --read_settings_files=off --write_settings_files=off edgechk -c edgechk --timing_analysis_only
+quartus_eda --read_settings_files=off --write_settings_files=off edgechk -c edgechk
+
+
+

@@ -1,0 +1,326 @@
+Analysis & Synthesis report for LCD12864
+Fri Jun 22 22:39:24 2012
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |LCD12864|state
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |LCD12864
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Jun 22 22:39:23 2012    ;
+; Quartus II Version                 ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name                      ; LCD12864                                 ;
+; Top-level Entity Name              ; LCD12864                                 ;
+; Family                             ; Cyclone II                               ;
+; Total logic elements               ; 121                                      ;
+;     Total combinational functions  ; 121                                      ;
+;     Dedicated logic registers      ; 75                                       ;
+; Total registers                    ; 75                                       ;
+; Total pins                         ; 15                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EP2C5T144C8        ;                    ;
+; Top-level entity name                                                          ; LCD12864           ; LCD12864           ;
+; Family name                                                                    ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; DSP Block Balancing                                                            ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Optimization Technique -- Cyclone II/Cyclone III                               ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto ROM Replacement                                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                              ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                  ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                               ;
++----------------------------------+-----------------+------------------------+----------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path           ;
++----------------------------------+-----------------+------------------------+----------------------------------------+
+; RTL/LCD12864.v                   ; yes             ; User Verilog HDL File  ; D:/2.3/LCD12864/Project/RTL/LCD12864.v ;
++----------------------------------+-----------------+------------------------+----------------------------------------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 121       ;
+;                                             ;           ;
+; Total combinational functions               ; 121       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 54        ;
+;     -- 3 input functions                    ; 8         ;
+;     -- <=2 input functions                  ; 59        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 72        ;
+;     -- arithmetic mode                      ; 49        ;
+;                                             ;           ;
+; Total registers                             ; 75        ;
+;     -- Dedicated logic registers            ; 75        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 15        ;
+; Maximum fan-out node                        ; sys_rst_n ;
+; Maximum fan-out                             ; 67        ;
+; Total fan-out                               ; 623       ;
+; Average fan-out                             ; 2.95      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |LCD12864                  ; 121 (121)         ; 75 (75)      ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |LCD12864           ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |LCD12864|state                                                                                                                                          ;
++--------------------+------------+------------+----------------+----------------+---------------+-------------+------------------+--------------------+-------------------+
+; Name               ; state.IDLE ; state.STOP ; state.WRITERAM ; state.SETDDRAM ; state.SETMODE ; state.CLEAR ; state.SWITCHMODE ; state.SETFUNCTION2 ; state.SETFUNCTION ;
++--------------------+------------+------------+----------------+----------------+---------------+-------------+------------------+--------------------+-------------------+
+; state.IDLE         ; 0          ; 0          ; 0              ; 0              ; 0             ; 0           ; 0                ; 0                  ; 0                 ;
+; state.SETFUNCTION  ; 1          ; 0          ; 0              ; 0              ; 0             ; 0           ; 0                ; 0                  ; 1                 ;
+; state.SETFUNCTION2 ; 1          ; 0          ; 0              ; 0              ; 0             ; 0           ; 0                ; 1                  ; 0                 ;
+; state.SWITCHMODE   ; 1          ; 0          ; 0              ; 0              ; 0             ; 0           ; 1                ; 0                  ; 0                 ;
+; state.CLEAR        ; 1          ; 0          ; 0              ; 0              ; 0             ; 1           ; 0                ; 0                  ; 0                 ;
+; state.SETMODE      ; 1          ; 0          ; 0              ; 0              ; 1             ; 0           ; 0                ; 0                  ; 0                 ;
+; state.SETDDRAM     ; 1          ; 0          ; 0              ; 1              ; 0             ; 0           ; 0                ; 0                  ; 0                 ;
+; state.WRITERAM     ; 1          ; 0          ; 1              ; 0              ; 0             ; 0           ; 0                ; 0                  ; 0                 ;
+; state.STOP         ; 1          ; 1          ; 0              ; 0              ; 0             ; 0           ; 0                ; 0                  ; 0                 ;
++--------------------+------------+------------+----------------+----------------+---------------+-------------+------------------+--------------------+-------------------+
+
+
++--------------------------------------------------------------------+
+; Registers Removed During Synthesis                                 ;
++---------------------------------------+----------------------------+
+; Register name                         ; Reason for Removal         ;
++---------------------------------------+----------------------------+
+; LCD_DATA[1]~en                        ; Merged with LCD_DATA[0]~en ;
+; LCD_DATA[2]~en                        ; Merged with LCD_DATA[0]~en ;
+; LCD_DATA[3]~en                        ; Merged with LCD_DATA[0]~en ;
+; LCD_DATA[4]~en                        ; Merged with LCD_DATA[0]~en ;
+; LCD_DATA[5]~en                        ; Merged with LCD_DATA[0]~en ;
+; LCD_DATA[6]~en                        ; Merged with LCD_DATA[0]~en ;
+; LCD_DATA[7]~en                        ; Merged with LCD_DATA[0]~en ;
+; state~103                             ; Lost fanout                ;
+; Total Number of Removed Registers = 8 ;                            ;
++---------------------------------------+----------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 75    ;
+; Number of registers using Synchronous Clear  ; 1     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 67    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 34    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; flag                                   ; 2       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |LCD12864|char_cnt[3]      ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |LCD12864|state~14         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |LCD12864 ;
++----------------+-----------+---------------------------------------------+
+; Parameter Name ; Value     ; Type                                        ;
++----------------+-----------+---------------------------------------------+
+; IDLE           ; 000000000 ; Unsigned Binary                             ;
+; SETFUNCTION    ; 000000001 ; Unsigned Binary                             ;
+; SETFUNCTION2   ; 000000010 ; Unsigned Binary                             ;
+; SWITCHMODE     ; 000000100 ; Unsigned Binary                             ;
+; CLEAR          ; 000001000 ; Unsigned Binary                             ;
+; SETMODE        ; 000010000 ; Unsigned Binary                             ;
+; SETDDRAM       ; 000100000 ; Unsigned Binary                             ;
+; WRITERAM       ; 001000000 ; Unsigned Binary                             ;
+; STOP           ; 010000000 ; Unsigned Binary                             ;
++----------------+-----------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Fri Jun 22 22:39:22 2012
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LCD12864 -c LCD12864
+Info: Found 1 design units, including 1 entities, in source file RTL/LCD12864.v
+    Info: Found entity 1: LCD12864
+Info: Elaborating entity "LCD12864" for the top level hierarchy
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "LCD_DATA[1]~en" merged to single register "LCD_DATA[0]~en"
+    Info: Duplicate register "LCD_DATA[2]~en" merged to single register "LCD_DATA[0]~en"
+    Info: Duplicate register "LCD_DATA[3]~en" merged to single register "LCD_DATA[0]~en"
+    Info: Duplicate register "LCD_DATA[4]~en" merged to single register "LCD_DATA[0]~en"
+    Info: Duplicate register "LCD_DATA[5]~en" merged to single register "LCD_DATA[0]~en"
+    Info: Duplicate register "LCD_DATA[6]~en" merged to single register "LCD_DATA[0]~en"
+    Info: Duplicate register "LCD_DATA[7]~en" merged to single register "LCD_DATA[0]~en"
+Info: Found 1 instances of uninferred RAM logic
+    Info: RAM logic "Ram0" uninferred due to size
+Info: State machine "|LCD12864|state" contains 9 states
+Info: Selected Auto state machine encoding method for state machine "|LCD12864|state"
+Info: Encoding result for state machine "|LCD12864|state"
+    Info: Completed encoding using 9 state bits
+        Info: Encoded state bit "state.IDLE"
+        Info: Encoded state bit "state.STOP"
+        Info: Encoded state bit "state.WRITERAM"
+        Info: Encoded state bit "state.SETDDRAM"
+        Info: Encoded state bit "state.SETMODE"
+        Info: Encoded state bit "state.CLEAR"
+        Info: Encoded state bit "state.SWITCHMODE"
+        Info: Encoded state bit "state.SETFUNCTION2"
+        Info: Encoded state bit "state.SETFUNCTION"
+    Info: State "|LCD12864|state.IDLE" uses code string "000000000"
+    Info: State "|LCD12864|state.SETFUNCTION" uses code string "100000001"
+    Info: State "|LCD12864|state.SETFUNCTION2" uses code string "100000010"
+    Info: State "|LCD12864|state.SWITCHMODE" uses code string "100000100"
+    Info: State "|LCD12864|state.CLEAR" uses code string "100001000"
+    Info: State "|LCD12864|state.SETMODE" uses code string "100010000"
+    Info: State "|LCD12864|state.SETDDRAM" uses code string "100100000"
+    Info: State "|LCD12864|state.WRITERAM" uses code string "101000000"
+    Info: State "|LCD12864|state.STOP" uses code string "110000000"
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LCD_RW" stuck at GND
+    Warning (13410): Pin "LCD_CS1" stuck at VCC
+Info: 1 registers lost all their fanouts during netlist optimizations. The first 1 are displayed below.
+    Info: Register "state~103" lost all its fanouts during netlist optimizations.
+Info: Implemented 144 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 13 output pins
+    Info: Implemented 129 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Allocated 143 megabytes of memory during processing
+    Info: Processing ended: Fri Jun 22 22:39:24 2012
+    Info: Elapsed time: 00:00:02
+
+

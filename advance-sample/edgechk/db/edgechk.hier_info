@@ -1,0 +1,11 @@
+|edgechk
+sys_clk => ctrl_signal_dly1.CLK
+sys_clk => ctrl_signal_dly2.CLK
+sys_rst_n => ctrl_signal_dly1.ACLR
+sys_rst_n => ctrl_signal_dly2.ACLR
+ctrl_signal => ctrl_signal_dly1.DATAIN
+posedge_pulse <= posedge_pulse~0.DB_MAX_OUTPUT_PORT_TYPE
+negedge_pulse <= negedge_pulse~0.DB_MAX_OUTPUT_PORT_TYPE
+edge_pulse <= edge_pulse~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

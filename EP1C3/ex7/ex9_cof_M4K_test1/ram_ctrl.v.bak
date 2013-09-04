@@ -1,0 +1,86 @@
+`timescale 1ns / 1ps
+////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: franchiese
+//
+// Create Date:
+// Design Name:    
+// Module Name:   
+// Project Name:  
+// Target Device: cyclone
+// Tool versions: Quartus II 8.1
+// Description:	 
+//
+// Dependencies:
+// 
+// Revision:	
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+////////////////////////////////////////////////////////////////////////////////
+module ram_ctrl(
+				
+			);
+
+input clk;		//系统输入时钟，25M
+input rst_n;	//系统服务信号，低有效
+
+input[7:0] ram_dout;	//RAM读出数据总线
+output reg ram_wr;			//RAM写入使能信号，高表示写入
+output reg [11:0] ram_addr;	//RAM地址总线
+output reg [7:0]  ram_din;	//RAM写入数据总线
+
+reg[3:0] cstate,nstate;
+parameter	S1	= 4'b0001,
+			S2	= 4'b0010,
+			S3	= 4'b0100,
+			S4	= 4'b1000;
+
+always @(posedge clk or negedge rst_n)
+	if(!rst_n) cstate <= S1;
+	else cstate <= nstate;
+
+always @(rst_n or cstate)
+	if(!rst_n) begin
+			nstate <= S1;
+			ram_wr <= 1'b0;
+			ram_addr <= 12'hzzz;
+			ram_din <= 8'hzz;
+		end
+	else
+		case(cstate)
+			S1: begin	//0地址写0x0f
+					nstate <= S2;
+					ram_wr <= 1'b1;
+					ram_addr <= 12'h000;
+					ram_din <= 8'h0f;
+				end
+			S2: begin	//1地址写0xf0
+					nstate <= S3;
+					ram_wr <= 1'b1;
+					ram_addr <= 12'h001;
+					ram_din <= 8'hf0;
+				end
+			S3: begin	//读0地址数据
+					nstate <= S4;
+					ram_wr <= 1'b0;
+					ram_addr <= 12'h000;
+					//ram_din <= 8'h0f;
+				end
+			S4: begin	//读1地址数据
+					nstate <= S4;
+					ram_wr <= 1'b0;
+					ram_addr <= 12'h001;			
+				end
+			default: ;
+			endcase
+
+
+
+/*
+always @ (posedge clk or negedge rst_n)
+	if(!rst_n) ram_wr <= 1'b0;
+	else ram_wr <= 1'b1;
+*/
+
+endmodule

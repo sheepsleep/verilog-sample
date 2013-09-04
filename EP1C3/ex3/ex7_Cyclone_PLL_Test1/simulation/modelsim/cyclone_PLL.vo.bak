@@ -1,0 +1,314 @@
+// Copyright (C) 1991-2008 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II"
+// VERSION "Version 8.1 Build 163 10/28/2008 SJ Full Version"
+
+// DATE "03/13/2009 12:37:32"
+
+// 
+// Device: Altera EP1C3T144C8 Package TQFP144
+// 
+
+// 
+// This Verilog file should be used for ModelSim (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module cyclone_PLL_top (
+	rst_n,
+	clk,
+	clkdiv);
+input 	rst_n;
+input 	clk;
+output 	clkdiv;
+
+wire gnd = 1'b0;
+wire vcc = 1'b1;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("cyclone_PLL_v.sdo");
+// synopsys translate_on
+
+wire \PLL_ctrl_inst|altpll_component|pll~CLK1 ;
+wire \PLL_ctrl_inst|altpll_component|_clk2 ;
+wire \PLL_ctrl_inst|altpll_component|pll~CLK3 ;
+wire \PLL_ctrl_inst|altpll_component|pll~CLK4 ;
+wire \PLL_ctrl_inst|altpll_component|pll~CLK5 ;
+wire \rst_n~combout ;
+wire \clk~combout ;
+wire \PLL_ctrl_inst|altpll_component|_clk0 ;
+
+wire [5:0] \PLL_ctrl_inst|altpll_component|pll_CLK_bus ;
+
+assign \PLL_ctrl_inst|altpll_component|_clk0  = \PLL_ctrl_inst|altpll_component|pll_CLK_bus [0];
+assign \PLL_ctrl_inst|altpll_component|pll~CLK1  = \PLL_ctrl_inst|altpll_component|pll_CLK_bus [1];
+assign \PLL_ctrl_inst|altpll_component|_clk2  = \PLL_ctrl_inst|altpll_component|pll_CLK_bus [2];
+assign \PLL_ctrl_inst|altpll_component|pll~CLK3  = \PLL_ctrl_inst|altpll_component|pll_CLK_bus [3];
+assign \PLL_ctrl_inst|altpll_component|pll~CLK4  = \PLL_ctrl_inst|altpll_component|pll_CLK_bus [4];
+assign \PLL_ctrl_inst|altpll_component|pll~CLK5  = \PLL_ctrl_inst|altpll_component|pll_CLK_bus [5];
+
+// atom is at PIN_11
+cyclone_io \rst_n~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\rst_n~combout ),
+	.regout(),
+	.padio(rst_n));
+// synopsys translate_off
+defparam \rst_n~I .input_async_reset = "none";
+defparam \rst_n~I .input_power_up = "low";
+defparam \rst_n~I .input_register_mode = "none";
+defparam \rst_n~I .input_sync_reset = "none";
+defparam \rst_n~I .oe_async_reset = "none";
+defparam \rst_n~I .oe_power_up = "low";
+defparam \rst_n~I .oe_register_mode = "none";
+defparam \rst_n~I .oe_sync_reset = "none";
+defparam \rst_n~I .operation_mode = "input";
+defparam \rst_n~I .output_async_reset = "none";
+defparam \rst_n~I .output_power_up = "low";
+defparam \rst_n~I .output_register_mode = "none";
+defparam \rst_n~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_16
+cyclone_io \clk~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\clk~combout ),
+	.regout(),
+	.padio(clk));
+// synopsys translate_off
+defparam \clk~I .input_async_reset = "none";
+defparam \clk~I .input_power_up = "low";
+defparam \clk~I .input_register_mode = "none";
+defparam \clk~I .input_sync_reset = "none";
+defparam \clk~I .oe_async_reset = "none";
+defparam \clk~I .oe_power_up = "low";
+defparam \clk~I .oe_register_mode = "none";
+defparam \clk~I .oe_sync_reset = "none";
+defparam \clk~I .operation_mode = "input";
+defparam \clk~I .output_async_reset = "none";
+defparam \clk~I .output_power_up = "low";
+defparam \clk~I .output_register_mode = "none";
+defparam \clk~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PLL_1
+cyclone_pll \PLL_ctrl_inst|altpll_component|pll (
+	.fbin(vcc),
+	.ena(vcc),
+	.clkswitch(gnd),
+	.areset(!\rst_n~combout ),
+	.pfdena(vcc),
+	.scanclk(gnd),
+	.scanaclr(gnd),
+	.scandata(gnd),
+	.comparator(gnd),
+	.inclk({gnd,\clk~combout }),
+	.clkena(6'b111111),
+	.extclkena(4'b1111),
+	.activeclock(),
+	.clkloss(),
+	.locked(),
+	.scandataout(),
+	.enable0(),
+	.enable1(),
+	.clk(\PLL_ctrl_inst|altpll_component|pll_CLK_bus ),
+	.extclk(),
+	.clkbad());
+// synopsys translate_off
+defparam \PLL_ctrl_inst|altpll_component|pll .bandwidth = 1295546;
+defparam \PLL_ctrl_inst|altpll_component|pll .bandwidth_type = "auto";
+defparam \PLL_ctrl_inst|altpll_component|pll .charge_pump_current = 40;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk0_counter = "g1";
+defparam \PLL_ctrl_inst|altpll_component|pll .clk0_divide_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk0_duty_cycle = 50;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk0_multiply_by = 2;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk0_phase_shift = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .clk0_time_delay = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .clk1_divide_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk1_duty_cycle = 50;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk1_multiply_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk1_phase_shift = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .clk1_time_delay = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .clk2_divide_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk2_duty_cycle = 50;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk2_multiply_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk2_phase_shift = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .clk2_time_delay = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .clk3_divide_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk3_duty_cycle = 50;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk3_multiply_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk3_phase_shift = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .clk3_time_delay = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .clk4_divide_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk4_duty_cycle = 50;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk4_multiply_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk4_phase_shift = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .clk4_time_delay = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .clk5_divide_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk5_duty_cycle = 50;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk5_multiply_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .clk5_phase_shift = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .clk5_time_delay = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .compensate_clock = "clk0";
+defparam \PLL_ctrl_inst|altpll_component|pll .down_spread = "0 %";
+defparam \PLL_ctrl_inst|altpll_component|pll .e0_mode = "bypass";
+defparam \PLL_ctrl_inst|altpll_component|pll .e0_ph = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .e0_time_delay = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .e1_mode = "bypass";
+defparam \PLL_ctrl_inst|altpll_component|pll .e1_ph = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .e1_time_delay = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .e2_mode = "bypass";
+defparam \PLL_ctrl_inst|altpll_component|pll .e2_ph = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .e2_time_delay = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .e3_mode = "bypass";
+defparam \PLL_ctrl_inst|altpll_component|pll .e3_ph = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .e3_time_delay = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .enable_switch_over_counter = "off";
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk0_divide_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk0_duty_cycle = 50;
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk0_multiply_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk0_phase_shift = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk0_time_delay = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk1_divide_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk1_duty_cycle = 50;
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk1_multiply_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk1_phase_shift = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk1_time_delay = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk2_divide_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk2_duty_cycle = 50;
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk2_multiply_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk2_phase_shift = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk2_time_delay = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk3_divide_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk3_duty_cycle = 50;
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk3_multiply_by = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk3_phase_shift = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .extclk3_time_delay = "0";
+defparam \PLL_ctrl_inst|altpll_component|pll .g0_mode = "bypass";
+defparam \PLL_ctrl_inst|altpll_component|pll .g0_ph = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .g0_time_delay = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .g1_high = 4;
+defparam \PLL_ctrl_inst|altpll_component|pll .g1_initial = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .g1_low = 4;
+defparam \PLL_ctrl_inst|altpll_component|pll .g1_mode = "even";
+defparam \PLL_ctrl_inst|altpll_component|pll .g1_ph = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .g1_time_delay = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .g2_mode = "bypass";
+defparam \PLL_ctrl_inst|altpll_component|pll .g2_ph = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .g2_time_delay = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .g3_mode = "bypass";
+defparam \PLL_ctrl_inst|altpll_component|pll .g3_ph = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .g3_time_delay = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .gate_lock_counter = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .gate_lock_signal = "no";
+defparam \PLL_ctrl_inst|altpll_component|pll .inclk0_input_frequency = 20000;
+defparam \PLL_ctrl_inst|altpll_component|pll .inclk1_input_frequency = 20000;
+defparam \PLL_ctrl_inst|altpll_component|pll .invalid_lock_multiplier = 5;
+defparam \PLL_ctrl_inst|altpll_component|pll .l0_high = 4;
+defparam \PLL_ctrl_inst|altpll_component|pll .l0_initial = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .l0_low = 4;
+defparam \PLL_ctrl_inst|altpll_component|pll .l0_mode = "even";
+defparam \PLL_ctrl_inst|altpll_component|pll .l0_ph = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .l0_time_delay = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .l1_mode = "bypass";
+defparam \PLL_ctrl_inst|altpll_component|pll .l1_ph = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .l1_time_delay = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .loop_filter_c = 10;
+defparam \PLL_ctrl_inst|altpll_component|pll .loop_filter_r = "1.021000";
+defparam \PLL_ctrl_inst|altpll_component|pll .m = 16;
+defparam \PLL_ctrl_inst|altpll_component|pll .m2 = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .m_initial = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .m_ph = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .m_time_delay = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .n = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .n2 = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .n_time_delay = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .operation_mode = "normal";
+defparam \PLL_ctrl_inst|altpll_component|pll .pfd_max = 66666;
+defparam \PLL_ctrl_inst|altpll_component|pll .pfd_min = 5000;
+defparam \PLL_ctrl_inst|altpll_component|pll .pll_compensation_delay = 5148;
+defparam \PLL_ctrl_inst|altpll_component|pll .pll_type = "auto";
+defparam \PLL_ctrl_inst|altpll_component|pll .primary_clock = "inclk0";
+defparam \PLL_ctrl_inst|altpll_component|pll .qualify_conf_done = "off";
+defparam \PLL_ctrl_inst|altpll_component|pll .simulation_type = "timing";
+defparam \PLL_ctrl_inst|altpll_component|pll .skip_vco = "off";
+defparam \PLL_ctrl_inst|altpll_component|pll .spread_frequency = 0;
+defparam \PLL_ctrl_inst|altpll_component|pll .switch_over_counter = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .switch_over_on_gated_lock = "off";
+defparam \PLL_ctrl_inst|altpll_component|pll .switch_over_on_lossclk = "off";
+defparam \PLL_ctrl_inst|altpll_component|pll .valid_lock_multiplier = 1;
+defparam \PLL_ctrl_inst|altpll_component|pll .vco_center = 1250;
+defparam \PLL_ctrl_inst|altpll_component|pll .vco_max = 2037;
+defparam \PLL_ctrl_inst|altpll_component|pll .vco_min = 1000;
+// synopsys translate_on
+
+// atom is at PIN_68
+cyclone_io \clkdiv~I (
+	.datain(\PLL_ctrl_inst|altpll_component|_clk0 ),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(clkdiv));
+// synopsys translate_off
+defparam \clkdiv~I .input_async_reset = "none";
+defparam \clkdiv~I .input_power_up = "low";
+defparam \clkdiv~I .input_register_mode = "none";
+defparam \clkdiv~I .input_sync_reset = "none";
+defparam \clkdiv~I .oe_async_reset = "none";
+defparam \clkdiv~I .oe_power_up = "low";
+defparam \clkdiv~I .oe_register_mode = "none";
+defparam \clkdiv~I .oe_sync_reset = "none";
+defparam \clkdiv~I .operation_mode = "output";
+defparam \clkdiv~I .output_async_reset = "none";
+defparam \clkdiv~I .output_power_up = "low";
+defparam \clkdiv~I .output_register_mode = "none";
+defparam \clkdiv~I .output_sync_reset = "none";
+// synopsys translate_on
+
+endmodule

@@ -1,0 +1,8 @@
+|clock_gating
+sys_clk => sys_gclk~0.IN1
+sys_clk => clk_temp[0].LATCH_ENABLE
+sys_rst_n => ~NO_FANOUT~
+clk_en => clk_temp[0].DATAIN
+sys_gclk[0] <= sys_gclk~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

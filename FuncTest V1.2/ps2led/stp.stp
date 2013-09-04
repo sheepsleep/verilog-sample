@@ -1,0 +1,105 @@
+<session jtag_chain="USB-Blaster [USB-0]" jtag_device="@1: EP2C5 (0x020B10DD)" sof_file="ps2key.sof" top_level_entity="ps2led">
+  <display_tree gui_logging_enabled="0">
+    <display_branch instance="auto_signaltap_0" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+  </display_tree>
+  <instance compilation_mode="full" entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
+    <position_info>
+      <single attribute="active tab" value="1"/>
+      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+      <single attribute="setup vertical scroll position" value="2"/>
+      <single attribute="zoom level denominator" value="16"/>
+      <single attribute="zoom level numerator" value="1"/>
+      <single attribute="zoom offset denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="2095104"/>
+    </position_info>
+    <signal_set global_temp="1" name="signal_set: 2010/08/01 17:24:36  #0">
+      <clock name="ps2key:ps2led_U0|sys_clk" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="M4K" reserved_data_nodes="0" reserved_trigger_nodes="0" sample_depth="2048" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="buff[0]" tap_mode="classic" type="register"/>
+          <wire name="data_out[0]" tap_mode="classic" type="output pin"/>
+          <wire name="data_out[1]" tap_mode="classic" type="output pin"/>
+          <wire name="data_out[2]" tap_mode="classic" type="output pin"/>
+          <wire name="data_out[3]" tap_mode="classic" type="output pin"/>
+          <wire name="data_out[4]" tap_mode="classic" type="output pin"/>
+          <wire name="data_out[5]" tap_mode="classic" type="output pin"/>
+          <wire name="data_out[6]" tap_mode="classic" type="output pin"/>
+          <wire name="data_out[7]" tap_mode="classic" type="output pin"/>
+          <wire name="ps2_key_clk" tap_mode="classic" type="input pin"/>
+          <wire name="ps2_key_data" tap_mode="classic" type="input pin"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="buff[0]" tap_mode="classic" type="register"/>
+          <wire name="data_out[0]" tap_mode="classic" type="output pin"/>
+          <wire name="data_out[1]" tap_mode="classic" type="output pin"/>
+          <wire name="data_out[2]" tap_mode="classic" type="output pin"/>
+          <wire name="data_out[3]" tap_mode="classic" type="output pin"/>
+          <wire name="data_out[4]" tap_mode="classic" type="output pin"/>
+          <wire name="data_out[5]" tap_mode="classic" type="output pin"/>
+          <wire name="data_out[6]" tap_mode="classic" type="output pin"/>
+          <wire name="data_out[7]" tap_mode="classic" type="output pin"/>
+          <wire name="ps2_key_clk" tap_mode="classic" type="input pin"/>
+          <wire name="ps2_key_data" tap_mode="classic" type="input pin"/>
+        </data_input_vec>
+      </signal_vec>
+      <presentation>
+        <data_view>
+          <bus is_signal_inverted="no" link="all" name="buff" order="msb_to_lsb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="buff[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="data_out" order="lsb_to_msb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="data_out[0]"/>
+            <net is_signal_inverted="no" name="data_out[1]"/>
+            <net is_signal_inverted="no" name="data_out[2]"/>
+            <net is_signal_inverted="no" name="data_out[3]"/>
+            <net is_signal_inverted="no" name="data_out[4]"/>
+            <net is_signal_inverted="no" name="data_out[5]"/>
+            <net is_signal_inverted="no" name="data_out[6]"/>
+            <net is_signal_inverted="no" name="data_out[7]"/>
+          </bus>
+          <net is_signal_inverted="no" name="ps2_key_clk"/>
+          <net is_signal_inverted="no" name="ps2_key_data"/>
+        </data_view>
+        <setup_view>
+          <bus is_signal_inverted="no" link="all" name="buff" order="msb_to_lsb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="buff[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="data_out" order="lsb_to_msb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="data_out[0]"/>
+            <net is_signal_inverted="no" name="data_out[1]"/>
+            <net is_signal_inverted="no" name="data_out[2]"/>
+            <net is_signal_inverted="no" name="data_out[3]"/>
+            <net is_signal_inverted="no" name="data_out[4]"/>
+            <net is_signal_inverted="no" name="data_out[5]"/>
+            <net is_signal_inverted="no" name="data_out[6]"/>
+            <net is_signal_inverted="no" name="data_out[7]"/>
+          </bus>
+          <net is_signal_inverted="no" name="ps2_key_clk"/>
+          <net is_signal_inverted="no" name="ps2_key_data"/>
+        </setup_view>
+      </presentation>
+      <trigger global_temp="1" name="trigger: 2010/08/01 17:24:36  #1" position="pre" power_up_trigger_mode="false" segment_size="1" trigger_in="dont_care" trigger_out="active high" trigger_type="circular">
+        <power_up_trigger position="pre" trigger_in="dont_care" trigger_out="active high"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">'ps2_key_clk' == either edge
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+      </trigger>
+    </signal_set>
+  </instance>
+  <mnemonics/>
+  <static_plugin_mnemonics/>
+  <global_info>
+    <single attribute="active instance" value="0"/>
+    <single attribute="lock mode" value="36110"/>
+    <multi attribute="window position" size="9" value="982,614,398,124,356,50,32,0,0"/>
+  </global_info>
+</session>

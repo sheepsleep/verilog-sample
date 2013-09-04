@@ -1,0 +1,120 @@
+// Copyright (C) 1991-2007 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II"
+// VERSION "Version 7.0 Build 33 02/05/2007 SJ Full Version"
+
+// DATE "05/23/2000 11:14:24"
+
+// 
+// Device: Altera EPM240T100C5 Package TQFP100
+// 
+
+// 
+// This Verilog file should be used for ModelSim (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module modelsim_test (
+	clk,
+	rst_n,
+	div);
+input 	clk;
+input 	rst_n;
+output 	div;
+
+wire gnd = 1'b0;
+wire vcc = 1'b1;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("modelsim_test_v.sdo");
+// synopsys translate_on
+
+wire \clk~combout ;
+wire \rst_n~combout ;
+wire \div~reg0 ;
+
+
+// atom is at PIN_5
+maxii_io \clk~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(\clk~combout ),
+	.padio(clk));
+// synopsys translate_off
+defparam \clk~I .operation_mode = "input";
+// synopsys translate_on
+
+// atom is at PIN_2
+maxii_io \rst_n~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(\rst_n~combout ),
+	.padio(rst_n));
+// synopsys translate_off
+defparam \rst_n~I .operation_mode = "input";
+// synopsys translate_on
+
+// atom is at LC_X2_Y4_N4
+maxii_lcell \div~reg0_I (
+// Equation(s):
+// \div~reg0  = DFFEAS(!\div~reg0 , \clk~combout , \rst_n~combout , , , , , , )
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\div~reg0 ),
+	.datad(vcc),
+	.aclr(!\rst_n~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\div~reg0 ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \div~reg0_I .lut_mask = "0f0f";
+defparam \div~reg0_I .operation_mode = "normal";
+defparam \div~reg0_I .output_mode = "reg_only";
+defparam \div~reg0_I .register_cascade_mode = "off";
+defparam \div~reg0_I .sum_lutc_input = "datac";
+defparam \div~reg0_I .synch_mode = "off";
+// synopsys translate_on
+
+// atom is at PIN_4
+maxii_io \div~I (
+	.datain(\div~reg0 ),
+	.oe(vcc),
+	.combout(),
+	.padio(div));
+// synopsys translate_off
+defparam \div~I .operation_mode = "output";
+// synopsys translate_on
+
+endmodule

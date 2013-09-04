@@ -1,0 +1,76 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.087 ns
+From           : KEY_PIO[3]
+To             : nios_ucos:inst|KEY_PIO:the_KEY_PIO|readdata[3]
+From Clock     : --
+To Clock       : SYS_CLK
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 9.174 ns
+From           : nios_ucos:inst|LED_PIO:the_LED_PIO|data_out[3]
+To             : LED_PIO[3]
+From Clock     : SYS_CLK
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.056 ns
+From           : altera_internal_jtag~TDO
+To             : altera_reserved_tdo
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.961 ns
+From           : altera_internal_jtag~TMSUTAP
+To             : sld_hub:sld_hub_inst|sld_jtag_state_machine:jtag_state_machine|state[10]
+From Clock     : --
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SYS_CLK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 70.14 MHz ( period = 14.257 ns )
+From           : nios_ucos:inst|CPU:the_CPU|M_ctrl_shift_rot
+To             : nios_ucos:inst|CPU:the_CPU|M_status_reg_pie
+From Clock     : SYS_CLK
+To Clock       : SYS_CLK
+Failed Paths   : 0
+
+Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 125.03 MHz ( period = 7.998 ns )
+From           : nios_ucos:inst|CPU:the_CPU|CPU_nios2_oci:the_CPU_nios2_oci|CPU_jtag_debug_module_wrapper:the_CPU_jtag_debug_module_wrapper|CPU_jtag_debug_module:the_CPU_jtag_debug_module1|sr[0]
+To             : sld_hub:sld_hub_inst|hub_tdo_reg
+From Clock     : altera_internal_jtag~TCKUTAP
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

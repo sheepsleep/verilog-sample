@@ -1,0 +1,45 @@
+`timescale 1ns / 1ps
+////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer:
+//
+// Create Date:
+// Design Name:    
+// Module Name:    
+// Project Name:   
+// Target Device:  
+// Tool versions:  
+// Description:	  
+//
+// Dependencies:
+// 
+// Revision:	
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+////////////////////////////////////////////////////////////////////////////////
+module cyclone_PLL(
+				clk,rst_n,
+				clkdiv
+			);
+
+input clk;		//50MHz
+input rst_n;	//low reset signal
+
+output clkdiv;	//PLL clock output
+
+wire locked;
+
+//PLL产生模块
+//产生一个系统输入时钟2/5分频，相移90度的时钟
+PLL_ctrl	PLL_ctrl_inst (
+				.areset(rst_n),		//PLL异步复位信号
+				.inclk0(clk),		//PLL输入时钟
+				.c0(clkdiv),				//
+				.locked(locked)		//
+			);
+
+
+
+endmodule
+

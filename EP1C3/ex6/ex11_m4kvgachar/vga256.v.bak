@@ -1,0 +1,138 @@
+`timescale 1ns / 1ps
+////////////////////////////////////////////////////////////////////////////////
+// Company		: 
+// Engineer		: 特权 franchises3
+// Create Date	: 2009.04.28
+// Design Name	: vga256
+// Module Name	: vga256
+// Project Name	: vga256
+// Target Device: Cyclone EP1C3T144C8 
+// Tool versions: Quartus II 8.1
+// Description	: 
+//
+// Revision		:
+// Additional Comments	: 
+// 
+////////////////////////////////////////////////////////////////////////////////
+module vga256(	
+				clk_25m,rst_n,	//系统控制
+				hsync,vsync,vga_r,vga_g,vga_b	// VGA控制
+			);
+
+input clk_25m;	// 25MHz
+input rst_n;	//低电平复位
+
+	// FPGA与VGA接口信号
+output hsync;	//行同步信号
+output vsync;	//场同步信号
+output[1:0] vga_r;
+output[2:0] vga_g;
+output[2:0] vga_b;
+
+//--------------------------------------------------
+	// 坐标计数
+reg[9:0] x_cnt;		//行坐标
+reg[9:0] y_cnt;		//列坐标
+
+always @ (posedge clk_25m or negedge rst_n)
+	if(!rst_n) x_cnt <= 10'd0;
+	else if(x_cnt == 10'd799) x_cnt <= 10'd0;
+	else x_cnt <= x_cnt+1'b1;
+
+always @ (posedge clk_25m or negedge rst_n)
+	if(!rst_n) y_cnt <= 10'd0;
+	else if(y_cnt == 10'd524) y_cnt <= 10'd0;
+	else if(x_cnt == 10'd799) y_cnt <= y_cnt+1'b1;
+
+//--------------------------------------------------
+	// VGA场同步,行同步信号
+reg hsync_r,vsync_r;	//同步信号
+ 
+always @ (posedge clk_25m or negedge rst_n)
+	if(!rst_n) hsync_r <= 1'b1;								
+	else if(x_cnt == 10'd0) hsync_r <= 1'b0;	//产生hsync信号
+	else if(x_cnt == 10'd96) hsync_r <= 1'b1;
+
+always @ (posedge clk_25m or negedge rst_n)
+	if(!rst_n) vsync_r <= 1'b1;							  
+	else if(y_cnt == 10'd0) vsync_r <= 1'b0;	//产生vsync信号
+	else if(y_cnt == 10'd2) vsync_r <= 1'b1;
+
+assign hsync = hsync_r;
+assign vsync = vsync_r;
+
+//--------------------------------------------------
+	//有效显示标志位产生
+reg valid_yr;	//行显示有效信号
+always @ (posedge clk_25m or negedge rst_n)
+	if(!rst_n) valid_yr <= 1'b0;
+	else if(y_cnt == 10'd32) valid_yr <= 1'b1;
+	else if(y_cnt == 10'd512) valid_yr <= 1'b0;	
+
+wire valid_y = valid_yr;
+
+reg valid_r;	// VGA有效显示区标志位
+always @ (posedge clk_25m or negedge rst_n)
+	if(!rst_n) valid_r <= 1'b0;
+	else if((x_cnt == 10'd141) && valid_y) valid_r <= 1'b1;
+	else if((x_cnt == 10'd781) && valid_y) valid_r <= 1'b0;
+	
+wire valid = valid_r;		
+
+wire[9:0] x_dis;		//横坐标显示有效区域相对坐标值0-639
+wire[9:0] y_dis;		//竖坐标显示有效区域相对坐标值0-479
+
+assign x_dis = x_cnt - 10'd142;
+assign y_dis = y_cnt - 10'd33;
+//--------------------------------------------------
+
+//-------------------------------------------------- 
+	// VGA色彩信号产生
+/*
+RGB = 000  	黑色	RGB = 100	红色
+	= 001  	蓝色		= 101	紫色
+	= 010	绿色		= 110	黄色
+	= 011	青色		= 111	白色
+*/	
+
+/*
+一共640*480个像素点，需要显示256种颜色；
+那么每个颜色显示区域为40*30，就正好。
+*/
+	
+reg[7:0] vga_rgb;	// VGA色彩显示寄存器
+
+always @ (posedge clk_25m)
+	if(!valid) vga_rgb <= 8'd0;
+	else begin
+		case(x_dis)
+			10'd0: begin		//当x坐标回到0时，让显示色彩数据根据当前的y坐标值重新复位
+					if(y_dis >= 10'd0 && y_dis < 10'd30) vga_rgb <= 8'd0;
+					else if(y_dis >= 10'd30 && y_dis < 10'd60) vga_rgb <= 8'd16;
+					else if(y_dis >= 10'd60 && y_dis < 10'd90) vga_rgb <= 8'd32;
+					else if(y_dis >= 10'd90 && y_dis < 10'd120) vga_rgb <= 8'd48;
+					else if(y_dis >= 10'd120 && y_dis < 10'd150) vga_rgb <= 8'd64;
+					else if(y_dis >= 10'd150 && y_dis < 10'd180) vga_rgb <= 8'd80;
+					else if(y_dis >= 10'd180 && y_dis < 10'd210) vga_rgb <= 8'd96;
+					else if(y_dis >= 10'd210 && y_dis < 10'd240) vga_rgb <= 8'd112;
+					else if(y_dis >= 10'd240 && y_dis < 10'd270) vga_rgb <= 8'd128;
+					else if(y_dis >= 10'd270 && y_dis < 10'd300) vga_rgb <= 8'd144;
+					else if(y_dis >= 10'd300 && y_dis < 10'd330) vga_rgb <= 8'd160;
+					else if(y_dis >= 10'd330 && y_dis < 10'd360) vga_rgb <= 8'd176;
+					else if(y_dis >= 10'd360 && y_dis < 10'd390) vga_rgb <= 8'd192;
+					else if(y_dis >= 10'd390 && y_dis < 10'd420) vga_rgb <= 8'd208;
+					else if(y_dis >= 10'd420 && y_dis < 10'd450) vga_rgb <= 8'd224;
+					else vga_rgb <= 8'd240;
+				end
+			10'd40,10'd80,10'd120,10'd160,10'd200,10'd240,10'd280,10'd320,10'd360,10'd400,
+			10'd440,10'd480,10'd520,10'd560,10'd600,10'd640: vga_rgb <= vga_rgb+1'b1;	//每40个横坐标像素点后显示色彩数据增1变化 
+		default: ;
+		endcase
+	end
+
+	//r,g,b控制液晶屏颜色显示
+assign vga_r = vga_rgb[7:6];
+assign vga_g = vga_rgb[5:3];
+assign vga_b = vga_rgb[2:0];
+
+endmodule

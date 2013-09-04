@@ -1,0 +1,90 @@
+/****************************************Copyright (c)**************************************************
+**                                      Dongdong   Studio 
+**                                     
+**---------------------------------------File Info-----------------------------------------------------
+** File name:			PWM
+** Last modified Date:	2011-12-23
+** Last Version:		1.0
+** Descriptions:		PWM Project
+**------------------------------------------------------------------------------------------------------
+** Created by:		    dongdong
+** Created date:		2011-12-23
+** Version:				1.0
+** Descriptions:		The original version
+**
+**------------------------------------------------------------------------------------------------------
+** Modified by:			
+** Modified date:		
+** Version:				
+** Descriptions:        PWM function moto run & stop & change speed & reverse run 
+**
+**------------------------------------------------------------------------------------------------------
+********************************************************************************************************/
+module PWM ( 
+                  //input 
+input			  sys_clk   ,
+input		      sys_rst_n ,
+input    [3:0]    key       ,
+
+                  //output 
+output wire       led       ,
+output wire       moto_a    ,  
+output wire       moto_b     );
+
+// parameter define 
+
+// reg define 
+reg [15:0]               counter          ;
+reg                      pwm_out          ;
+
+// wire define 
+wire                     moto_en          ;
+wire                     moto_direction   ;
+wire                     moto_speed0      ;
+wire                     moto_speed1      ;
+
+
+/*******************************************************************
+**                Main Program    
+*******************************************************************/
+
+// assign moto ctrl signal 
+assign moto_en        = key[0] ; 
+assign moto_direction = key[1] ;
+assign moto_speed0    = key[2] ;
+assign moto_speed1    = key[3] ;
+
+// PWM cnt 
+always @(posedge sys_clk or negedge sys_rst_n) begin 
+        if (sys_rst_n ==1'b0)  
+            counter <= 16'h0;
+        else if ( moto_en == 1'b1 ) begin
+            if ( moto_speed0 ==1'b1 && counter == 16'h7fff )
+                counter  <= 16'h0;
+            else if ( moto_speed1 ==1'b1 && counter == 16'hffff )
+                counter  <= 16'h0;   
+            else 
+                counter  <= counter + 16'b1;
+        end
+        else ;
+end
+
+// PWM state process
+always @(posedge sys_clk or negedge sys_rst_n) begin 
+        if (sys_rst_n ==1'b0)  
+            pwm_out <= 1'b0;
+        else if ( counter <= 16'h3fff )   
+            pwm_out  <= 1'b1;
+        else 
+            pwm_out  <= 1'b0;
+end
+
+// Moto direction process
+assign moto_a = moto_direction ? pwm_out : 1'b0     ;
+assign moto_b = moto_direction ? 1'b0    : pwm_out  ;
+
+// led debug
+assign led = pwm_out;
+
+endmodule
+//end of RTL code                       

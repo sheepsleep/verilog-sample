@@ -1,0 +1,1555 @@
+// Copyright (C) 1991-2009 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II"
+// VERSION "Version 9.0 Build 132 02/25/2009 SJ Full Version"
+
+// DATE "10/11/2009 08:21:05"
+
+// 
+// Device: Altera EP1C3T144C8 Package TQFP144
+// 
+
+// 
+// This Verilog file should be used for ModelSim (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module mem_cof (
+	clk,
+	rst_n,
+	shift_din,
+	shift_dout,
+	taps0x,
+	taps1x,
+	taps2x,
+	taps3x,
+	taps4x,
+	taps5x,
+	taps6x,
+	taps7x);
+input 	clk;
+input 	rst_n;
+input 	[3:0] shift_din;
+output 	[3:0] shift_dout;
+output 	[3:0] taps0x;
+output 	[3:0] taps1x;
+output 	[3:0] taps2x;
+output 	[3:0] taps3x;
+output 	[3:0] taps4x;
+output 	[3:0] taps5x;
+output 	[3:0] taps6x;
+output 	[3:0] taps7x;
+
+wire gnd = 1'b0;
+wire vcc = 1'b1;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("mem_cof_v.sdo");
+// synopsys translate_on
+
+wire \clk~combout ;
+wire \rst_n~combout ;
+wire [0:0] \uut_shift|altshift_taps_component|auto_generated|cntr1|safe_q ;
+wire [31:0] \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b ;
+wire [3:0] \shift_din~combout ;
+
+wire [31:0] \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus ;
+
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [28] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [0];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [29] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [1];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [30] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [2];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [31] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [3];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [0] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [4];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [1] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [5];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [2] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [6];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [3] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [7];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [4] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [8];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [5] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [9];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [6] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [10];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [7] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [11];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [8] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [12];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [9] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [13];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [10] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [14];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [11] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [15];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [12] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [16];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [13] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [17];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [14] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [18];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [15] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [19];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [16] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [20];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [17] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [21];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [18] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [22];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [19] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [23];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [20] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [24];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [21] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [25];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [22] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [26];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [23] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [27];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [24] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [28];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [25] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [29];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [26] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [30];
+assign \uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [27] = \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus [31];
+
+// atom is at PIN_17
+cyclone_io \clk~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\clk~combout ),
+	.regout(),
+	.padio(clk));
+// synopsys translate_off
+defparam \clk~I .input_async_reset = "none";
+defparam \clk~I .input_power_up = "low";
+defparam \clk~I .input_register_mode = "none";
+defparam \clk~I .input_sync_reset = "none";
+defparam \clk~I .oe_async_reset = "none";
+defparam \clk~I .oe_power_up = "low";
+defparam \clk~I .oe_register_mode = "none";
+defparam \clk~I .oe_sync_reset = "none";
+defparam \clk~I .operation_mode = "input";
+defparam \clk~I .output_async_reset = "none";
+defparam \clk~I .output_power_up = "low";
+defparam \clk~I .output_register_mode = "none";
+defparam \clk~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_143
+cyclone_io \rst_n~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\rst_n~combout ),
+	.regout(),
+	.padio(rst_n));
+// synopsys translate_off
+defparam \rst_n~I .input_async_reset = "none";
+defparam \rst_n~I .input_power_up = "low";
+defparam \rst_n~I .input_register_mode = "none";
+defparam \rst_n~I .input_sync_reset = "none";
+defparam \rst_n~I .oe_async_reset = "none";
+defparam \rst_n~I .oe_power_up = "low";
+defparam \rst_n~I .oe_register_mode = "none";
+defparam \rst_n~I .oe_sync_reset = "none";
+defparam \rst_n~I .operation_mode = "input";
+defparam \rst_n~I .output_async_reset = "none";
+defparam \rst_n~I .output_power_up = "low";
+defparam \rst_n~I .output_register_mode = "none";
+defparam \rst_n~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at LC_X7_Y13_N2
+cyclone_lcell \uut_shift|altshift_taps_component|auto_generated|cntr1|counter_cella0 (
+// Equation(s):
+// \uut_shift|altshift_taps_component|auto_generated|cntr1|safe_q [0] = DFFEAS(!\uut_shift|altshift_taps_component|auto_generated|cntr1|safe_q [0], GLOBAL(\clk~combout ), VCC, , \rst_n~combout , , , , )
+
+	.clk(\clk~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\uut_shift|altshift_taps_component|auto_generated|cntr1|safe_q [0]),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\rst_n~combout ),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\uut_shift|altshift_taps_component|auto_generated|cntr1|safe_q [0]),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \uut_shift|altshift_taps_component|auto_generated|cntr1|counter_cella0 .lut_mask = "0f0f";
+defparam \uut_shift|altshift_taps_component|auto_generated|cntr1|counter_cella0 .operation_mode = "normal";
+defparam \uut_shift|altshift_taps_component|auto_generated|cntr1|counter_cella0 .output_mode = "reg_only";
+defparam \uut_shift|altshift_taps_component|auto_generated|cntr1|counter_cella0 .register_cascade_mode = "off";
+defparam \uut_shift|altshift_taps_component|auto_generated|cntr1|counter_cella0 .sum_lutc_input = "datac";
+defparam \uut_shift|altshift_taps_component|auto_generated|cntr1|counter_cella0 .synch_mode = "off";
+// synopsys translate_on
+
+// atom is at PIN_34
+cyclone_io \shift_din[0]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\shift_din~combout [0]),
+	.regout(),
+	.padio(shift_din[0]));
+// synopsys translate_off
+defparam \shift_din[0]~I .input_async_reset = "none";
+defparam \shift_din[0]~I .input_power_up = "low";
+defparam \shift_din[0]~I .input_register_mode = "none";
+defparam \shift_din[0]~I .input_sync_reset = "none";
+defparam \shift_din[0]~I .oe_async_reset = "none";
+defparam \shift_din[0]~I .oe_power_up = "low";
+defparam \shift_din[0]~I .oe_register_mode = "none";
+defparam \shift_din[0]~I .oe_sync_reset = "none";
+defparam \shift_din[0]~I .operation_mode = "input";
+defparam \shift_din[0]~I .output_async_reset = "none";
+defparam \shift_din[0]~I .output_power_up = "low";
+defparam \shift_din[0]~I .output_register_mode = "none";
+defparam \shift_din[0]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_4
+cyclone_io \shift_din[1]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\shift_din~combout [1]),
+	.regout(),
+	.padio(shift_din[1]));
+// synopsys translate_off
+defparam \shift_din[1]~I .input_async_reset = "none";
+defparam \shift_din[1]~I .input_power_up = "low";
+defparam \shift_din[1]~I .input_register_mode = "none";
+defparam \shift_din[1]~I .input_sync_reset = "none";
+defparam \shift_din[1]~I .oe_async_reset = "none";
+defparam \shift_din[1]~I .oe_power_up = "low";
+defparam \shift_din[1]~I .oe_register_mode = "none";
+defparam \shift_din[1]~I .oe_sync_reset = "none";
+defparam \shift_din[1]~I .operation_mode = "input";
+defparam \shift_din[1]~I .output_async_reset = "none";
+defparam \shift_din[1]~I .output_power_up = "low";
+defparam \shift_din[1]~I .output_register_mode = "none";
+defparam \shift_din[1]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_27
+cyclone_io \shift_din[2]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\shift_din~combout [2]),
+	.regout(),
+	.padio(shift_din[2]));
+// synopsys translate_off
+defparam \shift_din[2]~I .input_async_reset = "none";
+defparam \shift_din[2]~I .input_power_up = "low";
+defparam \shift_din[2]~I .input_register_mode = "none";
+defparam \shift_din[2]~I .input_sync_reset = "none";
+defparam \shift_din[2]~I .oe_async_reset = "none";
+defparam \shift_din[2]~I .oe_power_up = "low";
+defparam \shift_din[2]~I .oe_register_mode = "none";
+defparam \shift_din[2]~I .oe_sync_reset = "none";
+defparam \shift_din[2]~I .operation_mode = "input";
+defparam \shift_din[2]~I .output_async_reset = "none";
+defparam \shift_din[2]~I .output_power_up = "low";
+defparam \shift_din[2]~I .output_register_mode = "none";
+defparam \shift_din[2]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_16
+cyclone_io \shift_din[3]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\shift_din~combout [3]),
+	.regout(),
+	.padio(shift_din[3]));
+// synopsys translate_off
+defparam \shift_din[3]~I .input_async_reset = "none";
+defparam \shift_din[3]~I .input_power_up = "low";
+defparam \shift_din[3]~I .input_register_mode = "none";
+defparam \shift_din[3]~I .input_sync_reset = "none";
+defparam \shift_din[3]~I .oe_async_reset = "none";
+defparam \shift_din[3]~I .oe_power_up = "low";
+defparam \shift_din[3]~I .oe_register_mode = "none";
+defparam \shift_din[3]~I .oe_sync_reset = "none";
+defparam \shift_din[3]~I .operation_mode = "input";
+defparam \shift_din[3]~I .output_async_reset = "none";
+defparam \shift_din[3]~I .output_power_up = "low";
+defparam \shift_din[3]~I .output_register_mode = "none";
+defparam \shift_din[3]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at M4K_X13_Y13
+cyclone_ram_block \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 (
+	.portawe(vcc),
+	.portbrewe(vcc),
+	.clk0(\clk~combout ),
+	.clk1(gnd),
+	.ena0(\rst_n~combout ),
+	.ena1(vcc),
+	.clr0(gnd),
+	.clr1(gnd),
+	.portadatain({\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [23],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [22],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [21],
+\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [20],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [19],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [18],
+\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [17],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [16],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [15],
+\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [14],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [13],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [12],
+\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [11],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [10],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [9],
+\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [8],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [7],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [6],
+\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [5],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [4],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [3],
+\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [2],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [1],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [0],\shift_din~combout [3],\shift_din~combout [2],\shift_din~combout [1],
+\shift_din~combout [0],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [27],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [26],\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [25],
+\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [24]}),
+	.portaaddr({\uut_shift|altshift_taps_component|auto_generated|cntr1|safe_q [0]}),
+	.portabyteenamasks(1'b1),
+	.portbdatain(32'b00000000000000000000000000000000),
+	.portbaddr({\uut_shift|altshift_taps_component|auto_generated|cntr1|safe_q [0]}),
+	.portbbyteenamasks(1'b1),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.portadataout(),
+	.portbdataout(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28_PORTBDATAOUT_bus ));
+// synopsys translate_off
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .data_interleave_offset_in_bits = 1;
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .data_interleave_width_in_bits = 1;
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .logical_ram_name = "shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .mixed_port_feed_through_mode = "old";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .operation_mode = "dual_port";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_a_address_clear = "none";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_a_address_width = 1;
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_a_byte_enable_clear = "none";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_a_byte_enable_clock = "none";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_a_data_in_clear = "none";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_a_data_out_clear = "none";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_a_data_out_clock = "none";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_a_data_width = 32;
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_a_first_address = 0;
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_a_first_bit_number = 0;
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_a_last_address = 1;
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_a_logical_ram_depth = 2;
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_a_logical_ram_width = 32;
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_a_write_enable_clear = "none";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_b_address_clear = "none";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_b_address_clock = "clock0";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_b_address_width = 1;
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_b_byte_enable_clear = "none";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_b_data_in_clear = "none";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_b_data_out_clear = "none";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_b_data_out_clock = "clock0";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_b_data_width = 32;
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_b_first_address = 0;
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_b_first_bit_number = 0;
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_b_last_address = 1;
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_b_logical_ram_depth = 2;
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_b_logical_ram_width = 32;
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_b_read_enable_write_enable_clear = "none";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .port_b_read_enable_write_enable_clock = "clock0";
+defparam \uut_shift|altshift_taps_component|auto_generated|altsyncram2|ram_block3a28 .ram_block_type = "M4K";
+// synopsys translate_on
+
+// atom is at PIN_110
+cyclone_io \shift_dout[0]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [28]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(shift_dout[0]));
+// synopsys translate_off
+defparam \shift_dout[0]~I .input_async_reset = "none";
+defparam \shift_dout[0]~I .input_power_up = "low";
+defparam \shift_dout[0]~I .input_register_mode = "none";
+defparam \shift_dout[0]~I .input_sync_reset = "none";
+defparam \shift_dout[0]~I .oe_async_reset = "none";
+defparam \shift_dout[0]~I .oe_power_up = "low";
+defparam \shift_dout[0]~I .oe_register_mode = "none";
+defparam \shift_dout[0]~I .oe_sync_reset = "none";
+defparam \shift_dout[0]~I .operation_mode = "output";
+defparam \shift_dout[0]~I .output_async_reset = "none";
+defparam \shift_dout[0]~I .output_power_up = "low";
+defparam \shift_dout[0]~I .output_register_mode = "none";
+defparam \shift_dout[0]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_51
+cyclone_io \shift_dout[1]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [29]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(shift_dout[1]));
+// synopsys translate_off
+defparam \shift_dout[1]~I .input_async_reset = "none";
+defparam \shift_dout[1]~I .input_power_up = "low";
+defparam \shift_dout[1]~I .input_register_mode = "none";
+defparam \shift_dout[1]~I .input_sync_reset = "none";
+defparam \shift_dout[1]~I .oe_async_reset = "none";
+defparam \shift_dout[1]~I .oe_power_up = "low";
+defparam \shift_dout[1]~I .oe_register_mode = "none";
+defparam \shift_dout[1]~I .oe_sync_reset = "none";
+defparam \shift_dout[1]~I .operation_mode = "output";
+defparam \shift_dout[1]~I .output_async_reset = "none";
+defparam \shift_dout[1]~I .output_power_up = "low";
+defparam \shift_dout[1]~I .output_register_mode = "none";
+defparam \shift_dout[1]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_61
+cyclone_io \shift_dout[2]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [30]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(shift_dout[2]));
+// synopsys translate_off
+defparam \shift_dout[2]~I .input_async_reset = "none";
+defparam \shift_dout[2]~I .input_power_up = "low";
+defparam \shift_dout[2]~I .input_register_mode = "none";
+defparam \shift_dout[2]~I .input_sync_reset = "none";
+defparam \shift_dout[2]~I .oe_async_reset = "none";
+defparam \shift_dout[2]~I .oe_power_up = "low";
+defparam \shift_dout[2]~I .oe_register_mode = "none";
+defparam \shift_dout[2]~I .oe_sync_reset = "none";
+defparam \shift_dout[2]~I .operation_mode = "output";
+defparam \shift_dout[2]~I .output_async_reset = "none";
+defparam \shift_dout[2]~I .output_power_up = "low";
+defparam \shift_dout[2]~I .output_register_mode = "none";
+defparam \shift_dout[2]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_123
+cyclone_io \shift_dout[3]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [31]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(shift_dout[3]));
+// synopsys translate_off
+defparam \shift_dout[3]~I .input_async_reset = "none";
+defparam \shift_dout[3]~I .input_power_up = "low";
+defparam \shift_dout[3]~I .input_register_mode = "none";
+defparam \shift_dout[3]~I .input_sync_reset = "none";
+defparam \shift_dout[3]~I .oe_async_reset = "none";
+defparam \shift_dout[3]~I .oe_power_up = "low";
+defparam \shift_dout[3]~I .oe_register_mode = "none";
+defparam \shift_dout[3]~I .oe_sync_reset = "none";
+defparam \shift_dout[3]~I .operation_mode = "output";
+defparam \shift_dout[3]~I .output_async_reset = "none";
+defparam \shift_dout[3]~I .output_power_up = "low";
+defparam \shift_dout[3]~I .output_register_mode = "none";
+defparam \shift_dout[3]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_107
+cyclone_io \taps0x[0]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [0]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps0x[0]));
+// synopsys translate_off
+defparam \taps0x[0]~I .input_async_reset = "none";
+defparam \taps0x[0]~I .input_power_up = "low";
+defparam \taps0x[0]~I .input_register_mode = "none";
+defparam \taps0x[0]~I .input_sync_reset = "none";
+defparam \taps0x[0]~I .oe_async_reset = "none";
+defparam \taps0x[0]~I .oe_power_up = "low";
+defparam \taps0x[0]~I .oe_register_mode = "none";
+defparam \taps0x[0]~I .oe_sync_reset = "none";
+defparam \taps0x[0]~I .operation_mode = "output";
+defparam \taps0x[0]~I .output_async_reset = "none";
+defparam \taps0x[0]~I .output_power_up = "low";
+defparam \taps0x[0]~I .output_register_mode = "none";
+defparam \taps0x[0]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_130
+cyclone_io \taps0x[1]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [1]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps0x[1]));
+// synopsys translate_off
+defparam \taps0x[1]~I .input_async_reset = "none";
+defparam \taps0x[1]~I .input_power_up = "low";
+defparam \taps0x[1]~I .input_register_mode = "none";
+defparam \taps0x[1]~I .input_sync_reset = "none";
+defparam \taps0x[1]~I .oe_async_reset = "none";
+defparam \taps0x[1]~I .oe_power_up = "low";
+defparam \taps0x[1]~I .oe_register_mode = "none";
+defparam \taps0x[1]~I .oe_sync_reset = "none";
+defparam \taps0x[1]~I .operation_mode = "output";
+defparam \taps0x[1]~I .output_async_reset = "none";
+defparam \taps0x[1]~I .output_power_up = "low";
+defparam \taps0x[1]~I .output_register_mode = "none";
+defparam \taps0x[1]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_119
+cyclone_io \taps0x[2]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [2]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps0x[2]));
+// synopsys translate_off
+defparam \taps0x[2]~I .input_async_reset = "none";
+defparam \taps0x[2]~I .input_power_up = "low";
+defparam \taps0x[2]~I .input_register_mode = "none";
+defparam \taps0x[2]~I .input_sync_reset = "none";
+defparam \taps0x[2]~I .oe_async_reset = "none";
+defparam \taps0x[2]~I .oe_power_up = "low";
+defparam \taps0x[2]~I .oe_register_mode = "none";
+defparam \taps0x[2]~I .oe_sync_reset = "none";
+defparam \taps0x[2]~I .operation_mode = "output";
+defparam \taps0x[2]~I .output_async_reset = "none";
+defparam \taps0x[2]~I .output_power_up = "low";
+defparam \taps0x[2]~I .output_register_mode = "none";
+defparam \taps0x[2]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_122
+cyclone_io \taps0x[3]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [3]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps0x[3]));
+// synopsys translate_off
+defparam \taps0x[3]~I .input_async_reset = "none";
+defparam \taps0x[3]~I .input_power_up = "low";
+defparam \taps0x[3]~I .input_register_mode = "none";
+defparam \taps0x[3]~I .input_sync_reset = "none";
+defparam \taps0x[3]~I .oe_async_reset = "none";
+defparam \taps0x[3]~I .oe_power_up = "low";
+defparam \taps0x[3]~I .oe_register_mode = "none";
+defparam \taps0x[3]~I .oe_sync_reset = "none";
+defparam \taps0x[3]~I .operation_mode = "output";
+defparam \taps0x[3]~I .output_async_reset = "none";
+defparam \taps0x[3]~I .output_power_up = "low";
+defparam \taps0x[3]~I .output_register_mode = "none";
+defparam \taps0x[3]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_2
+cyclone_io \taps1x[0]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [4]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps1x[0]));
+// synopsys translate_off
+defparam \taps1x[0]~I .input_async_reset = "none";
+defparam \taps1x[0]~I .input_power_up = "low";
+defparam \taps1x[0]~I .input_register_mode = "none";
+defparam \taps1x[0]~I .input_sync_reset = "none";
+defparam \taps1x[0]~I .oe_async_reset = "none";
+defparam \taps1x[0]~I .oe_power_up = "low";
+defparam \taps1x[0]~I .oe_register_mode = "none";
+defparam \taps1x[0]~I .oe_sync_reset = "none";
+defparam \taps1x[0]~I .operation_mode = "output";
+defparam \taps1x[0]~I .output_async_reset = "none";
+defparam \taps1x[0]~I .output_power_up = "low";
+defparam \taps1x[0]~I .output_register_mode = "none";
+defparam \taps1x[0]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_125
+cyclone_io \taps1x[1]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [5]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps1x[1]));
+// synopsys translate_off
+defparam \taps1x[1]~I .input_async_reset = "none";
+defparam \taps1x[1]~I .input_power_up = "low";
+defparam \taps1x[1]~I .input_register_mode = "none";
+defparam \taps1x[1]~I .input_sync_reset = "none";
+defparam \taps1x[1]~I .oe_async_reset = "none";
+defparam \taps1x[1]~I .oe_power_up = "low";
+defparam \taps1x[1]~I .oe_register_mode = "none";
+defparam \taps1x[1]~I .oe_sync_reset = "none";
+defparam \taps1x[1]~I .operation_mode = "output";
+defparam \taps1x[1]~I .output_async_reset = "none";
+defparam \taps1x[1]~I .output_power_up = "low";
+defparam \taps1x[1]~I .output_register_mode = "none";
+defparam \taps1x[1]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_129
+cyclone_io \taps1x[2]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [6]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps1x[2]));
+// synopsys translate_off
+defparam \taps1x[2]~I .input_async_reset = "none";
+defparam \taps1x[2]~I .input_power_up = "low";
+defparam \taps1x[2]~I .input_register_mode = "none";
+defparam \taps1x[2]~I .input_sync_reset = "none";
+defparam \taps1x[2]~I .oe_async_reset = "none";
+defparam \taps1x[2]~I .oe_power_up = "low";
+defparam \taps1x[2]~I .oe_register_mode = "none";
+defparam \taps1x[2]~I .oe_sync_reset = "none";
+defparam \taps1x[2]~I .operation_mode = "output";
+defparam \taps1x[2]~I .output_async_reset = "none";
+defparam \taps1x[2]~I .output_power_up = "low";
+defparam \taps1x[2]~I .output_register_mode = "none";
+defparam \taps1x[2]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_133
+cyclone_io \taps1x[3]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [7]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps1x[3]));
+// synopsys translate_off
+defparam \taps1x[3]~I .input_async_reset = "none";
+defparam \taps1x[3]~I .input_power_up = "low";
+defparam \taps1x[3]~I .input_register_mode = "none";
+defparam \taps1x[3]~I .input_sync_reset = "none";
+defparam \taps1x[3]~I .oe_async_reset = "none";
+defparam \taps1x[3]~I .oe_power_up = "low";
+defparam \taps1x[3]~I .oe_register_mode = "none";
+defparam \taps1x[3]~I .oe_sync_reset = "none";
+defparam \taps1x[3]~I .operation_mode = "output";
+defparam \taps1x[3]~I .output_async_reset = "none";
+defparam \taps1x[3]~I .output_power_up = "low";
+defparam \taps1x[3]~I .output_register_mode = "none";
+defparam \taps1x[3]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_94
+cyclone_io \taps2x[0]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [8]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps2x[0]));
+// synopsys translate_off
+defparam \taps2x[0]~I .input_async_reset = "none";
+defparam \taps2x[0]~I .input_power_up = "low";
+defparam \taps2x[0]~I .input_register_mode = "none";
+defparam \taps2x[0]~I .input_sync_reset = "none";
+defparam \taps2x[0]~I .oe_async_reset = "none";
+defparam \taps2x[0]~I .oe_power_up = "low";
+defparam \taps2x[0]~I .oe_register_mode = "none";
+defparam \taps2x[0]~I .oe_sync_reset = "none";
+defparam \taps2x[0]~I .operation_mode = "output";
+defparam \taps2x[0]~I .output_async_reset = "none";
+defparam \taps2x[0]~I .output_power_up = "low";
+defparam \taps2x[0]~I .output_register_mode = "none";
+defparam \taps2x[0]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_132
+cyclone_io \taps2x[1]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [9]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps2x[1]));
+// synopsys translate_off
+defparam \taps2x[1]~I .input_async_reset = "none";
+defparam \taps2x[1]~I .input_power_up = "low";
+defparam \taps2x[1]~I .input_register_mode = "none";
+defparam \taps2x[1]~I .input_sync_reset = "none";
+defparam \taps2x[1]~I .oe_async_reset = "none";
+defparam \taps2x[1]~I .oe_power_up = "low";
+defparam \taps2x[1]~I .oe_register_mode = "none";
+defparam \taps2x[1]~I .oe_sync_reset = "none";
+defparam \taps2x[1]~I .operation_mode = "output";
+defparam \taps2x[1]~I .output_async_reset = "none";
+defparam \taps2x[1]~I .output_power_up = "low";
+defparam \taps2x[1]~I .output_register_mode = "none";
+defparam \taps2x[1]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_127
+cyclone_io \taps2x[2]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [10]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps2x[2]));
+// synopsys translate_off
+defparam \taps2x[2]~I .input_async_reset = "none";
+defparam \taps2x[2]~I .input_power_up = "low";
+defparam \taps2x[2]~I .input_register_mode = "none";
+defparam \taps2x[2]~I .input_sync_reset = "none";
+defparam \taps2x[2]~I .oe_async_reset = "none";
+defparam \taps2x[2]~I .oe_power_up = "low";
+defparam \taps2x[2]~I .oe_register_mode = "none";
+defparam \taps2x[2]~I .oe_sync_reset = "none";
+defparam \taps2x[2]~I .operation_mode = "output";
+defparam \taps2x[2]~I .output_async_reset = "none";
+defparam \taps2x[2]~I .output_power_up = "low";
+defparam \taps2x[2]~I .output_register_mode = "none";
+defparam \taps2x[2]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_78
+cyclone_io \taps2x[3]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [11]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps2x[3]));
+// synopsys translate_off
+defparam \taps2x[3]~I .input_async_reset = "none";
+defparam \taps2x[3]~I .input_power_up = "low";
+defparam \taps2x[3]~I .input_register_mode = "none";
+defparam \taps2x[3]~I .input_sync_reset = "none";
+defparam \taps2x[3]~I .oe_async_reset = "none";
+defparam \taps2x[3]~I .oe_power_up = "low";
+defparam \taps2x[3]~I .oe_register_mode = "none";
+defparam \taps2x[3]~I .oe_sync_reset = "none";
+defparam \taps2x[3]~I .operation_mode = "output";
+defparam \taps2x[3]~I .output_async_reset = "none";
+defparam \taps2x[3]~I .output_power_up = "low";
+defparam \taps2x[3]~I .output_register_mode = "none";
+defparam \taps2x[3]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_7
+cyclone_io \taps3x[0]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [12]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps3x[0]));
+// synopsys translate_off
+defparam \taps3x[0]~I .input_async_reset = "none";
+defparam \taps3x[0]~I .input_power_up = "low";
+defparam \taps3x[0]~I .input_register_mode = "none";
+defparam \taps3x[0]~I .input_sync_reset = "none";
+defparam \taps3x[0]~I .oe_async_reset = "none";
+defparam \taps3x[0]~I .oe_power_up = "low";
+defparam \taps3x[0]~I .oe_register_mode = "none";
+defparam \taps3x[0]~I .oe_sync_reset = "none";
+defparam \taps3x[0]~I .operation_mode = "output";
+defparam \taps3x[0]~I .output_async_reset = "none";
+defparam \taps3x[0]~I .output_power_up = "low";
+defparam \taps3x[0]~I .output_register_mode = "none";
+defparam \taps3x[0]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_120
+cyclone_io \taps3x[1]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [13]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps3x[1]));
+// synopsys translate_off
+defparam \taps3x[1]~I .input_async_reset = "none";
+defparam \taps3x[1]~I .input_power_up = "low";
+defparam \taps3x[1]~I .input_register_mode = "none";
+defparam \taps3x[1]~I .input_sync_reset = "none";
+defparam \taps3x[1]~I .oe_async_reset = "none";
+defparam \taps3x[1]~I .oe_power_up = "low";
+defparam \taps3x[1]~I .oe_register_mode = "none";
+defparam \taps3x[1]~I .oe_sync_reset = "none";
+defparam \taps3x[1]~I .operation_mode = "output";
+defparam \taps3x[1]~I .output_async_reset = "none";
+defparam \taps3x[1]~I .output_power_up = "low";
+defparam \taps3x[1]~I .output_register_mode = "none";
+defparam \taps3x[1]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_54
+cyclone_io \taps3x[2]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [14]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps3x[2]));
+// synopsys translate_off
+defparam \taps3x[2]~I .input_async_reset = "none";
+defparam \taps3x[2]~I .input_power_up = "low";
+defparam \taps3x[2]~I .input_register_mode = "none";
+defparam \taps3x[2]~I .input_sync_reset = "none";
+defparam \taps3x[2]~I .oe_async_reset = "none";
+defparam \taps3x[2]~I .oe_power_up = "low";
+defparam \taps3x[2]~I .oe_register_mode = "none";
+defparam \taps3x[2]~I .oe_sync_reset = "none";
+defparam \taps3x[2]~I .operation_mode = "output";
+defparam \taps3x[2]~I .output_async_reset = "none";
+defparam \taps3x[2]~I .output_power_up = "low";
+defparam \taps3x[2]~I .output_register_mode = "none";
+defparam \taps3x[2]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_85
+cyclone_io \taps3x[3]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [15]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps3x[3]));
+// synopsys translate_off
+defparam \taps3x[3]~I .input_async_reset = "none";
+defparam \taps3x[3]~I .input_power_up = "low";
+defparam \taps3x[3]~I .input_register_mode = "none";
+defparam \taps3x[3]~I .input_sync_reset = "none";
+defparam \taps3x[3]~I .oe_async_reset = "none";
+defparam \taps3x[3]~I .oe_power_up = "low";
+defparam \taps3x[3]~I .oe_register_mode = "none";
+defparam \taps3x[3]~I .oe_sync_reset = "none";
+defparam \taps3x[3]~I .operation_mode = "output";
+defparam \taps3x[3]~I .output_async_reset = "none";
+defparam \taps3x[3]~I .output_power_up = "low";
+defparam \taps3x[3]~I .output_register_mode = "none";
+defparam \taps3x[3]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_140
+cyclone_io \taps4x[0]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [16]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps4x[0]));
+// synopsys translate_off
+defparam \taps4x[0]~I .input_async_reset = "none";
+defparam \taps4x[0]~I .input_power_up = "low";
+defparam \taps4x[0]~I .input_register_mode = "none";
+defparam \taps4x[0]~I .input_sync_reset = "none";
+defparam \taps4x[0]~I .oe_async_reset = "none";
+defparam \taps4x[0]~I .oe_power_up = "low";
+defparam \taps4x[0]~I .oe_register_mode = "none";
+defparam \taps4x[0]~I .oe_sync_reset = "none";
+defparam \taps4x[0]~I .operation_mode = "output";
+defparam \taps4x[0]~I .output_async_reset = "none";
+defparam \taps4x[0]~I .output_power_up = "low";
+defparam \taps4x[0]~I .output_register_mode = "none";
+defparam \taps4x[0]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_126
+cyclone_io \taps4x[1]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [17]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps4x[1]));
+// synopsys translate_off
+defparam \taps4x[1]~I .input_async_reset = "none";
+defparam \taps4x[1]~I .input_power_up = "low";
+defparam \taps4x[1]~I .input_register_mode = "none";
+defparam \taps4x[1]~I .input_sync_reset = "none";
+defparam \taps4x[1]~I .oe_async_reset = "none";
+defparam \taps4x[1]~I .oe_power_up = "low";
+defparam \taps4x[1]~I .oe_register_mode = "none";
+defparam \taps4x[1]~I .oe_sync_reset = "none";
+defparam \taps4x[1]~I .operation_mode = "output";
+defparam \taps4x[1]~I .output_async_reset = "none";
+defparam \taps4x[1]~I .output_power_up = "low";
+defparam \taps4x[1]~I .output_register_mode = "none";
+defparam \taps4x[1]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_144
+cyclone_io \taps4x[2]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [18]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps4x[2]));
+// synopsys translate_off
+defparam \taps4x[2]~I .input_async_reset = "none";
+defparam \taps4x[2]~I .input_power_up = "low";
+defparam \taps4x[2]~I .input_register_mode = "none";
+defparam \taps4x[2]~I .input_sync_reset = "none";
+defparam \taps4x[2]~I .oe_async_reset = "none";
+defparam \taps4x[2]~I .oe_power_up = "low";
+defparam \taps4x[2]~I .oe_register_mode = "none";
+defparam \taps4x[2]~I .oe_sync_reset = "none";
+defparam \taps4x[2]~I .operation_mode = "output";
+defparam \taps4x[2]~I .output_async_reset = "none";
+defparam \taps4x[2]~I .output_power_up = "low";
+defparam \taps4x[2]~I .output_register_mode = "none";
+defparam \taps4x[2]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_52
+cyclone_io \taps4x[3]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [19]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps4x[3]));
+// synopsys translate_off
+defparam \taps4x[3]~I .input_async_reset = "none";
+defparam \taps4x[3]~I .input_power_up = "low";
+defparam \taps4x[3]~I .input_register_mode = "none";
+defparam \taps4x[3]~I .input_sync_reset = "none";
+defparam \taps4x[3]~I .oe_async_reset = "none";
+defparam \taps4x[3]~I .oe_power_up = "low";
+defparam \taps4x[3]~I .oe_register_mode = "none";
+defparam \taps4x[3]~I .oe_sync_reset = "none";
+defparam \taps4x[3]~I .operation_mode = "output";
+defparam \taps4x[3]~I .output_async_reset = "none";
+defparam \taps4x[3]~I .output_power_up = "low";
+defparam \taps4x[3]~I .output_register_mode = "none";
+defparam \taps4x[3]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_141
+cyclone_io \taps5x[0]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [20]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps5x[0]));
+// synopsys translate_off
+defparam \taps5x[0]~I .input_async_reset = "none";
+defparam \taps5x[0]~I .input_power_up = "low";
+defparam \taps5x[0]~I .input_register_mode = "none";
+defparam \taps5x[0]~I .input_sync_reset = "none";
+defparam \taps5x[0]~I .oe_async_reset = "none";
+defparam \taps5x[0]~I .oe_power_up = "low";
+defparam \taps5x[0]~I .oe_register_mode = "none";
+defparam \taps5x[0]~I .oe_sync_reset = "none";
+defparam \taps5x[0]~I .operation_mode = "output";
+defparam \taps5x[0]~I .output_async_reset = "none";
+defparam \taps5x[0]~I .output_power_up = "low";
+defparam \taps5x[0]~I .output_register_mode = "none";
+defparam \taps5x[0]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_113
+cyclone_io \taps5x[1]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [21]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps5x[1]));
+// synopsys translate_off
+defparam \taps5x[1]~I .input_async_reset = "none";
+defparam \taps5x[1]~I .input_power_up = "low";
+defparam \taps5x[1]~I .input_register_mode = "none";
+defparam \taps5x[1]~I .input_sync_reset = "none";
+defparam \taps5x[1]~I .oe_async_reset = "none";
+defparam \taps5x[1]~I .oe_power_up = "low";
+defparam \taps5x[1]~I .oe_register_mode = "none";
+defparam \taps5x[1]~I .oe_sync_reset = "none";
+defparam \taps5x[1]~I .operation_mode = "output";
+defparam \taps5x[1]~I .output_async_reset = "none";
+defparam \taps5x[1]~I .output_power_up = "low";
+defparam \taps5x[1]~I .output_register_mode = "none";
+defparam \taps5x[1]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_128
+cyclone_io \taps5x[2]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [22]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps5x[2]));
+// synopsys translate_off
+defparam \taps5x[2]~I .input_async_reset = "none";
+defparam \taps5x[2]~I .input_power_up = "low";
+defparam \taps5x[2]~I .input_register_mode = "none";
+defparam \taps5x[2]~I .input_sync_reset = "none";
+defparam \taps5x[2]~I .oe_async_reset = "none";
+defparam \taps5x[2]~I .oe_power_up = "low";
+defparam \taps5x[2]~I .oe_register_mode = "none";
+defparam \taps5x[2]~I .oe_sync_reset = "none";
+defparam \taps5x[2]~I .operation_mode = "output";
+defparam \taps5x[2]~I .output_async_reset = "none";
+defparam \taps5x[2]~I .output_power_up = "low";
+defparam \taps5x[2]~I .output_register_mode = "none";
+defparam \taps5x[2]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_6
+cyclone_io \taps5x[3]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [23]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps5x[3]));
+// synopsys translate_off
+defparam \taps5x[3]~I .input_async_reset = "none";
+defparam \taps5x[3]~I .input_power_up = "low";
+defparam \taps5x[3]~I .input_register_mode = "none";
+defparam \taps5x[3]~I .input_sync_reset = "none";
+defparam \taps5x[3]~I .oe_async_reset = "none";
+defparam \taps5x[3]~I .oe_power_up = "low";
+defparam \taps5x[3]~I .oe_register_mode = "none";
+defparam \taps5x[3]~I .oe_sync_reset = "none";
+defparam \taps5x[3]~I .operation_mode = "output";
+defparam \taps5x[3]~I .output_async_reset = "none";
+defparam \taps5x[3]~I .output_power_up = "low";
+defparam \taps5x[3]~I .output_register_mode = "none";
+defparam \taps5x[3]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_131
+cyclone_io \taps6x[0]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [24]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps6x[0]));
+// synopsys translate_off
+defparam \taps6x[0]~I .input_async_reset = "none";
+defparam \taps6x[0]~I .input_power_up = "low";
+defparam \taps6x[0]~I .input_register_mode = "none";
+defparam \taps6x[0]~I .input_sync_reset = "none";
+defparam \taps6x[0]~I .oe_async_reset = "none";
+defparam \taps6x[0]~I .oe_power_up = "low";
+defparam \taps6x[0]~I .oe_register_mode = "none";
+defparam \taps6x[0]~I .oe_sync_reset = "none";
+defparam \taps6x[0]~I .operation_mode = "output";
+defparam \taps6x[0]~I .output_async_reset = "none";
+defparam \taps6x[0]~I .output_power_up = "low";
+defparam \taps6x[0]~I .output_register_mode = "none";
+defparam \taps6x[0]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_5
+cyclone_io \taps6x[1]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [25]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps6x[1]));
+// synopsys translate_off
+defparam \taps6x[1]~I .input_async_reset = "none";
+defparam \taps6x[1]~I .input_power_up = "low";
+defparam \taps6x[1]~I .input_register_mode = "none";
+defparam \taps6x[1]~I .input_sync_reset = "none";
+defparam \taps6x[1]~I .oe_async_reset = "none";
+defparam \taps6x[1]~I .oe_power_up = "low";
+defparam \taps6x[1]~I .oe_register_mode = "none";
+defparam \taps6x[1]~I .oe_sync_reset = "none";
+defparam \taps6x[1]~I .operation_mode = "output";
+defparam \taps6x[1]~I .output_async_reset = "none";
+defparam \taps6x[1]~I .output_power_up = "low";
+defparam \taps6x[1]~I .output_register_mode = "none";
+defparam \taps6x[1]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_3
+cyclone_io \taps6x[2]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [26]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps6x[2]));
+// synopsys translate_off
+defparam \taps6x[2]~I .input_async_reset = "none";
+defparam \taps6x[2]~I .input_power_up = "low";
+defparam \taps6x[2]~I .input_register_mode = "none";
+defparam \taps6x[2]~I .input_sync_reset = "none";
+defparam \taps6x[2]~I .oe_async_reset = "none";
+defparam \taps6x[2]~I .oe_power_up = "low";
+defparam \taps6x[2]~I .oe_register_mode = "none";
+defparam \taps6x[2]~I .oe_sync_reset = "none";
+defparam \taps6x[2]~I .operation_mode = "output";
+defparam \taps6x[2]~I .output_async_reset = "none";
+defparam \taps6x[2]~I .output_power_up = "low";
+defparam \taps6x[2]~I .output_register_mode = "none";
+defparam \taps6x[2]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_1
+cyclone_io \taps6x[3]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [27]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps6x[3]));
+// synopsys translate_off
+defparam \taps6x[3]~I .input_async_reset = "none";
+defparam \taps6x[3]~I .input_power_up = "low";
+defparam \taps6x[3]~I .input_register_mode = "none";
+defparam \taps6x[3]~I .input_sync_reset = "none";
+defparam \taps6x[3]~I .oe_async_reset = "none";
+defparam \taps6x[3]~I .oe_power_up = "low";
+defparam \taps6x[3]~I .oe_register_mode = "none";
+defparam \taps6x[3]~I .oe_sync_reset = "none";
+defparam \taps6x[3]~I .operation_mode = "output";
+defparam \taps6x[3]~I .output_async_reset = "none";
+defparam \taps6x[3]~I .output_power_up = "low";
+defparam \taps6x[3]~I .output_register_mode = "none";
+defparam \taps6x[3]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_121
+cyclone_io \taps7x[0]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [28]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps7x[0]));
+// synopsys translate_off
+defparam \taps7x[0]~I .input_async_reset = "none";
+defparam \taps7x[0]~I .input_power_up = "low";
+defparam \taps7x[0]~I .input_register_mode = "none";
+defparam \taps7x[0]~I .input_sync_reset = "none";
+defparam \taps7x[0]~I .oe_async_reset = "none";
+defparam \taps7x[0]~I .oe_power_up = "low";
+defparam \taps7x[0]~I .oe_register_mode = "none";
+defparam \taps7x[0]~I .oe_sync_reset = "none";
+defparam \taps7x[0]~I .operation_mode = "output";
+defparam \taps7x[0]~I .output_async_reset = "none";
+defparam \taps7x[0]~I .output_power_up = "low";
+defparam \taps7x[0]~I .output_register_mode = "none";
+defparam \taps7x[0]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_53
+cyclone_io \taps7x[1]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [29]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps7x[1]));
+// synopsys translate_off
+defparam \taps7x[1]~I .input_async_reset = "none";
+defparam \taps7x[1]~I .input_power_up = "low";
+defparam \taps7x[1]~I .input_register_mode = "none";
+defparam \taps7x[1]~I .input_sync_reset = "none";
+defparam \taps7x[1]~I .oe_async_reset = "none";
+defparam \taps7x[1]~I .oe_power_up = "low";
+defparam \taps7x[1]~I .oe_register_mode = "none";
+defparam \taps7x[1]~I .oe_sync_reset = "none";
+defparam \taps7x[1]~I .operation_mode = "output";
+defparam \taps7x[1]~I .output_async_reset = "none";
+defparam \taps7x[1]~I .output_power_up = "low";
+defparam \taps7x[1]~I .output_register_mode = "none";
+defparam \taps7x[1]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_48
+cyclone_io \taps7x[2]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [30]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps7x[2]));
+// synopsys translate_off
+defparam \taps7x[2]~I .input_async_reset = "none";
+defparam \taps7x[2]~I .input_power_up = "low";
+defparam \taps7x[2]~I .input_register_mode = "none";
+defparam \taps7x[2]~I .input_sync_reset = "none";
+defparam \taps7x[2]~I .oe_async_reset = "none";
+defparam \taps7x[2]~I .oe_power_up = "low";
+defparam \taps7x[2]~I .oe_register_mode = "none";
+defparam \taps7x[2]~I .oe_sync_reset = "none";
+defparam \taps7x[2]~I .operation_mode = "output";
+defparam \taps7x[2]~I .output_async_reset = "none";
+defparam \taps7x[2]~I .output_power_up = "low";
+defparam \taps7x[2]~I .output_register_mode = "none";
+defparam \taps7x[2]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_124
+cyclone_io \taps7x[3]~I (
+	.datain(\uut_shift|altshift_taps_component|auto_generated|altsyncram2|q_b [31]),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.padio(taps7x[3]));
+// synopsys translate_off
+defparam \taps7x[3]~I .input_async_reset = "none";
+defparam \taps7x[3]~I .input_power_up = "low";
+defparam \taps7x[3]~I .input_register_mode = "none";
+defparam \taps7x[3]~I .input_sync_reset = "none";
+defparam \taps7x[3]~I .oe_async_reset = "none";
+defparam \taps7x[3]~I .oe_power_up = "low";
+defparam \taps7x[3]~I .oe_register_mode = "none";
+defparam \taps7x[3]~I .oe_sync_reset = "none";
+defparam \taps7x[3]~I .operation_mode = "output";
+defparam \taps7x[3]~I .output_async_reset = "none";
+defparam \taps7x[3]~I .output_power_up = "low";
+defparam \taps7x[3]~I .output_register_mode = "none";
+defparam \taps7x[3]~I .output_sync_reset = "none";
+// synopsys translate_on
+
+endmodule

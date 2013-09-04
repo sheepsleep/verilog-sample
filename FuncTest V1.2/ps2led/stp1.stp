@@ -1,0 +1,195 @@
+<session jtag_chain="ByteBlasterMV [LPT1]" jtag_device="@1: EP2C5 (0x020B10DD)" sof_file="ps2key.sof" top_level_entity="ps2key">
+  <display_tree gui_logging_enabled="0">
+    <display_branch instance="auto_signaltap_0" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+  </display_tree>
+  <global_info>
+    <multi attribute="window position" size="9" value="893,548,398,124,356,50,24,0,0"/>
+    <single attribute="active instance" value="0"/>
+    <single attribute="lock mode" value="36110"/>
+  </global_info>
+  <instance compilation_mode="full" entity_name="sld_signaltap" is_auto_node="yes" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
+    <position_info>
+      <single attribute="active tab" value="1"/>
+      <single attribute="setup vertical scroll position" value="2"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+    </position_info>
+    <signal_set global_temp="1" name="signal_set: 2009/11/08 11:58:40  #0">
+      <clock name="clk_256" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="M4K" reserved_data_nodes="0" reserved_trigger_nodes="0" sample_depth="2048" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="count[0]" tap_mode="classic" type="register"/>
+          <wire name="count[1]" tap_mode="classic" type="register"/>
+          <wire name="count[2]" tap_mode="classic" type="register"/>
+          <wire name="count[3]" tap_mode="classic" type="register"/>
+          <wire name="data[0]" tap_mode="classic" type="register"/>
+          <wire name="data[1]" tap_mode="classic" type="register"/>
+          <wire name="data[2]" tap_mode="classic" type="register"/>
+          <wire name="data[3]" tap_mode="classic" type="register"/>
+          <wire name="data[4]" tap_mode="classic" type="register"/>
+          <wire name="data[5]" tap_mode="classic" type="register"/>
+          <wire name="data[6]" tap_mode="classic" type="register"/>
+          <wire name="data[7]" tap_mode="classic" type="register"/>
+          <wire name="data[8]" tap_mode="classic" type="register"/>
+          <wire name="data_uart[0]" tap_mode="classic" type="output pin"/>
+          <wire name="data_uart[1]" tap_mode="classic" type="output pin"/>
+          <wire name="data_uart[2]" tap_mode="classic" type="output pin"/>
+          <wire name="data_uart[3]" tap_mode="classic" type="output pin"/>
+          <wire name="data_uart[4]" tap_mode="classic" type="output pin"/>
+          <wire name="data_uart[5]" tap_mode="classic" type="output pin"/>
+          <wire name="data_uart[6]" tap_mode="classic" type="output pin"/>
+          <wire name="data_uart[7]" tap_mode="classic" type="output pin"/>
+          <wire name="keyclk" tap_mode="classic" type="input pin"/>
+          <wire name="keydata" tap_mode="classic" type="input pin"/>
+          <wire name="ledout[0]" tap_mode="classic" type="output pin"/>
+          <wire name="ledout[1]" tap_mode="classic" type="output pin"/>
+          <wire name="ledout[2]" tap_mode="classic" type="output pin"/>
+          <wire name="ledout[3]" tap_mode="classic" type="output pin"/>
+          <wire name="ledout[4]" tap_mode="classic" type="output pin"/>
+          <wire name="ledout[5]" tap_mode="classic" type="output pin"/>
+          <wire name="ledout[6]" tap_mode="classic" type="output pin"/>
+          <wire name="ledout[7]" tap_mode="classic" type="output pin"/>
+          <wire name="reset" tap_mode="classic" type="input pin"/>
+          <wire name="wr_uart" tap_mode="classic" type="output pin"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="count[0]" tap_mode="classic" type="register"/>
+          <wire name="count[1]" tap_mode="classic" type="register"/>
+          <wire name="count[2]" tap_mode="classic" type="register"/>
+          <wire name="count[3]" tap_mode="classic" type="register"/>
+          <wire name="data[0]" tap_mode="classic" type="register"/>
+          <wire name="data[1]" tap_mode="classic" type="register"/>
+          <wire name="data[2]" tap_mode="classic" type="register"/>
+          <wire name="data[3]" tap_mode="classic" type="register"/>
+          <wire name="data[4]" tap_mode="classic" type="register"/>
+          <wire name="data[5]" tap_mode="classic" type="register"/>
+          <wire name="data[6]" tap_mode="classic" type="register"/>
+          <wire name="data[7]" tap_mode="classic" type="register"/>
+          <wire name="data[8]" tap_mode="classic" type="register"/>
+          <wire name="data_uart[0]" tap_mode="classic" type="output pin"/>
+          <wire name="data_uart[1]" tap_mode="classic" type="output pin"/>
+          <wire name="data_uart[2]" tap_mode="classic" type="output pin"/>
+          <wire name="data_uart[3]" tap_mode="classic" type="output pin"/>
+          <wire name="data_uart[4]" tap_mode="classic" type="output pin"/>
+          <wire name="data_uart[5]" tap_mode="classic" type="output pin"/>
+          <wire name="data_uart[6]" tap_mode="classic" type="output pin"/>
+          <wire name="data_uart[7]" tap_mode="classic" type="output pin"/>
+          <wire name="keyclk" tap_mode="classic" type="input pin"/>
+          <wire name="keydata" tap_mode="classic" type="input pin"/>
+          <wire name="ledout[0]" tap_mode="classic" type="output pin"/>
+          <wire name="ledout[1]" tap_mode="classic" type="output pin"/>
+          <wire name="ledout[2]" tap_mode="classic" type="output pin"/>
+          <wire name="ledout[3]" tap_mode="classic" type="output pin"/>
+          <wire name="ledout[4]" tap_mode="classic" type="output pin"/>
+          <wire name="ledout[5]" tap_mode="classic" type="output pin"/>
+          <wire name="ledout[6]" tap_mode="classic" type="output pin"/>
+          <wire name="ledout[7]" tap_mode="classic" type="output pin"/>
+          <wire name="reset" tap_mode="classic" type="input pin"/>
+          <wire name="wr_uart" tap_mode="classic" type="output pin"/>
+        </data_input_vec>
+      </signal_vec>
+      <presentation>
+        <data_view>
+          <bus is_signal_inverted="no" link="all" name="count" order="lsb_to_msb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="count[0]"/>
+            <net is_signal_inverted="no" name="count[1]"/>
+            <net is_signal_inverted="no" name="count[2]"/>
+            <net is_signal_inverted="no" name="count[3]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="data" order="lsb_to_msb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="data[0]"/>
+            <net is_signal_inverted="no" name="data[1]"/>
+            <net is_signal_inverted="no" name="data[2]"/>
+            <net is_signal_inverted="no" name="data[3]"/>
+            <net is_signal_inverted="no" name="data[4]"/>
+            <net is_signal_inverted="no" name="data[5]"/>
+            <net is_signal_inverted="no" name="data[6]"/>
+            <net is_signal_inverted="no" name="data[7]"/>
+            <net is_signal_inverted="no" name="data[8]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="data_uart" order="lsb_to_msb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="data_uart[0]"/>
+            <net is_signal_inverted="no" name="data_uart[1]"/>
+            <net is_signal_inverted="no" name="data_uart[2]"/>
+            <net is_signal_inverted="no" name="data_uart[3]"/>
+            <net is_signal_inverted="no" name="data_uart[4]"/>
+            <net is_signal_inverted="no" name="data_uart[5]"/>
+            <net is_signal_inverted="no" name="data_uart[6]"/>
+            <net is_signal_inverted="no" name="data_uart[7]"/>
+          </bus>
+          <net is_signal_inverted="no" name="keyclk"/>
+          <net is_signal_inverted="no" name="keydata"/>
+          <bus is_signal_inverted="no" link="all" name="ledout" order="lsb_to_msb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="ledout[0]"/>
+            <net is_signal_inverted="no" name="ledout[1]"/>
+            <net is_signal_inverted="no" name="ledout[2]"/>
+            <net is_signal_inverted="no" name="ledout[3]"/>
+            <net is_signal_inverted="no" name="ledout[4]"/>
+            <net is_signal_inverted="no" name="ledout[5]"/>
+            <net is_signal_inverted="no" name="ledout[6]"/>
+            <net is_signal_inverted="no" name="ledout[7]"/>
+          </bus>
+          <net is_signal_inverted="no" name="wr_uart"/>
+          <net is_signal_inverted="no" name="reset"/>
+        </data_view>
+        <setup_view>
+          <bus is_signal_inverted="no" link="all" name="count" order="lsb_to_msb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="count[0]"/>
+            <net is_signal_inverted="no" name="count[1]"/>
+            <net is_signal_inverted="no" name="count[2]"/>
+            <net is_signal_inverted="no" name="count[3]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="data" order="lsb_to_msb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="data[0]"/>
+            <net is_signal_inverted="no" name="data[1]"/>
+            <net is_signal_inverted="no" name="data[2]"/>
+            <net is_signal_inverted="no" name="data[3]"/>
+            <net is_signal_inverted="no" name="data[4]"/>
+            <net is_signal_inverted="no" name="data[5]"/>
+            <net is_signal_inverted="no" name="data[6]"/>
+            <net is_signal_inverted="no" name="data[7]"/>
+            <net is_signal_inverted="no" name="data[8]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="data_uart" order="lsb_to_msb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="data_uart[0]"/>
+            <net is_signal_inverted="no" name="data_uart[1]"/>
+            <net is_signal_inverted="no" name="data_uart[2]"/>
+            <net is_signal_inverted="no" name="data_uart[3]"/>
+            <net is_signal_inverted="no" name="data_uart[4]"/>
+            <net is_signal_inverted="no" name="data_uart[5]"/>
+            <net is_signal_inverted="no" name="data_uart[6]"/>
+            <net is_signal_inverted="no" name="data_uart[7]"/>
+          </bus>
+          <net is_signal_inverted="no" name="keyclk"/>
+          <net is_signal_inverted="no" name="keydata"/>
+          <bus is_signal_inverted="no" link="all" name="ledout" order="lsb_to_msb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="ledout[0]"/>
+            <net is_signal_inverted="no" name="ledout[1]"/>
+            <net is_signal_inverted="no" name="ledout[2]"/>
+            <net is_signal_inverted="no" name="ledout[3]"/>
+            <net is_signal_inverted="no" name="ledout[4]"/>
+            <net is_signal_inverted="no" name="ledout[5]"/>
+            <net is_signal_inverted="no" name="ledout[6]"/>
+            <net is_signal_inverted="no" name="ledout[7]"/>
+          </bus>
+          <net is_signal_inverted="no" name="wr_uart"/>
+          <net is_signal_inverted="no" name="reset"/>
+        </setup_view>
+      </presentation>
+      <trigger global_temp="1" name="trigger: 2009/11/08 11:58:40  #1" position="pre" power_up_trigger_mode="false" segment_size="1" trigger_in="dont_care" trigger_out="active high" trigger_type="circular">
+        <power_up_trigger position="pre" trigger_in="dont_care" trigger_out="active high"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">'keyclk' == either edge
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+      </trigger>
+    </signal_set>
+  </instance>
+  <mnemonics/>
+  <static_plugin_mnemonics/>
+</session>

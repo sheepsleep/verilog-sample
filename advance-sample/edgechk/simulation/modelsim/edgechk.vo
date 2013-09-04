@@ -1,0 +1,386 @@
+// Copyright (C) 1991-2007 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II"
+// VERSION "Version 7.2 Build 151 09/26/2007 SJ Full Version"
+
+// DATE "10/23/2009 00:37:42"
+
+// 
+// Device: Altera EP2C5T144C8 Package TQFP144
+// 
+
+// 
+// This Verilog file should be used for ModelSim (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module edgechk (
+	sys_clk,
+	sys_rst_n,
+	ctrl_signal,
+	posedge_pulse,
+	negedge_pulse,
+	edge_pulse);
+input 	sys_clk;
+input 	sys_rst_n;
+input 	ctrl_signal;
+output 	posedge_pulse;
+output 	negedge_pulse;
+output 	edge_pulse;
+
+wire gnd = 1'b0;
+wire vcc = 1'b1;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("edgechk_v.sdo");
+// synopsys translate_on
+
+wire \sys_clk~combout ;
+wire \sys_clk~clkctrl_outclk ;
+wire \ctrl_signal~combout ;
+wire \sys_rst_n~combout ;
+wire \sys_rst_n~clkctrl_outclk ;
+wire \ctrl_signal_dly1~regout ;
+wire \ctrl_signal_dly2~regout ;
+wire \posedge_pulse~0_combout ;
+wire \negedge_pulse~0_combout ;
+wire \edge_pulse~0_combout ;
+
+
+// atom is at PIN_17
+cycloneii_io \sys_clk~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.differentialin(gnd),
+	.linkin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\sys_clk~combout ),
+	.regout(),
+	.differentialout(),
+	.linkout(),
+	.padio(sys_clk));
+// synopsys translate_off
+defparam \sys_clk~I .input_async_reset = "none";
+defparam \sys_clk~I .input_power_up = "low";
+defparam \sys_clk~I .input_register_mode = "none";
+defparam \sys_clk~I .input_sync_reset = "none";
+defparam \sys_clk~I .oe_async_reset = "none";
+defparam \sys_clk~I .oe_power_up = "low";
+defparam \sys_clk~I .oe_register_mode = "none";
+defparam \sys_clk~I .oe_sync_reset = "none";
+defparam \sys_clk~I .operation_mode = "input";
+defparam \sys_clk~I .output_async_reset = "none";
+defparam \sys_clk~I .output_power_up = "low";
+defparam \sys_clk~I .output_register_mode = "none";
+defparam \sys_clk~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at CLKCTRL_G2
+cycloneii_clkctrl \sys_clk~clkctrl (
+	.ena(vcc),
+	.inclk({gnd,gnd,gnd,\sys_clk~combout }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\sys_clk~clkctrl_outclk ));
+// synopsys translate_off
+defparam \sys_clk~clkctrl .clock_type = "global clock";
+defparam \sys_clk~clkctrl .ena_register_mode = "falling edge";
+// synopsys translate_on
+
+// atom is at PIN_26
+cycloneii_io \ctrl_signal~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.differentialin(gnd),
+	.linkin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\ctrl_signal~combout ),
+	.regout(),
+	.differentialout(),
+	.linkout(),
+	.padio(ctrl_signal));
+// synopsys translate_off
+defparam \ctrl_signal~I .input_async_reset = "none";
+defparam \ctrl_signal~I .input_power_up = "low";
+defparam \ctrl_signal~I .input_register_mode = "none";
+defparam \ctrl_signal~I .input_sync_reset = "none";
+defparam \ctrl_signal~I .oe_async_reset = "none";
+defparam \ctrl_signal~I .oe_power_up = "low";
+defparam \ctrl_signal~I .oe_register_mode = "none";
+defparam \ctrl_signal~I .oe_sync_reset = "none";
+defparam \ctrl_signal~I .operation_mode = "input";
+defparam \ctrl_signal~I .output_async_reset = "none";
+defparam \ctrl_signal~I .output_power_up = "low";
+defparam \ctrl_signal~I .output_register_mode = "none";
+defparam \ctrl_signal~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_18
+cycloneii_io \sys_rst_n~I (
+	.datain(gnd),
+	.oe(gnd),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.differentialin(gnd),
+	.linkin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(\sys_rst_n~combout ),
+	.regout(),
+	.differentialout(),
+	.linkout(),
+	.padio(sys_rst_n));
+// synopsys translate_off
+defparam \sys_rst_n~I .input_async_reset = "none";
+defparam \sys_rst_n~I .input_power_up = "low";
+defparam \sys_rst_n~I .input_register_mode = "none";
+defparam \sys_rst_n~I .input_sync_reset = "none";
+defparam \sys_rst_n~I .oe_async_reset = "none";
+defparam \sys_rst_n~I .oe_power_up = "low";
+defparam \sys_rst_n~I .oe_register_mode = "none";
+defparam \sys_rst_n~I .oe_sync_reset = "none";
+defparam \sys_rst_n~I .operation_mode = "input";
+defparam \sys_rst_n~I .output_async_reset = "none";
+defparam \sys_rst_n~I .output_power_up = "low";
+defparam \sys_rst_n~I .output_register_mode = "none";
+defparam \sys_rst_n~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at CLKCTRL_G1
+cycloneii_clkctrl \sys_rst_n~clkctrl (
+	.ena(vcc),
+	.inclk({gnd,gnd,gnd,\sys_rst_n~combout }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\sys_rst_n~clkctrl_outclk ));
+// synopsys translate_off
+defparam \sys_rst_n~clkctrl .clock_type = "global clock";
+defparam \sys_rst_n~clkctrl .ena_register_mode = "falling edge";
+// synopsys translate_on
+
+// atom is at LCFF_X1_Y5_N5
+cycloneii_lcell_ff ctrl_signal_dly1(
+	.clk(\sys_clk~clkctrl_outclk ),
+	.datain(gnd),
+	.sdata(\ctrl_signal~combout ),
+	.aclr(!\sys_rst_n~clkctrl_outclk ),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.regout(\ctrl_signal_dly1~regout ));
+
+// atom is at LCFF_X1_Y5_N1
+cycloneii_lcell_ff ctrl_signal_dly2(
+	.clk(\sys_clk~clkctrl_outclk ),
+	.datain(gnd),
+	.sdata(\ctrl_signal_dly1~regout ),
+	.aclr(!\sys_rst_n~clkctrl_outclk ),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.regout(\ctrl_signal_dly2~regout ));
+
+// atom is at LCCOMB_X1_Y5_N4
+cycloneii_lcell_comb \posedge_pulse~0 (
+// Equation(s):
+// \posedge_pulse~0_combout  = \ctrl_signal_dly1~regout  & !\ctrl_signal_dly2~regout 
+
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\ctrl_signal_dly1~regout ),
+	.datad(\ctrl_signal_dly2~regout ),
+	.cin(gnd),
+	.combout(\posedge_pulse~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \posedge_pulse~0 .lut_mask = 16'h00F0;
+defparam \posedge_pulse~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// atom is at LCCOMB_X1_Y5_N0
+cycloneii_lcell_comb \negedge_pulse~0 (
+// Equation(s):
+// \negedge_pulse~0_combout  = !\ctrl_signal_dly1~regout  & \ctrl_signal_dly2~regout 
+
+	.dataa(vcc),
+	.datab(\ctrl_signal_dly1~regout ),
+	.datac(\ctrl_signal_dly2~regout ),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\negedge_pulse~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \negedge_pulse~0 .lut_mask = 16'h3030;
+defparam \negedge_pulse~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// atom is at LCCOMB_X1_Y5_N8
+cycloneii_lcell_comb \edge_pulse~0 (
+// Equation(s):
+// \edge_pulse~0_combout  = \ctrl_signal_dly1~regout  $ \ctrl_signal_dly2~regout 
+
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\ctrl_signal_dly1~regout ),
+	.datad(\ctrl_signal_dly2~regout ),
+	.cin(gnd),
+	.combout(\edge_pulse~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \edge_pulse~0 .lut_mask = 16'h0FF0;
+defparam \edge_pulse~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// atom is at PIN_27
+cycloneii_io \posedge_pulse~I (
+	.datain(\posedge_pulse~0_combout ),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.differentialin(gnd),
+	.linkin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.differentialout(),
+	.linkout(),
+	.padio(posedge_pulse));
+// synopsys translate_off
+defparam \posedge_pulse~I .input_async_reset = "none";
+defparam \posedge_pulse~I .input_power_up = "low";
+defparam \posedge_pulse~I .input_register_mode = "none";
+defparam \posedge_pulse~I .input_sync_reset = "none";
+defparam \posedge_pulse~I .oe_async_reset = "none";
+defparam \posedge_pulse~I .oe_power_up = "low";
+defparam \posedge_pulse~I .oe_register_mode = "none";
+defparam \posedge_pulse~I .oe_sync_reset = "none";
+defparam \posedge_pulse~I .operation_mode = "output";
+defparam \posedge_pulse~I .output_async_reset = "none";
+defparam \posedge_pulse~I .output_power_up = "low";
+defparam \posedge_pulse~I .output_register_mode = "none";
+defparam \posedge_pulse~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_25
+cycloneii_io \negedge_pulse~I (
+	.datain(\negedge_pulse~0_combout ),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.differentialin(gnd),
+	.linkin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.differentialout(),
+	.linkout(),
+	.padio(negedge_pulse));
+// synopsys translate_off
+defparam \negedge_pulse~I .input_async_reset = "none";
+defparam \negedge_pulse~I .input_power_up = "low";
+defparam \negedge_pulse~I .input_register_mode = "none";
+defparam \negedge_pulse~I .input_sync_reset = "none";
+defparam \negedge_pulse~I .oe_async_reset = "none";
+defparam \negedge_pulse~I .oe_power_up = "low";
+defparam \negedge_pulse~I .oe_register_mode = "none";
+defparam \negedge_pulse~I .oe_sync_reset = "none";
+defparam \negedge_pulse~I .operation_mode = "output";
+defparam \negedge_pulse~I .output_async_reset = "none";
+defparam \negedge_pulse~I .output_power_up = "low";
+defparam \negedge_pulse~I .output_register_mode = "none";
+defparam \negedge_pulse~I .output_sync_reset = "none";
+// synopsys translate_on
+
+// atom is at PIN_24
+cycloneii_io \edge_pulse~I (
+	.datain(\edge_pulse~0_combout ),
+	.oe(vcc),
+	.outclk(gnd),
+	.outclkena(vcc),
+	.inclk(gnd),
+	.inclkena(vcc),
+	.areset(gnd),
+	.sreset(gnd),
+	.differentialin(gnd),
+	.linkin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.devoe(devoe),
+	.combout(),
+	.regout(),
+	.differentialout(),
+	.linkout(),
+	.padio(edge_pulse));
+// synopsys translate_off
+defparam \edge_pulse~I .input_async_reset = "none";
+defparam \edge_pulse~I .input_power_up = "low";
+defparam \edge_pulse~I .input_register_mode = "none";
+defparam \edge_pulse~I .input_sync_reset = "none";
+defparam \edge_pulse~I .oe_async_reset = "none";
+defparam \edge_pulse~I .oe_power_up = "low";
+defparam \edge_pulse~I .oe_register_mode = "none";
+defparam \edge_pulse~I .oe_sync_reset = "none";
+defparam \edge_pulse~I .operation_mode = "output";
+defparam \edge_pulse~I .output_async_reset = "none";
+defparam \edge_pulse~I .output_power_up = "low";
+defparam \edge_pulse~I .output_register_mode = "none";
+defparam \edge_pulse~I .output_sync_reset = "none";
+// synopsys translate_on
+
+endmodule

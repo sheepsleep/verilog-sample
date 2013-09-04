@@ -1,0 +1,94 @@
+--lpm_counter CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone II" lpm_modulus=1 lpm_port_updown="PORT_CONNECTIVITY" lpm_width=1 aclr clk_en clock q CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48
+--VERSION_BEGIN 7.2 cbx_cycloneii 2007:06:13:15:47:32:SJ cbx_lpm_add_sub 2007:08:06:16:01:34:SJ cbx_lpm_compare 2007:06:21:15:54:06:SJ cbx_lpm_counter 2007:08:07:01:40:08:SJ cbx_lpm_decode 2007:03:12:19:01:52:SJ cbx_mgl 2007:08:03:15:48:12:SJ cbx_stratix 2007:05:02:16:27:14:SJ cbx_stratixii 2007:06:28:17:26:26:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2007 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION cycloneii_lcell_ff (aclr, clk, datain, ena, sclr, sdata, sload)
+WITH ( x_on_violation)
+RETURNS ( regout);
+
+--synthesis_resources = lut 2 reg 1 
+SUBDESIGN cntr_uti
+( 
+	aclr	:	input;
+	clk_en	:	input;
+	clock	:	input;
+	q[0..0]	:	output;
+) 
+VARIABLE 
+	counter_reg_bit1a[0..0] : cycloneii_lcell_ff;
+	add_sub2_result_int[1..0]	:	WIRE;
+	add_sub2_cout	:	WIRE;
+	add_sub2_dataa[0..0]	:	WIRE;
+	add_sub2_datab[0..0]	:	WIRE;
+	add_sub2_result[0..0]	:	WIRE;
+	cmpr3_aeb_int	:	WIRE;
+	cmpr3_aeb	:	WIRE;
+	cmpr3_dataa[0..0]	:	WIRE;
+	cmpr3_datab[0..0]	:	WIRE;
+	aclr_actual	: WIRE;
+	add_sub_one_w[0..0]	: WIRE;
+	add_value_w[0..0]	: WIRE;
+	cnt_en	: NODE;
+	compare_result	: WIRE;
+	cout_actual	: WIRE;
+	current_reg_q_w[0..0]	: WIRE;
+	custom_cout_w	: WIRE;
+	modulus_bus[0..0]	: WIRE;
+	modulus_trigger	: WIRE;
+	modulus_trigger_value_w[0..0]	: WIRE;
+	safe_q[0..0]	: WIRE;
+	time_to_clear	: WIRE;
+	trigger_mux_w[0..0]	: WIRE;
+	updown_dir	: WIRE;
+
+BEGIN 
+	counter_reg_bit1a[].aclr = aclr_actual;
+	counter_reg_bit1a[].clk = clock;
+	counter_reg_bit1a[].datain = trigger_mux_w[];
+	counter_reg_bit1a[].ena = (clk_en & cnt_en);
+	add_sub2_result_int[] = (0, add_sub2_dataa[]) + (0, add_sub2_datab[]);
+	add_sub2_result[] = add_sub2_result_int[0..0];
+	add_sub2_cout = add_sub2_result_int[1];
+	add_sub2_dataa[] = current_reg_q_w[];
+	add_sub2_datab[] = add_value_w[];
+	IF ((0,cmpr3_dataa[]) == (0,cmpr3_datab[])) THEN
+		cmpr3_aeb_int = VCC;
+	ELSE
+		cmpr3_aeb_int = GND;
+	END IF;
+	cmpr3_aeb = cmpr3_aeb_int;
+	cmpr3_dataa[] = safe_q[];
+	cmpr3_datab[] = modulus_bus[];
+	aclr_actual = aclr;
+	add_sub_one_w[] = add_sub2_result[];
+	add_value_w[] = B"1";
+	cnt_en = VCC;
+	compare_result = cmpr3_aeb;
+	cout_actual = (custom_cout_w # (time_to_clear & updown_dir));
+	current_reg_q_w[] = counter_reg_bit1a[].regout;
+	custom_cout_w = (add_sub2_cout & add_value_w[0..0]);
+	modulus_bus[] = B"0";
+	modulus_trigger = cout_actual;
+	modulus_trigger_value_w[] = ((! updown_dir) & modulus_bus[]);
+	q[] = safe_q[];
+	safe_q[] = counter_reg_bit1a[].regout;
+	time_to_clear = compare_result;
+	trigger_mux_w[] = (((! modulus_trigger) & add_sub_one_w[]) # (modulus_trigger & modulus_trigger_value_w[]));
+	updown_dir = B"1";
+END;
+--VALID FILE

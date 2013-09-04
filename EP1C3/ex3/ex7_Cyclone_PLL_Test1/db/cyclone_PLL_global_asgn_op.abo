@@ -1,0 +1,770 @@
+Version:
+	9.0 Build 132 02/25/2009 SJ Full Version
+
+Chip Device Options:
+	Device Name:	EP1C3T144C8
+	Device JTAG code:	ffffffff
+	Programming_mode:	Active Serial Configuration
+	NWS_NRS_NCS:	UNRESERVED
+	RDYNBUSY:	UNRESERVED
+	DATA 7 to 1:	UNRESERVED
+	nCEO:	UNRESERVED
+	UNUSED PINS:	RESERVED_INPUT
+	Default IO Standard::	3.3-V LVTTL
+	User Start-up Clock:	0
+	Auto Restart on Error:	1
+	Release Clears Before Tristates:	0
+	Device Clear:	0
+	Test And Scan:	0
+	Device OE:	0
+	Enable Lock Output:	0
+	Enable Init Done:	0
+	Enable JTAG BST:	0
+	Enable Vref A:	0
+	Enable Vref B:	0
+
+
+
+****************************
+******Individual Atoms******
+****************************
+
+- ATOM ------------------------
+	ATOM_NAME: PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|pll -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 0
+	Atom Type: stratix_pll (WYSIWYG)
+
+User mode PLL
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: [ARESET]	~ rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [INCLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [INCLK]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [ACTIVECLOCK]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|pll~ACTIVECLOCK	LIT INDEX 0 FANOUTS 0
+		1: [CLKLOSS]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|pll~GLOCKED	LIT INDEX 0 FANOUTS 0
+		2: [LOCKED]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|_locked	LIT INDEX 0 FANOUTS 1
+		3: [SCANDATAOUT]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|pll~SCANDATAOUT	LIT INDEX 0 FANOUTS 0
+		4: [ENABLE0]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|pll~ENAOUT0	LIT INDEX 0 FANOUTS 0
+		5: [ENABLE1]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|pll~ENAOUT1	LIT INDEX 0 FANOUTS 0
+		6: [CLK]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|_clk0	LIT INDEX 0 FANOUTS 1
+		7: [CLK]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|pll~CLK1	LIT INDEX 1 FANOUTS 0
+		8: [CLK]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|_clk2	LIT INDEX 2 FANOUTS 0
+		9: [CLK]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|pll~CLK3	LIT INDEX 3 FANOUTS 0
+		10: [CLK]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|pll~CLK4	LIT INDEX 4 FANOUTS 0
+		11: [CLK]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|pll~CLK5	LIT INDEX 5 FANOUTS 0
+		12: [EXTCLK]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|pll~EXTCLK0	LIT INDEX 0 FANOUTS 0
+		13: [EXTCLK]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|pll~EXTCLK1	LIT INDEX 1 FANOUTS 0
+		14: [EXTCLK]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|pll~EXTCLK2	LIT INDEX 2 FANOUTS 0
+		15: [EXTCLK]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|pll~EXTCLK3	LIT INDEX 3 FANOUTS 0
+		16: [CLKBAD]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|pll~CLKBAD0	LIT INDEX 0 FANOUTS 0
+		17: [CLKBAD]	PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|pll~CLKBAD1	LIT INDEX 1 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		pll_type                       = auto
+		qualify_conf_done              = off
+		valid_lock_multiplier          = 1
+		invalid_lock_multiplier        = 5
+		scan_chain_mif_file            = 
+		compensate_clock               = clk0
+		feedback_source                = 
+		inclk0_input_frequency         = 20000
+		inclk1_input_frequency         = 20000
+		pfd_min                        = 5000
+		pfd_max                        = 66666
+		vco_min                        = 1000
+		vco_max                        = 2037
+		vco_center                     = 1250
+		pll_compensation_delay         = 2938
+		input_comp_delay_chain_bits    = 0
+		feedback_comp_delay_chain_bits = 0
+		common_rx_tx                   = on
+		skip_vco                       = off
+		rx_outclock_resource           = auto
+		primary_clock                  = inclk0
+		switch_over_on_lossclk         = off
+		switch_over_on_gated_lock      = off
+		enable_switch_over_counter     = off
+		gate_lock_signal               = no
+		scan_chain                     = 
+		gate_lock_counter              = 0
+		switch_over_counter            = 1
+		======= Real External and Internal Parameters ======= = 
+		bandwidth_type                 = auto
+		bandwidth                      = 1295546
+		spread_frequency               = 0
+		down_spread                    = 0 %
+		clk0_multiply_by               = 2
+		clk1_multiply_by               = 1
+		clk2_multiply_by               = 1
+		clk3_multiply_by               = 1
+		clk4_multiply_by               = 1
+		clk5_multiply_by               = 1
+		extclk0_multiply_by            = 1
+		extclk1_multiply_by            = 1
+		extclk2_multiply_by            = 1
+		extclk3_multiply_by            = 1
+		clk0_divide_by                 = 1
+		clk1_divide_by                 = 1
+		clk2_divide_by                 = 1
+		clk3_divide_by                 = 1
+		clk4_divide_by                 = 1
+		clk5_divide_by                 = 1
+		extclk0_divide_by              = 1
+		extclk1_divide_by              = 1
+		extclk2_divide_by              = 1
+		extclk3_divide_by              = 1
+		clk0_phase_shift               = 0
+		clk1_phase_shift               = 0
+		clk2_phase_shift               = 0
+		clk3_phase_shift               = 0
+		clk4_phase_shift               = 0
+		clk5_phase_shift               = 0
+		extclk0_phase_shift            = 0
+		extclk1_phase_shift            = 0
+		extclk2_phase_shift            = 0
+		extclk3_phase_shift            = 0
+		clk0_time_delay                = 0
+		clk1_time_delay                = 0
+		clk2_time_delay                = 0
+		clk3_time_delay                = 0
+		clk4_time_delay                = 0
+		clk5_time_delay                = 0
+		extclk0_time_delay             = 0
+		extclk1_time_delay             = 0
+		extclk2_time_delay             = 0
+		extclk3_time_delay             = 0
+		clk0_duty_cycle                = 50
+		clk1_duty_cycle                = 50
+		clk2_duty_cycle                = 50
+		clk3_duty_cycle                = 50
+		clk4_duty_cycle                = 50
+		clk5_duty_cycle                = 50
+		extclk0_duty_cycle             = 50
+		extclk1_duty_cycle             = 50
+		extclk2_duty_cycle             = 50
+		extclk3_duty_cycle             = 50
+		clk0_use_even_counter_mode     = off
+		clk1_use_even_counter_mode     = off
+		clk2_use_even_counter_mode     = off
+		clk3_use_even_counter_mode     = off
+		clk4_use_even_counter_mode     = off
+		clk5_use_even_counter_mode     = off
+		extclk0_use_even_counter_mode  = off
+		extclk1_use_even_counter_mode  = off
+		extclk2_use_even_counter_mode  = off
+		extclk3_use_even_counter_mode  = off
+		clk0_use_even_counter_value    = off
+		clk1_use_even_counter_value    = off
+		clk2_use_even_counter_value    = off
+		clk3_use_even_counter_value    = off
+		clk4_use_even_counter_value    = off
+		clk5_use_even_counter_value    = off
+		extclk0_use_even_counter_value = off
+		extclk1_use_even_counter_value = off
+		extclk2_use_even_counter_value = off
+		extclk3_use_even_counter_value = off
+		m                              = 16
+		n                              = 1
+		m2                             = 1
+		n2                             = 1
+		ss                             = 0
+		charge_pump_current            = 40
+		loop_filter_c                  = 10
+		loop_filter_r                  = 1.021000
+		enable0_counter                = 
+		enable1_counter                = 
+		clk0_counter                   = g0
+		clk1_counter                   = 
+		clk2_counter                   = 
+		clk3_counter                   = 
+		clk4_counter                   = 
+		clk5_counter                   = 
+		extclk0_counter                = 
+		extclk1_counter                = 
+		extclk2_counter                = 
+		extclk3_counter                = 
+		l0_is_used                     = no
+		l1_is_used                     = no
+		g0_is_used                     = yes
+		g1_is_used                     = no
+		g2_is_used                     = no
+		g3_is_used                     = no
+		e0_is_used                     = no
+		e1_is_used                     = no
+		e2_is_used                     = no
+		e3_is_used                     = no
+		l0_mode                        = even
+		l1_mode                        = bypass
+		g0_mode                        = even
+		g1_mode                        = bypass
+		g2_mode                        = bypass
+		g3_mode                        = bypass
+		e0_mode                        = bypass
+		e1_mode                        = bypass
+		e2_mode                        = bypass
+		e3_mode                        = bypass
+		l0_high                        = 4
+		l1_high                        = 0
+		g0_high                        = 4
+		g1_high                        = 0
+		g2_high                        = 0
+		g3_high                        = 0
+		e0_high                        = 0
+		e1_high                        = 0
+		e2_high                        = 0
+		e3_high                        = 0
+		l0_low                         = 4
+		l1_low                         = 0
+		g0_low                         = 4
+		g1_low                         = 0
+		g2_low                         = 0
+		g3_low                         = 0
+		e0_low                         = 0
+		e1_low                         = 0
+		e2_low                         = 0
+		e3_low                         = 0
+		m_initial                      = 1
+		l0_initial                     = 1
+		l1_initial                     = 1
+		g0_initial                     = 1
+		g1_initial                     = 1
+		g2_initial                     = 1
+		g3_initial                     = 1
+		e0_initial                     = 1
+		e1_initial                     = 1
+		e2_initial                     = 1
+		e3_initial                     = 1
+		m_ph                           = 0
+		l0_ph                          = 0
+		l1_ph                          = 0
+		g0_ph                          = 0
+		g1_ph                          = 0
+		g2_ph                          = 0
+		g3_ph                          = 0
+		e0_ph                          = 0
+		e1_ph                          = 0
+		e2_ph                          = 0
+		e3_ph                          = 0
+		m_time_delay                   = 0
+		n_time_delay                   = 0
+		l0_time_delay                  = 0
+		l1_time_delay                  = 0
+		g0_time_delay                  = 0
+		g1_time_delay                  = 0
+		g2_time_delay                  = 0
+		g3_time_delay                  = 0
+		e0_time_delay                  = 0
+		e1_time_delay                  = 0
+		e2_time_delay                  = 0
+		e3_time_delay                  = 0
+		======= User External and Internal Parameters ======= = 
+		bandwidth_type                 = auto
+		bandwidth                      = 0
+		spread_frequency               = 0
+		down_spread                    = 0
+		clk0_multiply_by               = 2
+		clk1_multiply_by               = 1
+		clk2_multiply_by               = 1
+		clk3_multiply_by               = 1
+		clk4_multiply_by               = 1
+		clk5_multiply_by               = 1
+		extclk0_multiply_by            = 1
+		extclk1_multiply_by            = 1
+		extclk2_multiply_by            = 1
+		extclk3_multiply_by            = 1
+		clk0_divide_by                 = 1
+		clk1_divide_by                 = 1
+		clk2_divide_by                 = 1
+		clk3_divide_by                 = 1
+		clk4_divide_by                 = 1
+		clk5_divide_by                 = 1
+		extclk0_divide_by              = 1
+		extclk1_divide_by              = 1
+		extclk2_divide_by              = 1
+		extclk3_divide_by              = 1
+		clk0_phase_shift               = 0
+		clk1_phase_shift               = 0
+		clk2_phase_shift               = 0
+		clk3_phase_shift               = 0
+		clk4_phase_shift               = 0
+		clk5_phase_shift               = 0
+		extclk0_phase_shift            = 0
+		extclk1_phase_shift            = 0
+		extclk2_phase_shift            = 0
+		extclk3_phase_shift            = 0
+		clk0_time_delay                = 0
+		clk1_time_delay                = 0
+		clk2_time_delay                = 0
+		clk3_time_delay                = 0
+		clk4_time_delay                = 0
+		clk5_time_delay                = 0
+		extclk0_time_delay             = 0
+		extclk1_time_delay             = 0
+		extclk2_time_delay             = 0
+		extclk3_time_delay             = 0
+		clk0_duty_cycle                = 50
+		clk1_duty_cycle                = 50
+		clk2_duty_cycle                = 50
+		clk3_duty_cycle                = 50
+		clk4_duty_cycle                = 50
+		clk5_duty_cycle                = 50
+		extclk0_duty_cycle             = 50
+		extclk1_duty_cycle             = 50
+		extclk2_duty_cycle             = 50
+		extclk3_duty_cycle             = 50
+		clk0_use_even_counter_mode     = off
+		clk1_use_even_counter_mode     = off
+		clk2_use_even_counter_mode     = off
+		clk3_use_even_counter_mode     = off
+		clk4_use_even_counter_mode     = off
+		clk5_use_even_counter_mode     = off
+		extclk0_use_even_counter_mode  = off
+		extclk1_use_even_counter_mode  = off
+		extclk2_use_even_counter_mode  = off
+		extclk3_use_even_counter_mode  = off
+		clk0_use_even_counter_value    = off
+		clk1_use_even_counter_value    = off
+		clk2_use_even_counter_value    = off
+		clk3_use_even_counter_value    = off
+		clk4_use_even_counter_value    = off
+		clk5_use_even_counter_value    = off
+		extclk0_use_even_counter_value = off
+		extclk1_use_even_counter_value = off
+		extclk2_use_even_counter_value = off
+		extclk3_use_even_counter_value = off
+		m                              = 16
+		n                              = 1
+		m2                             = 1
+		n2                             = 1
+		ss                             = 0
+		charge_pump_current            = 0
+		loop_filter_c                  = 0
+		loop_filter_r                  = 0.000000
+		enable0_counter                = 
+		enable1_counter                = 
+		clk0_counter                   = l0
+		clk1_counter                   = 
+		clk2_counter                   = 
+		clk3_counter                   = 
+		clk4_counter                   = 
+		clk5_counter                   = 
+		extclk0_counter                = 
+		extclk1_counter                = 
+		extclk2_counter                = 
+		extclk3_counter                = 
+		l0_is_used                     = yes
+		l1_is_used                     = no
+		g0_is_used                     = no
+		g1_is_used                     = no
+		g2_is_used                     = no
+		g3_is_used                     = no
+		e0_is_used                     = no
+		e1_is_used                     = no
+		e2_is_used                     = no
+		e3_is_used                     = no
+		l0_mode                        = even
+		l1_mode                        = bypass
+		g0_mode                        = bypass
+		g1_mode                        = bypass
+		g2_mode                        = bypass
+		g3_mode                        = bypass
+		e0_mode                        = bypass
+		e1_mode                        = bypass
+		e2_mode                        = bypass
+		e3_mode                        = bypass
+		l0_high                        = 4
+		l1_high                        = 0
+		g0_high                        = 0
+		g1_high                        = 0
+		g2_high                        = 0
+		g3_high                        = 0
+		e0_high                        = 0
+		e1_high                        = 0
+		e2_high                        = 0
+		e3_high                        = 0
+		l0_low                         = 4
+		l1_low                         = 0
+		g0_low                         = 0
+		g1_low                         = 0
+		g2_low                         = 0
+		g3_low                         = 0
+		e0_low                         = 0
+		e1_low                         = 0
+		e2_low                         = 0
+		e3_low                         = 0
+		m_initial                      = 1
+		l0_initial                     = 1
+		l1_initial                     = 1
+		g0_initial                     = 1
+		g1_initial                     = 1
+		g2_initial                     = 1
+		g3_initial                     = 1
+		e0_initial                     = 1
+		e1_initial                     = 1
+		e2_initial                     = 1
+		e3_initial                     = 1
+		m_ph                           = 0
+		l0_ph                          = 0
+		l1_ph                          = 0
+		g0_ph                          = 0
+		g1_ph                          = 0
+		g2_ph                          = 0
+		g3_ph                          = 0
+		e0_ph                          = 0
+		e1_ph                          = 0
+		e2_ph                          = 0
+		e3_ph                          = 0
+		m_time_delay                   = 0
+		n_time_delay                   = 0
+		l0_time_delay                  = 0
+		l1_time_delay                  = 0
+		g0_time_delay                  = 0
+		g1_time_delay                  = 0
+		g2_time_delay                  = 0
+		g3_time_delay                  = 0
+		e0_time_delay                  = 0
+		e1_time_delay                  = 0
+		e2_time_delay                  = 0
+		e3_time_delay                  = 0
+
+
+- ATOM ------------------------
+	ATOM_NAME: clkdiv -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 11
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|_clk0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	clkdiv	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: locked -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 12
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  PLL_ctrl:PLL_ctrl_inst|altpll:altpll_component|_locked	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	locked	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: rst_n -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 13
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	rst_n	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: [PADIO]	rst_n	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: clk -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 14
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	clk	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: [PADIO]	clk	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ~STRATIX_FITTER_CREATED_GND~I -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 15
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	~STRATIX_FITTER_CREATED_GND~I	LIT INDEX 0 FANOUTS 0
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		(Skipping parameters for lcell or lcell comb with no fanout)
+
+
+- ATOM ------------------------
+	ATOM_NAME: ~nCSO~ -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 16
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	~nCSO~	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ~ASDO~ -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 17
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	~ASDO~	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+

@@ -1,0 +1,13 @@
+|reset_proc2
+sys_clk => p_rst_temp1[0].CLK
+sys_clk => p_rst_temp2[0].CLK
+sys_clk => p_rst_temp3[0].CLK
+sys_clk => p_rst_temp4[0].CLK
+sys_clk => p_rst_temp5[0].CLK
+sys_clk => p_rst_temp6[0].CLK
+sys_clk => p_rst_temp7[0].CLK
+sys_clk => sys_rst_n[0]~reg0.CLK
+p_rst_n => p_rst_temp1[0].DATAIN
+sys_rst_n[0] <= sys_rst_n[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

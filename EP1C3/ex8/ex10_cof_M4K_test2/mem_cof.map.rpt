@@ -1,0 +1,305 @@
+Analysis & Synthesis report for mem_cof
+Sun Oct 11 08:20:44 2009
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis RAM Summary
+  8. General Register Statistics
+  9. Source assignments for shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2
+ 10. Parameter Settings for User Entity Instance: shift_ram:uut_shift|altshift_taps:altshift_taps_component
+ 11. altshift_taps Parameter Settings by Entity Instance
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sun Oct 11 08:20:44 2009    ;
+; Quartus II Version          ; 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Revision Name               ; mem_cof                                  ;
+; Top-level Entity Name       ; mem_cof                                  ;
+; Family                      ; Cyclone                                  ;
+; Total logic elements        ; 1                                        ;
+; Total pins                  ; 42                                       ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 64                                       ;
+; Total PLLs                  ; 0                                        ;
++-----------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                            ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Option                                                         ; Setting            ; Default Value      ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Device                                                         ; EP1C3T144C8        ;                    ;
+; Top-level entity name                                          ; mem_cof            ; mem_cof            ;
+; Family name                                                    ; Cyclone            ; Stratix II         ;
+; Type of Retiming Performed During Resynthesis                  ; Full               ;                    ;
+; Resynthesis Optimization Effort                                ; Normal             ;                    ;
+; Physical Synthesis Level for Resynthesis                       ; Normal             ;                    ;
+; Use Generated Physical Constraints File                        ; On                 ;                    ;
+; Use smart compilation                                          ; Off                ; Off                ;
+; Restructure Multiplexers                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                            ; Off                ; Off                ;
+; Preserve fewer node names                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                      ; Off                ; Off                ;
+; Verilog Version                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                       ; Auto               ; Auto               ;
+; Safe State Machine                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                              ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                     ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                 ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                        ; On                 ; On                 ;
+; Parallel Synthesis                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                 ; Off                ; Off                ;
+; Optimization Technique                                         ; Balanced           ; Balanced           ;
+; Carry Chain Length                                             ; 70                 ; 70                 ;
+; Auto Carry Chains                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                          ; Off                ; Off                ;
+; Auto ROM Replacement                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                  ; On                 ; On                 ;
+; Strict RAM Replacement                                         ; Off                ; Off                ;
+; Allow Synchronous Control Signals                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                         ; Off                ; Off                ;
+; Auto RAM Block Balancing                                       ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                              ; Off                ; Off                ;
+; Auto Resource Sharing                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                  ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing            ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                             ; Off                ; Off                ;
+; Synchronization Register Chain Length                          ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report       ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report      ; 100                ; 100                ;
+; Clock MUX Protection                                           ; On                 ; On                 ;
+; Block Design Naming                                            ; Auto               ; Auto               ;
+; Synthesis Effort                                               ; Auto               ; Auto               ;
+; Allows Asynchronous Clear Usage For Shift Register Replacement ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                             ; Medium             ; Medium             ;
++----------------------------------------------------------------+--------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                      ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------+
+; mem_cof.v                        ; yes             ; User Verilog HDL File        ; E:/Personal/EP1C3T144_board/SF-EP1CV2_ex0903/verilog_prj/ex10_11_12_M4K/ex10_cof_M4K_test2/mem_cof.v              ;
+; shift_ram.v                      ; yes             ; User Wizard-Generated File   ; E:/Personal/EP1C3T144_board/SF-EP1CV2_ex0903/verilog_prj/ex10_11_12_M4K/ex10_cof_M4K_test2/shift_ram.v            ;
+; altshift_taps.tdf                ; yes             ; Megafunction                 ; d:/altera/90/quartus/libraries/megafunctions/altshift_taps.tdf                                                    ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; d:/altera/90/quartus/libraries/megafunctions/altdpram.inc                                                         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                 ; d:/altera/90/quartus/libraries/megafunctions/lpm_counter.inc                                                      ;
+; lpm_compare.inc                  ; yes             ; Megafunction                 ; d:/altera/90/quartus/libraries/megafunctions/lpm_compare.inc                                                      ;
+; lpm_constant.inc                 ; yes             ; Megafunction                 ; d:/altera/90/quartus/libraries/megafunctions/lpm_constant.inc                                                     ;
+; db/shift_taps_8rr.tdf            ; yes             ; Auto-Generated Megafunction  ; E:/Personal/EP1C3T144_board/SF-EP1CV2_ex0903/verilog_prj/ex10_11_12_M4K/ex10_cof_M4K_test2/db/shift_taps_8rr.tdf  ;
+; db/altsyncram_et91.tdf           ; yes             ; Auto-Generated Megafunction  ; E:/Personal/EP1C3T144_board/SF-EP1CV2_ex0903/verilog_prj/ex10_11_12_M4K/ex10_cof_M4K_test2/db/altsyncram_et91.tdf ;
+; db/cntr_0df.tdf                  ; yes             ; Auto-Generated Megafunction  ; E:/Personal/EP1C3T144_board/SF-EP1CV2_ex0903/verilog_prj/ex10_11_12_M4K/ex10_cof_M4K_test2/db/cntr_0df.tdf        ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                                                    ;
++---------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                                            ;
++---------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+; Total logic elements                        ; 1                                                                                                                ;
+;     -- Combinational with no register       ; 0                                                                                                                ;
+;     -- Register only                        ; 0                                                                                                                ;
+;     -- Combinational with a register        ; 1                                                                                                                ;
+;                                             ;                                                                                                                  ;
+; Logic element usage by number of LUT inputs ;                                                                                                                  ;
+;     -- 4 input functions                    ; 0                                                                                                                ;
+;     -- 3 input functions                    ; 0                                                                                                                ;
+;     -- 2 input functions                    ; 0                                                                                                                ;
+;     -- 1 input functions                    ; 1                                                                                                                ;
+;     -- 0 input functions                    ; 0                                                                                                                ;
+;                                             ;                                                                                                                  ;
+; Logic elements by mode                      ;                                                                                                                  ;
+;     -- normal mode                          ; 1                                                                                                                ;
+;     -- arithmetic mode                      ; 0                                                                                                                ;
+;     -- qfbk mode                            ; 0                                                                                                                ;
+;     -- register cascade mode                ; 0                                                                                                                ;
+;     -- synchronous clear/load mode          ; 0                                                                                                                ;
+;     -- asynchronous clear/load mode         ; 0                                                                                                                ;
+;                                             ;                                                                                                                  ;
+; Total registers                             ; 1                                                                                                                ;
+; I/O pins                                    ; 42                                                                                                               ;
+; Total memory bits                           ; 64                                                                                                               ;
+; Maximum fan-out node                        ; shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0] ;
+; Maximum fan-out                             ; 33                                                                                                               ;
+; Total fan-out                               ; 167                                                                                                              ;
+; Average fan-out                             ; 2.23                                                                                                             ;
++---------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                               ;
++-----------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                    ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                          ; Library Name ;
++-----------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |mem_cof                                      ; 1 (0)       ; 1            ; 64          ; 42   ; 0            ; 0 (0)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |mem_cof                                                                                                                     ; work         ;
+;    |shift_ram:uut_shift|                      ; 1 (0)       ; 1            ; 64          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |mem_cof|shift_ram:uut_shift                                                                                                 ; work         ;
+;       |altshift_taps:altshift_taps_component| ; 1 (0)       ; 1            ; 64          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |mem_cof|shift_ram:uut_shift|altshift_taps:altshift_taps_component                                                           ; work         ;
+;          |shift_taps_8rr:auto_generated|      ; 1 (0)       ; 1            ; 64          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (0)            ; 0 (0)           ; 0 (0)      ; |mem_cof|shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated                             ; work         ;
+;             |altsyncram_et91:altsyncram2|     ; 0 (0)       ; 0            ; 64          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |mem_cof|shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2 ; work         ;
+;             |cntr_0df:cntr1|                  ; 1 (1)       ; 1            ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |mem_cof|shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1              ; work         ;
++-----------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                   ;
++--------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                                           ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++--------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM ; M4K  ; Simple Dual Port ; 2            ; 32           ; 2            ; 32           ; 64   ; None ;
++--------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2 ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                           ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                            ;
++---------------------------------+--------------------+------+------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: shift_ram:uut_shift|altshift_taps:altshift_taps_component ;
++----------------+----------------+----------------------------------------------------------------------+
+; Parameter Name ; Value          ; Type                                                                 ;
++----------------+----------------+----------------------------------------------------------------------+
+; WIDTH_BYTEENA  ; 1              ; Untyped                                                              ;
+; NUMBER_OF_TAPS ; 8              ; Signed Integer                                                       ;
+; TAP_DISTANCE   ; 4              ; Signed Integer                                                       ;
+; WIDTH          ; 4              ; Signed Integer                                                       ;
+; POWER_UP_STATE ; CLEARED        ; Untyped                                                              ;
+; CBXI_PARAMETER ; shift_taps_8rr ; Untyped                                                              ;
++----------------+----------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; altshift_taps Parameter Settings by Entity Instance                                    ;
++----------------------------+-----------------------------------------------------------+
+; Name                       ; Value                                                     ;
++----------------------------+-----------------------------------------------------------+
+; Number of entity instances ; 1                                                         ;
+; Entity Instance            ; shift_ram:uut_shift|altshift_taps:altshift_taps_component ;
+;     -- NUMBER_OF_TAPS      ; 8                                                         ;
+;     -- TAP_DISTANCE        ; 4                                                         ;
+;     -- WIDTH               ; 4                                                         ;
++----------------------------+-----------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Sun Oct 11 08:20:40 2009
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mem_cof -c mem_cof
+Info: Found 1 design units, including 1 entities, in source file mem_cof.v
+    Info: Found entity 1: mem_cof
+Info: Found 1 design units, including 1 entities, in source file shift_ram.v
+    Info: Found entity 1: shift_ram
+Info: Elaborating entity "mem_cof" for the top level hierarchy
+Info: Elaborating entity "shift_ram" for hierarchy "shift_ram:uut_shift"
+Info: Elaborating entity "altshift_taps" for hierarchy "shift_ram:uut_shift|altshift_taps:altshift_taps_component"
+Info: Elaborated megafunction instantiation "shift_ram:uut_shift|altshift_taps:altshift_taps_component"
+Info: Instantiated megafunction "shift_ram:uut_shift|altshift_taps:altshift_taps_component" with the following parameter:
+    Info: Parameter "lpm_hint" = "RAM_BLOCK_TYPE=M4K"
+    Info: Parameter "lpm_type" = "altshift_taps"
+    Info: Parameter "number_of_taps" = "8"
+    Info: Parameter "tap_distance" = "4"
+    Info: Parameter "width" = "4"
+Info: Found 1 design units, including 1 entities, in source file db/shift_taps_8rr.tdf
+    Info: Found entity 1: shift_taps_8rr
+Info: Elaborating entity "shift_taps_8rr" for hierarchy "shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_et91.tdf
+    Info: Found entity 1: altsyncram_et91
+Info: Elaborating entity "altsyncram_et91" for hierarchy "shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2"
+Info: Found 1 design units, including 1 entities, in source file db/cntr_0df.tdf
+    Info: Found entity 1: cntr_0df
+Info: Elaborating entity "cntr_0df" for hierarchy "shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1"
+Info: Implemented 75 device resources after synthesis - the final resource count might be different
+    Info: Implemented 6 input pins
+    Info: Implemented 36 output pins
+    Info: Implemented 1 logic cells
+    Info: Implemented 32 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 174 megabytes
+    Info: Processing ended: Sun Oct 11 08:20:44 2009
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
+
+

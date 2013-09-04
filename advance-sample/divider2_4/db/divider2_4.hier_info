@@ -1,0 +1,13 @@
+|divider2_4
+sys_clk => counter[1].CLK
+sys_clk => counter[0].CLK
+sys_clk => clk_1~reg0.CLK
+sys_clk => clk_2~reg0.CLK
+sys_rst_n => counter[0].ACLR
+sys_rst_n => counter[1].ACLR
+sys_rst_n => clk_2~reg0.ACLR
+sys_rst_n => clk_1~reg0.ACLR
+clk_1 <= clk_1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk_2 <= clk_2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

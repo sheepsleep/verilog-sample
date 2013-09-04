@@ -1,0 +1,121 @@
+# Copyright (C) 1991-2008 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		sdr_test_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name FAMILY Cyclone
+set_global_assignment -name DEVICE EP1C3T144C8
+set_global_assignment -name TOP_LEVEL_ENTITY sdr_test
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 8.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:34:01  MAY 11, 2009"
+set_global_assignment -name LAST_QUARTUS_VERSION 9.0
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim (Verilog)"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VERILOG -section_id eda_simulation
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name USE_TIMEQUEST_TIMING_ANALYZER ON
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name VERILOG_INPUT_VERSION VERILOG_2001
+set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name MISC_FILE "E:/Personal/VGA_SD_photos/sdram_verilog/verilog/sdram_mdl/sdr_test.dpf"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_16 -to clk
+set_location_assignment PIN_144 -to rst_n
+set_location_assignment PIN_139 -to sdram_data[3]
+set_location_assignment PIN_50 -to sdram_addr[3]
+set_location_assignment PIN_49 -to sdram_addr[2]
+set_location_assignment PIN_48 -to sdram_addr[1]
+set_location_assignment PIN_47 -to sdram_addr[0]
+set_location_assignment PIN_42 -to sdram_addr[10]
+set_location_assignment PIN_41 -to sdram_ba[1]
+set_location_assignment PIN_40 -to sdram_ba[0]
+set_location_assignment PIN_39 -to sdram_cs_n
+set_location_assignment PIN_38 -to sdram_ras_n
+set_location_assignment PIN_37 -to sdram_cas_n
+set_location_assignment PIN_143 -to sdram_data[7]
+set_location_assignment PIN_142 -to sdram_data[6]
+set_location_assignment PIN_141 -to sdram_data[5]
+set_location_assignment PIN_140 -to sdram_data[4]
+set_location_assignment PIN_134 -to sdram_data[2]
+set_location_assignment PIN_133 -to sdram_data[1]
+set_location_assignment PIN_132 -to sdram_data[0]
+set_location_assignment PIN_36 -to sdram_addr[4]
+set_location_assignment PIN_35 -to sdram_addr[5]
+set_location_assignment PIN_34 -to sdram_addr[6]
+set_location_assignment PIN_33 -to sdram_addr[7]
+set_location_assignment PIN_32 -to sdram_addr[8]
+set_location_assignment PIN_31 -to sdram_addr[9]
+set_location_assignment PIN_28 -to sdram_addr[11]
+set_location_assignment PIN_27 -to sdram_cke
+set_location_assignment PIN_26 -to sdram_clk
+set_location_assignment PIN_11 -to sdram_data[8]
+set_location_assignment PIN_10 -to sdram_data[9]
+set_location_assignment PIN_7 -to sdram_data[10]
+set_location_assignment PIN_6 -to sdram_data[11]
+set_location_assignment PIN_5 -to sdram_data[12]
+set_location_assignment PIN_4 -to sdram_data[13]
+set_location_assignment PIN_3 -to sdram_data[14]
+set_location_assignment PIN_2 -to sdram_data[15]
+set_location_assignment PIN_1 -to sdram_we_n
+set_global_assignment -name MISC_FILE "E:/VGA_SD_photos/sdram_verilog/verilog/sdram_mdl/sdr_test.dpf"
+set_location_assignment PIN_52 -to spi_clk
+set_location_assignment PIN_58 -to spi_cs_n
+set_location_assignment PIN_51 -to spi_miso
+set_location_assignment PIN_57 -to spi_mosi
+set_global_assignment -name MISC_FILE "E:/VGA_SD_photos/sd_sdram_verilog/sdram_mdl/sdr_test.dpf"
+set_global_assignment -name VERILOG_FILE vga_ctrl.v
+set_global_assignment -name VERILOG_FILE sdcard_ctrl.v
+set_global_assignment -name VERILOG_FILE spi_ctrl.v
+set_global_assignment -name VERILOG_FILE sd_ctrl.v
+set_global_assignment -name VERILOG_FILE sdr_test.v
+set_global_assignment -name VERILOG_FILE sdram_cmd.v
+set_global_assignment -name VERILOG_FILE sdram_ctrl.v
+set_global_assignment -name VERILOG_FILE sdram_top.v
+set_global_assignment -name VERILOG_FILE sdram_wr_data.v
+set_global_assignment -name VERILOG_FILE sys_ctrl.v
+set_global_assignment -name QIP_FILE PLL_ctrl.qip
+set_global_assignment -name QIP_FILE wrfifo.qip
+set_global_assignment -name VERILOG_FILE sdfifo_ctrl.v
+set_global_assignment -name QIP_FILE rdfifo.qip
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+set_location_assignment PIN_61 -to hsync
+set_location_assignment PIN_62 -to vsync
+set_location_assignment PIN_67 -to vga_b[1]
+set_location_assignment PIN_68 -to vga_b[0]
+set_location_assignment PIN_69 -to vga_g[0]
+set_location_assignment PIN_70 -to vga_g[1]
+set_location_assignment PIN_71 -to vga_g[2]
+set_location_assignment PIN_72 -to vga_r[0]
+set_location_assignment PIN_73 -to vga_r[1]
+set_global_assignment -name QIP_FILE rgb_ram.qip
+set_global_assignment -name MISC_FILE "E:/VGA_SD_photos/sd_sdram_verilog/sdram_mdl0523/sdr_test.dpf"
+set_global_assignment -name MISC_FILE "E:/Personal/EP1C3T144_board/SF-EP1CV3_ex/sdram_mdl0523/sdr_test.dpf"
+set_location_assignment PIN_74 -to vga_r[2]
+set_global_assignment -name MISC_FILE "E:/Personal/EP1C3T144_board/SF-EP1CV2_ex0903/sd_vga_photo/sdram_mdl0822/sdr_test.dpf"

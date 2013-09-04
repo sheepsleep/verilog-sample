@@ -1,0 +1,8 @@
+|reset_proc
+sys_clk => rst_p1[0].CLK
+sys_clk => sys_rst_n[0]~reg0.CLK
+p_rst_n => rst_temp.IN1
+p_rst_n => BUFF_U0.DATAIN
+sys_rst_n[0] <= sys_rst_n[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

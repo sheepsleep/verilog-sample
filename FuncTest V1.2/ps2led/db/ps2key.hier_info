@@ -1,0 +1,40 @@
+|ps2key
+sys_clk => clk_2.CLK
+sys_rst_n => clk_128.ACLR
+sys_rst_n => clk_64.ACLR
+sys_rst_n => clk_32.ACLR
+sys_rst_n => clk_16.ACLR
+sys_rst_n => clk_8.ACLR
+sys_rst_n => clk_4.ACLR
+sys_rst_n => clk_2.ACLR
+sys_rst_n => clk_256~reg0.ACLR
+ps2_key_clk => buff[9].CLK
+ps2_key_clk => buff[8].CLK
+ps2_key_clk => buff[7].CLK
+ps2_key_clk => buff[6].CLK
+ps2_key_clk => buff[5].CLK
+ps2_key_clk => buff[4].CLK
+ps2_key_clk => buff[3].CLK
+ps2_key_clk => buff[2].CLK
+ps2_key_clk => buff[1].CLK
+ps2_key_clk => buff[0].CLK
+ps2_key_data => buff[0].DATAIN
+clk_256 <= clk_256~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[0] <= buff[9].DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= buff[8].DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= buff[7].DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= buff[6].DB_MAX_OUTPUT_PORT_TYPE
+data_out[4] <= buff[5].DB_MAX_OUTPUT_PORT_TYPE
+data_out[5] <= buff[4].DB_MAX_OUTPUT_PORT_TYPE
+data_out[6] <= buff[3].DB_MAX_OUTPUT_PORT_TYPE
+data_out[7] <= buff[2].DB_MAX_OUTPUT_PORT_TYPE
+led[0] <= buff[9].DB_MAX_OUTPUT_PORT_TYPE
+led[1] <= buff[8].DB_MAX_OUTPUT_PORT_TYPE
+led[2] <= buff[7].DB_MAX_OUTPUT_PORT_TYPE
+led[3] <= buff[6].DB_MAX_OUTPUT_PORT_TYPE
+led[4] <= buff[5].DB_MAX_OUTPUT_PORT_TYPE
+led[5] <= buff[4].DB_MAX_OUTPUT_PORT_TYPE
+led[6] <= buff[3].DB_MAX_OUTPUT_PORT_TYPE
+led[7] <= buff[2].DB_MAX_OUTPUT_PORT_TYPE
+
+

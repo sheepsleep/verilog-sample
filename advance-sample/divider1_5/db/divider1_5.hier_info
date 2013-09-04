@@ -1,0 +1,15 @@
+|divider1_5
+sys_clk => counter[1].CLK
+sys_clk => counter[0].CLK
+sys_clk => sigal_b.CLK
+sys_clk => sys_clk_tmp.DATAB
+sys_clk => sigal_c.CLK
+sys_clk => sys_clk_tmp.DATAA
+sys_rst_n => sigal_c.ACLR
+sys_rst_n => sigal_b.ACLR
+sys_rst_n => counter[0].ACLR
+sys_rst_n => counter[1].ACLR
+sys_rst_n => clk_divider1_5~reg0.PRESET
+clk_divider1_5 <= clk_divider1_5~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

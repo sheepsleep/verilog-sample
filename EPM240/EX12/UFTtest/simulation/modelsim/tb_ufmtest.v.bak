@@ -1,0 +1,68 @@
+
+
+
+`timescale 1ns/1ns
+module tb_ufmtest();
+
+//inout
+wire[15:0] data;
+
+//input
+wire data_valid;
+wire nbusy;
+
+//output
+reg[8:0] addr;
+reg nerase;
+reg nread;
+reg nwrite;
+
+
+ufmtest		ufmtest(
+				.data(data),
+				.addr(addr),
+				.nerase(nerase),
+				.nread(nread),
+				.nwrite(nwrite),
+				.data_valid(data_valid),
+				.nbusy(nbusy)
+			);
+
+
+parameter	DELAY_600US	= 600_000,
+			DELAY_2US	= 2_000;
+
+
+initial begin
+		nerase = 1;
+		nread = 1;
+		nwrite = 1;
+		addr = 0;
+		data = 0;
+	
+	#DELAY_600US;	//write data=99 into addr=0
+		data = 8'd99;
+		addr = 9'd0;
+		nwrite = 0;
+		#DELAY_2US;
+		nwrite = 1;
+		for(;nbusy==0;) begin
+				#DELAY_2US;
+			end
+			
+	#DELAY_600US;	//read addr=0
+		data = 8'hff;
+		addr = 9'd0;
+		nread = 0;
+		#DELAY_2US;
+		nread = 1;
+		for(;nbusy==0;) begin
+				#DELAY_2US;
+			end
+			
+	#DELAY_600US;
+	$stop;		
+end
+
+
+endmodule

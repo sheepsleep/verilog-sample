@@ -1,0 +1,20 @@
+|counter4
+sys_clk => counter[3].CLK
+sys_clk => counter[2].CLK
+sys_clk => counter[1].CLK
+sys_clk => counter[0].CLK
+sys_rst_n => counter[3].ACLR
+sys_rst_n => counter[2].ACLR
+sys_rst_n => counter[1].ACLR
+sys_rst_n => counter[0].ACLR
+ena => counter[0].ENA
+ena => counter[3].ENA
+ena => counter[2].ENA
+ena => counter[1].ENA
+dout[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= counter[3].DB_MAX_OUTPUT_PORT_TYPE
+cout <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+
+

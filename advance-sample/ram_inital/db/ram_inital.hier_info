@@ -1,0 +1,38 @@
+|ram_inital
+sys_clk => intial_counter[3].CLK
+sys_clk => intial_counter[2].CLK
+sys_clk => intial_counter[1].CLK
+sys_clk => intial_counter[0].CLK
+sys_clk => intial_en~reg0.CLK
+sys_clk => intial_addr[7]~reg0.CLK
+sys_clk => intial_addr[6]~reg0.CLK
+sys_clk => intial_addr[5]~reg0.CLK
+sys_clk => intial_addr[4]~reg0.CLK
+sys_clk => intial_addr[3]~reg0.CLK
+sys_clk => intial_addr[2]~reg0.CLK
+sys_clk => intial_addr[1]~reg0.CLK
+sys_clk => intial_addr[0]~reg0.CLK
+sys_rst_n => intial_counter[0].ACLR
+sys_rst_n => intial_counter[1].ACLR
+sys_rst_n => intial_counter[2].ACLR
+sys_rst_n => intial_counter[3].ACLR
+sys_rst_n => intial_en~reg0.PRESET
+sys_rst_n => intial_addr[7]~reg0.ACLR
+sys_rst_n => intial_addr[6]~reg0.ACLR
+sys_rst_n => intial_addr[5]~reg0.ACLR
+sys_rst_n => intial_addr[4]~reg0.ACLR
+sys_rst_n => intial_addr[3]~reg0.ACLR
+sys_rst_n => intial_addr[2]~reg0.ACLR
+sys_rst_n => intial_addr[1]~reg0.ACLR
+sys_rst_n => intial_addr[0]~reg0.ACLR
+intial_en <= intial_en~reg0.DB_MAX_OUTPUT_PORT_TYPE
+intial_addr[0] <= intial_addr[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+intial_addr[1] <= intial_addr[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+intial_addr[2] <= intial_addr[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+intial_addr[3] <= intial_addr[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+intial_addr[4] <= intial_addr[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+intial_addr[5] <= intial_addr[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+intial_addr[6] <= intial_addr[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+intial_addr[7] <= intial_addr[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

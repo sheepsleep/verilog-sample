@@ -1,0 +1,267 @@
+module SegLed(
+		osc_clk,
+		sys_rst,
+		
+		seg_mosi,
+		seg_ncs,
+		seg_sck,
+		seg_c1,
+		seg_c2,
+		seg_c3,
+		seg_c4
+	);
+	
+	input osc_clk;
+	input sys_rst;
+	output seg_mosi;
+	output seg_ncs;
+	output seg_sck;
+	output seg_c1;
+	output seg_c2;
+	output seg_c3;
+	output seg_c4;
+	
+	reg seg_mosi;
+	reg seg_ncs;
+	reg seg_sck;
+	reg seg_c1;
+	reg seg_c2;
+	reg seg_c3;
+	reg seg_c4;
+	parameter width=26;
+	parameter width2=7;
+	
+	reg [width-1:0]count;
+	reg [width2-1:0]counter;
+	reg [7:0] dat1;
+	reg [7:0] dat2;
+	reg [7:0] dat3;
+	reg [7:0] dat4;
+	reg [7:0] dis_dat1;
+	reg [7:0] dis_dat2;
+	reg [7:0] dis_dat3;
+	reg [7:0] dis_dat4;
+	reg [7:0] dis_dat2ts;
+
+	
+	
+//	PLL PLL_U0(
+//		.inclk0(osc_clk),
+//		.c0(sys_clk)	
+//	);
+	assign sys_clk = osc_clk;
+	always @(posedge sys_clk or negedge sys_rst) begin
+	if (sys_rst==1'b0) begin
+	count <= 'b0;
+	end
+	else if (count ==26'h2FAF080) begin
+		count <= 26'b0;
+		end
+	else count <= count +26'b1;
+	end
+	
+	always @(posedge sys_clk or negedge sys_rst) begin
+		if(sys_rst==1'b0) begin
+			dis_dat1 <=8'b0;
+			dis_dat2 <=8'b0;
+			dis_dat3 <=8'b0;
+			dis_dat4 <=8'b0;
+		end
+		
+		else if(count==26'h1) begin
+			dis_dat1 <= dis_dat1+1'b1;
+			if(dis_dat1==9) begin
+				dis_dat1 <=0;
+				dis_dat2	<=	dis_dat2+1'b1;
+					if(dis_dat2==9) begin
+						dis_dat2 <=0;
+						dis_dat3 <= dis_dat3+1'b1;
+							if(dis_dat3==9) begin
+								dis_dat3 <=0;
+								dis_dat4	<=	dis_dat4+1'b1;
+									if(dis_dat4==9) begin
+										dis_dat4 <=0;
+									end
+						end
+					end
+			end
+		end
+		
+		else begin
+			dis_dat1 <= dis_dat1;
+			dis_dat2 <= dis_dat2;
+			dis_dat3 <= dis_dat3;
+			dis_dat4 <= dis_dat4;
+		end
+	end
+	
+	
+	
+	always @(*) begin 
+	case (dis_dat1)
+			9 		   :  dat1  =       8'hE6  ;   
+         8        :  dat1  =       8'hFE  ;    
+         7        :  dat1  =       8'hE0  ;   
+         6        :  dat1  =       8'hBE  ;   
+         5        :  dat1  =       8'hAE  ;   
+         4        :  dat1  =       8'h66  ;   
+         3        :  dat1  =       8'hEA  ;   
+         2        :  dat1  =       8'hDA  ;   
+         1        :  dat1  =       8'h60  ;   
+         0        :  dat1  =       8'hFC  ;   
+         default  :  dat1  =       8'h00  ; 
+	endcase
+	end
+	
+	always @(*) begin 
+	case (dis_dat2)
+			9 		   :  dat2  =       8'hE6  ;   
+         8        :  dat2  =       8'hFE  ;    
+         7        :  dat2  =       8'hE0  ;   
+         6        :  dat2  =       8'hBE  ;   
+         5        :  dat2  =       8'hAE  ;   
+         4        :  dat2  =       8'h66  ;   
+         3        :  dat2  =       8'hEA  ;   
+         2        :  dat2  =       8'hDA  ;   
+         1        :  dat2  =       8'h60  ;   
+         0        :  dat2  =       8'hFC  ;   
+         default  :  dat2  =       8'h00  ; 
+	endcase
+	end
+	
+	always @(*) begin 
+	case (dis_dat3)
+			9 		   :  dat3  =       8'hE6  ;   
+         8        :  dat3  =       8'hFE  ;    
+         7        :  dat3  =       8'hE0  ;   
+         6        :  dat3  =       8'hBE  ;   
+         5        :  dat3  =       8'hAE  ;   
+         4        :  dat3  =       8'h66  ;   
+         3        :  dat3  =       8'hEA  ;   
+         2        :  dat3  =       8'hDA  ;   
+         1        :  dat3  =       8'h60  ;   
+         0        :  dat3  =       8'hFC  ;   
+         default  :  dat3  =       8'h00  ; 
+	endcase
+	end
+	
+	always @(*) begin 
+	case (dis_dat4)
+			9 		   :  dat4  =       8'hE6  ;   
+         8        :  dat4  =       8'hFE  ;    
+         7        :  dat4  =       8'hE0  ;   
+         6        :  dat4  =       8'hBE  ;   
+         5        :  dat4  =       8'hAE  ;   
+         4        :  dat4  =       8'h66  ;   
+         3        :  dat4  =       8'hEA  ;   
+         2        :  dat4  =       8'hDA  ;   
+         1        :  dat4  =       8'h60  ;   
+         0        :  dat4  =       8'hFC  ;   
+         default  :  dat4  =       8'h00  ; 
+	endcase
+	end	
+	
+	always @(posedge sys_clk or negedge sys_rst) begin
+	if (sys_rst==0) begin 
+	counter <= 7'b0;
+	end
+	else if (counter >7'b100_0111) begin 
+	counter <= 7'b0;
+	end
+	else counter <= counter + 1'b1;
+	end
+	
+	always @(posedge sys_clk or negedge sys_rst ) begin
+	if (sys_rst==0) begin
+	seg_sck <= 1'b0;
+	end
+	else if (counter %2==0) begin
+		seg_sck <= 1'b0;
+	end
+	else if (counter %2==1)
+		seg_sck <= 1'b1;
+	end
+	
+	always @(*) begin
+		case (counter)
+		0,1:	seg_mosi=dat1[0];
+		2,3:	seg_mosi=dat1[1];
+		4,5:	seg_mosi=dat1[2];
+		6,7:	seg_mosi=dat1[3];
+		8,9:	seg_mosi=dat1[4];
+		10,11:	seg_mosi=dat1[5];
+		12,13:	seg_mosi=dat1[6];
+		14,15:	seg_mosi=dat1[7];
+		
+		18,19:	seg_mosi=dat2[0];
+		20,21:	seg_mosi=dat2[1];
+		22,23:	seg_mosi=dat2[2];
+		24,25:	seg_mosi=dat2[3];
+		26,27:	seg_mosi=dat2[4];
+		28,29:	seg_mosi=dat2[5];
+		30,31:	seg_mosi=dat2[6];
+		32,33:	seg_mosi=dat2[7];
+		
+		36,37:	seg_mosi=dat3[0];
+		38,39:	seg_mosi=dat3[1];
+		40,41:	seg_mosi=dat3[2];
+		42,43:	seg_mosi=dat3[3];
+		44,45:	seg_mosi=dat3[4];
+		46,47:	seg_mosi=dat3[5];
+		48,49:	seg_mosi=dat3[6];
+		50,51:	seg_mosi=dat3[7];
+		
+		54,55:	seg_mosi=dat4[0];
+		56,57:	seg_mosi=dat4[1];
+		58,59:	seg_mosi=dat4[2];
+		60,61:	seg_mosi=dat4[3];
+		62,63:	seg_mosi=dat4[4];
+		64,65:	seg_mosi=dat4[5];
+		66,67:	seg_mosi=dat4[6];
+		68,69:	seg_mosi=dat4[7];
+		
+		default: seg_mosi=1'b0;
+		endcase
+		end
+		
+		always @(*) begin
+		case (counter) 
+		16,17,34,35,52,53,70,71:	seg_ncs <= 1'b0;
+		default :seg_ncs <=1'b1;
+		endcase
+		end
+		
+		
+		always @(*) begin
+		if ((counter>=0) && (counter<=17)) begin
+		seg_c1=1'b1;
+		seg_c2=1'b1;
+		seg_c3=1'b1;
+		seg_c4=1'b0;
+		end
+		
+		else if((counter>=18) && (counter<=35)) begin
+		seg_c1=1'b0;
+		seg_c2=1'b1;
+		seg_c3=1'b1;
+		seg_c4=1'b1;
+		end
+		
+		else if((counter>=36) && (counter<=53)) begin
+		seg_c1=1'b1;
+		seg_c2=1'b0;
+		seg_c3=1'b1;
+		seg_c4=1'b1;
+		end
+		
+		else if((counter>=54) && (counter<=71)) begin
+		seg_c1=1'b1;
+		seg_c2=1'b1;
+		seg_c3=1'b0;
+		seg_c4=1'b1;
+		end
+		
+		end
+		
+		endmodule
+		

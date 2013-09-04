@@ -1,0 +1,42 @@
+|signed_compare
+sys_clk => c1~reg0.CLK
+sys_clk => c2~reg0.CLK
+sys_rst_n => c2~reg0.ACLR
+sys_rst_n => c1~reg0.ACLR
+a1[0] => LessThan0.IN7
+a1[1] => LessThan0.IN6
+a1[2] => LessThan0.IN5
+a1[3] => LessThan0.IN4
+a1[4] => LessThan0.IN3
+a1[5] => LessThan0.IN2
+a1[6] => LessThan0.IN1
+a1[7] => c1~2.OUTPUTSELECT
+b1[0] => LessThan0.IN14
+b1[1] => LessThan0.IN13
+b1[2] => LessThan0.IN12
+b1[3] => LessThan0.IN11
+b1[4] => LessThan0.IN10
+b1[5] => LessThan0.IN9
+b1[6] => LessThan0.IN8
+b1[7] => c1~0.OUTPUTSELECT
+b1[7] => c1~1.OUTPUTSELECT
+a2[0] => LessThan1.IN9
+a2[1] => LessThan1.IN8
+a2[2] => LessThan1.IN7
+a2[3] => LessThan1.IN6
+a2[4] => LessThan1.IN5
+a2[5] => LessThan1.IN4
+a2[6] => LessThan1.IN3
+a2[7] => LessThan1.IN1
+b2[0] => LessThan1.IN16
+b2[1] => LessThan1.IN15
+b2[2] => LessThan1.IN14
+b2[3] => LessThan1.IN13
+b2[4] => LessThan1.IN12
+b2[5] => LessThan1.IN11
+b2[6] => LessThan1.IN10
+b2[7] => LessThan1.IN2
+c1 <= c1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c2 <= c2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

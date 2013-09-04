@@ -1,0 +1,70 @@
+
+State Machine - |sdr_test|sdcard_ctrl:uut_sdcartctrl|sd_ctrl:uut_sdctrl|cmd_cstate
+Name cmd_cstate.CMD_DELAY cmd_cstate.CMD_RD cmd_cstate.CMD_CLKE cmd_cstate.CMD_RES cmd_cstate.CMD_END cmd_cstate.CMD_ARG4 cmd_cstate.CMD_ARG3 cmd_cstate.CMD_ARG2 cmd_cstate.CMD_ARG1 cmd_cstate.CMD_STAR cmd_cstate.CMD_CLKS cmd_cstate.CMD_NCLK cmd_cstate.CMD_IDLE 
+cmd_cstate.CMD_IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 
+cmd_cstate.CMD_NCLK 0 0 0 0 0 0 0 0 0 0 0 1 1 
+cmd_cstate.CMD_CLKS 0 0 0 0 0 0 0 0 0 0 1 0 1 
+cmd_cstate.CMD_STAR 0 0 0 0 0 0 0 0 0 1 0 0 1 
+cmd_cstate.CMD_ARG1 0 0 0 0 0 0 0 0 1 0 0 0 1 
+cmd_cstate.CMD_ARG2 0 0 0 0 0 0 0 1 0 0 0 0 1 
+cmd_cstate.CMD_ARG3 0 0 0 0 0 0 1 0 0 0 0 0 1 
+cmd_cstate.CMD_ARG4 0 0 0 0 0 1 0 0 0 0 0 0 1 
+cmd_cstate.CMD_END 0 0 0 0 1 0 0 0 0 0 0 0 1 
+cmd_cstate.CMD_RES 0 0 0 1 0 0 0 0 0 0 0 0 1 
+cmd_cstate.CMD_CLKE 0 0 1 0 0 0 0 0 0 0 0 0 1 
+cmd_cstate.CMD_RD 0 1 0 0 0 0 0 0 0 0 0 0 1 
+cmd_cstate.CMD_DELAY 1 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |sdr_test|sdcard_ctrl:uut_sdcartctrl|sd_ctrl:uut_sdctrl|sdinit_cstate
+Name sdinit_cstate.SD_DELAY sdinit_cstate.SD_RD_BPB sdinit_cstate.SD_RD_PT sdinit_cstate.SD_IDLE sdinit_cstate.SDINIT_CMD16 sdinit_cstate.SDINIT_CMD1 sdinit_cstate.SDINIT_ACMD41 sdinit_cstate.SDINIT_CMD55 sdinit_cstate.SDINIT_CMD0 sdinit_cstate.SDINIT_CLK sdinit_cstate.SDINIT_RST 
+sdinit_cstate.SDINIT_RST 0 0 0 0 0 0 0 0 0 0 0 
+sdinit_cstate.SDINIT_CLK 0 0 0 0 0 0 0 0 0 1 1 
+sdinit_cstate.SDINIT_CMD0 0 0 0 0 0 0 0 0 1 0 1 
+sdinit_cstate.SDINIT_CMD55 0 0 0 0 0 0 0 1 0 0 1 
+sdinit_cstate.SDINIT_ACMD41 0 0 0 0 0 0 1 0 0 0 1 
+sdinit_cstate.SDINIT_CMD1 0 0 0 0 0 1 0 0 0 0 1 
+sdinit_cstate.SDINIT_CMD16 0 0 0 0 1 0 0 0 0 0 1 
+sdinit_cstate.SD_IDLE 0 0 0 1 0 0 0 0 0 0 1 
+sdinit_cstate.SD_RD_PT 0 0 1 0 0 0 0 0 0 0 1 
+sdinit_cstate.SD_RD_BPB 0 1 0 0 0 0 0 0 0 0 1 
+sdinit_cstate.SD_DELAY 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |sdr_test|sdram_top:uut_sdramtop|sdram_ctrl:module_001|work_state_r
+Name work_state_r.1011 work_state_r.1010 work_state_r.1001 work_state_r.1000 work_state_r.0111 work_state_r.0110 work_state_r.0101 work_state_r.0100 work_state_r.0011 work_state_r.0010 work_state_r.0001 work_state_r.0000 
+work_state_r.0000 0 0 0 0 0 0 0 0 0 0 0 0 
+work_state_r.0001 0 0 0 0 0 0 0 0 0 0 1 1 
+work_state_r.0010 0 0 0 0 0 0 0 0 0 1 0 1 
+work_state_r.0011 0 0 0 0 0 0 0 0 1 0 0 1 
+work_state_r.0100 0 0 0 0 0 0 0 1 0 0 0 1 
+work_state_r.0101 0 0 0 0 0 0 1 0 0 0 0 1 
+work_state_r.0110 0 0 0 0 0 1 0 0 0 0 0 1 
+work_state_r.0111 0 0 0 0 1 0 0 0 0 0 0 1 
+work_state_r.1000 0 0 0 1 0 0 0 0 0 0 0 1 
+work_state_r.1001 0 0 1 0 0 0 0 0 0 0 0 1 
+work_state_r.1010 0 1 0 0 0 0 0 0 0 0 0 1 
+work_state_r.1011 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |sdr_test|sdram_top:uut_sdramtop|sdram_ctrl:module_001|init_state_r
+Name init_state_r.10101 init_state_r.10100 init_state_r.10011 init_state_r.10010 init_state_r.10001 init_state_r.10000 init_state_r.01111 init_state_r.01110 init_state_r.01101 init_state_r.01100 init_state_r.01011 init_state_r.01010 init_state_r.01001 init_state_r.01000 init_state_r.00111 init_state_r.00110 init_state_r.00101 init_state_r.00100 init_state_r.00011 init_state_r.00010 init_state_r.00001 init_state_r.00000 
+init_state_r.00000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+init_state_r.00001 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+init_state_r.00010 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+init_state_r.00011 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+init_state_r.00100 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+init_state_r.00101 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+init_state_r.00110 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+init_state_r.00111 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+init_state_r.01000 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+init_state_r.01001 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+init_state_r.01010 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+init_state_r.01011 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+init_state_r.01100 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+init_state_r.01101 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+init_state_r.01110 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+init_state_r.01111 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+init_state_r.10000 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+init_state_r.10001 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+init_state_r.10010 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+init_state_r.10011 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+init_state_r.10100 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+init_state_r.10101 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

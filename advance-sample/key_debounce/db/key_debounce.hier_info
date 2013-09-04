@@ -1,0 +1,35 @@
+|key_debounce
+sys_clk => key_dly1[3].CLK
+sys_clk => key_dly1[2].CLK
+sys_clk => key_dly1[1].CLK
+sys_clk => key_dly1[0].CLK
+sys_clk => key_dly2[3].CLK
+sys_clk => key_dly2[2].CLK
+sys_clk => key_dly2[1].CLK
+sys_clk => key_dly2[0].CLK
+sys_clk => key_dly3[3].CLK
+sys_clk => key_dly3[2].CLK
+sys_clk => key_dly3[1].CLK
+sys_clk => key_dly3[0].CLK
+sys_rst_n => key_dly1[3].ACLR
+sys_rst_n => key_dly1[2].ACLR
+sys_rst_n => key_dly1[1].ACLR
+sys_rst_n => key_dly1[0].ACLR
+sys_rst_n => key_dly2[3].ACLR
+sys_rst_n => key_dly2[2].ACLR
+sys_rst_n => key_dly2[1].ACLR
+sys_rst_n => key_dly2[0].ACLR
+sys_rst_n => key_dly3[3].ACLR
+sys_rst_n => key_dly3[2].ACLR
+sys_rst_n => key_dly3[1].ACLR
+sys_rst_n => key_dly3[0].ACLR
+key_in[0] => key_dly1[0].DATAIN
+key_in[1] => key_dly1[1].DATAIN
+key_in[2] => key_dly1[2].DATAIN
+key_in[3] => key_dly1[3].DATAIN
+key_out[0] <= key_out~4.DB_MAX_OUTPUT_PORT_TYPE
+key_out[1] <= key_out~5.DB_MAX_OUTPUT_PORT_TYPE
+key_out[2] <= key_out~6.DB_MAX_OUTPUT_PORT_TYPE
+key_out[3] <= key_out~7.DB_MAX_OUTPUT_PORT_TYPE
+
+

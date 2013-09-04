@@ -1,0 +1,86 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.732 ns
+From           : sys_rst_n
+To             : LCD_Driver:U2|Data_First_Buf[105]
+From Clock     : --
+To Clock       : sys_clk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 9.520 ns
+From           : LCD_Driver:U2|DB8[4]
+To             : DB8[4]
+From Clock     : sys_clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.056 ns
+From           : altera_internal_jtag~TDO
+To             : altera_reserved_tdo
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 2.346 ns
+From           : altera_internal_jtag~TMSUTAP
+To             : sld_hub:sld_hub_inst|sld_jtag_state_machine:jtag_state_machine|tms_cnt[0]
+From Clock     : --
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Setup: 'PLL:PLL_U0|altpll:altpll_component|_clk0'
+Slack          : 13.599 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : 156.23 MHz ( period = 6.401 ns )
+From           : LCD_Driver:U2|disp_count[0]
+To             : LCD_Driver:U2|Data_Second_Buf[32]
+From Clock     : PLL:PLL_U0|altpll:altpll_component|_clk0
+To Clock       : PLL:PLL_U0|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 69.04 MHz ( period = 14.484 ns )
+From           : sld_hub:sld_hub_inst|sld_dffex:BROADCAST|Q[0]
+To             : sld_hub:sld_hub_inst|hub_tdo_reg
+From Clock     : altera_internal_jtag~TCKUTAP
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Hold: 'PLL:PLL_U0|altpll:altpll_component|_clk0'
+Slack          : 0.499 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : N/A
+From           : LCD_Driver:U2|DB8[1]
+To             : LCD_Driver:U2|DB8[1]
+From Clock     : PLL:PLL_U0|altpll:altpll_component|_clk0
+To Clock       : PLL:PLL_U0|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

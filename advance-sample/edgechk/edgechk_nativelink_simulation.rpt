@@ -1,0 +1,37 @@
+Info: Start Nativelink Simulation process
+Info: NativeLink has detected Verilog design -- Verilog simulation models will be used
+
+========= EDA Simulation Settings =====================
+
+Sim Mode              :  RTL
+Family                :  cycloneii
+Quartus root          :  c:/altera/72/quartus/bin/
+Quartus sim root      :  c:/altera/72/quartus/eda/sim_lib
+Simulation Tool       :  modelsim
+Simulation Language   :  verilog
+Simulation Mode       :  GUI
+Sim Output File       :  edgechk.vo
+Sim SDF file          :  edgechk__verilog.sdo
+Sim dir               :  simulation\modelsim
+
+=======================================================
+
+Info: Starting NativeLink simulation with ModelSim software
+Sourced NativeLink script c:/altera/72/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Error: Can't launch the ModelSim software -- the path to the location of the executables for the ModelSim software were not specified or the executables were not found at specified path.
+Error: You can specify the path in the EDA Tool Options page of the Options dialog box or using the Tcl command set_user_option.
+Error: NativeLink simulation flow was NOT successful
+
+
+
+================The following additional information is provided to help identify the cause of error while running nativelink scripts=================
+Nativelink TCL script failed with errorCode:  NONE
+Nativelink TCL script failed with errorInfo:  
+    while executing
+"error ""  """
+    (procedure "launch_sim" line 36)
+    invoked from within
+"launch_sim verilog 1 1 0 0"
+    ("eval" body line 1)
+    invoked from within
+"eval launch_sim $launch_args"

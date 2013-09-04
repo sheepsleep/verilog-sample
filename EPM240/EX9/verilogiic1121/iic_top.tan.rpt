@@ -1,0 +1,462 @@
+Classic Timing Analyzer report for iic_top
+Tue Aug 04 21:28:19 2009
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                           ;
++------------------------------+-------+---------------+----------------------------------+------------------------+-------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                   ; To                      ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+------------------------+-------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 3.004 ns                         ; rst_n                  ; iic_com:iic_com|db_r[5] ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 8.853 ns                         ; iic_com:iic_com|scl_r  ; scl                     ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -1.278 ns                        ; sw1                    ; iic_com:iic_com|sw1_r   ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 90.79 MHz ( period = 11.015 ns ) ; iic_com:iic_com|num[0] ; iic_com:iic_com|sda_r   ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                        ;                         ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+------------------------+-------------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EPM240T100C5       ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                       ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------+------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                          ; To                           ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------+------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 90.79 MHz ( period = 11.015 ns )                    ; iic_com:iic_com|num[0]        ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 10.306 ns               ;
+; N/A                                     ; 96.38 MHz ( period = 10.376 ns )                    ; iic_com:iic_com|sda_r         ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 9.667 ns                ;
+; N/A                                     ; 96.46 MHz ( period = 10.367 ns )                    ; iic_com:iic_com|num[2]        ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 9.658 ns                ;
+; N/A                                     ; 102.47 MHz ( period = 9.759 ns )                    ; iic_com:iic_com|cstate.STOP2  ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 9.050 ns                ;
+; N/A                                     ; 103.46 MHz ( period = 9.666 ns )                    ; iic_com:iic_com|cstate.ACK2   ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 8.957 ns                ;
+; N/A                                     ; 103.69 MHz ( period = 9.644 ns )                    ; iic_com:iic_com|num[3]        ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 8.935 ns                ;
+; N/A                                     ; 103.76 MHz ( period = 9.638 ns )                    ; iic_com:iic_com|cnt.011       ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 8.929 ns                ;
+; N/A                                     ; 104.44 MHz ( period = 9.575 ns )                    ; iic_com:iic_com|db_r[0]       ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 8.866 ns                ;
+; N/A                                     ; 105.78 MHz ( period = 9.454 ns )                    ; iic_com:iic_com|db_r[6]       ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 8.745 ns                ;
+; N/A                                     ; 105.82 MHz ( period = 9.450 ns )                    ; iic_com:iic_com|db_r[7]       ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 8.741 ns                ;
+; N/A                                     ; 106.42 MHz ( period = 9.397 ns )                    ; iic_com:iic_com|cstate.STOP1  ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 8.688 ns                ;
+; N/A                                     ; 108.93 MHz ( period = 9.180 ns )                    ; iic_com:iic_com|cstate.ACK4   ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 8.471 ns                ;
+; N/A                                     ; 108.93 MHz ( period = 9.180 ns )                    ; iic_com:iic_com|db_r[5]       ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 8.471 ns                ;
+; N/A                                     ; 109.05 MHz ( period = 9.170 ns )                    ; iic_com:iic_com|num[1]        ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 8.461 ns                ;
+; N/A                                     ; 109.42 MHz ( period = 9.139 ns )                    ; iic_com:iic_com|cstate.ACK1   ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 8.430 ns                ;
+; N/A                                     ; 111.76 MHz ( period = 8.948 ns )                    ; iic_com:iic_com|num[2]        ; iic_com:iic_com|num[2]       ; clk        ; clk      ; None                        ; None                      ; 8.239 ns                ;
+; N/A                                     ; 111.76 MHz ( period = 8.948 ns )                    ; iic_com:iic_com|num[2]        ; iic_com:iic_com|num[0]       ; clk        ; clk      ; None                        ; None                      ; 8.239 ns                ;
+; N/A                                     ; 111.76 MHz ( period = 8.948 ns )                    ; iic_com:iic_com|num[2]        ; iic_com:iic_com|num[1]       ; clk        ; clk      ; None                        ; None                      ; 8.239 ns                ;
+; N/A                                     ; 112.16 MHz ( period = 8.916 ns )                    ; iic_com:iic_com|cnt.001       ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 8.207 ns                ;
+; N/A                                     ; 113.77 MHz ( period = 8.790 ns )                    ; iic_com:iic_com|cnt.011       ; iic_com:iic_com|num[2]       ; clk        ; clk      ; None                        ; None                      ; 8.081 ns                ;
+; N/A                                     ; 113.77 MHz ( period = 8.790 ns )                    ; iic_com:iic_com|cnt.011       ; iic_com:iic_com|num[0]       ; clk        ; clk      ; None                        ; None                      ; 8.081 ns                ;
+; N/A                                     ; 113.77 MHz ( period = 8.790 ns )                    ; iic_com:iic_com|cnt.011       ; iic_com:iic_com|num[1]       ; clk        ; clk      ; None                        ; None                      ; 8.081 ns                ;
+; N/A                                     ; 113.83 MHz ( period = 8.785 ns )                    ; iic_com:iic_com|num[3]        ; iic_com:iic_com|num[2]       ; clk        ; clk      ; None                        ; None                      ; 8.076 ns                ;
+; N/A                                     ; 113.83 MHz ( period = 8.785 ns )                    ; iic_com:iic_com|num[3]        ; iic_com:iic_com|num[0]       ; clk        ; clk      ; None                        ; None                      ; 8.076 ns                ;
+; N/A                                     ; 113.83 MHz ( period = 8.785 ns )                    ; iic_com:iic_com|num[3]        ; iic_com:iic_com|num[1]       ; clk        ; clk      ; None                        ; None                      ; 8.076 ns                ;
+; N/A                                     ; 114.43 MHz ( period = 8.739 ns )                    ; iic_com:iic_com|num[2]        ; iic_com:iic_com|sda_link     ; clk        ; clk      ; None                        ; None                      ; 8.030 ns                ;
+; N/A                                     ; 115.59 MHz ( period = 8.651 ns )                    ; iic_com:iic_com|num[0]        ; iic_com:iic_com|num[2]       ; clk        ; clk      ; None                        ; None                      ; 7.942 ns                ;
+; N/A                                     ; 115.59 MHz ( period = 8.651 ns )                    ; iic_com:iic_com|num[0]        ; iic_com:iic_com|num[0]       ; clk        ; clk      ; None                        ; None                      ; 7.942 ns                ;
+; N/A                                     ; 115.59 MHz ( period = 8.651 ns )                    ; iic_com:iic_com|num[0]        ; iic_com:iic_com|num[1]       ; clk        ; clk      ; None                        ; None                      ; 7.942 ns                ;
+; N/A                                     ; 116.60 MHz ( period = 8.576 ns )                    ; iic_com:iic_com|num[3]        ; iic_com:iic_com|sda_link     ; clk        ; clk      ; None                        ; None                      ; 7.867 ns                ;
+; N/A                                     ; 117.27 MHz ( period = 8.527 ns )                    ; iic_com:iic_com|cnt_20ms[8]   ; iic_com:iic_com|cstate.STOP2 ; clk        ; clk      ; None                        ; None                      ; 7.818 ns                ;
+; N/A                                     ; 117.65 MHz ( period = 8.500 ns )                    ; iic_com:iic_com|cnt_20ms[14]  ; iic_com:iic_com|cstate.STOP2 ; clk        ; clk      ; None                        ; None                      ; 7.791 ns                ;
+; N/A                                     ; 117.80 MHz ( period = 8.489 ns )                    ; iic_com:iic_com|sw2_r         ; iic_com:iic_com|num[2]       ; clk        ; clk      ; None                        ; None                      ; 7.780 ns                ;
+; N/A                                     ; 117.80 MHz ( period = 8.489 ns )                    ; iic_com:iic_com|sw2_r         ; iic_com:iic_com|num[0]       ; clk        ; clk      ; None                        ; None                      ; 7.780 ns                ;
+; N/A                                     ; 117.80 MHz ( period = 8.489 ns )                    ; iic_com:iic_com|sw2_r         ; iic_com:iic_com|num[1]       ; clk        ; clk      ; None                        ; None                      ; 7.780 ns                ;
+; N/A                                     ; 117.88 MHz ( period = 8.483 ns )                    ; iic_com:iic_com|cnt.001       ; iic_com:iic_com|num[2]       ; clk        ; clk      ; None                        ; None                      ; 7.774 ns                ;
+; N/A                                     ; 117.88 MHz ( period = 8.483 ns )                    ; iic_com:iic_com|cnt.001       ; iic_com:iic_com|num[0]       ; clk        ; clk      ; None                        ; None                      ; 7.774 ns                ;
+; N/A                                     ; 117.88 MHz ( period = 8.483 ns )                    ; iic_com:iic_com|cnt.001       ; iic_com:iic_com|num[1]       ; clk        ; clk      ; None                        ; None                      ; 7.774 ns                ;
+; N/A                                     ; 118.30 MHz ( period = 8.453 ns )                    ; iic_com:iic_com|cnt_20ms[8]   ; iic_com:iic_com|sw2_r        ; clk        ; clk      ; None                        ; None                      ; 7.744 ns                ;
+; N/A                                     ; 118.30 MHz ( period = 8.453 ns )                    ; iic_com:iic_com|cnt_20ms[8]   ; iic_com:iic_com|sw1_r        ; clk        ; clk      ; None                        ; None                      ; 7.744 ns                ;
+; N/A                                     ; 118.46 MHz ( period = 8.442 ns )                    ; iic_com:iic_com|num[0]        ; iic_com:iic_com|sda_link     ; clk        ; clk      ; None                        ; None                      ; 7.733 ns                ;
+; N/A                                     ; 118.68 MHz ( period = 8.426 ns )                    ; iic_com:iic_com|cnt_20ms[14]  ; iic_com:iic_com|sw2_r        ; clk        ; clk      ; None                        ; None                      ; 7.717 ns                ;
+; N/A                                     ; 118.68 MHz ( period = 8.426 ns )                    ; iic_com:iic_com|cnt_20ms[14]  ; iic_com:iic_com|sw1_r        ; clk        ; clk      ; None                        ; None                      ; 7.717 ns                ;
+; N/A                                     ; 119.39 MHz ( period = 8.376 ns )                    ; led_seg7:led_seg7|cnt[7]      ; led_seg7:led_seg7|sm_dbr[1]  ; clk        ; clk      ; None                        ; None                      ; 7.667 ns                ;
+; N/A                                     ; 119.40 MHz ( period = 8.375 ns )                    ; led_seg7:led_seg7|cnt[7]      ; led_seg7:led_seg7|sm_dbr[4]  ; clk        ; clk      ; None                        ; None                      ; 7.666 ns                ;
+; N/A                                     ; 119.42 MHz ( period = 8.374 ns )                    ; led_seg7:led_seg7|cnt[7]      ; led_seg7:led_seg7|sm_dbr[0]  ; clk        ; clk      ; None                        ; None                      ; 7.665 ns                ;
+; N/A                                     ; 119.52 MHz ( period = 8.367 ns )                    ; led_seg7:led_seg7|cnt[7]      ; led_seg7:led_seg7|sm_dbr[5]  ; clk        ; clk      ; None                        ; None                      ; 7.658 ns                ;
+; N/A                                     ; 119.53 MHz ( period = 8.366 ns )                    ; led_seg7:led_seg7|cnt[7]      ; led_seg7:led_seg7|sm_dbr[3]  ; clk        ; clk      ; None                        ; None                      ; 7.657 ns                ;
+; N/A                                     ; 119.53 MHz ( period = 8.366 ns )                    ; led_seg7:led_seg7|cnt[7]      ; led_seg7:led_seg7|sm_dbr[6]  ; clk        ; clk      ; None                        ; None                      ; 7.657 ns                ;
+; N/A                                     ; 119.56 MHz ( period = 8.364 ns )                    ; led_seg7:led_seg7|cnt[7]      ; led_seg7:led_seg7|sm_dbr[2]  ; clk        ; clk      ; None                        ; None                      ; 7.655 ns                ;
+; N/A                                     ; 120.22 MHz ( period = 8.318 ns )                    ; iic_com:iic_com|cnt_20ms[13]  ; iic_com:iic_com|cstate.STOP2 ; clk        ; clk      ; None                        ; None                      ; 7.609 ns                ;
+; N/A                                     ; 121.01 MHz ( period = 8.264 ns )                    ; iic_com:iic_com|cnt_20ms[15]  ; iic_com:iic_com|cstate.STOP2 ; clk        ; clk      ; None                        ; None                      ; 7.555 ns                ;
+; N/A                                     ; 121.23 MHz ( period = 8.249 ns )                    ; iic_com:iic_com|num[1]        ; iic_com:iic_com|num[2]       ; clk        ; clk      ; None                        ; None                      ; 7.540 ns                ;
+; N/A                                     ; 121.23 MHz ( period = 8.249 ns )                    ; iic_com:iic_com|num[1]        ; iic_com:iic_com|num[0]       ; clk        ; clk      ; None                        ; None                      ; 7.540 ns                ;
+; N/A                                     ; 121.23 MHz ( period = 8.249 ns )                    ; iic_com:iic_com|num[1]        ; iic_com:iic_com|num[1]       ; clk        ; clk      ; None                        ; None                      ; 7.540 ns                ;
+; N/A                                     ; 121.30 MHz ( period = 8.244 ns )                    ; iic_com:iic_com|cnt_20ms[13]  ; iic_com:iic_com|sw2_r        ; clk        ; clk      ; None                        ; None                      ; 7.535 ns                ;
+; N/A                                     ; 121.30 MHz ( period = 8.244 ns )                    ; iic_com:iic_com|cnt_20ms[13]  ; iic_com:iic_com|sw1_r        ; clk        ; clk      ; None                        ; None                      ; 7.535 ns                ;
+; N/A                                     ; 122.09 MHz ( period = 8.191 ns )                    ; iic_com:iic_com|cstate.DATA   ; iic_com:iic_com|read_data[7] ; clk        ; clk      ; None                        ; None                      ; 7.482 ns                ;
+; N/A                                     ; 122.10 MHz ( period = 8.190 ns )                    ; iic_com:iic_com|cnt_20ms[15]  ; iic_com:iic_com|sw2_r        ; clk        ; clk      ; None                        ; None                      ; 7.481 ns                ;
+; N/A                                     ; 122.10 MHz ( period = 8.190 ns )                    ; iic_com:iic_com|cnt_20ms[15]  ; iic_com:iic_com|sw1_r        ; clk        ; clk      ; None                        ; None                      ; 7.481 ns                ;
+; N/A                                     ; 122.13 MHz ( period = 8.188 ns )                    ; iic_com:iic_com|num[2]        ; iic_com:iic_com|num[3]       ; clk        ; clk      ; None                        ; None                      ; 7.479 ns                ;
+; N/A                                     ; 122.14 MHz ( period = 8.187 ns )                    ; iic_com:iic_com|cstate.DATA   ; iic_com:iic_com|read_data[6] ; clk        ; clk      ; None                        ; None                      ; 7.478 ns                ;
+; N/A                                     ; 122.14 MHz ( period = 8.187 ns )                    ; iic_com:iic_com|cnt.011       ; iic_com:iic_com|cstate.STOP2 ; clk        ; clk      ; None                        ; None                      ; 7.478 ns                ;
+; N/A                                     ; 122.61 MHz ( period = 8.156 ns )                    ; iic_com:iic_com|cnt_20ms[9]   ; iic_com:iic_com|cstate.STOP2 ; clk        ; clk      ; None                        ; None                      ; 7.447 ns                ;
+; N/A                                     ; 123.06 MHz ( period = 8.126 ns )                    ; iic_com:iic_com|cnt_20ms[18]  ; iic_com:iic_com|cstate.STOP2 ; clk        ; clk      ; None                        ; None                      ; 7.417 ns                ;
+; N/A                                     ; 123.18 MHz ( period = 8.118 ns )                    ; iic_com:iic_com|cnt.011       ; iic_com:iic_com|sda_link     ; clk        ; clk      ; None                        ; None                      ; 7.409 ns                ;
+; N/A                                     ; 123.23 MHz ( period = 8.115 ns )                    ; iic_com:iic_com|cstate.ACK1   ; iic_com:iic_com|db_r[0]      ; clk        ; clk      ; None                        ; None                      ; 7.406 ns                ;
+; N/A                                     ; 123.23 MHz ( period = 8.115 ns )                    ; iic_com:iic_com|cstate.ACK1   ; iic_com:iic_com|db_r[7]      ; clk        ; clk      ; None                        ; None                      ; 7.406 ns                ;
+; N/A                                     ; 123.23 MHz ( period = 8.115 ns )                    ; iic_com:iic_com|cstate.ACK1   ; iic_com:iic_com|db_r[6]      ; clk        ; clk      ; None                        ; None                      ; 7.406 ns                ;
+; N/A                                     ; 123.23 MHz ( period = 8.115 ns )                    ; iic_com:iic_com|cstate.ACK1   ; iic_com:iic_com|db_r[5]      ; clk        ; clk      ; None                        ; None                      ; 7.406 ns                ;
+; N/A                                     ; 123.38 MHz ( period = 8.105 ns )                    ; iic_com:iic_com|cstate.ACK3   ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 7.396 ns                ;
+; N/A                                     ; 123.73 MHz ( period = 8.082 ns )                    ; iic_com:iic_com|cnt_20ms[9]   ; iic_com:iic_com|sw2_r        ; clk        ; clk      ; None                        ; None                      ; 7.373 ns                ;
+; N/A                                     ; 123.73 MHz ( period = 8.082 ns )                    ; iic_com:iic_com|cnt_20ms[9]   ; iic_com:iic_com|sw1_r        ; clk        ; clk      ; None                        ; None                      ; 7.373 ns                ;
+; N/A                                     ; 123.76 MHz ( period = 8.080 ns )                    ; iic_com:iic_com|cnt.001       ; iic_com:iic_com|read_data[7] ; clk        ; clk      ; None                        ; None                      ; 7.371 ns                ;
+; N/A                                     ; 123.82 MHz ( period = 8.076 ns )                    ; iic_com:iic_com|cnt.001       ; iic_com:iic_com|read_data[6] ; clk        ; clk      ; None                        ; None                      ; 7.367 ns                ;
+; N/A                                     ; 124.19 MHz ( period = 8.052 ns )                    ; iic_com:iic_com|cnt_20ms[18]  ; iic_com:iic_com|sw2_r        ; clk        ; clk      ; None                        ; None                      ; 7.343 ns                ;
+; N/A                                     ; 124.19 MHz ( period = 8.052 ns )                    ; iic_com:iic_com|cnt_20ms[18]  ; iic_com:iic_com|sw1_r        ; clk        ; clk      ; None                        ; None                      ; 7.343 ns                ;
+; N/A                                     ; 124.38 MHz ( period = 8.040 ns )                    ; iic_com:iic_com|num[1]        ; iic_com:iic_com|sda_link     ; clk        ; clk      ; None                        ; None                      ; 7.331 ns                ;
+; N/A                                     ; 124.49 MHz ( period = 8.033 ns )                    ; iic_com:iic_com|cstate.DATA   ; iic_com:iic_com|num[2]       ; clk        ; clk      ; None                        ; None                      ; 7.324 ns                ;
+; N/A                                     ; 124.49 MHz ( period = 8.033 ns )                    ; iic_com:iic_com|cstate.DATA   ; iic_com:iic_com|num[0]       ; clk        ; clk      ; None                        ; None                      ; 7.324 ns                ;
+; N/A                                     ; 124.49 MHz ( period = 8.033 ns )                    ; iic_com:iic_com|cstate.DATA   ; iic_com:iic_com|num[1]       ; clk        ; clk      ; None                        ; None                      ; 7.324 ns                ;
+; N/A                                     ; 124.88 MHz ( period = 8.008 ns )                    ; iic_com:iic_com|sw1_r         ; iic_com:iic_com|db_r[0]      ; clk        ; clk      ; None                        ; None                      ; 7.299 ns                ;
+; N/A                                     ; 124.88 MHz ( period = 8.008 ns )                    ; iic_com:iic_com|sw1_r         ; iic_com:iic_com|db_r[7]      ; clk        ; clk      ; None                        ; None                      ; 7.299 ns                ;
+; N/A                                     ; 124.88 MHz ( period = 8.008 ns )                    ; iic_com:iic_com|sw1_r         ; iic_com:iic_com|db_r[6]      ; clk        ; clk      ; None                        ; None                      ; 7.299 ns                ;
+; N/A                                     ; 124.88 MHz ( period = 8.008 ns )                    ; iic_com:iic_com|sw1_r         ; iic_com:iic_com|db_r[5]      ; clk        ; clk      ; None                        ; None                      ; 7.299 ns                ;
+; N/A                                     ; 125.69 MHz ( period = 7.956 ns )                    ; iic_com:iic_com|sw2_r         ; iic_com:iic_com|db_r[0]      ; clk        ; clk      ; None                        ; None                      ; 7.247 ns                ;
+; N/A                                     ; 125.69 MHz ( period = 7.956 ns )                    ; iic_com:iic_com|sw2_r         ; iic_com:iic_com|db_r[7]      ; clk        ; clk      ; None                        ; None                      ; 7.247 ns                ;
+; N/A                                     ; 125.69 MHz ( period = 7.956 ns )                    ; iic_com:iic_com|sw2_r         ; iic_com:iic_com|db_r[6]      ; clk        ; clk      ; None                        ; None                      ; 7.247 ns                ;
+; N/A                                     ; 125.69 MHz ( period = 7.956 ns )                    ; iic_com:iic_com|sw2_r         ; iic_com:iic_com|db_r[5]      ; clk        ; clk      ; None                        ; None                      ; 7.247 ns                ;
+; N/A                                     ; 125.91 MHz ( period = 7.942 ns )                    ; led_seg7:led_seg7|cnt[1]      ; iic_com:iic_com|cnt_delay[3] ; clk        ; clk      ; None                        ; None                      ; 7.233 ns                ;
+; N/A                                     ; 127.26 MHz ( period = 7.858 ns )                    ; led_seg7:led_seg7|cnt[0]      ; iic_com:iic_com|sw2_r        ; clk        ; clk      ; None                        ; None                      ; 7.149 ns                ;
+; N/A                                     ; 127.26 MHz ( period = 7.858 ns )                    ; led_seg7:led_seg7|cnt[0]      ; iic_com:iic_com|sw1_r        ; clk        ; clk      ; None                        ; None                      ; 7.149 ns                ;
+; N/A                                     ; 127.45 MHz ( period = 7.846 ns )                    ; iic_com:iic_com|cstate.ADD1   ; iic_com:iic_com|sda_link     ; clk        ; clk      ; None                        ; None                      ; 7.137 ns                ;
+; N/A                                     ; 127.47 MHz ( period = 7.845 ns )                    ; iic_com:iic_com|cnt_20ms[8]   ; iic_com:iic_com|cstate.IDLE  ; clk        ; clk      ; None                        ; None                      ; 7.136 ns                ;
+; N/A                                     ; 127.53 MHz ( period = 7.841 ns )                    ; led_seg7:led_seg7|cnt[4]      ; iic_com:iic_com|cstate.STOP2 ; clk        ; clk      ; None                        ; None                      ; 7.132 ns                ;
+; N/A                                     ; 127.91 MHz ( period = 7.818 ns )                    ; iic_com:iic_com|cnt_20ms[14]  ; iic_com:iic_com|cstate.IDLE  ; clk        ; clk      ; None                        ; None                      ; 7.109 ns                ;
+; N/A                                     ; 128.44 MHz ( period = 7.786 ns )                    ; iic_com:iic_com|cnt_20ms[12]  ; iic_com:iic_com|cstate.STOP2 ; clk        ; clk      ; None                        ; None                      ; 7.077 ns                ;
+; N/A                                     ; 128.75 MHz ( period = 7.767 ns )                    ; led_seg7:led_seg7|cnt[4]      ; iic_com:iic_com|sw2_r        ; clk        ; clk      ; None                        ; None                      ; 7.058 ns                ;
+; N/A                                     ; 128.75 MHz ( period = 7.767 ns )                    ; led_seg7:led_seg7|cnt[4]      ; iic_com:iic_com|sw1_r        ; clk        ; clk      ; None                        ; None                      ; 7.058 ns                ;
+; N/A                                     ; 128.85 MHz ( period = 7.761 ns )                    ; iic_com:iic_com|cnt.011       ; iic_com:iic_com|num[3]       ; clk        ; clk      ; None                        ; None                      ; 7.052 ns                ;
+; N/A                                     ; 128.93 MHz ( period = 7.756 ns )                    ; iic_com:iic_com|num[3]        ; iic_com:iic_com|num[3]       ; clk        ; clk      ; None                        ; None                      ; 7.047 ns                ;
+; N/A                                     ; 129.45 MHz ( period = 7.725 ns )                    ; led_seg7:led_seg7|cnt[1]      ; iic_com:iic_com|cnt_delay[7] ; clk        ; clk      ; None                        ; None                      ; 7.016 ns                ;
+; N/A                                     ; 129.67 MHz ( period = 7.712 ns )                    ; iic_com:iic_com|cnt_20ms[12]  ; iic_com:iic_com|sw2_r        ; clk        ; clk      ; None                        ; None                      ; 7.003 ns                ;
+; N/A                                     ; 129.67 MHz ( period = 7.712 ns )                    ; iic_com:iic_com|cnt_20ms[12]  ; iic_com:iic_com|sw1_r        ; clk        ; clk      ; None                        ; None                      ; 7.003 ns                ;
+; N/A                                     ; 130.41 MHz ( period = 7.668 ns )                    ; led_seg7:led_seg7|cnt[7]      ; iic_com:iic_com|cstate.STOP2 ; clk        ; clk      ; None                        ; None                      ; 6.959 ns                ;
+; N/A                                     ; 130.96 MHz ( period = 7.636 ns )                    ; iic_com:iic_com|cnt_20ms[13]  ; iic_com:iic_com|cstate.IDLE  ; clk        ; clk      ; None                        ; None                      ; 6.927 ns                ;
+; N/A                                     ; 131.20 MHz ( period = 7.622 ns )                    ; iic_com:iic_com|num[0]        ; iic_com:iic_com|num[3]       ; clk        ; clk      ; None                        ; None                      ; 6.913 ns                ;
+; N/A                                     ; 131.32 MHz ( period = 7.615 ns )                    ; iic_com:iic_com|cstate.DATA   ; iic_com:iic_com|read_data[3] ; clk        ; clk      ; None                        ; None                      ; 6.906 ns                ;
+; N/A                                     ; 131.34 MHz ( period = 7.614 ns )                    ; iic_com:iic_com|cstate.DATA   ; iic_com:iic_com|read_data[2] ; clk        ; clk      ; None                        ; None                      ; 6.905 ns                ;
+; N/A                                     ; 131.68 MHz ( period = 7.594 ns )                    ; led_seg7:led_seg7|cnt[7]      ; iic_com:iic_com|sw2_r        ; clk        ; clk      ; None                        ; None                      ; 6.885 ns                ;
+; N/A                                     ; 131.68 MHz ( period = 7.594 ns )                    ; led_seg7:led_seg7|cnt[7]      ; iic_com:iic_com|sw1_r        ; clk        ; clk      ; None                        ; None                      ; 6.885 ns                ;
+; N/A                                     ; 131.77 MHz ( period = 7.589 ns )                    ; iic_com:iic_com|sw1_r         ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 6.880 ns                ;
+; N/A                                     ; 131.89 MHz ( period = 7.582 ns )                    ; iic_com:iic_com|cnt_20ms[15]  ; iic_com:iic_com|cstate.IDLE  ; clk        ; clk      ; None                        ; None                      ; 6.873 ns                ;
+; N/A                                     ; 132.42 MHz ( period = 7.552 ns )                    ; led_seg7:led_seg7|cnt[6]      ; iic_com:iic_com|cstate.STOP2 ; clk        ; clk      ; None                        ; None                      ; 6.843 ns                ;
+; N/A                                     ; 133.07 MHz ( period = 7.515 ns )                    ; iic_com:iic_com|cnt_delay[3]  ; iic_com:iic_com|cnt_delay[7] ; clk        ; clk      ; None                        ; None                      ; 6.806 ns                ;
+; N/A                                     ; 133.10 MHz ( period = 7.513 ns )                    ; iic_com:iic_com|cstate.ADD3   ; iic_com:iic_com|num[0]       ; clk        ; clk      ; None                        ; None                      ; 6.804 ns                ;
+; N/A                                     ; 133.14 MHz ( period = 7.511 ns )                    ; led_seg7:led_seg7|cnt[5]      ; iic_com:iic_com|cstate.STOP2 ; clk        ; clk      ; None                        ; None                      ; 6.802 ns                ;
+; N/A                                     ; 133.24 MHz ( period = 7.505 ns )                    ; iic_com:iic_com|cnt.011       ; iic_com:iic_com|cstate.IDLE  ; clk        ; clk      ; None                        ; None                      ; 6.796 ns                ;
+; N/A                                     ; 133.26 MHz ( period = 7.504 ns )                    ; iic_com:iic_com|cnt.001       ; iic_com:iic_com|read_data[3] ; clk        ; clk      ; None                        ; None                      ; 6.795 ns                ;
+; N/A                                     ; 133.28 MHz ( period = 7.503 ns )                    ; iic_com:iic_com|cnt.001       ; iic_com:iic_com|read_data[2] ; clk        ; clk      ; None                        ; None                      ; 6.794 ns                ;
+; N/A                                     ; 133.71 MHz ( period = 7.479 ns )                    ; iic_com:iic_com|cstate.START2 ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 6.770 ns                ;
+; N/A                                     ; 133.73 MHz ( period = 7.478 ns )                    ; led_seg7:led_seg7|cnt[6]      ; iic_com:iic_com|sw2_r        ; clk        ; clk      ; None                        ; None                      ; 6.769 ns                ;
+; N/A                                     ; 133.73 MHz ( period = 7.478 ns )                    ; led_seg7:led_seg7|cnt[6]      ; iic_com:iic_com|sw1_r        ; clk        ; clk      ; None                        ; None                      ; 6.769 ns                ;
+; N/A                                     ; 133.74 MHz ( period = 7.477 ns )                    ; iic_com:iic_com|cstate.DATA   ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 6.768 ns                ;
+; N/A                                     ; 133.80 MHz ( period = 7.474 ns )                    ; iic_com:iic_com|cnt_20ms[9]   ; iic_com:iic_com|cstate.IDLE  ; clk        ; clk      ; None                        ; None                      ; 6.765 ns                ;
+; N/A                                     ; 133.98 MHz ( period = 7.464 ns )                    ; led_seg7:led_seg7|cnt[0]      ; iic_com:iic_com|cstate.STOP2 ; clk        ; clk      ; None                        ; None                      ; 6.755 ns                ;
+; N/A                                     ; 134.05 MHz ( period = 7.460 ns )                    ; iic_com:iic_com|sw2_r         ; iic_com:iic_com|num[3]       ; clk        ; clk      ; None                        ; None                      ; 6.751 ns                ;
+; N/A                                     ; 134.16 MHz ( period = 7.454 ns )                    ; iic_com:iic_com|cnt.001       ; iic_com:iic_com|num[3]       ; clk        ; clk      ; None                        ; None                      ; 6.745 ns                ;
+; N/A                                     ; 134.19 MHz ( period = 7.452 ns )                    ; iic_com:iic_com|num[2]        ; iic_com:iic_com|cstate.ACK3  ; clk        ; clk      ; None                        ; None                      ; 6.743 ns                ;
+; N/A                                     ; 134.34 MHz ( period = 7.444 ns )                    ; iic_com:iic_com|cnt_20ms[18]  ; iic_com:iic_com|cstate.IDLE  ; clk        ; clk      ; None                        ; None                      ; 6.735 ns                ;
+; N/A                                     ; 134.37 MHz ( period = 7.442 ns )                    ; led_seg7:led_seg7|cnt[1]      ; iic_com:iic_com|cnt_delay[8] ; clk        ; clk      ; None                        ; None                      ; 6.733 ns                ;
+; N/A                                     ; 134.46 MHz ( period = 7.437 ns )                    ; led_seg7:led_seg7|cnt[5]      ; iic_com:iic_com|sw2_r        ; clk        ; clk      ; None                        ; None                      ; 6.728 ns                ;
+; N/A                                     ; 134.46 MHz ( period = 7.437 ns )                    ; led_seg7:led_seg7|cnt[5]      ; iic_com:iic_com|sw1_r        ; clk        ; clk      ; None                        ; None                      ; 6.728 ns                ;
+; N/A                                     ; 134.79 MHz ( period = 7.419 ns )                    ; iic_com:iic_com|num[2]        ; iic_com:iic_com|read_data[3] ; clk        ; clk      ; None                        ; None                      ; 6.710 ns                ;
+; N/A                                     ; 134.81 MHz ( period = 7.418 ns )                    ; iic_com:iic_com|num[2]        ; iic_com:iic_com|read_data[2] ; clk        ; clk      ; None                        ; None                      ; 6.709 ns                ;
+; N/A                                     ; 135.96 MHz ( period = 7.355 ns )                    ; iic_com:iic_com|cnt_20ms[19]  ; iic_com:iic_com|cstate.STOP2 ; clk        ; clk      ; None                        ; None                      ; 6.646 ns                ;
+; N/A                                     ; 135.98 MHz ( period = 7.354 ns )                    ; iic_com:iic_com|cnt_delay[3]  ; iic_com:iic_com|cnt_delay[4] ; clk        ; clk      ; None                        ; None                      ; 6.645 ns                ;
+; N/A                                     ; 136.30 MHz ( period = 7.337 ns )                    ; iic_com:iic_com|cstate.ADD1   ; iic_com:iic_com|num[0]       ; clk        ; clk      ; None                        ; None                      ; 6.628 ns                ;
+; N/A                                     ; 136.61 MHz ( period = 7.320 ns )                    ; led_seg7:led_seg7|cnt[0]      ; iic_com:iic_com|cnt_delay[3] ; clk        ; clk      ; None                        ; None                      ; 6.611 ns                ;
+; N/A                                     ; 136.82 MHz ( period = 7.309 ns )                    ; iic_com:iic_com|num[3]        ; iic_com:iic_com|read_data[7] ; clk        ; clk      ; None                        ; None                      ; 6.600 ns                ;
+; N/A                                     ; 136.89 MHz ( period = 7.305 ns )                    ; iic_com:iic_com|num[3]        ; iic_com:iic_com|read_data[6] ; clk        ; clk      ; None                        ; None                      ; 6.596 ns                ;
+; N/A                                     ; 137.19 MHz ( period = 7.289 ns )                    ; led_seg7:led_seg7|cnt[1]      ; iic_com:iic_com|cnt_delay[6] ; clk        ; clk      ; None                        ; None                      ; 6.580 ns                ;
+; N/A                                     ; 137.19 MHz ( period = 7.289 ns )                    ; iic_com:iic_com|num[3]        ; iic_com:iic_com|cstate.ACK3  ; clk        ; clk      ; None                        ; None                      ; 6.580 ns                ;
+; N/A                                     ; 137.34 MHz ( period = 7.281 ns )                    ; iic_com:iic_com|cnt_20ms[19]  ; iic_com:iic_com|sw2_r        ; clk        ; clk      ; None                        ; None                      ; 6.572 ns                ;
+; N/A                                     ; 137.34 MHz ( period = 7.281 ns )                    ; iic_com:iic_com|cnt_20ms[19]  ; iic_com:iic_com|sw1_r        ; clk        ; clk      ; None                        ; None                      ; 6.572 ns                ;
+; N/A                                     ; 137.72 MHz ( period = 7.261 ns )                    ; iic_com:iic_com|cnt_delay[3]  ; iic_com:iic_com|cnt_delay[5] ; clk        ; clk      ; None                        ; None                      ; 6.552 ns                ;
+; N/A                                     ; 137.74 MHz ( period = 7.260 ns )                    ; iic_com:iic_com|cnt_delay[3]  ; iic_com:iic_com|cnt_delay[6] ; clk        ; clk      ; None                        ; None                      ; 6.551 ns                ;
+; N/A                                     ; 137.76 MHz ( period = 7.259 ns )                    ; iic_com:iic_com|cstate.ACK2   ; iic_com:iic_com|sda_link     ; clk        ; clk      ; None                        ; None                      ; 6.550 ns                ;
+; N/A                                     ; 137.87 MHz ( period = 7.253 ns )                    ; iic_com:iic_com|sw2_r         ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 6.544 ns                ;
+; N/A                                     ; 138.12 MHz ( period = 7.240 ns )                    ; iic_com:iic_com|cstate.DATA   ; iic_com:iic_com|read_data[1] ; clk        ; clk      ; None                        ; None                      ; 6.531 ns                ;
+; N/A                                     ; 138.18 MHz ( period = 7.237 ns )                    ; iic_com:iic_com|cnt.001       ; iic_com:iic_com|sda_link     ; clk        ; clk      ; None                        ; None                      ; 6.528 ns                ;
+; N/A                                     ; 138.22 MHz ( period = 7.235 ns )                    ; iic_com:iic_com|cnt_20ms[17]  ; iic_com:iic_com|cstate.STOP2 ; clk        ; clk      ; None                        ; None                      ; 6.526 ns                ;
+; N/A                                     ; 138.27 MHz ( period = 7.232 ns )                    ; iic_com:iic_com|cnt_delay[3]  ; iic_com:iic_com|cnt_delay[8] ; clk        ; clk      ; None                        ; None                      ; 6.523 ns                ;
+; N/A                                     ; 138.35 MHz ( period = 7.228 ns )                    ; iic_com:iic_com|sw2_r         ; iic_com:iic_com|read_data[7] ; clk        ; clk      ; None                        ; None                      ; 6.519 ns                ;
+; N/A                                     ; 138.43 MHz ( period = 7.224 ns )                    ; iic_com:iic_com|sw2_r         ; iic_com:iic_com|read_data[6] ; clk        ; clk      ; None                        ; None                      ; 6.515 ns                ;
+; N/A                                     ; 138.50 MHz ( period = 7.220 ns )                    ; iic_com:iic_com|num[1]        ; iic_com:iic_com|num[3]       ; clk        ; clk      ; None                        ; None                      ; 6.511 ns                ;
+; N/A                                     ; 138.60 MHz ( period = 7.215 ns )                    ; iic_com:iic_com|cstate.ADD2   ; iic_com:iic_com|num[0]       ; clk        ; clk      ; None                        ; None                      ; 6.506 ns                ;
+; N/A                                     ; 138.70 MHz ( period = 7.210 ns )                    ; iic_com:iic_com|cstate.START1 ; iic_com:iic_com|sda_r        ; clk        ; clk      ; None                        ; None                      ; 6.501 ns                ;
+; N/A                                     ; 138.79 MHz ( period = 7.205 ns )                    ; iic_com:iic_com|cstate.ADD3   ; iic_com:iic_com|num[3]       ; clk        ; clk      ; None                        ; None                      ; 6.496 ns                ;
+; N/A                                     ; 138.81 MHz ( period = 7.204 ns )                    ; iic_com:iic_com|cstate.ADD3   ; iic_com:iic_com|num[1]       ; clk        ; clk      ; None                        ; None                      ; 6.495 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; iic_com:iic_com|cnt.010       ; iic_com:iic_com|db_r[0]      ; clk        ; clk      ; None                        ; None                      ; 6.491 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; iic_com:iic_com|cnt.010       ; iic_com:iic_com|db_r[7]      ; clk        ; clk      ; None                        ; None                      ; 6.491 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; iic_com:iic_com|cnt.010       ; iic_com:iic_com|db_r[6]      ; clk        ; clk      ; None                        ; None                      ; 6.491 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; iic_com:iic_com|cnt.010       ; iic_com:iic_com|db_r[5]      ; clk        ; clk      ; None                        ; None                      ; 6.491 ns                ;
+; N/A                                     ; 138.97 MHz ( period = 7.196 ns )                    ; iic_com:iic_com|cstate.ADD3   ; iic_com:iic_com|num[2]       ; clk        ; clk      ; None                        ; None                      ; 6.487 ns                ;
+; N/A                                     ; 139.26 MHz ( period = 7.181 ns )                    ; iic_com:iic_com|cstate.ADD2   ; iic_com:iic_com|num[2]       ; clk        ; clk      ; None                        ; None                      ; 6.472 ns                ;
+; N/A                                     ; 139.26 MHz ( period = 7.181 ns )                    ; iic_com:iic_com|cstate.ADD2   ; iic_com:iic_com|num[1]       ; clk        ; clk      ; None                        ; None                      ; 6.472 ns                ;
+; N/A                                     ; 139.26 MHz ( period = 7.181 ns )                    ; led_seg7:led_seg7|cnt[1]      ; iic_com:iic_com|cnt_20ms[10] ; clk        ; clk      ; None                        ; None                      ; 6.472 ns                ;
+; N/A                                     ; 139.26 MHz ( period = 7.181 ns )                    ; led_seg7:led_seg7|cnt[1]      ; iic_com:iic_com|cnt_20ms[11] ; clk        ; clk      ; None                        ; None                      ; 6.472 ns                ;
+; N/A                                     ; 139.26 MHz ( period = 7.181 ns )                    ; led_seg7:led_seg7|cnt[1]      ; iic_com:iic_com|cnt_20ms[12] ; clk        ; clk      ; None                        ; None                      ; 6.472 ns                ;
+; N/A                                     ; 139.26 MHz ( period = 7.181 ns )                    ; led_seg7:led_seg7|cnt[1]      ; iic_com:iic_com|cnt_20ms[13] ; clk        ; clk      ; None                        ; None                      ; 6.472 ns                ;
+; N/A                                     ; 139.26 MHz ( period = 7.181 ns )                    ; led_seg7:led_seg7|cnt[1]      ; iic_com:iic_com|cnt_20ms[14] ; clk        ; clk      ; None                        ; None                      ; 6.472 ns                ;
+; N/A                                     ; 139.39 MHz ( period = 7.174 ns )                    ; iic_com:iic_com|num[2]        ; iic_com:iic_com|cstate.DATA  ; clk        ; clk      ; None                        ; None                      ; 6.465 ns                ;
+; N/A                                     ; 139.49 MHz ( period = 7.169 ns )                    ; iic_com:iic_com|cnt_20ms[11]  ; iic_com:iic_com|cstate.STOP2 ; clk        ; clk      ; None                        ; None                      ; 6.460 ns                ;
+; N/A                                     ; 139.51 MHz ( period = 7.168 ns )                    ; led_seg7:led_seg7|cnt[1]      ; iic_com:iic_com|cnt_20ms[15] ; clk        ; clk      ; None                        ; None                      ; 6.459 ns                ;
+; N/A                                     ; 139.51 MHz ( period = 7.168 ns )                    ; led_seg7:led_seg7|cnt[1]      ; iic_com:iic_com|cnt_20ms[16] ; clk        ; clk      ; None                        ; None                      ; 6.459 ns                ;
+; N/A                                     ; 139.51 MHz ( period = 7.168 ns )                    ; led_seg7:led_seg7|cnt[1]      ; iic_com:iic_com|cnt_20ms[17] ; clk        ; clk      ; None                        ; None                      ; 6.459 ns                ;
+; N/A                                     ; 139.51 MHz ( period = 7.168 ns )                    ; led_seg7:led_seg7|cnt[1]      ; iic_com:iic_com|cnt_20ms[18] ; clk        ; clk      ; None                        ; None                      ; 6.459 ns                ;
+; N/A                                     ; 139.51 MHz ( period = 7.168 ns )                    ; led_seg7:led_seg7|cnt[1]      ; iic_com:iic_com|cnt_20ms[19] ; clk        ; clk      ; None                        ; None                      ; 6.459 ns                ;
+; N/A                                     ; 139.65 MHz ( period = 7.161 ns )                    ; iic_com:iic_com|cnt_20ms[17]  ; iic_com:iic_com|sw2_r        ; clk        ; clk      ; None                        ; None                      ; 6.452 ns                ;
+; N/A                                     ; 139.65 MHz ( period = 7.161 ns )                    ; iic_com:iic_com|cnt_20ms[17]  ; iic_com:iic_com|sw1_r        ; clk        ; clk      ; None                        ; None                      ; 6.452 ns                ;
+; N/A                                     ; 139.68 MHz ( period = 7.159 ns )                    ; led_seg7:led_seg7|cnt[4]      ; iic_com:iic_com|cstate.IDLE  ; clk        ; clk      ; None                        ; None                      ; 6.450 ns                ;
+; N/A                                     ; 139.68 MHz ( period = 7.159 ns )                    ; iic_com:iic_com|num[2]        ; iic_com:iic_com|cstate.ADD1  ; clk        ; clk      ; None                        ; None                      ; 6.450 ns                ;
+; N/A                                     ; 139.76 MHz ( period = 7.155 ns )                    ; iic_com:iic_com|num[0]        ; iic_com:iic_com|cstate.ACK3  ; clk        ; clk      ; None                        ; None                      ; 6.446 ns                ;
+; N/A                                     ; 139.98 MHz ( period = 7.144 ns )                    ; led_seg7:led_seg7|cnt[1]      ; iic_com:iic_com|cnt_delay[4] ; clk        ; clk      ; None                        ; None                      ; 6.435 ns                ;
+; N/A                                     ; 140.08 MHz ( period = 7.139 ns )                    ; iic_com:iic_com|cnt_delay[3]  ; iic_com:iic_com|cnt_delay[2] ; clk        ; clk      ; None                        ; None                      ; 6.430 ns                ;
+; N/A                                     ; 140.25 MHz ( period = 7.130 ns )                    ; iic_com:iic_com|cnt_20ms[16]  ; iic_com:iic_com|cstate.STOP2 ; clk        ; clk      ; None                        ; None                      ; 6.421 ns                ;
+; N/A                                     ; 140.27 MHz ( period = 7.129 ns )                    ; iic_com:iic_com|cnt.001       ; iic_com:iic_com|read_data[1] ; clk        ; clk      ; None                        ; None                      ; 6.420 ns                ;
+; N/A                                     ; 140.77 MHz ( period = 7.104 ns )                    ; iic_com:iic_com|cnt_20ms[12]  ; iic_com:iic_com|cstate.IDLE  ; clk        ; clk      ; None                        ; None                      ; 6.395 ns                ;
+; N/A                                     ; 140.79 MHz ( period = 7.103 ns )                    ; led_seg7:led_seg7|cnt[0]      ; iic_com:iic_com|cnt_delay[7] ; clk        ; clk      ; None                        ; None                      ; 6.394 ns                ;
+; N/A                                     ; 140.94 MHz ( period = 7.095 ns )                    ; iic_com:iic_com|cnt_20ms[11]  ; iic_com:iic_com|sw2_r        ; clk        ; clk      ; None                        ; None                      ; 6.386 ns                ;
+; N/A                                     ; 140.94 MHz ( period = 7.095 ns )                    ; iic_com:iic_com|cnt_20ms[11]  ; iic_com:iic_com|sw1_r        ; clk        ; clk      ; None                        ; None                      ; 6.386 ns                ;
+; N/A                                     ; 141.72 MHz ( period = 7.056 ns )                    ; iic_com:iic_com|cnt_20ms[16]  ; iic_com:iic_com|sw2_r        ; clk        ; clk      ; None                        ; None                      ; 6.347 ns                ;
+; N/A                                     ; 141.72 MHz ( period = 7.056 ns )                    ; iic_com:iic_com|cnt_20ms[16]  ; iic_com:iic_com|sw1_r        ; clk        ; clk      ; None                        ; None                      ; 6.347 ns                ;
+; N/A                                     ; 142.19 MHz ( period = 7.033 ns )                    ; iic_com:iic_com|cnt_delay[3]  ; iic_com:iic_com|cnt_delay[3] ; clk        ; clk      ; None                        ; None                      ; 6.324 ns                ;
+; N/A                                     ; 142.27 MHz ( period = 7.029 ns )                    ; iic_com:iic_com|cstate.ADD1   ; iic_com:iic_com|num[3]       ; clk        ; clk      ; None                        ; None                      ; 6.320 ns                ;
+; N/A                                     ; 142.29 MHz ( period = 7.028 ns )                    ; iic_com:iic_com|cstate.ADD1   ; iic_com:iic_com|num[1]       ; clk        ; clk      ; None                        ; None                      ; 6.319 ns                ;
+; N/A                                     ; 142.45 MHz ( period = 7.020 ns )                    ; iic_com:iic_com|cstate.ADD1   ; iic_com:iic_com|num[2]       ; clk        ; clk      ; None                        ; None                      ; 6.311 ns                ;
+; N/A                                     ; 142.63 MHz ( period = 7.011 ns )                    ; iic_com:iic_com|num[3]        ; iic_com:iic_com|cstate.DATA  ; clk        ; clk      ; None                        ; None                      ; 6.302 ns                ;
+; N/A                                     ; 142.78 MHz ( period = 7.004 ns )                    ; iic_com:iic_com|cstate.DATA   ; iic_com:iic_com|num[3]       ; clk        ; clk      ; None                        ; None                      ; 6.295 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                               ;                              ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-------------------------------+------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; tsu                                                                                 ;
++-------+--------------+------------+-------+------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From  ; To                           ; To Clock ;
++-------+--------------+------------+-------+------------------------------+----------+
+; N/A   ; None         ; 3.004 ns   ; rst_n ; iic_com:iic_com|db_r[0]      ; clk      ;
+; N/A   ; None         ; 3.004 ns   ; rst_n ; iic_com:iic_com|db_r[7]      ; clk      ;
+; N/A   ; None         ; 3.004 ns   ; rst_n ; iic_com:iic_com|db_r[6]      ; clk      ;
+; N/A   ; None         ; 3.004 ns   ; rst_n ; iic_com:iic_com|db_r[5]      ; clk      ;
+; N/A   ; None         ; 2.365 ns   ; sda   ; iic_com:iic_com|read_data[7] ; clk      ;
+; N/A   ; None         ; 2.361 ns   ; sda   ; iic_com:iic_com|read_data[6] ; clk      ;
+; N/A   ; None         ; 2.358 ns   ; sda   ; iic_com:iic_com|read_data[2] ; clk      ;
+; N/A   ; None         ; 2.355 ns   ; sda   ; iic_com:iic_com|read_data[3] ; clk      ;
+; N/A   ; None         ; 2.351 ns   ; sda   ; iic_com:iic_com|read_data[4] ; clk      ;
+; N/A   ; None         ; 2.348 ns   ; sda   ; iic_com:iic_com|read_data[0] ; clk      ;
+; N/A   ; None         ; 2.343 ns   ; sda   ; iic_com:iic_com|read_data[5] ; clk      ;
+; N/A   ; None         ; 2.340 ns   ; sda   ; iic_com:iic_com|read_data[1] ; clk      ;
+; N/A   ; None         ; 2.022 ns   ; sw2   ; iic_com:iic_com|sw2_r        ; clk      ;
+; N/A   ; None         ; 1.832 ns   ; sw1   ; iic_com:iic_com|sw1_r        ; clk      ;
++-------+--------------+------------+-------+------------------------------+----------+
+
+
++-----------------------------------------------------------------------------------------+
+; tco                                                                                     ;
++-------+--------------+------------+-----------------------------+----------+------------+
+; Slack ; Required tco ; Actual tco ; From                        ; To       ; From Clock ;
++-------+--------------+------------+-----------------------------+----------+------------+
+; N/A   ; None         ; 8.853 ns   ; iic_com:iic_com|scl_r       ; scl      ; clk        ;
+; N/A   ; None         ; 8.800 ns   ; iic_com:iic_com|sda_r       ; sda      ; clk        ;
+; N/A   ; None         ; 8.096 ns   ; led_seg7:led_seg7|sm_dbr[5] ; sm_db[5] ; clk        ;
+; N/A   ; None         ; 8.095 ns   ; led_seg7:led_seg7|sm_dbr[4] ; sm_db[4] ; clk        ;
+; N/A   ; None         ; 8.081 ns   ; led_seg7:led_seg7|sm_dbr[0] ; sm_db[0] ; clk        ;
+; N/A   ; None         ; 8.076 ns   ; led_seg7:led_seg7|sm_dbr[6] ; sm_db[6] ; clk        ;
+; N/A   ; None         ; 8.020 ns   ; led_seg7:led_seg7|sm_dbr[1] ; sm_db[1] ; clk        ;
+; N/A   ; None         ; 7.997 ns   ; led_seg7:led_seg7|cnt[7]    ; sm_cs2_n ; clk        ;
+; N/A   ; None         ; 7.997 ns   ; led_seg7:led_seg7|cnt[7]    ; sm_cs1_n ; clk        ;
+; N/A   ; None         ; 7.979 ns   ; iic_com:iic_com|sda_link    ; sda      ; clk        ;
+; N/A   ; None         ; 6.858 ns   ; led_seg7:led_seg7|sm_dbr[3] ; sm_db[3] ; clk        ;
+; N/A   ; None         ; 6.858 ns   ; led_seg7:led_seg7|sm_dbr[2] ; sm_db[2] ; clk        ;
++-------+--------------+------------+-----------------------------+----------+------------+
+
+
++-------------------------------------------------------------------------------------------+
+; th                                                                                        ;
++---------------+-------------+-----------+-------+------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From  ; To                           ; To Clock ;
++---------------+-------------+-----------+-------+------------------------------+----------+
+; N/A           ; None        ; -1.278 ns ; sw1   ; iic_com:iic_com|sw1_r        ; clk      ;
+; N/A           ; None        ; -1.468 ns ; sw2   ; iic_com:iic_com|sw2_r        ; clk      ;
+; N/A           ; None        ; -1.786 ns ; sda   ; iic_com:iic_com|read_data[1] ; clk      ;
+; N/A           ; None        ; -1.789 ns ; sda   ; iic_com:iic_com|read_data[5] ; clk      ;
+; N/A           ; None        ; -1.794 ns ; sda   ; iic_com:iic_com|read_data[0] ; clk      ;
+; N/A           ; None        ; -1.797 ns ; sda   ; iic_com:iic_com|read_data[4] ; clk      ;
+; N/A           ; None        ; -1.801 ns ; sda   ; iic_com:iic_com|read_data[3] ; clk      ;
+; N/A           ; None        ; -1.804 ns ; sda   ; iic_com:iic_com|read_data[2] ; clk      ;
+; N/A           ; None        ; -1.807 ns ; sda   ; iic_com:iic_com|read_data[6] ; clk      ;
+; N/A           ; None        ; -1.811 ns ; sda   ; iic_com:iic_com|read_data[7] ; clk      ;
+; N/A           ; None        ; -2.450 ns ; rst_n ; iic_com:iic_com|db_r[0]      ; clk      ;
+; N/A           ; None        ; -2.450 ns ; rst_n ; iic_com:iic_com|db_r[7]      ; clk      ;
+; N/A           ; None        ; -2.450 ns ; rst_n ; iic_com:iic_com|db_r[6]      ; clk      ;
+; N/A           ; None        ; -2.450 ns ; rst_n ; iic_com:iic_com|db_r[5]      ; clk      ;
++---------------+-------------+-----------+-------+------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Tue Aug 04 21:28:17 2009
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off iic_top -c iic_top
+Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 90.79 MHz between source register "iic_com:iic_com|num[0]" and destination register "iic_com:iic_com|sda_r" (period= 11.015 ns)
+    Info: + Longest register to register delay is 10.306 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X5_Y1_N5; Fanout = 14; REG Node = 'iic_com:iic_com|num[0]'
+        Info: 2: + IC(2.144 ns) + CELL(0.740 ns) = 2.884 ns; Loc. = LC_X4_Y2_N0; Fanout = 2; COMB Node = 'iic_com:iic_com|Decoder1~8'
+        Info: 3: + IC(1.782 ns) + CELL(0.914 ns) = 5.580 ns; Loc. = LC_X4_Y1_N8; Fanout = 2; COMB Node = 'iic_com:iic_com|Mux0~4'
+        Info: 4: + IC(0.712 ns) + CELL(0.200 ns) = 6.492 ns; Loc. = LC_X4_Y1_N3; Fanout = 2; COMB Node = 'iic_com:iic_com|sda_r~12'
+        Info: 5: + IC(2.004 ns) + CELL(0.914 ns) = 9.410 ns; Loc. = LC_X4_Y4_N3; Fanout = 1; COMB Node = 'iic_com:iic_com|Selector1~10'
+        Info: 6: + IC(0.305 ns) + CELL(0.591 ns) = 10.306 ns; Loc. = LC_X4_Y4_N4; Fanout = 8; REG Node = 'iic_com:iic_com|sda_r'
+        Info: Total cell delay = 3.359 ns ( 32.59 % )
+        Info: Total interconnect delay = 6.947 ns ( 67.41 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 3.348 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 72; CLK Node = 'clk'
+            Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X4_Y4_N4; Fanout = 8; REG Node = 'iic_com:iic_com|sda_r'
+            Info: Total cell delay = 2.081 ns ( 62.16 % )
+            Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+        Info: - Longest clock path from clock "clk" to source register is 3.348 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 72; CLK Node = 'clk'
+            Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X5_Y1_N5; Fanout = 14; REG Node = 'iic_com:iic_com|num[0]'
+            Info: Total cell delay = 2.081 ns ( 62.16 % )
+            Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Info: tsu for register "iic_com:iic_com|db_r[0]" (data pin = "rst_n", clock pin = "clk") is 3.004 ns
+    Info: + Longest pin to register delay is 6.019 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_44; Fanout = 62; PIN Node = 'rst_n'
+        Info: 2: + IC(2.231 ns) + CELL(0.740 ns) = 4.103 ns; Loc. = LC_X5_Y3_N6; Fanout = 4; COMB Node = 'iic_com:iic_com|db_r[7]~42'
+        Info: 3: + IC(0.673 ns) + CELL(1.243 ns) = 6.019 ns; Loc. = LC_X5_Y3_N7; Fanout = 1; REG Node = 'iic_com:iic_com|db_r[0]'
+        Info: Total cell delay = 3.115 ns ( 51.75 % )
+        Info: Total interconnect delay = 2.904 ns ( 48.25 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 3.348 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 72; CLK Node = 'clk'
+        Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X5_Y3_N7; Fanout = 1; REG Node = 'iic_com:iic_com|db_r[0]'
+        Info: Total cell delay = 2.081 ns ( 62.16 % )
+        Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+Info: tco from clock "clk" to destination pin "scl" through register "iic_com:iic_com|scl_r" is 8.853 ns
+    Info: + Longest clock path from clock "clk" to source register is 3.348 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 72; CLK Node = 'clk'
+        Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X5_Y4_N8; Fanout = 2; REG Node = 'iic_com:iic_com|scl_r'
+        Info: Total cell delay = 2.081 ns ( 62.16 % )
+        Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 5.129 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X5_Y4_N8; Fanout = 2; REG Node = 'iic_com:iic_com|scl_r'
+        Info: 2: + IC(2.807 ns) + CELL(2.322 ns) = 5.129 ns; Loc. = PIN_17; Fanout = 0; PIN Node = 'scl'
+        Info: Total cell delay = 2.322 ns ( 45.27 % )
+        Info: Total interconnect delay = 2.807 ns ( 54.73 % )
+Info: th for register "iic_com:iic_com|sw1_r" (data pin = "sw1", clock pin = "clk") is -1.278 ns
+    Info: + Longest clock path from clock "clk" to destination register is 3.348 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.163 ns) = 1.163 ns; Loc. = PIN_12; Fanout = 72; CLK Node = 'clk'
+        Info: 2: + IC(1.267 ns) + CELL(0.918 ns) = 3.348 ns; Loc. = LC_X6_Y3_N1; Fanout = 10; REG Node = 'iic_com:iic_com|sw1_r'
+        Info: Total cell delay = 2.081 ns ( 62.16 % )
+        Info: Total interconnect delay = 1.267 ns ( 37.84 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 4.847 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_37; Fanout = 1; PIN Node = 'sw1'
+        Info: 2: + IC(2.654 ns) + CELL(1.061 ns) = 4.847 ns; Loc. = LC_X6_Y3_N1; Fanout = 10; REG Node = 'iic_com:iic_com|sw1_r'
+        Info: Total cell delay = 2.193 ns ( 45.24 % )
+        Info: Total interconnect delay = 2.654 ns ( 54.76 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 135 megabytes
+    Info: Processing ended: Tue Aug 04 21:28:20 2009
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

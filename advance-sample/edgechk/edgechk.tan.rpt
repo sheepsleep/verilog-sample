@@ -1,0 +1,208 @@
+Classic Timing Analyzer report for edgechk
+Fri Oct 23 00:37:41 2009
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'sys_clk'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                            ;
++------------------------------+-------+---------------+------------------------------------------------+------------------+------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                                    ; From             ; To               ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+------------------------------------------------+------------------+------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 3.908 ns                                       ; ctrl_signal      ; ctrl_signal_dly1 ; --         ; sys_clk  ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 7.723 ns                                       ; ctrl_signal_dly1 ; negedge_pulse    ; sys_clk    ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -3.642 ns                                      ; ctrl_signal      ; ctrl_signal_dly1 ; --         ; sys_clk  ; 0            ;
+; Clock Setup: 'sys_clk'       ; N/A   ; None          ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; ctrl_signal_dly1 ; ctrl_signal_dly2 ; sys_clk    ; sys_clk  ; 0            ;
+; Total number of failed paths ;       ;               ;                                                ;                  ;                  ;            ;          ; 0            ;
++------------------------------+-------+---------------+------------------------------------------------+------------------+------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EP2C5T144C8        ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; sys_clk         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'sys_clk'                                                                                                                                                                                   ;
++-------+------------------------------------------------+------------------+------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From             ; To               ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+------------------+------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; Restricted to 340.02 MHz ( period = 2.941 ns ) ; ctrl_signal_dly1 ; ctrl_signal_dly2 ; sys_clk    ; sys_clk  ; None                        ; None                      ; 0.912 ns                ;
++-------+------------------------------------------------+------------------+------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------+
+; tsu                                                                           ;
++-------+--------------+------------+-------------+------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From        ; To               ; To Clock ;
++-------+--------------+------------+-------------+------------------+----------+
+; N/A   ; None         ; 3.908 ns   ; ctrl_signal ; ctrl_signal_dly1 ; sys_clk  ;
++-------+--------------+------------+-------------+------------------+----------+
+
+
++-----------------------------------------------------------------------------------+
+; tco                                                                               ;
++-------+--------------+------------+------------------+---------------+------------+
+; Slack ; Required tco ; Actual tco ; From             ; To            ; From Clock ;
++-------+--------------+------------+------------------+---------------+------------+
+; N/A   ; None         ; 7.723 ns   ; ctrl_signal_dly1 ; negedge_pulse ; sys_clk    ;
+; N/A   ; None         ; 7.552 ns   ; ctrl_signal_dly1 ; edge_pulse    ; sys_clk    ;
+; N/A   ; None         ; 7.375 ns   ; ctrl_signal_dly2 ; posedge_pulse ; sys_clk    ;
+; N/A   ; None         ; 7.370 ns   ; ctrl_signal_dly2 ; edge_pulse    ; sys_clk    ;
+; N/A   ; None         ; 7.133 ns   ; ctrl_signal_dly1 ; posedge_pulse ; sys_clk    ;
+; N/A   ; None         ; 7.124 ns   ; ctrl_signal_dly2 ; negedge_pulse ; sys_clk    ;
++-------+--------------+------------+------------------+---------------+------------+
+
+
++-------------------------------------------------------------------------------------+
+; th                                                                                  ;
++---------------+-------------+-----------+-------------+------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From        ; To               ; To Clock ;
++---------------+-------------+-----------+-------------+------------------+----------+
+; N/A           ; None        ; -3.642 ns ; ctrl_signal ; ctrl_signal_dly1 ; sys_clk  ;
++---------------+-------------+-----------+-------------+------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Fri Oct 23 00:37:40 2009
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off edgechk -c edgechk --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "sys_clk" is an undefined clock
+Info: Clock "sys_clk" Internal fmax is restricted to 340.02 MHz between source register "ctrl_signal_dly1" and destination register "ctrl_signal_dly2"
+    Info: fmax restricted to clock pin edge rate 2.941 ns. Expand message to see actual delay path.
+        Info: + Longest register to register delay is 0.912 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X1_Y5_N5; Fanout = 4; REG Node = 'ctrl_signal_dly1'
+            Info: 2: + IC(0.452 ns) + CELL(0.460 ns) = 0.912 ns; Loc. = LCFF_X1_Y5_N1; Fanout = 3; REG Node = 'ctrl_signal_dly2'
+            Info: Total cell delay = 0.460 ns ( 50.44 % )
+            Info: Total interconnect delay = 0.452 ns ( 49.56 % )
+        Info: - Smallest clock skew is 0.000 ns
+            Info: + Shortest clock path from clock "sys_clk" to destination register is 2.732 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_17; Fanout = 1; CLK Node = 'sys_clk'
+                Info: 2: + IC(0.143 ns) + CELL(0.000 ns) = 1.243 ns; Loc. = CLKCTRL_G2; Fanout = 2; COMB Node = 'sys_clk~clkctrl'
+                Info: 3: + IC(0.823 ns) + CELL(0.666 ns) = 2.732 ns; Loc. = LCFF_X1_Y5_N1; Fanout = 3; REG Node = 'ctrl_signal_dly2'
+                Info: Total cell delay = 1.766 ns ( 64.64 % )
+                Info: Total interconnect delay = 0.966 ns ( 35.36 % )
+            Info: - Longest clock path from clock "sys_clk" to source register is 2.732 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_17; Fanout = 1; CLK Node = 'sys_clk'
+                Info: 2: + IC(0.143 ns) + CELL(0.000 ns) = 1.243 ns; Loc. = CLKCTRL_G2; Fanout = 2; COMB Node = 'sys_clk~clkctrl'
+                Info: 3: + IC(0.823 ns) + CELL(0.666 ns) = 2.732 ns; Loc. = LCFF_X1_Y5_N5; Fanout = 4; REG Node = 'ctrl_signal_dly1'
+                Info: Total cell delay = 1.766 ns ( 64.64 % )
+                Info: Total interconnect delay = 0.966 ns ( 35.36 % )
+        Info: + Micro clock to output delay of source is 0.304 ns
+        Info: + Micro setup delay of destination is -0.040 ns
+Info: tsu for register "ctrl_signal_dly1" (data pin = "ctrl_signal", clock pin = "sys_clk") is 3.908 ns
+    Info: + Longest pin to register delay is 6.680 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.955 ns) = 0.955 ns; Loc. = PIN_26; Fanout = 1; PIN Node = 'ctrl_signal'
+        Info: 2: + IC(5.265 ns) + CELL(0.460 ns) = 6.680 ns; Loc. = LCFF_X1_Y5_N5; Fanout = 4; REG Node = 'ctrl_signal_dly1'
+        Info: Total cell delay = 1.415 ns ( 21.18 % )
+        Info: Total interconnect delay = 5.265 ns ( 78.82 % )
+    Info: + Micro setup delay of destination is -0.040 ns
+    Info: - Shortest clock path from clock "sys_clk" to destination register is 2.732 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_17; Fanout = 1; CLK Node = 'sys_clk'
+        Info: 2: + IC(0.143 ns) + CELL(0.000 ns) = 1.243 ns; Loc. = CLKCTRL_G2; Fanout = 2; COMB Node = 'sys_clk~clkctrl'
+        Info: 3: + IC(0.823 ns) + CELL(0.666 ns) = 2.732 ns; Loc. = LCFF_X1_Y5_N5; Fanout = 4; REG Node = 'ctrl_signal_dly1'
+        Info: Total cell delay = 1.766 ns ( 64.64 % )
+        Info: Total interconnect delay = 0.966 ns ( 35.36 % )
+Info: tco from clock "sys_clk" to destination pin "negedge_pulse" through register "ctrl_signal_dly1" is 7.723 ns
+    Info: + Longest clock path from clock "sys_clk" to source register is 2.732 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_17; Fanout = 1; CLK Node = 'sys_clk'
+        Info: 2: + IC(0.143 ns) + CELL(0.000 ns) = 1.243 ns; Loc. = CLKCTRL_G2; Fanout = 2; COMB Node = 'sys_clk~clkctrl'
+        Info: 3: + IC(0.823 ns) + CELL(0.666 ns) = 2.732 ns; Loc. = LCFF_X1_Y5_N5; Fanout = 4; REG Node = 'ctrl_signal_dly1'
+        Info: Total cell delay = 1.766 ns ( 64.64 % )
+        Info: Total interconnect delay = 0.966 ns ( 35.36 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Longest register to pin delay is 4.687 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X1_Y5_N5; Fanout = 4; REG Node = 'ctrl_signal_dly1'
+        Info: 2: + IC(0.448 ns) + CELL(0.544 ns) = 0.992 ns; Loc. = LCCOMB_X1_Y5_N0; Fanout = 1; COMB Node = 'negedge_pulse~0'
+        Info: 3: + IC(0.639 ns) + CELL(3.056 ns) = 4.687 ns; Loc. = PIN_25; Fanout = 0; PIN Node = 'negedge_pulse'
+        Info: Total cell delay = 3.600 ns ( 76.81 % )
+        Info: Total interconnect delay = 1.087 ns ( 23.19 % )
+Info: th for register "ctrl_signal_dly1" (data pin = "ctrl_signal", clock pin = "sys_clk") is -3.642 ns
+    Info: + Longest clock path from clock "sys_clk" to destination register is 2.732 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.100 ns) = 1.100 ns; Loc. = PIN_17; Fanout = 1; CLK Node = 'sys_clk'
+        Info: 2: + IC(0.143 ns) + CELL(0.000 ns) = 1.243 ns; Loc. = CLKCTRL_G2; Fanout = 2; COMB Node = 'sys_clk~clkctrl'
+        Info: 3: + IC(0.823 ns) + CELL(0.666 ns) = 2.732 ns; Loc. = LCFF_X1_Y5_N5; Fanout = 4; REG Node = 'ctrl_signal_dly1'
+        Info: Total cell delay = 1.766 ns ( 64.64 % )
+        Info: Total interconnect delay = 0.966 ns ( 35.36 % )
+    Info: + Micro hold delay of destination is 0.306 ns
+    Info: - Shortest pin to register delay is 6.680 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.955 ns) = 0.955 ns; Loc. = PIN_26; Fanout = 1; PIN Node = 'ctrl_signal'
+        Info: 2: + IC(5.265 ns) + CELL(0.460 ns) = 6.680 ns; Loc. = LCFF_X1_Y5_N5; Fanout = 4; REG Node = 'ctrl_signal_dly1'
+        Info: Total cell delay = 1.415 ns ( 21.18 % )
+        Info: Total interconnect delay = 5.265 ns ( 78.82 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Allocated 112 megabytes of memory during processing
+    Info: Processing ended: Fri Oct 23 00:37:41 2009
+    Info: Elapsed time: 00:00:01
+
+

@@ -1,0 +1,128 @@
+/****************************************Copyright (c)**************************************************
+**                                      Dongdong   Studio 
+**                                     
+**---------------------------------------File Info-----------------------------------------------------
+** File name:			reset_proc
+** Last modified Date:	2009-10-18
+** Last Version:		1.0
+** Descriptions:		reset_proc
+**------------------------------------------------------------------------------------------------------
+** Created by:		    dongdong
+** Created date:		2009-10-18
+** Version:				1.0
+** Descriptions:		The original version
+**
+**------------------------------------------------------------------------------------------------------
+** Modified by:			
+** Modified date:		
+** Version:				
+** Descriptions:		
+**
+**------------------------------------------------------------------------------------------------------
+********************************************************************************************************/
+module reset_proc ( 
+              //input 
+              sys_clk,
+              p_rst_n,
+
+
+              //output 
+              sys_rst_n
+              );
+
+//input ports
+
+input                    sys_clk          ;   //system clock;
+input                    p_rst_n          ;   //system port input reset, low is active;
+
+
+//output ports
+output [WIDTH-1:0]       sys_rst_n         ;   //output reset signal ,can be used directlty
+
+//reg define 
+
+reg    [WIDTH-1:0]       rst_p1            ;   //reset signal ,pre 1 cycle
+reg    [WIDTH-1:0]       sys_rst_n         ;   //real reset signal 
+
+//wire define                             
+wire   [WIDTH-1:0]       p_rst_temp1       ;   //temp wire,connect with buff
+wire   [WIDTH-1:0]       p_rst_temp2       ;   //temp wire,connect with buff
+wire   [WIDTH-1:0]       p_rst_temp3       ;   //temp wire,connect with buff
+wire   [WIDTH-1:0]       p_rst_temp4       ;   //temp wire,connect with buff
+wire   [WIDTH-1:0]       p_rst_temp5       ;   //temp wire,connect with buff
+wire   [WIDTH-1:0]       p_rst_temp6       ;   //temp wire,connect with buff
+wire   [WIDTH-1:0]       p_rst_temp7       ;   //temp wire,connect with buff
+
+//parameter define 
+parameter WIDTH = 1;
+parameter SIZE  = 8;
+
+/*******************************************************************************************************
+**                              Main Program    
+**  
+********************************************************************************************************/
+
+buf BUFF_U0(                             //BUFF门的实例引用       
+            p_rst_temp1, 
+            p_rst_n     
+            );
+
+buf BUFF_U1(                             //BUFF门的实例引用       
+            p_rst_temp2, 
+            p_rst_temp1     
+            );            
+ 
+buf BUFF_U2(                             //BUFF门的实例引用       
+            p_rst_temp3, 
+            p_rst_temp2  
+            );
+            
+buf BUFF_U3(                             //BUFF门的实例引用       
+            p_rst_temp4,  
+            p_rst_temp3  
+            );
+
+buf BUFF_U4(                             //BUFF门的实例引用       
+            p_rst_temp5,  
+            p_rst_temp4  
+            );            
+ 
+buf BUFF_U5(                             //BUFF门的实例引用       
+            p_rst_temp6,  
+            p_rst_temp5  
+            );            
+            
+buf BUFF_U6(                             //BUFF门的实例引用       
+            p_rst_temp7,  
+            p_rst_temp6  
+            );               
+            
+ 
+assign rst_temp = p_rst_n | p_rst_temp7 ;     
+
+
+//always @(posedge sys_clk or negedge rst_temp) begin 
+//        rst_p1 <= 1'b1;
+//end 
+
+always @(posedge sys_clk or negedge rst_temp) begin 
+    if (rst_temp ==1'b0) begin 
+        rst_p1 <= 1'b1;
+    end
+    else begin 
+        rst_p1 <= 1'b1;
+    end
+end
+
+always @(posedge sys_clk or negedge rst_temp) begin 
+    if (rst_temp ==1'b0) begin 
+        sys_rst_n <= 1'b1;
+    end
+    else  begin 
+        sys_rst_n <= rst_p1;
+    end
+end
+
+
+endmodule
+//end of RTL code                       

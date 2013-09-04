@@ -1,0 +1,17 @@
+|myosctest
+rst_n => cnt[2].ACLR
+rst_n => cnt[1].ACLR
+rst_n => cnt[0].ACLR
+clkdiv <= cnt[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|myosctest|internal_osc:internal_osc
+oscena => oscena~0.IN1
+osc <= internal_osc_altufm_osc_rv5:internal_osc_altufm_osc_rv5_component.osc
+
+
+|myosctest|internal_osc:internal_osc|internal_osc_altufm_osc_rv5:internal_osc_altufm_osc_rv5_component
+osc <= maxii_ufm_block1.OSC
+oscena => maxii_ufm_block1.OSCENA
+
+

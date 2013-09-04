@@ -1,0 +1,70 @@
+/****************************************Copyright (c)**************************************************
+**                                      Dongdong   Studio 
+**                                     
+**---------------------------------------File Info-----------------------------------------------------
+** File name:           clock_gating
+** Last modified Date:  2009-10-18
+** Last Version:        1.0
+** Descriptions:        clock_gating
+**------------------------------------------------------------------------------------------------------
+** Created by:          dongdong
+** Created date:        2009-10-18
+** Version:             1.0
+** Descriptions:        The original version
+**
+**------------------------------------------------------------------------------------------------------
+** Modified by:			
+** Modified date:		
+** Version:				
+** Descriptions:		
+**
+**------------------------------------------------------------------------------------------------------
+********************************************************************************************************/
+module clock_gating ( 
+              //input 
+              sys_clk     ,
+              sys_rst_n   ,
+              clk_en      ,
+
+              //output 
+              sys_gclk
+              );
+
+//input ports
+
+input                    sys_clk      ;      //system clock;
+input                    sys_rst_n    ;      //system reset, low is active;
+
+input                    clk_en       ;      //system clock enable;
+
+
+//output ports
+output [WIDTH-1:0]       sys_gclk     ;      //system clock with gating;
+
+//reg define 
+reg    [WIDTH-1:0]       clk_temp     ;
+
+
+//wire define 
+wire   [WIDTH-1:0]       addr_gray;
+
+//parameter define 
+parameter WIDTH = 1;
+parameter SIZE  = 1;
+
+/*******************************************************************************************************
+**                              Main Program    
+**  
+********************************************************************************************************/
+
+always @( sys_clk or clk_en) begin 
+    if (!sys_clk) begin 
+        clk_temp <= clk_en;
+    end
+end
+
+assign sys_gclk = sys_clk & clk_temp
+
+
+endmodule
+//end of RTL code                       

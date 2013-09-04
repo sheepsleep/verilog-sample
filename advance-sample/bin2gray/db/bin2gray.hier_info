@@ -1,0 +1,42 @@
+|bin2gray
+sys_clk => addr_gray[7]~reg0.CLK
+sys_clk => addr_gray[6]~reg0.CLK
+sys_clk => addr_gray[5]~reg0.CLK
+sys_clk => addr_gray[4]~reg0.CLK
+sys_clk => addr_gray[3]~reg0.CLK
+sys_clk => addr_gray[2]~reg0.CLK
+sys_clk => addr_gray[1]~reg0.CLK
+sys_clk => addr_gray[0]~reg0.CLK
+sys_rst_n => addr_gray[7]~reg0.ACLR
+sys_rst_n => addr_gray[6]~reg0.ACLR
+sys_rst_n => addr_gray[5]~reg0.ACLR
+sys_rst_n => addr_gray[4]~reg0.ACLR
+sys_rst_n => addr_gray[3]~reg0.ACLR
+sys_rst_n => addr_gray[2]~reg0.ACLR
+sys_rst_n => addr_gray[1]~reg0.ACLR
+sys_rst_n => addr_gray[0]~reg0.ACLR
+addr[0] => addr_gray~0.IN1
+addr[1] => addr_gray~1.IN0
+addr[1] => addr_gray~0.IN0
+addr[2] => addr_gray~2.IN1
+addr[2] => addr_gray~1.IN1
+addr[3] => addr_gray~3.IN1
+addr[3] => addr_gray~2.IN0
+addr[4] => addr_gray~4.IN1
+addr[4] => addr_gray~3.IN0
+addr[5] => addr_gray~5.IN1
+addr[5] => addr_gray~4.IN0
+addr[6] => addr_gray~6.IN1
+addr[6] => addr_gray~5.IN0
+addr[7] => addr_gray[7]~reg0.DATAIN
+addr[7] => addr_gray~6.IN0
+addr_gray[0] <= addr_gray[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_gray[1] <= addr_gray[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_gray[2] <= addr_gray[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_gray[3] <= addr_gray[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_gray[4] <= addr_gray[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_gray[5] <= addr_gray[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_gray[6] <= addr_gray[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+addr_gray[7] <= addr_gray[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,4344 @@
+Version:
+	9.0 Build 132 02/25/2009 SJ Full Version
+
+Chip Device Options:
+	Device Name:	EP1C3T144C8
+	Device JTAG code:	ffffffff
+	Programming_mode:	Active Serial Configuration
+	NWS_NRS_NCS:	UNRESERVED
+	RDYNBUSY:	UNRESERVED
+	DATA 7 to 1:	UNRESERVED
+	nCEO:	UNRESERVED
+	UNUSED PINS:	RESERVED_INPUT
+	Default IO Standard::	3.3-V LVTTL
+	User Start-up Clock:	0
+	Auto Restart on Error:	1
+	Release Clears Before Tristates:	0
+	Device Clear:	0
+	Test And Scan:	0
+	Device OE:	0
+	Enable Lock Output:	0
+	Enable Init Done:	0
+	Enable JTAG BST:	0
+	Enable Vref A:	0
+	Enable Vref B:	0
+
+
+
+****************************
+******Individual Atoms******
+****************************
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a28 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 0
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[24]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a28~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[28]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a28~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a28~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a28~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a28~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a28~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a28~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 28
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 28
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a29 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 1
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[25]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a29~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[29]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a29~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a29~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a29~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a29~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a29~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a29~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 29
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 29
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a30 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 2
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[26]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a30~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[30]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a30~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a30~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a30~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a30~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a30~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a30~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 30
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 30
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a31 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 3
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[27]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a31~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[31]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a31~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a31~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a31~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a31~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a31~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a31~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 31
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 31
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a0 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 4
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_din[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a0~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[0]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a0~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a0~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a0~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a0~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a0~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a0~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 0
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 0
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a1 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 5
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_din[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a1~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[1]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a1~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a1~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a1~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a1~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a1~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a1~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 1
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 1
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a2 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 6
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_din[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a2~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[2]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a2~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a2~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a2~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a2~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a2~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a2~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 2
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 2
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a3 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 7
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_din[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a3~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[3]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a3~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a3~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a3~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a3~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a3~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a3~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 3
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 3
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a4 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 8
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a4~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[4]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a4~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a4~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a4~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a4~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a4~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a4~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 4
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 4
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a5 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 9
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a5~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[5]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a5~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a5~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a5~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a5~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a5~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a5~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 5
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 5
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a6 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 10
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a6~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[6]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a6~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a6~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a6~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a6~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a6~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a6~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 6
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 6
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a7 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 11
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a7~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[7]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a7~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a7~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a7~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a7~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a7~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a7~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 7
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 7
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a8 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 12
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a8~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[8]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a8~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a8~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a8~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a8~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a8~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a8~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 8
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 8
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a9 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 13
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a9~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[9]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a9~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a9~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a9~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a9~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a9~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a9~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 9
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 9
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a10 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 14
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a10~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[10]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a10~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a10~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a10~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a10~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a10~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a10~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 10
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 10
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a11 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 15
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a11~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[11]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a11~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a11~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a11~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a11~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a11~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a11~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 11
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 11
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a12 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 16
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[8]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a12~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[12]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a12~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a12~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a12~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a12~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a12~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a12~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 12
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 12
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a13 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 17
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[9]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a13~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[13]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a13~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a13~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a13~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a13~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a13~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a13~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 13
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 13
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a14 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 18
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[10]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a14~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[14]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a14~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a14~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a14~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a14~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a14~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a14~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 14
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 14
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a15 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 19
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[11]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a15~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[15]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a15~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a15~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a15~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a15~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a15~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a15~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 15
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 15
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a16 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 20
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[12]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a16~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[16]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a16~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a16~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a16~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a16~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a16~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a16~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 16
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 16
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a17 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 21
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[13]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a17~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[17]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a17~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a17~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a17~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a17~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a17~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a17~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 17
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 17
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a18 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 22
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[14]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a18~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[18]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a18~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a18~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a18~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a18~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a18~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a18~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 18
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 18
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a19 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 23
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[15]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a19~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[19]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a19~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a19~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a19~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a19~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a19~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a19~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 19
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 19
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a20 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 24
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[16]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a20~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[20]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a20~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a20~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a20~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a20~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a20~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a20~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 20
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 20
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a21 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 25
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[17]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a21~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[21]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a21~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a21~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a21~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a21~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a21~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a21~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 21
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 21
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a22 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 26
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[18]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a22~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[22]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a22~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a22~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a22~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a22~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a22~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a22~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 22
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 22
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a23 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 27
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[19]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a23~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[23]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a23~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a23~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a23~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a23~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a23~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a23~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 23
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 23
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a24 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 28
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[20]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a24~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[24]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a24~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a24~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a24~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a24~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a24~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a24~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 24
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 24
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a25 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 29
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[21]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a25~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[25]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a25~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a25~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a25~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a25~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a25~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a25~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 25
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 25
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a26 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 30
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[22]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a26~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[26]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a26~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a26~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a26~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a26~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a26~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a26~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 26
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 26
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a27 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 31
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ GND	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [PORTBREWE]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [ENA0]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[23]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTBADDR]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a27~PORTADATAOUT0	LIT INDEX 0 FANOUTS 0
+		1: [PORTBDATAOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[27]	LIT INDEX 0 FANOUTS 2 REGED POS
+		2: [OBSERVABLEPORTAWEREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a27~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTBREREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a27~portb_re_reg	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTADATAINREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a27~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAMEMORYREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a27~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a27~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		7: [OBSERVABLEPORTBADDRESSREGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ram_block3a27~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = dual_port
+		ram_block_type                 = M4K
+		mixed_port_feed_through_mode   = old
+		logical_ram_name               = shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 1
+		port_b_address_width           = 1
+		port_a_logical_ram_depth       = 2
+		port_a_logical_ram_width       = 32
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = none
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 1
+		port_a_first_bit_number        = 27
+		port_a_data_width              = 1
+		port_b_logical_ram_depth       = 2
+		port_b_logical_ram_width       = 32
+		port_b_data_in_clear           = none
+		port_b_address_clock           = clock0
+		port_b_address_clear           = none
+		port_b_read_enable_write_enable_clock = clock0
+		port_b_read_enable_write_enable_clear = none
+		port_b_byte_enable_clear       = none
+		port_b_data_out_clock          = clock0
+		port_b_data_out_clear          = none
+		port_b_first_address           = 0
+		port_b_last_address            = 1
+		port_b_first_bit_number        = 27
+		port_b_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|counter_cella0 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 32
+	Atom Type: stratix_lcell (WYSIWYG)
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: [ACLR]	~ VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: [SCLR]	DISCONNECTED
+		8: NO ITERM
+		9: [ENA]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|cntr_0df:cntr1|safe_q[0]	LIT INDEX 0 FANOUTS 65 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 5555
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: shift_dout[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 77
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[28]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	shift_dout[0]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: shift_dout[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 78
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[29]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	shift_dout[1]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: shift_dout[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 79
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[30]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	shift_dout[2]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: shift_dout[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 80
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[31]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	shift_dout[3]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps0x[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 81
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps0x[0]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps0x[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 82
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps0x[1]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps0x[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 83
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps0x[2]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps0x[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 84
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps0x[3]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps1x[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 85
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps1x[0]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps1x[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 86
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps1x[1]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps1x[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 87
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps1x[2]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps1x[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 88
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps1x[3]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps2x[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 89
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[8]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps2x[0]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps2x[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 90
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[9]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps2x[1]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps2x[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 91
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[10]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps2x[2]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps2x[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 92
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[11]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps2x[3]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps3x[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 93
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[12]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps3x[0]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps3x[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 94
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[13]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps3x[1]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps3x[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 95
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[14]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps3x[2]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps3x[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 96
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[15]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps3x[3]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps4x[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 97
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[16]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps4x[0]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps4x[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 98
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[17]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps4x[1]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps4x[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 99
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[18]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps4x[2]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps4x[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 100
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[19]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps4x[3]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps5x[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 101
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[20]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps5x[0]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps5x[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 102
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[21]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps5x[1]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps5x[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 103
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[22]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps5x[2]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps5x[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 104
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[23]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps5x[3]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps6x[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 105
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[24]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps6x[0]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps6x[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 106
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[25]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps6x[1]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps6x[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 107
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[26]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps6x[2]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps6x[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 108
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[27]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps6x[3]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps7x[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 109
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[28]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps7x[0]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps7x[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 110
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[29]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps7x[1]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps7x[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 111
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[30]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps7x[2]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: taps7x[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 112
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  shift_ram:uut_shift|altshift_taps:altshift_taps_component|shift_taps_8rr:auto_generated|altsyncram_et91:altsyncram2|q_b[31]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	taps7x[3]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: clk -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 113
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	clk	LIT INDEX 0 FANOUTS 33
+		1: NONE
+		2: [PADIO]	clk	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: rst_n -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 114
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	rst_n	LIT INDEX 0 FANOUTS 33
+		1: NONE
+		2: [PADIO]	rst_n	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: shift_din[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 115
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	shift_din[0]	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: [PADIO]	shift_din[0]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: shift_din[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 116
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	shift_din[1]	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: [PADIO]	shift_din[1]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: shift_din[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 117
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	shift_din[2]	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: [PADIO]	shift_din[2]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: shift_din[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 118
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	shift_din[3]	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: [PADIO]	shift_din[3]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ~STRATIX_FITTER_CREATED_GND~I -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 119
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	~STRATIX_FITTER_CREATED_GND~I	LIT INDEX 0 FANOUTS 0
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		(Skipping parameters for lcell or lcell comb with no fanout)
+
+
+- ATOM ------------------------
+	ATOM_NAME: ~nCSO~ -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 120
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	~nCSO~	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ~ASDO~ -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 121
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	~ASDO~	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+

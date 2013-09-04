@@ -1,0 +1,73 @@
+/****************************************Copyright (c)**************************************************
+**                                      Dongdong   Studio 
+**                                     
+**---------------------------------------File Info-----------------------------------------------------
+** File name:           1602 LCD Driver Program
+** Last modified Date:  2009-10-18
+** Last Version:        1.0
+** Descriptions:        driver 1602 LCD 
+**------------------------------------------------------------------------------------------------------
+** Created by:          dongdong
+** Created date:        2011-09-18
+** Version:             1.0
+** Descriptions:        The original version
+**
+**------------------------------------------------------------------------------------------------------
+** Modified by:			
+** Modified date:		
+** Version:				
+** Descriptions:		
+**
+**------------------------------------------------------------------------------------------------------
+********************************************************************************************************/
+
+module LCD1602_TOP (
+// input
+input                sys_clk    ,
+input                sys_rst_n  ,
+
+// output
+output  wire         LCD_EN     ,
+output  wire         RS         ,
+output  wire         RW         ,
+output  wire [7:0]   DB8          );
+
+// DEFINE 
+
+`define U_DLY 1 
+
+reg            [   16:0]             div_cnt       ;
+reg                                  clk_lcd       ;
+
+/*******************************************************************************************************
+**                              Main Program    
+**  
+********************************************************************************************************/
+
+assign sys_clk_50m = sys_clk;
+
+// 50M = 20ns , 20ns * 131072 *2 ~= 5ms
+always @(posedge sys_clk_50m or negedge sys_rst_n) begin
+        if (sys_rst_n ==1'b0)  
+            div_cnt <= #`U_DLY 17'b0;
+        else
+            div_cnt <= #`U_DLY div_cnt + 17'b1;
+end
+
+always @(posedge sys_clk_50m or negedge sys_rst_n) begin
+        if (sys_rst_n ==1'b0)  
+            clk_lcd <= #`U_DLY 1'b0;
+        else if ( div_cnt == {17{1'b1}} )
+            clk_lcd <= #`U_DLY ~clk_lcd;
+        else ;
+end
+
+LCD_Driver  U2(.clk_lcd (clk_lcd   ),
+               .rst     (sys_rst_n ),
+               .LCD_EN  (LCD_EN    ),
+               .RS      (RS        ),
+               .RW      (RW        ),
+               .DB8     (DB8       )
+              );
+               
+endmodule

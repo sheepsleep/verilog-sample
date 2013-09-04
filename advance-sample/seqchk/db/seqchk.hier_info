@@ -1,0 +1,23 @@
+|seqchk
+sys_clk => sys_clk~0.IN1
+sys_rst_n => sys_rst_n~0.IN1
+seq_en => seq_en~0.IN1
+led <= led~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|seqchk|seq_gen:u_seq_gen
+sys_clk => counter[3].CLK
+sys_clk => counter[2].CLK
+sys_clk => counter[1].CLK
+sys_clk => counter[0].CLK
+sys_rst_n => counter[3].ACLR
+sys_rst_n => counter[2].ACLR
+sys_rst_n => counter[1].ACLR
+sys_rst_n => counter[0].ACLR
+seq_en => counter[0].ENA
+seq_en => counter[3].ENA
+seq_en => counter[2].ENA
+seq_en => counter[1].ENA
+seq_signal <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

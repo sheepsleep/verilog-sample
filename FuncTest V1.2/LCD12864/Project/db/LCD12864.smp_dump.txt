@@ -1,0 +1,12 @@
+
+State Machine - |LCD12864|state
+Name state.IDLE state.STOP state.WRITERAM state.SETDDRAM state.SETMODE state.CLEAR state.SWITCHMODE state.SETFUNCTION2 state.SETFUNCTION 
+state.IDLE 0 0 0 0 0 0 0 0 0 
+state.SETFUNCTION 1 0 0 0 0 0 0 0 1 
+state.SETFUNCTION2 1 0 0 0 0 0 0 1 0 
+state.SWITCHMODE 1 0 0 0 0 0 1 0 0 
+state.CLEAR 1 0 0 0 0 1 0 0 0 
+state.SETMODE 1 0 0 0 1 0 0 0 0 
+state.SETDDRAM 1 0 0 1 0 0 0 0 0 
+state.WRITERAM 1 0 1 0 0 0 0 0 0 
+state.STOP 1 1 0 0 0 0 0 0 0 

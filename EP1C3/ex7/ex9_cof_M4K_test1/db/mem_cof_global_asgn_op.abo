@@ -1,0 +1,2412 @@
+Version:
+	9.0 Build 132 02/25/2009 SJ Full Version
+
+Chip Device Options:
+	Device Name:	EP1C3T144C8
+	Device JTAG code:	ffffffff
+	Programming_mode:	Active Serial Configuration
+	NWS_NRS_NCS:	UNRESERVED
+	RDYNBUSY:	UNRESERVED
+	DATA 7 to 1:	UNRESERVED
+	nCEO:	UNRESERVED
+	UNUSED PINS:	RESERVED_GND
+	Default IO Standard::	3.3-V LVTTL
+	User Start-up Clock:	0
+	Auto Restart on Error:	1
+	Release Clears Before Tristates:	0
+	Device Clear:	0
+	Test And Scan:	0
+	Device OE:	0
+	Enable Lock Output:	0
+	Enable Init Done:	0
+	Enable JTAG BST:	0
+	Enable Vref A:	0
+	Enable Vref B:	0
+
+
+
+****************************
+******Individual Atoms******
+****************************
+
+- ATOM ------------------------
+	ATOM_NAME: sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 0
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ !(ram_wr)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  ram_din[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  ram_addr[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTAADDR]	  ram_addr[1]	LIT INDEX 1	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: [PORTAADDR]	  ram_addr[2]	LIT INDEX 2	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		12: [PORTAADDR]	  ram_addr[3]	LIT INDEX 3	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		13: [PORTAADDR]	  ram_addr[4]	LIT INDEX 4	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		14: [PORTAADDR]	  ram_addr[5]	LIT INDEX 5	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		15: [PORTAADDR]	  ram_addr[6]	LIT INDEX 6	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		16: [PORTAADDR]	  ram_addr[7]	LIT INDEX 7	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		17: [PORTAADDR]	  ram_addr[8]	LIT INDEX 8	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		18: [PORTAADDR]	  ram_addr[9]	LIT INDEX 9	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		19: [PORTAADDR]	  ram_addr[10]	LIT INDEX 10	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		20: [PORTAADDR]	  ram_addr[11]	LIT INDEX 11	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		21: [PORTBADDR]	  ram_addr[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		22: [PORTBADDR]	  ram_addr[1]	LIT INDEX 1	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		23: [PORTBADDR]	  ram_addr[2]	LIT INDEX 2	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		24: [PORTBADDR]	  ram_addr[3]	LIT INDEX 3	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		25: [PORTBADDR]	  ram_addr[4]	LIT INDEX 4	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		26: [PORTBADDR]	  ram_addr[5]	LIT INDEX 5	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		27: [PORTBADDR]	  ram_addr[6]	LIT INDEX 6	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		28: [PORTBADDR]	  ram_addr[7]	LIT INDEX 7	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		29: [PORTBADDR]	  ram_addr[8]	LIT INDEX 8	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		30: [PORTBADDR]	  ram_addr[9]	LIT INDEX 9	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		31: [PORTBADDR]	  ram_addr[10]	LIT INDEX 10	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		32: [PORTBADDR]	  ram_addr[11]	LIT INDEX 11	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|q_a[0]	LIT INDEX 0 FANOUTS 1 REGED POS
+		1: [OBSERVABLEPORTAWEREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		2: [OBSERVABLEPORTADATAINREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTAMEMORYREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~porta_address_reg1	LIT INDEX 1 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~porta_address_reg2	LIT INDEX 2 FANOUTS 0
+		7: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~porta_address_reg3	LIT INDEX 3 FANOUTS 0
+		8: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~porta_address_reg4	LIT INDEX 4 FANOUTS 0
+		9: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~porta_address_reg5	LIT INDEX 5 FANOUTS 0
+		10: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~porta_address_reg6	LIT INDEX 6 FANOUTS 0
+		11: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~porta_address_reg7	LIT INDEX 7 FANOUTS 0
+		12: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~porta_address_reg8	LIT INDEX 8 FANOUTS 0
+		13: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~porta_address_reg9	LIT INDEX 9 FANOUTS 0
+		14: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~porta_address_reg10	LIT INDEX 10 FANOUTS 0
+		15: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~porta_address_reg11	LIT INDEX 11 FANOUTS 0
+		16: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+		17: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~portb_address_reg1	LIT INDEX 1 FANOUTS 0
+		18: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~portb_address_reg2	LIT INDEX 2 FANOUTS 0
+		19: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~portb_address_reg3	LIT INDEX 3 FANOUTS 0
+		20: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~portb_address_reg4	LIT INDEX 4 FANOUTS 0
+		21: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~portb_address_reg5	LIT INDEX 5 FANOUTS 0
+		22: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~portb_address_reg6	LIT INDEX 6 FANOUTS 0
+		23: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~portb_address_reg7	LIT INDEX 7 FANOUTS 0
+		24: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~portb_address_reg8	LIT INDEX 8 FANOUTS 0
+		25: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~portb_address_reg9	LIT INDEX 9 FANOUTS 0
+		26: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~portb_address_reg10	LIT INDEX 10 FANOUTS 0
+		27: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a0~portb_address_reg11	LIT INDEX 11 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = single_port
+		ram_block_type                 = auto
+		logical_ram_name               = sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 12
+		port_a_logical_ram_depth       = 4096
+		port_a_logical_ram_width       = 8
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = clock0
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 4095
+		port_a_first_bit_number        = 0
+		port_a_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 1
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ !(ram_wr)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  ram_din[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  ram_addr[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTAADDR]	  ram_addr[1]	LIT INDEX 1	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: [PORTAADDR]	  ram_addr[2]	LIT INDEX 2	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		12: [PORTAADDR]	  ram_addr[3]	LIT INDEX 3	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		13: [PORTAADDR]	  ram_addr[4]	LIT INDEX 4	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		14: [PORTAADDR]	  ram_addr[5]	LIT INDEX 5	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		15: [PORTAADDR]	  ram_addr[6]	LIT INDEX 6	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		16: [PORTAADDR]	  ram_addr[7]	LIT INDEX 7	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		17: [PORTAADDR]	  ram_addr[8]	LIT INDEX 8	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		18: [PORTAADDR]	  ram_addr[9]	LIT INDEX 9	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		19: [PORTAADDR]	  ram_addr[10]	LIT INDEX 10	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		20: [PORTAADDR]	  ram_addr[11]	LIT INDEX 11	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		21: [PORTBADDR]	  ram_addr[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		22: [PORTBADDR]	  ram_addr[1]	LIT INDEX 1	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		23: [PORTBADDR]	  ram_addr[2]	LIT INDEX 2	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		24: [PORTBADDR]	  ram_addr[3]	LIT INDEX 3	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		25: [PORTBADDR]	  ram_addr[4]	LIT INDEX 4	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		26: [PORTBADDR]	  ram_addr[5]	LIT INDEX 5	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		27: [PORTBADDR]	  ram_addr[6]	LIT INDEX 6	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		28: [PORTBADDR]	  ram_addr[7]	LIT INDEX 7	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		29: [PORTBADDR]	  ram_addr[8]	LIT INDEX 8	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		30: [PORTBADDR]	  ram_addr[9]	LIT INDEX 9	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		31: [PORTBADDR]	  ram_addr[10]	LIT INDEX 10	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		32: [PORTBADDR]	  ram_addr[11]	LIT INDEX 11	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|q_a[1]	LIT INDEX 0 FANOUTS 1 REGED POS
+		1: [OBSERVABLEPORTAWEREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		2: [OBSERVABLEPORTADATAINREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTAMEMORYREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~porta_address_reg1	LIT INDEX 1 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~porta_address_reg2	LIT INDEX 2 FANOUTS 0
+		7: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~porta_address_reg3	LIT INDEX 3 FANOUTS 0
+		8: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~porta_address_reg4	LIT INDEX 4 FANOUTS 0
+		9: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~porta_address_reg5	LIT INDEX 5 FANOUTS 0
+		10: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~porta_address_reg6	LIT INDEX 6 FANOUTS 0
+		11: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~porta_address_reg7	LIT INDEX 7 FANOUTS 0
+		12: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~porta_address_reg8	LIT INDEX 8 FANOUTS 0
+		13: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~porta_address_reg9	LIT INDEX 9 FANOUTS 0
+		14: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~porta_address_reg10	LIT INDEX 10 FANOUTS 0
+		15: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~porta_address_reg11	LIT INDEX 11 FANOUTS 0
+		16: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+		17: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~portb_address_reg1	LIT INDEX 1 FANOUTS 0
+		18: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~portb_address_reg2	LIT INDEX 2 FANOUTS 0
+		19: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~portb_address_reg3	LIT INDEX 3 FANOUTS 0
+		20: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~portb_address_reg4	LIT INDEX 4 FANOUTS 0
+		21: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~portb_address_reg5	LIT INDEX 5 FANOUTS 0
+		22: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~portb_address_reg6	LIT INDEX 6 FANOUTS 0
+		23: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~portb_address_reg7	LIT INDEX 7 FANOUTS 0
+		24: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~portb_address_reg8	LIT INDEX 8 FANOUTS 0
+		25: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~portb_address_reg9	LIT INDEX 9 FANOUTS 0
+		26: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~portb_address_reg10	LIT INDEX 10 FANOUTS 0
+		27: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a1~portb_address_reg11	LIT INDEX 11 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = single_port
+		ram_block_type                 = auto
+		logical_ram_name               = sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 12
+		port_a_logical_ram_depth       = 4096
+		port_a_logical_ram_width       = 8
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = clock0
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 4095
+		port_a_first_bit_number        = 1
+		port_a_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 2
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ !(ram_wr)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  ram_din[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  ram_addr[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTAADDR]	  ram_addr[1]	LIT INDEX 1	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: [PORTAADDR]	  ram_addr[2]	LIT INDEX 2	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		12: [PORTAADDR]	  ram_addr[3]	LIT INDEX 3	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		13: [PORTAADDR]	  ram_addr[4]	LIT INDEX 4	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		14: [PORTAADDR]	  ram_addr[5]	LIT INDEX 5	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		15: [PORTAADDR]	  ram_addr[6]	LIT INDEX 6	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		16: [PORTAADDR]	  ram_addr[7]	LIT INDEX 7	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		17: [PORTAADDR]	  ram_addr[8]	LIT INDEX 8	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		18: [PORTAADDR]	  ram_addr[9]	LIT INDEX 9	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		19: [PORTAADDR]	  ram_addr[10]	LIT INDEX 10	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		20: [PORTAADDR]	  ram_addr[11]	LIT INDEX 11	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		21: [PORTBADDR]	  ram_addr[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		22: [PORTBADDR]	  ram_addr[1]	LIT INDEX 1	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		23: [PORTBADDR]	  ram_addr[2]	LIT INDEX 2	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		24: [PORTBADDR]	  ram_addr[3]	LIT INDEX 3	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		25: [PORTBADDR]	  ram_addr[4]	LIT INDEX 4	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		26: [PORTBADDR]	  ram_addr[5]	LIT INDEX 5	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		27: [PORTBADDR]	  ram_addr[6]	LIT INDEX 6	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		28: [PORTBADDR]	  ram_addr[7]	LIT INDEX 7	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		29: [PORTBADDR]	  ram_addr[8]	LIT INDEX 8	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		30: [PORTBADDR]	  ram_addr[9]	LIT INDEX 9	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		31: [PORTBADDR]	  ram_addr[10]	LIT INDEX 10	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		32: [PORTBADDR]	  ram_addr[11]	LIT INDEX 11	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|q_a[2]	LIT INDEX 0 FANOUTS 1 REGED POS
+		1: [OBSERVABLEPORTAWEREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		2: [OBSERVABLEPORTADATAINREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTAMEMORYREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~porta_address_reg1	LIT INDEX 1 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~porta_address_reg2	LIT INDEX 2 FANOUTS 0
+		7: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~porta_address_reg3	LIT INDEX 3 FANOUTS 0
+		8: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~porta_address_reg4	LIT INDEX 4 FANOUTS 0
+		9: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~porta_address_reg5	LIT INDEX 5 FANOUTS 0
+		10: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~porta_address_reg6	LIT INDEX 6 FANOUTS 0
+		11: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~porta_address_reg7	LIT INDEX 7 FANOUTS 0
+		12: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~porta_address_reg8	LIT INDEX 8 FANOUTS 0
+		13: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~porta_address_reg9	LIT INDEX 9 FANOUTS 0
+		14: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~porta_address_reg10	LIT INDEX 10 FANOUTS 0
+		15: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~porta_address_reg11	LIT INDEX 11 FANOUTS 0
+		16: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+		17: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~portb_address_reg1	LIT INDEX 1 FANOUTS 0
+		18: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~portb_address_reg2	LIT INDEX 2 FANOUTS 0
+		19: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~portb_address_reg3	LIT INDEX 3 FANOUTS 0
+		20: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~portb_address_reg4	LIT INDEX 4 FANOUTS 0
+		21: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~portb_address_reg5	LIT INDEX 5 FANOUTS 0
+		22: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~portb_address_reg6	LIT INDEX 6 FANOUTS 0
+		23: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~portb_address_reg7	LIT INDEX 7 FANOUTS 0
+		24: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~portb_address_reg8	LIT INDEX 8 FANOUTS 0
+		25: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~portb_address_reg9	LIT INDEX 9 FANOUTS 0
+		26: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~portb_address_reg10	LIT INDEX 10 FANOUTS 0
+		27: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a2~portb_address_reg11	LIT INDEX 11 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = single_port
+		ram_block_type                 = auto
+		logical_ram_name               = sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 12
+		port_a_logical_ram_depth       = 4096
+		port_a_logical_ram_width       = 8
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = clock0
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 4095
+		port_a_first_bit_number        = 2
+		port_a_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 3
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ !(ram_wr)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  ram_din[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  ram_addr[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTAADDR]	  ram_addr[1]	LIT INDEX 1	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: [PORTAADDR]	  ram_addr[2]	LIT INDEX 2	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		12: [PORTAADDR]	  ram_addr[3]	LIT INDEX 3	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		13: [PORTAADDR]	  ram_addr[4]	LIT INDEX 4	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		14: [PORTAADDR]	  ram_addr[5]	LIT INDEX 5	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		15: [PORTAADDR]	  ram_addr[6]	LIT INDEX 6	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		16: [PORTAADDR]	  ram_addr[7]	LIT INDEX 7	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		17: [PORTAADDR]	  ram_addr[8]	LIT INDEX 8	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		18: [PORTAADDR]	  ram_addr[9]	LIT INDEX 9	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		19: [PORTAADDR]	  ram_addr[10]	LIT INDEX 10	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		20: [PORTAADDR]	  ram_addr[11]	LIT INDEX 11	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		21: [PORTBADDR]	  ram_addr[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		22: [PORTBADDR]	  ram_addr[1]	LIT INDEX 1	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		23: [PORTBADDR]	  ram_addr[2]	LIT INDEX 2	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		24: [PORTBADDR]	  ram_addr[3]	LIT INDEX 3	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		25: [PORTBADDR]	  ram_addr[4]	LIT INDEX 4	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		26: [PORTBADDR]	  ram_addr[5]	LIT INDEX 5	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		27: [PORTBADDR]	  ram_addr[6]	LIT INDEX 6	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		28: [PORTBADDR]	  ram_addr[7]	LIT INDEX 7	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		29: [PORTBADDR]	  ram_addr[8]	LIT INDEX 8	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		30: [PORTBADDR]	  ram_addr[9]	LIT INDEX 9	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		31: [PORTBADDR]	  ram_addr[10]	LIT INDEX 10	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		32: [PORTBADDR]	  ram_addr[11]	LIT INDEX 11	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|q_a[3]	LIT INDEX 0 FANOUTS 1 REGED POS
+		1: [OBSERVABLEPORTAWEREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		2: [OBSERVABLEPORTADATAINREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTAMEMORYREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~porta_address_reg1	LIT INDEX 1 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~porta_address_reg2	LIT INDEX 2 FANOUTS 0
+		7: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~porta_address_reg3	LIT INDEX 3 FANOUTS 0
+		8: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~porta_address_reg4	LIT INDEX 4 FANOUTS 0
+		9: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~porta_address_reg5	LIT INDEX 5 FANOUTS 0
+		10: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~porta_address_reg6	LIT INDEX 6 FANOUTS 0
+		11: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~porta_address_reg7	LIT INDEX 7 FANOUTS 0
+		12: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~porta_address_reg8	LIT INDEX 8 FANOUTS 0
+		13: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~porta_address_reg9	LIT INDEX 9 FANOUTS 0
+		14: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~porta_address_reg10	LIT INDEX 10 FANOUTS 0
+		15: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~porta_address_reg11	LIT INDEX 11 FANOUTS 0
+		16: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+		17: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~portb_address_reg1	LIT INDEX 1 FANOUTS 0
+		18: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~portb_address_reg2	LIT INDEX 2 FANOUTS 0
+		19: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~portb_address_reg3	LIT INDEX 3 FANOUTS 0
+		20: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~portb_address_reg4	LIT INDEX 4 FANOUTS 0
+		21: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~portb_address_reg5	LIT INDEX 5 FANOUTS 0
+		22: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~portb_address_reg6	LIT INDEX 6 FANOUTS 0
+		23: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~portb_address_reg7	LIT INDEX 7 FANOUTS 0
+		24: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~portb_address_reg8	LIT INDEX 8 FANOUTS 0
+		25: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~portb_address_reg9	LIT INDEX 9 FANOUTS 0
+		26: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~portb_address_reg10	LIT INDEX 10 FANOUTS 0
+		27: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a3~portb_address_reg11	LIT INDEX 11 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = single_port
+		ram_block_type                 = auto
+		logical_ram_name               = sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 12
+		port_a_logical_ram_depth       = 4096
+		port_a_logical_ram_width       = 8
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = clock0
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 4095
+		port_a_first_bit_number        = 3
+		port_a_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 4
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ !(ram_wr)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  ram_din[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  ram_addr[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTAADDR]	  ram_addr[1]	LIT INDEX 1	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: [PORTAADDR]	  ram_addr[2]	LIT INDEX 2	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		12: [PORTAADDR]	  ram_addr[3]	LIT INDEX 3	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		13: [PORTAADDR]	  ram_addr[4]	LIT INDEX 4	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		14: [PORTAADDR]	  ram_addr[5]	LIT INDEX 5	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		15: [PORTAADDR]	  ram_addr[6]	LIT INDEX 6	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		16: [PORTAADDR]	  ram_addr[7]	LIT INDEX 7	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		17: [PORTAADDR]	  ram_addr[8]	LIT INDEX 8	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		18: [PORTAADDR]	  ram_addr[9]	LIT INDEX 9	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		19: [PORTAADDR]	  ram_addr[10]	LIT INDEX 10	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		20: [PORTAADDR]	  ram_addr[11]	LIT INDEX 11	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		21: [PORTBADDR]	  ram_addr[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		22: [PORTBADDR]	  ram_addr[1]	LIT INDEX 1	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		23: [PORTBADDR]	  ram_addr[2]	LIT INDEX 2	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		24: [PORTBADDR]	  ram_addr[3]	LIT INDEX 3	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		25: [PORTBADDR]	  ram_addr[4]	LIT INDEX 4	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		26: [PORTBADDR]	  ram_addr[5]	LIT INDEX 5	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		27: [PORTBADDR]	  ram_addr[6]	LIT INDEX 6	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		28: [PORTBADDR]	  ram_addr[7]	LIT INDEX 7	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		29: [PORTBADDR]	  ram_addr[8]	LIT INDEX 8	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		30: [PORTBADDR]	  ram_addr[9]	LIT INDEX 9	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		31: [PORTBADDR]	  ram_addr[10]	LIT INDEX 10	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		32: [PORTBADDR]	  ram_addr[11]	LIT INDEX 11	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|q_a[4]	LIT INDEX 0 FANOUTS 1 REGED POS
+		1: [OBSERVABLEPORTAWEREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		2: [OBSERVABLEPORTADATAINREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTAMEMORYREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~porta_address_reg1	LIT INDEX 1 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~porta_address_reg2	LIT INDEX 2 FANOUTS 0
+		7: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~porta_address_reg3	LIT INDEX 3 FANOUTS 0
+		8: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~porta_address_reg4	LIT INDEX 4 FANOUTS 0
+		9: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~porta_address_reg5	LIT INDEX 5 FANOUTS 0
+		10: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~porta_address_reg6	LIT INDEX 6 FANOUTS 0
+		11: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~porta_address_reg7	LIT INDEX 7 FANOUTS 0
+		12: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~porta_address_reg8	LIT INDEX 8 FANOUTS 0
+		13: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~porta_address_reg9	LIT INDEX 9 FANOUTS 0
+		14: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~porta_address_reg10	LIT INDEX 10 FANOUTS 0
+		15: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~porta_address_reg11	LIT INDEX 11 FANOUTS 0
+		16: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+		17: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~portb_address_reg1	LIT INDEX 1 FANOUTS 0
+		18: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~portb_address_reg2	LIT INDEX 2 FANOUTS 0
+		19: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~portb_address_reg3	LIT INDEX 3 FANOUTS 0
+		20: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~portb_address_reg4	LIT INDEX 4 FANOUTS 0
+		21: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~portb_address_reg5	LIT INDEX 5 FANOUTS 0
+		22: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~portb_address_reg6	LIT INDEX 6 FANOUTS 0
+		23: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~portb_address_reg7	LIT INDEX 7 FANOUTS 0
+		24: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~portb_address_reg8	LIT INDEX 8 FANOUTS 0
+		25: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~portb_address_reg9	LIT INDEX 9 FANOUTS 0
+		26: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~portb_address_reg10	LIT INDEX 10 FANOUTS 0
+		27: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a4~portb_address_reg11	LIT INDEX 11 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = single_port
+		ram_block_type                 = auto
+		logical_ram_name               = sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 12
+		port_a_logical_ram_depth       = 4096
+		port_a_logical_ram_width       = 8
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = clock0
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 4095
+		port_a_first_bit_number        = 4
+		port_a_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 5
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ !(ram_wr)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  ram_din[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  ram_addr[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTAADDR]	  ram_addr[1]	LIT INDEX 1	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: [PORTAADDR]	  ram_addr[2]	LIT INDEX 2	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		12: [PORTAADDR]	  ram_addr[3]	LIT INDEX 3	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		13: [PORTAADDR]	  ram_addr[4]	LIT INDEX 4	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		14: [PORTAADDR]	  ram_addr[5]	LIT INDEX 5	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		15: [PORTAADDR]	  ram_addr[6]	LIT INDEX 6	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		16: [PORTAADDR]	  ram_addr[7]	LIT INDEX 7	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		17: [PORTAADDR]	  ram_addr[8]	LIT INDEX 8	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		18: [PORTAADDR]	  ram_addr[9]	LIT INDEX 9	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		19: [PORTAADDR]	  ram_addr[10]	LIT INDEX 10	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		20: [PORTAADDR]	  ram_addr[11]	LIT INDEX 11	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		21: [PORTBADDR]	  ram_addr[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		22: [PORTBADDR]	  ram_addr[1]	LIT INDEX 1	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		23: [PORTBADDR]	  ram_addr[2]	LIT INDEX 2	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		24: [PORTBADDR]	  ram_addr[3]	LIT INDEX 3	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		25: [PORTBADDR]	  ram_addr[4]	LIT INDEX 4	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		26: [PORTBADDR]	  ram_addr[5]	LIT INDEX 5	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		27: [PORTBADDR]	  ram_addr[6]	LIT INDEX 6	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		28: [PORTBADDR]	  ram_addr[7]	LIT INDEX 7	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		29: [PORTBADDR]	  ram_addr[8]	LIT INDEX 8	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		30: [PORTBADDR]	  ram_addr[9]	LIT INDEX 9	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		31: [PORTBADDR]	  ram_addr[10]	LIT INDEX 10	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		32: [PORTBADDR]	  ram_addr[11]	LIT INDEX 11	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|q_a[5]	LIT INDEX 0 FANOUTS 1 REGED POS
+		1: [OBSERVABLEPORTAWEREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		2: [OBSERVABLEPORTADATAINREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTAMEMORYREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~porta_address_reg1	LIT INDEX 1 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~porta_address_reg2	LIT INDEX 2 FANOUTS 0
+		7: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~porta_address_reg3	LIT INDEX 3 FANOUTS 0
+		8: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~porta_address_reg4	LIT INDEX 4 FANOUTS 0
+		9: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~porta_address_reg5	LIT INDEX 5 FANOUTS 0
+		10: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~porta_address_reg6	LIT INDEX 6 FANOUTS 0
+		11: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~porta_address_reg7	LIT INDEX 7 FANOUTS 0
+		12: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~porta_address_reg8	LIT INDEX 8 FANOUTS 0
+		13: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~porta_address_reg9	LIT INDEX 9 FANOUTS 0
+		14: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~porta_address_reg10	LIT INDEX 10 FANOUTS 0
+		15: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~porta_address_reg11	LIT INDEX 11 FANOUTS 0
+		16: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+		17: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~portb_address_reg1	LIT INDEX 1 FANOUTS 0
+		18: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~portb_address_reg2	LIT INDEX 2 FANOUTS 0
+		19: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~portb_address_reg3	LIT INDEX 3 FANOUTS 0
+		20: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~portb_address_reg4	LIT INDEX 4 FANOUTS 0
+		21: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~portb_address_reg5	LIT INDEX 5 FANOUTS 0
+		22: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~portb_address_reg6	LIT INDEX 6 FANOUTS 0
+		23: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~portb_address_reg7	LIT INDEX 7 FANOUTS 0
+		24: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~portb_address_reg8	LIT INDEX 8 FANOUTS 0
+		25: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~portb_address_reg9	LIT INDEX 9 FANOUTS 0
+		26: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~portb_address_reg10	LIT INDEX 10 FANOUTS 0
+		27: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a5~portb_address_reg11	LIT INDEX 11 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = single_port
+		ram_block_type                 = auto
+		logical_ram_name               = sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 12
+		port_a_logical_ram_depth       = 4096
+		port_a_logical_ram_width       = 8
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = clock0
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 4095
+		port_a_first_bit_number        = 5
+		port_a_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 6
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ !(ram_wr)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  ram_din[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  ram_addr[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTAADDR]	  ram_addr[1]	LIT INDEX 1	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: [PORTAADDR]	  ram_addr[2]	LIT INDEX 2	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		12: [PORTAADDR]	  ram_addr[3]	LIT INDEX 3	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		13: [PORTAADDR]	  ram_addr[4]	LIT INDEX 4	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		14: [PORTAADDR]	  ram_addr[5]	LIT INDEX 5	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		15: [PORTAADDR]	  ram_addr[6]	LIT INDEX 6	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		16: [PORTAADDR]	  ram_addr[7]	LIT INDEX 7	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		17: [PORTAADDR]	  ram_addr[8]	LIT INDEX 8	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		18: [PORTAADDR]	  ram_addr[9]	LIT INDEX 9	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		19: [PORTAADDR]	  ram_addr[10]	LIT INDEX 10	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		20: [PORTAADDR]	  ram_addr[11]	LIT INDEX 11	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		21: [PORTBADDR]	  ram_addr[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		22: [PORTBADDR]	  ram_addr[1]	LIT INDEX 1	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		23: [PORTBADDR]	  ram_addr[2]	LIT INDEX 2	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		24: [PORTBADDR]	  ram_addr[3]	LIT INDEX 3	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		25: [PORTBADDR]	  ram_addr[4]	LIT INDEX 4	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		26: [PORTBADDR]	  ram_addr[5]	LIT INDEX 5	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		27: [PORTBADDR]	  ram_addr[6]	LIT INDEX 6	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		28: [PORTBADDR]	  ram_addr[7]	LIT INDEX 7	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		29: [PORTBADDR]	  ram_addr[8]	LIT INDEX 8	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		30: [PORTBADDR]	  ram_addr[9]	LIT INDEX 9	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		31: [PORTBADDR]	  ram_addr[10]	LIT INDEX 10	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		32: [PORTBADDR]	  ram_addr[11]	LIT INDEX 11	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|q_a[6]	LIT INDEX 0 FANOUTS 1 REGED POS
+		1: [OBSERVABLEPORTAWEREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		2: [OBSERVABLEPORTADATAINREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTAMEMORYREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~porta_address_reg1	LIT INDEX 1 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~porta_address_reg2	LIT INDEX 2 FANOUTS 0
+		7: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~porta_address_reg3	LIT INDEX 3 FANOUTS 0
+		8: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~porta_address_reg4	LIT INDEX 4 FANOUTS 0
+		9: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~porta_address_reg5	LIT INDEX 5 FANOUTS 0
+		10: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~porta_address_reg6	LIT INDEX 6 FANOUTS 0
+		11: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~porta_address_reg7	LIT INDEX 7 FANOUTS 0
+		12: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~porta_address_reg8	LIT INDEX 8 FANOUTS 0
+		13: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~porta_address_reg9	LIT INDEX 9 FANOUTS 0
+		14: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~porta_address_reg10	LIT INDEX 10 FANOUTS 0
+		15: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~porta_address_reg11	LIT INDEX 11 FANOUTS 0
+		16: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+		17: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~portb_address_reg1	LIT INDEX 1 FANOUTS 0
+		18: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~portb_address_reg2	LIT INDEX 2 FANOUTS 0
+		19: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~portb_address_reg3	LIT INDEX 3 FANOUTS 0
+		20: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~portb_address_reg4	LIT INDEX 4 FANOUTS 0
+		21: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~portb_address_reg5	LIT INDEX 5 FANOUTS 0
+		22: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~portb_address_reg6	LIT INDEX 6 FANOUTS 0
+		23: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~portb_address_reg7	LIT INDEX 7 FANOUTS 0
+		24: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~portb_address_reg8	LIT INDEX 8 FANOUTS 0
+		25: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~portb_address_reg9	LIT INDEX 9 FANOUTS 0
+		26: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~portb_address_reg10	LIT INDEX 10 FANOUTS 0
+		27: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a6~portb_address_reg11	LIT INDEX 11 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = single_port
+		ram_block_type                 = auto
+		logical_ram_name               = sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 12
+		port_a_logical_ram_depth       = 4096
+		port_a_logical_ram_width       = 8
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = clock0
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 4095
+		port_a_first_bit_number        = 6
+		port_a_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7 -- UNIQUE
+	Atom Hier Name: 
+	Atom Id: 7
+	Atom Type: stratix_ram_block (WYSIWYG)
+
+	INPUTS (Driven By):
+		0: [PORTAWE]	~ !(ram_wr)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: [CLK0]	  clk	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PORTADATAIN]	  ram_din[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		9: [PORTAADDR]	  ram_addr[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [PORTAADDR]	  ram_addr[1]	LIT INDEX 1	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		11: [PORTAADDR]	  ram_addr[2]	LIT INDEX 2	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		12: [PORTAADDR]	  ram_addr[3]	LIT INDEX 3	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		13: [PORTAADDR]	  ram_addr[4]	LIT INDEX 4	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		14: [PORTAADDR]	  ram_addr[5]	LIT INDEX 5	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		15: [PORTAADDR]	  ram_addr[6]	LIT INDEX 6	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		16: [PORTAADDR]	  ram_addr[7]	LIT INDEX 7	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		17: [PORTAADDR]	  ram_addr[8]	LIT INDEX 8	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		18: [PORTAADDR]	  ram_addr[9]	LIT INDEX 9	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		19: [PORTAADDR]	  ram_addr[10]	LIT INDEX 10	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		20: [PORTAADDR]	  ram_addr[11]	LIT INDEX 11	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		21: [PORTBADDR]	  ram_addr[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		22: [PORTBADDR]	  ram_addr[1]	LIT INDEX 1	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		23: [PORTBADDR]	  ram_addr[2]	LIT INDEX 2	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		24: [PORTBADDR]	  ram_addr[3]	LIT INDEX 3	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		25: [PORTBADDR]	  ram_addr[4]	LIT INDEX 4	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		26: [PORTBADDR]	  ram_addr[5]	LIT INDEX 5	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		27: [PORTBADDR]	  ram_addr[6]	LIT INDEX 6	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		28: [PORTBADDR]	  ram_addr[7]	LIT INDEX 7	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		29: [PORTBADDR]	  ram_addr[8]	LIT INDEX 8	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		30: [PORTBADDR]	  ram_addr[9]	LIT INDEX 9	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		31: [PORTBADDR]	  ram_addr[10]	LIT INDEX 10	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		32: [PORTBADDR]	  ram_addr[11]	LIT INDEX 11	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [PORTADATAOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|q_a[7]	LIT INDEX 0 FANOUTS 1 REGED POS
+		1: [OBSERVABLEPORTAWEREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~porta_we_reg	LIT INDEX 0 FANOUTS 0
+		2: [OBSERVABLEPORTADATAINREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~porta_datain_reg0	LIT INDEX 0 FANOUTS 0
+		3: [OBSERVABLEPORTAMEMORYREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~porta_memory_reg0	LIT INDEX 0 FANOUTS 0
+		4: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~porta_address_reg0	LIT INDEX 0 FANOUTS 0
+		5: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~porta_address_reg1	LIT INDEX 1 FANOUTS 0
+		6: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~porta_address_reg2	LIT INDEX 2 FANOUTS 0
+		7: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~porta_address_reg3	LIT INDEX 3 FANOUTS 0
+		8: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~porta_address_reg4	LIT INDEX 4 FANOUTS 0
+		9: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~porta_address_reg5	LIT INDEX 5 FANOUTS 0
+		10: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~porta_address_reg6	LIT INDEX 6 FANOUTS 0
+		11: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~porta_address_reg7	LIT INDEX 7 FANOUTS 0
+		12: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~porta_address_reg8	LIT INDEX 8 FANOUTS 0
+		13: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~porta_address_reg9	LIT INDEX 9 FANOUTS 0
+		14: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~porta_address_reg10	LIT INDEX 10 FANOUTS 0
+		15: [OBSERVABLEPORTAADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~porta_address_reg11	LIT INDEX 11 FANOUTS 0
+		16: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~portb_address_reg0	LIT INDEX 0 FANOUTS 0
+		17: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~portb_address_reg1	LIT INDEX 1 FANOUTS 0
+		18: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~portb_address_reg2	LIT INDEX 2 FANOUTS 0
+		19: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~portb_address_reg3	LIT INDEX 3 FANOUTS 0
+		20: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~portb_address_reg4	LIT INDEX 4 FANOUTS 0
+		21: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~portb_address_reg5	LIT INDEX 5 FANOUTS 0
+		22: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~portb_address_reg6	LIT INDEX 6 FANOUTS 0
+		23: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~portb_address_reg7	LIT INDEX 7 FANOUTS 0
+		24: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~portb_address_reg8	LIT INDEX 8 FANOUTS 0
+		25: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~portb_address_reg9	LIT INDEX 9 FANOUTS 0
+		26: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~portb_address_reg10	LIT INDEX 10 FANOUTS 0
+		27: [OBSERVABLEPORTBADDRESSREGOUT]	sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ram_block1a7~portb_address_reg11	LIT INDEX 11 FANOUTS 0
+
+	PARAMETER LIST:
+		operation_mode                 = single_port
+		ram_block_type                 = auto
+		logical_ram_name               = sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|ALTSYNCRAM
+		data_interleave_width_in_bits  = 1
+		data_interleave_offset_in_bits = 1
+		port_a_address_width           = 12
+		port_a_logical_ram_depth       = 4096
+		port_a_logical_ram_width       = 8
+		port_a_data_in_clear           = none
+		port_a_address_clear           = none
+		port_a_write_enable_clear      = none
+		port_a_byte_enable_clear       = none
+		port_a_data_out_clock          = clock0
+		port_a_data_out_clear          = none
+		port_a_first_address           = 0
+		port_a_last_address            = 4095
+		port_a_first_bit_number        = 7
+		port_a_data_width              = 1
+
+
+- ATOM ------------------------
+	ATOM_NAME: rst_n -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 41
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	rst_n	LIT INDEX 0 FANOUTS 0
+		1: NONE
+		2: [PADIO]	rst_n	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_dout[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 42
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|q_a[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	ram_dout[0]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_dout[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 43
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|q_a[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	ram_dout[1]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_dout[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 44
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|q_a[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	ram_dout[2]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_dout[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 45
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|q_a[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	ram_dout[3]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_dout[4] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 46
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|q_a[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	ram_dout[4]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_dout[5] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 47
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|q_a[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	ram_dout[5]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_dout[6] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 48
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|q_a[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	ram_dout[6]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_dout[7] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 49
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: [DATAIN]	  sys_ram:uut_ram|altsyncram:altsyncram_component|altsyncram_oaa1:auto_generated|q_a[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	ram_dout[7]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = output
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_wr -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 50
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_wr	LIT INDEX 0 FANOUTS 8
+		1: NONE
+		2: [PADIO]	ram_wr	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: clk -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 51
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	clk	LIT INDEX 0 FANOUTS 8
+		1: NONE
+		2: [PADIO]	clk	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_din[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 52
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_din[0]	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: [PADIO]	ram_din[0]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_addr[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 53
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_addr[0]	LIT INDEX 0 FANOUTS 16
+		1: NONE
+		2: [PADIO]	ram_addr[0]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_addr[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 54
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_addr[1]	LIT INDEX 0 FANOUTS 16
+		1: NONE
+		2: [PADIO]	ram_addr[1]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_addr[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 55
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_addr[2]	LIT INDEX 0 FANOUTS 16
+		1: NONE
+		2: [PADIO]	ram_addr[2]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_addr[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 56
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_addr[3]	LIT INDEX 0 FANOUTS 16
+		1: NONE
+		2: [PADIO]	ram_addr[3]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_addr[4] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 57
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_addr[4]	LIT INDEX 0 FANOUTS 16
+		1: NONE
+		2: [PADIO]	ram_addr[4]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_addr[5] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 58
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_addr[5]	LIT INDEX 0 FANOUTS 16
+		1: NONE
+		2: [PADIO]	ram_addr[5]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_addr[6] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 59
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_addr[6]	LIT INDEX 0 FANOUTS 16
+		1: NONE
+		2: [PADIO]	ram_addr[6]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_addr[7] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 60
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_addr[7]	LIT INDEX 0 FANOUTS 16
+		1: NONE
+		2: [PADIO]	ram_addr[7]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_addr[8] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 61
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_addr[8]	LIT INDEX 0 FANOUTS 16
+		1: NONE
+		2: [PADIO]	ram_addr[8]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_addr[9] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 62
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_addr[9]	LIT INDEX 0 FANOUTS 16
+		1: NONE
+		2: [PADIO]	ram_addr[9]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_addr[10] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 63
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_addr[10]	LIT INDEX 0 FANOUTS 16
+		1: NONE
+		2: [PADIO]	ram_addr[10]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_addr[11] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 64
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_addr[11]	LIT INDEX 0 FANOUTS 16
+		1: NONE
+		2: [PADIO]	ram_addr[11]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_din[1] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 65
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_din[1]	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: [PADIO]	ram_din[1]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_din[2] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 66
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_din[2]	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: [PADIO]	ram_din[2]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_din[3] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 67
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_din[3]	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: [PADIO]	ram_din[3]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_din[4] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 68
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_din[4]	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: [PADIO]	ram_din[4]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_din[5] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 69
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_din[5]	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: [PADIO]	ram_din[5]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_din[6] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 70
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_din[6]	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: [PADIO]	ram_din[6]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ram_din[7] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 71
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: [PADIO]	DISCONNECTED
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	ram_din[7]	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: [PADIO]	ram_din[7]	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ~STRATIX_FITTER_CREATED_GND~I -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 72
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	~STRATIX_FITTER_CREATED_GND~I	LIT INDEX 0 FANOUTS 0
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		(Skipping parameters for lcell or lcell comb with no fanout)
+
+
+- ATOM ------------------------
+	ATOM_NAME: ~nCSO~ -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 73
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	~nCSO~	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+
+- ATOM ------------------------
+	ATOM_NAME: ~ASDO~ -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 74
+	Atom Type: tornado_io
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: NO ITERM
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: NONE
+		2: [PADIO]	~ASDO~	LIT INDEX 0 FANOUTS 0
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = input
+		input_register_mode            = none
+		output_register_mode           = none
+		oe_register_mode               = none
+		input_async_reset              = none
+		output_async_reset             = none
+		oe_async_reset                 = none
+		input_sync_reset               = none
+		output_sync_reset              = none
+		oe_sync_reset                  = none
+		input_power_up                 = low
+		output_power_up                = low
+		oe_power_up                    = low
+
+	DELAY CHAINS:
+		PAD TO CORE 0:	OFF
+		PAD TO CORE 1:	OFF
+		PAD TO INPUT REG:	OFF
+		TCO CHAIN:	OFF
+
+	IO STANDARD:			3.3-V LVTTL
+	CURRENT STRENGTH:		DEFAULT
+	PCI DIODE:       		OFF
+	TERMINATION:     		OFF
+

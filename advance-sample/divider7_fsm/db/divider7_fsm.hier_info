@@ -1,0 +1,8 @@
+|divider7_fsm
+sys_clk => clk_divide_7~reg0.CLK
+sys_clk => curr_st~0.IN1
+sys_rst_n => clk_divide_7~reg0.ACLR
+sys_rst_n => curr_st~1.IN1
+clk_divide_7 <= clk_divide_7~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

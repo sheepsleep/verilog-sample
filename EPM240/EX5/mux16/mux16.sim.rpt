@@ -1,0 +1,561 @@
+Simulator report for mux16
+Thu Sep 26 11:14:03 2002
+Quartus II Version 7.0 Build 33 02/05/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 214 nodes    ;
+; Simulation Coverage         ;      44.16 % ;
+; Total Number of Transitions ; 1252         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; MAX II       ;
+; Device                      ; EPM240T100C5 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Glitch Filtering                                                                           ; Off        ; Off           ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      44.16 % ;
+; Total nodes checked                                 ; 214          ;
+; Total output ports checked                          ; 274          ;
+; Total output ports with complete 1/0-value coverage ; 121          ;
+; Total output ports with no 1/0-value coverage       ; 127          ;
+; Total output ports with no 1-value coverage         ; 127          ;
+; Total output ports with no 0-value coverage         ; 153          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                        ;
++------------------------+------------------------+------------------+
+; Node Name              ; Output Port Name       ; Output Port Type ;
++------------------------+------------------------+------------------+
+; |mux16|yout_r[8]       ; |mux16|yout_r[8]       ; regout           ;
+; |mux16|yout_r[9]       ; |mux16|yout_r[9]       ; regout           ;
+; |mux16|yout_r[10]      ; |mux16|yout_r[10]      ; regout           ;
+; |mux16|yout_r[11]      ; |mux16|yout_r[11]      ; regout           ;
+; |mux16|yout_r[12]      ; |mux16|yout_r[12]      ; regout           ;
+; |mux16|yout_r[13]      ; |mux16|yout_r[13]      ; regout           ;
+; |mux16|yout_r[14]      ; |mux16|yout_r[14]      ; regout           ;
+; |mux16|yout_r[15]      ; |mux16|yout_r[15]      ; regout           ;
+; |mux16|yout_r[16]      ; |mux16|yout_r[16]      ; regout           ;
+; |mux16|yout_r[17]      ; |mux16|yout_r[17]      ; regout           ;
+; |mux16|yout_r[18]      ; |mux16|yout_r[18]      ; regout           ;
+; |mux16|yout_r[19]      ; |mux16|yout_r[19]      ; regout           ;
+; |mux16|yout_r[20]      ; |mux16|yout_r[20]      ; regout           ;
+; |mux16|yout_r[21]      ; |mux16|yout_r[21]      ; regout           ;
+; |mux16|yout_r[22]      ; |mux16|yout_r[22]      ; regout           ;
+; |mux16|yout_r[23]      ; |mux16|yout_r[23]      ; regout           ;
+; |mux16|i[4]            ; |mux16|i[4]            ; regout           ;
+; |mux16|i[3]            ; |mux16|i[3]            ; regout           ;
+; |mux16|i[3]            ; |mux16|i[3]~147        ; cout0            ;
+; |mux16|i[3]            ; |mux16|i[3]~147COUT1   ; cout1            ;
+; |mux16|i[2]            ; |mux16|i[2]            ; regout           ;
+; |mux16|i[2]            ; |mux16|i[2]~148        ; cout0            ;
+; |mux16|i[2]            ; |mux16|i[2]~148COUT1   ; cout1            ;
+; |mux16|i[0]            ; |mux16|i[0]~149        ; cout0            ;
+; |mux16|i[0]            ; |mux16|i[0]~149COUT1   ; cout1            ;
+; |mux16|i[1]            ; |mux16|i[1]            ; regout           ;
+; |mux16|i[1]            ; |mux16|i[1]~150        ; cout0            ;
+; |mux16|i[1]            ; |mux16|i[1]~150COUT1   ; cout1            ;
+; |mux16|always0~61      ; |mux16|always0~61      ; combout          ;
+; |mux16|yout_r[0]~2264  ; |mux16|yout_r[0]~2264  ; combout          ;
+; |mux16|Add2~431        ; |mux16|Add2~431        ; combout          ;
+; |mux16|Mux0~112        ; |mux16|Mux0~112        ; combout          ;
+; |mux16|Mux0~113        ; |mux16|Mux0~113        ; combout          ;
+; |mux16|Mux0~114        ; |mux16|Mux0~114        ; combout          ;
+; |mux16|Add1~98         ; |mux16|Add1~98         ; combout          ;
+; |mux16|Mux0~121        ; |mux16|Mux0~121        ; combout          ;
+; |mux16|Mux0~122        ; |mux16|Mux0~122        ; combout          ;
+; |mux16|Mux0~123        ; |mux16|Mux0~123        ; combout          ;
+; |mux16|Mux0~124        ; |mux16|Mux0~124        ; combout          ;
+; |mux16|Mux0~125        ; |mux16|Mux0~125        ; combout          ;
+; |mux16|Add2~433        ; |mux16|Add2~433        ; combout          ;
+; |mux16|Add2~433        ; |mux16|Add2~434        ; cout0            ;
+; |mux16|Add2~433        ; |mux16|Add2~434COUT1   ; cout1            ;
+; |mux16|Add3~237        ; |mux16|Add3~237        ; combout          ;
+; |mux16|Add2~435        ; |mux16|Add2~435        ; combout          ;
+; |mux16|Add2~435        ; |mux16|Add2~436        ; cout             ;
+; |mux16|Add2~437        ; |mux16|Add2~437        ; combout          ;
+; |mux16|always0~62      ; |mux16|always0~62      ; combout          ;
+; |mux16|yout_r[19]~2278 ; |mux16|yout_r[19]~2278 ; combout          ;
+; |mux16|Add3~239        ; |mux16|Add3~239        ; combout          ;
+; |mux16|Add3~239        ; |mux16|Add3~240        ; cout0            ;
+; |mux16|Add3~239        ; |mux16|Add3~240COUT1   ; cout1            ;
+; |mux16|Add2~438        ; |mux16|Add2~438        ; combout          ;
+; |mux16|Add2~438        ; |mux16|Add2~439COUT1   ; cout1            ;
+; |mux16|Add2~440        ; |mux16|Add2~440        ; combout          ;
+; |mux16|Add3~241        ; |mux16|Add3~241        ; combout          ;
+; |mux16|Add3~241        ; |mux16|Add3~242        ; cout             ;
+; |mux16|Add2~441        ; |mux16|Add2~441        ; combout          ;
+; |mux16|Add2~441        ; |mux16|Add2~442        ; cout0            ;
+; |mux16|Add2~441        ; |mux16|Add2~442COUT1   ; cout1            ;
+; |mux16|Add2~443        ; |mux16|Add2~443        ; combout          ;
+; |mux16|Add3~243        ; |mux16|Add3~243        ; combout          ;
+; |mux16|Add3~243        ; |mux16|Add3~244COUT1   ; cout1            ;
+; |mux16|Add2~444        ; |mux16|Add2~444        ; combout          ;
+; |mux16|Add2~444        ; |mux16|Add2~445        ; cout0            ;
+; |mux16|Add2~444        ; |mux16|Add2~445COUT1   ; cout1            ;
+; |mux16|Add2~446        ; |mux16|Add2~446        ; combout          ;
+; |mux16|Add3~245        ; |mux16|Add3~245        ; combout          ;
+; |mux16|Add3~245        ; |mux16|Add3~246        ; cout0            ;
+; |mux16|Add3~245        ; |mux16|Add3~246COUT1   ; cout1            ;
+; |mux16|Add2~447        ; |mux16|Add2~447        ; combout          ;
+; |mux16|Add2~447        ; |mux16|Add2~448        ; cout0            ;
+; |mux16|Add2~447        ; |mux16|Add2~448COUT1   ; cout1            ;
+; |mux16|Add2~449        ; |mux16|Add2~449        ; combout          ;
+; |mux16|Add3~247        ; |mux16|Add3~247        ; combout          ;
+; |mux16|Add3~247        ; |mux16|Add3~248        ; cout0            ;
+; |mux16|Add3~247        ; |mux16|Add3~248COUT1   ; cout1            ;
+; |mux16|Add2~450        ; |mux16|Add2~450        ; combout          ;
+; |mux16|Add2~450        ; |mux16|Add2~451        ; cout             ;
+; |mux16|Add2~452        ; |mux16|Add2~452        ; combout          ;
+; |mux16|Add3~249        ; |mux16|Add3~249        ; combout          ;
+; |mux16|Add3~249        ; |mux16|Add3~250        ; cout0            ;
+; |mux16|Add3~249        ; |mux16|Add3~250COUT1   ; cout1            ;
+; |mux16|Add2~453        ; |mux16|Add2~453        ; combout          ;
+; |mux16|Add2~453        ; |mux16|Add2~454COUT1   ; cout1            ;
+; |mux16|Add2~455        ; |mux16|Add2~455        ; combout          ;
+; |mux16|Add3~251        ; |mux16|Add3~251        ; combout          ;
+; |mux16|Add3~251        ; |mux16|Add3~252        ; cout             ;
+; |mux16|Add2~456        ; |mux16|Add2~456        ; combout          ;
+; |mux16|Add2~458        ; |mux16|Add2~458        ; combout          ;
+; |mux16|Add3~253        ; |mux16|Add3~253        ; combout          ;
+; |mux16|Add3~255        ; |mux16|Add3~255        ; combout          ;
+; |mux16|yout_r[31]~2280 ; |mux16|yout_r[31]~2280 ; combout          ;
+; |mux16|yout_r[31]~2281 ; |mux16|yout_r[31]~2281 ; combout          ;
+; |mux16|always0~63      ; |mux16|always0~63      ; combout          ;
+; |mux16|done_r~113      ; |mux16|done_r~113      ; combout          ;
+; |mux16|done_r~114      ; |mux16|done_r~114      ; combout          ;
+; |mux16|i[3]~151        ; |mux16|i[3]~151        ; combout          ;
+; |mux16|LessThan1~64    ; |mux16|LessThan1~64    ; combout          ;
+; |mux16|LessThan0~86    ; |mux16|LessThan0~86    ; combout          ;
+; |mux16|breg[14]~311    ; |mux16|breg[14]~311    ; combout          ;
+; |mux16|rst_n           ; |mux16|rst_n           ; combout          ;
+; |mux16|clk             ; |mux16|clk             ; combout          ;
+; |mux16|start           ; |mux16|start           ; combout          ;
+; |mux16|yout[8]         ; |mux16|yout[8]         ; padio            ;
+; |mux16|yout[9]         ; |mux16|yout[9]         ; padio            ;
+; |mux16|yout[10]        ; |mux16|yout[10]        ; padio            ;
+; |mux16|yout[11]        ; |mux16|yout[11]        ; padio            ;
+; |mux16|yout[12]        ; |mux16|yout[12]        ; padio            ;
+; |mux16|yout[13]        ; |mux16|yout[13]        ; padio            ;
+; |mux16|yout[14]        ; |mux16|yout[14]        ; padio            ;
+; |mux16|yout[15]        ; |mux16|yout[15]        ; padio            ;
+; |mux16|yout[16]        ; |mux16|yout[16]        ; padio            ;
+; |mux16|yout[17]        ; |mux16|yout[17]        ; padio            ;
+; |mux16|yout[18]        ; |mux16|yout[18]        ; padio            ;
+; |mux16|yout[19]        ; |mux16|yout[19]        ; padio            ;
+; |mux16|yout[20]        ; |mux16|yout[20]        ; padio            ;
+; |mux16|yout[21]        ; |mux16|yout[21]        ; padio            ;
+; |mux16|yout[22]        ; |mux16|yout[22]        ; padio            ;
+; |mux16|yout[23]        ; |mux16|yout[23]        ; padio            ;
+; |mux16|done            ; |mux16|done            ; padio            ;
++------------------------+------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------+
+; Missing 1-Value Coverage                                     ;
++--------------------+----------------------+------------------+
+; Node Name          ; Output Port Name     ; Output Port Type ;
++--------------------+----------------------+------------------+
+; |mux16|yout_r[0]   ; |mux16|yout_r[0]     ; regout           ;
+; |mux16|yout_r[24]  ; |mux16|yout_r[24]    ; regout           ;
+; |mux16|yout_r[25]  ; |mux16|yout_r[25]    ; regout           ;
+; |mux16|yout_r[26]  ; |mux16|yout_r[26]    ; regout           ;
+; |mux16|yout_r[27]  ; |mux16|yout_r[27]    ; regout           ;
+; |mux16|yout_r[28]  ; |mux16|yout_r[28]    ; regout           ;
+; |mux16|yout_r[29]  ; |mux16|yout_r[29]    ; regout           ;
+; |mux16|yout_r[30]  ; |mux16|yout_r[30]    ; regout           ;
+; |mux16|yout_r[31]  ; |mux16|yout_r[31]    ; regout           ;
+; |mux16|Add2~431    ; |mux16|Add2~432      ; cout0            ;
+; |mux16|Add2~431    ; |mux16|Add2~432COUT1 ; cout1            ;
+; |mux16|areg[1]     ; |mux16|areg[1]       ; regout           ;
+; |mux16|areg[7]     ; |mux16|areg[7]       ; regout           ;
+; |mux16|areg[12]    ; |mux16|areg[12]      ; regout           ;
+; |mux16|areg[8]     ; |mux16|areg[8]       ; regout           ;
+; |mux16|Mux0~115    ; |mux16|Mux0~115      ; combout          ;
+; |mux16|areg[14]    ; |mux16|areg[14]      ; regout           ;
+; |mux16|areg[10]    ; |mux16|areg[10]      ; regout           ;
+; |mux16|Mux0~116    ; |mux16|Mux0~116      ; combout          ;
+; |mux16|Mux0~117    ; |mux16|Mux0~117      ; combout          ;
+; |mux16|areg[13]    ; |mux16|areg[13]      ; regout           ;
+; |mux16|areg[9]     ; |mux16|areg[9]       ; regout           ;
+; |mux16|Mux0~118    ; |mux16|Mux0~118      ; combout          ;
+; |mux16|areg[15]    ; |mux16|areg[15]      ; regout           ;
+; |mux16|areg[11]    ; |mux16|areg[11]      ; regout           ;
+; |mux16|Mux0~119    ; |mux16|Mux0~119      ; combout          ;
+; |mux16|Mux0~120    ; |mux16|Mux0~120      ; combout          ;
+; |mux16|areg[4]     ; |mux16|areg[4]       ; regout           ;
+; |mux16|areg[6]     ; |mux16|areg[6]       ; regout           ;
+; |mux16|Add3~237    ; |mux16|Add3~238      ; cout0            ;
+; |mux16|Add3~237    ; |mux16|Add3~238COUT1 ; cout1            ;
+; |mux16|always0~1   ; |mux16|always0~1     ; combout          ;
+; |mux16|Add2~438    ; |mux16|Add2~439      ; cout0            ;
+; |mux16|Add3~243    ; |mux16|Add3~244      ; cout0            ;
+; |mux16|Add2~456    ; |mux16|Add2~457      ; cout0            ;
+; |mux16|Add2~456    ; |mux16|Add2~457COUT1 ; cout1            ;
+; |mux16|Add3~253    ; |mux16|Add3~254COUT1 ; cout1            ;
+; |mux16|Add2~459    ; |mux16|Add2~459      ; combout          ;
+; |mux16|Add2~459    ; |mux16|Add2~460      ; cout0            ;
+; |mux16|Add2~459    ; |mux16|Add2~460COUT1 ; cout1            ;
+; |mux16|Add2~461    ; |mux16|Add2~461      ; combout          ;
+; |mux16|Add3~255    ; |mux16|Add3~256      ; cout0            ;
+; |mux16|Add3~255    ; |mux16|Add3~256COUT1 ; cout1            ;
+; |mux16|Add2~462    ; |mux16|Add2~462      ; combout          ;
+; |mux16|Add2~462    ; |mux16|Add2~463      ; cout0            ;
+; |mux16|Add2~462    ; |mux16|Add2~463COUT1 ; cout1            ;
+; |mux16|Add2~464    ; |mux16|Add2~464      ; combout          ;
+; |mux16|Add3~257    ; |mux16|Add3~257      ; combout          ;
+; |mux16|Add3~257    ; |mux16|Add3~258      ; cout0            ;
+; |mux16|Add3~257    ; |mux16|Add3~258COUT1 ; cout1            ;
+; |mux16|Add2~465    ; |mux16|Add2~465      ; combout          ;
+; |mux16|Add2~465    ; |mux16|Add2~466      ; cout             ;
+; |mux16|Add2~467    ; |mux16|Add2~467      ; combout          ;
+; |mux16|Add3~259    ; |mux16|Add3~259      ; combout          ;
+; |mux16|Add3~259    ; |mux16|Add3~260      ; cout0            ;
+; |mux16|Add3~259    ; |mux16|Add3~260COUT1 ; cout1            ;
+; |mux16|Add2~468    ; |mux16|Add2~468      ; combout          ;
+; |mux16|Add2~468    ; |mux16|Add2~469      ; cout0            ;
+; |mux16|Add2~468    ; |mux16|Add2~469COUT1 ; cout1            ;
+; |mux16|Add2~470    ; |mux16|Add2~470      ; combout          ;
+; |mux16|Add3~261    ; |mux16|Add3~261      ; combout          ;
+; |mux16|Add3~261    ; |mux16|Add3~262      ; cout             ;
+; |mux16|Add2~471    ; |mux16|Add2~471      ; combout          ;
+; |mux16|Add2~471    ; |mux16|Add2~472      ; cout0            ;
+; |mux16|Add2~471    ; |mux16|Add2~472COUT1 ; cout1            ;
+; |mux16|Add2~473    ; |mux16|Add2~473      ; combout          ;
+; |mux16|Add3~263    ; |mux16|Add3~263      ; combout          ;
+; |mux16|Add3~263    ; |mux16|Add3~264      ; cout0            ;
+; |mux16|Add3~263    ; |mux16|Add3~264COUT1 ; cout1            ;
+; |mux16|Add2~474    ; |mux16|Add2~474      ; combout          ;
+; |mux16|Add2~476    ; |mux16|Add2~476      ; combout          ;
+; |mux16|Add3~265    ; |mux16|Add3~265      ; combout          ;
+; |mux16|Add3~265    ; |mux16|Add3~266      ; cout0            ;
+; |mux16|Add3~265    ; |mux16|Add3~266COUT1 ; cout1            ;
+; |mux16|yout_r~2279 ; |mux16|yout_r~2279   ; combout          ;
+; |mux16|Add3~267    ; |mux16|Add3~267      ; combout          ;
+; |mux16|breg[0]     ; |mux16|breg[0]       ; regout           ;
+; |mux16|breg[3]     ; |mux16|breg[3]       ; regout           ;
+; |mux16|breg[6]     ; |mux16|breg[6]       ; regout           ;
+; |mux16|breg[9]     ; |mux16|breg[9]       ; regout           ;
+; |mux16|breg[10]    ; |mux16|breg[10]      ; regout           ;
+; |mux16|breg[11]    ; |mux16|breg[11]      ; regout           ;
+; |mux16|breg[12]    ; |mux16|breg[12]      ; regout           ;
+; |mux16|breg[13]    ; |mux16|breg[13]      ; regout           ;
+; |mux16|breg[14]    ; |mux16|breg[14]      ; regout           ;
+; |mux16|breg[15]    ; |mux16|breg[15]      ; regout           ;
+; |mux16|ain[5]      ; |mux16|ain[5]        ; combout          ;
+; |mux16|ain[1]      ; |mux16|ain[1]        ; combout          ;
+; |mux16|ain[3]      ; |mux16|ain[3]        ; combout          ;
+; |mux16|ain[7]      ; |mux16|ain[7]        ; combout          ;
+; |mux16|ain[12]     ; |mux16|ain[12]       ; combout          ;
+; |mux16|ain[8]      ; |mux16|ain[8]        ; combout          ;
+; |mux16|ain[14]     ; |mux16|ain[14]       ; combout          ;
+; |mux16|ain[10]     ; |mux16|ain[10]       ; combout          ;
+; |mux16|ain[13]     ; |mux16|ain[13]       ; combout          ;
+; |mux16|ain[9]      ; |mux16|ain[9]        ; combout          ;
+; |mux16|ain[15]     ; |mux16|ain[15]       ; combout          ;
+; |mux16|ain[11]     ; |mux16|ain[11]       ; combout          ;
+; |mux16|ain[4]      ; |mux16|ain[4]        ; combout          ;
+; |mux16|ain[0]      ; |mux16|ain[0]        ; combout          ;
+; |mux16|ain[2]      ; |mux16|ain[2]        ; combout          ;
+; |mux16|ain[6]      ; |mux16|ain[6]        ; combout          ;
+; |mux16|bin[0]      ; |mux16|bin[0]        ; combout          ;
+; |mux16|bin[1]      ; |mux16|bin[1]        ; combout          ;
+; |mux16|bin[2]      ; |mux16|bin[2]        ; combout          ;
+; |mux16|bin[3]      ; |mux16|bin[3]        ; combout          ;
+; |mux16|bin[4]      ; |mux16|bin[4]        ; combout          ;
+; |mux16|bin[5]      ; |mux16|bin[5]        ; combout          ;
+; |mux16|bin[6]      ; |mux16|bin[6]        ; combout          ;
+; |mux16|bin[7]      ; |mux16|bin[7]        ; combout          ;
+; |mux16|bin[8]      ; |mux16|bin[8]        ; combout          ;
+; |mux16|bin[9]      ; |mux16|bin[9]        ; combout          ;
+; |mux16|bin[10]     ; |mux16|bin[10]       ; combout          ;
+; |mux16|bin[11]     ; |mux16|bin[11]       ; combout          ;
+; |mux16|bin[12]     ; |mux16|bin[12]       ; combout          ;
+; |mux16|bin[13]     ; |mux16|bin[13]       ; combout          ;
+; |mux16|bin[14]     ; |mux16|bin[14]       ; combout          ;
+; |mux16|bin[15]     ; |mux16|bin[15]       ; combout          ;
+; |mux16|yout[0]     ; |mux16|yout[0]       ; padio            ;
+; |mux16|yout[24]    ; |mux16|yout[24]      ; padio            ;
+; |mux16|yout[25]    ; |mux16|yout[25]      ; padio            ;
+; |mux16|yout[26]    ; |mux16|yout[26]      ; padio            ;
+; |mux16|yout[27]    ; |mux16|yout[27]      ; padio            ;
+; |mux16|yout[28]    ; |mux16|yout[28]      ; padio            ;
+; |mux16|yout[29]    ; |mux16|yout[29]      ; padio            ;
+; |mux16|yout[30]    ; |mux16|yout[30]      ; padio            ;
+; |mux16|yout[31]    ; |mux16|yout[31]      ; padio            ;
++--------------------+----------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------+
+; Missing 0-Value Coverage                                     ;
++--------------------+----------------------+------------------+
+; Node Name          ; Output Port Name     ; Output Port Type ;
++--------------------+----------------------+------------------+
+; |mux16|yout_r[0]   ; |mux16|yout_r[0]     ; regout           ;
+; |mux16|yout_r[1]   ; |mux16|yout_r[1]     ; regout           ;
+; |mux16|yout_r[2]   ; |mux16|yout_r[2]     ; regout           ;
+; |mux16|yout_r[3]   ; |mux16|yout_r[3]     ; regout           ;
+; |mux16|yout_r[4]   ; |mux16|yout_r[4]     ; regout           ;
+; |mux16|yout_r[5]   ; |mux16|yout_r[5]     ; regout           ;
+; |mux16|yout_r[6]   ; |mux16|yout_r[6]     ; regout           ;
+; |mux16|yout_r[7]   ; |mux16|yout_r[7]     ; regout           ;
+; |mux16|yout_r[24]  ; |mux16|yout_r[24]    ; regout           ;
+; |mux16|yout_r[25]  ; |mux16|yout_r[25]    ; regout           ;
+; |mux16|yout_r[26]  ; |mux16|yout_r[26]    ; regout           ;
+; |mux16|yout_r[27]  ; |mux16|yout_r[27]    ; regout           ;
+; |mux16|yout_r[28]  ; |mux16|yout_r[28]    ; regout           ;
+; |mux16|yout_r[29]  ; |mux16|yout_r[29]    ; regout           ;
+; |mux16|yout_r[30]  ; |mux16|yout_r[30]    ; regout           ;
+; |mux16|yout_r[31]  ; |mux16|yout_r[31]    ; regout           ;
+; |mux16|Add2~431    ; |mux16|Add2~432      ; cout0            ;
+; |mux16|Add2~431    ; |mux16|Add2~432COUT1 ; cout1            ;
+; |mux16|areg[5]     ; |mux16|areg[5]       ; regout           ;
+; |mux16|areg[1]     ; |mux16|areg[1]       ; regout           ;
+; |mux16|areg[3]     ; |mux16|areg[3]       ; regout           ;
+; |mux16|areg[7]     ; |mux16|areg[7]       ; regout           ;
+; |mux16|areg[12]    ; |mux16|areg[12]      ; regout           ;
+; |mux16|areg[8]     ; |mux16|areg[8]       ; regout           ;
+; |mux16|Mux0~115    ; |mux16|Mux0~115      ; combout          ;
+; |mux16|areg[14]    ; |mux16|areg[14]      ; regout           ;
+; |mux16|areg[10]    ; |mux16|areg[10]      ; regout           ;
+; |mux16|Mux0~116    ; |mux16|Mux0~116      ; combout          ;
+; |mux16|Mux0~117    ; |mux16|Mux0~117      ; combout          ;
+; |mux16|areg[13]    ; |mux16|areg[13]      ; regout           ;
+; |mux16|areg[9]     ; |mux16|areg[9]       ; regout           ;
+; |mux16|Mux0~118    ; |mux16|Mux0~118      ; combout          ;
+; |mux16|areg[15]    ; |mux16|areg[15]      ; regout           ;
+; |mux16|areg[11]    ; |mux16|areg[11]      ; regout           ;
+; |mux16|Mux0~119    ; |mux16|Mux0~119      ; combout          ;
+; |mux16|Mux0~120    ; |mux16|Mux0~120      ; combout          ;
+; |mux16|areg[4]     ; |mux16|areg[4]       ; regout           ;
+; |mux16|areg[0]     ; |mux16|areg[0]       ; regout           ;
+; |mux16|areg[2]     ; |mux16|areg[2]       ; regout           ;
+; |mux16|areg[6]     ; |mux16|areg[6]       ; regout           ;
+; |mux16|Add3~237    ; |mux16|Add3~238      ; cout0            ;
+; |mux16|Add3~237    ; |mux16|Add3~238COUT1 ; cout1            ;
+; |mux16|always0~1   ; |mux16|always0~1     ; combout          ;
+; |mux16|Add2~438    ; |mux16|Add2~439      ; cout0            ;
+; |mux16|Add3~243    ; |mux16|Add3~244      ; cout0            ;
+; |mux16|Add2~453    ; |mux16|Add2~454      ; cout0            ;
+; |mux16|Add2~456    ; |mux16|Add2~457      ; cout0            ;
+; |mux16|Add2~456    ; |mux16|Add2~457COUT1 ; cout1            ;
+; |mux16|Add3~253    ; |mux16|Add3~254      ; cout0            ;
+; |mux16|Add3~253    ; |mux16|Add3~254COUT1 ; cout1            ;
+; |mux16|Add2~459    ; |mux16|Add2~459      ; combout          ;
+; |mux16|Add2~459    ; |mux16|Add2~460      ; cout0            ;
+; |mux16|Add2~459    ; |mux16|Add2~460COUT1 ; cout1            ;
+; |mux16|Add2~461    ; |mux16|Add2~461      ; combout          ;
+; |mux16|Add3~255    ; |mux16|Add3~256      ; cout0            ;
+; |mux16|Add3~255    ; |mux16|Add3~256COUT1 ; cout1            ;
+; |mux16|Add2~462    ; |mux16|Add2~462      ; combout          ;
+; |mux16|Add2~462    ; |mux16|Add2~463      ; cout0            ;
+; |mux16|Add2~462    ; |mux16|Add2~463COUT1 ; cout1            ;
+; |mux16|Add2~464    ; |mux16|Add2~464      ; combout          ;
+; |mux16|Add3~257    ; |mux16|Add3~257      ; combout          ;
+; |mux16|Add3~257    ; |mux16|Add3~258      ; cout0            ;
+; |mux16|Add3~257    ; |mux16|Add3~258COUT1 ; cout1            ;
+; |mux16|Add2~465    ; |mux16|Add2~465      ; combout          ;
+; |mux16|Add2~465    ; |mux16|Add2~466      ; cout             ;
+; |mux16|Add2~467    ; |mux16|Add2~467      ; combout          ;
+; |mux16|Add3~259    ; |mux16|Add3~259      ; combout          ;
+; |mux16|Add3~259    ; |mux16|Add3~260      ; cout0            ;
+; |mux16|Add3~259    ; |mux16|Add3~260COUT1 ; cout1            ;
+; |mux16|Add2~468    ; |mux16|Add2~468      ; combout          ;
+; |mux16|Add2~468    ; |mux16|Add2~469      ; cout0            ;
+; |mux16|Add2~468    ; |mux16|Add2~469COUT1 ; cout1            ;
+; |mux16|Add2~470    ; |mux16|Add2~470      ; combout          ;
+; |mux16|Add3~261    ; |mux16|Add3~261      ; combout          ;
+; |mux16|Add3~261    ; |mux16|Add3~262      ; cout             ;
+; |mux16|Add2~471    ; |mux16|Add2~471      ; combout          ;
+; |mux16|Add2~471    ; |mux16|Add2~472      ; cout0            ;
+; |mux16|Add2~471    ; |mux16|Add2~472COUT1 ; cout1            ;
+; |mux16|Add2~473    ; |mux16|Add2~473      ; combout          ;
+; |mux16|Add3~263    ; |mux16|Add3~263      ; combout          ;
+; |mux16|Add3~263    ; |mux16|Add3~264      ; cout0            ;
+; |mux16|Add3~263    ; |mux16|Add3~264COUT1 ; cout1            ;
+; |mux16|Add2~474    ; |mux16|Add2~474      ; combout          ;
+; |mux16|Add2~476    ; |mux16|Add2~476      ; combout          ;
+; |mux16|Add3~265    ; |mux16|Add3~265      ; combout          ;
+; |mux16|Add3~265    ; |mux16|Add3~266      ; cout0            ;
+; |mux16|Add3~265    ; |mux16|Add3~266COUT1 ; cout1            ;
+; |mux16|yout_r~2279 ; |mux16|yout_r~2279   ; combout          ;
+; |mux16|Add3~267    ; |mux16|Add3~267      ; combout          ;
+; |mux16|breg[0]     ; |mux16|breg[0]       ; regout           ;
+; |mux16|breg[1]     ; |mux16|breg[1]       ; regout           ;
+; |mux16|breg[2]     ; |mux16|breg[2]       ; regout           ;
+; |mux16|breg[3]     ; |mux16|breg[3]       ; regout           ;
+; |mux16|breg[4]     ; |mux16|breg[4]       ; regout           ;
+; |mux16|breg[5]     ; |mux16|breg[5]       ; regout           ;
+; |mux16|breg[6]     ; |mux16|breg[6]       ; regout           ;
+; |mux16|breg[7]     ; |mux16|breg[7]       ; regout           ;
+; |mux16|breg[8]     ; |mux16|breg[8]       ; regout           ;
+; |mux16|breg[9]     ; |mux16|breg[9]       ; regout           ;
+; |mux16|breg[10]    ; |mux16|breg[10]      ; regout           ;
+; |mux16|breg[11]    ; |mux16|breg[11]      ; regout           ;
+; |mux16|breg[12]    ; |mux16|breg[12]      ; regout           ;
+; |mux16|breg[13]    ; |mux16|breg[13]      ; regout           ;
+; |mux16|breg[14]    ; |mux16|breg[14]      ; regout           ;
+; |mux16|breg[15]    ; |mux16|breg[15]      ; regout           ;
+; |mux16|ain[5]      ; |mux16|ain[5]        ; combout          ;
+; |mux16|ain[1]      ; |mux16|ain[1]        ; combout          ;
+; |mux16|ain[3]      ; |mux16|ain[3]        ; combout          ;
+; |mux16|ain[7]      ; |mux16|ain[7]        ; combout          ;
+; |mux16|ain[12]     ; |mux16|ain[12]       ; combout          ;
+; |mux16|ain[8]      ; |mux16|ain[8]        ; combout          ;
+; |mux16|ain[14]     ; |mux16|ain[14]       ; combout          ;
+; |mux16|ain[10]     ; |mux16|ain[10]       ; combout          ;
+; |mux16|ain[13]     ; |mux16|ain[13]       ; combout          ;
+; |mux16|ain[9]      ; |mux16|ain[9]        ; combout          ;
+; |mux16|ain[15]     ; |mux16|ain[15]       ; combout          ;
+; |mux16|ain[11]     ; |mux16|ain[11]       ; combout          ;
+; |mux16|ain[4]      ; |mux16|ain[4]        ; combout          ;
+; |mux16|ain[0]      ; |mux16|ain[0]        ; combout          ;
+; |mux16|ain[2]      ; |mux16|ain[2]        ; combout          ;
+; |mux16|ain[6]      ; |mux16|ain[6]        ; combout          ;
+; |mux16|bin[0]      ; |mux16|bin[0]        ; combout          ;
+; |mux16|bin[1]      ; |mux16|bin[1]        ; combout          ;
+; |mux16|bin[2]      ; |mux16|bin[2]        ; combout          ;
+; |mux16|bin[3]      ; |mux16|bin[3]        ; combout          ;
+; |mux16|bin[4]      ; |mux16|bin[4]        ; combout          ;
+; |mux16|bin[5]      ; |mux16|bin[5]        ; combout          ;
+; |mux16|bin[6]      ; |mux16|bin[6]        ; combout          ;
+; |mux16|bin[7]      ; |mux16|bin[7]        ; combout          ;
+; |mux16|bin[8]      ; |mux16|bin[8]        ; combout          ;
+; |mux16|bin[9]      ; |mux16|bin[9]        ; combout          ;
+; |mux16|bin[10]     ; |mux16|bin[10]       ; combout          ;
+; |mux16|bin[11]     ; |mux16|bin[11]       ; combout          ;
+; |mux16|bin[12]     ; |mux16|bin[12]       ; combout          ;
+; |mux16|bin[13]     ; |mux16|bin[13]       ; combout          ;
+; |mux16|bin[14]     ; |mux16|bin[14]       ; combout          ;
+; |mux16|bin[15]     ; |mux16|bin[15]       ; combout          ;
+; |mux16|yout[0]     ; |mux16|yout[0]       ; padio            ;
+; |mux16|yout[1]     ; |mux16|yout[1]       ; padio            ;
+; |mux16|yout[2]     ; |mux16|yout[2]       ; padio            ;
+; |mux16|yout[3]     ; |mux16|yout[3]       ; padio            ;
+; |mux16|yout[4]     ; |mux16|yout[4]       ; padio            ;
+; |mux16|yout[5]     ; |mux16|yout[5]       ; padio            ;
+; |mux16|yout[6]     ; |mux16|yout[6]       ; padio            ;
+; |mux16|yout[7]     ; |mux16|yout[7]       ; padio            ;
+; |mux16|yout[24]    ; |mux16|yout[24]      ; padio            ;
+; |mux16|yout[25]    ; |mux16|yout[25]      ; padio            ;
+; |mux16|yout[26]    ; |mux16|yout[26]      ; padio            ;
+; |mux16|yout[27]    ; |mux16|yout[27]      ; padio            ;
+; |mux16|yout[28]    ; |mux16|yout[28]      ; padio            ;
+; |mux16|yout[29]    ; |mux16|yout[29]      ; padio            ;
+; |mux16|yout[30]    ; |mux16|yout[30]      ; padio            ;
+; |mux16|yout[31]    ; |mux16|yout[31]      ; padio            ;
++--------------------+----------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 7.0 Build 33 02/05/2007 SJ Full Version
+    Info: Processing started: Thu Sep 26 11:14:00 2002
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off mux16 -c mux16
+Info: Using vector source file "D:/project/mux16/mux16.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      44.16 %
+Info: Number of transitions in simulation is 1252
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Allocated 90 megabytes of memory during processing
+    Info: Processing ended: Thu Sep 26 11:14:01 2002
+    Info: Elapsed time: 00:00:01
+
+

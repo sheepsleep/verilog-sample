@@ -1,0 +1,76 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.733 ns
+From           : KEY_PIO[0]
+To             : nios_ucos:inst|CPU:the_CPU|M_ipending_reg[0]
+From Clock     : --
+To Clock       : SYS_CLK
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 9.447 ns
+From           : nios_ucos:inst|LED_PIO:the_LED_PIO|data_out[3]
+To             : LED_PIO[3]
+From Clock     : SYS_CLK
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.056 ns
+From           : altera_internal_jtag~TDO
+To             : altera_reserved_tdo
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 2.820 ns
+From           : altera_internal_jtag~TDIUTAP
+To             : sld_hub:sld_hub_inst|sld_dffex:IRF_ENA_0|Q[0]
+From Clock     : --
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Setup: 'SYS_CLK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 65.33 MHz ( period = 15.306 ns )
+From           : nios_ucos:inst|CPU:the_CPU|av_ld_or_div_done
+To             : nios_ucos:inst|CPU:the_CPU|M_ienable_reg[0]
+From Clock     : SYS_CLK
+To Clock       : SYS_CLK
+Failed Paths   : 0
+
+Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 146.20 MHz ( period = 6.840 ns )
+From           : sld_hub:sld_hub_inst|jtag_debug_mode_usr1
+To             : sld_hub:sld_hub_inst|hub_tdo_reg
+From Clock     : altera_internal_jtag~TCKUTAP
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

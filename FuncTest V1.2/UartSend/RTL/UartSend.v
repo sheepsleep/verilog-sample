@@ -1,0 +1,125 @@
+/****************************************Copyright (c)**************************************************
+**                                      Dongdong   Studio 
+**                                     
+**---------------------------------------File Info-----------------------------------------------------
+** File name:           UartSend
+** Last modified Date:  2009-10-18
+** Last Version:        1.0
+** Descriptions:        UartSend
+**------------------------------------------------------------------------------------------------------
+** Created by:          dongdong
+** Created date:        2009-10-18
+** Version:             1.0
+** Descriptions:        The original version
+**
+**------------------------------------------------------------------------------------------------------
+** Modified by:			
+** Modified date:		
+** Version:				
+** Descriptions:		
+**
+**------------------------------------------------------------------------------------------------------
+********************************************************************************************************/
+module UartSend ( 
+              //input 
+              sys_clk        ,
+//              sys_rst_n      ,
+              key_data       ,             //KEY data in 4bit
+
+              //output 
+              LED            ,
+              uart_txd
+              );
+
+//input ports
+
+input                    sys_clk             ;    //system clock;
+//input                    sys_rst_n           ;    //system reset, low is active;
+input  [      3:0]       key_data            ;    //to send data  8bit ;    
+
+//output ports
+output                   uart_txd            ;    //uart txd output ;   
+
+output  wire  [7:0]      LED                 ;    //led output ;   
+
+
+//reg define 
+reg    [WIDTH-1:0]       buff                ;         
+reg    [WIDTH-1:0]       data_out            ; 
+
+reg                      uart_txd            ;    
+reg                      txd                 ;    //temp txd signal;
+     
+reg  [SIZE-1:0]          counter             ;     
+     
+//wire define 
+wire                     sys_clk             ;
+wire                     sys_rst_n           ;
+
+//parameter define 
+parameter WIDTH = 8;
+parameter SIZE  = 16;
+
+/******************************************************************
+**                              Main Code    
+**  
+*******************************************************************/
+
+assign sys_rst_n = 1'b1 ;
+
+always @(posedge sys_clk or negedge sys_rst_n) begin 
+        if (sys_rst_n ==1'b0)  
+            buff <= 8'b0;
+        else
+            buff  <= { key_data , key_data } ;
+end
+        
+assign LED = buff;
+
+always @(posedge sys_clk or negedge sys_rst_n) begin 
+        if (sys_rst_n ==1'b0)  
+            counter <= 16'b0;
+        else if (counter > 57200 )     
+            counter <= 16'b0;
+        else
+            counter  <= counter + 1'b1;
+end
+
+always @(*) begin 
+    if ((counter > 0)         &&  (counter  <= 5200 ))   
+       txd  =  1'b0  ;                        
+    else if ((counter > 5200) &&  (counter  <= 10400))   
+       txd  =  buff[0]  ;                     
+    else if ((counter > 10400) && (counter  <= 15600))   
+       txd  =  buff[1]  ;                     
+    else if ((counter > 15600) && (counter  <= 20800))   
+       txd  =  buff[2]  ;                     
+    else if ((counter > 20800) && (counter  <= 26000))   
+       txd  =  buff[3]  ;                     
+    else if ((counter > 26000) && (counter  <= 31200))   
+       txd  =  buff[4]  ;                     
+    else if ((counter > 31200) && (counter  <= 36400))   
+       txd  =  buff[5]  ;                     
+    else if ((counter > 36400) && (counter  <= 41600))   
+       txd  =  buff[6]  ;                     
+    else if ((counter > 41600) && (counter  <= 46800))   
+       txd  =  buff[7]  ;                     
+    else if ((counter > 46800) && (counter  <= 52000))   
+       txd  =  1'b1     ;                     
+    else if ((counter > 52000) && (counter  <= 57200)) 
+       txd  =  1'b1     ;        
+    else            
+       txd  =  1'b1  ;  
+end        
+
+
+always @(posedge sys_clk or negedge sys_rst_n) begin 
+        if (sys_rst_n ==1'b0)  
+           uart_txd <= 1'b1;        
+        else  
+           uart_txd  <= txd;        
+           
+end
+
+endmodule
+//end of RTL code                       

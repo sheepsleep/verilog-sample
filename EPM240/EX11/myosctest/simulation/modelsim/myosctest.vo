@@ -1,0 +1,245 @@
+// Copyright (C) 1991-2009 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II"
+// VERSION "Version 9.0 Build 132 02/25/2009 SJ Full Version"
+
+// DATE "08/05/2009 22:01:49"
+
+// 
+// Device: Altera EPM240T100C5 Package TQFP100
+// 
+
+// 
+// This Verilog file should be used for ModelSim (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module myosctest (
+	rst_n,
+	clkdiv);
+input 	rst_n;
+output 	clkdiv;
+
+wire gnd = 1'b0;
+wire vcc = 1'b1;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("myosctest_v.sdo");
+// synopsys translate_on
+
+wire \internal_osc|internal_osc_altufm_osc_rv5_component|maxii_ufm_block1~drdout ;
+wire \~GND~combout ;
+wire \internal_osc|internal_osc_altufm_osc_rv5_component|wire_maxii_ufm_block1_osc ;
+wire \rst_n~combout ;
+wire [2:0] cnt;
+
+
+// atom is at LC_X2_Y2_N2
+maxii_lcell \~GND (
+// Equation(s):
+// \~GND~combout  = GND
+
+	.clk(gnd),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\~GND~combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \~GND .lut_mask = "0000";
+defparam \~GND .operation_mode = "normal";
+defparam \~GND .output_mode = "comb_only";
+defparam \~GND .register_cascade_mode = "off";
+defparam \~GND .sum_lutc_input = "datac";
+defparam \~GND .synch_mode = "off";
+// synopsys translate_on
+
+// atom is at UFM_X0_Y1_N4
+maxii_ufm \internal_osc|internal_osc_altufm_osc_rv5_component|maxii_ufm_block1 (
+	.drdin(gnd),
+	.drclk(gnd),
+	.drshft(vcc),
+	.ardin(gnd),
+	.arclk(gnd),
+	.arshft(gnd),
+	.program(gnd),
+	.erase(gnd),
+	.oscena(!\~GND~combout ),
+	.sbdin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.drdout(\internal_osc|internal_osc_altufm_osc_rv5_component|maxii_ufm_block1~drdout ),
+	.busy(),
+	.osc(\internal_osc|internal_osc_altufm_osc_rv5_component|wire_maxii_ufm_block1_osc ),
+	.sbdout(),
+	.bgpbusy());
+// synopsys translate_off
+defparam \internal_osc|internal_osc_altufm_osc_rv5_component|maxii_ufm_block1 .address_width = 9;
+defparam \internal_osc|internal_osc_altufm_osc_rv5_component|maxii_ufm_block1 .erase_time = 500000000;
+defparam \internal_osc|internal_osc_altufm_osc_rv5_component|maxii_ufm_block1 .init_file = "none";
+defparam \internal_osc|internal_osc_altufm_osc_rv5_component|maxii_ufm_block1 .osc_sim_setting = 180000;
+defparam \internal_osc|internal_osc_altufm_osc_rv5_component|maxii_ufm_block1 .program_time = 100000;
+// synopsys translate_on
+
+// atom is at PIN_14
+maxii_io \rst_n~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(\rst_n~combout ),
+	.padio(rst_n));
+// synopsys translate_off
+defparam \rst_n~I .operation_mode = "input";
+// synopsys translate_on
+
+// atom is at LC_X2_Y1_N2
+maxii_lcell \cnt[0] (
+// Equation(s):
+// cnt[0] = DFFEAS(!cnt[0], GLOBAL(\internal_osc|internal_osc_altufm_osc_rv5_component|wire_maxii_ufm_block1_osc ), GLOBAL(\rst_n~combout ), , , , , , )
+
+	.clk(\internal_osc|internal_osc_altufm_osc_rv5_component|wire_maxii_ufm_block1_osc ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(cnt[0]),
+	.aclr(!\rst_n~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(cnt[0]),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \cnt[0] .lut_mask = "00ff";
+defparam \cnt[0] .operation_mode = "normal";
+defparam \cnt[0] .output_mode = "reg_only";
+defparam \cnt[0] .register_cascade_mode = "off";
+defparam \cnt[0] .sum_lutc_input = "datac";
+defparam \cnt[0] .synch_mode = "off";
+// synopsys translate_on
+
+// atom is at LC_X2_Y1_N4
+maxii_lcell \cnt[1] (
+// Equation(s):
+// cnt[1] = DFFEAS(cnt[1] $ cnt[0], GLOBAL(\internal_osc|internal_osc_altufm_osc_rv5_component|wire_maxii_ufm_block1_osc ), GLOBAL(\rst_n~combout ), , , , , , )
+
+	.clk(\internal_osc|internal_osc_altufm_osc_rv5_component|wire_maxii_ufm_block1_osc ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(cnt[1]),
+	.datad(cnt[0]),
+	.aclr(!\rst_n~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(cnt[1]),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \cnt[1] .lut_mask = "0ff0";
+defparam \cnt[1] .operation_mode = "normal";
+defparam \cnt[1] .output_mode = "reg_only";
+defparam \cnt[1] .register_cascade_mode = "off";
+defparam \cnt[1] .sum_lutc_input = "datac";
+defparam \cnt[1] .synch_mode = "off";
+// synopsys translate_on
+
+// atom is at LC_X2_Y1_N5
+maxii_lcell \cnt[2] (
+// Equation(s):
+// cnt[2] = DFFEAS(cnt[2] $ (cnt[0] & cnt[1]), GLOBAL(\internal_osc|internal_osc_altufm_osc_rv5_component|wire_maxii_ufm_block1_osc ), GLOBAL(\rst_n~combout ), , , , , , )
+
+	.clk(\internal_osc|internal_osc_altufm_osc_rv5_component|wire_maxii_ufm_block1_osc ),
+	.dataa(cnt[2]),
+	.datab(cnt[0]),
+	.datac(cnt[1]),
+	.datad(vcc),
+	.aclr(!\rst_n~combout ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(cnt[2]),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \cnt[2] .lut_mask = "6a6a";
+defparam \cnt[2] .operation_mode = "normal";
+defparam \cnt[2] .output_mode = "reg_only";
+defparam \cnt[2] .register_cascade_mode = "off";
+defparam \cnt[2] .sum_lutc_input = "datac";
+defparam \cnt[2] .synch_mode = "off";
+// synopsys translate_on
+
+// atom is at PIN_19
+maxii_io \clkdiv~I (
+	.datain(cnt[2]),
+	.oe(vcc),
+	.combout(),
+	.padio(clkdiv));
+// synopsys translate_off
+defparam \clkdiv~I .operation_mode = "output";
+// synopsys translate_on
+
+endmodule

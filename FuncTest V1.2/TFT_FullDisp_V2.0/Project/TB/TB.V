@@ -1,0 +1,57 @@
+siy/****************************************Copyright (c)**************************************************
+**                                      Dongdong   Studio 
+**                                     
+**---------------------------------------File Info-----------------------------------------------------
+** File name:	        TB.v
+** Last modified Date:	2011-12-23
+** Last Version:		1.0
+** Descriptions:		
+**------------------------------------------------------------------------------------------------------
+** Created by:          dongdong
+** Created date:		2011-12-23
+** Version:             1.0
+** Descriptions:		The original version
+**
+**------------------------------------------------------------------------------------------------------
+** Modified by:			
+** Modified date:		
+** Version:				
+** Descriptions:	  PWM TestBench
+**
+**------------------------------------------------------------------------------------------------------
+********************************************************************************************************/
+
+module TB;
+
+// declare input ports
+reg                         sys_clk           ;  //system clock;
+reg                         sys_rst_n         ;  //system reset, low is active;
+
+initial begin
+   sys_clk = 'b0       ;
+   sys_rst_n = 'b1     ;
+   #23  sys_rst_n = 'b0;
+   #33  sys_rst_n = 'b1;
+end
+
+always #10 sys_clk = ~sys_clk;
+
+
+TFT_FullDisp   U_TFT_FullDisp      (
+                        //input ports
+                        .sys_clk          ( sys_clk         )          ,
+                        .sys_rst_n        ( sys_rst_n       )          ,
+                                           
+                        //output ports        
+                        .LCD_SCL          (                 )          ,    
+                        .LCD_SDA          (                 )          ,
+                        .LCD_RS           (                 )          , 
+                        .LCD_CS           (                 )          ,
+                        .LCD_RST          (                 )        
+
+                        );
+                        
+                  
+
+
+endmodule

@@ -1,0 +1,271 @@
+Analysis & Synthesis report for sram_test
+Mon Mar 23 21:19:37 2009
+Quartus II Version 8.1 Build 163 10/28/2008 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |sram_test|cstate
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |sram_test
+ 11. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Mon Mar 23 21:19:37 2009    ;
+; Quartus II Version          ; 8.1 Build 163 10/28/2008 SJ Full Version ;
+; Revision Name               ; sram_test                                ;
+; Top-level Entity Name       ; sram_test                                ;
+; Family                      ; MAX II                                   ;
+; Total logic elements        ; 89                                       ;
+; Total pins                  ; 27                                       ;
+; Total virtual pins          ; 0                                        ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                            ;
++-----------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                            ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Option                                                         ; Setting            ; Default Value      ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Device                                                         ; EPM240T100C5       ;                    ;
+; Top-level entity name                                          ; sram_test          ; sram_test          ;
+; Family name                                                    ; MAX II             ; Stratix            ;
+; Type of Retiming Performed During Resynthesis                  ; Full               ;                    ;
+; Resynthesis Optimization Effort                                ; Normal             ;                    ;
+; Physical Synthesis Level for Resynthesis                       ; Normal             ;                    ;
+; Use Generated Physical Constraints File                        ; On                 ;                    ;
+; Use smart compilation                                          ; Off                ; Off                ;
+; Restructure Multiplexers                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                            ; Off                ; Off                ;
+; Preserve fewer node names                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                      ; Off                ; Off                ;
+; Verilog Version                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                       ; Auto               ; Auto               ;
+; Safe State Machine                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                              ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                     ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                 ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                        ; On                 ; On                 ;
+; Parallel Synthesis                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                 ; Off                ; Off                ;
+; Optimization Technique                                         ; Balanced           ; Balanced           ;
+; Carry Chain Length                                             ; 70                 ; 70                 ;
+; Auto Carry Chains                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                          ; Off                ; Off                ;
+; Perform gate-level register retiming                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax         ; On                 ; On                 ;
+; Auto Shift Register Replacement                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                         ; Off                ; Off                ;
+; Auto Resource Sharing                                          ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing            ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                             ; Off                ; Off                ;
+; Synchronization Register Chain Length                          ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report       ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report      ; 100                ; 100                ;
+; Clock MUX Protection                                           ; On                 ; On                 ;
+; Block Design Naming                                            ; Auto               ; Auto               ;
+; Synthesis Effort                                               ; Auto               ; Auto               ;
+; Allows Asynchronous Clear Usage For Shift Register Replacement ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                             ; Medium             ; Medium             ;
++----------------------------------------------------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                                                            ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+; sram_test.v                      ; yes             ; User Verilog HDL File  ; E:/Personal/BJ-EPM240学习板/BJ-EPM240V2 学习板刻盘资料/BJ-EPM240V2实验例程以及说明文档0318/11、读写SRAM（0212）/verilogsram/sram_test.v ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 89    ;
+;     -- Combinational with no register       ; 30    ;
+;     -- Register only                        ; 8     ;
+;     -- Combinational with a register        ; 51    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 20    ;
+;     -- 3 input functions                    ; 10    ;
+;     -- 2 input functions                    ; 50    ;
+;     -- 1 input functions                    ; 1     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 46    ;
+;     -- arithmetic mode                      ; 43    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 59    ;
+;                                             ;       ;
+; Total registers                             ; 59    ;
+; Total logic cells in carry chains           ; 46    ;
+; I/O pins                                    ; 27    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 59    ;
+; Total fan-out                               ; 392   ;
+; Average fan-out                             ; 3.38  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                  ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; |sram_test                 ; 89 (89)     ; 59           ; 0          ; 27   ; 0            ; 30 (30)      ; 8 (8)             ; 51 (51)          ; 46 (46)         ; 0 (0)      ; |sram_test          ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------+
+; State Machine - |sram_test|cstate                                                 ;
++-------------+-------------+-------------+-------------+-------------+-------------+
+; Name        ; cstate.REA0 ; cstate.WRT1 ; cstate.WRT0 ; cstate.IDLE ; cstate.REA1 ;
++-------------+-------------+-------------+-------------+-------------+-------------+
+; cstate.IDLE ; 0           ; 0           ; 0           ; 0           ; 0           ;
+; cstate.WRT0 ; 0           ; 0           ; 1           ; 1           ; 0           ;
+; cstate.WRT1 ; 0           ; 1           ; 0           ; 1           ; 0           ;
+; cstate.REA0 ; 1           ; 0           ; 0           ; 1           ; 0           ;
+; cstate.REA1 ; 0           ; 0           ; 0           ; 1           ; 1           ;
++-------------+-------------+-------------+-------------+-------------+-------------+
+
+
++-----------------------------------------------------------------+
+; Registers Removed During Synthesis                              ;
++----------------------------------------+------------------------+
+; Register name                          ; Reason for Removal     ;
++----------------------------------------+------------------------+
+; addr_r[0]                              ; Merged with wr_data[0] ;
+; addr_r[1]                              ; Merged with wr_data[1] ;
+; addr_r[2]                              ; Merged with wr_data[2] ;
+; addr_r[3]                              ; Merged with wr_data[3] ;
+; addr_r[4]                              ; Merged with wr_data[4] ;
+; addr_r[5]                              ; Merged with wr_data[5] ;
+; addr_r[6]                              ; Merged with wr_data[6] ;
+; addr_r[7]                              ; Merged with wr_data[7] ;
+; cstate~14                              ; Lost fanout            ;
+; cstate~15                              ; Lost fanout            ;
+; cstate~17                              ; Lost fanout            ;
+; Total Number of Removed Registers = 11 ;                        ;
++----------------------------------------+------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 59    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 59    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 22    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |sram_test ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; IDLE           ; 0000  ; Unsigned Binary                                  ;
+; WRT0           ; 0001  ; Unsigned Binary                                  ;
+; WRT1           ; 0010  ; Unsigned Binary                                  ;
+; REA0           ; 0011  ; Unsigned Binary                                  ;
+; REA1           ; 0100  ; Unsigned Binary                                  ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 8.1 Build 163 10/28/2008 SJ Full Version
+    Info: Processing started: Mon Mar 23 21:19:34 2009
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sram_test -c sram_test
+Info: Found 1 design units, including 1 entities, in source file sram_test.v
+    Info: Found entity 1: sram_test
+Info: Elaborating entity "sram_test" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at sram_test.v(40): truncated value with size 32 to match size of target (26)
+Info (10264): Verilog HDL Case Statement information at sram_test.v(119): all case item expressions in this case statement are onehot
+Info: 3 registers lost all their fanouts during netlist optimizations. The first 3 are displayed below.
+    Info: Register "cstate~14" lost all its fanouts during netlist optimizations.
+    Info: Register "cstate~15" lost all its fanouts during netlist optimizations.
+    Info: Register "cstate~17" lost all its fanouts during netlist optimizations.
+Info: Implemented 116 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 17 output pins
+    Info: Implemented 8 bidirectional pins
+    Info: Implemented 89 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 163 megabytes
+    Info: Processing ended: Mon Mar 23 21:19:37 2009
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+

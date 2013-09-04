@@ -1,0 +1,11 @@
+
+State Machine - |LCD1602_TOP|LCD_Driver:U2|state
+Name state.Idel state.Write_Data_Second state.Write_Data_First state.Write_Addr state.Shift_Down state.Disp_On state.Set_Disp_Mode state.Clear_Lcd 
+state.Clear_Lcd 0 0 0 0 0 0 0 0 
+state.Set_Disp_Mode 0 0 0 0 0 0 1 1 
+state.Disp_On 0 0 0 0 0 1 0 1 
+state.Shift_Down 0 0 0 0 1 0 0 1 
+state.Write_Addr 0 0 0 1 0 0 0 1 
+state.Write_Data_First 0 0 1 0 0 0 0 1 
+state.Write_Data_Second 0 1 0 0 0 0 0 1 
+state.Idel 1 0 0 0 0 0 0 1 

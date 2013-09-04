@@ -1,0 +1,18 @@
+// LCD_Top.v
+//连接Clock_Gen模块和LCD_Driver模块
+module LCD_Top(clk_48M,rst,LCD_EN,RS,RW,DB8);
+input   clk_48M,rst;
+output  LCD_EN,RS,RW;
+output  [7:0] DB8;
+wire    clk_LCD;    //用于将Clock_Gen模块clk_LCD输出连接至LCD_Driver模块的clk_LCD输入
+Clock_Gen   U1(.clk_48M(clk_48M),
+               .rst(rst),
+               .clk_LCD(clk_LCD));
+LCD_Driver  U2(.clk_LCD(clk_LCD),
+               .rst(rst),
+               .LCD_EN(LCD_EN),
+               .RS(RS),
+               .RW(RW),
+               .DB8(DB8));
+               
+endmodule

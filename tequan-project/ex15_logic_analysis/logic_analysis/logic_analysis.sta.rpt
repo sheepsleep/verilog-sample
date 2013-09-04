@@ -1,0 +1,487 @@
+TimeQuest Timing Analyzer report for logic_analysis
+Thu Sep 03 14:24:12 2009
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Fmax Summary
+  7. Setup Summary
+  8. Hold Summary
+  9. Recovery Summary
+ 10. Removal Summary
+ 11. Minimum Pulse Width
+ 12. Setup Times
+ 13. Hold Times
+ 14. Clock to Output Times
+ 15. Minimum Clock to Output Times
+ 16. Setup Transfers
+ 17. Hold Transfers
+ 18. Recovery Transfers
+ 19. Removal Transfers
+ 20. Report TCCS
+ 21. Report RSKM
+ 22. Unconstrained Paths
+ 23. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                     ;
++--------------------+--------------------------------------------------+
+; Quartus II Version ; Version 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Revision Name      ; logic_analysis                                   ;
+; Device Family      ; Cyclone                                          ;
+; Device Name        ; EP1C3T144C8                                      ;
+; Timing Models      ; Final                                            ;
+; Delay Model        ; Slow Model                                       ;
+; Rise/Fall Delays   ; Unavailable                                      ;
++--------------------+--------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------+
+; SDC File List                                          ;
++--------------------+--------+--------------------------+
+; SDC File Path      ; Status ; Read at                  ;
++--------------------+--------+--------------------------+
+; logic_analysis.sdc ; OK     ; Thu Sep 03 14:24:12 2009 ;
++--------------------+--------+--------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                                                                                                                 ;
++---------------------------------------------------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+---------------------------------------------------------+-----------------------------------------------------------+
+; Clock Name                                                                ; Type      ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source                                                  ; Targets                                                   ;
++---------------------------------------------------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+---------------------------------------------------------+-----------------------------------------------------------+
+; clk                                                                       ; Base      ; 40.000 ; 25.0 MHz  ; 0.000 ; 20.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;                                                         ; { clk }                                                   ;
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ; Generated ; 40.000 ; 25.0 MHz  ; 0.000 ; 20.000 ; 50.00      ; 1         ; 1           ;       ;        ;           ;            ; false    ; clk    ; uut_sys_ctrl|uut_PLL_ctrl|altpll_component|pll|inclk[0] ; { uut_sys_ctrl|uut_PLL_ctrl|altpll_component|pll|clk[0] } ;
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Generated ; 10.000 ; 100.0 MHz ; 0.000 ; 5.000  ; 50.00      ; 1         ; 4           ;       ;        ;           ;            ; false    ; clk    ; uut_sys_ctrl|uut_PLL_ctrl|altpll_component|pll|inclk[0] ; { uut_sys_ctrl|uut_PLL_ctrl|altpll_component|pll|clk[1] } ;
++---------------------------------------------------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+---------------------------------------------------------+-----------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fmax Summary                                                                                                                                                      ;
++-------------+-----------------+---------------------------------------------------------------------------+-------------------------------------------------------+
+; Fmax        ; Restricted Fmax ; Clock Name                                                                ; Note                                                  ;
++-------------+-----------------+---------------------------------------------------------------------------+-------------------------------------------------------+
+; 28.93 MHz   ; 28.93 MHz       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;                                                       ;
+; 119.77 MHz  ; 119.77 MHz      ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;                                                       ;
+; 1095.29 MHz ; 275.03 MHz      ; clk                                                                       ; limit due to high minimum pulse width violation (tch) ;
++-------------+-----------------+---------------------------------------------------------------------------+-------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------------------------------------------------------------------+
+; Setup Summary                                                                                      ;
++---------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                     ; Slack  ; End Point TNS ;
++---------------------------------------------------------------------------+--------+---------------+
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; 1.651  ; 0.000         ;
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ; 5.436  ; 0.000         ;
+; clk                                                                       ; 39.087 ; 0.000         ;
++---------------------------------------------------------------------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Hold Summary                                                                                      ;
++---------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                     ; Slack ; End Point TNS ;
++---------------------------------------------------------------------------+-------+---------------+
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; 0.860 ; 0.000         ;
+; clk                                                                       ; 0.861 ; 0.000         ;
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ; 1.051 ; 0.000         ;
++---------------------------------------------------------------------------+-------+---------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Recovery Summary                                                                                   ;
++---------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                     ; Slack  ; End Point TNS ;
++---------------------------------------------------------------------------+--------+---------------+
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; 3.274  ; 0.000         ;
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ; 35.091 ; 0.000         ;
++---------------------------------------------------------------------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Removal Summary                                                                                   ;
++---------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                     ; Slack ; End Point TNS ;
++---------------------------------------------------------------------------+-------+---------------+
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; 4.852 ; 0.000         ;
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ; 4.853 ; 0.000         ;
++---------------------------------------------------------------------------+-------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width                                                                                                                                                                             ;
++-------+--------------+----------------+------------------+---------------------------------------------------------------------------+------------+---------------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                                                                     ; Clock Edge ; Target                                      ;
++-------+--------------+----------------+------------------+---------------------------------------------------------------------------+------------+---------------------------------------------+
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|cnt[0]           ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|cnt[0]           ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|cnt[1]           ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|cnt[1]           ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|cnt[2]           ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|cnt[2]           ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|cnt[3]           ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|cnt[3]           ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|cnt[4]           ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|cnt[4]           ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|cnt[5]           ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|cnt[5]           ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[0]         ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[0]         ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[10]        ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[10]        ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[11]        ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[11]        ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[12]        ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[12]        ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[13]        ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[13]        ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[14]        ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[14]        ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[15]        ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[15]        ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[16]        ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[16]        ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[17]        ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[17]        ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[18]        ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[18]        ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[19]        ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[19]        ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[1]         ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[1]         ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[20]        ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[20]        ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[2]         ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[2]         ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[3]         ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[3]         ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[4]         ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[4]         ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[5]         ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[5]         ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[6]         ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[6]         ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[7]         ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[7]         ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[8]         ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[8]         ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[9]         ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|delay[9]         ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|key_valuer1[0]   ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|key_valuer1[0]   ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|key_valuer1[1]   ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|key_valuer1[1]   ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|key_valuer2[0]   ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|key_valuer2[0]   ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|key_valuer2[1]   ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|key_valuer2[1]   ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sampling_end     ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sampling_end     ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sampling_rate[0] ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sampling_rate[0] ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sampling_rate[1] ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sampling_rate[1] ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sampling_rate[2] ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sampling_rate[2] ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sampling_rate[3] ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sampling_rate[3] ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[0]    ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[0]    ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[10]   ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[10]   ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[11]   ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[11]   ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[12]   ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[12]   ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[13]   ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[13]   ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[1]    ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[1]    ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[2]    ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[2]    ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[3]    ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[3]    ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[4]    ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[4]    ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[5]    ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[5]    ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[6]    ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[6]    ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[7]    ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[7]    ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[8]    ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[8]    ;
+; 3.182 ; 5.000        ; 1.818          ; High Pulse Width ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[9]    ;
+; 3.182 ; 5.000        ; 1.818          ; Low Pulse Width  ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; Rise       ; sampling_ctrl:uut_sampling|sapdiv_cnt[9]    ;
++-------+--------------+----------------+------------------+---------------------------------------------------------------------------+------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                         ;
++-------------+------------+--------+--------+------------+---------------------------------------------------------------------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                                           ;
++-------------+------------+--------+--------+------------+---------------------------------------------------------------------------+
+; signal[*]   ; clk        ; -0.963 ; -0.963 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[0]  ; clk        ; -1.043 ; -1.043 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[1]  ; clk        ; -1.043 ; -1.043 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[2]  ; clk        ; -1.043 ; -1.043 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[3]  ; clk        ; -1.043 ; -1.043 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[4]  ; clk        ; -1.043 ; -1.043 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[5]  ; clk        ; -1.043 ; -1.043 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[6]  ; clk        ; -1.043 ; -1.043 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[7]  ; clk        ; -1.043 ; -1.043 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[8]  ; clk        ; -1.043 ; -1.043 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[9]  ; clk        ; -1.043 ; -1.043 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[10] ; clk        ; -1.043 ; -1.043 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[11] ; clk        ; -1.043 ; -1.043 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[12] ; clk        ; -1.043 ; -1.043 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[13] ; clk        ; -1.043 ; -1.043 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[14] ; clk        ; -0.963 ; -0.963 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[15] ; clk        ; -0.963 ; -0.963 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+; trigger     ; clk        ; -0.963 ; -0.963 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
++-------------+------------+--------+--------+------------+---------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                        ;
++-------------+------------+-------+-------+------------+---------------------------------------------------------------------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                                           ;
++-------------+------------+-------+-------+------------+---------------------------------------------------------------------------+
+; signal[*]   ; clk        ; 1.820 ; 1.820 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[0]  ; clk        ; 1.820 ; 1.820 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[1]  ; clk        ; 1.820 ; 1.820 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[2]  ; clk        ; 1.820 ; 1.820 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[3]  ; clk        ; 1.820 ; 1.820 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[4]  ; clk        ; 1.820 ; 1.820 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[5]  ; clk        ; 1.820 ; 1.820 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[6]  ; clk        ; 1.820 ; 1.820 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[7]  ; clk        ; 1.820 ; 1.820 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[8]  ; clk        ; 1.820 ; 1.820 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[9]  ; clk        ; 1.820 ; 1.820 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[10] ; clk        ; 1.820 ; 1.820 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[11] ; clk        ; 1.820 ; 1.820 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[12] ; clk        ; 1.820 ; 1.820 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[13] ; clk        ; 1.820 ; 1.820 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[14] ; clk        ; 1.740 ; 1.740 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+;  signal[15] ; clk        ; 1.740 ; 1.740 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
+; trigger     ; clk        ; 1.740 ; 1.740 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ;
++-------------+------------+-------+-------+------------+---------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                           ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                                           ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------+
+; hsync     ; clk        ; 7.513 ; 7.513 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+; vga_b[*]  ; clk        ; 7.556 ; 7.556 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+;  vga_b[0] ; clk        ; 7.556 ; 7.556 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+;  vga_b[1] ; clk        ; 7.556 ; 7.556 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+; vga_g[*]  ; clk        ; 7.891 ; 7.891 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+;  vga_g[0] ; clk        ; 7.561 ; 7.561 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+;  vga_g[1] ; clk        ; 7.891 ; 7.891 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+;  vga_g[2] ; clk        ; 7.888 ; 7.888 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+; vga_r[*]  ; clk        ; 8.046 ; 8.046 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+;  vga_r[0] ; clk        ; 7.879 ; 7.879 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+;  vga_r[1] ; clk        ; 8.046 ; 8.046 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+;  vga_r[2] ; clk        ; 8.046 ; 8.046 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+; vsync     ; clk        ; 7.795 ; 7.795 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                                   ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                                           ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------+
+; hsync     ; clk        ; 7.513 ; 7.513 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+; vga_b[*]  ; clk        ; 7.556 ; 7.556 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+;  vga_b[0] ; clk        ; 7.556 ; 7.556 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+;  vga_b[1] ; clk        ; 7.556 ; 7.556 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+; vga_g[*]  ; clk        ; 7.561 ; 7.561 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+;  vga_g[0] ; clk        ; 7.561 ; 7.561 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+;  vga_g[1] ; clk        ; 7.891 ; 7.891 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+;  vga_g[2] ; clk        ; 7.888 ; 7.888 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+; vga_r[*]  ; clk        ; 7.879 ; 7.879 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+;  vga_r[0] ; clk        ; 7.879 ; 7.879 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+;  vga_r[1] ; clk        ; 8.046 ; 8.046 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+;  vga_r[2] ; clk        ; 8.046 ; 8.046 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
+; vsync     ; clk        ; 7.795 ; 7.795 ; Rise       ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                                                                                   ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                                                ; To Clock                                                                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+----------+----------+----------+----------+
+; clk                                                                       ; clk                                                                       ; 1        ; 0        ; 0        ; 0        ;
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ; 20654    ; 0        ; 0        ; 0        ;
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ; 4197     ; 0        ; 0        ; 0        ;
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; 18318    ; 0        ; 0        ; 0        ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                                                                                    ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                                                ; To Clock                                                                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+----------+----------+----------+----------+
+; clk                                                                       ; clk                                                                       ; 1        ; 0        ; 0        ; 0        ;
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ; 20654    ; 0        ; 0        ; 0        ;
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ; 4197     ; 0        ; 0        ; 0        ;
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; 18318    ; 0        ; 0        ; 0        ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                                                                                                                                ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                                                ; To Clock                                                                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+----------+----------+----------+----------+
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ; 45       ; 0        ; 0        ; 0        ;
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; 1078     ; 0        ; 0        ; 0        ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal Transfers                                                                                                                                                                                 ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                                                ; To Clock                                                                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+----------+----------+----------+----------+
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 ; 45       ; 0        ; 0        ; 0        ;
+; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 ; 1078     ; 0        ; 0        ; 0        ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design.
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design.
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II TimeQuest Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Thu Sep 03 14:24:10 2009
+Info: Command: quartus_sta logic_analysis -c logic_analysis
+Info: qsta_default_script.tcl version: #3
+Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info: Reading SDC File: 'logic_analysis.sdc'
+Info: Deriving PLL Clocks
+    Info: create_generated_clock -source {uut_sys_ctrl|uut_PLL_ctrl|altpll_component|pll|inclk[0]} -duty_cycle 50.00 -name {sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0} {uut_sys_ctrl|uut_PLL_ctrl|altpll_component|pll|clk[0]}
+    Info: create_generated_clock -source {uut_sys_ctrl|uut_PLL_ctrl|altpll_component|pll|inclk[0]} -multiply_by 4 -duty_cycle 50.00 -name {sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1} {uut_sys_ctrl|uut_PLL_ctrl|altpll_component|pll|clk[1]}
+Warning: At least one of the filters had some problems and could not be matched.
+    Warning: vga_b[2] could not be matched with a port.
+Warning: Ignored assignment: set_output_delay -add_delay -max -clock [get_clocks {sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0}] 28.000 [get_ports {vga_b[2]}]
+    Warning: Positional argument <targets> with value [get_ports {vga_b[2]}] contains zero elements
+    Warning: Positional argument: object_list targets with value [get_ports {vga_b[2]}] contains no output ports
+Warning: Ignored assignment: set_output_delay -add_delay -min -clock [get_clocks {sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0}] -4.500 [get_ports {vga_b[2]}]
+    Warning: Positional argument <targets> with value [get_ports {vga_b[2]}] contains zero elements
+    Warning: Positional argument: object_list targets with value [get_ports {vga_b[2]}] contains no output ports
+Info: Worst-case setup slack is 1.651
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     1.651         0.000 sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 
+    Info:     5.436         0.000 sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 
+    Info:    39.087         0.000 clk 
+Info: Worst-case hold slack is 0.860
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     0.860         0.000 sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 
+    Info:     0.861         0.000 clk 
+    Info:     1.051         0.000 sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 
+Info: Worst-case recovery slack is 3.274
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     3.274         0.000 sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 
+    Info:    35.091         0.000 sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 
+Info: Worst-case removal slack is 4.852
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     4.852         0.000 sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk1 
+    Info:     4.853         0.000 sys_ctrl:uut_sys_ctrl|PLL_ctrl:uut_PLL_ctrl|altpll:altpll_component|_clk0 
+Info: The selected device family is not supported by the report_metastability command.
+Info: Design is not fully constrained for setup requirements
+Info: Design is not fully constrained for hold requirements
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 145 megabytes
+    Info: Processing ended: Thu Sep 03 14:24:12 2009
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

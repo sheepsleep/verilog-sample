@@ -1,0 +1,93 @@
+# Reading E:/altera/modelsim_ase/tcl/vsim/pref.tcl 
+# do SegLed_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying E:\altera\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied E:\altera\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/base/SegLed {D:/base/SegLed/SegLed.v}
+# Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+# -- Compiling module SegLed
+# 
+# Top level modules:
+# 	SegLed
+# 
+# vlog -vlog01compat -work work +incdir+D:/base/SegLed/simulation/modelsim {D:/base/SegLed/simulation/modelsim/SegLed.vt}
+# Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+# -- Compiling module SegLed_vlg_tst
+# 
+# Top level modules:
+# 	SegLed_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  SegLed_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps SegLed_vlg_tst 
+# Loading work.SegLed_vlg_tst
+# Loading work.SegLed
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+#  
+add wave sim:/SegLed_vlg_tst/i1/*
+vlog -vlog01compat -work work +incdir+D:/base/SegLed -O0 D:/base/SegLed/SegLed.v
+# Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+# -- Compiling module SegLed
+# 
+# Top level modules:
+# 	SegLed
+vlog -vlog01compat -work work +incdir+D:/base/SegLed/simulation/modelsim -O0 D:/base/SegLed/simulation/modelsim/SegLed.vt
+# Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+# -- Compiling module SegLed_vlg_tst
+# 
+# Top level modules:
+# 	SegLed_vlg_tst
+vsim -voptargs=+acc work.SegLed_vlg_tst
+# vsim -voptargs=+acc work.SegLed_vlg_tst 
+# Loading work.SegLed_vlg_tst
+# Loading work.SegLed
+add wave sim:/SegLed_vlg_tst/i1/*
+run 1 us
+vlog -vlog01compat -work work +incdir+D:/base/SegLed -O0 D:/base/SegLed/SegLed.v
+# Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+# -- Compiling module SegLed
+# 
+# Top level modules:
+# 	SegLed
+vlog -vlog01compat -work work +incdir+D:/base/SegLed/simulation/modelsim -O0 D:/base/SegLed/simulation/modelsim/SegLed.vt
+# Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+# -- Compiling module SegLed_vlg_tst
+# 
+# Top level modules:
+# 	SegLed_vlg_tst
+vsim -voptargs=+acc work.SegLed_vlg_tst
+# vsim -voptargs=+acc work.SegLed_vlg_tst 
+# Loading work.SegLed_vlg_tst
+# Loading work.SegLed
+add wave sim:/SegLed_vlg_tst/i1/*
+run 1 us
+vlog -vlog01compat -work work +incdir+D:/base/SegLed -O0 D:/base/SegLed/SegLed.v
+# Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+# -- Compiling module SegLed
+# 
+# Top level modules:
+# 	SegLed
+vlog -vlog01compat -work work +incdir+D:/base/SegLed/simulation/modelsim -O0 D:/base/SegLed/simulation/modelsim/SegLed.vt
+# Model Technology ModelSim ALTERA vlog 10.0c Compiler 2011.09 Sep 21 2011
+# -- Compiling module SegLed_vlg_tst
+# 
+# Top level modules:
+# 	SegLed_vlg_tst
+vsim -voptargs=+acc work.SegLed_vlg_tst
+# vsim -voptargs=+acc work.SegLed_vlg_tst 
+# Loading work.SegLed_vlg_tst
+# Loading work.SegLed
+add wave sim:/SegLed_vlg_tst/i1/*
+run
