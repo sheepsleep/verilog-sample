@@ -1,0 +1,459 @@
+Classic Timing Analyzer report for i2c_top
+Mon Nov 28 08:33:59 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                          ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------+-----------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                              ; To                          ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------+-----------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 0.457 ns                         ; SDA                               ; i2c_drive:inst|read_data[2] ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 17.492 ns                        ; hc164_driver:inst1|seg_led_num[2] ; HC_SI                       ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 0.751 ns                         ; rst_n                             ; i2c_drive:inst|db_r[0]      ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 97.54 MHz ( period = 10.252 ns ) ; i2c_drive:inst|sw1_r              ; i2c_drive:inst|num[1]       ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                   ;                             ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------+-----------------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EPM240T100C5       ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                             ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------+-----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                           ; To                                ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------+-----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 97.54 MHz ( period = 10.252 ns )                    ; i2c_drive:inst|sw1_r           ; i2c_drive:inst|num[2]             ; clk        ; clk      ; None                        ; None                      ; 9.543 ns                ;
+; N/A                                     ; 97.54 MHz ( period = 10.252 ns )                    ; i2c_drive:inst|sw1_r           ; i2c_drive:inst|num[0]             ; clk        ; clk      ; None                        ; None                      ; 9.543 ns                ;
+; N/A                                     ; 97.54 MHz ( period = 10.252 ns )                    ; i2c_drive:inst|sw1_r           ; i2c_drive:inst|num[1]             ; clk        ; clk      ; None                        ; None                      ; 9.543 ns                ;
+; N/A                                     ; 100.95 MHz ( period = 9.906 ns )                    ; i2c_drive:inst|sw1_r           ; i2c_drive:inst|num[3]             ; clk        ; clk      ; None                        ; None                      ; 9.197 ns                ;
+; N/A                                     ; 103.04 MHz ( period = 9.705 ns )                    ; hc164_driver:inst1|clk_cnt[5]  ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 8.996 ns                ;
+; N/A                                     ; 103.18 MHz ( period = 9.692 ns )                    ; i2c_drive:inst|sw1_r           ; i2c_drive:inst|sda_r              ; clk        ; clk      ; None                        ; None                      ; 8.983 ns                ;
+; N/A                                     ; 103.65 MHz ( period = 9.648 ns )                    ; hc164_driver:inst1|clk_cnt[9]  ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 8.939 ns                ;
+; N/A                                     ; 104.99 MHz ( period = 9.525 ns )                    ; i2c_drive:inst|sw1_r           ; i2c_drive:inst|db_r[1]            ; clk        ; clk      ; None                        ; None                      ; 8.816 ns                ;
+; N/A                                     ; 104.99 MHz ( period = 9.525 ns )                    ; i2c_drive:inst|sw1_r           ; i2c_drive:inst|db_r[7]            ; clk        ; clk      ; None                        ; None                      ; 8.816 ns                ;
+; N/A                                     ; 104.99 MHz ( period = 9.525 ns )                    ; i2c_drive:inst|sw1_r           ; i2c_drive:inst|db_r[2]            ; clk        ; clk      ; None                        ; None                      ; 8.816 ns                ;
+; N/A                                     ; 104.99 MHz ( period = 9.525 ns )                    ; i2c_drive:inst|sw1_r           ; i2c_drive:inst|db_r[0]            ; clk        ; clk      ; None                        ; None                      ; 8.816 ns                ;
+; N/A                                     ; 105.12 MHz ( period = 9.513 ns )                    ; hc164_driver:inst1|clk_cnt[6]  ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 8.804 ns                ;
+; N/A                                     ; 105.22 MHz ( period = 9.504 ns )                    ; hc164_driver:inst1|clk_cnt[5]  ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 8.795 ns                ;
+; N/A                                     ; 105.22 MHz ( period = 9.504 ns )                    ; hc164_driver:inst1|clk_cnt[5]  ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 8.795 ns                ;
+; N/A                                     ; 105.24 MHz ( period = 9.502 ns )                    ; hc164_driver:inst1|clk_cnt[7]  ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 8.793 ns                ;
+; N/A                                     ; 105.57 MHz ( period = 9.472 ns )                    ; i2c_drive:inst|sw2_r           ; i2c_drive:inst|num[2]             ; clk        ; clk      ; None                        ; None                      ; 8.763 ns                ;
+; N/A                                     ; 105.57 MHz ( period = 9.472 ns )                    ; i2c_drive:inst|sw2_r           ; i2c_drive:inst|num[0]             ; clk        ; clk      ; None                        ; None                      ; 8.763 ns                ;
+; N/A                                     ; 105.57 MHz ( period = 9.472 ns )                    ; i2c_drive:inst|sw2_r           ; i2c_drive:inst|num[1]             ; clk        ; clk      ; None                        ; None                      ; 8.763 ns                ;
+; N/A                                     ; 105.83 MHz ( period = 9.449 ns )                    ; hc164_driver:inst1|clk_cnt[9]  ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 8.740 ns                ;
+; N/A                                     ; 105.83 MHz ( period = 9.449 ns )                    ; hc164_driver:inst1|clk_cnt[9]  ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 8.740 ns                ;
+; N/A                                     ; 107.39 MHz ( period = 9.312 ns )                    ; hc164_driver:inst1|clk_cnt[6]  ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 8.603 ns                ;
+; N/A                                     ; 107.39 MHz ( period = 9.312 ns )                    ; hc164_driver:inst1|clk_cnt[6]  ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 8.603 ns                ;
+; N/A                                     ; 107.48 MHz ( period = 9.304 ns )                    ; hc164_driver:inst1|clk_cnt[15] ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 8.595 ns                ;
+; N/A                                     ; 107.49 MHz ( period = 9.303 ns )                    ; hc164_driver:inst1|clk_cnt[7]  ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 8.594 ns                ;
+; N/A                                     ; 107.49 MHz ( period = 9.303 ns )                    ; hc164_driver:inst1|clk_cnt[7]  ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 8.594 ns                ;
+; N/A                                     ; 109.29 MHz ( period = 9.150 ns )                    ; hc164_driver:inst1|clk_cnt[8]  ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 8.441 ns                ;
+; N/A                                     ; 109.58 MHz ( period = 9.126 ns )                    ; i2c_drive:inst|sw2_r           ; i2c_drive:inst|num[3]             ; clk        ; clk      ; None                        ; None                      ; 8.417 ns                ;
+; N/A                                     ; 109.85 MHz ( period = 9.103 ns )                    ; i2c_drive:inst|sw2_r           ; i2c_drive:inst|sda_r              ; clk        ; clk      ; None                        ; None                      ; 8.394 ns                ;
+; N/A                                     ; 109.85 MHz ( period = 9.103 ns )                    ; hc164_driver:inst1|clk_cnt[15] ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 8.394 ns                ;
+; N/A                                     ; 109.85 MHz ( period = 9.103 ns )                    ; hc164_driver:inst1|clk_cnt[15] ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 8.394 ns                ;
+; N/A                                     ; 111.58 MHz ( period = 8.962 ns )                    ; hc164_driver:inst1|clk_cnt[10] ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 8.253 ns                ;
+; N/A                                     ; 111.72 MHz ( period = 8.951 ns )                    ; hc164_driver:inst1|clk_cnt[8]  ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 8.242 ns                ;
+; N/A                                     ; 111.72 MHz ( period = 8.951 ns )                    ; hc164_driver:inst1|clk_cnt[8]  ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 8.242 ns                ;
+; N/A                                     ; 111.78 MHz ( period = 8.946 ns )                    ; hc164_driver:inst1|clk_cnt[13] ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 8.237 ns                ;
+; N/A                                     ; 112.31 MHz ( period = 8.904 ns )                    ; i2c_drive:inst|cnt.001         ; i2c_drive:inst|sda_r              ; clk        ; clk      ; None                        ; None                      ; 8.195 ns                ;
+; N/A                                     ; 112.64 MHz ( period = 8.878 ns )                    ; hc164_driver:inst1|clk_cnt[3]  ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 8.169 ns                ;
+; N/A                                     ; 112.64 MHz ( period = 8.878 ns )                    ; hc164_driver:inst1|clk_cnt[3]  ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 8.169 ns                ;
+; N/A                                     ; 113.07 MHz ( period = 8.844 ns )                    ; hc164_driver:inst1|clk_cnt[5]  ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 8.135 ns                ;
+; N/A                                     ; 113.15 MHz ( period = 8.838 ns )                    ; hc164_driver:inst1|clk_cnt[5]  ; hc164_driver:inst1|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 8.129 ns                ;
+; N/A                                     ; 113.21 MHz ( period = 8.833 ns )                    ; hc164_driver:inst1|clk_cnt[5]  ; hc164_driver:inst1|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 8.124 ns                ;
+; N/A                                     ; 113.78 MHz ( period = 8.789 ns )                    ; hc164_driver:inst1|clk_cnt[9]  ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 8.080 ns                ;
+; N/A                                     ; 113.86 MHz ( period = 8.783 ns )                    ; hc164_driver:inst1|clk_cnt[9]  ; hc164_driver:inst1|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 8.074 ns                ;
+; N/A                                     ; 113.92 MHz ( period = 8.778 ns )                    ; hc164_driver:inst1|clk_cnt[9]  ; hc164_driver:inst1|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 8.069 ns                ;
+; N/A                                     ; 114.03 MHz ( period = 8.770 ns )                    ; i2c_drive:inst|sw1_r           ; i2c_drive:inst|cstate.ACK4        ; clk        ; clk      ; None                        ; None                      ; 8.061 ns                ;
+; N/A                                     ; 114.12 MHz ( period = 8.763 ns )                    ; hc164_driver:inst1|clk_cnt[10] ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 8.054 ns                ;
+; N/A                                     ; 114.12 MHz ( period = 8.763 ns )                    ; hc164_driver:inst1|clk_cnt[10] ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 8.054 ns                ;
+; N/A                                     ; 114.35 MHz ( period = 8.745 ns )                    ; hc164_driver:inst1|clk_cnt[13] ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 8.036 ns                ;
+; N/A                                     ; 114.35 MHz ( period = 8.745 ns )                    ; hc164_driver:inst1|clk_cnt[13] ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 8.036 ns                ;
+; N/A                                     ; 114.36 MHz ( period = 8.744 ns )                    ; i2c_drive:inst|sw2_r           ; i2c_drive:inst|db_r[1]            ; clk        ; clk      ; None                        ; None                      ; 8.035 ns                ;
+; N/A                                     ; 114.36 MHz ( period = 8.744 ns )                    ; i2c_drive:inst|sw2_r           ; i2c_drive:inst|db_r[7]            ; clk        ; clk      ; None                        ; None                      ; 8.035 ns                ;
+; N/A                                     ; 114.36 MHz ( period = 8.744 ns )                    ; i2c_drive:inst|sw2_r           ; i2c_drive:inst|db_r[2]            ; clk        ; clk      ; None                        ; None                      ; 8.035 ns                ;
+; N/A                                     ; 114.36 MHz ( period = 8.744 ns )                    ; i2c_drive:inst|sw2_r           ; i2c_drive:inst|db_r[0]            ; clk        ; clk      ; None                        ; None                      ; 8.035 ns                ;
+; N/A                                     ; 114.57 MHz ( period = 8.728 ns )                    ; i2c_drive:inst|cstate.ACK4     ; i2c_drive:inst|sda_r              ; clk        ; clk      ; None                        ; None                      ; 8.019 ns                ;
+; N/A                                     ; 114.73 MHz ( period = 8.716 ns )                    ; i2c_drive:inst|cnt_20ms[17]    ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 8.007 ns                ;
+; N/A                                     ; 115.13 MHz ( period = 8.686 ns )                    ; hc164_driver:inst1|clk_cnt[0]  ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 7.977 ns                ;
+; N/A                                     ; 115.13 MHz ( period = 8.686 ns )                    ; hc164_driver:inst1|clk_cnt[0]  ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 7.977 ns                ;
+; N/A                                     ; 115.27 MHz ( period = 8.675 ns )                    ; hc164_driver:inst1|clk_cnt[12] ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 7.966 ns                ;
+; N/A                                     ; 115.58 MHz ( period = 8.652 ns )                    ; hc164_driver:inst1|clk_cnt[6]  ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 7.943 ns                ;
+; N/A                                     ; 115.62 MHz ( period = 8.649 ns )                    ; i2c_drive:inst|sw1_r           ; i2c_drive:inst|cstate.DATA        ; clk        ; clk      ; None                        ; None                      ; 7.940 ns                ;
+; N/A                                     ; 115.66 MHz ( period = 8.646 ns )                    ; hc164_driver:inst1|clk_cnt[6]  ; hc164_driver:inst1|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 7.937 ns                ;
+; N/A                                     ; 115.70 MHz ( period = 8.643 ns )                    ; hc164_driver:inst1|clk_cnt[7]  ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 7.934 ns                ;
+; N/A                                     ; 115.73 MHz ( period = 8.641 ns )                    ; hc164_driver:inst1|clk_cnt[6]  ; hc164_driver:inst1|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 7.932 ns                ;
+; N/A                                     ; 115.78 MHz ( period = 8.637 ns )                    ; hc164_driver:inst1|clk_cnt[7]  ; hc164_driver:inst1|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 7.928 ns                ;
+; N/A                                     ; 115.85 MHz ( period = 8.632 ns )                    ; hc164_driver:inst1|clk_cnt[7]  ; hc164_driver:inst1|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 7.923 ns                ;
+; N/A                                     ; 115.86 MHz ( period = 8.631 ns )                    ; i2c_drive:inst|cnt_20ms[17]    ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 7.922 ns                ;
+; N/A                                     ; 115.86 MHz ( period = 8.631 ns )                    ; i2c_drive:inst|cnt_20ms[17]    ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 7.922 ns                ;
+; N/A                                     ; 115.87 MHz ( period = 8.630 ns )                    ; hc164_driver:inst1|clk_cnt[4]  ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 7.921 ns                ;
+; N/A                                     ; 115.98 MHz ( period = 8.622 ns )                    ; i2c_drive:inst|cnt_delay[6]    ; i2c_drive:inst|cnt_delay[2]       ; clk        ; clk      ; None                        ; None                      ; 7.913 ns                ;
+; N/A                                     ; 116.00 MHz ( period = 8.621 ns )                    ; i2c_drive:inst|cnt_delay[6]    ; i2c_drive:inst|cnt_delay[7]       ; clk        ; clk      ; None                        ; None                      ; 7.912 ns                ;
+; N/A                                     ; 116.84 MHz ( period = 8.559 ns )                    ; i2c_drive:inst|cnt_delay[6]    ; i2c_drive:inst|cnt_delay[6]       ; clk        ; clk      ; None                        ; None                      ; 7.850 ns                ;
+; N/A                                     ; 116.84 MHz ( period = 8.559 ns )                    ; i2c_drive:inst|cnt_delay[6]    ; i2c_drive:inst|cnt_delay[5]       ; clk        ; clk      ; None                        ; None                      ; 7.850 ns                ;
+; N/A                                     ; 116.95 MHz ( period = 8.551 ns )                    ; i2c_drive:inst|cnt_20ms[18]    ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 7.842 ns                ;
+; N/A                                     ; 117.14 MHz ( period = 8.537 ns )                    ; i2c_drive:inst|num[2]          ; i2c_drive:inst|sda_r              ; clk        ; clk      ; None                        ; None                      ; 7.828 ns                ;
+; N/A                                     ; 117.37 MHz ( period = 8.520 ns )                    ; i2c_drive:inst|cstate.ACK1     ; i2c_drive:inst|sda_r              ; clk        ; clk      ; None                        ; None                      ; 7.811 ns                ;
+; N/A                                     ; 117.41 MHz ( period = 8.517 ns )                    ; hc164_driver:inst1|clk_cnt[2]  ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 7.808 ns                ;
+; N/A                                     ; 117.41 MHz ( period = 8.517 ns )                    ; hc164_driver:inst1|clk_cnt[2]  ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 7.808 ns                ;
+; N/A                                     ; 117.79 MHz ( period = 8.490 ns )                    ; hc164_driver:inst1|clk_cnt[5]  ; i2c_drive:inst|cstate.IDLE        ; clk        ; clk      ; None                        ; None                      ; 7.781 ns                ;
+; N/A                                     ; 118.01 MHz ( period = 8.474 ns )                    ; hc164_driver:inst1|clk_cnt[12] ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 7.765 ns                ;
+; N/A                                     ; 118.01 MHz ( period = 8.474 ns )                    ; hc164_driver:inst1|clk_cnt[12] ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 7.765 ns                ;
+; N/A                                     ; 118.12 MHz ( period = 8.466 ns )                    ; i2c_drive:inst|cnt_20ms[18]    ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 7.757 ns                ;
+; N/A                                     ; 118.12 MHz ( period = 8.466 ns )                    ; i2c_drive:inst|cnt_20ms[18]    ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 7.757 ns                ;
+; N/A                                     ; 118.44 MHz ( period = 8.443 ns )                    ; hc164_driver:inst1|clk_cnt[15] ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 7.734 ns                ;
+; N/A                                     ; 118.53 MHz ( period = 8.437 ns )                    ; hc164_driver:inst1|clk_cnt[15] ; hc164_driver:inst1|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 7.728 ns                ;
+; N/A                                     ; 118.58 MHz ( period = 8.433 ns )                    ; i2c_drive:inst|cnt.011         ; i2c_drive:inst|sda_r              ; clk        ; clk      ; None                        ; None                      ; 7.724 ns                ;
+; N/A                                     ; 118.58 MHz ( period = 8.433 ns )                    ; hc164_driver:inst1|clk_cnt[9]  ; i2c_drive:inst|cstate.IDLE        ; clk        ; clk      ; None                        ; None                      ; 7.724 ns                ;
+; N/A                                     ; 118.60 MHz ( period = 8.432 ns )                    ; hc164_driver:inst1|clk_cnt[15] ; hc164_driver:inst1|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 7.723 ns                ;
+; N/A                                     ; 118.64 MHz ( period = 8.429 ns )                    ; hc164_driver:inst1|clk_cnt[4]  ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 7.720 ns                ;
+; N/A                                     ; 118.64 MHz ( period = 8.429 ns )                    ; hc164_driver:inst1|clk_cnt[4]  ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 7.720 ns                ;
+; N/A                                     ; 118.72 MHz ( period = 8.423 ns )                    ; i2c_drive:inst|cnt_20ms[19]    ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 7.714 ns                ;
+; N/A                                     ; 119.45 MHz ( period = 8.372 ns )                    ; i2c_drive:inst|sw2_r           ; i2c_drive:inst|read_data[4]       ; clk        ; clk      ; None                        ; None                      ; 7.663 ns                ;
+; N/A                                     ; 119.66 MHz ( period = 8.357 ns )                    ; i2c_drive:inst|cnt_delay[5]    ; i2c_drive:inst|cnt_delay[2]       ; clk        ; clk      ; None                        ; None                      ; 7.648 ns                ;
+; N/A                                     ; 119.67 MHz ( period = 8.356 ns )                    ; i2c_drive:inst|cnt_delay[5]    ; i2c_drive:inst|cnt_delay[7]       ; clk        ; clk      ; None                        ; None                      ; 7.647 ns                ;
+; N/A                                     ; 119.93 MHz ( period = 8.338 ns )                    ; i2c_drive:inst|cnt_20ms[19]    ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 7.629 ns                ;
+; N/A                                     ; 119.93 MHz ( period = 8.338 ns )                    ; i2c_drive:inst|cnt_20ms[19]    ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 7.629 ns                ;
+; N/A                                     ; 120.24 MHz ( period = 8.317 ns )                    ; i2c_drive:inst|cnt_delay[6]    ; i2c_drive:inst|cnt_delay[8]       ; clk        ; clk      ; None                        ; None                      ; 7.608 ns                ;
+; N/A                                     ; 120.25 MHz ( period = 8.316 ns )                    ; i2c_drive:inst|cnt_delay[6]    ; i2c_drive:inst|cnt_delay[4]       ; clk        ; clk      ; None                        ; None                      ; 7.607 ns                ;
+; N/A                                     ; 120.51 MHz ( period = 8.298 ns )                    ; hc164_driver:inst1|clk_cnt[6]  ; i2c_drive:inst|cstate.IDLE        ; clk        ; clk      ; None                        ; None                      ; 7.589 ns                ;
+; N/A                                     ; 120.57 MHz ( period = 8.294 ns )                    ; i2c_drive:inst|cnt_delay[5]    ; i2c_drive:inst|cnt_delay[6]       ; clk        ; clk      ; None                        ; None                      ; 7.585 ns                ;
+; N/A                                     ; 120.57 MHz ( period = 8.294 ns )                    ; i2c_drive:inst|cnt_delay[5]    ; i2c_drive:inst|cnt_delay[5]       ; clk        ; clk      ; None                        ; None                      ; 7.585 ns                ;
+; N/A                                     ; 120.61 MHz ( period = 8.291 ns )                    ; hc164_driver:inst1|clk_cnt[8]  ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 7.582 ns                ;
+; N/A                                     ; 120.67 MHz ( period = 8.287 ns )                    ; hc164_driver:inst1|clk_cnt[7]  ; i2c_drive:inst|cstate.IDLE        ; clk        ; clk      ; None                        ; None                      ; 7.578 ns                ;
+; N/A                                     ; 120.70 MHz ( period = 8.285 ns )                    ; hc164_driver:inst1|clk_cnt[8]  ; hc164_driver:inst1|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 7.576 ns                ;
+; N/A                                     ; 120.77 MHz ( period = 8.280 ns )                    ; hc164_driver:inst1|clk_cnt[8]  ; hc164_driver:inst1|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 7.571 ns                ;
+; N/A                                     ; 120.86 MHz ( period = 8.274 ns )                    ; hc164_driver:inst1|clk_cnt[11] ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 7.565 ns                ;
+; N/A                                     ; 121.05 MHz ( period = 8.261 ns )                    ; i2c_drive:inst|num[0]          ; i2c_drive:inst|sda_r              ; clk        ; clk      ; None                        ; None                      ; 7.552 ns                ;
+; N/A                                     ; 121.68 MHz ( period = 8.218 ns )                    ; hc164_driver:inst1|clk_cnt[3]  ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 7.509 ns                ;
+; N/A                                     ; 121.68 MHz ( period = 8.218 ns )                    ; i2c_drive:inst|sda_r           ; i2c_drive:inst|sda_r              ; clk        ; clk      ; None                        ; None                      ; 7.509 ns                ;
+; N/A                                     ; 121.77 MHz ( period = 8.212 ns )                    ; hc164_driver:inst1|clk_cnt[3]  ; hc164_driver:inst1|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 7.503 ns                ;
+; N/A                                     ; 121.85 MHz ( period = 8.207 ns )                    ; hc164_driver:inst1|clk_cnt[3]  ; hc164_driver:inst1|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 7.498 ns                ;
+; N/A                                     ; 122.06 MHz ( period = 8.193 ns )                    ; i2c_drive:inst|cstate.ACK2     ; i2c_drive:inst|sda_r              ; clk        ; clk      ; None                        ; None                      ; 7.484 ns                ;
+; N/A                                     ; 122.49 MHz ( period = 8.164 ns )                    ; i2c_drive:inst|sw2_r           ; i2c_drive:inst|read_data[5]       ; clk        ; clk      ; None                        ; None                      ; 7.455 ns                ;
+; N/A                                     ; 122.49 MHz ( period = 8.164 ns )                    ; i2c_drive:inst|sw2_r           ; i2c_drive:inst|read_data[6]       ; clk        ; clk      ; None                        ; None                      ; 7.455 ns                ;
+; N/A                                     ; 122.67 MHz ( period = 8.152 ns )                    ; i2c_drive:inst|cstate.DATA     ; i2c_drive:inst|num[2]             ; clk        ; clk      ; None                        ; None                      ; 7.443 ns                ;
+; N/A                                     ; 122.67 MHz ( period = 8.152 ns )                    ; i2c_drive:inst|cstate.DATA     ; i2c_drive:inst|num[0]             ; clk        ; clk      ; None                        ; None                      ; 7.443 ns                ;
+; N/A                                     ; 122.67 MHz ( period = 8.152 ns )                    ; i2c_drive:inst|cstate.DATA     ; i2c_drive:inst|num[1]             ; clk        ; clk      ; None                        ; None                      ; 7.443 ns                ;
+; N/A                                     ; 122.85 MHz ( period = 8.140 ns )                    ; i2c_drive:inst|cstate.START2   ; i2c_drive:inst|sda_r              ; clk        ; clk      ; None                        ; None                      ; 7.431 ns                ;
+; N/A                                     ; 122.96 MHz ( period = 8.133 ns )                    ; hc164_driver:inst1|clk_cnt[1]  ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 7.424 ns                ;
+; N/A                                     ; 122.96 MHz ( period = 8.133 ns )                    ; hc164_driver:inst1|clk_cnt[1]  ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 7.424 ns                ;
+; N/A                                     ; 123.32 MHz ( period = 8.109 ns )                    ; i2c_drive:inst|num[1]          ; i2c_drive:inst|sda_r              ; clk        ; clk      ; None                        ; None                      ; 7.400 ns                ;
+; N/A                                     ; 123.41 MHz ( period = 8.103 ns )                    ; hc164_driver:inst1|clk_cnt[10] ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 7.394 ns                ;
+; N/A                                     ; 123.49 MHz ( period = 8.098 ns )                    ; i2c_drive:inst|sw2_r           ; i2c_drive:inst|read_data[0]       ; clk        ; clk      ; None                        ; None                      ; 7.389 ns                ;
+; N/A                                     ; 123.49 MHz ( period = 8.098 ns )                    ; i2c_drive:inst|cnt.010         ; i2c_drive:inst|db_r[1]            ; clk        ; clk      ; None                        ; None                      ; 7.389 ns                ;
+; N/A                                     ; 123.49 MHz ( period = 8.098 ns )                    ; i2c_drive:inst|cnt.010         ; i2c_drive:inst|db_r[7]            ; clk        ; clk      ; None                        ; None                      ; 7.389 ns                ;
+; N/A                                     ; 123.49 MHz ( period = 8.098 ns )                    ; i2c_drive:inst|cnt.010         ; i2c_drive:inst|db_r[2]            ; clk        ; clk      ; None                        ; None                      ; 7.389 ns                ;
+; N/A                                     ; 123.49 MHz ( period = 8.098 ns )                    ; i2c_drive:inst|cnt.010         ; i2c_drive:inst|db_r[0]            ; clk        ; clk      ; None                        ; None                      ; 7.389 ns                ;
+; N/A                                     ; 123.50 MHz ( period = 8.097 ns )                    ; hc164_driver:inst1|clk_cnt[10] ; hc164_driver:inst1|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 7.388 ns                ;
+; N/A                                     ; 123.52 MHz ( period = 8.096 ns )                    ; i2c_drive:inst|sw2_r           ; i2c_drive:inst|read_data[1]       ; clk        ; clk      ; None                        ; None                      ; 7.387 ns                ;
+; N/A                                     ; 123.58 MHz ( period = 8.092 ns )                    ; hc164_driver:inst1|clk_cnt[10] ; hc164_driver:inst1|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 7.383 ns                ;
+; N/A                                     ; 123.62 MHz ( period = 8.089 ns )                    ; hc164_driver:inst1|clk_cnt[15] ; i2c_drive:inst|cstate.IDLE        ; clk        ; clk      ; None                        ; None                      ; 7.380 ns                ;
+; N/A                                     ; 123.69 MHz ( period = 8.085 ns )                    ; hc164_driver:inst1|clk_cnt[13] ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 7.376 ns                ;
+; N/A                                     ; 123.78 MHz ( period = 8.079 ns )                    ; hc164_driver:inst1|clk_cnt[13] ; hc164_driver:inst1|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 7.370 ns                ;
+; N/A                                     ; 123.85 MHz ( period = 8.074 ns )                    ; hc164_driver:inst1|clk_cnt[13] ; hc164_driver:inst1|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 7.365 ns                ;
+; N/A                                     ; 123.87 MHz ( period = 8.073 ns )                    ; hc164_driver:inst1|clk_cnt[11] ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 7.364 ns                ;
+; N/A                                     ; 123.87 MHz ( period = 8.073 ns )                    ; hc164_driver:inst1|clk_cnt[11] ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 7.364 ns                ;
+; N/A                                     ; 124.01 MHz ( period = 8.064 ns )                    ; hc164_driver:inst1|clk_cnt[3]  ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 7.355 ns                ;
+; N/A                                     ; 124.07 MHz ( period = 8.060 ns )                    ; i2c_drive:inst|cstate.ACK1     ; i2c_drive:inst|db_r[1]            ; clk        ; clk      ; None                        ; None                      ; 7.351 ns                ;
+; N/A                                     ; 124.07 MHz ( period = 8.060 ns )                    ; i2c_drive:inst|cstate.ACK1     ; i2c_drive:inst|db_r[7]            ; clk        ; clk      ; None                        ; None                      ; 7.351 ns                ;
+; N/A                                     ; 124.07 MHz ( period = 8.060 ns )                    ; i2c_drive:inst|cstate.ACK1     ; i2c_drive:inst|db_r[2]            ; clk        ; clk      ; None                        ; None                      ; 7.351 ns                ;
+; N/A                                     ; 124.07 MHz ( period = 8.060 ns )                    ; i2c_drive:inst|cstate.ACK1     ; i2c_drive:inst|db_r[0]            ; clk        ; clk      ; None                        ; None                      ; 7.351 ns                ;
+; N/A                                     ; 124.19 MHz ( period = 8.052 ns )                    ; i2c_drive:inst|cnt_delay[5]    ; i2c_drive:inst|cnt_delay[8]       ; clk        ; clk      ; None                        ; None                      ; 7.343 ns                ;
+; N/A                                     ; 124.21 MHz ( period = 8.051 ns )                    ; i2c_drive:inst|cnt_delay[5]    ; i2c_drive:inst|cnt_delay[4]       ; clk        ; clk      ; None                        ; None                      ; 7.342 ns                ;
+; N/A                                     ; 124.53 MHz ( period = 8.030 ns )                    ; i2c_drive:inst|cnt_20ms[16]    ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 7.321 ns                ;
+; N/A                                     ; 124.60 MHz ( period = 8.026 ns )                    ; hc164_driver:inst1|clk_cnt[0]  ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 7.317 ns                ;
+; N/A                                     ; 124.69 MHz ( period = 8.020 ns )                    ; hc164_driver:inst1|clk_cnt[0]  ; hc164_driver:inst1|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 7.311 ns                ;
+; N/A                                     ; 124.77 MHz ( period = 8.015 ns )                    ; hc164_driver:inst1|clk_cnt[0]  ; hc164_driver:inst1|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 7.306 ns                ;
+; N/A                                     ; 125.16 MHz ( period = 7.990 ns )                    ; i2c_drive:inst|sw2_r           ; i2c_drive:inst|cstate.ACK4        ; clk        ; clk      ; None                        ; None                      ; 7.281 ns                ;
+; N/A                                     ; 125.87 MHz ( period = 7.945 ns )                    ; i2c_drive:inst|cnt_20ms[16]    ; i2c_drive:inst|sw2_r              ; clk        ; clk      ; None                        ; None                      ; 7.236 ns                ;
+; N/A                                     ; 125.87 MHz ( period = 7.945 ns )                    ; i2c_drive:inst|cnt_20ms[16]    ; i2c_drive:inst|sw1_r              ; clk        ; clk      ; None                        ; None                      ; 7.236 ns                ;
+; N/A                                     ; 125.99 MHz ( period = 7.937 ns )                    ; hc164_driver:inst1|clk_cnt[1]  ; i2c_drive:inst|cnt_delay[7]       ; clk        ; clk      ; None                        ; None                      ; 7.228 ns                ;
+; N/A                                     ; 126.02 MHz ( period = 7.935 ns )                    ; hc164_driver:inst1|clk_cnt[8]  ; i2c_drive:inst|cstate.IDLE        ; clk        ; clk      ; None                        ; None                      ; 7.226 ns                ;
+; N/A                                     ; 126.28 MHz ( period = 7.919 ns )                    ; hc164_driver:inst1|clk_cnt[0]  ; i2c_drive:inst|cnt_delay[2]       ; clk        ; clk      ; None                        ; None                      ; 7.210 ns                ;
+; N/A                                     ; 126.29 MHz ( period = 7.918 ns )                    ; hc164_driver:inst1|clk_cnt[0]  ; i2c_drive:inst|cnt_delay[7]       ; clk        ; clk      ; None                        ; None                      ; 7.209 ns                ;
+; N/A                                     ; 126.77 MHz ( period = 7.888 ns )                    ; i2c_drive:inst|num[2]          ; i2c_drive:inst|num[0]             ; clk        ; clk      ; None                        ; None                      ; 7.179 ns                ;
+; N/A                                     ; 126.79 MHz ( period = 7.887 ns )                    ; i2c_drive:inst|num[2]          ; i2c_drive:inst|num[1]             ; clk        ; clk      ; None                        ; None                      ; 7.178 ns                ;
+; N/A                                     ; 126.81 MHz ( period = 7.886 ns )                    ; i2c_drive:inst|num[2]          ; i2c_drive:inst|num[3]             ; clk        ; clk      ; None                        ; None                      ; 7.177 ns                ;
+; N/A                                     ; 126.81 MHz ( period = 7.886 ns )                    ; i2c_drive:inst|num[2]          ; i2c_drive:inst|read_data[4]       ; clk        ; clk      ; None                        ; None                      ; 7.177 ns                ;
+; N/A                                     ; 126.84 MHz ( period = 7.884 ns )                    ; i2c_drive:inst|num[2]          ; i2c_drive:inst|num[2]             ; clk        ; clk      ; None                        ; None                      ; 7.175 ns                ;
+; N/A                                     ; 127.03 MHz ( period = 7.872 ns )                    ; hc164_driver:inst1|clk_cnt[0]  ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 7.163 ns                ;
+; N/A                                     ; 127.11 MHz ( period = 7.867 ns )                    ; i2c_drive:inst|cnt_delay[6]    ; i2c_drive:inst|cnt.001            ; clk        ; clk      ; None                        ; None                      ; 7.158 ns                ;
+; N/A                                     ; 127.21 MHz ( period = 7.861 ns )                    ; hc164_driver:inst1|clk_cnt[14] ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 7.152 ns                ;
+; N/A                                     ; 127.24 MHz ( period = 7.859 ns )                    ; i2c_drive:inst|cstate.ACK4     ; i2c_drive:inst|sda_link           ; clk        ; clk      ; None                        ; None                      ; 7.150 ns                ;
+; N/A                                     ; 127.28 MHz ( period = 7.857 ns )                    ; hc164_driver:inst1|clk_cnt[2]  ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 7.148 ns                ;
+; N/A                                     ; 127.29 MHz ( period = 7.856 ns )                    ; hc164_driver:inst1|clk_cnt[0]  ; i2c_drive:inst|cnt_delay[6]       ; clk        ; clk      ; None                        ; None                      ; 7.147 ns                ;
+; N/A                                     ; 127.29 MHz ( period = 7.856 ns )                    ; hc164_driver:inst1|clk_cnt[0]  ; i2c_drive:inst|cnt_delay[5]       ; clk        ; clk      ; None                        ; None                      ; 7.147 ns                ;
+; N/A                                     ; 127.32 MHz ( period = 7.854 ns )                    ; i2c_drive:inst|cstate.ADD3     ; i2c_drive:inst|num[2]             ; clk        ; clk      ; None                        ; None                      ; 7.145 ns                ;
+; N/A                                     ; 127.32 MHz ( period = 7.854 ns )                    ; i2c_drive:inst|cstate.ADD3     ; i2c_drive:inst|num[0]             ; clk        ; clk      ; None                        ; None                      ; 7.145 ns                ;
+; N/A                                     ; 127.32 MHz ( period = 7.854 ns )                    ; i2c_drive:inst|cstate.ADD3     ; i2c_drive:inst|num[1]             ; clk        ; clk      ; None                        ; None                      ; 7.145 ns                ;
+; N/A                                     ; 127.37 MHz ( period = 7.851 ns )                    ; hc164_driver:inst1|clk_cnt[2]  ; hc164_driver:inst1|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 7.142 ns                ;
+; N/A                                     ; 127.42 MHz ( period = 7.848 ns )                    ; i2c_drive:inst|cstate.ADD2     ; i2c_drive:inst|num[2]             ; clk        ; clk      ; None                        ; None                      ; 7.139 ns                ;
+; N/A                                     ; 127.42 MHz ( period = 7.848 ns )                    ; i2c_drive:inst|cstate.ADD2     ; i2c_drive:inst|num[0]             ; clk        ; clk      ; None                        ; None                      ; 7.139 ns                ;
+; N/A                                     ; 127.42 MHz ( period = 7.848 ns )                    ; i2c_drive:inst|cstate.ADD2     ; i2c_drive:inst|num[1]             ; clk        ; clk      ; None                        ; None                      ; 7.139 ns                ;
+; N/A                                     ; 127.45 MHz ( period = 7.846 ns )                    ; hc164_driver:inst1|clk_cnt[2]  ; hc164_driver:inst1|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 7.137 ns                ;
+; N/A                                     ; 127.86 MHz ( period = 7.821 ns )                    ; i2c_drive:inst|cnt_delay[6]    ; i2c_drive:inst|cnt.011            ; clk        ; clk      ; None                        ; None                      ; 7.112 ns                ;
+; N/A                                     ; 127.98 MHz ( period = 7.814 ns )                    ; hc164_driver:inst1|clk_cnt[12] ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 7.105 ns                ;
+; N/A                                     ; 128.07 MHz ( period = 7.808 ns )                    ; hc164_driver:inst1|clk_cnt[12] ; hc164_driver:inst1|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 7.099 ns                ;
+; N/A                                     ; 128.11 MHz ( period = 7.806 ns )                    ; i2c_drive:inst|cstate.DATA     ; i2c_drive:inst|num[3]             ; clk        ; clk      ; None                        ; None                      ; 7.097 ns                ;
+; N/A                                     ; 128.16 MHz ( period = 7.803 ns )                    ; hc164_driver:inst1|clk_cnt[12] ; hc164_driver:inst1|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 7.094 ns                ;
+; N/A                                     ; 128.21 MHz ( period = 7.800 ns )                    ; i2c_drive:inst|db_r[7]         ; i2c_drive:inst|sda_r              ; clk        ; clk      ; None                        ; None                      ; 7.091 ns                ;
+; N/A                                     ; 128.39 MHz ( period = 7.789 ns )                    ; i2c_drive:inst|num[3]          ; i2c_drive:inst|num[0]             ; clk        ; clk      ; None                        ; None                      ; 7.080 ns                ;
+; N/A                                     ; 128.40 MHz ( period = 7.788 ns )                    ; i2c_drive:inst|num[3]          ; i2c_drive:inst|num[1]             ; clk        ; clk      ; None                        ; None                      ; 7.079 ns                ;
+; N/A                                     ; 128.42 MHz ( period = 7.787 ns )                    ; i2c_drive:inst|num[3]          ; i2c_drive:inst|num[3]             ; clk        ; clk      ; None                        ; None                      ; 7.078 ns                ;
+; N/A                                     ; 128.45 MHz ( period = 7.785 ns )                    ; i2c_drive:inst|num[3]          ; i2c_drive:inst|num[2]             ; clk        ; clk      ; None                        ; None                      ; 7.076 ns                ;
+; N/A                                     ; 128.63 MHz ( period = 7.774 ns )                    ; i2c_drive:inst|cstate.START1   ; i2c_drive:inst|num[2]             ; clk        ; clk      ; None                        ; None                      ; 7.065 ns                ;
+; N/A                                     ; 128.63 MHz ( period = 7.774 ns )                    ; i2c_drive:inst|cstate.START1   ; i2c_drive:inst|num[0]             ; clk        ; clk      ; None                        ; None                      ; 7.065 ns                ;
+; N/A                                     ; 128.63 MHz ( period = 7.774 ns )                    ; i2c_drive:inst|cstate.START1   ; i2c_drive:inst|num[1]             ; clk        ; clk      ; None                        ; None                      ; 7.065 ns                ;
+; N/A                                     ; 128.72 MHz ( period = 7.769 ns )                    ; hc164_driver:inst1|clk_cnt[4]  ; hc164_driver:inst1|seg_led_num[2] ; clk        ; clk      ; None                        ; None                      ; 7.060 ns                ;
+; N/A                                     ; 128.82 MHz ( period = 7.763 ns )                    ; hc164_driver:inst1|clk_cnt[4]  ; hc164_driver:inst1|seg_led_num[1] ; clk        ; clk      ; None                        ; None                      ; 7.054 ns                ;
+; N/A                                     ; 128.90 MHz ( period = 7.758 ns )                    ; hc164_driver:inst1|clk_cnt[4]  ; hc164_driver:inst1|seg_led_num[0] ; clk        ; clk      ; None                        ; None                      ; 7.049 ns                ;
+; N/A                                     ; 129.08 MHz ( period = 7.747 ns )                    ; hc164_driver:inst1|clk_cnt[10] ; i2c_drive:inst|cstate.IDLE        ; clk        ; clk      ; None                        ; None                      ; 7.038 ns                ;
+; N/A                                     ; 129.35 MHz ( period = 7.731 ns )                    ; hc164_driver:inst1|clk_cnt[13] ; i2c_drive:inst|cstate.IDLE        ; clk        ; clk      ; None                        ; None                      ; 7.022 ns                ;
+; N/A                                     ; 129.65 MHz ( period = 7.713 ns )                    ; hc164_driver:inst1|clk_cnt[1]  ; i2c_drive:inst|cnt_delay[3]       ; clk        ; clk      ; None                        ; None                      ; 7.004 ns                ;
+; N/A                                     ; 129.82 MHz ( period = 7.703 ns )                    ; hc164_driver:inst1|clk_cnt[2]  ; i2c_drive:inst|cstate.STOP2       ; clk        ; clk      ; None                        ; None                      ; 6.994 ns                ;
+; N/A                                     ; 129.87 MHz ( period = 7.700 ns )                    ; i2c_drive:inst|num[3]          ; i2c_drive:inst|sda_r              ; clk        ; clk      ; None                        ; None                      ; 6.991 ns                ;
+; N/A                                     ; 130.07 MHz ( period = 7.688 ns )                    ; i2c_drive:inst|cstate.STOP2    ; i2c_drive:inst|sda_link           ; clk        ; clk      ; None                        ; None                      ; 6.979 ns                ;
+; N/A                                     ; 130.17 MHz ( period = 7.682 ns )                    ; hc164_driver:inst1|clk_cnt[1]  ; i2c_drive:inst|cnt_delay[8]       ; clk        ; clk      ; None                        ; None                      ; 6.973 ns                ;
+; N/A                                     ; 130.24 MHz ( period = 7.678 ns )                    ; i2c_drive:inst|num[2]          ; i2c_drive:inst|read_data[5]       ; clk        ; clk      ; None                        ; None                      ; 6.969 ns                ;
+; N/A                                     ; 130.24 MHz ( period = 7.678 ns )                    ; i2c_drive:inst|num[2]          ; i2c_drive:inst|read_data[6]       ; clk        ; clk      ; None                        ; None                      ; 6.969 ns                ;
+; N/A                                     ; 130.28 MHz ( period = 7.676 ns )                    ; i2c_drive:inst|cnt.011         ; i2c_drive:inst|num[2]             ; clk        ; clk      ; None                        ; None                      ; 6.967 ns                ;
+; N/A                                     ; 130.28 MHz ( period = 7.676 ns )                    ; i2c_drive:inst|cnt.011         ; i2c_drive:inst|num[0]             ; clk        ; clk      ; None                        ; None                      ; 6.967 ns                ;
+; N/A                                     ; 130.28 MHz ( period = 7.676 ns )                    ; i2c_drive:inst|cnt.011         ; i2c_drive:inst|num[1]             ; clk        ; clk      ; None                        ; None                      ; 6.967 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                ;                                   ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------+-----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------+
+; tsu                                                                                ;
++-------+--------------+------------+-------+-----------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From  ; To                          ; To Clock ;
++-------+--------------+------------+-------+-----------------------------+----------+
+; N/A   ; None         ; 0.457 ns   ; SDA   ; i2c_drive:inst|read_data[0] ; clk      ;
+; N/A   ; None         ; 0.457 ns   ; SDA   ; i2c_drive:inst|read_data[2] ; clk      ;
+; N/A   ; None         ; 0.449 ns   ; SDA   ; i2c_drive:inst|read_data[1] ; clk      ;
+; N/A   ; None         ; 0.448 ns   ; SDA   ; i2c_drive:inst|read_data[3] ; clk      ;
+; N/A   ; None         ; 0.439 ns   ; SDA   ; i2c_drive:inst|read_data[7] ; clk      ;
+; N/A   ; None         ; 0.435 ns   ; SDA   ; i2c_drive:inst|read_data[5] ; clk      ;
+; N/A   ; None         ; 0.429 ns   ; SDA   ; i2c_drive:inst|read_data[4] ; clk      ;
+; N/A   ; None         ; 0.428 ns   ; SDA   ; i2c_drive:inst|read_data[6] ; clk      ;
+; N/A   ; None         ; 0.220 ns   ; SW[0] ; i2c_drive:inst|sw1_r        ; clk      ;
+; N/A   ; None         ; -0.184 ns  ; SW[7] ; i2c_drive:inst|sw2_r        ; clk      ;
+; N/A   ; None         ; -0.197 ns  ; rst_n ; i2c_drive:inst|db_r[1]      ; clk      ;
+; N/A   ; None         ; -0.197 ns  ; rst_n ; i2c_drive:inst|db_r[7]      ; clk      ;
+; N/A   ; None         ; -0.197 ns  ; rst_n ; i2c_drive:inst|db_r[2]      ; clk      ;
+; N/A   ; None         ; -0.197 ns  ; rst_n ; i2c_drive:inst|db_r[0]      ; clk      ;
++-------+--------------+------------+-------+-----------------------------+----------+
+
+
++---------------------------------------------------------------------------------------------+
+; tco                                                                                         ;
++-------+--------------+------------+-----------------------------------+--------+------------+
+; Slack ; Required tco ; Actual tco ; From                              ; To     ; From Clock ;
++-------+--------------+------------+-----------------------------------+--------+------------+
+; N/A   ; None         ; 17.492 ns  ; hc164_driver:inst1|seg_led_num[2] ; HC_SI  ; clk        ;
+; N/A   ; None         ; 17.286 ns  ; i2c_drive:inst|read_data[5]       ; HC_SI  ; clk        ;
+; N/A   ; None         ; 17.162 ns  ; i2c_drive:inst|read_data[2]       ; HC_SI  ; clk        ;
+; N/A   ; None         ; 17.118 ns  ; i2c_drive:inst|read_data[7]       ; HC_SI  ; clk        ;
+; N/A   ; None         ; 17.007 ns  ; i2c_drive:inst|read_data[0]       ; HC_SI  ; clk        ;
+; N/A   ; None         ; 16.967 ns  ; hc164_driver:inst1|seg_led_num[1] ; HC_SI  ; clk        ;
+; N/A   ; None         ; 16.941 ns  ; i2c_drive:inst|read_data[6]       ; HC_SI  ; clk        ;
+; N/A   ; None         ; 16.872 ns  ; i2c_drive:inst|read_data[3]       ; HC_SI  ; clk        ;
+; N/A   ; None         ; 16.811 ns  ; i2c_drive:inst|read_data[4]       ; HC_SI  ; clk        ;
+; N/A   ; None         ; 16.706 ns  ; i2c_drive:inst|read_data[1]       ; HC_SI  ; clk        ;
+; N/A   ; None         ; 16.617 ns  ; hc164_driver:inst1|seg_led_num[0] ; HC_SI  ; clk        ;
+; N/A   ; None         ; 15.369 ns  ; hc164_driver:inst1|tx_cnt[1]      ; HC_SI  ; clk        ;
+; N/A   ; None         ; 15.113 ns  ; hc164_driver:inst1|tx_cnt[2]      ; HC_SI  ; clk        ;
+; N/A   ; None         ; 14.595 ns  ; hc164_driver:inst1|tx_cnt[3]      ; HC_SI  ; clk        ;
+; N/A   ; None         ; 14.254 ns  ; hc164_driver:inst1|tx_cnt[4]      ; HC_SI  ; clk        ;
+; N/A   ; None         ; 12.353 ns  ; i2c_drive:inst|read_data[0]       ; led[0] ; clk        ;
+; N/A   ; None         ; 12.238 ns  ; i2c_drive:inst|sda_r              ; SDA    ; clk        ;
+; N/A   ; None         ; 12.108 ns  ; i2c_drive:inst|read_data[4]       ; led[4] ; clk        ;
+; N/A   ; None         ; 11.997 ns  ; i2c_drive:inst|scl_r              ; SCL    ; clk        ;
+; N/A   ; None         ; 11.945 ns  ; hc164_driver:inst1|hc_cp          ; HC_CP  ; clk        ;
+; N/A   ; None         ; 11.850 ns  ; i2c_drive:inst|read_data[7]       ; led[7] ; clk        ;
+; N/A   ; None         ; 11.715 ns  ; i2c_drive:inst|read_data[5]       ; led[5] ; clk        ;
+; N/A   ; None         ; 11.700 ns  ; i2c_drive:inst|read_data[6]       ; led[6] ; clk        ;
+; N/A   ; None         ; 11.683 ns  ; i2c_drive:inst|read_data[1]       ; led[1] ; clk        ;
+; N/A   ; None         ; 11.625 ns  ; i2c_drive:inst|read_data[3]       ; led[3] ; clk        ;
+; N/A   ; None         ; 11.601 ns  ; i2c_drive:inst|read_data[2]       ; led[2] ; clk        ;
+; N/A   ; None         ; 10.882 ns  ; i2c_drive:inst|sda_link           ; SDA    ; clk        ;
++-------+--------------+------------+-----------------------------------+--------+------------+
+
+
++------------------------------------------------------------------------------------------+
+; th                                                                                       ;
++---------------+-------------+-----------+-------+-----------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From  ; To                          ; To Clock ;
++---------------+-------------+-----------+-------+-----------------------------+----------+
+; N/A           ; None        ; 0.751 ns  ; rst_n ; i2c_drive:inst|db_r[1]      ; clk      ;
+; N/A           ; None        ; 0.751 ns  ; rst_n ; i2c_drive:inst|db_r[7]      ; clk      ;
+; N/A           ; None        ; 0.751 ns  ; rst_n ; i2c_drive:inst|db_r[2]      ; clk      ;
+; N/A           ; None        ; 0.751 ns  ; rst_n ; i2c_drive:inst|db_r[0]      ; clk      ;
+; N/A           ; None        ; 0.738 ns  ; SW[7] ; i2c_drive:inst|sw2_r        ; clk      ;
+; N/A           ; None        ; 0.334 ns  ; SW[0] ; i2c_drive:inst|sw1_r        ; clk      ;
+; N/A           ; None        ; 0.126 ns  ; SDA   ; i2c_drive:inst|read_data[6] ; clk      ;
+; N/A           ; None        ; 0.125 ns  ; SDA   ; i2c_drive:inst|read_data[4] ; clk      ;
+; N/A           ; None        ; 0.119 ns  ; SDA   ; i2c_drive:inst|read_data[5] ; clk      ;
+; N/A           ; None        ; 0.115 ns  ; SDA   ; i2c_drive:inst|read_data[7] ; clk      ;
+; N/A           ; None        ; 0.106 ns  ; SDA   ; i2c_drive:inst|read_data[3] ; clk      ;
+; N/A           ; None        ; 0.105 ns  ; SDA   ; i2c_drive:inst|read_data[1] ; clk      ;
+; N/A           ; None        ; 0.097 ns  ; SDA   ; i2c_drive:inst|read_data[0] ; clk      ;
+; N/A           ; None        ; 0.097 ns  ; SDA   ; i2c_drive:inst|read_data[2] ; clk      ;
++---------------+-------------+-----------+-------+-----------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Mon Nov 28 08:33:58 2011
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off i2c_top -c i2c_top
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 97.54 MHz between source register "i2c_drive:inst|sw1_r" and destination register "i2c_drive:inst|num[2]" (period= 10.252 ns)
+    Info: + Longest register to register delay is 9.543 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X7_Y2_N4; Fanout = 11; REG Node = 'i2c_drive:inst|sw1_r'
+        Info: 2: + IC(4.320 ns) + CELL(0.511 ns) = 4.831 ns; Loc. = LC_X7_Y3_N3; Fanout = 2; COMB Node = 'i2c_drive:inst|Selector20~51'
+        Info: 3: + IC(1.874 ns) + CELL(0.914 ns) = 7.619 ns; Loc. = LC_X4_Y3_N4; Fanout = 4; COMB Node = 'i2c_drive:inst|num[2]~1332'
+        Info: 4: + IC(0.681 ns) + CELL(1.243 ns) = 9.543 ns; Loc. = LC_X4_Y3_N3; Fanout = 10; REG Node = 'i2c_drive:inst|num[2]'
+        Info: Total cell delay = 2.668 ns ( 27.96 % )
+        Info: Total interconnect delay = 6.875 ns ( 72.04 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 6.526 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 75; CLK Node = 'clk'
+            Info: 2: + IC(4.476 ns) + CELL(0.918 ns) = 6.526 ns; Loc. = LC_X4_Y3_N3; Fanout = 10; REG Node = 'i2c_drive:inst|num[2]'
+            Info: Total cell delay = 2.050 ns ( 31.41 % )
+            Info: Total interconnect delay = 4.476 ns ( 68.59 % )
+        Info: - Longest clock path from clock "clk" to source register is 6.526 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 75; CLK Node = 'clk'
+            Info: 2: + IC(4.476 ns) + CELL(0.918 ns) = 6.526 ns; Loc. = LC_X7_Y2_N4; Fanout = 11; REG Node = 'i2c_drive:inst|sw1_r'
+            Info: Total cell delay = 2.050 ns ( 31.41 % )
+            Info: Total interconnect delay = 4.476 ns ( 68.59 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Info: tsu for register "i2c_drive:inst|read_data[0]" (data pin = "SDA", clock pin = "clk") is 0.457 ns
+    Info: + Longest pin to register delay is 6.650 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = PIN_72; Fanout = 1; PIN Node = 'SDA'
+        Info: 2: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = IOC_X8_Y4_N2; Fanout = 8; COMB Node = 'SDA~0'
+        Info: 3: + IC(4.927 ns) + CELL(0.591 ns) = 6.650 ns; Loc. = LC_X4_Y1_N2; Fanout = 9; REG Node = 'i2c_drive:inst|read_data[0]'
+        Info: Total cell delay = 1.723 ns ( 25.91 % )
+        Info: Total interconnect delay = 4.927 ns ( 74.09 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 6.526 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 75; CLK Node = 'clk'
+        Info: 2: + IC(4.476 ns) + CELL(0.918 ns) = 6.526 ns; Loc. = LC_X4_Y1_N2; Fanout = 9; REG Node = 'i2c_drive:inst|read_data[0]'
+        Info: Total cell delay = 2.050 ns ( 31.41 % )
+        Info: Total interconnect delay = 4.476 ns ( 68.59 % )
+Info: tco from clock "clk" to destination pin "HC_SI" through register "hc164_driver:inst1|seg_led_num[2]" is 17.492 ns
+    Info: + Longest clock path from clock "clk" to source register is 6.526 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 75; CLK Node = 'clk'
+        Info: 2: + IC(4.476 ns) + CELL(0.918 ns) = 6.526 ns; Loc. = LC_X5_Y1_N2; Fanout = 3; REG Node = 'hc164_driver:inst1|seg_led_num[2]'
+        Info: Total cell delay = 2.050 ns ( 31.41 % )
+        Info: Total interconnect delay = 4.476 ns ( 68.59 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 10.590 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X5_Y1_N2; Fanout = 3; REG Node = 'hc164_driver:inst1|seg_led_num[2]'
+        Info: 2: + IC(0.927 ns) + CELL(0.740 ns) = 1.667 ns; Loc. = LC_X5_Y1_N6; Fanout = 7; COMB Node = 'hc164_driver:inst1|Decoder1~84'
+        Info: 3: + IC(1.951 ns) + CELL(0.511 ns) = 4.129 ns; Loc. = LC_X2_Y1_N4; Fanout = 1; COMB Node = 'hc164_driver:inst1|WideOr3~55'
+        Info: 4: + IC(0.757 ns) + CELL(0.511 ns) = 5.397 ns; Loc. = LC_X2_Y1_N1; Fanout = 1; COMB Node = 'hc164_driver:inst1|Mux5~154'
+        Info: 5: + IC(0.728 ns) + CELL(0.200 ns) = 6.325 ns; Loc. = LC_X2_Y1_N0; Fanout = 1; COMB Node = 'hc164_driver:inst1|Mux5~155'
+        Info: 6: + IC(0.792 ns) + CELL(0.511 ns) = 7.628 ns; Loc. = LC_X2_Y1_N8; Fanout = 1; COMB Node = 'hc164_driver:inst1|Mux5~156'
+        Info: 7: + IC(0.640 ns) + CELL(2.322 ns) = 10.590 ns; Loc. = PIN_26; Fanout = 0; PIN Node = 'HC_SI'
+        Info: Total cell delay = 4.795 ns ( 45.28 % )
+        Info: Total interconnect delay = 5.795 ns ( 54.72 % )
+Info: th for register "i2c_drive:inst|db_r[1]" (data pin = "rst_n", clock pin = "clk") is 0.751 ns
+    Info: + Longest clock path from clock "clk" to destination register is 6.526 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 75; CLK Node = 'clk'
+        Info: 2: + IC(4.476 ns) + CELL(0.918 ns) = 6.526 ns; Loc. = LC_X5_Y3_N7; Fanout = 1; REG Node = 'i2c_drive:inst|db_r[1]'
+        Info: Total cell delay = 2.050 ns ( 31.41 % )
+        Info: Total interconnect delay = 4.476 ns ( 68.59 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 5.996 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_83; Fanout = 72; PIN Node = 'rst_n'
+        Info: 2: + IC(2.200 ns) + CELL(0.740 ns) = 4.072 ns; Loc. = LC_X5_Y3_N2; Fanout = 4; COMB Node = 'i2c_drive:inst|db_r[7]~197'
+        Info: 3: + IC(0.681 ns) + CELL(1.243 ns) = 5.996 ns; Loc. = LC_X5_Y3_N7; Fanout = 1; REG Node = 'i2c_drive:inst|db_r[1]'
+        Info: Total cell delay = 3.115 ns ( 51.95 % )
+        Info: Total interconnect delay = 2.881 ns ( 48.05 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Allocated 111 megabytes of memory during processing
+    Info: Processing ended: Mon Nov 28 08:34:00 2011
+    Info: Elapsed time: 00:00:02
+
+

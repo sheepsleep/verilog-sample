@@ -1,0 +1,370 @@
+Classic Timing Analyzer report for LCD12864_TOP
+Sun Nov 27 16:57:26 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. tco
+  7. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                        ;
++------------------------------+-------+---------------+----------------------------------+--------------------------+--------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                     ; To                 ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+--------------------------+--------------------+------------+----------+--------------+
+; Worst-case tco               ; N/A   ; None          ; 17.537 ns                        ; LCD12864:inst|e          ; lcd_en             ; clk        ; --       ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 109.88 MHz ( period = 9.101 ns ) ; LCD12864:inst|counter[2] ; LCD12864:inst|clkr ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                          ;                    ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+--------------------------+--------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EPM240T100C5       ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                ;
++-----------------------------------------+-----------------------------------------------------+---------------------------+---------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                      ; To                        ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+---------------------------+---------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 109.88 MHz ( period = 9.101 ns )                    ; LCD12864:inst|counter[2]  ; LCD12864:inst|clkr        ; clk        ; clk      ; None                        ; None                      ; 8.392 ns                ;
+; N/A                                     ; 112.46 MHz ( period = 8.892 ns )                    ; LCD12864:inst|counter[0]  ; LCD12864:inst|clkr        ; clk        ; clk      ; None                        ; None                      ; 8.183 ns                ;
+; N/A                                     ; 112.91 MHz ( period = 8.857 ns )                    ; LCD12864:inst|counter[4]  ; LCD12864:inst|clkr        ; clk        ; clk      ; None                        ; None                      ; 8.148 ns                ;
+; N/A                                     ; 113.48 MHz ( period = 8.812 ns )                    ; LCD12864:inst|counter[3]  ; LCD12864:inst|clkr        ; clk        ; clk      ; None                        ; None                      ; 8.103 ns                ;
+; N/A                                     ; 114.06 MHz ( period = 8.767 ns )                    ; LCD12864:inst|counter[1]  ; LCD12864:inst|clkr        ; clk        ; clk      ; None                        ; None                      ; 8.058 ns                ;
+; N/A                                     ; 114.27 MHz ( period = 8.751 ns )                    ; LCD12864:inst|counter[5]  ; LCD12864:inst|clkr        ; clk        ; clk      ; None                        ; None                      ; 8.042 ns                ;
+; N/A                                     ; 118.02 MHz ( period = 8.473 ns )                    ; LCD12864:inst|next.dat18  ; LCD12864:inst|dat[5]      ; clk        ; clk      ; None                        ; None                      ; 7.764 ns                ;
+; N/A                                     ; 118.12 MHz ( period = 8.466 ns )                    ; LCD12864:inst|next.dat38  ; LCD12864:inst|dat[1]      ; clk        ; clk      ; None                        ; None                      ; 7.757 ns                ;
+; N/A                                     ; 118.71 MHz ( period = 8.424 ns )                    ; LCD12864:inst|next.dat38  ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 7.715 ns                ;
+; N/A                                     ; 118.85 MHz ( period = 8.414 ns )                    ; LCD12864:inst|next.dat11  ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 7.705 ns                ;
+; N/A                                     ; 119.25 MHz ( period = 8.386 ns )                    ; LCD12864:inst|next.dat43  ; LCD12864:inst|dat[0]      ; clk        ; clk      ; None                        ; None                      ; 7.677 ns                ;
+; N/A                                     ; 119.32 MHz ( period = 8.381 ns )                    ; LCD12864:inst|next.dat19  ; LCD12864:inst|dat[5]      ; clk        ; clk      ; None                        ; None                      ; 7.672 ns                ;
+; N/A                                     ; 119.35 MHz ( period = 8.379 ns )                    ; LCD12864:inst|next.dat39  ; LCD12864:inst|dat[1]      ; clk        ; clk      ; None                        ; None                      ; 7.670 ns                ;
+; N/A                                     ; 119.37 MHz ( period = 8.377 ns )                    ; LCD12864:inst|counter[6]  ; LCD12864:inst|clkr        ; clk        ; clk      ; None                        ; None                      ; 7.668 ns                ;
+; N/A                                     ; 119.45 MHz ( period = 8.372 ns )                    ; LCD12864:inst|next.dat18  ; LCD12864:inst|dat[6]      ; clk        ; clk      ; None                        ; None                      ; 7.663 ns                ;
+; N/A                                     ; 119.95 MHz ( period = 8.337 ns )                    ; LCD12864:inst|next.dat39  ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 7.628 ns                ;
+; N/A                                     ; 120.06 MHz ( period = 8.329 ns )                    ; LCD12864:inst|counter[7]  ; LCD12864:inst|clkr        ; clk        ; clk      ; None                        ; None                      ; 7.620 ns                ;
+; N/A                                     ; 120.77 MHz ( period = 8.280 ns )                    ; LCD12864:inst|next.dat19  ; LCD12864:inst|dat[6]      ; clk        ; clk      ; None                        ; None                      ; 7.571 ns                ;
+; N/A                                     ; 120.98 MHz ( period = 8.266 ns )                    ; LCD12864:inst|next.dat5   ; LCD12864:inst|dat[5]      ; clk        ; clk      ; None                        ; None                      ; 7.557 ns                ;
+; N/A                                     ; 121.82 MHz ( period = 8.209 ns )                    ; LCD12864:inst|next.dat41  ; LCD12864:inst|dat[1]      ; clk        ; clk      ; None                        ; None                      ; 7.500 ns                ;
+; N/A                                     ; 122.44 MHz ( period = 8.167 ns )                    ; LCD12864:inst|next.dat41  ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 7.458 ns                ;
+; N/A                                     ; 122.47 MHz ( period = 8.165 ns )                    ; LCD12864:inst|next.dat5   ; LCD12864:inst|dat[6]      ; clk        ; clk      ; None                        ; None                      ; 7.456 ns                ;
+; N/A                                     ; 123.26 MHz ( period = 8.113 ns )                    ; LCD12864:inst|next.dat32  ; LCD12864:inst|dat[1]      ; clk        ; clk      ; None                        ; None                      ; 7.404 ns                ;
+; N/A                                     ; 123.90 MHz ( period = 8.071 ns )                    ; LCD12864:inst|next.dat32  ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 7.362 ns                ;
+; N/A                                     ; 125.63 MHz ( period = 7.960 ns )                    ; LCD12864:inst|next.dat20  ; LCD12864:inst|dat[5]      ; clk        ; clk      ; None                        ; None                      ; 7.251 ns                ;
+; N/A                                     ; 126.33 MHz ( period = 7.916 ns )                    ; LCD12864:inst|counter[12] ; LCD12864:inst|clkr        ; clk        ; clk      ; None                        ; None                      ; 7.207 ns                ;
+; N/A                                     ; 126.79 MHz ( period = 7.887 ns )                    ; LCD12864:inst|next.dat18  ; LCD12864:inst|dat[4]      ; clk        ; clk      ; None                        ; None                      ; 7.178 ns                ;
+; N/A                                     ; 126.89 MHz ( period = 7.881 ns )                    ; LCD12864:inst|next.dat7   ; LCD12864:inst|dat[5]      ; clk        ; clk      ; None                        ; None                      ; 7.172 ns                ;
+; N/A                                     ; 127.24 MHz ( period = 7.859 ns )                    ; LCD12864:inst|next.dat20  ; LCD12864:inst|dat[6]      ; clk        ; clk      ; None                        ; None                      ; 7.150 ns                ;
+; N/A                                     ; 127.36 MHz ( period = 7.852 ns )                    ; LCD12864:inst|next.dat37  ; LCD12864:inst|dat[3]      ; clk        ; clk      ; None                        ; None                      ; 7.143 ns                ;
+; N/A                                     ; 127.94 MHz ( period = 7.816 ns )                    ; LCD12864:inst|next.dat44  ; LCD12864:inst|dat[0]      ; clk        ; clk      ; None                        ; None                      ; 7.107 ns                ;
+; N/A                                     ; 128.29 MHz ( period = 7.795 ns )                    ; LCD12864:inst|next.dat19  ; LCD12864:inst|dat[4]      ; clk        ; clk      ; None                        ; None                      ; 7.086 ns                ;
+; N/A                                     ; 128.45 MHz ( period = 7.785 ns )                    ; LCD12864:inst|next.dat36  ; LCD12864:inst|dat[3]      ; clk        ; clk      ; None                        ; None                      ; 7.076 ns                ;
+; N/A                                     ; 128.53 MHz ( period = 7.780 ns )                    ; LCD12864:inst|next.dat7   ; LCD12864:inst|dat[6]      ; clk        ; clk      ; None                        ; None                      ; 7.071 ns                ;
+; N/A                                     ; 129.05 MHz ( period = 7.749 ns )                    ; LCD12864:inst|counter[9]  ; LCD12864:inst|clkr        ; clk        ; clk      ; None                        ; None                      ; 7.040 ns                ;
+; N/A                                     ; 129.07 MHz ( period = 7.748 ns )                    ; LCD12864:inst|next.dat11  ; LCD12864:inst|dat[4]      ; clk        ; clk      ; None                        ; None                      ; 7.039 ns                ;
+; N/A                                     ; 129.23 MHz ( period = 7.738 ns )                    ; LCD12864:inst|next.dat17  ; LCD12864:inst|dat[5]      ; clk        ; clk      ; None                        ; None                      ; 7.029 ns                ;
+; N/A                                     ; 130.12 MHz ( period = 7.685 ns )                    ; LCD12864:inst|next.dat33  ; LCD12864:inst|dat[1]      ; clk        ; clk      ; None                        ; None                      ; 6.976 ns                ;
+; N/A                                     ; 130.21 MHz ( period = 7.680 ns )                    ; LCD12864:inst|next.dat5   ; LCD12864:inst|dat[4]      ; clk        ; clk      ; None                        ; None                      ; 6.971 ns                ;
+; N/A                                     ; 130.41 MHz ( period = 7.668 ns )                    ; LCD12864:inst|counter[8]  ; LCD12864:inst|clkr        ; clk        ; clk      ; None                        ; None                      ; 6.959 ns                ;
+; N/A                                     ; 130.84 MHz ( period = 7.643 ns )                    ; LCD12864:inst|next.dat33  ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 6.934 ns                ;
+; N/A                                     ; 130.94 MHz ( period = 7.637 ns )                    ; LCD12864:inst|next.dat17  ; LCD12864:inst|dat[6]      ; clk        ; clk      ; None                        ; None                      ; 6.928 ns                ;
+; N/A                                     ; 132.22 MHz ( period = 7.563 ns )                    ; LCD12864:inst|counter[13] ; LCD12864:inst|clkr        ; clk        ; clk      ; None                        ; None                      ; 6.854 ns                ;
+; N/A                                     ; 132.52 MHz ( period = 7.546 ns )                    ; LCD12864:inst|next.dat33  ; LCD12864:inst|dat[0]      ; clk        ; clk      ; None                        ; None                      ; 6.837 ns                ;
+; N/A                                     ; 132.59 MHz ( period = 7.542 ns )                    ; LCD12864:inst|counter[4]  ; LCD12864:inst|counter[12] ; clk        ; clk      ; None                        ; None                      ; 6.833 ns                ;
+; N/A                                     ; 132.87 MHz ( period = 7.526 ns )                    ; LCD12864:inst|next.dat35  ; LCD12864:inst|dat[0]      ; clk        ; clk      ; None                        ; None                      ; 6.817 ns                ;
+; N/A                                     ; 132.93 MHz ( period = 7.523 ns )                    ; LCD12864:inst|next.dat16  ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 6.814 ns                ;
+; N/A                                     ; 133.39 MHz ( period = 7.497 ns )                    ; LCD12864:inst|counter[3]  ; LCD12864:inst|counter[12] ; clk        ; clk      ; None                        ; None                      ; 6.788 ns                ;
+; N/A                                     ; 133.42 MHz ( period = 7.495 ns )                    ; LCD12864:inst|counter[14] ; LCD12864:inst|clkr        ; clk        ; clk      ; None                        ; None                      ; 6.786 ns                ;
+; N/A                                     ; 134.48 MHz ( period = 7.436 ns )                    ; LCD12864:inst|counter[5]  ; LCD12864:inst|counter[12] ; clk        ; clk      ; None                        ; None                      ; 6.727 ns                ;
+; N/A                                     ; 134.81 MHz ( period = 7.418 ns )                    ; LCD12864:inst|counter[10] ; LCD12864:inst|clkr        ; clk        ; clk      ; None                        ; None                      ; 6.709 ns                ;
+; N/A                                     ; 135.61 MHz ( period = 7.374 ns )                    ; LCD12864:inst|next.dat20  ; LCD12864:inst|dat[4]      ; clk        ; clk      ; None                        ; None                      ; 6.665 ns                ;
+; N/A                                     ; 135.91 MHz ( period = 7.358 ns )                    ; LCD12864:inst|next.set2   ; LCD12864:inst|rs          ; clk        ; clk      ; None                        ; None                      ; 6.649 ns                ;
+; N/A                                     ; 135.91 MHz ( period = 7.358 ns )                    ; LCD12864:inst|counter[2]  ; LCD12864:inst|counter[12] ; clk        ; clk      ; None                        ; None                      ; 6.649 ns                ;
+; N/A                                     ; 136.00 MHz ( period = 7.353 ns )                    ; LCD12864:inst|next.dat32  ; LCD12864:inst|dat[3]      ; clk        ; clk      ; None                        ; None                      ; 6.644 ns                ;
+; N/A                                     ; 136.97 MHz ( period = 7.301 ns )                    ; LCD12864:inst|next.dat11  ; LCD12864:inst|dat[0]      ; clk        ; clk      ; None                        ; None                      ; 6.592 ns                ;
+; N/A                                     ; 137.08 MHz ( period = 7.295 ns )                    ; LCD12864:inst|next.dat7   ; LCD12864:inst|dat[4]      ; clk        ; clk      ; None                        ; None                      ; 6.586 ns                ;
+; N/A                                     ; 138.66 MHz ( period = 7.212 ns )                    ; LCD12864:inst|counter[11] ; LCD12864:inst|clkr        ; clk        ; clk      ; None                        ; None                      ; 6.503 ns                ;
+; N/A                                     ; 138.91 MHz ( period = 7.199 ns )                    ; LCD12864:inst|next.dat33  ; LCD12864:inst|dat[5]      ; clk        ; clk      ; None                        ; None                      ; 6.490 ns                ;
+; N/A                                     ; 139.82 MHz ( period = 7.152 ns )                    ; LCD12864:inst|next.dat17  ; LCD12864:inst|dat[4]      ; clk        ; clk      ; None                        ; None                      ; 6.443 ns                ;
+; N/A                                     ; 140.11 MHz ( period = 7.137 ns )                    ; LCD12864:inst|next.dat27  ; LCD12864:inst|dat[4]      ; clk        ; clk      ; None                        ; None                      ; 6.428 ns                ;
+; N/A                                     ; 140.88 MHz ( period = 7.098 ns )                    ; LCD12864:inst|next.dat33  ; LCD12864:inst|dat[6]      ; clk        ; clk      ; None                        ; None                      ; 6.389 ns                ;
+; N/A                                     ; 141.00 MHz ( period = 7.092 ns )                    ; LCD12864:inst|counter[6]  ; LCD12864:inst|counter[12] ; clk        ; clk      ; None                        ; None                      ; 6.383 ns                ;
+; N/A                                     ; 141.72 MHz ( period = 7.056 ns )                    ; LCD12864:inst|counter[0]  ; LCD12864:inst|counter[12] ; clk        ; clk      ; None                        ; None                      ; 6.347 ns                ;
+; N/A                                     ; 141.96 MHz ( period = 7.044 ns )                    ; LCD12864:inst|counter[7]  ; LCD12864:inst|counter[12] ; clk        ; clk      ; None                        ; None                      ; 6.335 ns                ;
+; N/A                                     ; 142.05 MHz ( period = 7.040 ns )                    ; LCD12864:inst|counter[4]  ; LCD12864:inst|counter[15] ; clk        ; clk      ; None                        ; None                      ; 6.331 ns                ;
+; N/A                                     ; 142.09 MHz ( period = 7.038 ns )                    ; LCD12864:inst|next.dat0   ; LCD12864:inst|dat[0]      ; clk        ; clk      ; None                        ; None                      ; 6.329 ns                ;
+; N/A                                     ; 142.15 MHz ( period = 7.035 ns )                    ; LCD12864:inst|next.dat0   ; LCD12864:inst|dat[3]      ; clk        ; clk      ; None                        ; None                      ; 6.326 ns                ;
+; N/A                                     ; 142.76 MHz ( period = 7.005 ns )                    ; LCD12864:inst|next.dat21  ; LCD12864:inst|dat[5]      ; clk        ; clk      ; None                        ; None                      ; 6.296 ns                ;
+; N/A                                     ; 142.96 MHz ( period = 6.995 ns )                    ; LCD12864:inst|counter[3]  ; LCD12864:inst|counter[15] ; clk        ; clk      ; None                        ; None                      ; 6.286 ns                ;
+; N/A                                     ; 143.39 MHz ( period = 6.974 ns )                    ; LCD12864:inst|counter[4]  ; LCD12864:inst|counter[13] ; clk        ; clk      ; None                        ; None                      ; 6.265 ns                ;
+; N/A                                     ; 144.05 MHz ( period = 6.942 ns )                    ; LCD12864:inst|next.dat6   ; LCD12864:inst|dat[5]      ; clk        ; clk      ; None                        ; None                      ; 6.233 ns                ;
+; N/A                                     ; 144.07 MHz ( period = 6.941 ns )                    ; LCD12864:inst|counter[12] ; LCD12864:inst|counter[15] ; clk        ; clk      ; None                        ; None                      ; 6.232 ns                ;
+; N/A                                     ; 144.20 MHz ( period = 6.935 ns )                    ; LCD12864:inst|counter[1]  ; LCD12864:inst|counter[12] ; clk        ; clk      ; None                        ; None                      ; 6.226 ns                ;
+; N/A                                     ; 144.22 MHz ( period = 6.934 ns )                    ; LCD12864:inst|counter[5]  ; LCD12864:inst|counter[15] ; clk        ; clk      ; None                        ; None                      ; 6.225 ns                ;
+; N/A                                     ; 144.32 MHz ( period = 6.929 ns )                    ; LCD12864:inst|counter[3]  ; LCD12864:inst|counter[13] ; clk        ; clk      ; None                        ; None                      ; 6.220 ns                ;
+; N/A                                     ; 144.43 MHz ( period = 6.924 ns )                    ; LCD12864:inst|next.dat42  ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 6.215 ns                ;
+; N/A                                     ; 144.53 MHz ( period = 6.919 ns )                    ; LCD12864:inst|next.dat25  ; LCD12864:inst|dat[4]      ; clk        ; clk      ; None                        ; None                      ; 6.210 ns                ;
+; N/A                                     ; 144.72 MHz ( period = 6.910 ns )                    ; LCD12864:inst|next.dat8   ; LCD12864:inst|dat[5]      ; clk        ; clk      ; None                        ; None                      ; 6.201 ns                ;
+; N/A                                     ; 144.84 MHz ( period = 6.904 ns )                    ; LCD12864:inst|next.dat21  ; LCD12864:inst|dat[6]      ; clk        ; clk      ; None                        ; None                      ; 6.195 ns                ;
+; N/A                                     ; 144.93 MHz ( period = 6.900 ns )                    ; LCD12864:inst|next.dat37  ; LCD12864:inst|dat[7]      ; clk        ; clk      ; None                        ; None                      ; 6.191 ns                ;
+; N/A                                     ; 145.45 MHz ( period = 6.875 ns )                    ; LCD12864:inst|counter[12] ; LCD12864:inst|counter[13] ; clk        ; clk      ; None                        ; None                      ; 6.166 ns                ;
+; N/A                                     ; 145.60 MHz ( period = 6.868 ns )                    ; LCD12864:inst|counter[5]  ; LCD12864:inst|counter[13] ; clk        ; clk      ; None                        ; None                      ; 6.159 ns                ;
+; N/A                                     ; 145.86 MHz ( period = 6.856 ns )                    ; LCD12864:inst|counter[2]  ; LCD12864:inst|counter[15] ; clk        ; clk      ; None                        ; None                      ; 6.147 ns                ;
+; N/A                                     ; 146.18 MHz ( period = 6.841 ns )                    ; LCD12864:inst|next.dat6   ; LCD12864:inst|dat[6]      ; clk        ; clk      ; None                        ; None                      ; 6.132 ns                ;
+; N/A                                     ; 146.35 MHz ( period = 6.833 ns )                    ; LCD12864:inst|next.dat36  ; LCD12864:inst|dat[7]      ; clk        ; clk      ; None                        ; None                      ; 6.124 ns                ;
+; N/A                                     ; 147.28 MHz ( period = 6.790 ns )                    ; LCD12864:inst|counter[2]  ; LCD12864:inst|counter[13] ; clk        ; clk      ; None                        ; None                      ; 6.081 ns                ;
+; N/A                                     ; 147.73 MHz ( period = 6.769 ns )                    ; LCD12864:inst|next.set1   ; LCD12864:inst|rs          ; clk        ; clk      ; None                        ; None                      ; 6.060 ns                ;
+; N/A                                     ; 147.97 MHz ( period = 6.758 ns )                    ; LCD12864:inst|next.dat43  ; LCD12864:inst|dat[5]      ; clk        ; clk      ; None                        ; None                      ; 6.049 ns                ;
+; N/A                                     ; 148.13 MHz ( period = 6.751 ns )                    ; LCD12864:inst|counter[9]  ; LCD12864:inst|counter[12] ; clk        ; clk      ; None                        ; None                      ; 6.042 ns                ;
+; N/A                                     ; 148.28 MHz ( period = 6.744 ns )                    ; LCD12864:inst|next.dat40  ; LCD12864:inst|dat[1]      ; clk        ; clk      ; None                        ; None                      ; 6.035 ns                ;
+; N/A                                     ; 148.50 MHz ( period = 6.734 ns )                    ; LCD12864:inst|counter[4]  ; LCD12864:inst|counter[14] ; clk        ; clk      ; None                        ; None                      ; 6.025 ns                ;
+; N/A                                     ; 149.21 MHz ( period = 6.702 ns )                    ; LCD12864:inst|next.dat40  ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 5.993 ns                ;
+; N/A                                     ; 149.50 MHz ( period = 6.689 ns )                    ; LCD12864:inst|counter[3]  ; LCD12864:inst|counter[14] ; clk        ; clk      ; None                        ; None                      ; 5.980 ns                ;
+; N/A                                     ; 149.63 MHz ( period = 6.683 ns )                    ; LCD12864:inst|next.set2   ; LCD12864:inst|dat[6]      ; clk        ; clk      ; None                        ; None                      ; 5.974 ns                ;
+; N/A                                     ; 149.63 MHz ( period = 6.683 ns )                    ; LCD12864:inst|counter[9]  ; LCD12864:inst|counter[15] ; clk        ; clk      ; None                        ; None                      ; 5.974 ns                ;
+; N/A                                     ; 149.93 MHz ( period = 6.670 ns )                    ; LCD12864:inst|counter[8]  ; LCD12864:inst|counter[12] ; clk        ; clk      ; None                        ; None                      ; 5.961 ns                ;
+; N/A                                     ; 150.72 MHz ( period = 6.635 ns )                    ; LCD12864:inst|counter[12] ; LCD12864:inst|counter[14] ; clk        ; clk      ; None                        ; None                      ; 5.926 ns                ;
+; N/A                                     ; 150.88 MHz ( period = 6.628 ns )                    ; LCD12864:inst|counter[5]  ; LCD12864:inst|counter[14] ; clk        ; clk      ; None                        ; None                      ; 5.919 ns                ;
+; N/A                                     ; 151.13 MHz ( period = 6.617 ns )                    ; LCD12864:inst|counter[9]  ; LCD12864:inst|counter[13] ; clk        ; clk      ; None                        ; None                      ; 5.908 ns                ;
+; N/A                                     ; 151.22 MHz ( period = 6.613 ns )                    ; LCD12864:inst|next.dat33  ; LCD12864:inst|dat[4]      ; clk        ; clk      ; None                        ; None                      ; 5.904 ns                ;
+; N/A                                     ; 151.47 MHz ( period = 6.602 ns )                    ; LCD12864:inst|counter[8]  ; LCD12864:inst|counter[15] ; clk        ; clk      ; None                        ; None                      ; 5.893 ns                ;
+; N/A                                     ; 151.75 MHz ( period = 6.590 ns )                    ; LCD12864:inst|counter[6]  ; LCD12864:inst|counter[15] ; clk        ; clk      ; None                        ; None                      ; 5.881 ns                ;
+; N/A                                     ; 151.79 MHz ( period = 6.588 ns )                    ; LCD12864:inst|counter[13] ; LCD12864:inst|counter[15] ; clk        ; clk      ; None                        ; None                      ; 5.879 ns                ;
+; N/A                                     ; 151.95 MHz ( period = 6.581 ns )                    ; LCD12864:inst|next.dat27  ; LCD12864:inst|dat[1]      ; clk        ; clk      ; None                        ; None                      ; 5.872 ns                ;
+; N/A                                     ; 152.23 MHz ( period = 6.569 ns )                    ; LCD12864:inst|next.dat27  ; LCD12864:inst|dat[0]      ; clk        ; clk      ; None                        ; None                      ; 5.860 ns                ;
+; N/A                                     ; 152.49 MHz ( period = 6.558 ns )                    ; LCD12864:inst|counter[4]  ; LCD12864:inst|counter[8]  ; clk        ; clk      ; None                        ; None                      ; 5.849 ns                ;
+; N/A                                     ; 152.58 MHz ( period = 6.554 ns )                    ; LCD12864:inst|counter[0]  ; LCD12864:inst|counter[15] ; clk        ; clk      ; None                        ; None                      ; 5.845 ns                ;
+; N/A                                     ; 152.67 MHz ( period = 6.550 ns )                    ; LCD12864:inst|counter[2]  ; LCD12864:inst|counter[14] ; clk        ; clk      ; None                        ; None                      ; 5.841 ns                ;
+; N/A                                     ; 152.70 MHz ( period = 6.549 ns )                    ; LCD12864:inst|counter[4]  ; LCD12864:inst|counter[10] ; clk        ; clk      ; None                        ; None                      ; 5.840 ns                ;
+; N/A                                     ; 152.70 MHz ( period = 6.549 ns )                    ; LCD12864:inst|counter[4]  ; LCD12864:inst|counter[11] ; clk        ; clk      ; None                        ; None                      ; 5.840 ns                ;
+; N/A                                     ; 152.86 MHz ( period = 6.542 ns )                    ; LCD12864:inst|counter[7]  ; LCD12864:inst|counter[15] ; clk        ; clk      ; None                        ; None                      ; 5.833 ns                ;
+; N/A                                     ; 153.00 MHz ( period = 6.536 ns )                    ; LCD12864:inst|counter[8]  ; LCD12864:inst|counter[13] ; clk        ; clk      ; None                        ; None                      ; 5.827 ns                ;
+; N/A                                     ; 153.28 MHz ( period = 6.524 ns )                    ; LCD12864:inst|counter[6]  ; LCD12864:inst|counter[13] ; clk        ; clk      ; None                        ; None                      ; 5.815 ns                ;
+; N/A                                     ; 153.37 MHz ( period = 6.520 ns )                    ; LCD12864:inst|counter[14] ; LCD12864:inst|counter[15] ; clk        ; clk      ; None                        ; None                      ; 5.811 ns                ;
+; N/A                                     ; 153.54 MHz ( period = 6.513 ns )                    ; LCD12864:inst|counter[3]  ; LCD12864:inst|counter[8]  ; clk        ; clk      ; None                        ; None                      ; 5.804 ns                ;
+; N/A                                     ; 153.75 MHz ( period = 6.504 ns )                    ; LCD12864:inst|counter[3]  ; LCD12864:inst|counter[10] ; clk        ; clk      ; None                        ; None                      ; 5.795 ns                ;
+; N/A                                     ; 153.75 MHz ( period = 6.504 ns )                    ; LCD12864:inst|counter[3]  ; LCD12864:inst|counter[11] ; clk        ; clk      ; None                        ; None                      ; 5.795 ns                ;
+; N/A                                     ; 154.13 MHz ( period = 6.488 ns )                    ; LCD12864:inst|counter[0]  ; LCD12864:inst|counter[13] ; clk        ; clk      ; None                        ; None                      ; 5.779 ns                ;
+; N/A                                     ; 154.39 MHz ( period = 6.477 ns )                    ; LCD12864:inst|next.set6   ; LCD12864:inst|rs          ; clk        ; clk      ; None                        ; None                      ; 5.768 ns                ;
+; N/A                                     ; 154.42 MHz ( period = 6.476 ns )                    ; LCD12864:inst|counter[7]  ; LCD12864:inst|counter[13] ; clk        ; clk      ; None                        ; None                      ; 5.767 ns                ;
+; N/A                                     ; 154.99 MHz ( period = 6.452 ns )                    ; LCD12864:inst|counter[5]  ; LCD12864:inst|counter[8]  ; clk        ; clk      ; None                        ; None                      ; 5.743 ns                ;
+; N/A                                     ; 155.21 MHz ( period = 6.443 ns )                    ; LCD12864:inst|counter[5]  ; LCD12864:inst|counter[10] ; clk        ; clk      ; None                        ; None                      ; 5.734 ns                ;
+; N/A                                     ; 155.21 MHz ( period = 6.443 ns )                    ; LCD12864:inst|counter[5]  ; LCD12864:inst|counter[11] ; clk        ; clk      ; None                        ; None                      ; 5.734 ns                ;
+; N/A                                     ; 155.45 MHz ( period = 6.433 ns )                    ; LCD12864:inst|counter[1]  ; LCD12864:inst|counter[15] ; clk        ; clk      ; None                        ; None                      ; 5.724 ns                ;
+; N/A                                     ; 155.76 MHz ( period = 6.420 ns )                    ; LCD12864:inst|counter[10] ; LCD12864:inst|counter[12] ; clk        ; clk      ; None                        ; None                      ; 5.711 ns                ;
+; N/A                                     ; 155.79 MHz ( period = 6.419 ns )                    ; LCD12864:inst|next.dat21  ; LCD12864:inst|dat[4]      ; clk        ; clk      ; None                        ; None                      ; 5.710 ns                ;
+; N/A                                     ; 156.01 MHz ( period = 6.410 ns )                    ; LCD12864:inst|next.dat23  ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 5.701 ns                ;
+; N/A                                     ; 156.23 MHz ( period = 6.401 ns )                    ; LCD12864:inst|next.dat32  ; LCD12864:inst|dat[7]      ; clk        ; clk      ; None                        ; None                      ; 5.692 ns                ;
+; N/A                                     ; 156.81 MHz ( period = 6.377 ns )                    ; LCD12864:inst|counter[9]  ; LCD12864:inst|counter[14] ; clk        ; clk      ; None                        ; None                      ; 5.668 ns                ;
+; N/A                                     ; 156.89 MHz ( period = 6.374 ns )                    ; LCD12864:inst|counter[2]  ; LCD12864:inst|counter[8]  ; clk        ; clk      ; None                        ; None                      ; 5.665 ns                ;
+; N/A                                     ; 157.06 MHz ( period = 6.367 ns )                    ; LCD12864:inst|counter[1]  ; LCD12864:inst|counter[13] ; clk        ; clk      ; None                        ; None                      ; 5.658 ns                ;
+; N/A                                     ; 157.11 MHz ( period = 6.365 ns )                    ; LCD12864:inst|counter[2]  ; LCD12864:inst|counter[10] ; clk        ; clk      ; None                        ; None                      ; 5.656 ns                ;
+; N/A                                     ; 157.11 MHz ( period = 6.365 ns )                    ; LCD12864:inst|counter[2]  ; LCD12864:inst|counter[11] ; clk        ; clk      ; None                        ; None                      ; 5.656 ns                ;
+; N/A                                     ; 157.16 MHz ( period = 6.363 ns )                    ; LCD12864:inst|next.dat25  ; LCD12864:inst|dat[1]      ; clk        ; clk      ; None                        ; None                      ; 5.654 ns                ;
+; N/A                                     ; 157.33 MHz ( period = 6.356 ns )                    ; LCD12864:inst|next.dat6   ; LCD12864:inst|dat[4]      ; clk        ; clk      ; None                        ; None                      ; 5.647 ns                ;
+; N/A                                     ; 157.43 MHz ( period = 6.352 ns )                    ; LCD12864:inst|counter[10] ; LCD12864:inst|counter[15] ; clk        ; clk      ; None                        ; None                      ; 5.643 ns                ;
+; N/A                                     ; 157.46 MHz ( period = 6.351 ns )                    ; LCD12864:inst|next.dat25  ; LCD12864:inst|dat[0]      ; clk        ; clk      ; None                        ; None                      ; 5.642 ns                ;
+; N/A                                     ; 157.83 MHz ( period = 6.336 ns )                    ; LCD12864:inst|next.dat30  ; LCD12864:inst|dat[1]      ; clk        ; clk      ; None                        ; None                      ; 5.627 ns                ;
+; N/A                                     ; 158.03 MHz ( period = 6.328 ns )                    ; LCD12864:inst|next.set1   ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 5.619 ns                ;
+; N/A                                     ; 158.05 MHz ( period = 6.327 ns )                    ; LCD12864:inst|next.dat30  ; LCD12864:inst|dat[5]      ; clk        ; clk      ; None                        ; None                      ; 5.618 ns                ;
+; N/A                                     ; 158.60 MHz ( period = 6.305 ns )                    ; LCD12864:inst|next.dat17  ; LCD12864:inst|dat[0]      ; clk        ; clk      ; None                        ; None                      ; 5.596 ns                ;
+; N/A                                     ; 158.60 MHz ( period = 6.305 ns )                    ; LCD12864:inst|counter[11] ; LCD12864:inst|counter[12] ; clk        ; clk      ; None                        ; None                      ; 5.596 ns                ;
+; N/A                                     ; 158.83 MHz ( period = 6.296 ns )                    ; LCD12864:inst|counter[8]  ; LCD12864:inst|counter[14] ; clk        ; clk      ; None                        ; None                      ; 5.587 ns                ;
+; N/A                                     ; 158.88 MHz ( period = 6.294 ns )                    ; LCD12864:inst|next.dat30  ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 5.585 ns                ;
+; N/A                                     ; 158.88 MHz ( period = 6.294 ns )                    ; LCD12864:inst|counter[4]  ; LCD12864:inst|counter[9]  ; clk        ; clk      ; None                        ; None                      ; 5.585 ns                ;
+; N/A                                     ; 159.08 MHz ( period = 6.286 ns )                    ; LCD12864:inst|counter[10] ; LCD12864:inst|counter[13] ; clk        ; clk      ; None                        ; None                      ; 5.577 ns                ;
+; N/A                                     ; 159.13 MHz ( period = 6.284 ns )                    ; LCD12864:inst|counter[6]  ; LCD12864:inst|counter[14] ; clk        ; clk      ; None                        ; None                      ; 5.575 ns                ;
+; N/A                                     ; 159.49 MHz ( period = 6.270 ns )                    ; LCD12864:inst|next.dat41  ; LCD12864:inst|dat[0]      ; clk        ; clk      ; None                        ; None                      ; 5.561 ns                ;
+; N/A                                     ; 159.57 MHz ( period = 6.267 ns )                    ; LCD12864:inst|next.dat41  ; LCD12864:inst|dat[3]      ; clk        ; clk      ; None                        ; None                      ; 5.558 ns                ;
+; N/A                                     ; 160.03 MHz ( period = 6.249 ns )                    ; LCD12864:inst|counter[3]  ; LCD12864:inst|counter[9]  ; clk        ; clk      ; None                        ; None                      ; 5.540 ns                ;
+; N/A                                     ; 160.05 MHz ( period = 6.248 ns )                    ; LCD12864:inst|counter[0]  ; LCD12864:inst|counter[14] ; clk        ; clk      ; None                        ; None                      ; 5.539 ns                ;
+; N/A                                     ; 160.23 MHz ( period = 6.241 ns )                    ; LCD12864:inst|counter[12] ; LCD12864:inst|counter[12] ; clk        ; clk      ; None                        ; None                      ; 5.532 ns                ;
+; N/A                                     ; 160.33 MHz ( period = 6.237 ns )                    ; LCD12864:inst|counter[11] ; LCD12864:inst|counter[15] ; clk        ; clk      ; None                        ; None                      ; 5.528 ns                ;
+; N/A                                     ; 160.36 MHz ( period = 6.236 ns )                    ; LCD12864:inst|counter[7]  ; LCD12864:inst|counter[14] ; clk        ; clk      ; None                        ; None                      ; 5.527 ns                ;
+; N/A                                     ; 160.41 MHz ( period = 6.234 ns )                    ; LCD12864:inst|next.dat21  ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 5.525 ns                ;
+; N/A                                     ; 160.41 MHz ( period = 6.234 ns )                    ; LCD12864:inst|next.dat10  ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 5.525 ns                ;
+; N/A                                     ; 160.59 MHz ( period = 6.227 ns )                    ; LCD12864:inst|next.dat29  ; LCD12864:inst|dat[1]      ; clk        ; clk      ; None                        ; None                      ; 5.518 ns                ;
+; N/A                                     ; 160.62 MHz ( period = 6.226 ns )                    ; LCD12864:inst|next.dat30  ; LCD12864:inst|dat[6]      ; clk        ; clk      ; None                        ; None                      ; 5.517 ns                ;
+; N/A                                     ; 160.88 MHz ( period = 6.216 ns )                    ; LCD12864:inst|next.dat44  ; LCD12864:inst|dat[5]      ; clk        ; clk      ; None                        ; None                      ; 5.507 ns                ;
+; N/A                                     ; 161.60 MHz ( period = 6.188 ns )                    ; LCD12864:inst|counter[5]  ; LCD12864:inst|counter[9]  ; clk        ; clk      ; None                        ; None                      ; 5.479 ns                ;
+; N/A                                     ; 161.68 MHz ( period = 6.185 ns )                    ; LCD12864:inst|next.dat29  ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 5.476 ns                ;
+; N/A                                     ; 161.84 MHz ( period = 6.179 ns )                    ; LCD12864:inst|next.set5   ; LCD12864:inst|dat[3]      ; clk        ; clk      ; None                        ; None                      ; 5.470 ns                ;
+; N/A                                     ; 162.05 MHz ( period = 6.171 ns )                    ; LCD12864:inst|next.dat6   ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 5.462 ns                ;
+; N/A                                     ; 162.05 MHz ( period = 6.171 ns )                    ; LCD12864:inst|counter[11] ; LCD12864:inst|counter[13] ; clk        ; clk      ; None                        ; None                      ; 5.462 ns                ;
+; N/A                                     ; 162.18 MHz ( period = 6.166 ns )                    ; LCD12864:inst|next.dat8   ; LCD12864:inst|dat[6]      ; clk        ; clk      ; None                        ; None                      ; 5.457 ns                ;
+; N/A                                     ; 162.36 MHz ( period = 6.159 ns )                    ; LCD12864:inst|counter[13] ; LCD12864:inst|counter[14] ; clk        ; clk      ; None                        ; None                      ; 5.450 ns                ;
+; N/A                                     ; 163.21 MHz ( period = 6.127 ns )                    ; LCD12864:inst|counter[1]  ; LCD12864:inst|counter[14] ; clk        ; clk      ; None                        ; None                      ; 5.418 ns                ;
+; N/A                                     ; 163.67 MHz ( period = 6.110 ns )                    ; LCD12864:inst|counter[2]  ; LCD12864:inst|counter[9]  ; clk        ; clk      ; None                        ; None                      ; 5.401 ns                ;
+; N/A                                     ; 163.72 MHz ( period = 6.108 ns )                    ; LCD12864:inst|counter[6]  ; LCD12864:inst|counter[8]  ; clk        ; clk      ; None                        ; None                      ; 5.399 ns                ;
+; N/A                                     ; 163.96 MHz ( period = 6.099 ns )                    ; LCD12864:inst|counter[6]  ; LCD12864:inst|counter[10] ; clk        ; clk      ; None                        ; None                      ; 5.390 ns                ;
+; N/A                                     ; 163.96 MHz ( period = 6.099 ns )                    ; LCD12864:inst|counter[6]  ; LCD12864:inst|counter[11] ; clk        ; clk      ; None                        ; None                      ; 5.390 ns                ;
+; N/A                                     ; 164.10 MHz ( period = 6.094 ns )                    ; LCD12864:inst|next.set1   ; LCD12864:inst|dat[6]      ; clk        ; clk      ; None                        ; None                      ; 5.385 ns                ;
+; N/A                                     ; 164.69 MHz ( period = 6.072 ns )                    ; LCD12864:inst|counter[0]  ; LCD12864:inst|counter[8]  ; clk        ; clk      ; None                        ; None                      ; 5.363 ns                ;
+; N/A                                     ; 164.93 MHz ( period = 6.063 ns )                    ; LCD12864:inst|counter[0]  ; LCD12864:inst|counter[10] ; clk        ; clk      ; None                        ; None                      ; 5.354 ns                ;
+; N/A                                     ; 164.93 MHz ( period = 6.063 ns )                    ; LCD12864:inst|counter[0]  ; LCD12864:inst|counter[11] ; clk        ; clk      ; None                        ; None                      ; 5.354 ns                ;
+; N/A                                     ; 165.02 MHz ( period = 6.060 ns )                    ; LCD12864:inst|counter[7]  ; LCD12864:inst|counter[8]  ; clk        ; clk      ; None                        ; None                      ; 5.351 ns                ;
+; N/A                                     ; 165.26 MHz ( period = 6.051 ns )                    ; LCD12864:inst|counter[7]  ; LCD12864:inst|counter[10] ; clk        ; clk      ; None                        ; None                      ; 5.342 ns                ;
+; N/A                                     ; 165.26 MHz ( period = 6.051 ns )                    ; LCD12864:inst|counter[7]  ; LCD12864:inst|counter[11] ; clk        ; clk      ; None                        ; None                      ; 5.342 ns                ;
+; N/A                                     ; 165.40 MHz ( period = 6.046 ns )                    ; LCD12864:inst|counter[10] ; LCD12864:inst|counter[14] ; clk        ; clk      ; None                        ; None                      ; 5.337 ns                ;
+; N/A                                     ; 165.89 MHz ( period = 6.028 ns )                    ; LCD12864:inst|next.set6   ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 5.319 ns                ;
+; N/A                                     ; 166.28 MHz ( period = 6.014 ns )                    ; LCD12864:inst|next.dat43  ; LCD12864:inst|dat[6]      ; clk        ; clk      ; None                        ; None                      ; 5.305 ns                ;
+; N/A                                     ; 167.06 MHz ( period = 5.986 ns )                    ; LCD12864:inst|next.set1   ; LCD12864:inst|dat[3]      ; clk        ; clk      ; None                        ; None                      ; 5.277 ns                ;
+; N/A                                     ; 167.59 MHz ( period = 5.967 ns )                    ; LCD12864:inst|next.dat37  ; LCD12864:inst|dat[5]      ; clk        ; clk      ; None                        ; None                      ; 5.258 ns                ;
+; N/A                                     ; 168.04 MHz ( period = 5.951 ns )                    ; LCD12864:inst|counter[1]  ; LCD12864:inst|counter[8]  ; clk        ; clk      ; None                        ; None                      ; 5.242 ns                ;
+; N/A                                     ; 168.12 MHz ( period = 5.948 ns )                    ; LCD12864:inst|next.dat29  ; LCD12864:inst|dat[4]      ; clk        ; clk      ; None                        ; None                      ; 5.239 ns                ;
+; N/A                                     ; 168.27 MHz ( period = 5.943 ns )                    ; LCD12864:inst|counter[15] ; LCD12864:inst|clkr        ; clk        ; clk      ; None                        ; None                      ; 5.234 ns                ;
+; N/A                                     ; 168.29 MHz ( period = 5.942 ns )                    ; LCD12864:inst|counter[1]  ; LCD12864:inst|counter[10] ; clk        ; clk      ; None                        ; None                      ; 5.233 ns                ;
+; N/A                                     ; 168.29 MHz ( period = 5.942 ns )                    ; LCD12864:inst|counter[1]  ; LCD12864:inst|counter[11] ; clk        ; clk      ; None                        ; None                      ; 5.233 ns                ;
+; N/A                                     ; 168.61 MHz ( period = 5.931 ns )                    ; LCD12864:inst|counter[11] ; LCD12864:inst|counter[14] ; clk        ; clk      ; None                        ; None                      ; 5.222 ns                ;
+; N/A                                     ; 168.95 MHz ( period = 5.919 ns )                    ; LCD12864:inst|next.dat1   ; LCD12864:inst|dat[0]      ; clk        ; clk      ; None                        ; None                      ; 5.210 ns                ;
+; N/A                                     ; 170.47 MHz ( period = 5.866 ns )                    ; LCD12864:inst|next.dat37  ; LCD12864:inst|dat[6]      ; clk        ; clk      ; None                        ; None                      ; 5.157 ns                ;
+; N/A                                     ; 171.12 MHz ( period = 5.844 ns )                    ; LCD12864:inst|counter[6]  ; LCD12864:inst|counter[9]  ; clk        ; clk      ; None                        ; None                      ; 5.135 ns                ;
+; N/A                                     ; 171.91 MHz ( period = 5.817 ns )                    ; LCD12864:inst|next.dat28  ; LCD12864:inst|dat[1]      ; clk        ; clk      ; None                        ; None                      ; 5.108 ns                ;
+; N/A                                     ; 172.18 MHz ( period = 5.808 ns )                    ; LCD12864:inst|counter[0]  ; LCD12864:inst|counter[9]  ; clk        ; clk      ; None                        ; None                      ; 5.099 ns                ;
+; N/A                                     ; 172.35 MHz ( period = 5.802 ns )                    ; LCD12864:inst|next.set6   ; LCD12864:inst|dat[6]      ; clk        ; clk      ; None                        ; None                      ; 5.093 ns                ;
+; N/A                                     ; 172.53 MHz ( period = 5.796 ns )                    ; LCD12864:inst|next.dat14  ; LCD12864:inst|dat[2]      ; clk        ; clk      ; None                        ; None                      ; 5.087 ns                ;
+; N/A                                     ; 172.53 MHz ( period = 5.796 ns )                    ; LCD12864:inst|counter[7]  ; LCD12864:inst|counter[9]  ; clk        ; clk      ; None                        ; None                      ; 5.087 ns                ;
+; N/A                                     ; 172.68 MHz ( period = 5.791 ns )                    ; LCD12864:inst|counter[2]  ; LCD12864:inst|counter[3]  ; clk        ; clk      ; None                        ; None                      ; 5.082 ns                ;
+; N/A                                     ; 173.01 MHz ( period = 5.780 ns )                    ; LCD12864:inst|counter[2]  ; LCD12864:inst|counter[6]  ; clk        ; clk      ; None                        ; None                      ; 5.071 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                           ;                           ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+---------------------------+---------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; tco                                                                                 ;
++-------+--------------+------------+----------------------+-------------+------------+
+; Slack ; Required tco ; Actual tco ; From                 ; To          ; From Clock ;
++-------+--------------+------------+----------------------+-------------+------------+
+; N/A   ; None         ; 17.537 ns  ; LCD12864:inst|e      ; lcd_en      ; clk        ;
+; N/A   ; None         ; 16.885 ns  ; LCD12864:inst|dat[2] ; lcd_data[2] ; clk        ;
+; N/A   ; None         ; 16.634 ns  ; LCD12864:inst|dat[6] ; lcd_data[6] ; clk        ;
+; N/A   ; None         ; 16.568 ns  ; LCD12864:inst|dat[0] ; lcd_data[0] ; clk        ;
+; N/A   ; None         ; 16.528 ns  ; LCD12864:inst|dat[5] ; lcd_data[5] ; clk        ;
+; N/A   ; None         ; 16.524 ns  ; LCD12864:inst|dat[7] ; lcd_data[7] ; clk        ;
+; N/A   ; None         ; 16.517 ns  ; LCD12864:inst|rs     ; lcd_rs      ; clk        ;
+; N/A   ; None         ; 16.426 ns  ; LCD12864:inst|dat[3] ; lcd_data[3] ; clk        ;
+; N/A   ; None         ; 16.425 ns  ; LCD12864:inst|dat[4] ; lcd_data[4] ; clk        ;
+; N/A   ; None         ; 16.421 ns  ; LCD12864:inst|dat[1] ; lcd_data[1] ; clk        ;
+; N/A   ; None         ; 13.857 ns  ; LCD12864:inst|clkr   ; lcd_en      ; clk        ;
++-------+--------------+------------+----------------------+-------------+------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Sun Nov 27 16:57:25 2011
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off LCD12864_TOP -c LCD12864_TOP
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "LCD12864:inst|clkr" as buffer
+Info: Clock "clk" has Internal fmax of 109.88 MHz between source register "LCD12864:inst|counter[2]" and destination register "LCD12864:inst|clkr" (period= 9.101 ns)
+    Info: + Longest register to register delay is 8.392 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X3_Y1_N0; Fanout = 2; REG Node = 'LCD12864:inst|counter[2]'
+        Info: 2: + IC(1.258 ns) + CELL(1.077 ns) = 2.335 ns; Loc. = LC_X4_Y1_N4; Fanout = 6; COMB Node = 'LCD12864:inst|Add0~242'
+        Info: 3: + IC(0.000 ns) + CELL(0.975 ns) = 3.310 ns; Loc. = LC_X4_Y1_N5; Fanout = 2; COMB Node = 'LCD12864:inst|Add0~243'
+        Info: 4: + IC(1.180 ns) + CELL(0.200 ns) = 4.690 ns; Loc. = LC_X3_Y1_N5; Fanout = 1; COMB Node = 'LCD12864:inst|Equal0~146'
+        Info: 5: + IC(0.757 ns) + CELL(0.511 ns) = 5.958 ns; Loc. = LC_X3_Y1_N8; Fanout = 1; COMB Node = 'LCD12864:inst|Equal0~148'
+        Info: 6: + IC(1.843 ns) + CELL(0.591 ns) = 8.392 ns; Loc. = LC_X5_Y1_N8; Fanout = 67; REG Node = 'LCD12864:inst|clkr'
+        Info: Total cell delay = 3.354 ns ( 39.97 % )
+        Info: Total interconnect delay = 5.038 ns ( 60.03 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 6.490 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 17; CLK Node = 'clk'
+            Info: 2: + IC(4.440 ns) + CELL(0.918 ns) = 6.490 ns; Loc. = LC_X5_Y1_N8; Fanout = 67; REG Node = 'LCD12864:inst|clkr'
+            Info: Total cell delay = 2.050 ns ( 31.59 % )
+            Info: Total interconnect delay = 4.440 ns ( 68.41 % )
+        Info: - Longest clock path from clock "clk" to source register is 6.490 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 17; CLK Node = 'clk'
+            Info: 2: + IC(4.440 ns) + CELL(0.918 ns) = 6.490 ns; Loc. = LC_X3_Y1_N0; Fanout = 2; REG Node = 'LCD12864:inst|counter[2]'
+            Info: Total cell delay = 2.050 ns ( 31.59 % )
+            Info: Total interconnect delay = 4.440 ns ( 68.41 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Info: tco from clock "clk" to destination pin "lcd_en" through register "LCD12864:inst|e" is 17.537 ns
+    Info: + Longest clock path from clock "clk" to source register is 11.785 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 17; CLK Node = 'clk'
+        Info: 2: + IC(4.440 ns) + CELL(1.294 ns) = 6.866 ns; Loc. = LC_X5_Y1_N8; Fanout = 67; REG Node = 'LCD12864:inst|clkr'
+        Info: 3: + IC(4.001 ns) + CELL(0.918 ns) = 11.785 ns; Loc. = LC_X4_Y3_N2; Fanout = 2; REG Node = 'LCD12864:inst|e'
+        Info: Total cell delay = 3.344 ns ( 28.38 % )
+        Info: Total interconnect delay = 8.441 ns ( 71.62 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 5.376 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X4_Y3_N2; Fanout = 2; REG Node = 'LCD12864:inst|e'
+        Info: 2: + IC(0.974 ns) + CELL(0.200 ns) = 1.174 ns; Loc. = LC_X4_Y3_N6; Fanout = 1; COMB Node = 'LCD12864:inst|en'
+        Info: 3: + IC(1.880 ns) + CELL(2.322 ns) = 5.376 ns; Loc. = PIN_34; Fanout = 0; PIN Node = 'lcd_en'
+        Info: Total cell delay = 2.522 ns ( 46.91 % )
+        Info: Total interconnect delay = 2.854 ns ( 53.09 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Allocated 111 megabytes of memory during processing
+    Info: Processing ended: Sun Nov 27 16:57:27 2011
+    Info: Elapsed time: 00:00:02
+
+

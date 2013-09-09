@@ -1,0 +1,71 @@
+|pstop
+led[0] <= inst3[0].DB_MAX_OUTPUT_PORT_TYPE
+led[1] <= inst3[1].DB_MAX_OUTPUT_PORT_TYPE
+led[2] <= inst3[2].DB_MAX_OUTPUT_PORT_TYPE
+led[3] <= inst3[3].DB_MAX_OUTPUT_PORT_TYPE
+led[4] <= inst3[4].DB_MAX_OUTPUT_PORT_TYPE
+led[5] <= inst3[5].DB_MAX_OUTPUT_PORT_TYPE
+led[6] <= inst3[6].DB_MAX_OUTPUT_PORT_TYPE
+led[7] <= inst3[7].DB_MAX_OUTPUT_PORT_TYPE
+rst_n => inst2.IN0
+PS2_CLK2 => pskey:inst.ps2clk
+PS2_DAT2 => pskey:inst.ps2data
+
+
+|pstop|pskey:inst
+reset => temp[10].ACLR
+reset => temp[9].ACLR
+reset => temp[8].ACLR
+reset => temp[7].ACLR
+reset => temp[6].ACLR
+reset => temp[5].ACLR
+reset => temp[4].ACLR
+reset => temp[3].ACLR
+reset => temp[2].ACLR
+reset => cnt4[3].ACLR
+reset => cnt4[2].ACLR
+reset => cnt4[1].ACLR
+reset => cnt4[0].ACLR
+reset => over~reg0.ENA
+reset => data[7]~reg0.ENA
+reset => data[6]~reg0.ENA
+reset => data[5]~reg0.ENA
+reset => data[4]~reg0.ENA
+reset => data[3]~reg0.ENA
+reset => data[2]~reg0.ENA
+reset => data[1]~reg0.ENA
+reset => data[0]~reg0.ENA
+ps2clk => temp[10].CLK
+ps2clk => temp[9].CLK
+ps2clk => temp[8].CLK
+ps2clk => temp[7].CLK
+ps2clk => temp[6].CLK
+ps2clk => temp[5].CLK
+ps2clk => temp[4].CLK
+ps2clk => temp[3].CLK
+ps2clk => temp[2].CLK
+ps2clk => cnt4[3].CLK
+ps2clk => cnt4[2].CLK
+ps2clk => cnt4[1].CLK
+ps2clk => cnt4[0].CLK
+ps2clk => data[7]~reg0.CLK
+ps2clk => data[6]~reg0.CLK
+ps2clk => data[5]~reg0.CLK
+ps2clk => data[4]~reg0.CLK
+ps2clk => data[3]~reg0.CLK
+ps2clk => data[2]~reg0.CLK
+ps2clk => data[1]~reg0.CLK
+ps2clk => data[0]~reg0.CLK
+ps2clk => over~reg0.CLK
+ps2data => temp[10].DATAIN
+over <= over~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

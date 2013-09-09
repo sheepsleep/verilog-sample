@@ -1,0 +1,918 @@
+Version 7.2 Build 151 09/26/2007 SJ Full Version
+39
+2304
+OFF
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+MAXII_PicoBlaze
+# storage
+db|MAXII_PicoBlaze.(0).cnf
+db|MAXII_PicoBlaze.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+MAXII_PicoBlaze.vhd
+658fd95a0c616fde87d3baf4ec4ef4a
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+|
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+clkdiv
+# storage
+db|MAXII_PicoBlaze.(1).cnf
+db|MAXII_PicoBlaze.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+clkdiv.vhd
+8dc94836633527c9e4d0cbb49aa9fb98
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+clkdiv:clk_div
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+picoblaze
+# storage
+db|MAXII_PicoBlaze.(2).cnf
+db|MAXII_PicoBlaze.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+picoblaze.vhd
+f1d8bc7b9486762466e5834d4107e
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(address)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(instruction)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(port_id)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(out_port)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(in_port)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+picoblaze:processor
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+IO_strobe_logic
+# storage
+db|MAXII_PicoBlaze.(3).cnf
+db|MAXII_PicoBlaze.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+IO_strobe_logic.vhd
+5b63426f66ada5c6d4a38fbf305b
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+picoblaze:processor|IO_strobe_logic:IO_strobes
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+arithmetic_process
+# storage
+db|MAXII_PicoBlaze.(4).cnf
+db|MAXII_PicoBlaze.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+arithmatic.vhd
+19975b5643a32c571fe0af5ac1ac1
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(first_operand)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(second_operand)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(y)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+picoblaze:processor|arithmetic_process:arithmetic_group
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+addsub8
+# storage
+db|MAXII_PicoBlaze.(5).cnf
+db|MAXII_PicoBlaze.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+arithmatic.vhd
+19975b5643a32c571fe0af5ac1ac1
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(first_operand)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(second_operand)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(y)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+picoblaze:processor|arithmetic_process:arithmetic_group|addsub8:add_sub_module
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+shift_rotate
+# storage
+db|MAXII_PicoBlaze.(6).cnf
+db|MAXII_PicoBlaze.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+shift_rotate.vhd
+3fc3e8baec1aabe5dea9979b14a0c8
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(operand)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(y)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+picoblaze:processor|shift_rotate:shift_group
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+logical_bus_processing
+# storage
+db|MAXII_PicoBlaze.(7).cnf
+db|MAXII_PicoBlaze.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+logical_bus_processing.vhd
+5ae99bf1ad7b477c16a8964866b1dbf
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(first_operand)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(second_operand)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(y)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+picoblaze:processor|logical_bus_processing:logical_group
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+T_state_and_Reset
+# storage
+db|MAXII_PicoBlaze.(8).cnf
+db|MAXII_PicoBlaze.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+T_state_and_Reset.vhd
+5a140191d6ba2c19fe1e72ac42193
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+picoblaze:processor|T_state_and_Reset:basic_control
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+register_and_flag_enable
+# storage
+db|MAXII_PicoBlaze.(9).cnf
+db|MAXII_PicoBlaze.(9).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+register_and_flag_enable.vhd
+2267f622765e96a45570cf6d2ae3f056
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+picoblaze:processor|register_and_flag_enable:reg_and_flag_enables
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+carry_flag_logic
+# storage
+db|MAXII_PicoBlaze.(10).cnf
+db|MAXII_PicoBlaze.(10).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+carry_flag_logic.vhd
+3abb9bae9b5caf8b53d4e80ac7ae41c
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+picoblaze:processor|carry_flag_logic:carry_logic
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+zero_flag_logic
+# storage
+db|MAXII_PicoBlaze.(11).cnf
+db|MAXII_PicoBlaze.(11).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+zero_flag_logic.vhd
+e1c1d3436ba3eaf1aa5d98c14add4e40
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(data)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+picoblaze:processor|zero_flag_logic:zero_logic
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+program_counter
+# storage
+db|MAXII_PicoBlaze.(12).cnf
+db|MAXII_PicoBlaze.(12).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+program_counter.vhd
+45233c0f965922c308d76aa48ead594
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(low_instruction)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(stack_value)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(program_count)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+picoblaze:processor|program_counter:prog_count
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+register_bank
+# storage
+db|MAXII_PicoBlaze.(13).cnf
+db|MAXII_PicoBlaze.(13).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+register_bank.vhd
+67941096d4def675629193aa25a7d682
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+m
+3
+PARAMETER_SIGNED_DEC
+USR
+ constraint(d_bus)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(a)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(dpra)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(spo_bus)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(dpo_bus)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+picoblaze:processor|register_bank:data_registers
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+ram_Nx1
+# storage
+db|MAXII_PicoBlaze.(14).cnf
+db|MAXII_PicoBlaze.(14).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+register_bank.vhd
+67941096d4def675629193aa25a7d682
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+m
+3
+PARAMETER_SIGNED_DEC
+USR
+ constraint(a)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(dpra)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit
+picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:1:data_register_bit
+picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:2:data_register_bit
+picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:3:data_register_bit
+picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:4:data_register_bit
+picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:5:data_register_bit
+picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:6:data_register_bit
+picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:7:data_register_bit
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+stack_ram
+# storage
+db|MAXII_PicoBlaze.(15).cnf
+db|MAXII_PicoBlaze.(15).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+stack_ram.vhd
+ceb5d233f8a1d812e6ebae59b9184642
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+m
+2
+PARAMETER_SIGNED_DEC
+USR
+n
+8
+PARAMETER_SIGNED_DEC
+USR
+ constraint(din)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(dout)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(addr)
+1 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+picoblaze:processor|stack_ram:stack_memory
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+ram_x1s
+# storage
+db|MAXII_PicoBlaze.(16).cnf
+db|MAXII_PicoBlaze.(16).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+stack_ram.vhd
+ceb5d233f8a1d812e6ebae59b9184642
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+m
+2
+PARAMETER_SIGNED_DEC
+USR
+ constraint(a)
+1 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:0:stack_ram_bit
+picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:1:stack_ram_bit
+picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:2:stack_ram_bit
+picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:3:stack_ram_bit
+picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:4:stack_ram_bit
+picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:5:stack_ram_bit
+picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:6:stack_ram_bit
+picoblaze:processor|stack_ram:stack_memory|ram_x1s:\bus_width_loop:7:stack_ram_bit
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+stack_counter
+# storage
+db|MAXII_PicoBlaze.(17).cnf
+db|MAXII_PicoBlaze.(17).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+stack_counter.vhd
+a0c7ebcacb6ba9f445f5d830ba6fc4f5
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+n
+2
+PARAMETER_SIGNED_DEC
+USR
+ constraint(stack_count)
+1 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+picoblaze:processor|stack_counter:stack_control
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+interrupt_capture
+# storage
+db|MAXII_PicoBlaze.(18).cnf
+db|MAXII_PicoBlaze.(18).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+interrupt_capture.vhd
+3bb341d2e6a92b3ac6b6414ed7a7a4b7
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+picoblaze:processor|interrupt_capture:get_interrupt
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+interrupt_logic
+# storage
+db|MAXII_PicoBlaze.(19).cnf
+db|MAXII_PicoBlaze.(19).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+interrupt_logic.vhd
+c8b9bcc2d86ec0f6c15b36fab0e3116
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+picoblaze:processor|interrupt_logic:interrupt_control
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+ROM_test
+# storage
+db|MAXII_PicoBlaze.(20).cnf
+db|MAXII_PicoBlaze.(20).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+ROM_test.vhd
+65b579fa8255ea6b14e6c6bbda8cb2f8
+4
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(address)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(dout)
+15 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+ROM_test:program
+}
+# lmf
+c:|altera|72|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# complete
+

@@ -1,0 +1,13 @@
+
+State Machine - |LCD1602|LCD_Driver:inst|state
+Name state.WRITERAM2 state.WRITERAM1 state.SETDDRAM2 state.SETDDRAM1 state.SETFUNCTION state.SWITCHMODE state.SETMODE state.CLEAR state.IDLE state.WAIT 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 
+state.CLEAR 0 0 0 0 0 0 0 1 1 0 
+state.SETMODE 0 0 0 0 0 0 1 0 1 0 
+state.SWITCHMODE 0 0 0 0 0 1 0 0 1 0 
+state.SETFUNCTION 0 0 0 0 1 0 0 0 1 0 
+state.SETDDRAM1 0 0 0 1 0 0 0 0 1 0 
+state.SETDDRAM2 0 0 1 0 0 0 0 0 1 0 
+state.WRITERAM1 0 1 0 0 0 0 0 0 1 0 
+state.WRITERAM2 1 0 0 0 0 0 0 0 1 0 
+state.WAIT 0 0 0 0 0 0 0 0 1 1 

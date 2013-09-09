@@ -1,0 +1,138 @@
+Version 7.2 Build 151 09/26/2007 SJ Full Version
+39
+2304
+OFF
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+LCD_test
+# storage
+db|LCD_test.(0).cnf
+db|LCD_test.(0).cnf
+# case_insensitive
+# source_file
+LCD_test.bdf
+5c4c37beb632f8f1df28d8633a23ecb
+25
+# internal_option {
+BLOCK_DESIGN_NAMING
+OFF
+}
+# hierarchies {
+|
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+LCD1602
+# storage
+db|LCD_test.(1).cnf
+db|LCD_test.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+LCD1602.v
+b34a64c31a6af5d9a1a7dd1370b9f65d
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# user_parameter {
+init
+0
+PARAMETER_UNKNOWN
+USR
+write_first_data
+1
+PARAMETER_UNKNOWN
+USR
+write_second_data
+2
+PARAMETER_UNKNOWN
+USR
+}
+# hierarchies {
+LCD1602:inst
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+autoreset
+# storage
+db|LCD_test.(2).cnf
+db|LCD_test.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+autoreset.v
+648c825f31a5f4e5bdd9799ebfcc4627
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# user_parameter {
+DIV
+2500000
+PARAMETER_UNKNOWN
+USR
+}
+# hierarchies {
+autoreset:inst1
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# complete
+

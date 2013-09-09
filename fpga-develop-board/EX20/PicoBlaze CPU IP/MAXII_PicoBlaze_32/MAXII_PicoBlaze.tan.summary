@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : -5.537 ns
+From           : reset_n
+To             : picoblaze:processor|T_state_and_Reset:basic_control|reset_delay2
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.461 ns
+From           : output[3]~reg0
+To             : output[3]
+From Clock     : clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 9.210 ns
+From           : reset_n
+To             : picoblaze:processor|T_state_and_Reset:basic_control|reset_delay1
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 77.45 MHz ( period = 12.911 ns )
+From           : picoblaze:processor|register_bank:data_registers|ram_Nx1:\bus_width_loop:0:data_register_bit|rambit[0]
+To             : picoblaze:processor|arithmetic_process:arithmetic_group|addsub8:add_sub_module|Y[7]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : ROM_test:program|dout[2]
+To             : picoblaze:processor|logical_bus_processing:logical_group|Y[2]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 83
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 83
+
+--------------------------------------------------------------------------------------
+

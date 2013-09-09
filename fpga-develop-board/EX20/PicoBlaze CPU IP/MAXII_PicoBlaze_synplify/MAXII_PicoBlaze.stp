@@ -1,0 +1,138 @@
+<session jtag_chain="ByteBlasterMV [LPT1]" jtag_device="@1: EPM570 (0x020A20DD)" sof_file="" top_level_entity="MAXII_PicoBlaze">
+  <display_tree gui_logging_enabled="0">
+    <display_branch instance="MAXII_PicoBlaze" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+  </display_tree>
+  <global_info>
+    <multi attribute="window position" size="9" value="1070,785,398,124,356,50,47,0,0"/>
+    <multi attribute="column width" size="18" value="34,34,271,74,73,70,88,100,101,101,101,101,101,101,101,101,107,78"/>
+    <single attribute="active instance" value="0"/>
+    <single attribute="lock mode" value="36110"/>
+  </global_info>
+  <instance compilation_mode="incremental" entity_name="sld_signaltap" is_auto_node="yes" name="MAXII_PicoBlaze" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="5"/>
+    <position_info>
+      <single attribute="active tab" value="1"/>
+      <single attribute="setup vertical scroll position" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+    </position_info>
+    <signal_set global_temp="1" name="signal_set: 2008/06/02 09:53:51  #0">
+      <clock name="clk" polarity="posedge"/>
+      <config ram_type="M4K" reserved_data_nodes="0" reserved_trigger_nodes="0" sample_depth="64" trigger_in_enable="yes" trigger_in_node="reset_n" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="ROM_test:inst1|dout[0]" tap_mode="probeonly" type="register"/>
+          <wire name="ROM_test:inst1|dout[11]" tap_mode="probeonly" type="register"/>
+          <wire name="ROM_test:inst1|dout[12]" tap_mode="probeonly" type="register"/>
+          <wire name="ROM_test:inst1|dout[15]" tap_mode="probeonly" type="register"/>
+          <wire name="ROM_test:inst1|dout[1]" tap_mode="probeonly" type="register"/>
+          <wire name="ROM_test:inst1|dout[2]" tap_mode="probeonly" type="register"/>
+          <wire name="ROM_test:inst1|dout[8]" tap_mode="probeonly" type="register"/>
+          <wire name="ROM_test:inst1|dout[9]" tap_mode="probeonly" type="register"/>
+          <wire name="clkdiv:inst17|s_clk" tap_mode="probeonly" type="register"/>
+          <wire name="led[0]" tap_mode="probeonly" type="output pin"/>
+          <wire name="led[1]" tap_mode="probeonly" type="output pin"/>
+          <wire name="led[2]" tap_mode="probeonly" type="output pin"/>
+          <wire name="led[3]" tap_mode="probeonly" type="output pin"/>
+          <wire name="led[4]" tap_mode="probeonly" type="output pin"/>
+          <wire name="led[5]" tap_mode="probeonly" type="output pin"/>
+          <wire name="led[6]" tap_mode="probeonly" type="output pin"/>
+          <wire name="led[7]" tap_mode="probeonly" type="output pin"/>
+          <wire name="picoblaze:inst|shift_rotate:shift_group|carry_out" tap_mode="probeonly" type="register"/>
+          <wire name="picoblaze:inst|zero_flag_logic:zero_logic|zero_flag" tap_mode="probeonly" type="register"/>
+          <wire name="reset_n" tap_mode="probeonly" type="input pin"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="ROM_test:inst1|dout[0]" tap_mode="probeonly" type="register"/>
+          <wire name="ROM_test:inst1|dout[11]" tap_mode="probeonly" type="register"/>
+          <wire name="ROM_test:inst1|dout[12]" tap_mode="probeonly" type="register"/>
+          <wire name="ROM_test:inst1|dout[15]" tap_mode="probeonly" type="register"/>
+          <wire name="ROM_test:inst1|dout[1]" tap_mode="probeonly" type="register"/>
+          <wire name="ROM_test:inst1|dout[2]" tap_mode="probeonly" type="register"/>
+          <wire name="ROM_test:inst1|dout[8]" tap_mode="probeonly" type="register"/>
+          <wire name="ROM_test:inst1|dout[9]" tap_mode="probeonly" type="register"/>
+          <wire name="clkdiv:inst17|s_clk" tap_mode="probeonly" type="register"/>
+          <wire name="led[0]" tap_mode="probeonly" type="output pin"/>
+          <wire name="led[1]" tap_mode="probeonly" type="output pin"/>
+          <wire name="led[2]" tap_mode="probeonly" type="output pin"/>
+          <wire name="led[3]" tap_mode="probeonly" type="output pin"/>
+          <wire name="led[4]" tap_mode="probeonly" type="output pin"/>
+          <wire name="led[5]" tap_mode="probeonly" type="output pin"/>
+          <wire name="led[6]" tap_mode="probeonly" type="output pin"/>
+          <wire name="led[7]" tap_mode="probeonly" type="output pin"/>
+          <wire name="picoblaze:inst|shift_rotate:shift_group|carry_out" tap_mode="probeonly" type="register"/>
+          <wire name="picoblaze:inst|zero_flag_logic:zero_logic|zero_flag" tap_mode="probeonly" type="register"/>
+          <wire name="reset_n" tap_mode="probeonly" type="input pin"/>
+        </data_input_vec>
+      </signal_vec>
+      <presentation>
+        <data_view>
+          <bus is_signal_inverted="no" link="all" name="led" order="lsb_to_msb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="led[0]"/>
+            <net is_signal_inverted="no" name="led[1]"/>
+            <net is_signal_inverted="no" name="led[2]"/>
+            <net is_signal_inverted="no" name="led[3]"/>
+            <net is_signal_inverted="no" name="led[4]"/>
+            <net is_signal_inverted="no" name="led[5]"/>
+            <net is_signal_inverted="no" name="led[6]"/>
+            <net is_signal_inverted="no" name="led[7]"/>
+          </bus>
+          <net is_signal_inverted="no" name="reset_n"/>
+          <bus is_signal_inverted="no" link="all" name="ROM_test:inst1|dout" order="lsb_to_msb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="ROM_test:inst1|dout[0]"/>
+            <net is_signal_inverted="no" name="ROM_test:inst1|dout[1]"/>
+            <net is_signal_inverted="no" name="ROM_test:inst1|dout[2]"/>
+            <net is_signal_inverted="no" name="ROM_test:inst1|dout[8]"/>
+            <net is_signal_inverted="no" name="ROM_test:inst1|dout[9]"/>
+            <net is_signal_inverted="no" name="ROM_test:inst1|dout[11]"/>
+            <net is_signal_inverted="no" name="ROM_test:inst1|dout[12]"/>
+            <net is_signal_inverted="no" name="ROM_test:inst1|dout[15]"/>
+          </bus>
+          <net is_signal_inverted="no" name="picoblaze:inst|shift_rotate:shift_group|carry_out"/>
+          <net is_signal_inverted="no" name="picoblaze:inst|zero_flag_logic:zero_logic|zero_flag"/>
+          <net is_signal_inverted="no" name="clkdiv:inst17|s_clk"/>
+        </data_view>
+        <setup_view>
+          <net is_signal_inverted="no" name="clkdiv:inst17|s_clk"/>
+          <bus is_signal_inverted="no" link="all" name="led" order="lsb_to_msb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="led[0]"/>
+            <net is_signal_inverted="no" name="led[1]"/>
+            <net is_signal_inverted="no" name="led[2]"/>
+            <net is_signal_inverted="no" name="led[3]"/>
+            <net is_signal_inverted="no" name="led[4]"/>
+            <net is_signal_inverted="no" name="led[5]"/>
+            <net is_signal_inverted="no" name="led[6]"/>
+            <net is_signal_inverted="no" name="led[7]"/>
+          </bus>
+          <net is_signal_inverted="no" name="reset_n"/>
+          <bus is_signal_inverted="no" link="all" name="ROM_test:inst1|dout" order="lsb_to_msb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="ROM_test:inst1|dout[0]"/>
+            <net is_signal_inverted="no" name="ROM_test:inst1|dout[1]"/>
+            <net is_signal_inverted="no" name="ROM_test:inst1|dout[2]"/>
+            <net is_signal_inverted="no" name="ROM_test:inst1|dout[8]"/>
+            <net is_signal_inverted="no" name="ROM_test:inst1|dout[9]"/>
+            <net is_signal_inverted="no" name="ROM_test:inst1|dout[11]"/>
+            <net is_signal_inverted="no" name="ROM_test:inst1|dout[12]"/>
+            <net is_signal_inverted="no" name="ROM_test:inst1|dout[15]"/>
+          </bus>
+          <net is_signal_inverted="no" name="picoblaze:inst|shift_rotate:shift_group|carry_out"/>
+          <net is_signal_inverted="no" name="picoblaze:inst|zero_flag_logic:zero_logic|zero_flag"/>
+        </setup_view>
+      </presentation>
+      <trigger global_temp="1" name="trigger: 2008/06/02 09:53:51  #1" position="center" power_up_trigger_mode="false" segment_size="1" trigger_in="rising edge" trigger_out="active high" trigger_type="circular">
+        <power_up_trigger position="pre" segment_size="1" trigger_in="dont_care" trigger_out="active high" trigger_type="circular"/>
+        <events>
+          <level enabled="yes" type="basic">
+            <power_up enabled="yes">
+            </power_up>
+            <op_node>
+              <op_node left="386" top="227" type="Advanced Trigger Level Result"/>
+              <op_node expanded="1" left="174" name="bus_0" selected="1" top="275" type="Bus"/>
+            </op_node>
+          </level>
+        </events>
+      </trigger>
+    </signal_set>
+  </instance>
+  <mnemonics/>
+</session>

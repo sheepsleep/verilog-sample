@@ -1,0 +1,228 @@
+////////////////////////////////////////////////////////////////////////////////
+//  Company: 成都锐创智能科技 Ruichuang Smart Technology                      //
+//           http://ruicstech.taobao.com                                      // 
+//  Engineer:      Youzhiyu                                                   //
+//  QQ      :      4016682                                                    //
+//  Target Device: MAXII240T100C5N                                            //
+//  Tool versions: Quartus II 7.2                                             //
+//  Create Date:   2011-09-06 10:09                                           //
+//  Description:                                                              //
+//                                                                            //
+////////////////////////////////////////////////////////////////////////////////
+// 	   Copyright (C) 2011-2012  Youzhiyu   All rights reserved                //
+//----------------------------------------------------------------------------//
+////////////////////////////////////////////////////////////////////////////////
+
+module LCD_Driver(
+                  clk,
+                  rst_n,
+                  lcd_e,
+                  lcd_rw,
+                  lcd_rs,
+                  data);
+input  clk;
+input  rst_n;
+output lcd_e;
+output lcd_rw;
+output lcd_rs;
+output [7:0] data;
+
+reg lcd_e,lcd_rw,lcd_rs;
+reg [7:0] data;
+ 
+reg [9:0] state;
+reg [5:0] address;
+ 
+ parameter IDLE  =10'b0000000000;
+ parameter CLEAR  =10'b0000000001;    //清屏
+ 
+ parameter SETMODE =10'b0000000011;    //输入方式设置，读写数据后ram地址增/减1；画面动/不动
+ 
+ parameter SWITCHMODE=10'b0000000100;     //显示状态设置，显示开/关；光标开/关；闪烁开/关
+ 
+ parameter SETFUNCTION =10'b0000000101;  //工作方式设置 1：8/1：4位数据接口；两行/一行显示；5x10/5x7点阵
+ 
+ parameter SETDDRAM1 =10'b0000000110;    //设置DDRAM
+ parameter SETDDRAM2 =10'b0000000111;    //设置DDRAM
+ parameter WRITERAM1 =10'b0000001000;    //写RAM
+ parameter WRITERAM2 =10'b0000001001;    //写RAM
+ parameter WAIT =10'b1000001001;
+//-------------------------------------------
+ function [7:0] ddram;
+  input [5:0] n;
+  begin
+   case(n)
+   6'b000_000:ddram=8'b0111_0111;//w
+   6'b000_001:ddram=8'b0110_0101;//e
+   6'b000_010:ddram=8'b0110_1100;//l
+   6'b000_011:ddram=8'b0110_0011;//c
+   6'b000_100:ddram=8'b0110_1111;//o
+   6'b000_101:ddram=8'b0110_1101;//m
+   6'b000_110:ddram=8'b0110_0101;//e
+   6'b000_111:ddram=8'b0010_0000;//
+   6'b001_000:ddram=8'b0111_0100;//t
+   6'b001_001:ddram=8'b0110_1111;//o
+   6'b001_010:ddram=8'b0010_0000;//
+   6'b001_011:ddram=8'b0101_0011;//S
+   6'b001_100:ddram=8'b0110_1111;//o
+   6'b001_101:ddram=8'b0111_0101;//u
+   6'b001_110:ddram=8'b0111_0100;//t
+   6'b001_111:ddram=8'b0110_1000;//h
+   6'b010_000:ddram=8'b0010_1101;//-
+   6'b010_001:ddram=8'b0111_0111;//w
+   6'b010_010:ddram=8'b0110_0101;//e
+   6'b010_011:ddram=8'b0111_0011;//s
+   6'b010_100:ddram=8'b0111_0100;//t
+   6'b010_101:ddram=8'bb0010_0000;//
+  
+   6'b010_110:ddram=8'b0101_0101;//U
+   6'b010_111:ddram=8'b0110_1110;//n
+   6'b011_000:ddram=8'b0110_1001;//i
+   6'b011_001:ddram=8'b0111_0110;//v
+   6'b011_010:ddram=8'b0110_0101;//e
+   6'b011_011:ddram=8'b0111_0010;//r
+   6'b011_100:ddram=8'b0111_0011;//s
+   6'b011_101:ddram=8'b0110_1001;//i
+   6'b011_110:ddram=8'b0111_0100;//t
+   6'b011_111:ddram=8'b0111_1001;//y
+   default:   ddram=8'bz;
+   endcase
+  end
+ endfunction
+//-------------------------------------------
+reg [15:0] clkcnt;
+always @ (posedge clk)
+ if(!rst_n)
+    clkcnt<=16'b0000_0000_0000_0000;
+ else
+   begin
+     if(clkcnt==16'b1110_0001_1010_1000)       //25000
+        clkcnt<=16'b0000_0000_0000_0000;
+      else
+        clkcnt<=clkcnt+1'b1;
+   end
+
+wire tc_clkcnt;   
+assign tc_clkcnt=(clkcnt==16'b1110_0001_1010_1000)?1'b1:1'b0;
+
+//----------------------------------------------------------
+ reg clkdiv;          
+ always @ (posedge tc_clkcnt)                   //2000
+ if(!rst_n)
+  clkdiv<=0;
+ else
+  clkdiv<=~clkdiv;
+ //----------------------------------------------------------
+ always @ (negedge tc_clkcnt)              //2000
+ if(!rst_n)
+     lcd_e<=0;
+ else
+     lcd_e<=~lcd_e;
+//----------------------------------------------------------
+ always @ (posedge clkdiv or negedge rst_n)
+ if(!rst_n)
+  begin
+   state<=IDLE;
+   address<=6'b000000;
+   data<=8'b00000000;
+   lcd_rs<=0;
+   lcd_rw<=0;
+  end
+ else
+  begin
+   case(state)
+   IDLE:
+    begin
+    data<=8'bzzzz_zzzz;
+    state<=CLEAR;
+    end
+        
+   CLEAR:
+    begin
+    lcd_rs<=0;
+    lcd_rw<=0;
+    data<=8'b0000_0001;      //清屏01
+    state<=SETFUNCTION;
+    end
+        
+   SETFUNCTION:
+     begin
+     lcd_rs<=0;
+     lcd_rw<=0;
+     data<=8'b0011_1000;     //功能设置38
+     state<=SWITCHMODE;
+     end
+       
+   SWITCHMODE:
+    begin
+    lcd_rs<=0;
+    lcd_rw<=0;
+    data<=8'b0000_1101;     //显示状态开关设置0C
+    state<=SETMODE;
+    end 
+       
+   SETMODE:
+     begin
+     lcd_rs<=0;
+     lcd_rw<=0;
+     data<=8'b0000_0110;     //输入方式设置06
+     state<=SETDDRAM1;
+     end  
+  
+   SETDDRAM1:
+     begin
+     lcd_rs<=0;
+     lcd_rw<=0;
+     data<=8'b10000000;       //显示数据存储器地址80
+     state<=WRITERAM1;
+     end
+  
+   SETDDRAM2:
+     begin
+     lcd_rs<=0;
+     lcd_rw<=0;
+     data<=8'b11000000;       //显示数据存储器地址80+40
+     state<=WRITERAM2;
+     end
+  
+   WRITERAM1:
+    begin
+     if(address<=6'b001_111)
+       begin
+       lcd_rs<=1;
+       lcd_rw<=0;
+       data<=ddram(address);
+       address<=address+1'b1;
+       state<=WRITERAM1;
+       end
+     else
+       begin
+       lcd_rs<=0;
+       lcd_rw<=0;
+       state<=SETDDRAM2;
+       end
+    end
+  
+   WRITERAM2:
+                              
+     if(address<=6'b011_111)
+       begin
+       lcd_rs<=1;
+       lcd_rw<=0;
+       data<=ddram(address);
+       address<=address+1'b1;
+       state<=WRITERAM2;
+       end
+     else
+       begin
+       lcd_rs<=0;
+       lcd_rw<=0;
+       state<=WAIT;
+       address<=6'b000000;
+       end
+    WAIT:
+     state<=WAIT;
+  
+  endcase
+ end
+endmodule 

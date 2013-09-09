@@ -1,0 +1,132 @@
+////////////////////////////////////////////////////////////////////////////////
+//  Company:                                                                  //
+//  Company bbs:                                                              //
+//  Engineer:      Youzhiyu                                                   //
+//                                                                            //
+//  Target Device: MAXII240T100C5N                                            //
+//  Tool versions: Quartus II 7.2                                             //
+//  Create Date:   2011-09-10 10:09                                           //
+//  Description:                                                              //
+//                                                                            //
+////////////////////////////////////////////////////////////////////////////////
+// 	      Copyright (C) 2011-2012  Youzhiyu   All rights reserved             //
+//----------------------------------------------------------------------------//
+////////////////////////////////////////////////////////////////////////////////
+module LCD1602(clk,rs,rw,en,data);
+input clk;
+output rs,rw,en;
+output[7:0] data;
+
+reg rs,rw;
+wire en;
+
+reg[7:0] data;
+reg[4:0] counter;
+reg[1:0] state;
+reg [15:0] count; 
+reg clkr; 
+
+parameter init=0,write_first_data=1,write_second_data=2;
+
+assign en=clkr;
+
+always @(posedge clk)      
+begin 
+   count=count+1; 
+   if(count==16'h000f) 
+   clkr=~clkr; 
+end 
+
+always@(posedge clkr)
+begin
+    case(state)
+    init:
+     begin
+       rs=0;rw=0;
+       counter=counter+1;
+       case(counter)
+            1:data='h38;
+            2:data='h08;
+            3:data='h01;
+            4:data='h06;
+            5:data='h0c;
+            6:
+              begin
+                  data='h00;
+                  state=write_first_data;
+                  counter=0;
+               end
+             default: counter=0;
+         endcase
+       end
+                
+      write_first_data:
+        begin   
+          rs=1;
+          case(counter)
+             0:data="H";
+             1:data="e";
+             2:data="l";
+             3:data="l";
+             4:data="o";
+             5:data=" ";
+             6:data="C";
+             7:data="P";
+             8:data="L";
+             9:data="D";
+             10:data=" ";
+             11:data="W";
+             12:data="o";
+             13:data="r";
+             14:data="l";
+             15:data="d";
+             16:
+                 begin
+                    rs=0;
+                    state=write_second_data;
+                    data='hc0;
+                  end
+              default: counter=0;
+            endcase
+            if(counter==16) 
+                counter=0;
+             else 
+                counter=counter+1;
+          end   
+       write_second_data:
+        begin   
+          rs=1;
+          case(counter)
+             0:data="Y";
+             1:data="o";
+             2:data="u";
+             3:data="Z";
+             4:data="h";
+             5:data="i";
+             6:data="y";
+             7:data="u";
+             8:data=" ";
+             9:data="1";
+             10:data="1";
+             11:data=".";
+             12:data="9";
+             13:data=".";
+             14:data="1";
+             15:data="0";
+             16:
+                 begin
+                    rs=0;
+                    state=write_first_data;
+                    data='h00;
+                  end
+              default: counter=0;
+            endcase
+            if(counter==16) 
+                counter=0;
+             else 
+                counter=counter+1;
+          end  
+        default: state=init;
+    endcase
+end
+endmodule 

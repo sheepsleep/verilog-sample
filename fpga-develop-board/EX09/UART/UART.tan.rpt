@@ -1,0 +1,385 @@
+Classic Timing Analyzer report for UART
+Thu Oct 27 14:45:23 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                          ;
++------------------------------+-------+---------------+----------------------------------+---------------------------------------------+---------------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                        ; To                                                ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+---------------------------------------------+---------------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; -0.149 ns                        ; rst_n                                       ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 11.686 ns                        ; rs232tx:rs232_tx_block|q[0]                 ; Uart1_T                                           ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 1.656 ns                         ; rst_n                                       ; clock_gen_select:clock_unit|dds_prescale_count[1] ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 172.44 MHz ( period = 5.799 ns ) ; rs232tx:rs232_tx_block|prescaler_count_l[0] ; rs232tx:rs232_tx_block|q[8]                       ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                             ;                                                   ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+---------------------------------------------+---------------------------------------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EPM240T100C5       ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                         ;
++-------+------------------------------------------------+---------------------------------------------------+---------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                                              ; To                                                ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+---------------------------------------------------+---------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 172.44 MHz ( period = 5.799 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; rs232tx:rs232_tx_block|q[8]                       ; clk        ; clk      ; None                        ; None                      ; 5.090 ns                ;
+; N/A   ; 173.67 MHz ( period = 5.758 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[2] ; clock_gen_select:clock_unit|dds_phase[5]          ; clk        ; clk      ; None                        ; None                      ; 5.049 ns                ;
+; N/A   ; 173.67 MHz ( period = 5.758 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[2] ; clock_gen_select:clock_unit|dds_phase[4]          ; clk        ; clk      ; None                        ; None                      ; 5.049 ns                ;
+; N/A   ; 178.35 MHz ( period = 5.607 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; rs232tx:rs232_tx_block|q[8]                       ; clk        ; clk      ; None                        ; None                      ; 4.898 ns                ;
+; N/A   ; 178.83 MHz ( period = 5.592 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[0] ; clock_gen_select:clock_unit|dds_phase[5]          ; clk        ; clk      ; None                        ; None                      ; 4.883 ns                ;
+; N/A   ; 178.83 MHz ( period = 5.592 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[0] ; clock_gen_select:clock_unit|dds_phase[4]          ; clk        ; clk      ; None                        ; None                      ; 4.883 ns                ;
+; N/A   ; 181.06 MHz ( period = 5.523 ns )               ; clock_gen_select:clock_unit|dds_phase[0]          ; clock_gen_select:clock_unit|dds_phase[5]          ; clk        ; clk      ; None                        ; None                      ; 4.814 ns                ;
+; N/A   ; 181.06 MHz ( period = 5.523 ns )               ; clock_gen_select:clock_unit|dds_phase[0]          ; clock_gen_select:clock_unit|dds_phase[4]          ; clk        ; clk      ; None                        ; None                      ; 4.814 ns                ;
+; N/A   ; 181.59 MHz ( period = 5.507 ns )               ; clock_gen_select:clock_unit|dds_phase[5]          ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; clk        ; clk      ; None                        ; None                      ; 4.798 ns                ;
+; N/A   ; 181.59 MHz ( period = 5.507 ns )               ; clock_gen_select:clock_unit|dds_phase[5]          ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; clk        ; clk      ; None                        ; None                      ; 4.798 ns                ;
+; N/A   ; 181.59 MHz ( period = 5.507 ns )               ; clock_gen_select:clock_unit|dds_phase[5]          ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; clk        ; clk      ; None                        ; None                      ; 4.798 ns                ;
+; N/A   ; 184.47 MHz ( period = 5.421 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; rs232tx:rs232_tx_block|q[8]                       ; clk        ; clk      ; None                        ; None                      ; 4.712 ns                ;
+; N/A   ; 185.74 MHz ( period = 5.384 ns )               ; clock_gen_select:clock_unit|dds_phase[5]          ; rs232tx:rs232_tx_block|q[8]                       ; clk        ; clk      ; None                        ; None                      ; 4.675 ns                ;
+; N/A   ; 188.25 MHz ( period = 5.312 ns )               ; clock_gen_select:clock_unit|dds_phase[5]          ; rs232tx:rs232_tx_block|q[0]                       ; clk        ; clk      ; None                        ; None                      ; 4.603 ns                ;
+; N/A   ; 188.75 MHz ( period = 5.298 ns )               ; clock_gen_select:clock_unit|dds_phase[5]          ; rs232tx:rs232_tx_block|q[2]                       ; clk        ; clk      ; None                        ; None                      ; 4.589 ns                ;
+; N/A   ; 188.82 MHz ( period = 5.296 ns )               ; clock_gen_select:clock_unit|dds_phase[5]          ; rs232tx:rs232_tx_block|q[7]                       ; clk        ; clk      ; None                        ; None                      ; 4.587 ns                ;
+; N/A   ; 189.00 MHz ( period = 5.291 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[2] ; clock_gen_select:clock_unit|dds_phase[3]          ; clk        ; clk      ; None                        ; None                      ; 4.582 ns                ;
+; N/A   ; 191.83 MHz ( period = 5.213 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[1] ; clock_gen_select:clock_unit|dds_phase[5]          ; clk        ; clk      ; None                        ; None                      ; 4.504 ns                ;
+; N/A   ; 191.83 MHz ( period = 5.213 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[1] ; clock_gen_select:clock_unit|dds_phase[4]          ; clk        ; clk      ; None                        ; None                      ; 4.504 ns                ;
+; N/A   ; 193.50 MHz ( period = 5.168 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[2] ; clock_gen_select:clock_unit|dds_phase[2]          ; clk        ; clk      ; None                        ; None                      ; 4.459 ns                ;
+; N/A   ; 194.55 MHz ( period = 5.140 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; rs232tx:rs232_tx_block|q[2]                       ; clk        ; clk      ; None                        ; None                      ; 4.431 ns                ;
+; N/A   ; 194.59 MHz ( period = 5.139 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; rs232tx:rs232_tx_block|q[6]                       ; clk        ; clk      ; None                        ; None                      ; 4.430 ns                ;
+; N/A   ; 194.70 MHz ( period = 5.136 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; rs232tx:rs232_tx_block|q[1]                       ; clk        ; clk      ; None                        ; None                      ; 4.427 ns                ;
+; N/A   ; 195.05 MHz ( period = 5.127 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; rs232tx:rs232_tx_block|q[4]                       ; clk        ; clk      ; None                        ; None                      ; 4.418 ns                ;
+; N/A   ; 195.12 MHz ( period = 5.125 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[0] ; clock_gen_select:clock_unit|dds_phase[3]          ; clk        ; clk      ; None                        ; None                      ; 4.416 ns                ;
+; N/A   ; 195.12 MHz ( period = 5.125 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; rs232tx:rs232_tx_block|q[3]                       ; clk        ; clk      ; None                        ; None                      ; 4.416 ns                ;
+; N/A   ; 195.24 MHz ( period = 5.122 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; rs232tx:rs232_tx_block|q[0]                       ; clk        ; clk      ; None                        ; None                      ; 4.413 ns                ;
+; N/A   ; 195.27 MHz ( period = 5.121 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; rs232tx:rs232_tx_block|q[5]                       ; clk        ; clk      ; None                        ; None                      ; 4.412 ns                ;
+; N/A   ; 197.78 MHz ( period = 5.056 ns )               ; clock_gen_select:clock_unit|dds_phase[0]          ; clock_gen_select:clock_unit|dds_phase[3]          ; clk        ; clk      ; None                        ; None                      ; 4.347 ns                ;
+; N/A   ; 197.82 MHz ( period = 5.055 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; rs232tx:rs232_tx_block|q[8]                       ; clk        ; clk      ; None                        ; None                      ; 4.346 ns                ;
+; N/A   ; 198.22 MHz ( period = 5.045 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[2] ; clock_gen_select:clock_unit|dds_phase[1]          ; clk        ; clk      ; None                        ; None                      ; 4.336 ns                ;
+; N/A   ; 199.92 MHz ( period = 5.002 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[0] ; clock_gen_select:clock_unit|dds_phase[2]          ; clk        ; clk      ; None                        ; None                      ; 4.293 ns                ;
+; N/A   ; 202.10 MHz ( period = 4.948 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; rs232tx:rs232_tx_block|q[2]                       ; clk        ; clk      ; None                        ; None                      ; 4.239 ns                ;
+; N/A   ; 202.14 MHz ( period = 4.947 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; rs232tx:rs232_tx_block|q[6]                       ; clk        ; clk      ; None                        ; None                      ; 4.238 ns                ;
+; N/A   ; 202.27 MHz ( period = 4.944 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; rs232tx:rs232_tx_block|q[1]                       ; clk        ; clk      ; None                        ; None                      ; 4.235 ns                ;
+; N/A   ; 202.63 MHz ( period = 4.935 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; rs232tx:rs232_tx_block|q[4]                       ; clk        ; clk      ; None                        ; None                      ; 4.226 ns                ;
+; N/A   ; 202.72 MHz ( period = 4.933 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; rs232tx:rs232_tx_block|q[3]                       ; clk        ; clk      ; None                        ; None                      ; 4.224 ns                ;
+; N/A   ; 202.72 MHz ( period = 4.933 ns )               ; clock_gen_select:clock_unit|dds_phase[0]          ; clock_gen_select:clock_unit|dds_phase[2]          ; clk        ; clk      ; None                        ; None                      ; 4.224 ns                ;
+; N/A   ; 202.84 MHz ( period = 4.930 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; rs232tx:rs232_tx_block|q[0]                       ; clk        ; clk      ; None                        ; None                      ; 4.221 ns                ;
+; N/A   ; 202.88 MHz ( period = 4.929 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; rs232tx:rs232_tx_block|q[5]                       ; clk        ; clk      ; None                        ; None                      ; 4.220 ns                ;
+; N/A   ; 204.16 MHz ( period = 4.898 ns )               ; clock_gen_select:clock_unit|delayed_pulse         ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; clk        ; clk      ; None                        ; None                      ; 4.189 ns                ;
+; N/A   ; 204.16 MHz ( period = 4.898 ns )               ; clock_gen_select:clock_unit|delayed_pulse         ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; clk        ; clk      ; None                        ; None                      ; 4.189 ns                ;
+; N/A   ; 204.16 MHz ( period = 4.898 ns )               ; clock_gen_select:clock_unit|delayed_pulse         ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; clk        ; clk      ; None                        ; None                      ; 4.189 ns                ;
+; N/A   ; 204.96 MHz ( period = 4.879 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[0] ; clock_gen_select:clock_unit|dds_phase[1]          ; clk        ; clk      ; None                        ; None                      ; 4.170 ns                ;
+; N/A   ; 206.65 MHz ( period = 4.839 ns )               ; clock_gen_select:clock_unit|dds_phase[5]          ; rs232tx:rs232_tx_block|q[5]                       ; clk        ; clk      ; None                        ; None                      ; 4.130 ns                ;
+; N/A   ; 206.74 MHz ( period = 4.837 ns )               ; clock_gen_select:clock_unit|dds_phase[5]          ; rs232tx:rs232_tx_block|q[3]                       ; clk        ; clk      ; None                        ; None                      ; 4.128 ns                ;
+; N/A   ; 206.78 MHz ( period = 4.836 ns )               ; clock_gen_select:clock_unit|dds_phase[5]          ; rs232tx:rs232_tx_block|q[4]                       ; clk        ; clk      ; None                        ; None                      ; 4.127 ns                ;
+; N/A   ; 207.17 MHz ( period = 4.827 ns )               ; clock_gen_select:clock_unit|dds_phase[5]          ; rs232tx:rs232_tx_block|q[1]                       ; clk        ; clk      ; None                        ; None                      ; 4.118 ns                ;
+; N/A   ; 207.25 MHz ( period = 4.825 ns )               ; clock_gen_select:clock_unit|dds_phase[5]          ; rs232tx:rs232_tx_block|q[6]                       ; clk        ; clk      ; None                        ; None                      ; 4.116 ns                ;
+; N/A   ; 207.90 MHz ( period = 4.810 ns )               ; clock_gen_select:clock_unit|dds_phase[0]          ; clock_gen_select:clock_unit|dds_phase[1]          ; clk        ; clk      ; None                        ; None                      ; 4.101 ns                ;
+; N/A   ; 209.42 MHz ( period = 4.775 ns )               ; clock_gen_select:clock_unit|delayed_pulse         ; rs232tx:rs232_tx_block|q[8]                       ; clk        ; clk      ; None                        ; None                      ; 4.066 ns                ;
+; N/A   ; 210.00 MHz ( period = 4.762 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; rs232tx:rs232_tx_block|q[2]                       ; clk        ; clk      ; None                        ; None                      ; 4.053 ns                ;
+; N/A   ; 210.04 MHz ( period = 4.761 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; rs232tx:rs232_tx_block|q[6]                       ; clk        ; clk      ; None                        ; None                      ; 4.052 ns                ;
+; N/A   ; 210.17 MHz ( period = 4.758 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; rs232tx:rs232_tx_block|q[1]                       ; clk        ; clk      ; None                        ; None                      ; 4.049 ns                ;
+; N/A   ; 210.57 MHz ( period = 4.749 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; rs232tx:rs232_tx_block|q[4]                       ; clk        ; clk      ; None                        ; None                      ; 4.040 ns                ;
+; N/A   ; 210.66 MHz ( period = 4.747 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; rs232tx:rs232_tx_block|q[3]                       ; clk        ; clk      ; None                        ; None                      ; 4.038 ns                ;
+; N/A   ; 210.70 MHz ( period = 4.746 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[1] ; clock_gen_select:clock_unit|dds_phase[3]          ; clk        ; clk      ; None                        ; None                      ; 4.037 ns                ;
+; N/A   ; 210.79 MHz ( period = 4.744 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; rs232tx:rs232_tx_block|q[0]                       ; clk        ; clk      ; None                        ; None                      ; 4.035 ns                ;
+; N/A   ; 210.84 MHz ( period = 4.743 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; rs232tx:rs232_tx_block|q[5]                       ; clk        ; clk      ; None                        ; None                      ; 4.034 ns                ;
+; N/A   ; 216.31 MHz ( period = 4.623 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[1] ; clock_gen_select:clock_unit|dds_phase[2]          ; clk        ; clk      ; None                        ; None                      ; 3.914 ns                ;
+; N/A   ; 218.91 MHz ( period = 4.568 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; rs232tx:rs232_tx_block|q[7]                       ; clk        ; clk      ; None                        ; None                      ; 3.859 ns                ;
+; N/A   ; 222.22 MHz ( period = 4.500 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[1] ; clock_gen_select:clock_unit|dds_phase[1]          ; clk        ; clk      ; None                        ; None                      ; 3.791 ns                ;
+; N/A   ; 225.23 MHz ( period = 4.440 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; clk        ; clk      ; None                        ; None                      ; 3.731 ns                ;
+; N/A   ; 227.48 MHz ( period = 4.396 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; rs232tx:rs232_tx_block|q[2]                       ; clk        ; clk      ; None                        ; None                      ; 3.687 ns                ;
+; N/A   ; 227.53 MHz ( period = 4.395 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; rs232tx:rs232_tx_block|q[6]                       ; clk        ; clk      ; None                        ; None                      ; 3.686 ns                ;
+; N/A   ; 227.69 MHz ( period = 4.392 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; rs232tx:rs232_tx_block|q[1]                       ; clk        ; clk      ; None                        ; None                      ; 3.683 ns                ;
+; N/A   ; 228.15 MHz ( period = 4.383 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; rs232tx:rs232_tx_block|q[4]                       ; clk        ; clk      ; None                        ; None                      ; 3.674 ns                ;
+; N/A   ; 228.26 MHz ( period = 4.381 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; rs232tx:rs232_tx_block|q[3]                       ; clk        ; clk      ; None                        ; None                      ; 3.672 ns                ;
+; N/A   ; 228.41 MHz ( period = 4.378 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; rs232tx:rs232_tx_block|q[0]                       ; clk        ; clk      ; None                        ; None                      ; 3.669 ns                ;
+; N/A   ; 228.47 MHz ( period = 4.377 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; rs232tx:rs232_tx_block|q[5]                       ; clk        ; clk      ; None                        ; None                      ; 3.668 ns                ;
+; N/A   ; 228.52 MHz ( period = 4.376 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; rs232tx:rs232_tx_block|q[7]                       ; clk        ; clk      ; None                        ; None                      ; 3.667 ns                ;
+; N/A   ; 233.05 MHz ( period = 4.291 ns )               ; clock_gen_select:clock_unit|dds_phase[3]          ; clock_gen_select:clock_unit|dds_phase[5]          ; clk        ; clk      ; None                        ; None                      ; 3.582 ns                ;
+; N/A   ; 233.05 MHz ( period = 4.291 ns )               ; clock_gen_select:clock_unit|dds_phase[3]          ; clock_gen_select:clock_unit|dds_phase[4]          ; clk        ; clk      ; None                        ; None                      ; 3.582 ns                ;
+; N/A   ; 234.58 MHz ( period = 4.263 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; clk        ; clk      ; None                        ; None                      ; 3.554 ns                ;
+; N/A   ; 235.18 MHz ( period = 4.252 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; clk        ; clk      ; None                        ; None                      ; 3.543 ns                ;
+; N/A   ; 235.35 MHz ( period = 4.249 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; clk        ; clk      ; None                        ; None                      ; 3.540 ns                ;
+; N/A   ; 236.18 MHz ( period = 4.234 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; clk        ; clk      ; None                        ; None                      ; 3.525 ns                ;
+; N/A   ; 236.69 MHz ( period = 4.225 ns )               ; clock_gen_select:clock_unit|dds_phase[2]          ; clock_gen_select:clock_unit|dds_phase[5]          ; clk        ; clk      ; None                        ; None                      ; 3.516 ns                ;
+; N/A   ; 236.69 MHz ( period = 4.225 ns )               ; clock_gen_select:clock_unit|dds_phase[2]          ; clock_gen_select:clock_unit|dds_phase[4]          ; clk        ; clk      ; None                        ; None                      ; 3.516 ns                ;
+; N/A   ; 238.21 MHz ( period = 4.198 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[2] ; clock_gen_select:clock_unit|dds_phase[0]          ; clk        ; clk      ; None                        ; None                      ; 3.489 ns                ;
+; N/A   ; 238.66 MHz ( period = 4.190 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; rs232tx:rs232_tx_block|q[7]                       ; clk        ; clk      ; None                        ; None                      ; 3.481 ns                ;
+; N/A   ; 243.43 MHz ( period = 4.108 ns )               ; clock_gen_select:clock_unit|dds_phase[1]          ; clock_gen_select:clock_unit|dds_phase[5]          ; clk        ; clk      ; None                        ; None                      ; 3.399 ns                ;
+; N/A   ; 243.43 MHz ( period = 4.108 ns )               ; clock_gen_select:clock_unit|dds_phase[1]          ; clock_gen_select:clock_unit|dds_phase[4]          ; clk        ; clk      ; None                        ; None                      ; 3.399 ns                ;
+; N/A   ; 245.64 MHz ( period = 4.071 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; clk        ; clk      ; None                        ; None                      ; 3.362 ns                ;
+; N/A   ; 245.88 MHz ( period = 4.067 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; clk        ; clk      ; None                        ; None                      ; 3.358 ns                ;
+; N/A   ; 246.31 MHz ( period = 4.060 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; clk        ; clk      ; None                        ; None                      ; 3.351 ns                ;
+; N/A   ; 246.49 MHz ( period = 4.057 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; clk        ; clk      ; None                        ; None                      ; 3.348 ns                ;
+; N/A   ; 248.02 MHz ( period = 4.032 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[0] ; clock_gen_select:clock_unit|dds_phase[0]          ; clk        ; clk      ; None                        ; None                      ; 3.323 ns                ;
+; N/A   ; 257.40 MHz ( period = 3.885 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; clk        ; clk      ; None                        ; None                      ; 3.176 ns                ;
+; N/A   ; 258.13 MHz ( period = 3.874 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; clk        ; clk      ; None                        ; None                      ; 3.165 ns                ;
+; N/A   ; 258.33 MHz ( period = 3.871 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; clk        ; clk      ; None                        ; None                      ; 3.162 ns                ;
+; N/A   ; 258.40 MHz ( period = 3.870 ns )               ; clock_gen_select:clock_unit|dds_phase[5]          ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; clk        ; clk      ; None                        ; None                      ; 3.161 ns                ;
+; N/A   ; 259.47 MHz ( period = 3.854 ns )               ; clock_gen_select:clock_unit|dds_phase[0]          ; clock_gen_select:clock_unit|dds_phase[0]          ; clk        ; clk      ; None                        ; None                      ; 3.145 ns                ;
+; N/A   ; 261.51 MHz ( period = 3.824 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; rs232tx:rs232_tx_block|q[7]                       ; clk        ; clk      ; None                        ; None                      ; 3.115 ns                ;
+; N/A   ; 266.10 MHz ( period = 3.758 ns )               ; clock_gen_select:clock_unit|dds_phase[2]          ; clock_gen_select:clock_unit|dds_phase[3]          ; clk        ; clk      ; None                        ; None                      ; 3.049 ns                ;
+; N/A   ; 267.17 MHz ( period = 3.743 ns )               ; clock_gen_select:clock_unit|delayed_pulse         ; rs232tx:rs232_tx_block|q[0]                       ; clk        ; clk      ; None                        ; None                      ; 3.034 ns                ;
+; N/A   ; 268.17 MHz ( period = 3.729 ns )               ; clock_gen_select:clock_unit|delayed_pulse         ; rs232tx:rs232_tx_block|q[2]                       ; clk        ; clk      ; None                        ; None                      ; 3.020 ns                ;
+; N/A   ; 268.31 MHz ( period = 3.727 ns )               ; clock_gen_select:clock_unit|delayed_pulse         ; rs232tx:rs232_tx_block|q[7]                       ; clk        ; clk      ; None                        ; None                      ; 3.018 ns                ;
+; N/A   ; 268.74 MHz ( period = 3.721 ns )               ; clock_gen_select:clock_unit|dds_phase[4]          ; clock_gen_select:clock_unit|dds_phase[5]          ; clk        ; clk      ; None                        ; None                      ; 3.012 ns                ;
+; N/A   ; 270.64 MHz ( period = 3.695 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; clk        ; clk      ; None                        ; None                      ; 2.986 ns                ;
+; N/A   ; 273.75 MHz ( period = 3.653 ns )               ; clock_gen_select:clock_unit|dds_prescale_count[1] ; clock_gen_select:clock_unit|dds_phase[0]          ; clk        ; clk      ; None                        ; None                      ; 2.944 ns                ;
+; N/A   ; 274.65 MHz ( period = 3.641 ns )               ; clock_gen_select:clock_unit|dds_phase[1]          ; clock_gen_select:clock_unit|dds_phase[3]          ; clk        ; clk      ; None                        ; None                      ; 2.932 ns                ;
+; N/A   ; 284.17 MHz ( period = 3.519 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; clk        ; clk      ; None                        ; None                      ; 2.810 ns                ;
+; N/A   ; 284.25 MHz ( period = 3.518 ns )               ; clock_gen_select:clock_unit|dds_phase[1]          ; clock_gen_select:clock_unit|dds_phase[2]          ; clk        ; clk      ; None                        ; None                      ; 2.809 ns                ;
+; N/A   ; 285.06 MHz ( period = 3.508 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; clk        ; clk      ; None                        ; None                      ; 2.799 ns                ;
+; N/A   ; 285.31 MHz ( period = 3.505 ns )               ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; clk        ; clk      ; None                        ; None                      ; 2.796 ns                ;
+; N/A   ; 299.40 MHz ( period = 3.340 ns )               ; clock_gen_select:clock_unit|delayed_pulse         ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; clk        ; clk      ; None                        ; None                      ; 2.631 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|delayed_pulse         ; rs232tx:rs232_tx_block|q[5]                       ; clk        ; clk      ; None                        ; None                      ; 2.561 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|delayed_pulse         ; rs232tx:rs232_tx_block|q[3]                       ; clk        ; clk      ; None                        ; None                      ; 2.559 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|delayed_pulse         ; rs232tx:rs232_tx_block|q[4]                       ; clk        ; clk      ; None                        ; None                      ; 2.558 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|delayed_pulse         ; rs232tx:rs232_tx_block|q[1]                       ; clk        ; clk      ; None                        ; None                      ; 2.549 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|delayed_pulse         ; rs232tx:rs232_tx_block|q[6]                       ; clk        ; clk      ; None                        ; None                      ; 2.547 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|dds_phase[3]          ; clock_gen_select:clock_unit|dds_phase[3]          ; clk        ; clk      ; None                        ; None                      ; 2.322 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|dds_phase[5]          ; clock_gen_select:clock_unit|delayed_pulse         ; clk        ; clk      ; None                        ; None                      ; 2.289 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|dds_prescale_count[1] ; clock_gen_select:clock_unit|dds_prescale_count[0] ; clk        ; clk      ; None                        ; None                      ; 2.136 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|dds_prescale_count[1] ; clock_gen_select:clock_unit|dds_prescale_count[2] ; clk        ; clk      ; None                        ; None                      ; 2.131 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|dds_phase[2]          ; clock_gen_select:clock_unit|dds_phase[2]          ; clk        ; clk      ; None                        ; None                      ; 2.093 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; rs232tx:rs232_tx_block|q[8]                       ; rs232tx:rs232_tx_block|q[7]                       ; clk        ; clk      ; None                        ; None                      ; 2.081 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; rs232tx:rs232_tx_block|q[8]                       ; rs232tx:rs232_tx_block|q[8]                       ; clk        ; clk      ; None                        ; None                      ; 2.079 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|dds_phase[4]          ; clock_gen_select:clock_unit|dds_phase[4]          ; clk        ; clk      ; None                        ; None                      ; 2.056 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|dds_prescale_count[0] ; clock_gen_select:clock_unit|dds_prescale_count[2] ; clk        ; clk      ; None                        ; None                      ; 2.047 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|dds_prescale_count[0] ; clock_gen_select:clock_unit|dds_prescale_count[0] ; clk        ; clk      ; None                        ; None                      ; 2.025 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; rs232tx:rs232_tx_block|q[6]                       ; rs232tx:rs232_tx_block|q[5]                       ; clk        ; clk      ; None                        ; None                      ; 1.978 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; rs232tx:rs232_tx_block|q[4]                       ; rs232tx:rs232_tx_block|q[3]                       ; clk        ; clk      ; None                        ; None                      ; 1.973 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; rs232tx:rs232_tx_block|q[7]                       ; rs232tx:rs232_tx_block|q[6]                       ; clk        ; clk      ; None                        ; None                      ; 1.971 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; rs232tx:rs232_tx_block|q[2]                       ; rs232tx:rs232_tx_block|q[1]                       ; clk        ; clk      ; None                        ; None                      ; 1.966 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; rs232tx:rs232_tx_block|q[5]                       ; rs232tx:rs232_tx_block|q[4]                       ; clk        ; clk      ; None                        ; None                      ; 1.965 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|dds_phase[1]          ; clock_gen_select:clock_unit|dds_phase[1]          ; clk        ; clk      ; None                        ; None                      ; 1.962 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|dds_phase[5]          ; clock_gen_select:clock_unit|dds_phase[5]          ; clk        ; clk      ; None                        ; None                      ; 1.894 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|dds_prescale_count[0] ; clock_gen_select:clock_unit|dds_prescale_count[1] ; clk        ; clk      ; None                        ; None                      ; 1.836 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|dds_prescale_count[2] ; clock_gen_select:clock_unit|dds_prescale_count[0] ; clk        ; clk      ; None                        ; None                      ; 1.826 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|dds_prescale_count[2] ; clock_gen_select:clock_unit|dds_prescale_count[2] ; clk        ; clk      ; None                        ; None                      ; 1.813 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; clock_gen_select:clock_unit|dds_prescale_count[1] ; clock_gen_select:clock_unit|dds_prescale_count[1] ; clk        ; clk      ; None                        ; None                      ; 1.552 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; rs232tx:rs232_tx_block|q[3]                       ; rs232tx:rs232_tx_block|q[2]                       ; clk        ; clk      ; None                        ; None                      ; 1.500 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; rs232tx:rs232_tx_block|q[1]                       ; rs232tx:rs232_tx_block|q[0]                       ; clk        ; clk      ; None                        ; None                      ; 1.499 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; rs232tx:rs232_tx_block|q[0]                       ; rs232tx:rs232_tx_block|q[0]                       ; clk        ; clk      ; None                        ; None                      ; 0.923 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; rs232tx:rs232_tx_block|q[1]                       ; rs232tx:rs232_tx_block|q[1]                       ; clk        ; clk      ; None                        ; None                      ; 0.923 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; rs232tx:rs232_tx_block|q[2]                       ; rs232tx:rs232_tx_block|q[2]                       ; clk        ; clk      ; None                        ; None                      ; 0.923 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; rs232tx:rs232_tx_block|q[3]                       ; rs232tx:rs232_tx_block|q[3]                       ; clk        ; clk      ; None                        ; None                      ; 0.923 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; rs232tx:rs232_tx_block|q[4]                       ; rs232tx:rs232_tx_block|q[4]                       ; clk        ; clk      ; None                        ; None                      ; 0.923 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; rs232tx:rs232_tx_block|q[5]                       ; rs232tx:rs232_tx_block|q[5]                       ; clk        ; clk      ; None                        ; None                      ; 0.923 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; rs232tx:rs232_tx_block|q[6]                       ; rs232tx:rs232_tx_block|q[6]                       ; clk        ; clk      ; None                        ; None                      ; 0.923 ns                ;
+; N/A   ; Restricted to 304.04 MHz ( period = 3.289 ns ) ; rs232tx:rs232_tx_block|q[7]                       ; rs232tx:rs232_tx_block|q[7]                       ; clk        ; clk      ; None                        ; None                      ; 0.923 ns                ;
++-------+------------------------------------------------+---------------------------------------------------+---------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                      ;
++-------+--------------+------------+-------+---------------------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From  ; To                                                ; To Clock ;
++-------+--------------+------------+-------+---------------------------------------------------+----------+
+; N/A   ; None         ; -0.149 ns  ; rst_n ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; clk      ;
+; N/A   ; None         ; -0.149 ns  ; rst_n ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; clk      ;
+; N/A   ; None         ; -0.149 ns  ; rst_n ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; clk      ;
+; N/A   ; None         ; -0.935 ns  ; rst_n ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; clk      ;
+; N/A   ; None         ; -0.999 ns  ; rst_n ; rs232tx:rs232_tx_block|q[0]                       ; clk      ;
+; N/A   ; None         ; -0.999 ns  ; rst_n ; rs232tx:rs232_tx_block|q[1]                       ; clk      ;
+; N/A   ; None         ; -0.999 ns  ; rst_n ; rs232tx:rs232_tx_block|q[2]                       ; clk      ;
+; N/A   ; None         ; -0.999 ns  ; rst_n ; rs232tx:rs232_tx_block|q[3]                       ; clk      ;
+; N/A   ; None         ; -0.999 ns  ; rst_n ; rs232tx:rs232_tx_block|q[4]                       ; clk      ;
+; N/A   ; None         ; -0.999 ns  ; rst_n ; rs232tx:rs232_tx_block|q[5]                       ; clk      ;
+; N/A   ; None         ; -0.999 ns  ; rst_n ; rs232tx:rs232_tx_block|q[6]                       ; clk      ;
+; N/A   ; None         ; -0.999 ns  ; rst_n ; rs232tx:rs232_tx_block|q[7]                       ; clk      ;
+; N/A   ; None         ; -0.999 ns  ; rst_n ; rs232tx:rs232_tx_block|q[8]                       ; clk      ;
+; N/A   ; None         ; -1.102 ns  ; rst_n ; clock_gen_select:clock_unit|dds_phase[5]          ; clk      ;
+; N/A   ; None         ; -1.102 ns  ; rst_n ; clock_gen_select:clock_unit|dds_phase[4]          ; clk      ;
+; N/A   ; None         ; -1.102 ns  ; rst_n ; clock_gen_select:clock_unit|dds_phase[3]          ; clk      ;
+; N/A   ; None         ; -1.102 ns  ; rst_n ; clock_gen_select:clock_unit|dds_phase[2]          ; clk      ;
+; N/A   ; None         ; -1.102 ns  ; rst_n ; clock_gen_select:clock_unit|dds_phase[1]          ; clk      ;
+; N/A   ; None         ; -1.102 ns  ; rst_n ; clock_gen_select:clock_unit|dds_phase[0]          ; clk      ;
+; N/A   ; None         ; -1.102 ns  ; rst_n ; clock_gen_select:clock_unit|dds_prescale_count[2] ; clk      ;
+; N/A   ; None         ; -1.102 ns  ; rst_n ; clock_gen_select:clock_unit|dds_prescale_count[0] ; clk      ;
+; N/A   ; None         ; -1.102 ns  ; rst_n ; clock_gen_select:clock_unit|dds_prescale_count[1] ; clk      ;
++-------+--------------+------------+-------+---------------------------------------------------+----------+
+
+
++----------------------------------------------------------------------------------------+
+; tco                                                                                    ;
++-------+--------------+------------+-----------------------------+---------+------------+
+; Slack ; Required tco ; Actual tco ; From                        ; To      ; From Clock ;
++-------+--------------+------------+-----------------------------+---------+------------+
+; N/A   ; None         ; 11.686 ns  ; rs232tx:rs232_tx_block|q[0] ; Uart1_T ; clk        ;
++-------+--------------+------------+-----------------------------+---------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; th                                                                                                             ;
++---------------+-------------+-----------+-------+---------------------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From  ; To                                                ; To Clock ;
++---------------+-------------+-----------+-------+---------------------------------------------------+----------+
+; N/A           ; None        ; 1.656 ns  ; rst_n ; clock_gen_select:clock_unit|dds_phase[5]          ; clk      ;
+; N/A           ; None        ; 1.656 ns  ; rst_n ; clock_gen_select:clock_unit|dds_phase[4]          ; clk      ;
+; N/A           ; None        ; 1.656 ns  ; rst_n ; clock_gen_select:clock_unit|dds_phase[3]          ; clk      ;
+; N/A           ; None        ; 1.656 ns  ; rst_n ; clock_gen_select:clock_unit|dds_phase[2]          ; clk      ;
+; N/A           ; None        ; 1.656 ns  ; rst_n ; clock_gen_select:clock_unit|dds_phase[1]          ; clk      ;
+; N/A           ; None        ; 1.656 ns  ; rst_n ; clock_gen_select:clock_unit|dds_phase[0]          ; clk      ;
+; N/A           ; None        ; 1.656 ns  ; rst_n ; clock_gen_select:clock_unit|dds_prescale_count[2] ; clk      ;
+; N/A           ; None        ; 1.656 ns  ; rst_n ; clock_gen_select:clock_unit|dds_prescale_count[0] ; clk      ;
+; N/A           ; None        ; 1.656 ns  ; rst_n ; clock_gen_select:clock_unit|dds_prescale_count[1] ; clk      ;
+; N/A           ; None        ; 1.553 ns  ; rst_n ; rs232tx:rs232_tx_block|q[0]                       ; clk      ;
+; N/A           ; None        ; 1.553 ns  ; rst_n ; rs232tx:rs232_tx_block|q[1]                       ; clk      ;
+; N/A           ; None        ; 1.553 ns  ; rst_n ; rs232tx:rs232_tx_block|q[2]                       ; clk      ;
+; N/A           ; None        ; 1.553 ns  ; rst_n ; rs232tx:rs232_tx_block|q[3]                       ; clk      ;
+; N/A           ; None        ; 1.553 ns  ; rst_n ; rs232tx:rs232_tx_block|q[4]                       ; clk      ;
+; N/A           ; None        ; 1.553 ns  ; rst_n ; rs232tx:rs232_tx_block|q[5]                       ; clk      ;
+; N/A           ; None        ; 1.553 ns  ; rst_n ; rs232tx:rs232_tx_block|q[6]                       ; clk      ;
+; N/A           ; None        ; 1.553 ns  ; rst_n ; rs232tx:rs232_tx_block|q[7]                       ; clk      ;
+; N/A           ; None        ; 1.553 ns  ; rst_n ; rs232tx:rs232_tx_block|q[8]                       ; clk      ;
+; N/A           ; None        ; 1.489 ns  ; rst_n ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ; clk      ;
+; N/A           ; None        ; 1.489 ns  ; rst_n ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ; clk      ;
+; N/A           ; None        ; 1.489 ns  ; rst_n ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ; clk      ;
+; N/A           ; None        ; 1.489 ns  ; rst_n ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ; clk      ;
++---------------+-------------+-----------+-------+---------------------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Thu Oct 27 14:45:23 2011
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off UART -c UART
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 172.44 MHz between source register "rs232tx:rs232_tx_block|prescaler_count_l[0]" and destination register "rs232tx:rs232_tx_block|q[8]" (period= 5.799 ns)
+    Info: + Longest register to register delay is 5.090 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X6_Y2_N8; Fanout = 5; REG Node = 'rs232tx:rs232_tx_block|prescaler_count_l[0]'
+        Info: 2: + IC(0.971 ns) + CELL(0.914 ns) = 1.885 ns; Loc. = LC_X6_Y2_N7; Fanout = 13; COMB Node = 'rs232tx:rs232_tx_block|Equal0~90'
+        Info: 3: + IC(0.864 ns) + CELL(0.511 ns) = 3.260 ns; Loc. = LC_X6_Y2_N4; Fanout = 1; COMB Node = 'rs232tx:rs232_tx_block|tx_clk_1x~14'
+        Info: 4: + IC(1.239 ns) + CELL(0.591 ns) = 5.090 ns; Loc. = LC_X5_Y2_N4; Fanout = 2; REG Node = 'rs232tx:rs232_tx_block|q[8]'
+        Info: Total cell delay = 2.016 ns ( 39.61 % )
+        Info: Total interconnect delay = 3.074 ns ( 60.39 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 6.471 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 23; CLK Node = 'clk'
+            Info: 2: + IC(4.421 ns) + CELL(0.918 ns) = 6.471 ns; Loc. = LC_X5_Y2_N4; Fanout = 2; REG Node = 'rs232tx:rs232_tx_block|q[8]'
+            Info: Total cell delay = 2.050 ns ( 31.68 % )
+            Info: Total interconnect delay = 4.421 ns ( 68.32 % )
+        Info: - Longest clock path from clock "clk" to source register is 6.471 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 23; CLK Node = 'clk'
+            Info: 2: + IC(4.421 ns) + CELL(0.918 ns) = 6.471 ns; Loc. = LC_X6_Y2_N8; Fanout = 5; REG Node = 'rs232tx:rs232_tx_block|prescaler_count_l[0]'
+            Info: Total cell delay = 2.050 ns ( 31.68 % )
+            Info: Total interconnect delay = 4.421 ns ( 68.32 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Info: tsu for register "rs232tx:rs232_tx_block|prescaler_count_l[3]" (data pin = "rst_n", clock pin = "clk") is -0.149 ns
+    Info: + Longest pin to register delay is 5.989 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_83; Fanout = 23; PIN Node = 'rst_n'
+        Info: 2: + IC(2.394 ns) + CELL(0.511 ns) = 4.037 ns; Loc. = LC_X6_Y2_N3; Fanout = 3; COMB Node = 'rs232tx:rs232_tx_block|q[9]~1174'
+        Info: 3: + IC(0.709 ns) + CELL(1.243 ns) = 5.989 ns; Loc. = LC_X6_Y2_N9; Fanout = 2; REG Node = 'rs232tx:rs232_tx_block|prescaler_count_l[3]'
+        Info: Total cell delay = 2.886 ns ( 48.19 % )
+        Info: Total interconnect delay = 3.103 ns ( 51.81 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 6.471 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 23; CLK Node = 'clk'
+        Info: 2: + IC(4.421 ns) + CELL(0.918 ns) = 6.471 ns; Loc. = LC_X6_Y2_N9; Fanout = 2; REG Node = 'rs232tx:rs232_tx_block|prescaler_count_l[3]'
+        Info: Total cell delay = 2.050 ns ( 31.68 % )
+        Info: Total interconnect delay = 4.421 ns ( 68.32 % )
+Info: tco from clock "clk" to destination pin "Uart1_T" through register "rs232tx:rs232_tx_block|q[0]" is 11.686 ns
+    Info: + Longest clock path from clock "clk" to source register is 6.471 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 23; CLK Node = 'clk'
+        Info: 2: + IC(4.421 ns) + CELL(0.918 ns) = 6.471 ns; Loc. = LC_X5_Y2_N6; Fanout = 2; REG Node = 'rs232tx:rs232_tx_block|q[0]'
+        Info: Total cell delay = 2.050 ns ( 31.68 % )
+        Info: Total interconnect delay = 4.421 ns ( 68.32 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 4.839 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X5_Y2_N6; Fanout = 2; REG Node = 'rs232tx:rs232_tx_block|q[0]'
+        Info: 2: + IC(2.517 ns) + CELL(2.322 ns) = 4.839 ns; Loc. = PIN_18; Fanout = 0; PIN Node = 'Uart1_T'
+        Info: Total cell delay = 2.322 ns ( 47.99 % )
+        Info: Total interconnect delay = 2.517 ns ( 52.01 % )
+Info: th for register "clock_gen_select:clock_unit|dds_phase[5]" (data pin = "rst_n", clock pin = "clk") is 1.656 ns
+    Info: + Longest clock path from clock "clk" to destination register is 6.471 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 23; CLK Node = 'clk'
+        Info: 2: + IC(4.421 ns) + CELL(0.918 ns) = 6.471 ns; Loc. = LC_X5_Y3_N6; Fanout = 6; REG Node = 'clock_gen_select:clock_unit|dds_phase[5]'
+        Info: Total cell delay = 2.050 ns ( 31.68 % )
+        Info: Total interconnect delay = 4.421 ns ( 68.32 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 5.036 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_83; Fanout = 23; PIN Node = 'rst_n'
+        Info: 2: + IC(2.144 ns) + CELL(1.760 ns) = 5.036 ns; Loc. = LC_X5_Y3_N6; Fanout = 6; REG Node = 'clock_gen_select:clock_unit|dds_phase[5]'
+        Info: Total cell delay = 2.892 ns ( 57.43 % )
+        Info: Total interconnect delay = 2.144 ns ( 42.57 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Allocated 110 megabytes of memory during processing
+    Info: Processing ended: Thu Oct 27 14:45:24 2011
+    Info: Elapsed time: 00:00:01
+
+

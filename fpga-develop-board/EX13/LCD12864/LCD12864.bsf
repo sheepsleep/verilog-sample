@@ -1,0 +1,330 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 128 144)
+	(text "LCD12864" (rect 5 0 56 12)(font "Arial" ))
+	(text "inst" (rect 8 112 25 124)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 112 32)
+		(output)
+		(text "rs" (rect 0 0 9 12)(font "Arial" ))
+		(text "rs" (rect 82 27 91 39)(font "Arial" ))
+		(line (pt 112 32)(pt 96 32)(line_width 1))
+	)
+	(port
+		(pt 112 48)
+		(output)
+		(text "rw" (rect 0 0 10 12)(font "Arial" ))
+		(text "rw" (rect 81 43 91 55)(font "Arial" ))
+		(line (pt 112 48)(pt 96 48)(line_width 1))
+	)
+	(port
+		(pt 112 64)
+		(output)
+		(text "en" (rect 0 0 11 12)(font "Arial" ))
+		(text "en" (rect 80 59 91 71)(font "Arial" ))
+		(line (pt 112 64)(pt 96 64)(line_width 1))
+	)
+	(port
+		(pt 112 80)
+		(output)
+		(text "dat[7..0]" (rect 0 0 41 12)(font "Arial" ))
+		(text "dat[7..0]" (rect 50 75 91 87)(font "Arial" ))
+		(line (pt 112 80)(pt 96 80)(line_width 3))
+	)
+	(parameter
+		"set0"
+		"B\"000000\""
+		""
+	)
+	(parameter
+		"set1"
+		"B\"000001\""
+		""
+	)
+	(parameter
+		"set2"
+		"B\"000010\""
+		""
+	)
+	(parameter
+		"set3"
+		"B\"000011\""
+		""
+	)
+	(parameter
+		"set4"
+		"B\"000100\""
+		""
+	)
+	(parameter
+		"set5"
+		"B\"000101\""
+		""
+	)
+	(parameter
+		"set6"
+		"B\"000110\""
+		""
+	)
+	(parameter
+		"dat0"
+		"B\"000111\""
+		""
+	)
+	(parameter
+		"dat1"
+		"B\"001000\""
+		""
+	)
+	(parameter
+		"dat2"
+		"B\"001001\""
+		""
+	)
+	(parameter
+		"dat3"
+		"B\"001010\""
+		""
+	)
+	(parameter
+		"dat4"
+		"B\"001011\""
+		""
+	)
+	(parameter
+		"dat5"
+		"B\"001100\""
+		""
+	)
+	(parameter
+		"dat6"
+		"B\"001101\""
+		""
+	)
+	(parameter
+		"dat7"
+		"B\"001110\""
+		""
+	)
+	(parameter
+		"dat8"
+		"B\"001111\""
+		""
+	)
+	(parameter
+		"dat9"
+		"B\"010000\""
+		""
+	)
+	(parameter
+		"dat10"
+		"B\"010010\""
+		""
+	)
+	(parameter
+		"dat11"
+		"B\"010011\""
+		""
+	)
+	(parameter
+		"dat12"
+		"B\"010100\""
+		""
+	)
+	(parameter
+		"dat13"
+		"B\"010101\""
+		""
+	)
+	(parameter
+		"dat14"
+		"B\"010110\""
+		""
+	)
+	(parameter
+		"dat15"
+		"B\"010111\""
+		""
+	)
+	(parameter
+		"dat16"
+		"B\"011000\""
+		""
+	)
+	(parameter
+		"dat17"
+		"B\"011001\""
+		""
+	)
+	(parameter
+		"dat18"
+		"B\"011010\""
+		""
+	)
+	(parameter
+		"dat19"
+		"B\"011011\""
+		""
+	)
+	(parameter
+		"dat20"
+		"B\"011100\""
+		""
+	)
+	(parameter
+		"dat21"
+		"B\"011101\""
+		""
+	)
+	(parameter
+		"dat22"
+		"B\"011110\""
+		""
+	)
+	(parameter
+		"dat23"
+		"B\"011111\""
+		""
+	)
+	(parameter
+		"dat24"
+		"B\"100000\""
+		""
+	)
+	(parameter
+		"dat25"
+		"B\"100001\""
+		""
+	)
+	(parameter
+		"dat26"
+		"B\"100010\""
+		""
+	)
+	(parameter
+		"dat27"
+		"B\"100011\""
+		""
+	)
+	(parameter
+		"dat28"
+		"B\"100100\""
+		""
+	)
+	(parameter
+		"dat29"
+		"B\"100101\""
+		""
+	)
+	(parameter
+		"dat30"
+		"B\"100110\""
+		""
+	)
+	(parameter
+		"dat31"
+		"B\"100111\""
+		""
+	)
+	(parameter
+		"dat32"
+		"B\"101000\""
+		""
+	)
+	(parameter
+		"dat33"
+		"B\"101001\""
+		""
+	)
+	(parameter
+		"dat34"
+		"B\"101010\""
+		""
+	)
+	(parameter
+		"dat35"
+		"B\"101011\""
+		""
+	)
+	(parameter
+		"dat36"
+		"B\"101100\""
+		""
+	)
+	(parameter
+		"dat37"
+		"B\"101110\""
+		""
+	)
+	(parameter
+		"dat38"
+		"B\"101111\""
+		""
+	)
+	(parameter
+		"dat39"
+		"B\"110000\""
+		""
+	)
+	(parameter
+		"dat40"
+		"B\"110001\""
+		""
+	)
+	(parameter
+		"dat41"
+		"B\"110010\""
+		""
+	)
+	(parameter
+		"dat42"
+		"B\"110011\""
+		""
+	)
+	(parameter
+		"dat43"
+		"B\"110100\""
+		""
+	)
+	(parameter
+		"dat44"
+		"B\"110101\""
+		""
+	)
+	(parameter
+		"nul"
+		"B\"110110\""
+		""
+	)
+	(drawing
+		(rectangle (rect 16 16 96 112)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 128 -64 228 16))
+)

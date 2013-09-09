@@ -1,0 +1,247 @@
+Analysis & Synthesis report for int_osc
+Mon Nov 28 08:53:54 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. General Register Statistics
+  8. Parameter Settings for User Entity Instance: clk_div:inst1
+  9. Analysis & Synthesis Messages
+ 10. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Mon Nov 28 08:53:54 2011    ;
+; Quartus II Version          ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name               ; int_osc                                  ;
+; Top-level Entity Name       ; int_osc                                  ;
+; Family                      ; MAX II                                   ;
+; Total logic elements        ; 60                                       ;
+; Total pins                  ; 1                                        ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 0                                        ;
+; DSP block 9-bit elements    ; 0                                        ;
+; Total PLLs                  ; 0                                        ;
+; Total DLLs                  ; 0                                        ;
++-----------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EPM240T100C5       ;                    ;
+; Top-level entity name                                                          ; int_osc            ; int_osc            ;
+; Family name                                                                    ; MAX II             ; Stratix II         ;
+; Optimization Technique -- MAX II                                               ; Area               ; Balanced           ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                           ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------+
+; clk_div.v                        ; yes             ; User Verilog HDL File              ; D:/EPM240_570/EPM240_570_DVD/HDL Code/verilog/EX19/int_osc/clk_div.v   ;
+; osc.v                            ; yes             ; User Verilog HDL File              ; D:/EPM240_570/EPM240_570_DVD/HDL Code/verilog/EX19/int_osc/osc.v       ;
+; int_osc.bdf                      ; yes             ; User Block Diagram/Schematic File  ; D:/EPM240_570/EPM240_570_DVD/HDL Code/verilog/EX19/int_osc/int_osc.bdf ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                             ;
++---------------------------------------------+---------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                     ;
++---------------------------------------------+---------------------------------------------------------------------------+
+; Total logic elements                        ; 60                                                                        ;
+;     -- Combinational with no register       ; 34                                                                        ;
+;     -- Register only                        ; 16                                                                        ;
+;     -- Combinational with a register        ; 10                                                                        ;
+;                                             ;                                                                           ;
+; Logic element usage by number of LUT inputs ;                                                                           ;
+;     -- 4 input functions                    ; 8                                                                         ;
+;     -- 3 input functions                    ; 0                                                                         ;
+;     -- 2 input functions                    ; 34                                                                        ;
+;     -- 1 input functions                    ; 1                                                                         ;
+;     -- 0 input functions                    ; 1                                                                         ;
+;                                             ;                                                                           ;
+; Logic elements by mode                      ;                                                                           ;
+;     -- normal mode                          ; 36                                                                        ;
+;     -- arithmetic mode                      ; 24                                                                        ;
+;     -- qfbk mode                            ; 0                                                                         ;
+;     -- register cascade mode                ; 0                                                                         ;
+;     -- synchronous clear/load mode          ; 0                                                                         ;
+;     -- asynchronous clear/load mode         ; 0                                                                         ;
+;                                             ;                                                                           ;
+; Total registers                             ; 26                                                                        ;
+; Total logic cells in carry chains           ; 25                                                                        ;
+; I/O pins                                    ; 1                                                                         ;
+; Maximum fan-out node                        ; osc:inst|osc_altufm_osc_rv5:osc_altufm_osc_rv5_component|maxii_ufm_block1 ;
+; Maximum fan-out                             ; 26                                                                        ;
+; Total fan-out                               ; 145                                                                       ;
+; Average fan-out                             ; 2.34                                                                      ;
++---------------------------------------------+---------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                               ;
++---------------------------------------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                              ; Logic Cells ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                               ; Library Name ;
++---------------------------------------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------+--------------+
+; |int_osc                                                ; 60 (1)      ; 26           ; 0           ; 0            ; 0       ; 0         ; 0         ; 1    ; 0            ; 34 (1)       ; 16 (0)            ; 10 (0)           ; 25 (0)          ; 0 (0)      ; |int_osc                                                          ; work         ;
+;    |clk_div:inst1|                                      ; 59 (59)     ; 26           ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 33 (33)      ; 16 (16)           ; 10 (10)          ; 25 (25)         ; 0 (0)      ; |int_osc|clk_div:inst1                                            ; work         ;
+;    |osc:inst|                                           ; 0 (0)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |int_osc|osc:inst                                                 ; work         ;
+;       |osc_altufm_osc_rv5:osc_altufm_osc_rv5_component| ; 0 (0)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |int_osc|osc:inst|osc_altufm_osc_rv5:osc_altufm_osc_rv5_component ; work         ;
++---------------------------------------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 26    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clk_div:inst1 ;
++----------------+---------+---------------------------------+
+; Parameter Name ; Value   ; Type                            ;
++----------------+---------+---------------------------------+
+; DIV            ; 2500000 ; Untyped                         ;
++----------------+---------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Mon Nov 28 08:53:52 2011
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off int_osc -c int_osc
+Info: Found 1 design units, including 1 entities, in source file clk_div.v
+    Info: Found entity 1: clk_div
+Info: Found 2 design units, including 2 entities, in source file osc.v
+    Info: Found entity 1: osc_altufm_osc_rv5
+    Info: Found entity 2: osc
+Info: Found 1 design units, including 1 entities, in source file int_osc.bdf
+    Info: Found entity 1: int_osc
+Info: Elaborating entity "int_osc" for the top level hierarchy
+Info: Elaborating entity "clk_div" for hierarchy "clk_div:inst1"
+Info: Elaborating entity "osc" for hierarchy "osc:inst"
+Info: Elaborating entity "osc_altufm_osc_rv5" for hierarchy "osc:inst|osc_altufm_osc_rv5:osc_altufm_osc_rv5_component"
+Warning: Ignore assignments for "led[0]" because it is an invalid assignment target -- "led"  is a single bit, and cannot have members
+Warning: Ignore assignments for "led[1]" because it is an invalid assignment target -- "led"  is a single bit, and cannot have members
+Warning: Ignore assignments for "led[2]" because it is an invalid assignment target -- "led"  is a single bit, and cannot have members
+Warning: Ignore assignments for "led[3]" because it is an invalid assignment target -- "led"  is a single bit, and cannot have members
+Warning: Ignore assignments for "led[4]" because it is an invalid assignment target -- "led"  is a single bit, and cannot have members
+Warning: Ignore assignments for "led[5]" because it is an invalid assignment target -- "led"  is a single bit, and cannot have members
+Warning: Ignore assignments for "led[6]" because it is an invalid assignment target -- "led"  is a single bit, and cannot have members
+Warning: Ignore assignments for "led[7]" because it is an invalid assignment target -- "led"  is a single bit, and cannot have members
+Info: Implemented 62 device resources after synthesis - the final resource count might be different
+    Info: Implemented 0 input pins
+    Info: Implemented 1 output pins
+    Info: Implemented 60 logic cells
+    Info: Implemented 1 User Flash Memory blocks
+Info: Generated suppressed messages file D:/EPM240_570/EPM240_570_DVD/HDL Code/verilog/EX19/int_osc/int_osc.map.smsg
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Allocated 141 megabytes of memory during processing
+    Info: Processing ended: Mon Nov 28 08:53:55 2011
+    Info: Elapsed time: 00:00:03
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/EPM240_570/EPM240_570_DVD/HDL Code/verilog/EX19/int_osc/int_osc.map.smsg.
+
+
