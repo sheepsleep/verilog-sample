@@ -1,0 +1,172 @@
+Version 7.2 Build 151 09/26/2007 SJ Full Version
+39
+2304
+OFF
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+i2c_top
+# storage
+db|i2c_top.(0).cnf
+db|i2c_top.(0).cnf
+# case_insensitive
+# source_file
+i2c_top.bdf
+5d7e2f7fd42abff2aa29eb0d146ebb
+25
+# internal_option {
+BLOCK_DESIGN_NAMING
+OFF
+}
+# hierarchies {
+|
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+i2c_drive
+# storage
+db|i2c_top.(1).cnf
+db|i2c_top.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+i2c_drive.v
+c888fa9caca3ca493c3760769c875fec
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# user_parameter {
+IDLE
+0000
+PARAMETER_UNSIGNED_BIN
+USR
+START1
+0001
+PARAMETER_UNSIGNED_BIN
+USR
+ADD1
+0010
+PARAMETER_UNSIGNED_BIN
+USR
+ACK1
+0011
+PARAMETER_UNSIGNED_BIN
+USR
+ADD2
+0100
+PARAMETER_UNSIGNED_BIN
+USR
+ACK2
+0101
+PARAMETER_UNSIGNED_BIN
+USR
+START2
+0110
+PARAMETER_UNSIGNED_BIN
+USR
+ADD3
+0111
+PARAMETER_UNSIGNED_BIN
+USR
+ACK3
+1000
+PARAMETER_UNSIGNED_BIN
+USR
+DATA
+1001
+PARAMETER_UNSIGNED_BIN
+USR
+ACK4
+1010
+PARAMETER_UNSIGNED_BIN
+USR
+STOP1
+1011
+PARAMETER_UNSIGNED_BIN
+USR
+STOP2
+1100
+PARAMETER_UNSIGNED_BIN
+USR
+}
+# hierarchies {
+i2c_drive:inst
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+DEVICE_WRITE8'b1010_0000	SCL_HIG(cnt==3'd1)		SCL_LOW(cnt==3'd3)		SCL_NEG(cnt==3'd2)		BYTE_ADDR8'b0000_0100	SCL_LOW(cnt==3'd3)		SCL_NEG(cnt==3'd2)		WRITE_DATA8'b0000_0111	DEVICE_READ8'b1010_0001	SCL_LOW(cnt==3'd3)		SCL_HIG(cnt==3'd1)		SCL_LOW(cnt==3'd3)		SCL_NEG(cnt==3'd2)		SCL_HIG(cnt==3'd1)		SCL_LOW(cnt==3'd3)		SCL_LOW(cnt==3'd3)		SCL_LOW(cnt==3'd3)		SCL_NEG(cnt==3'd2)		SCL_LOW(cnt==3'd3)		SCL_HIG(cnt==3'd1)		SCL_LOW(cnt==3'd3)		
+# end
+# entity
+hc164_driver
+# storage
+db|i2c_top.(2).cnf
+db|i2c_top.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+hc164_driver.v
+3a80c782c14ee31c71de66bf42fa8e2b
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# hierarchies {
+hc164_driver:inst1
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# complete
+

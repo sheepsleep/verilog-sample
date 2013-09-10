@@ -1,0 +1,483 @@
+Analysis & Synthesis report for UART
+Sun Nov 27 16:50:53 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |UART|rs232rx:rs232_rx_block|m1_state
+  8. State Machine - |UART|rs232tx:rs232_tx_block|m1_state
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (No Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: rs232tx:rs232_tx_block
+ 14. Parameter Settings for User Entity Instance: rs232rx:rs232_rx_block
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sun Nov 27 16:50:53 2011    ;
+; Quartus II Version          ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name               ; UART                                     ;
+; Top-level Entity Name       ; UART                                     ;
+; Family                      ; MAX II                                   ;
+; Total logic elements        ; 39                                       ;
+; Total pins                  ; 4                                        ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 0                                        ;
+; DSP block 9-bit elements    ; 0                                        ;
+; Total PLLs                  ; 0                                        ;
+; Total DLLs                  ; 0                                        ;
++-----------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EPM240T100C5       ;                    ;
+; Top-level entity name                                                          ; UART               ; UART               ;
+; Family name                                                                    ; MAX II             ; Stratix II         ;
+; Optimization Technique -- MAX II                                               ; Speed              ; Balanced           ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                               ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                           ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+
+; UART.v                           ; yes             ; User Verilog HDL File  ; D:/EPM240/EPM240_570_DVD/HDL Code/verilog/EX09/UART/UART.v             ;
+; clock_gen_select.v               ; yes             ; User Verilog HDL File  ; D:/EPM240/EPM240_570_DVD/HDL Code/verilog/EX09/UART/clock_gen_select.v ;
+; rs232rx.v                        ; yes             ; User Verilog HDL File  ; D:/EPM240/EPM240_570_DVD/HDL Code/verilog/EX09/UART/rs232rx.v          ;
+; rs232tx.v                        ; yes             ; User Verilog HDL File  ; D:/EPM240/EPM240_570_DVD/HDL Code/verilog/EX09/UART/rs232tx.v          ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 39    ;
+;     -- Combinational with no register       ; 16    ;
+;     -- Register only                        ; 9     ;
+;     -- Combinational with a register        ; 14    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 11    ;
+;     -- 3 input functions                    ; 7     ;
+;     -- 2 input functions                    ; 12    ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 34    ;
+;     -- arithmetic mode                      ; 5     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 22    ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 23    ;
+; Total logic cells in carry chains           ; 6     ;
+; I/O pins                                    ; 4     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 23    ;
+; Total fan-out                               ; 147   ;
+; Average fan-out                             ; 3.42  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                        ;
++----------------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------+--------------+
+; Compilation Hierarchy Node       ; Logic Cells ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name               ; Library Name ;
++----------------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------+--------------+
+; |UART                            ; 39 (0)      ; 23           ; 0           ; 0            ; 0       ; 0         ; 0         ; 4    ; 0            ; 16 (0)       ; 9 (0)             ; 14 (0)           ; 6 (0)           ; 0 (0)      ; |UART                             ; work         ;
+;    |clock_gen_select:clock_unit| ; 11 (11)     ; 10           ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 1 (1)        ; 1 (1)             ; 9 (9)            ; 6 (6)           ; 0 (0)      ; |UART|clock_gen_select:clock_unit ; work         ;
+;    |rs232tx:rs232_tx_block|      ; 28 (28)     ; 13           ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 15 (15)      ; 8 (8)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |UART|rs232tx:rs232_tx_block      ; work         ;
++----------------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |UART|rs232rx:rs232_rx_block|m1_state                                                                                                 ;
++-----------------------+---------------------+-----------------------+-------------------+----------------------+-------------------+------------------+
+; Name                  ; m1_state.m1_all_low ; m1_state.m1_under_run ; m1_state.m1_shift ; m1_state.m1_over_run ; m1_state.m1_start ; m1_state.m1_idle ;
++-----------------------+---------------------+-----------------------+-------------------+----------------------+-------------------+------------------+
+; m1_state.m1_idle      ; 0                   ; 0                     ; 0                 ; 0                    ; 0                 ; 0                ;
+; m1_state.m1_start     ; 0                   ; 0                     ; 0                 ; 0                    ; 1                 ; 1                ;
+; m1_state.m1_over_run  ; 0                   ; 0                     ; 0                 ; 1                    ; 0                 ; 1                ;
+; m1_state.m1_shift     ; 0                   ; 0                     ; 1                 ; 0                    ; 0                 ; 1                ;
+; m1_state.m1_under_run ; 0                   ; 1                     ; 0                 ; 0                    ; 0                 ; 1                ;
+; m1_state.m1_all_low   ; 1                   ; 0                     ; 0                 ; 0                    ; 0                 ; 1                ;
++-----------------------+---------------------+-----------------------+-------------------+----------------------+-------------------+------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |UART|rs232tx:rs232_tx_block|m1_state                                                                      ;
++------------------------------+---------------------+------------------------------+---------------------+------------------+
+; Name                         ; m1_state.m1_sending ; m1_state.m1_sending_last_bit ; m1_state.m1_waiting ; m1_state.m1_idle ;
++------------------------------+---------------------+------------------------------+---------------------+------------------+
+; m1_state.m1_idle             ; 0                   ; 0                            ; 0                   ; 0                ;
+; m1_state.m1_waiting          ; 0                   ; 0                            ; 1                   ; 1                ;
+; m1_state.m1_sending_last_bit ; 0                   ; 1                            ; 0                   ; 1                ;
+; m1_state.m1_sending          ; 1                   ; 0                            ; 0                   ; 1                ;
++------------------------------+---------------------+------------------------------+---------------------+------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                ;
++-----------------------------------------------------+---------------------------------------------+
+; Register name                                       ; Reason for Removal                          ;
++-----------------------------------------------------+---------------------------------------------+
+; rs232tx:rs232_tx_block|data_in_waiting[0..7]        ; Stuck at GND due to stuck port clock_enable ;
+; rs232rx:rs232_rx_block|data[0..3]                   ; Lost fanout                                 ;
+; rs232rx:rs232_rx_block|m2_state                     ; Lost fanout                                 ;
+; rs232rx:rs232_rx_block|data[4..7]                   ; Lost fanout                                 ;
+; rs232tx:rs232_tx_block|q[9]                         ; Stuck at VCC due to stuck port data_in      ;
+; rs232rx:rs232_rx_block|m1_state~19                  ; Lost fanout                                 ;
+; rs232rx:rs232_rx_block|m1_state~20                  ; Lost fanout                                 ;
+; rs232rx:rs232_rx_block|m1_state~21                  ; Lost fanout                                 ;
+; rs232tx:rs232_tx_block|m1_state~11                  ; Lost fanout                                 ;
+; rs232tx:rs232_tx_block|m1_state~12                  ; Lost fanout                                 ;
+; rs232rx:rs232_rx_block|q[0,9]                       ; Lost fanout                                 ;
+; rs232rx:rs232_rx_block|intrabit_count_l[0..3]       ; Lost fanout                                 ;
+; rs232rx:rs232_rx_block|q[1..8]                      ; Lost fanout                                 ;
+; rs232tx:rs232_tx_block|tx_bit_count_l[0..3]         ; Lost fanout                                 ;
+; rs232rx:rs232_rx_block|m1_state.m1_idle             ; Lost fanout                                 ;
+; rs232rx:rs232_rx_block|m1_state.m1_start            ; Lost fanout                                 ;
+; rs232rx:rs232_rx_block|m1_state.m1_over_run         ; Lost fanout                                 ;
+; rs232rx:rs232_rx_block|m1_state.m1_shift            ; Lost fanout                                 ;
+; rs232rx:rs232_rx_block|m1_state.m1_under_run        ; Lost fanout                                 ;
+; rs232rx:rs232_rx_block|m1_state.m1_all_low          ; Lost fanout                                 ;
+; rs232tx:rs232_tx_block|m1_state.m1_idle             ; Lost fanout                                 ;
+; rs232tx:rs232_tx_block|m1_state.m1_sending_last_bit ; Lost fanout                                 ;
+; rs232tx:rs232_tx_block|m1_state.m1_sending          ; Lost fanout                                 ;
+; rs232tx:rs232_tx_block|m1_state.m1_waiting          ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 51              ;                                             ;
++-----------------------------------------------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                ;
++--------------------------------------------+--------------------------------+--------------------------------------------------------------+
+; Register name                              ; Reason for Removal             ; Registers Removed due to This Register                       ;
++--------------------------------------------+--------------------------------+--------------------------------------------------------------+
+; rs232tx:rs232_tx_block|data_in_waiting[3]  ; Stuck at GND                   ; rs232rx:rs232_rx_block|data[3], rs232rx:rs232_rx_block|q[0], ;
+;                                            ; due to stuck port clock_enable ; rs232rx:rs232_rx_block|q[9], rs232rx:rs232_rx_block|q[4],    ;
+;                                            ;                                ; rs232rx:rs232_rx_block|q[5], rs232rx:rs232_rx_block|q[6],    ;
+;                                            ;                                ; rs232rx:rs232_rx_block|q[7], rs232rx:rs232_rx_block|q[8]     ;
+; rs232tx:rs232_tx_block|data_in_waiting[0]  ; Stuck at GND                   ; rs232rx:rs232_rx_block|data[0], rs232rx:rs232_rx_block|q[1]  ;
+;                                            ; due to stuck port clock_enable ;                                                              ;
+; rs232tx:rs232_tx_block|data_in_waiting[1]  ; Stuck at GND                   ; rs232rx:rs232_rx_block|data[1], rs232rx:rs232_rx_block|q[2]  ;
+;                                            ; due to stuck port clock_enable ;                                                              ;
+; rs232tx:rs232_tx_block|data_in_waiting[2]  ; Stuck at GND                   ; rs232rx:rs232_rx_block|data[2], rs232rx:rs232_rx_block|q[3]  ;
+;                                            ; due to stuck port clock_enable ;                                                              ;
+; rs232rx:rs232_rx_block|intrabit_count_l[1] ; Lost Fanouts                   ; rs232rx:rs232_rx_block|intrabit_count_l[2],                  ;
+;                                            ;                                ; rs232rx:rs232_rx_block|intrabit_count_l[3]                   ;
+; rs232tx:rs232_tx_block|data_in_waiting[4]  ; Stuck at GND                   ; rs232rx:rs232_rx_block|data[4]                               ;
+;                                            ; due to stuck port clock_enable ;                                                              ;
+; rs232tx:rs232_tx_block|data_in_waiting[5]  ; Stuck at GND                   ; rs232rx:rs232_rx_block|data[5]                               ;
+;                                            ; due to stuck port clock_enable ;                                                              ;
+; rs232tx:rs232_tx_block|data_in_waiting[6]  ; Stuck at GND                   ; rs232rx:rs232_rx_block|data[6]                               ;
+;                                            ; due to stuck port clock_enable ;                                                              ;
+; rs232tx:rs232_tx_block|data_in_waiting[7]  ; Stuck at GND                   ; rs232rx:rs232_rx_block|data[7]                               ;
+;                                            ; due to stuck port clock_enable ;                                                              ;
+; rs232tx:rs232_tx_block|tx_bit_count_l[1]   ; Lost Fanouts                   ; rs232tx:rs232_tx_block|tx_bit_count_l[2]                     ;
++--------------------------------------------+--------------------------------+--------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 23    ;
+; Number of registers using Synchronous Clear  ; 13    ;
+; Number of registers using Synchronous Load   ; 9     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 3     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (No Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |UART|rs232rx:rs232_rx_block|q[7]                       ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |UART|clock_gen_select:clock_unit|dds_prescale_count[2] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UART|rs232tx:rs232_tx_block|prescaler_count_l[0]       ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |UART|rs232tx:rs232_tx_block|q[0]                       ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UART|rs232rx:rs232_rx_block|intrabit_count_l[3]        ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UART|rs232tx:rs232_tx_block|tx_bit_count_l[0]          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rs232tx:rs232_tx_block ;
++----------------------+-------+--------------------------------------+
+; Parameter Name       ; Value ; Type                                 ;
++----------------------+-------+--------------------------------------+
+; START_BITS_PP        ; 1     ; Signed Integer                       ;
+; DATA_BITS_PP         ; 8     ; Signed Integer                       ;
+; STOP_BITS_PP         ; 1     ; Signed Integer                       ;
+; CLOCK_FACTOR_PP      ; 16    ; Signed Integer                       ;
+; TX_BIT_COUNT_BITS_PP ; 4     ; Signed Integer                       ;
+; m1_idle              ; 0     ; Signed Integer                       ;
+; m1_waiting           ; 1     ; Signed Integer                       ;
+; m1_sending           ; 3     ; Signed Integer                       ;
+; m1_sending_last_bit  ; 2     ; Signed Integer                       ;
++----------------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rs232rx:rs232_rx_block ;
++--------------------+-------+----------------------------------------+
+; Parameter Name     ; Value ; Type                                   ;
++--------------------+-------+----------------------------------------+
+; START_BITS_PP      ; 1     ; Signed Integer                         ;
+; DATA_BITS_PP       ; 8     ; Signed Integer                         ;
+; STOP_BITS_PP       ; 1     ; Signed Integer                         ;
+; CLOCK_FACTOR_PP    ; 16    ; Signed Integer                         ;
+; m1_idle            ; 0     ; Signed Integer                         ;
+; m1_start           ; 1     ; Signed Integer                         ;
+; m1_shift           ; 3     ; Signed Integer                         ;
+; m1_over_run        ; 2     ; Signed Integer                         ;
+; m1_under_run       ; 4     ; Signed Integer                         ;
+; m1_all_low         ; 5     ; Signed Integer                         ;
+; m1_extra_1         ; 6     ; Signed Integer                         ;
+; m1_extra_2         ; 7     ; Signed Integer                         ;
+; m2_data_ready_ack  ; 0     ; Signed Integer                         ;
+; m2_data_ready_flag ; 1     ; Signed Integer                         ;
++--------------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Sun Nov 27 16:50:51 2011
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UART -c UART
+Info: Found 1 design units, including 1 entities, in source file UART.v
+    Info: Found entity 1: UART
+Info: Found 1 design units, including 1 entities, in source file clock_gen_select.v
+    Info: Found entity 1: clock_gen_select
+Info: Found 1 design units, including 1 entities, in source file rs232rx.v
+    Info: Found entity 1: rs232rx
+Info: Found 1 design units, including 1 entities, in source file rs232tx.v
+    Info: Found entity 1: rs232tx
+Info: Elaborating entity "UART" for the top level hierarchy
+Info: Elaborating entity "clock_gen_select" for hierarchy "clock_gen_select:clock_unit"
+Warning (10230): Verilog HDL assignment warning at clock_gen_select.v(199): truncated value with size 32 to match size of target (3)
+Info: Elaborating entity "rs232tx" for hierarchy "rs232tx:rs232_tx_block"
+Warning (10230): Verilog HDL assignment warning at rs232tx.v(94): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at rs232tx.v(106): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at rs232tx.v(171): truncated value with size 32 to match size of target (10)
+Info: Elaborating entity "rs232rx" for hierarchy "rs232rx:rs232_rx_block"
+Warning (10230): Verilog HDL assignment warning at rs232rx.v(174): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at rs232rx.v(185): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at rs232rx.v(186): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at rs232rx.v(191): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at rs232rx.v(192): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at rs232rx.v(194): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at rs232rx.v(205): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at rs232rx.v(214): truncated value with size 32 to match size of target (10)
+Warning (14110): No clock transition on "rs232tx:rs232_tx_block|data_in_waiting[0]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "rs232tx:rs232_tx_block|data_in_waiting[0]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "rs232tx:rs232_tx_block|data_in_waiting[1]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "rs232tx:rs232_tx_block|data_in_waiting[1]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "rs232tx:rs232_tx_block|data_in_waiting[2]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "rs232tx:rs232_tx_block|data_in_waiting[2]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "rs232tx:rs232_tx_block|data_in_waiting[3]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "rs232tx:rs232_tx_block|data_in_waiting[3]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "rs232tx:rs232_tx_block|data_in_waiting[4]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "rs232tx:rs232_tx_block|data_in_waiting[4]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "rs232tx:rs232_tx_block|data_in_waiting[5]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "rs232tx:rs232_tx_block|data_in_waiting[5]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "rs232tx:rs232_tx_block|data_in_waiting[6]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "rs232tx:rs232_tx_block|data_in_waiting[6]" with stuck clock_enable port to stuck value GND
+Warning (14110): No clock transition on "rs232tx:rs232_tx_block|data_in_waiting[7]" register due to stuck clock or clock enable
+Warning (14130): Reduced register "rs232tx:rs232_tx_block|data_in_waiting[7]" with stuck clock_enable port to stuck value GND
+Info: Power-up level of register "rs232tx:rs232_tx_block|q[9]" is not specified -- using power-up level of High to minimize register
+Warning (14130): Reduced register "rs232tx:rs232_tx_block|q[9]" with stuck data_in port to stuck value VCC
+Info: State machine "|UART|rs232rx:rs232_rx_block|m1_state" contains 6 states
+Info: State machine "|UART|rs232tx:rs232_tx_block|m1_state" contains 4 states
+Info: Selected Auto state machine encoding method for state machine "|UART|rs232rx:rs232_rx_block|m1_state"
+Info: Encoding result for state machine "|UART|rs232rx:rs232_rx_block|m1_state"
+    Info: Completed encoding using 6 state bits
+        Info: Encoded state bit "rs232rx:rs232_rx_block|m1_state.m1_all_low"
+        Info: Encoded state bit "rs232rx:rs232_rx_block|m1_state.m1_under_run"
+        Info: Encoded state bit "rs232rx:rs232_rx_block|m1_state.m1_shift"
+        Info: Encoded state bit "rs232rx:rs232_rx_block|m1_state.m1_over_run"
+        Info: Encoded state bit "rs232rx:rs232_rx_block|m1_state.m1_start"
+        Info: Encoded state bit "rs232rx:rs232_rx_block|m1_state.m1_idle"
+    Info: State "|UART|rs232rx:rs232_rx_block|m1_state.m1_idle" uses code string "000000"
+    Info: State "|UART|rs232rx:rs232_rx_block|m1_state.m1_start" uses code string "000011"
+    Info: State "|UART|rs232rx:rs232_rx_block|m1_state.m1_over_run" uses code string "000101"
+    Info: State "|UART|rs232rx:rs232_rx_block|m1_state.m1_shift" uses code string "001001"
+    Info: State "|UART|rs232rx:rs232_rx_block|m1_state.m1_under_run" uses code string "010001"
+    Info: State "|UART|rs232rx:rs232_rx_block|m1_state.m1_all_low" uses code string "100001"
+Info: Selected Auto state machine encoding method for state machine "|UART|rs232tx:rs232_tx_block|m1_state"
+Info: Encoding result for state machine "|UART|rs232tx:rs232_tx_block|m1_state"
+    Info: Completed encoding using 4 state bits
+        Info: Encoded state bit "rs232tx:rs232_tx_block|m1_state.m1_sending"
+        Info: Encoded state bit "rs232tx:rs232_tx_block|m1_state.m1_sending_last_bit"
+        Info: Encoded state bit "rs232tx:rs232_tx_block|m1_state.m1_waiting"
+        Info: Encoded state bit "rs232tx:rs232_tx_block|m1_state.m1_idle"
+    Info: State "|UART|rs232tx:rs232_tx_block|m1_state.m1_idle" uses code string "0000"
+    Info: State "|UART|rs232tx:rs232_tx_block|m1_state.m1_waiting" uses code string "0011"
+    Info: State "|UART|rs232tx:rs232_tx_block|m1_state.m1_sending_last_bit" uses code string "0101"
+    Info: State "|UART|rs232tx:rs232_tx_block|m1_state.m1_sending" uses code string "1001"
+Warning (14130): Reduced register "rs232tx:rs232_tx_block|m1_state.m1_waiting" with stuck data_in port to stuck value GND
+Info: 41 registers lost all their fanouts during netlist optimizations. The first 41 are displayed below.
+    Info: Register "rs232rx:rs232_rx_block|data[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|data[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|data[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|data[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|m2_state" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|data[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|data[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|data[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|data[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|m1_state~19" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|m1_state~20" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|m1_state~21" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232tx:rs232_tx_block|m1_state~11" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232tx:rs232_tx_block|m1_state~12" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|q[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|q[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|intrabit_count_l[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|intrabit_count_l[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|intrabit_count_l[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|intrabit_count_l[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|q[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|q[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|q[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|q[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|q[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|q[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|q[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|q[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232tx:rs232_tx_block|tx_bit_count_l[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232tx:rs232_tx_block|tx_bit_count_l[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232tx:rs232_tx_block|tx_bit_count_l[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232tx:rs232_tx_block|tx_bit_count_l[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|m1_state.m1_idle" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|m1_state.m1_start" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|m1_state.m1_over_run" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|m1_state.m1_shift" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|m1_state.m1_under_run" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232rx:rs232_rx_block|m1_state.m1_all_low" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232tx:rs232_tx_block|m1_state.m1_idle" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232tx:rs232_tx_block|m1_state.m1_sending_last_bit" lost all its fanouts during netlist optimizations.
+    Info: Register "rs232tx:rs232_tx_block|m1_state.m1_sending" lost all its fanouts during netlist optimizations.
+Warning: Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Uart2_R"
+Info: Implemented 43 device resources after synthesis - the final resource count might be different
+    Info: Implemented 3 input pins
+    Info: Implemented 1 output pins
+    Info: Implemented 39 logic cells
+Info: Generated suppressed messages file D:/EPM240/EPM240_570_DVD/HDL Code/verilog/EX09/UART/UART.map.smsg
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 32 warnings
+    Info: Allocated 141 megabytes of memory during processing
+    Info: Processing ended: Sun Nov 27 16:50:53 2011
+    Info: Elapsed time: 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/EPM240/EPM240_570_DVD/HDL Code/verilog/EX09/UART/UART.map.smsg.
+
+

@@ -1,0 +1,244 @@
+TimeQuest Timing Analyzer report for UART
+Sun Nov 27 16:51:02 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Clocks
+  4. Fmax Summary
+  5. Setup Summary
+  6. Hold Summary
+  7. Recovery Summary
+  8. Removal Summary
+  9. Minimum Pulse Width
+ 10. Setup Transfers
+ 11. Hold Transfers
+ 12. Report TCCS
+ 13. Report RSKM
+ 14. Unconstrained Paths
+ 15. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                     ;
++--------------------+--------------------------------------------------+
+; Quartus II Version ; Version 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name      ; UART                                             ;
+; Device Family      ; MAX II                                           ;
+; Device Name        ; EPM240T100C5                                     ;
+; Timing Models      ; Final                                            ;
+; Delay Model        ; Slow Model                                       ;
+; Rise/Fall Delays   ; Unavailable                                      ;
++--------------------+--------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 173.16 MHz ; 173.16 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Setup Summary                  ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -4.775 ; -90.284       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 1.078 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width                                                                                                      ;
++--------+--------------+----------------+--------+-------+------------+---------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Pulse  ; Clock ; Clock Edge ; Target                                            ;
++--------+--------------+----------------+--------+-------+------------+---------------------------------------------------+
+; -2.289 ; 1.000        ; 3.289          ; Period ; clk   ; Rise       ; clk                                               ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; rs232tx:rs232_tx_block|prescaler_count_l[2]       ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; rs232tx:rs232_tx_block|prescaler_count_l[1]       ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; rs232tx:rs232_tx_block|prescaler_count_l[3]       ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; rs232tx:rs232_tx_block|prescaler_count_l[0]       ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; clock_gen_select:clock_unit|delayed_pulse         ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; clock_gen_select:clock_unit|delayed_pulse         ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_phase[5]          ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_phase[5]          ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[3]                       ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[3]                       ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[0]                       ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[0]                       ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[1]                       ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[1]                       ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[2]                       ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[2]                       ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_phase[4]          ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_phase[4]          ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_phase[3]          ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_phase[3]          ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[4]                       ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[4]                       ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_phase[2]          ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_phase[2]          ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_prescale_count[1] ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_prescale_count[1] ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[5]                       ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[5]                       ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_phase[1]          ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_phase[1]          ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[6]                       ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[6]                       ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_phase[0]          ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_phase[0]          ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[7]                       ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[7]                       ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_prescale_count[2] ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_prescale_count[2] ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_prescale_count[0] ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; clock_gen_select:clock_unit|dds_prescale_count[0] ;
+; 0.234  ; 0.500        ; 0.266          ; High   ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[8]                       ;
+; 0.234  ; 0.500        ; 0.266          ; Low    ; clk   ; Rise       ; rs232tx:rs232_tx_block|q[8]                       ;
++--------+--------------+----------------+--------+-------+------------+---------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 182      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 182      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No LVDS transmitter found in design.
+
+
+---------------
+; Report RSKM ;
+---------------
+No LVDS receiver found in design.
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 22    ; 22   ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II TimeQuest Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Sun Nov 27 16:51:01 2011
+Info: Command: quartus_sta UART -c UART
+Info: qsta_default_script.tcl version: 25.0.1.4
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Critical Warning: SDC file not found: 'UART.sdc'. An SDC file is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the compiler will not properly optimize the design
+Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info: Deriving Clocks
+    Info: create_clock -period 1.000 -waveform {0.000 0.500} -name clk clk
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -4.775
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -4.775       -90.284 clk 
+Info: Worst-case hold slack is 1.078
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     1.078         0.000 clk 
+Info: No recovery paths to report
+Info: No removal paths to report
+Critical Warning: Found minimum pulse width or period violations. See Report Minimum Pulse Width for details.
+Warning: Advanced I/O Timing is not enabled
+Info: Design is not fully constrained for setup requirements
+Info: Design is not fully constrained for hold requirements
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Allocated 112 megabytes of memory during processing
+    Info: Processing ended: Sun Nov 27 16:51:02 2011
+    Info: Elapsed time: 00:00:01
+
+

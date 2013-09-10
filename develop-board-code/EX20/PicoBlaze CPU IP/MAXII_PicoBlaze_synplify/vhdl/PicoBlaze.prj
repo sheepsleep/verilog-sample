@@ -1,0 +1,77 @@
+#-- Synplicity, Inc.
+#-- Version 9.0
+#-- Project file C:\altera\work\MAXII_PicoBlaze\vhdl\PicoBlaze.prj
+#-- Written on Sat May 31 11:12:40 2008
+
+
+#add_file options
+add_file -vhdl -lib work "./arithmatic.vhd"
+add_file -vhdl -lib work "./carry_flag_logic.vhd"
+add_file -vhdl -lib work "./flip.vhd"
+add_file -vhdl -lib work "./interrupt_capture.vhd"
+add_file -vhdl -lib work "./interrupt_logic.vhd"
+add_file -vhdl -lib work "./IO_strobe_logic.vhd"
+add_file -vhdl -lib work "./logical_bus_processing.vhd"
+add_file -vhdl -lib work "./program_counter.vhd"
+add_file -vhdl -lib work "./register_and_flag_enable.vhd"
+add_file -vhdl -lib work "./register_bank.vhd"
+add_file -vhdl -lib work "./shift_rotate.vhd"
+add_file -vhdl -lib work "./stack_counter.vhd"
+add_file -vhdl -lib work "./stack_ram.vhd"
+add_file -vhdl -lib work "./T_state_and_Reset.vhd"
+add_file -vhdl -lib work "./zero_flag_logic.vhd"
+add_file -vhdl -lib work "./picoblaze.vhd"
+
+
+#implementation: "rev_1"
+impl -add rev_1 -type fpga
+
+#device options
+set_option -technology MAXII
+set_option -part EPM570
+set_option -package TC144
+set_option -speed_grade -5
+
+#compilation/mapping options
+set_option -default_enum_encoding default
+set_option -resource_sharing 1
+set_option -use_fsm_explorer 0
+set_option -top_module "picoblaze"
+
+#map options
+set_option -frequency auto
+set_option -run_prop_extract 1
+set_option -fanout_limit 500
+set_option -disable_io_insertion 0
+set_option -pipe 1
+set_option -update_models_cp 0
+set_option -retiming 0
+set_option -fixgatedclocks 3
+set_option -fixgeneratedclocks 3
+set_option -no_sequential_opt 0
+set_option -quartus_version 7.0
+
+
+#sequential_optimizations options
+set_option -symbolic_fsm_compiler 1
+
+#simulation options
+set_option -write_verilog 0
+set_option -write_vhdl 0
+
+#VIF options
+set_option -write_vif 1
+
+#automatic place and route (vendor) options
+set_option -write_apr_constraint 1
+
+#set result format/file last
+project -result_file "./rev_1/PicoBlaze.vqm"
+
+#
+#implementation attributes
+
+set_option -vlog_std v2001
+set_option -synthesis_onoff_pragma 0
+set_option -project_relative_includes 1
+impl -active "rev_1"

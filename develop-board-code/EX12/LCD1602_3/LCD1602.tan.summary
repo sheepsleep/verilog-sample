@@ -1,0 +1,46 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 27.537 ns
+From           : LCD_Driver:inst|lcd_data[5]
+To             : lcd_data[5]
+From Clock     : clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 59.79 MHz ( period = 16.724 ns )
+From           : LCD_Driver:inst|current_state.ROW2_9
+To             : LCD_Driver:inst|lcd_data[4]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : LCD_Driver:inst|current_state.ROW2_ADDR
+To             : LCD_Driver:inst|current_state.ROW2_0
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 302
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 302
+
+--------------------------------------------------------------------------------------
+

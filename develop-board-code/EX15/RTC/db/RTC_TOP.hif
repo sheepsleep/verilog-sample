@@ -1,0 +1,202 @@
+Version 7.2 Build 151 09/26/2007 SJ Full Version
+39
+2304
+OFF
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+RTC_TOP
+# storage
+db|RTC_TOP.(0).cnf
+db|RTC_TOP.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+RTC_TOP.v
+1dfbb63ad1fbb67b2642f565e68dddc
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# user_parameter {
+SEC_TIME
+00
+PARAMETER_UNSIGNED_BIN
+DEF
+MNT_TIME
+01
+PARAMETER_UNSIGNED_BIN
+DEF
+HUR_TIME
+10
+PARAMETER_UNSIGNED_BIN
+DEF
+DAY_TIME
+11
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+|
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+i2c_drive
+# storage
+db|RTC_TOP.(1).cnf
+db|RTC_TOP.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+i2c_drive.v
+99348c5f103c9546dbb7a3c76c467ca3
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# user_parameter {
+IDLE
+0000
+PARAMETER_UNSIGNED_BIN
+DEF
+START1
+0001
+PARAMETER_UNSIGNED_BIN
+DEF
+ADD1
+0010
+PARAMETER_UNSIGNED_BIN
+DEF
+ACK1
+0011
+PARAMETER_UNSIGNED_BIN
+DEF
+ADD2
+0100
+PARAMETER_UNSIGNED_BIN
+DEF
+ACK2
+0101
+PARAMETER_UNSIGNED_BIN
+DEF
+START2
+0110
+PARAMETER_UNSIGNED_BIN
+DEF
+ADD3
+0111
+PARAMETER_UNSIGNED_BIN
+DEF
+ACK3
+1000
+PARAMETER_UNSIGNED_BIN
+DEF
+DATA
+1001
+PARAMETER_UNSIGNED_BIN
+DEF
+ACK4
+1010
+PARAMETER_UNSIGNED_BIN
+DEF
+STOP1
+1011
+PARAMETER_UNSIGNED_BIN
+DEF
+STOP2
+1100
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+i2c_drive:i2c_drive
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+DEVICE_WRITE8'b1010_0010	SCL_HIG(cnt==3'd1)		SCL_LOW(cnt==3'd3)		SCL_NEG(cnt==3'd2)		SCL_LOW(cnt==3'd3)		SCL_NEG(cnt==3'd2)		DEVICE_READ8'b1010_0011	SCL_LOW(cnt==3'd3)		SCL_HIG(cnt==3'd1)		SCL_LOW(cnt==3'd3)		SCL_NEG(cnt==3'd2)		SCL_HIG(cnt==3'd1)		SCL_LOW(cnt==3'd3)		SCL_LOW(cnt==3'd3)		SCL_LOW(cnt==3'd3)		SCL_NEG(cnt==3'd2)		SCL_LOW(cnt==3'd3)		SCL_HIG(cnt==3'd1)		SCL_LOW(cnt==3'd3)		
+# end
+# entity
+hc164_driver
+# storage
+db|RTC_TOP.(2).cnf
+db|RTC_TOP.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+hc164_driver.v
+d5c38b1a559687a29ca71ebc7fd1c6a0
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# hierarchies {
+hc164_driver:hc164_driver_inst
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# complete
+

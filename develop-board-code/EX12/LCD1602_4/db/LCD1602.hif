@@ -1,0 +1,166 @@
+Version 7.2 Build 151 09/26/2007 SJ Full Version
+39
+2320
+OFF
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+LCD1602
+# storage
+db|LCD1602.(0).cnf
+db|LCD1602.(0).cnf
+# case_insensitive
+# source_file
+LCD1602.bdf
+8f105dc6fe81eabc75e68d1cd97636
+25
+# internal_option {
+BLOCK_DESIGN_NAMING
+OFF
+}
+# hierarchies {
+|
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+LCD_Driver
+# storage
+db|LCD1602.(1).cnf
+db|LCD1602.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+LCD_Driver.v
+9f7715bb3e6948451d715ed7a31d4
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# user_parameter {
+IDLE
+0000000000
+PARAMETER_UNSIGNED_BIN
+USR
+CLEAR
+0000000001
+PARAMETER_UNSIGNED_BIN
+USR
+SETMODE
+0000000011
+PARAMETER_UNSIGNED_BIN
+USR
+SWITCHMODE
+0000000100
+PARAMETER_UNSIGNED_BIN
+USR
+SETFUNCTION
+0000000101
+PARAMETER_UNSIGNED_BIN
+USR
+SETDDRAM1
+0000000110
+PARAMETER_UNSIGNED_BIN
+USR
+SETDDRAM2
+0000000111
+PARAMETER_UNSIGNED_BIN
+USR
+WRITERAM1
+0000001000
+PARAMETER_UNSIGNED_BIN
+USR
+WRITERAM2
+0000001001
+PARAMETER_UNSIGNED_BIN
+USR
+WAIT
+1000001001
+PARAMETER_UNSIGNED_BIN
+USR
+}
+# hierarchies {
+LCD_Driver:inst
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# entity
+autoreset
+# storage
+db|LCD1602.(2).cnf
+db|LCD1602.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+autoreset.v
+648c825f31a5f4e5bdd9799ebfcc4627
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# user_parameter {
+DIV
+2500000
+PARAMETER_UNKNOWN
+USR
+}
+# hierarchies {
+autoreset:inst1
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+
+# end
+# complete
+

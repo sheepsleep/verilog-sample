@@ -1,0 +1,73 @@
+# Copyright (C) 1991-2007 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		MAXII_PicoBlaze_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name DEVICE EPM240T100C5
+set_global_assignment -name FAMILY "MAX II"
+set_global_assignment -name TOP_LEVEL_ENTITY MAXII_PicoBlaze
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 7.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:59:59  JUNE 02, 2008"
+set_global_assignment -name LAST_QUARTUS_VERSION 7.2
+set_global_assignment -name DEVICE_FILTER_PACKAGE TQFP
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 100
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 5
+set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_location_assignment PIN_61 -to clk
+set_location_assignment PIN_53 -to output[7]
+set_location_assignment PIN_52 -to output[6]
+set_location_assignment PIN_51 -to output[5]
+set_location_assignment PIN_50 -to output[4]
+set_location_assignment PIN_49 -to output[3]
+set_location_assignment PIN_48 -to output[2]
+set_location_assignment PIN_47 -to output[1]
+set_location_assignment PIN_44 -to output[0]
+set_location_assignment PIN_83 -to reset_n
+set_global_assignment -name VECTOR_WAVEFORM_FILE MAXII_PicoBlaze.vwf
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name CHECK_OUTPUTS OFF
+set_global_assignment -name SIMULATOR_GENERATE_SIGNAL_ACTIVITY_FILE OFF
+set_global_assignment -name SIMULATOR_GENERATE_POWERPLAY_VCD_FILE OFF
+set_global_assignment -name VHDL_FILE MAXII_PicoBlaze.vhd
+set_global_assignment -name VHDL_FILE clkdiv.vhd
+set_global_assignment -name VHDL_FILE ROM_test.vhd
+set_global_assignment -name VHDL_FILE picoblaze.vhd
+set_global_assignment -name VHDL_FILE arithmatic.vhd
+set_global_assignment -name VHDL_FILE carry_flag_logic.vhd
+set_global_assignment -name VHDL_FILE flip.vhd
+set_global_assignment -name VHDL_FILE interrupt_capture.vhd
+set_global_assignment -name VHDL_FILE interrupt_logic.vhd
+set_global_assignment -name VHDL_FILE IO_strobe_logic.vhd
+set_global_assignment -name VHDL_FILE logical_bus_processing.vhd
+set_global_assignment -name VHDL_FILE program_counter.vhd
+set_global_assignment -name VHDL_FILE register_and_flag_enable.vhd
+set_global_assignment -name VHDL_FILE register_bank.vhd
+set_global_assignment -name VHDL_FILE shift_rotate.vhd
+set_global_assignment -name VHDL_FILE stack_counter.vhd
+set_global_assignment -name VHDL_FILE stack_ram.vhd
+set_global_assignment -name VHDL_FILE T_state_and_Reset.vhd
+set_global_assignment -name VHDL_FILE zero_flag_logic.vhd
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS OUTPUT DRIVING AN UNSPECIFIED SIGNAL"
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"

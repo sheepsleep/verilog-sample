@@ -1,0 +1,454 @@
+Classic Timing Analyzer report for ps2_mouse
+Sun Nov 27 16:51:48 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                ;
++------------------------------+-------+---------------+----------------------------------+----------------------------------+------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                             ; To                                 ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+----------------------------------+------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 0.456 ns                         ; rst_n                            ; ps2_mouse_ctr:inst2|ps2_data_en    ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 22.647 ns                        ; hc164_driver:inst|seg_led_num[0] ; HC_SI                              ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 1.279 ns                         ; PS2_CLK2                         ; ps2_mouse_ctr:inst2|ps2_clk_buf[0] ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 99.19 MHz ( period = 10.082 ns ) ; ps2_mouse_ctr:inst2|cont_rst[11] ; ps2_mouse_ctr:inst2|ps2_clk_en     ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                  ;                                    ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+----------------------------------+------------------------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                      ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                         ; Setting            ; From ; To ; Entity Name ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                    ; EPM240T100C5       ;      ;    ;             ;
+; Timing Models                                                  ; Final              ;      ;    ;             ;
+; Default hold multicycle                                        ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                      ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                         ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                 ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                               ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                          ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                        ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                               ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                           ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                  ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node          ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                          ; 10                 ;      ;    ;             ;
+; Number of paths to report                                      ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                   ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                         ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                     ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                   ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis ; Off                ;      ;    ;             ;
++----------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                              ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------+----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                             ; To                               ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------+----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 99.19 MHz ( period = 10.082 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[11] ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 9.373 ns                ;
+; N/A                                     ; 100.63 MHz ( period = 9.937 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[2]  ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 9.228 ns                ;
+; N/A                                     ; 100.94 MHz ( period = 9.907 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[8]  ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 9.198 ns                ;
+; N/A                                     ; 102.32 MHz ( period = 9.773 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[3]  ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 9.064 ns                ;
+; N/A                                     ; 102.33 MHz ( period = 9.772 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[9]  ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 9.063 ns                ;
+; N/A                                     ; 103.43 MHz ( period = 9.668 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[4]  ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 8.959 ns                ;
+; N/A                                     ; 103.44 MHz ( period = 9.667 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[11] ; ps2_mouse_ctr:inst2|state_b      ; clk        ; clk      ; None                        ; None                      ; 8.958 ns                ;
+; N/A                                     ; 104.11 MHz ( period = 9.605 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[5]  ; ps2_mouse_ctr:inst2|cont_rst[18] ; clk        ; clk      ; None                        ; None                      ; 8.896 ns                ;
+; N/A                                     ; 104.57 MHz ( period = 9.563 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[0]  ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 8.854 ns                ;
+; N/A                                     ; 104.60 MHz ( period = 9.560 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[20] ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 8.851 ns                ;
+; N/A                                     ; 104.90 MHz ( period = 9.533 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[12] ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 8.824 ns                ;
+; N/A                                     ; 104.99 MHz ( period = 9.525 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[11] ; ps2_mouse_ctr:inst2|cont_rst[22] ; clk        ; clk      ; None                        ; None                      ; 8.816 ns                ;
+; N/A                                     ; 105.01 MHz ( period = 9.523 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[11] ; ps2_mouse_ctr:inst2|cont_rst[15] ; clk        ; clk      ; None                        ; None                      ; 8.814 ns                ;
+; N/A                                     ; 105.02 MHz ( period = 9.522 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[2]  ; ps2_mouse_ctr:inst2|state_b      ; clk        ; clk      ; None                        ; None                      ; 8.813 ns                ;
+; N/A                                     ; 105.04 MHz ( period = 9.520 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[11] ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 8.811 ns                ;
+; N/A                                     ; 105.13 MHz ( period = 9.512 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[11] ; ps2_mouse_ctr:inst2|cont_rst[23] ; clk        ; clk      ; None                        ; None                      ; 8.803 ns                ;
+; N/A                                     ; 105.31 MHz ( period = 9.496 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[11] ; ps2_mouse_ctr:inst2|cont_rst[0]  ; clk        ; clk      ; None                        ; None                      ; 8.787 ns                ;
+; N/A                                     ; 105.32 MHz ( period = 9.495 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[11] ; ps2_mouse_ctr:inst2|cont_rst[16] ; clk        ; clk      ; None                        ; None                      ; 8.786 ns                ;
+; N/A                                     ; 105.35 MHz ( period = 9.492 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[8]  ; ps2_mouse_ctr:inst2|state_b      ; clk        ; clk      ; None                        ; None                      ; 8.783 ns                ;
+; N/A                                     ; 105.76 MHz ( period = 9.455 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[1]  ; ps2_mouse_ctr:inst2|cont_rst[18] ; clk        ; clk      ; None                        ; None                      ; 8.746 ns                ;
+; N/A                                     ; 106.09 MHz ( period = 9.426 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[23] ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 8.717 ns                ;
+; N/A                                     ; 106.30 MHz ( period = 9.407 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[11] ; ps2_mouse_ctr:inst2|ps2_data_en  ; clk        ; clk      ; None                        ; None                      ; 8.698 ns                ;
+; N/A                                     ; 106.61 MHz ( period = 9.380 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[2]  ; ps2_mouse_ctr:inst2|cont_rst[22] ; clk        ; clk      ; None                        ; None                      ; 8.671 ns                ;
+; N/A                                     ; 106.63 MHz ( period = 9.378 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[2]  ; ps2_mouse_ctr:inst2|cont_rst[15] ; clk        ; clk      ; None                        ; None                      ; 8.669 ns                ;
+; N/A                                     ; 106.67 MHz ( period = 9.375 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[2]  ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 8.666 ns                ;
+; N/A                                     ; 106.76 MHz ( period = 9.367 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[2]  ; ps2_mouse_ctr:inst2|cont_rst[23] ; clk        ; clk      ; None                        ; None                      ; 8.658 ns                ;
+; N/A                                     ; 106.86 MHz ( period = 9.358 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[3]  ; ps2_mouse_ctr:inst2|state_b      ; clk        ; clk      ; None                        ; None                      ; 8.649 ns                ;
+; N/A                                     ; 106.87 MHz ( period = 9.357 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[9]  ; ps2_mouse_ctr:inst2|state_b      ; clk        ; clk      ; None                        ; None                      ; 8.648 ns                ;
+; N/A                                     ; 106.94 MHz ( period = 9.351 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[2]  ; ps2_mouse_ctr:inst2|cont_rst[0]  ; clk        ; clk      ; None                        ; None                      ; 8.642 ns                ;
+; N/A                                     ; 106.95 MHz ( period = 9.350 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[2]  ; ps2_mouse_ctr:inst2|cont_rst[16] ; clk        ; clk      ; None                        ; None                      ; 8.641 ns                ;
+; N/A                                     ; 106.95 MHz ( period = 9.350 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[8]  ; ps2_mouse_ctr:inst2|cont_rst[22] ; clk        ; clk      ; None                        ; None                      ; 8.641 ns                ;
+; N/A                                     ; 106.97 MHz ( period = 9.348 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[8]  ; ps2_mouse_ctr:inst2|cont_rst[15] ; clk        ; clk      ; None                        ; None                      ; 8.639 ns                ;
+; N/A                                     ; 107.01 MHz ( period = 9.345 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[8]  ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 8.636 ns                ;
+; N/A                                     ; 107.10 MHz ( period = 9.337 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[8]  ; ps2_mouse_ctr:inst2|cont_rst[23] ; clk        ; clk      ; None                        ; None                      ; 8.628 ns                ;
+; N/A                                     ; 107.22 MHz ( period = 9.327 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[5]  ; ps2_mouse_ctr:inst2|cont_rst[25] ; clk        ; clk      ; None                        ; None                      ; 8.618 ns                ;
+; N/A                                     ; 107.28 MHz ( period = 9.321 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[8]  ; ps2_mouse_ctr:inst2|cont_rst[0]  ; clk        ; clk      ; None                        ; None                      ; 8.612 ns                ;
+; N/A                                     ; 107.30 MHz ( period = 9.320 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[8]  ; ps2_mouse_ctr:inst2|cont_rst[16] ; clk        ; clk      ; None                        ; None                      ; 8.611 ns                ;
+; N/A                                     ; 107.31 MHz ( period = 9.319 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[2]  ; ps2_mouse_ctr:inst2|cont_rst[18] ; clk        ; clk      ; None                        ; None                      ; 8.610 ns                ;
+; N/A                                     ; 107.91 MHz ( period = 9.267 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[18] ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 8.558 ns                ;
+; N/A                                     ; 107.97 MHz ( period = 9.262 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[2]  ; ps2_mouse_ctr:inst2|ps2_data_en  ; clk        ; clk      ; None                        ; None                      ; 8.553 ns                ;
+; N/A                                     ; 108.07 MHz ( period = 9.253 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[4]  ; ps2_mouse_ctr:inst2|state_b      ; clk        ; clk      ; None                        ; None                      ; 8.544 ns                ;
+; N/A                                     ; 108.32 MHz ( period = 9.232 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[21] ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 8.523 ns                ;
+; N/A                                     ; 108.32 MHz ( period = 9.232 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[8]  ; ps2_mouse_ctr:inst2|ps2_data_en  ; clk        ; clk      ; None                        ; None                      ; 8.523 ns                ;
+; N/A                                     ; 108.51 MHz ( period = 9.216 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[3]  ; ps2_mouse_ctr:inst2|cont_rst[22] ; clk        ; clk      ; None                        ; None                      ; 8.507 ns                ;
+; N/A                                     ; 108.52 MHz ( period = 9.215 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[9]  ; ps2_mouse_ctr:inst2|cont_rst[22] ; clk        ; clk      ; None                        ; None                      ; 8.506 ns                ;
+; N/A                                     ; 108.53 MHz ( period = 9.214 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[3]  ; ps2_mouse_ctr:inst2|cont_rst[15] ; clk        ; clk      ; None                        ; None                      ; 8.505 ns                ;
+; N/A                                     ; 108.54 MHz ( period = 9.213 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[9]  ; ps2_mouse_ctr:inst2|cont_rst[15] ; clk        ; clk      ; None                        ; None                      ; 8.504 ns                ;
+; N/A                                     ; 108.57 MHz ( period = 9.211 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[3]  ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 8.502 ns                ;
+; N/A                                     ; 108.58 MHz ( period = 9.210 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[9]  ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 8.501 ns                ;
+; N/A                                     ; 108.65 MHz ( period = 9.204 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[3]  ; ps2_mouse_ctr:inst2|cont_rst[18] ; clk        ; clk      ; None                        ; None                      ; 8.495 ns                ;
+; N/A                                     ; 108.66 MHz ( period = 9.203 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[3]  ; ps2_mouse_ctr:inst2|cont_rst[23] ; clk        ; clk      ; None                        ; None                      ; 8.494 ns                ;
+; N/A                                     ; 108.67 MHz ( period = 9.202 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[9]  ; ps2_mouse_ctr:inst2|cont_rst[23] ; clk        ; clk      ; None                        ; None                      ; 8.493 ns                ;
+; N/A                                     ; 108.70 MHz ( period = 9.200 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[16] ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 8.491 ns                ;
+; N/A                                     ; 108.85 MHz ( period = 9.187 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[3]  ; ps2_mouse_ctr:inst2|cont_rst[0]  ; clk        ; clk      ; None                        ; None                      ; 8.478 ns                ;
+; N/A                                     ; 108.86 MHz ( period = 9.186 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[5]  ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 8.477 ns                ;
+; N/A                                     ; 108.86 MHz ( period = 9.186 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[3]  ; ps2_mouse_ctr:inst2|cont_rst[16] ; clk        ; clk      ; None                        ; None                      ; 8.477 ns                ;
+; N/A                                     ; 108.86 MHz ( period = 9.186 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[9]  ; ps2_mouse_ctr:inst2|cont_rst[0]  ; clk        ; clk      ; None                        ; None                      ; 8.477 ns                ;
+; N/A                                     ; 108.87 MHz ( period = 9.185 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[9]  ; ps2_mouse_ctr:inst2|cont_rst[16] ; clk        ; clk      ; None                        ; None                      ; 8.476 ns                ;
+; N/A                                     ; 108.97 MHz ( period = 9.177 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[1]  ; ps2_mouse_ctr:inst2|cont_rst[25] ; clk        ; clk      ; None                        ; None                      ; 8.468 ns                ;
+; N/A                                     ; 109.21 MHz ( period = 9.157 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[4]  ; ps2_mouse_ctr:inst2|cont_rst[18] ; clk        ; clk      ; None                        ; None                      ; 8.448 ns                ;
+; N/A                                     ; 109.31 MHz ( period = 9.148 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[0]  ; ps2_mouse_ctr:inst2|state_b      ; clk        ; clk      ; None                        ; None                      ; 8.439 ns                ;
+; N/A                                     ; 109.35 MHz ( period = 9.145 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[20] ; ps2_mouse_ctr:inst2|state_b      ; clk        ; clk      ; None                        ; None                      ; 8.436 ns                ;
+; N/A                                     ; 109.37 MHz ( period = 9.143 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[30] ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 8.434 ns                ;
+; N/A                                     ; 109.67 MHz ( period = 9.118 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[12] ; ps2_mouse_ctr:inst2|state_b      ; clk        ; clk      ; None                        ; None                      ; 8.409 ns                ;
+; N/A                                     ; 109.76 MHz ( period = 9.111 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[4]  ; ps2_mouse_ctr:inst2|cont_rst[22] ; clk        ; clk      ; None                        ; None                      ; 8.402 ns                ;
+; N/A                                     ; 109.78 MHz ( period = 9.109 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[4]  ; ps2_mouse_ctr:inst2|cont_rst[15] ; clk        ; clk      ; None                        ; None                      ; 8.400 ns                ;
+; N/A                                     ; 109.82 MHz ( period = 9.106 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[4]  ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 8.397 ns                ;
+; N/A                                     ; 109.91 MHz ( period = 9.098 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[22] ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 8.389 ns                ;
+; N/A                                     ; 109.91 MHz ( period = 9.098 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[3]  ; ps2_mouse_ctr:inst2|ps2_data_en  ; clk        ; clk      ; None                        ; None                      ; 8.389 ns                ;
+; N/A                                     ; 109.91 MHz ( period = 9.098 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[4]  ; ps2_mouse_ctr:inst2|cont_rst[23] ; clk        ; clk      ; None                        ; None                      ; 8.389 ns                ;
+; N/A                                     ; 109.93 MHz ( period = 9.097 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[9]  ; ps2_mouse_ctr:inst2|ps2_data_en  ; clk        ; clk      ; None                        ; None                      ; 8.388 ns                ;
+; N/A                                     ; 110.01 MHz ( period = 9.090 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[19] ; ps2_mouse_ctr:inst2|cont_rst[25] ; clk        ; clk      ; None                        ; None                      ; 8.381 ns                ;
+; N/A                                     ; 110.11 MHz ( period = 9.082 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[4]  ; ps2_mouse_ctr:inst2|cont_rst[0]  ; clk        ; clk      ; None                        ; None                      ; 8.373 ns                ;
+; N/A                                     ; 110.12 MHz ( period = 9.081 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[4]  ; ps2_mouse_ctr:inst2|cont_rst[16] ; clk        ; clk      ; None                        ; None                      ; 8.372 ns                ;
+; N/A                                     ; 110.35 MHz ( period = 9.062 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[8]  ; ps2_mouse_ctr:inst2|cont_rst[18] ; clk        ; clk      ; None                        ; None                      ; 8.353 ns                ;
+; N/A                                     ; 110.45 MHz ( period = 9.054 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[6]  ; ps2_mouse_ctr:inst2|cont_rst[18] ; clk        ; clk      ; None                        ; None                      ; 8.345 ns                ;
+; N/A                                     ; 110.47 MHz ( period = 9.052 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[13] ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 8.343 ns                ;
+; N/A                                     ; 110.55 MHz ( period = 9.046 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[11] ; ps2_mouse_ctr:inst2|cont_rst[18] ; clk        ; clk      ; None                        ; None                      ; 8.337 ns                ;
+; N/A                                     ; 110.57 MHz ( period = 9.044 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[11] ; ps2_mouse_ctr:inst2|cont_rst[12] ; clk        ; clk      ; None                        ; None                      ; 8.335 ns                ;
+; N/A                                     ; 110.61 MHz ( period = 9.041 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[2]  ; ps2_mouse_ctr:inst2|cont_rst[25] ; clk        ; clk      ; None                        ; None                      ; 8.332 ns                ;
+; N/A                                     ; 110.67 MHz ( period = 9.036 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[1]  ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 8.327 ns                ;
+; N/A                                     ; 110.98 MHz ( period = 9.011 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[23] ; ps2_mouse_ctr:inst2|state_b      ; clk        ; clk      ; None                        ; None                      ; 8.302 ns                ;
+; N/A                                     ; 111.04 MHz ( period = 9.006 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[0]  ; ps2_mouse_ctr:inst2|cont_rst[22] ; clk        ; clk      ; None                        ; None                      ; 8.297 ns                ;
+; N/A                                     ; 111.06 MHz ( period = 9.004 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[0]  ; ps2_mouse_ctr:inst2|cont_rst[15] ; clk        ; clk      ; None                        ; None                      ; 8.295 ns                ;
+; N/A                                     ; 111.07 MHz ( period = 9.003 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[20] ; ps2_mouse_ctr:inst2|cont_rst[22] ; clk        ; clk      ; None                        ; None                      ; 8.294 ns                ;
+; N/A                                     ; 111.10 MHz ( period = 9.001 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[0]  ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 8.292 ns                ;
+; N/A                                     ; 111.10 MHz ( period = 9.001 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[20] ; ps2_mouse_ctr:inst2|cont_rst[15] ; clk        ; clk      ; None                        ; None                      ; 8.292 ns                ;
+; N/A                                     ; 111.14 MHz ( period = 8.998 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[20] ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 8.289 ns                ;
+; N/A                                     ; 111.20 MHz ( period = 8.993 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[4]  ; ps2_mouse_ctr:inst2|ps2_data_en  ; clk        ; clk      ; None                        ; None                      ; 8.284 ns                ;
+; N/A                                     ; 111.20 MHz ( period = 8.993 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[0]  ; ps2_mouse_ctr:inst2|cont_rst[23] ; clk        ; clk      ; None                        ; None                      ; 8.284 ns                ;
+; N/A                                     ; 111.22 MHz ( period = 8.991 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[11] ; ps2_mouse_ctr:inst2|state_b_1    ; clk        ; clk      ; None                        ; None                      ; 8.282 ns                ;
+; N/A                                     ; 111.23 MHz ( period = 8.990 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[20] ; ps2_mouse_ctr:inst2|cont_rst[23] ; clk        ; clk      ; None                        ; None                      ; 8.281 ns                ;
+; N/A                                     ; 111.40 MHz ( period = 8.977 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[0]  ; ps2_mouse_ctr:inst2|cont_rst[0]  ; clk        ; clk      ; None                        ; None                      ; 8.268 ns                ;
+; N/A                                     ; 111.41 MHz ( period = 8.976 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[0]  ; ps2_mouse_ctr:inst2|cont_rst[16] ; clk        ; clk      ; None                        ; None                      ; 8.267 ns                ;
+; N/A                                     ; 111.41 MHz ( period = 8.976 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[12] ; ps2_mouse_ctr:inst2|cont_rst[22] ; clk        ; clk      ; None                        ; None                      ; 8.267 ns                ;
+; N/A                                     ; 111.43 MHz ( period = 8.974 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[20] ; ps2_mouse_ctr:inst2|cont_rst[0]  ; clk        ; clk      ; None                        ; None                      ; 8.265 ns                ;
+; N/A                                     ; 111.43 MHz ( period = 8.974 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[12] ; ps2_mouse_ctr:inst2|cont_rst[15] ; clk        ; clk      ; None                        ; None                      ; 8.265 ns                ;
+; N/A                                     ; 111.45 MHz ( period = 8.973 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[20] ; ps2_mouse_ctr:inst2|cont_rst[16] ; clk        ; clk      ; None                        ; None                      ; 8.264 ns                ;
+; N/A                                     ; 111.47 MHz ( period = 8.971 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[12] ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 8.262 ns                ;
+; N/A                                     ; 111.57 MHz ( period = 8.963 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[12] ; ps2_mouse_ctr:inst2|cont_rst[23] ; clk        ; clk      ; None                        ; None                      ; 8.254 ns                ;
+; N/A                                     ; 111.72 MHz ( period = 8.951 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[7]  ; ps2_mouse_ctr:inst2|cont_rst[18] ; clk        ; clk      ; None                        ; None                      ; 8.242 ns                ;
+; N/A                                     ; 111.76 MHz ( period = 8.948 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[5]  ; ps2_mouse_ctr:inst2|cont_rst[21] ; clk        ; clk      ; None                        ; None                      ; 8.239 ns                ;
+; N/A                                     ; 111.77 MHz ( period = 8.947 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[12] ; ps2_mouse_ctr:inst2|cont_rst[0]  ; clk        ; clk      ; None                        ; None                      ; 8.238 ns                ;
+; N/A                                     ; 111.78 MHz ( period = 8.946 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[12] ; ps2_mouse_ctr:inst2|cont_rst[16] ; clk        ; clk      ; None                        ; None                      ; 8.237 ns                ;
+; N/A                                     ; 111.87 MHz ( period = 8.939 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[9]  ; ps2_mouse_ctr:inst2|cont_rst[18] ; clk        ; clk      ; None                        ; None                      ; 8.230 ns                ;
+; N/A                                     ; 112.03 MHz ( period = 8.926 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[3]  ; ps2_mouse_ctr:inst2|cont_rst[25] ; clk        ; clk      ; None                        ; None                      ; 8.217 ns                ;
+; N/A                                     ; 112.10 MHz ( period = 8.921 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[5]  ; ps2_mouse_ctr:inst2|cont_rst[29] ; clk        ; clk      ; None                        ; None                      ; 8.212 ns                ;
+; N/A                                     ; 112.23 MHz ( period = 8.910 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[10] ; ps2_mouse_ctr:inst2|cont_rst[18] ; clk        ; clk      ; None                        ; None                      ; 8.201 ns                ;
+; N/A                                     ; 112.37 MHz ( period = 8.899 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[2]  ; ps2_mouse_ctr:inst2|cont_rst[12] ; clk        ; clk      ; None                        ; None                      ; 8.190 ns                ;
+; N/A                                     ; 112.49 MHz ( period = 8.890 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[28] ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 8.181 ns                ;
+; N/A                                     ; 112.51 MHz ( period = 8.888 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[0]  ; ps2_mouse_ctr:inst2|ps2_data_en  ; clk        ; clk      ; None                        ; None                      ; 8.179 ns                ;
+; N/A                                     ; 112.55 MHz ( period = 8.885 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[20] ; ps2_mouse_ctr:inst2|ps2_data_en  ; clk        ; clk      ; None                        ; None                      ; 8.176 ns                ;
+; N/A                                     ; 112.63 MHz ( period = 8.879 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[4]  ; ps2_mouse_ctr:inst2|cont_rst[25] ; clk        ; clk      ; None                        ; None                      ; 8.170 ns                ;
+; N/A                                     ; 112.75 MHz ( period = 8.869 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[8]  ; ps2_mouse_ctr:inst2|cont_rst[12] ; clk        ; clk      ; None                        ; None                      ; 8.160 ns                ;
+; N/A                                     ; 112.75 MHz ( period = 8.869 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[23] ; ps2_mouse_ctr:inst2|cont_rst[22] ; clk        ; clk      ; None                        ; None                      ; 8.160 ns                ;
+; N/A                                     ; 112.78 MHz ( period = 8.867 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[23] ; ps2_mouse_ctr:inst2|cont_rst[15] ; clk        ; clk      ; None                        ; None                      ; 8.158 ns                ;
+; N/A                                     ; 112.80 MHz ( period = 8.865 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[6]  ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 8.156 ns                ;
+; N/A                                     ; 112.82 MHz ( period = 8.864 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[23] ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 8.155 ns                ;
+; N/A                                     ; 112.89 MHz ( period = 8.858 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[12] ; ps2_mouse_ctr:inst2|ps2_data_en  ; clk        ; clk      ; None                        ; None                      ; 8.149 ns                ;
+; N/A                                     ; 112.92 MHz ( period = 8.856 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[23] ; ps2_mouse_ctr:inst2|cont_rst[23] ; clk        ; clk      ; None                        ; None                      ; 8.147 ns                ;
+; N/A                                     ; 112.97 MHz ( period = 8.852 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[18] ; ps2_mouse_ctr:inst2|state_b      ; clk        ; clk      ; None                        ; None                      ; 8.143 ns                ;
+; N/A                                     ; 113.05 MHz ( period = 8.846 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[2]  ; ps2_mouse_ctr:inst2|state_b_1    ; clk        ; clk      ; None                        ; None                      ; 8.137 ns                ;
+; N/A                                     ; 113.12 MHz ( period = 8.840 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[23] ; ps2_mouse_ctr:inst2|cont_rst[0]  ; clk        ; clk      ; None                        ; None                      ; 8.131 ns                ;
+; N/A                                     ; 113.13 MHz ( period = 8.839 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[23] ; ps2_mouse_ctr:inst2|cont_rst[16] ; clk        ; clk      ; None                        ; None                      ; 8.130 ns                ;
+; N/A                                     ; 113.42 MHz ( period = 8.817 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[21] ; ps2_mouse_ctr:inst2|state_b      ; clk        ; clk      ; None                        ; None                      ; 8.108 ns                ;
+; N/A                                     ; 113.43 MHz ( period = 8.816 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[8]  ; ps2_mouse_ctr:inst2|state_b_1    ; clk        ; clk      ; None                        ; None                      ; 8.107 ns                ;
+; N/A                                     ; 113.43 MHz ( period = 8.816 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[5]  ; ps2_mouse_ctr:inst2|cont_rst[16] ; clk        ; clk      ; None                        ; None                      ; 8.107 ns                ;
+; N/A                                     ; 113.55 MHz ( period = 8.807 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[5]  ; ps2_mouse_ctr:inst2|cont_rst[27] ; clk        ; clk      ; None                        ; None                      ; 8.098 ns                ;
+; N/A                                     ; 113.66 MHz ( period = 8.798 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[1]  ; ps2_mouse_ctr:inst2|cont_rst[21] ; clk        ; clk      ; None                        ; None                      ; 8.089 ns                ;
+; N/A                                     ; 113.83 MHz ( period = 8.785 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[16] ; ps2_mouse_ctr:inst2|state_b      ; clk        ; clk      ; None                        ; None                      ; 8.076 ns                ;
+; N/A                                     ; 113.84 MHz ( period = 8.784 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[8]  ; ps2_mouse_ctr:inst2|cont_rst[25] ; clk        ; clk      ; None                        ; None                      ; 8.075 ns                ;
+; N/A                                     ; 113.95 MHz ( period = 8.776 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[6]  ; ps2_mouse_ctr:inst2|cont_rst[25] ; clk        ; clk      ; None                        ; None                      ; 8.067 ns                ;
+; N/A                                     ; 114.01 MHz ( period = 8.771 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[1]  ; ps2_mouse_ctr:inst2|cont_rst[29] ; clk        ; clk      ; None                        ; None                      ; 8.062 ns                ;
+; N/A                                     ; 114.27 MHz ( period = 8.751 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[23] ; ps2_mouse_ctr:inst2|ps2_data_en  ; clk        ; clk      ; None                        ; None                      ; 8.042 ns                ;
+; N/A                                     ; 114.48 MHz ( period = 8.735 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[3]  ; ps2_mouse_ctr:inst2|cont_rst[12] ; clk        ; clk      ; None                        ; None                      ; 8.026 ns                ;
+; N/A                                     ; 114.50 MHz ( period = 8.734 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[9]  ; ps2_mouse_ctr:inst2|cont_rst[12] ; clk        ; clk      ; None                        ; None                      ; 8.025 ns                ;
+; N/A                                     ; 114.57 MHz ( period = 8.728 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[30] ; ps2_mouse_ctr:inst2|state_b      ; clk        ; clk      ; None                        ; None                      ; 8.019 ns                ;
+; N/A                                     ; 114.59 MHz ( period = 8.727 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[11] ; ps2_mouse_ctr:inst2|cont_rst[25] ; clk        ; clk      ; None                        ; None                      ; 8.018 ns                ;
+; N/A                                     ; 114.63 MHz ( period = 8.724 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[5]  ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 8.015 ns                ;
+; N/A                                     ; 114.65 MHz ( period = 8.722 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[11] ; ps2_mouse_ctr:inst2|cont_rst[7]  ; clk        ; clk      ; None                        ; None                      ; 8.013 ns                ;
+; N/A                                     ; 114.80 MHz ( period = 8.711 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[19] ; ps2_mouse_ctr:inst2|cont_rst[21] ; clk        ; clk      ; None                        ; None                      ; 8.002 ns                ;
+; N/A                                     ; 114.81 MHz ( period = 8.710 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[18] ; ps2_mouse_ctr:inst2|cont_rst[22] ; clk        ; clk      ; None                        ; None                      ; 8.001 ns                ;
+; N/A                                     ; 114.84 MHz ( period = 8.708 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[18] ; ps2_mouse_ctr:inst2|cont_rst[15] ; clk        ; clk      ; None                        ; None                      ; 7.999 ns                ;
+; N/A                                     ; 114.88 MHz ( period = 8.705 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[18] ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 7.996 ns                ;
+; N/A                                     ; 114.97 MHz ( period = 8.698 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[12] ; ps2_mouse_ctr:inst2|cont_rst[18] ; clk        ; clk      ; None                        ; None                      ; 7.989 ns                ;
+; N/A                                     ; 114.98 MHz ( period = 8.697 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[18] ; ps2_mouse_ctr:inst2|cont_rst[23] ; clk        ; clk      ; None                        ; None                      ; 7.988 ns                ;
+; N/A                                     ; 115.15 MHz ( period = 8.684 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[19] ; ps2_mouse_ctr:inst2|cont_rst[29] ; clk        ; clk      ; None                        ; None                      ; 7.975 ns                ;
+; N/A                                     ; 115.17 MHz ( period = 8.683 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[22] ; ps2_mouse_ctr:inst2|state_b      ; clk        ; clk      ; None                        ; None                      ; 7.974 ns                ;
+; N/A                                     ; 115.18 MHz ( period = 8.682 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[3]  ; ps2_mouse_ctr:inst2|state_b_1    ; clk        ; clk      ; None                        ; None                      ; 7.973 ns                ;
+; N/A                                     ; 115.19 MHz ( period = 8.681 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[9]  ; ps2_mouse_ctr:inst2|state_b_1    ; clk        ; clk      ; None                        ; None                      ; 7.972 ns                ;
+; N/A                                     ; 115.19 MHz ( period = 8.681 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[18] ; ps2_mouse_ctr:inst2|cont_rst[0]  ; clk        ; clk      ; None                        ; None                      ; 7.972 ns                ;
+; N/A                                     ; 115.21 MHz ( period = 8.680 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[18] ; ps2_mouse_ctr:inst2|cont_rst[16] ; clk        ; clk      ; None                        ; None                      ; 7.971 ns                ;
+; N/A                                     ; 115.27 MHz ( period = 8.675 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[21] ; ps2_mouse_ctr:inst2|cont_rst[22] ; clk        ; clk      ; None                        ; None                      ; 7.966 ns                ;
+; N/A                                     ; 115.30 MHz ( period = 8.673 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[7]  ; ps2_mouse_ctr:inst2|cont_rst[25] ; clk        ; clk      ; None                        ; None                      ; 7.964 ns                ;
+; N/A                                     ; 115.30 MHz ( period = 8.673 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[21] ; ps2_mouse_ctr:inst2|cont_rst[15] ; clk        ; clk      ; None                        ; None                      ; 7.964 ns                ;
+; N/A                                     ; 115.34 MHz ( period = 8.670 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[21] ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 7.961 ns                ;
+; N/A                                     ; 115.39 MHz ( period = 8.666 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[1]  ; ps2_mouse_ctr:inst2|cont_rst[16] ; clk        ; clk      ; None                        ; None                      ; 7.957 ns                ;
+; N/A                                     ; 115.45 MHz ( period = 8.662 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[21] ; ps2_mouse_ctr:inst2|cont_rst[23] ; clk        ; clk      ; None                        ; None                      ; 7.953 ns                ;
+; N/A                                     ; 115.45 MHz ( period = 8.662 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[2]  ; ps2_mouse_ctr:inst2|cont_rst[21] ; clk        ; clk      ; None                        ; None                      ; 7.953 ns                ;
+; N/A                                     ; 115.46 MHz ( period = 8.661 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[9]  ; ps2_mouse_ctr:inst2|cont_rst[25] ; clk        ; clk      ; None                        ; None                      ; 7.952 ns                ;
+; N/A                                     ; 115.51 MHz ( period = 8.657 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[1]  ; ps2_mouse_ctr:inst2|cont_rst[27] ; clk        ; clk      ; None                        ; None                      ; 7.948 ns                ;
+; N/A                                     ; 115.61 MHz ( period = 8.650 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[5]  ; ps2_mouse_ctr:inst2|cont_rst[22] ; clk        ; clk      ; None                        ; None                      ; 7.941 ns                ;
+; N/A                                     ; 115.62 MHz ( period = 8.649 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[17] ; ps2_mouse_ctr:inst2|cont_rst[25] ; clk        ; clk      ; None                        ; None                      ; 7.940 ns                ;
+; N/A                                     ; 115.66 MHz ( period = 8.646 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[21] ; ps2_mouse_ctr:inst2|cont_rst[0]  ; clk        ; clk      ; None                        ; None                      ; 7.937 ns                ;
+; N/A                                     ; 115.67 MHz ( period = 8.645 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[21] ; ps2_mouse_ctr:inst2|cont_rst[16] ; clk        ; clk      ; None                        ; None                      ; 7.936 ns                ;
+; N/A                                     ; 115.70 MHz ( period = 8.643 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[5]  ; ps2_mouse_ctr:inst2|cont_rst[23] ; clk        ; clk      ; None                        ; None                      ; 7.934 ns                ;
+; N/A                                     ; 115.70 MHz ( period = 8.643 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[16] ; ps2_mouse_ctr:inst2|cont_rst[22] ; clk        ; clk      ; None                        ; None                      ; 7.934 ns                ;
+; N/A                                     ; 115.73 MHz ( period = 8.641 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[16] ; ps2_mouse_ctr:inst2|cont_rst[15] ; clk        ; clk      ; None                        ; None                      ; 7.932 ns                ;
+; N/A                                     ; 115.77 MHz ( period = 8.638 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[16] ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 7.929 ns                ;
+; N/A                                     ; 115.78 MHz ( period = 8.637 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[13] ; ps2_mouse_ctr:inst2|state_b      ; clk        ; clk      ; None                        ; None                      ; 7.928 ns                ;
+; N/A                                     ; 115.81 MHz ( period = 8.635 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[2]  ; ps2_mouse_ctr:inst2|cont_rst[29] ; clk        ; clk      ; None                        ; None                      ; 7.926 ns                ;
+; N/A                                     ; 115.81 MHz ( period = 8.635 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[6]  ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 7.926 ns                ;
+; N/A                                     ; 115.85 MHz ( period = 8.632 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[10] ; ps2_mouse_ctr:inst2|cont_rst[25] ; clk        ; clk      ; None                        ; None                      ; 7.923 ns                ;
+; N/A                                     ; 115.87 MHz ( period = 8.630 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[16] ; ps2_mouse_ctr:inst2|cont_rst[23] ; clk        ; clk      ; None                        ; None                      ; 7.921 ns                ;
+; N/A                                     ; 115.87 MHz ( period = 8.630 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[4]  ; ps2_mouse_ctr:inst2|cont_rst[12] ; clk        ; clk      ; None                        ; None                      ; 7.921 ns                ;
+; N/A                                     ; 115.90 MHz ( period = 8.628 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[15] ; ps2_mouse_ctr:inst2|cont_rst[18] ; clk        ; clk      ; None                        ; None                      ; 7.919 ns                ;
+; N/A                                     ; 116.09 MHz ( period = 8.614 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[31] ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 7.905 ns                ;
+; N/A                                     ; 116.09 MHz ( period = 8.614 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[16] ; ps2_mouse_ctr:inst2|cont_rst[0]  ; clk        ; clk      ; None                        ; None                      ; 7.905 ns                ;
+; N/A                                     ; 116.10 MHz ( period = 8.613 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[16] ; ps2_mouse_ctr:inst2|cont_rst[16] ; clk        ; clk      ; None                        ; None                      ; 7.904 ns                ;
+; N/A                                     ; 116.39 MHz ( period = 8.592 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[18] ; ps2_mouse_ctr:inst2|ps2_data_en  ; clk        ; clk      ; None                        ; None                      ; 7.883 ns                ;
+; N/A                                     ; 116.47 MHz ( period = 8.586 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[30] ; ps2_mouse_ctr:inst2|cont_rst[22] ; clk        ; clk      ; None                        ; None                      ; 7.877 ns                ;
+; N/A                                     ; 116.50 MHz ( period = 8.584 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[30] ; ps2_mouse_ctr:inst2|cont_rst[15] ; clk        ; clk      ; None                        ; None                      ; 7.875 ns                ;
+; N/A                                     ; 116.54 MHz ( period = 8.581 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[30] ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 7.872 ns                ;
+; N/A                                     ; 116.59 MHz ( period = 8.577 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[4]  ; ps2_mouse_ctr:inst2|state_b_1    ; clk        ; clk      ; None                        ; None                      ; 7.868 ns                ;
+; N/A                                     ; 116.59 MHz ( period = 8.577 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[2]  ; ps2_mouse_ctr:inst2|cont_rst[7]  ; clk        ; clk      ; None                        ; None                      ; 7.868 ns                ;
+; N/A                                     ; 116.60 MHz ( period = 8.576 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[26] ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 7.867 ns                ;
+; N/A                                     ; 116.65 MHz ( period = 8.573 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[30] ; ps2_mouse_ctr:inst2|cont_rst[23] ; clk        ; clk      ; None                        ; None                      ; 7.864 ns                ;
+; N/A                                     ; 116.69 MHz ( period = 8.570 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[19] ; ps2_mouse_ctr:inst2|cont_rst[27] ; clk        ; clk      ; None                        ; None                      ; 7.861 ns                ;
+; N/A                                     ; 116.75 MHz ( period = 8.565 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[5]  ; ps2_mouse_ctr:inst2|cont_rst[9]  ; clk        ; clk      ; None                        ; None                      ; 7.856 ns                ;
+; N/A                                     ; 116.86 MHz ( period = 8.557 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[30] ; ps2_mouse_ctr:inst2|cont_rst[0]  ; clk        ; clk      ; None                        ; None                      ; 7.848 ns                ;
+; N/A                                     ; 116.88 MHz ( period = 8.556 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[30] ; ps2_mouse_ctr:inst2|cont_rst[16] ; clk        ; clk      ; None                        ; None                      ; 7.847 ns                ;
+; N/A                                     ; 117.00 MHz ( period = 8.547 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[8]  ; ps2_mouse_ctr:inst2|cont_rst[7]  ; clk        ; clk      ; None                        ; None                      ; 7.838 ns                ;
+; N/A                                     ; 117.00 MHz ( period = 8.547 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[3]  ; ps2_mouse_ctr:inst2|cont_rst[21] ; clk        ; clk      ; None                        ; None                      ; 7.838 ns                ;
+; N/A                                     ; 117.07 MHz ( period = 8.542 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[15] ; ps2_mouse_ctr:inst2|ps2_clk_en   ; clk        ; clk      ; None                        ; None                      ; 7.833 ns                ;
+; N/A                                     ; 117.08 MHz ( period = 8.541 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[22] ; ps2_mouse_ctr:inst2|cont_rst[22] ; clk        ; clk      ; None                        ; None                      ; 7.832 ns                ;
+; N/A                                     ; 117.11 MHz ( period = 8.539 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[22] ; ps2_mouse_ctr:inst2|cont_rst[15] ; clk        ; clk      ; None                        ; None                      ; 7.830 ns                ;
+; N/A                                     ; 117.15 MHz ( period = 8.536 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[22] ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 7.827 ns                ;
+; N/A                                     ; 117.21 MHz ( period = 8.532 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[7]  ; ps2_mouse_ctr:inst2|cont_rst[20] ; clk        ; clk      ; None                        ; None                      ; 7.823 ns                ;
+; N/A                                     ; 117.26 MHz ( period = 8.528 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[22] ; ps2_mouse_ctr:inst2|cont_rst[23] ; clk        ; clk      ; None                        ; None                      ; 7.819 ns                ;
+; N/A                                     ; 117.27 MHz ( period = 8.527 ns )                    ; ps2_mouse_ctr:inst2|cont_rst[0]  ; ps2_mouse_ctr:inst2|cont_rst[18] ; clk        ; clk      ; None                        ; None                      ; 7.818 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                  ;                                  ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+----------------------------------+----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; tsu                                                                                           ;
++-------+--------------+------------+----------+-------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From     ; To                                  ; To Clock ;
++-------+--------------+------------+----------+-------------------------------------+----------+
+; N/A   ; None         ; 0.456 ns   ; rst_n    ; ps2_mouse_ctr:inst2|ps2_data_en     ; clk      ;
+; N/A   ; None         ; -0.072 ns  ; PS2_DAT2 ; ps2_mouse_ctr:inst2|data_buf_in[10] ; clk      ;
+; N/A   ; None         ; -0.725 ns  ; PS2_CLK2 ; ps2_mouse_ctr:inst2|ps2_clk_buf[0]  ; clk      ;
++-------+--------------+------------+----------+-------------------------------------+----------+
+
+
++------------------------------------------------------------------------------------------------+
+; tco                                                                                            ;
++-------+--------------+------------+------------------------------------+----------+------------+
+; Slack ; Required tco ; Actual tco ; From                               ; To       ; From Clock ;
++-------+--------------+------------+------------------------------------+----------+------------+
+; N/A   ; None         ; 22.647 ns  ; hc164_driver:inst|seg_led_num[0]   ; HC_SI    ; clk        ;
+; N/A   ; None         ; 22.433 ns  ; hc164_driver:inst|seg_led_num[1]   ; HC_SI    ; clk        ;
+; N/A   ; None         ; 22.256 ns  ; hc164_driver:inst|seg_led_num[2]   ; HC_SI    ; clk        ;
+; N/A   ; None         ; 21.336 ns  ; ps2_mouse_ctr:inst2|xcont[7]       ; HC_SI    ; clk        ;
+; N/A   ; None         ; 21.172 ns  ; ps2_mouse_ctr:inst2|xcont[5]       ; HC_SI    ; clk        ;
+; N/A   ; None         ; 20.602 ns  ; ps2_mouse_ctr:inst2|ycont[7]       ; HC_SI    ; clk        ;
+; N/A   ; None         ; 20.262 ns  ; ps2_mouse_ctr:inst2|ycont[5]       ; HC_SI    ; clk        ;
+; N/A   ; None         ; 19.692 ns  ; ps2_mouse_ctr:inst2|ycont[1]       ; HC_SI    ; clk        ;
+; N/A   ; None         ; 19.502 ns  ; ps2_mouse_ctr:inst2|ycont[3]       ; HC_SI    ; clk        ;
+; N/A   ; None         ; 19.420 ns  ; ps2_mouse_ctr:inst2|xcont[6]       ; HC_SI    ; clk        ;
+; N/A   ; None         ; 19.377 ns  ; ps2_mouse_ctr:inst2|xcont[4]       ; HC_SI    ; clk        ;
+; N/A   ; None         ; 18.997 ns  ; ps2_mouse_ctr:inst2|xcont[3]       ; HC_SI    ; clk        ;
+; N/A   ; None         ; 18.872 ns  ; ps2_mouse_ctr:inst2|ycont[4]       ; HC_SI    ; clk        ;
+; N/A   ; None         ; 18.777 ns  ; ps2_mouse_ctr:inst2|xcont[1]       ; HC_SI    ; clk        ;
+; N/A   ; None         ; 18.686 ns  ; ps2_mouse_ctr:inst2|ycont[6]       ; HC_SI    ; clk        ;
+; N/A   ; None         ; 17.929 ns  ; ps2_mouse_ctr:inst2|ycont[0]       ; HC_SI    ; clk        ;
+; N/A   ; None         ; 17.586 ns  ; ps2_mouse_ctr:inst2|ycont[2]       ; HC_SI    ; clk        ;
+; N/A   ; None         ; 17.424 ns  ; ps2_mouse_ctr:inst2|xcont[0]       ; HC_SI    ; clk        ;
+; N/A   ; None         ; 17.264 ns  ; hc164_driver:inst|tx_cnt[1]        ; HC_SI    ; clk        ;
+; N/A   ; None         ; 17.081 ns  ; ps2_mouse_ctr:inst2|xcont[2]       ; HC_SI    ; clk        ;
+; N/A   ; None         ; 16.804 ns  ; hc164_driver:inst|tx_cnt[2]        ; HC_SI    ; clk        ;
+; N/A   ; None         ; 15.896 ns  ; hc164_driver:inst|tx_cnt[4]        ; HC_SI    ; clk        ;
+; N/A   ; None         ; 15.534 ns  ; hc164_driver:inst|tx_cnt[3]        ; HC_SI    ; clk        ;
+; N/A   ; None         ; 15.000 ns  ; ps2_mouse_ctr:inst2|get_data_en[0] ; Uart1_T  ; clk        ;
+; N/A   ; None         ; 14.196 ns  ; ps2_mouse_ctr:inst2|get_data_en[1] ; Uart1_T  ; clk        ;
+; N/A   ; None         ; 13.653 ns  ; ps2_mouse_ctr:inst2|xcont[7]       ; led[7]   ; clk        ;
+; N/A   ; None         ; 13.537 ns  ; ps2_mouse_ctr:inst2|mmr_state[0]   ; Uart1_T  ; clk        ;
+; N/A   ; None         ; 12.954 ns  ; ps2_mouse_ctr:inst2|mmr_state[1]   ; Uart1_T  ; clk        ;
+; N/A   ; None         ; 12.292 ns  ; ps2_mouse_ctr:inst2|xcont[3]       ; led[3]   ; clk        ;
+; N/A   ; None         ; 12.105 ns  ; ps2_mouse_ctr:inst2|rgbut          ; Uart1_R  ; clk        ;
+; N/A   ; None         ; 12.046 ns  ; ps2_mouse_ctr:inst2|lfbut          ; Uart2_T  ; clk        ;
+; N/A   ; None         ; 12.036 ns  ; ps2_mouse_ctr:inst2|xcont[1]       ; led[1]   ; clk        ;
+; N/A   ; None         ; 11.851 ns  ; ps2_mouse_ctr:inst2|sdata          ; PS2_DAT2 ; clk        ;
+; N/A   ; None         ; 11.845 ns  ; ps2_mouse_ctr:inst2|xcont[5]       ; led[5]   ; clk        ;
+; N/A   ; None         ; 11.659 ns  ; ps2_mouse_ctr:inst2|xcont[2]       ; led[2]   ; clk        ;
+; N/A   ; None         ; 11.560 ns  ; ps2_mouse_ctr:inst2|xcont[0]       ; led[0]   ; clk        ;
+; N/A   ; None         ; 11.294 ns  ; ps2_mouse_ctr:inst2|ps2_clk_en     ; PS2_CLK2 ; clk        ;
+; N/A   ; None         ; 11.271 ns  ; hc164_driver:inst|hc_cp            ; HC_CP    ; clk        ;
+; N/A   ; None         ; 11.217 ns  ; ps2_mouse_ctr:inst2|xcont[6]       ; led[6]   ; clk        ;
+; N/A   ; None         ; 11.074 ns  ; ps2_mouse_ctr:inst2|xcont[4]       ; led[4]   ; clk        ;
+; N/A   ; None         ; 10.822 ns  ; ps2_mouse_ctr:inst2|ps2_data_en    ; PS2_DAT2 ; clk        ;
++-------+--------------+------------+------------------------------------+----------+------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; th                                                                                                  ;
++---------------+-------------+-----------+----------+-------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From     ; To                                  ; To Clock ;
++---------------+-------------+-----------+----------+-------------------------------------+----------+
+; N/A           ; None        ; 1.279 ns  ; PS2_CLK2 ; ps2_mouse_ctr:inst2|ps2_clk_buf[0]  ; clk      ;
+; N/A           ; None        ; 0.626 ns  ; PS2_DAT2 ; ps2_mouse_ctr:inst2|data_buf_in[10] ; clk      ;
+; N/A           ; None        ; 0.098 ns  ; rst_n    ; ps2_mouse_ctr:inst2|ps2_data_en     ; clk      ;
++---------------+-------------+-----------+----------+-------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Sun Nov 27 16:51:47 2011
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off ps2_mouse -c ps2_mouse
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 99.19 MHz between source register "ps2_mouse_ctr:inst2|cont_rst[11]" and destination register "ps2_mouse_ctr:inst2|ps2_clk_en" (period= 10.082 ns)
+    Info: + Longest register to register delay is 9.373 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X3_Y4_N8; Fanout = 4; REG Node = 'ps2_mouse_ctr:inst2|cont_rst[11]'
+        Info: 2: + IC(0.898 ns) + CELL(0.914 ns) = 1.812 ns; Loc. = LC_X3_Y4_N2; Fanout = 1; COMB Node = 'ps2_mouse_ctr:inst2|Equal0~324'
+        Info: 3: + IC(0.722 ns) + CELL(0.740 ns) = 3.274 ns; Loc. = LC_X3_Y4_N6; Fanout = 1; COMB Node = 'ps2_mouse_ctr:inst2|Equal0~326'
+        Info: 4: + IC(1.129 ns) + CELL(0.740 ns) = 5.143 ns; Loc. = LC_X4_Y4_N8; Fanout = 2; COMB Node = 'ps2_mouse_ctr:inst2|Equal0~327'
+        Info: 5: + IC(0.305 ns) + CELL(0.200 ns) = 5.648 ns; Loc. = LC_X4_Y4_N9; Fanout = 16; COMB Node = 'ps2_mouse_ctr:inst2|Equal1~107'
+        Info: 6: + IC(2.482 ns) + CELL(1.243 ns) = 9.373 ns; Loc. = LC_X5_Y1_N2; Fanout = 1; REG Node = 'ps2_mouse_ctr:inst2|ps2_clk_en'
+        Info: Total cell delay = 3.837 ns ( 40.94 % )
+        Info: Total interconnect delay = 5.536 ns ( 59.06 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 6.527 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 118; CLK Node = 'clk'
+            Info: 2: + IC(4.477 ns) + CELL(0.918 ns) = 6.527 ns; Loc. = LC_X5_Y1_N2; Fanout = 1; REG Node = 'ps2_mouse_ctr:inst2|ps2_clk_en'
+            Info: Total cell delay = 2.050 ns ( 31.41 % )
+            Info: Total interconnect delay = 4.477 ns ( 68.59 % )
+        Info: - Longest clock path from clock "clk" to source register is 6.527 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 118; CLK Node = 'clk'
+            Info: 2: + IC(4.477 ns) + CELL(0.918 ns) = 6.527 ns; Loc. = LC_X3_Y4_N8; Fanout = 4; REG Node = 'ps2_mouse_ctr:inst2|cont_rst[11]'
+            Info: Total cell delay = 2.050 ns ( 31.41 % )
+            Info: Total interconnect delay = 4.477 ns ( 68.59 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Micro setup delay of destination is 0.333 ns
+Info: tsu for register "ps2_mouse_ctr:inst2|ps2_data_en" (data pin = "rst_n", clock pin = "clk") is 0.456 ns
+    Info: + Longest pin to register delay is 6.650 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_83; Fanout = 118; PIN Node = 'rst_n'
+        Info: 2: + IC(4.714 ns) + CELL(0.804 ns) = 6.650 ns; Loc. = LC_X4_Y4_N4; Fanout = 2; REG Node = 'ps2_mouse_ctr:inst2|ps2_data_en'
+        Info: Total cell delay = 1.936 ns ( 29.11 % )
+        Info: Total interconnect delay = 4.714 ns ( 70.89 % )
+    Info: + Micro setup delay of destination is 0.333 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 6.527 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 118; CLK Node = 'clk'
+        Info: 2: + IC(4.477 ns) + CELL(0.918 ns) = 6.527 ns; Loc. = LC_X4_Y4_N4; Fanout = 2; REG Node = 'ps2_mouse_ctr:inst2|ps2_data_en'
+        Info: Total cell delay = 2.050 ns ( 31.41 % )
+        Info: Total interconnect delay = 4.477 ns ( 68.59 % )
+Info: tco from clock "clk" to destination pin "HC_SI" through register "hc164_driver:inst|seg_led_num[0]" is 22.647 ns
+    Info: + Longest clock path from clock "clk" to source register is 6.527 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 118; CLK Node = 'clk'
+        Info: 2: + IC(4.477 ns) + CELL(0.918 ns) = 6.527 ns; Loc. = LC_X6_Y3_N2; Fanout = 12; REG Node = 'hc164_driver:inst|seg_led_num[0]'
+        Info: Total cell delay = 2.050 ns ( 31.41 % )
+        Info: Total interconnect delay = 4.477 ns ( 68.59 % )
+    Info: + Micro clock to output delay of source is 0.376 ns
+    Info: + Longest register to pin delay is 15.744 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X6_Y3_N2; Fanout = 12; REG Node = 'hc164_driver:inst|seg_led_num[0]'
+        Info: 2: + IC(1.330 ns) + CELL(0.740 ns) = 2.070 ns; Loc. = LC_X7_Y3_N3; Fanout = 1; COMB Node = 'hc164_driver:inst|Mux2~51'
+        Info: 3: + IC(0.710 ns) + CELL(0.200 ns) = 2.980 ns; Loc. = LC_X7_Y3_N0; Fanout = 2; COMB Node = 'hc164_driver:inst|Mux2~52'
+        Info: 4: + IC(0.745 ns) + CELL(0.740 ns) = 4.465 ns; Loc. = LC_X7_Y3_N5; Fanout = 7; COMB Node = 'hc164_driver:inst|Mux2~54'
+        Info: 5: + IC(2.438 ns) + CELL(0.740 ns) = 7.643 ns; Loc. = LC_X6_Y1_N4; Fanout = 1; COMB Node = 'hc164_driver:inst|WideOr3~19'
+        Info: 6: + IC(0.777 ns) + CELL(0.511 ns) = 8.931 ns; Loc. = LC_X6_Y1_N8; Fanout = 1; COMB Node = 'hc164_driver:inst|Mux5~171'
+        Info: 7: + IC(0.714 ns) + CELL(0.200 ns) = 9.845 ns; Loc. = LC_X6_Y1_N0; Fanout = 1; COMB Node = 'hc164_driver:inst|Mux5~172'
+        Info: 8: + IC(0.758 ns) + CELL(0.511 ns) = 11.114 ns; Loc. = LC_X6_Y1_N3; Fanout = 1; COMB Node = 'hc164_driver:inst|Mux5~173'
+        Info: 9: + IC(2.308 ns) + CELL(2.322 ns) = 15.744 ns; Loc. = PIN_26; Fanout = 0; PIN Node = 'HC_SI'
+        Info: Total cell delay = 5.964 ns ( 37.88 % )
+        Info: Total interconnect delay = 9.780 ns ( 62.12 % )
+Info: th for register "ps2_mouse_ctr:inst2|ps2_clk_buf[0]" (data pin = "PS2_CLK2", clock pin = "clk") is 1.279 ns
+    Info: + Longest clock path from clock "clk" to destination register is 6.527 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = PIN_61; Fanout = 118; CLK Node = 'clk'
+        Info: 2: + IC(4.477 ns) + CELL(0.918 ns) = 6.527 ns; Loc. = LC_X4_Y1_N2; Fanout = 6; REG Node = 'ps2_mouse_ctr:inst2|ps2_clk_buf[0]'
+        Info: Total cell delay = 2.050 ns ( 31.41 % )
+        Info: Total interconnect delay = 4.477 ns ( 68.59 % )
+    Info: + Micro hold delay of destination is 0.221 ns
+    Info: - Shortest pin to register delay is 5.469 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = PIN_54; Fanout = 1; PIN Node = 'PS2_CLK2'
+        Info: 2: + IC(0.000 ns) + CELL(1.132 ns) = 1.132 ns; Loc. = IOC_X8_Y1_N2; Fanout = 1; COMB Node = 'PS2_CLK2~0'
+        Info: 3: + IC(4.057 ns) + CELL(0.280 ns) = 5.469 ns; Loc. = LC_X4_Y1_N2; Fanout = 6; REG Node = 'ps2_mouse_ctr:inst2|ps2_clk_buf[0]'
+        Info: Total cell delay = 1.412 ns ( 25.82 % )
+        Info: Total interconnect delay = 4.057 ns ( 74.18 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Allocated 111 megabytes of memory during processing
+    Info: Processing ended: Sun Nov 27 16:51:49 2011
+    Info: Elapsed time: 00:00:02
+
+

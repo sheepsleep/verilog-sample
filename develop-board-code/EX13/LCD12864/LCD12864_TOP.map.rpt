@@ -1,0 +1,773 @@
+Analysis & Synthesis report for LCD12864_TOP
+Sun Nov 27 16:57:15 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |LCD12864_TOP|LCD12864:inst|next
+  8. State Machine - |LCD12864_TOP|LCD12864:inst|current
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: LCD12864:inst
+ 12. Analysis & Synthesis Messages
+ 13. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sun Nov 27 16:57:15 2011    ;
+; Quartus II Version          ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name               ; LCD12864_TOP                             ;
+; Top-level Entity Name       ; LCD12864_TOP                             ;
+; Family                      ; MAX II                                   ;
+; Total logic elements        ; 134                                      ;
+; Total pins                  ; 12                                       ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 0                                        ;
+; DSP block 9-bit elements    ; 0                                        ;
+; Total PLLs                  ; 0                                        ;
+; Total DLLs                  ; 0                                        ;
++-----------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EPM240T100C5       ;                    ;
+; Top-level entity name                                                          ; LCD12864_TOP       ; LCD12864_TOP       ;
+; Family name                                                                    ; MAX II             ; Stratix II         ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Optimization Technique -- MAX II                                               ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                             ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------+
+; LCD12864.v                       ; yes             ; User Verilog HDL File              ; D:/EPM240/EPM240_570_DVD/HDL Code/verilog/EX13/LCD12864/LCD12864.v       ;
+; LCD12864_TOP.bdf                 ; yes             ; User Block Diagram/Schematic File  ; D:/EPM240/EPM240_570_DVD/HDL Code/verilog/EX13/LCD12864/LCD12864_TOP.bdf ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Total logic elements                        ; 134                ;
+;     -- Combinational with no register       ; 52                 ;
+;     -- Register only                        ; 66                 ;
+;     -- Combinational with a register        ; 16                 ;
+;                                             ;                    ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 33                 ;
+;     -- 3 input functions                    ; 11                 ;
+;     -- 2 input functions                    ; 22                 ;
+;     -- 1 input functions                    ; 2                  ;
+;     -- 0 input functions                    ; 0                  ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 119                ;
+;     -- arithmetic mode                      ; 15                 ;
+;     -- qfbk mode                            ; 0                  ;
+;     -- register cascade mode                ; 0                  ;
+;     -- synchronous clear/load mode          ; 0                  ;
+;     -- asynchronous clear/load mode         ; 0                  ;
+;                                             ;                    ;
+; Total registers                             ; 82                 ;
+; Total logic cells in carry chains           ; 16                 ;
+; I/O pins                                    ; 12                 ;
+; Maximum fan-out node                        ; LCD12864:inst|clkr ;
+; Maximum fan-out                             ; 67                 ;
+; Total fan-out                               ; 369                ;
+; Average fan-out                             ; 2.53               ;
++---------------------------------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                            ;
++----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name         ; Library Name ;
++----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------+--------------+
+; |LCD12864_TOP              ; 134 (0)     ; 82           ; 0           ; 0            ; 0       ; 0         ; 0         ; 12   ; 0            ; 52 (0)       ; 66 (0)            ; 16 (0)           ; 16 (0)          ; 0 (0)      ; |LCD12864_TOP               ; work         ;
+;    |LCD12864:inst|         ; 134 (134)   ; 82           ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 52 (52)      ; 66 (66)           ; 16 (16)          ; 16 (16)         ; 0 (0)      ; |LCD12864_TOP|LCD12864:inst ; work         ;
++----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |LCD12864_TOP|LCD12864:inst|next                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
++------------+----------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
+; Name       ; next.nul ; next.dat44 ; next.dat43 ; next.dat42 ; next.dat41 ; next.dat40 ; next.dat39 ; next.dat38 ; next.dat37 ; next.dat36 ; next.dat35 ; next.dat34 ; next.dat33 ; next.dat32 ; next.dat31 ; next.dat30 ; next.dat29 ; next.dat28 ; next.dat27 ; next.dat26 ; next.dat25 ; next.dat24 ; next.dat23 ; next.dat22 ; next.dat21 ; next.dat20 ; next.dat19 ; next.dat18 ; next.dat17 ; next.dat16 ; next.dat15 ; next.dat14 ; next.dat13 ; next.dat12 ; next.dat11 ; next.dat10 ; next.dat9 ; next.dat8 ; next.dat7 ; next.dat6 ; next.dat5 ; next.dat4 ; next.dat3 ; next.dat2 ; next.dat1 ; next.dat0 ; next.set6 ; next.set5 ; next.set4 ; next.set3 ; next.set2 ; next.set1 ; next.set0 ;
++------------+----------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
+; next.set0  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ;
+; next.set1  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 1         ;
+; next.set2  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 1         ;
+; next.set3  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 1         ;
+; next.set4  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 1         ;
+; next.set5  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.set6  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat0  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat1  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat2  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat3  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat4  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat5  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat6  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat7  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat8  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat9  ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat10 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat11 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat12 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat13 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat14 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat15 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat16 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat17 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat18 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat19 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat20 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat21 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat22 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat23 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat24 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat25 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat26 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat27 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat28 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat29 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat30 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat31 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat32 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat33 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat34 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat35 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat36 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat37 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat38 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat39 ; 0        ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat40 ; 0        ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat41 ; 0        ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat42 ; 0        ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat43 ; 0        ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.dat44 ; 0        ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
+; next.nul   ; 1        ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ;
++------------+----------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |LCD12864_TOP|LCD12864:inst|current                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
++---------------+-------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; Name          ; current.nul ; current.dat44 ; current.dat43 ; current.dat42 ; current.dat41 ; current.dat40 ; current.dat39 ; current.dat38 ; current.dat37 ; current.dat36 ; current.dat35 ; current.dat34 ; current.dat33 ; current.dat32 ; current.dat31 ; current.dat30 ; current.dat29 ; current.dat28 ; current.dat27 ; current.dat26 ; current.dat25 ; current.dat24 ; current.dat23 ; current.dat22 ; current.dat21 ; current.dat20 ; current.dat19 ; current.dat18 ; current.dat17 ; current.dat16 ; current.dat15 ; current.dat14 ; current.dat13 ; current.dat12 ; current.dat11 ; current.dat10 ; current.dat9 ; current.dat8 ; current.dat7 ; current.dat6 ; current.dat5 ; current.dat4 ; current.dat3 ; current.dat2 ; current.dat1 ; current.dat0 ; current.set6 ; current.set5 ; current.set4 ; current.set3 ; current.set2 ; current.set1 ; current.set0 ;
++---------------+-------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; current.set0  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
+; current.set1  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 1            ;
+; current.set2  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 1            ;
+; current.set3  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 1            ;
+; current.set4  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 1            ;
+; current.set5  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.set6  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat0  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat1  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat2  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat3  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat4  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat5  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat6  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat7  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat8  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat9  ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat10 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat11 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat12 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat13 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat14 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat15 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat16 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat17 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat18 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat19 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat20 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat21 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat22 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat23 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat24 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat25 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat26 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat27 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat28 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat29 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat30 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat31 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat32 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat33 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat34 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat35 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat36 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat37 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat38 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat39 ; 0           ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat40 ; 0           ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat41 ; 0           ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat42 ; 0           ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat43 ; 0           ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.dat44 ; 0           ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; current.nul   ; 1           ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
++---------------+-------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; LCD12864:inst|current.set0             ; Lost fanout        ;
+; LCD12864:inst|current.set1             ; Lost fanout        ;
+; LCD12864:inst|current.set2             ; Lost fanout        ;
+; LCD12864:inst|current.set3             ; Lost fanout        ;
+; LCD12864:inst|current.set4             ; Lost fanout        ;
+; LCD12864:inst|current.set5             ; Lost fanout        ;
+; LCD12864:inst|current.set6             ; Lost fanout        ;
+; LCD12864:inst|current.dat0             ; Lost fanout        ;
+; LCD12864:inst|current.dat1             ; Lost fanout        ;
+; LCD12864:inst|current.dat2             ; Lost fanout        ;
+; LCD12864:inst|current.dat3             ; Lost fanout        ;
+; LCD12864:inst|current.dat4             ; Lost fanout        ;
+; LCD12864:inst|current.dat5             ; Lost fanout        ;
+; LCD12864:inst|current.dat6             ; Lost fanout        ;
+; LCD12864:inst|current.dat7             ; Lost fanout        ;
+; LCD12864:inst|current.dat8             ; Lost fanout        ;
+; LCD12864:inst|current.dat9             ; Lost fanout        ;
+; LCD12864:inst|current.dat10            ; Lost fanout        ;
+; LCD12864:inst|current.dat11            ; Lost fanout        ;
+; LCD12864:inst|current.dat12            ; Lost fanout        ;
+; LCD12864:inst|current.dat13            ; Lost fanout        ;
+; LCD12864:inst|current.dat14            ; Lost fanout        ;
+; LCD12864:inst|current.dat15            ; Lost fanout        ;
+; LCD12864:inst|current.dat16            ; Lost fanout        ;
+; LCD12864:inst|current.dat17            ; Lost fanout        ;
+; LCD12864:inst|current.dat18            ; Lost fanout        ;
+; LCD12864:inst|current.dat19            ; Lost fanout        ;
+; LCD12864:inst|current.dat20            ; Lost fanout        ;
+; LCD12864:inst|current.dat21            ; Lost fanout        ;
+; LCD12864:inst|current.dat22            ; Lost fanout        ;
+; LCD12864:inst|current.dat23            ; Lost fanout        ;
+; LCD12864:inst|current.dat24            ; Lost fanout        ;
+; LCD12864:inst|current.dat25            ; Lost fanout        ;
+; LCD12864:inst|current.dat26            ; Lost fanout        ;
+; LCD12864:inst|current.dat27            ; Lost fanout        ;
+; LCD12864:inst|current.dat28            ; Lost fanout        ;
+; LCD12864:inst|current.dat29            ; Lost fanout        ;
+; LCD12864:inst|current.dat30            ; Lost fanout        ;
+; LCD12864:inst|current.dat31            ; Lost fanout        ;
+; LCD12864:inst|current.dat32            ; Lost fanout        ;
+; LCD12864:inst|current.dat33            ; Lost fanout        ;
+; LCD12864:inst|current.dat34            ; Lost fanout        ;
+; LCD12864:inst|current.dat35            ; Lost fanout        ;
+; LCD12864:inst|current.dat36            ; Lost fanout        ;
+; LCD12864:inst|current.dat37            ; Lost fanout        ;
+; LCD12864:inst|current.dat38            ; Lost fanout        ;
+; LCD12864:inst|current.dat39            ; Lost fanout        ;
+; LCD12864:inst|current.dat40            ; Lost fanout        ;
+; LCD12864:inst|current.dat41            ; Lost fanout        ;
+; LCD12864:inst|current.dat42            ; Lost fanout        ;
+; LCD12864:inst|current.dat43            ; Lost fanout        ;
+; LCD12864:inst|current.dat44            ; Lost fanout        ;
+; LCD12864:inst|current.nul              ; Lost fanout        ;
+; LCD12864:inst|next~8                   ; Lost fanout        ;
+; LCD12864:inst|next~9                   ; Lost fanout        ;
+; LCD12864:inst|next~10                  ; Lost fanout        ;
+; LCD12864:inst|next~11                  ; Lost fanout        ;
+; LCD12864:inst|next~12                  ; Lost fanout        ;
+; LCD12864:inst|next~13                  ; Lost fanout        ;
+; LCD12864:inst|current~7                ; Lost fanout        ;
+; LCD12864:inst|current~8                ; Lost fanout        ;
+; LCD12864:inst|current~9                ; Lost fanout        ;
+; LCD12864:inst|current~10               ; Lost fanout        ;
+; LCD12864:inst|current~11               ; Lost fanout        ;
+; LCD12864:inst|current~12               ; Lost fanout        ;
+; Total Number of Removed Registers = 65 ;                    ;
++----------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 82    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LCD12864:inst ;
++----------------+--------+----------------------------------+
+; Parameter Name ; Value  ; Type                             ;
++----------------+--------+----------------------------------+
+; set0           ; 000000 ; Unsigned Binary                  ;
+; set1           ; 000001 ; Unsigned Binary                  ;
+; set2           ; 000010 ; Unsigned Binary                  ;
+; set3           ; 000011 ; Unsigned Binary                  ;
+; set4           ; 000100 ; Unsigned Binary                  ;
+; set5           ; 000101 ; Unsigned Binary                  ;
+; set6           ; 000110 ; Unsigned Binary                  ;
+; dat0           ; 000111 ; Unsigned Binary                  ;
+; dat1           ; 001000 ; Unsigned Binary                  ;
+; dat2           ; 001001 ; Unsigned Binary                  ;
+; dat3           ; 001010 ; Unsigned Binary                  ;
+; dat4           ; 001011 ; Unsigned Binary                  ;
+; dat5           ; 001100 ; Unsigned Binary                  ;
+; dat6           ; 001101 ; Unsigned Binary                  ;
+; dat7           ; 001110 ; Unsigned Binary                  ;
+; dat8           ; 001111 ; Unsigned Binary                  ;
+; dat9           ; 010000 ; Unsigned Binary                  ;
+; dat10          ; 010010 ; Unsigned Binary                  ;
+; dat11          ; 010011 ; Unsigned Binary                  ;
+; dat12          ; 010100 ; Unsigned Binary                  ;
+; dat13          ; 010101 ; Unsigned Binary                  ;
+; dat14          ; 010110 ; Unsigned Binary                  ;
+; dat15          ; 010111 ; Unsigned Binary                  ;
+; dat16          ; 011000 ; Unsigned Binary                  ;
+; dat17          ; 011001 ; Unsigned Binary                  ;
+; dat18          ; 011010 ; Unsigned Binary                  ;
+; dat19          ; 011011 ; Unsigned Binary                  ;
+; dat20          ; 011100 ; Unsigned Binary                  ;
+; dat21          ; 011101 ; Unsigned Binary                  ;
+; dat22          ; 011110 ; Unsigned Binary                  ;
+; dat23          ; 011111 ; Unsigned Binary                  ;
+; dat24          ; 100000 ; Unsigned Binary                  ;
+; dat25          ; 100001 ; Unsigned Binary                  ;
+; dat26          ; 100010 ; Unsigned Binary                  ;
+; dat27          ; 100011 ; Unsigned Binary                  ;
+; dat28          ; 100100 ; Unsigned Binary                  ;
+; dat29          ; 100101 ; Unsigned Binary                  ;
+; dat30          ; 100110 ; Unsigned Binary                  ;
+; dat31          ; 100111 ; Unsigned Binary                  ;
+; dat32          ; 101000 ; Unsigned Binary                  ;
+; dat33          ; 101001 ; Unsigned Binary                  ;
+; dat34          ; 101010 ; Unsigned Binary                  ;
+; dat35          ; 101011 ; Unsigned Binary                  ;
+; dat36          ; 101100 ; Unsigned Binary                  ;
+; dat37          ; 101110 ; Unsigned Binary                  ;
+; dat38          ; 101111 ; Unsigned Binary                  ;
+; dat39          ; 110000 ; Unsigned Binary                  ;
+; dat40          ; 110001 ; Unsigned Binary                  ;
+; dat41          ; 110010 ; Unsigned Binary                  ;
+; dat42          ; 110011 ; Unsigned Binary                  ;
+; dat43          ; 110100 ; Unsigned Binary                  ;
+; dat44          ; 110101 ; Unsigned Binary                  ;
+; nul            ; 110110 ; Unsigned Binary                  ;
++----------------+--------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Sun Nov 27 16:57:13 2011
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LCD12864_TOP -c LCD12864_TOP
+Info: Found 1 design units, including 1 entities, in source file LCD12864.v
+    Info: Found entity 1: LCD12864
+Info: Found 1 design units, including 1 entities, in source file LCD12864_TOP.bdf
+    Info: Found entity 1: LCD12864_TOP
+Info: Elaborating entity "LCD12864_TOP" for the top level hierarchy
+Info: Elaborating entity "LCD12864" for hierarchy "LCD12864:inst"
+Warning (10230): Verilog HDL assignment warning at LCD12864.v(86): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at LCD12864.v(163): truncated value with size 32 to match size of target (2)
+Info: State machine "|LCD12864_TOP|LCD12864:inst|next" contains 53 states
+Info: State machine "|LCD12864_TOP|LCD12864:inst|current" contains 53 states
+Info: Selected Auto state machine encoding method for state machine "|LCD12864_TOP|LCD12864:inst|next"
+Info: Encoding result for state machine "|LCD12864_TOP|LCD12864:inst|next"
+    Info: Completed encoding using 53 state bits
+        Info: Encoded state bit "LCD12864:inst|next.nul"
+        Info: Encoded state bit "LCD12864:inst|next.dat44"
+        Info: Encoded state bit "LCD12864:inst|next.dat43"
+        Info: Encoded state bit "LCD12864:inst|next.dat42"
+        Info: Encoded state bit "LCD12864:inst|next.dat41"
+        Info: Encoded state bit "LCD12864:inst|next.dat40"
+        Info: Encoded state bit "LCD12864:inst|next.dat39"
+        Info: Encoded state bit "LCD12864:inst|next.dat38"
+        Info: Encoded state bit "LCD12864:inst|next.dat37"
+        Info: Encoded state bit "LCD12864:inst|next.dat36"
+        Info: Encoded state bit "LCD12864:inst|next.dat35"
+        Info: Encoded state bit "LCD12864:inst|next.dat34"
+        Info: Encoded state bit "LCD12864:inst|next.dat33"
+        Info: Encoded state bit "LCD12864:inst|next.dat32"
+        Info: Encoded state bit "LCD12864:inst|next.dat31"
+        Info: Encoded state bit "LCD12864:inst|next.dat30"
+        Info: Encoded state bit "LCD12864:inst|next.dat29"
+        Info: Encoded state bit "LCD12864:inst|next.dat28"
+        Info: Encoded state bit "LCD12864:inst|next.dat27"
+        Info: Encoded state bit "LCD12864:inst|next.dat26"
+        Info: Encoded state bit "LCD12864:inst|next.dat25"
+        Info: Encoded state bit "LCD12864:inst|next.dat24"
+        Info: Encoded state bit "LCD12864:inst|next.dat23"
+        Info: Encoded state bit "LCD12864:inst|next.dat22"
+        Info: Encoded state bit "LCD12864:inst|next.dat21"
+        Info: Encoded state bit "LCD12864:inst|next.dat20"
+        Info: Encoded state bit "LCD12864:inst|next.dat19"
+        Info: Encoded state bit "LCD12864:inst|next.dat18"
+        Info: Encoded state bit "LCD12864:inst|next.dat17"
+        Info: Encoded state bit "LCD12864:inst|next.dat16"
+        Info: Encoded state bit "LCD12864:inst|next.dat15"
+        Info: Encoded state bit "LCD12864:inst|next.dat14"
+        Info: Encoded state bit "LCD12864:inst|next.dat13"
+        Info: Encoded state bit "LCD12864:inst|next.dat12"
+        Info: Encoded state bit "LCD12864:inst|next.dat11"
+        Info: Encoded state bit "LCD12864:inst|next.dat10"
+        Info: Encoded state bit "LCD12864:inst|next.dat9"
+        Info: Encoded state bit "LCD12864:inst|next.dat8"
+        Info: Encoded state bit "LCD12864:inst|next.dat7"
+        Info: Encoded state bit "LCD12864:inst|next.dat6"
+        Info: Encoded state bit "LCD12864:inst|next.dat5"
+        Info: Encoded state bit "LCD12864:inst|next.dat4"
+        Info: Encoded state bit "LCD12864:inst|next.dat3"
+        Info: Encoded state bit "LCD12864:inst|next.dat2"
+        Info: Encoded state bit "LCD12864:inst|next.dat1"
+        Info: Encoded state bit "LCD12864:inst|next.dat0"
+        Info: Encoded state bit "LCD12864:inst|next.set6"
+        Info: Encoded state bit "LCD12864:inst|next.set5"
+        Info: Encoded state bit "LCD12864:inst|next.set4"
+        Info: Encoded state bit "LCD12864:inst|next.set3"
+        Info: Encoded state bit "LCD12864:inst|next.set2"
+        Info: Encoded state bit "LCD12864:inst|next.set1"
+        Info: Encoded state bit "LCD12864:inst|next.set0"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.set0" uses code string "00000000000000000000000000000000000000000000000000000"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.set1" uses code string "00000000000000000000000000000000000000000000000000011"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.set2" uses code string "00000000000000000000000000000000000000000000000000101"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.set3" uses code string "00000000000000000000000000000000000000000000000001001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.set4" uses code string "00000000000000000000000000000000000000000000000010001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.set5" uses code string "00000000000000000000000000000000000000000000000100001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.set6" uses code string "00000000000000000000000000000000000000000000001000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat0" uses code string "00000000000000000000000000000000000000000000010000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat1" uses code string "00000000000000000000000000000000000000000000100000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat2" uses code string "00000000000000000000000000000000000000000001000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat3" uses code string "00000000000000000000000000000000000000000010000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat4" uses code string "00000000000000000000000000000000000000000100000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat5" uses code string "00000000000000000000000000000000000000001000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat6" uses code string "00000000000000000000000000000000000000010000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat7" uses code string "00000000000000000000000000000000000000100000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat8" uses code string "00000000000000000000000000000000000001000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat9" uses code string "00000000000000000000000000000000000010000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat10" uses code string "00000000000000000000000000000000000100000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat11" uses code string "00000000000000000000000000000000001000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat12" uses code string "00000000000000000000000000000000010000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat13" uses code string "00000000000000000000000000000000100000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat14" uses code string "00000000000000000000000000000001000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat15" uses code string "00000000000000000000000000000010000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat16" uses code string "00000000000000000000000000000100000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat17" uses code string "00000000000000000000000000001000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat18" uses code string "00000000000000000000000000010000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat19" uses code string "00000000000000000000000000100000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat20" uses code string "00000000000000000000000001000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat21" uses code string "00000000000000000000000010000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat22" uses code string "00000000000000000000000100000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat23" uses code string "00000000000000000000001000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat24" uses code string "00000000000000000000010000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat25" uses code string "00000000000000000000100000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat26" uses code string "00000000000000000001000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat27" uses code string "00000000000000000010000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat28" uses code string "00000000000000000100000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat29" uses code string "00000000000000001000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat30" uses code string "00000000000000010000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat31" uses code string "00000000000000100000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat32" uses code string "00000000000001000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat33" uses code string "00000000000010000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat34" uses code string "00000000000100000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat35" uses code string "00000000001000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat36" uses code string "00000000010000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat37" uses code string "00000000100000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat38" uses code string "00000001000000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat39" uses code string "00000010000000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat40" uses code string "00000100000000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat41" uses code string "00001000000000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat42" uses code string "00010000000000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat43" uses code string "00100000000000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.dat44" uses code string "01000000000000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|next.nul" uses code string "10000000000000000000000000000000000000000000000000001"
+Info: Selected Auto state machine encoding method for state machine "|LCD12864_TOP|LCD12864:inst|current"
+Info: Encoding result for state machine "|LCD12864_TOP|LCD12864:inst|current"
+    Info: Completed encoding using 53 state bits
+        Info: Encoded state bit "LCD12864:inst|current.nul"
+        Info: Encoded state bit "LCD12864:inst|current.dat44"
+        Info: Encoded state bit "LCD12864:inst|current.dat43"
+        Info: Encoded state bit "LCD12864:inst|current.dat42"
+        Info: Encoded state bit "LCD12864:inst|current.dat41"
+        Info: Encoded state bit "LCD12864:inst|current.dat40"
+        Info: Encoded state bit "LCD12864:inst|current.dat39"
+        Info: Encoded state bit "LCD12864:inst|current.dat38"
+        Info: Encoded state bit "LCD12864:inst|current.dat37"
+        Info: Encoded state bit "LCD12864:inst|current.dat36"
+        Info: Encoded state bit "LCD12864:inst|current.dat35"
+        Info: Encoded state bit "LCD12864:inst|current.dat34"
+        Info: Encoded state bit "LCD12864:inst|current.dat33"
+        Info: Encoded state bit "LCD12864:inst|current.dat32"
+        Info: Encoded state bit "LCD12864:inst|current.dat31"
+        Info: Encoded state bit "LCD12864:inst|current.dat30"
+        Info: Encoded state bit "LCD12864:inst|current.dat29"
+        Info: Encoded state bit "LCD12864:inst|current.dat28"
+        Info: Encoded state bit "LCD12864:inst|current.dat27"
+        Info: Encoded state bit "LCD12864:inst|current.dat26"
+        Info: Encoded state bit "LCD12864:inst|current.dat25"
+        Info: Encoded state bit "LCD12864:inst|current.dat24"
+        Info: Encoded state bit "LCD12864:inst|current.dat23"
+        Info: Encoded state bit "LCD12864:inst|current.dat22"
+        Info: Encoded state bit "LCD12864:inst|current.dat21"
+        Info: Encoded state bit "LCD12864:inst|current.dat20"
+        Info: Encoded state bit "LCD12864:inst|current.dat19"
+        Info: Encoded state bit "LCD12864:inst|current.dat18"
+        Info: Encoded state bit "LCD12864:inst|current.dat17"
+        Info: Encoded state bit "LCD12864:inst|current.dat16"
+        Info: Encoded state bit "LCD12864:inst|current.dat15"
+        Info: Encoded state bit "LCD12864:inst|current.dat14"
+        Info: Encoded state bit "LCD12864:inst|current.dat13"
+        Info: Encoded state bit "LCD12864:inst|current.dat12"
+        Info: Encoded state bit "LCD12864:inst|current.dat11"
+        Info: Encoded state bit "LCD12864:inst|current.dat10"
+        Info: Encoded state bit "LCD12864:inst|current.dat9"
+        Info: Encoded state bit "LCD12864:inst|current.dat8"
+        Info: Encoded state bit "LCD12864:inst|current.dat7"
+        Info: Encoded state bit "LCD12864:inst|current.dat6"
+        Info: Encoded state bit "LCD12864:inst|current.dat5"
+        Info: Encoded state bit "LCD12864:inst|current.dat4"
+        Info: Encoded state bit "LCD12864:inst|current.dat3"
+        Info: Encoded state bit "LCD12864:inst|current.dat2"
+        Info: Encoded state bit "LCD12864:inst|current.dat1"
+        Info: Encoded state bit "LCD12864:inst|current.dat0"
+        Info: Encoded state bit "LCD12864:inst|current.set6"
+        Info: Encoded state bit "LCD12864:inst|current.set5"
+        Info: Encoded state bit "LCD12864:inst|current.set4"
+        Info: Encoded state bit "LCD12864:inst|current.set3"
+        Info: Encoded state bit "LCD12864:inst|current.set2"
+        Info: Encoded state bit "LCD12864:inst|current.set1"
+        Info: Encoded state bit "LCD12864:inst|current.set0"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.set0" uses code string "00000000000000000000000000000000000000000000000000000"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.set1" uses code string "00000000000000000000000000000000000000000000000000011"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.set2" uses code string "00000000000000000000000000000000000000000000000000101"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.set3" uses code string "00000000000000000000000000000000000000000000000001001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.set4" uses code string "00000000000000000000000000000000000000000000000010001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.set5" uses code string "00000000000000000000000000000000000000000000000100001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.set6" uses code string "00000000000000000000000000000000000000000000001000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat0" uses code string "00000000000000000000000000000000000000000000010000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat1" uses code string "00000000000000000000000000000000000000000000100000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat2" uses code string "00000000000000000000000000000000000000000001000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat3" uses code string "00000000000000000000000000000000000000000010000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat4" uses code string "00000000000000000000000000000000000000000100000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat5" uses code string "00000000000000000000000000000000000000001000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat6" uses code string "00000000000000000000000000000000000000010000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat7" uses code string "00000000000000000000000000000000000000100000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat8" uses code string "00000000000000000000000000000000000001000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat9" uses code string "00000000000000000000000000000000000010000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat10" uses code string "00000000000000000000000000000000000100000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat11" uses code string "00000000000000000000000000000000001000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat12" uses code string "00000000000000000000000000000000010000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat13" uses code string "00000000000000000000000000000000100000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat14" uses code string "00000000000000000000000000000001000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat15" uses code string "00000000000000000000000000000010000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat16" uses code string "00000000000000000000000000000100000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat17" uses code string "00000000000000000000000000001000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat18" uses code string "00000000000000000000000000010000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat19" uses code string "00000000000000000000000000100000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat20" uses code string "00000000000000000000000001000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat21" uses code string "00000000000000000000000010000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat22" uses code string "00000000000000000000000100000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat23" uses code string "00000000000000000000001000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat24" uses code string "00000000000000000000010000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat25" uses code string "00000000000000000000100000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat26" uses code string "00000000000000000001000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat27" uses code string "00000000000000000010000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat28" uses code string "00000000000000000100000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat29" uses code string "00000000000000001000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat30" uses code string "00000000000000010000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat31" uses code string "00000000000000100000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat32" uses code string "00000000000001000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat33" uses code string "00000000000010000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat34" uses code string "00000000000100000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat35" uses code string "00000000001000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat36" uses code string "00000000010000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat37" uses code string "00000000100000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat38" uses code string "00000001000000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat39" uses code string "00000010000000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat40" uses code string "00000100000000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat41" uses code string "00001000000000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat42" uses code string "00010000000000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat43" uses code string "00100000000000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.dat44" uses code string "01000000000000000000000000000000000000000000000000001"
+    Info: State "|LCD12864_TOP|LCD12864:inst|current.nul" uses code string "10000000000000000000000000000000000000000000000000001"
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "lcd_rw" stuck at GND
+Info: 65 registers lost all their fanouts during netlist optimizations. The first 65 are displayed below.
+    Info: Register "LCD12864:inst|current.set0" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.set1" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.set2" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.set3" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.set4" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.set5" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.set6" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat0" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat1" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat2" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat3" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat4" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat5" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat6" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat7" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat8" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat9" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat10" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat11" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat12" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat13" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat14" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat15" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat16" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat17" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat18" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat19" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat20" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat21" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat22" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat23" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat24" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat25" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat26" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat27" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat28" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat29" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat30" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat31" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat32" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat33" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat34" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat35" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat36" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat37" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat38" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat39" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat40" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat41" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat42" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat43" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.dat44" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current.nul" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|next~8" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|next~9" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|next~10" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|next~11" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|next~12" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|next~13" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current~7" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current~8" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current~9" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current~10" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current~11" lost all its fanouts during netlist optimizations.
+    Info: Register "LCD12864:inst|current~12" lost all its fanouts during netlist optimizations.
+Info: Implemented 146 device resources after synthesis - the final resource count might be different
+    Info: Implemented 1 input pins
+    Info: Implemented 11 output pins
+    Info: Implemented 134 logic cells
+Info: Generated suppressed messages file D:/EPM240/EPM240_570_DVD/HDL Code/verilog/EX13/LCD12864/LCD12864_TOP.map.smsg
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Allocated 141 megabytes of memory during processing
+    Info: Processing ended: Sun Nov 27 16:57:15 2011
+    Info: Elapsed time: 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/EPM240/EPM240_570_DVD/HDL Code/verilog/EX13/LCD12864/LCD12864_TOP.map.smsg.
+
+

@@ -1,0 +1,639 @@
+Analysis & Synthesis report for DS18B20
+Mon Nov 28 08:40:56 2011
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |top|DS18B20:inst2|ReadBitstate
+  8. State Machine - |top|DS18B20:inst2|Readstate
+  9. State Machine - |top|DS18B20:inst2|WriteBitstate
+ 10. State Machine - |top|DS18B20:inst2|Writestate
+ 11. State Machine - |top|DS18B20:inst2|CmdSETstate
+ 12. State Machine - |top|DS18B20:inst2|Rststate
+ 13. Registers Removed During Synthesis
+ 14. General Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: DS18B20:inst2
+ 17. Parameter Settings for User Entity Instance: clk_div:inst1
+ 18. Analysis & Synthesis Messages
+ 19. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Mon Nov 28 08:40:56 2011    ;
+; Quartus II Version          ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name               ; DS18B20                                  ;
+; Top-level Entity Name       ; top                                      ;
+; Family                      ; MAX II                                   ;
+; Total logic elements        ; 283                                      ;
+; Total pins                  ; 11                                       ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 0                                        ;
+; DSP block 9-bit elements    ; 0                                        ;
+; Total PLLs                  ; 0                                        ;
+; Total DLLs                  ; 0                                        ;
++-----------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                         ; Setting            ; Default Value      ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                         ; EPM240T100C5       ;                    ;
+; Top-level entity name                                                          ; top                ; DS18B20            ;
+; Family name                                                                    ; MAX II             ; Stratix II         ;
+; Optimization Technique -- MAX II                                               ; Area               ; Balanced           ;
+; Use Generated Physical Constraints File                                        ; Off                ;                    ;
+; Use smart compilation                                                          ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                            ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                            ; Off                ; Off                ;
+; Preserve fewer node names                                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                      ; Off                ; Off                ;
+; Verilog Version                                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                       ; Auto               ; Auto               ;
+; Safe State Machine                                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                              ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                        ; On                 ; On                 ;
+; Parallel Synthesis                                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                 ; Off                ; Off                ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II/Cyclone III ; 70                 ; 70                 ;
+; Auto Carry Chains                                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                          ; Off                ; Off                ;
+; Perform gate-level register retiming                                           ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                         ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                  ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                         ; Off                ; Off                ;
+; Auto Resource Sharing                                                          ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                             ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                               ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                           ; On                 ; On                 ;
+; Block Design Naming                                                            ; Auto               ; Auto               ;
++--------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                         ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                         ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------+
+; top.bdf                          ; yes             ; User Block Diagram/Schematic File  ; D:/EPM240_570/EPM240_570_DVD/HDL Code/verilog/EX16/DS18B20/top.bdf   ;
+; clk_div.v                        ; yes             ; User Verilog HDL File              ; D:/EPM240_570/EPM240_570_DVD/HDL Code/verilog/EX16/DS18B20/clk_div.v ;
+; DS18B20.v                        ; yes             ; User Verilog HDL File              ; D:/EPM240_570/EPM240_570_DVD/HDL Code/verilog/EX16/DS18B20/DS18B20.v ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                         ;
++---------------------------------------------+-----------------------+
+; Resource                                    ; Usage                 ;
++---------------------------------------------+-----------------------+
+; Total logic elements                        ; 283                   ;
+;     -- Combinational with no register       ; 127                   ;
+;     -- Register only                        ; 51                    ;
+;     -- Combinational with a register        ; 105                   ;
+;                                             ;                       ;
+; Logic element usage by number of LUT inputs ;                       ;
+;     -- 4 input functions                    ; 99                    ;
+;     -- 3 input functions                    ; 30                    ;
+;     -- 2 input functions                    ; 93                    ;
+;     -- 1 input functions                    ; 10                    ;
+;     -- 0 input functions                    ; 0                     ;
+;                                             ;                       ;
+; Logic elements by mode                      ;                       ;
+;     -- normal mode                          ; 220                   ;
+;     -- arithmetic mode                      ; 63                    ;
+;     -- qfbk mode                            ; 0                     ;
+;     -- register cascade mode                ; 0                     ;
+;     -- synchronous clear/load mode          ; 25                    ;
+;     -- asynchronous clear/load mode         ; 0                     ;
+;                                             ;                       ;
+; Total registers                             ; 156                   ;
+; Total logic cells in carry chains           ; 69                    ;
+; I/O pins                                    ; 11                    ;
+; Maximum fan-out node                        ; clk_div:inst1|clk_out ;
+; Maximum fan-out                             ; 131                   ;
+; Total fan-out                               ; 1048                  ;
+; Average fan-out                             ; 3.56                  ;
++---------------------------------------------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                    ;
++----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; |top                       ; 283 (0)     ; 156          ; 0           ; 0            ; 0       ; 0         ; 0         ; 11   ; 0            ; 127 (0)      ; 51 (0)            ; 105 (0)          ; 69 (0)          ; 0 (0)      ; |top                ; work         ;
+;    |DS18B20:inst2|         ; 224 (224)   ; 130          ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 94 (94)      ; 29 (29)           ; 101 (101)        ; 44 (44)         ; 0 (0)      ; |top|DS18B20:inst2  ; work         ;
+;    |clk_div:inst1|         ; 59 (59)     ; 26           ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 33 (33)      ; 22 (22)           ; 4 (4)            ; 25 (25)         ; 0 (0)      ; |top|clk_div:inst1  ; work         ;
++----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|DS18B20:inst2|ReadBitstate                                                                                         ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+
+; Name                 ; ReadBitstate.state_3 ; ReadBitstate.state_2 ; ReadBitstate.state_1 ; ReadBitstate.state_0 ; ReadBitstate.state_4 ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+
+; ReadBitstate.state_0 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ;
+; ReadBitstate.state_1 ; 0                    ; 0                    ; 1                    ; 1                    ; 0                    ;
+; ReadBitstate.state_2 ; 0                    ; 1                    ; 0                    ; 1                    ; 0                    ;
+; ReadBitstate.state_3 ; 1                    ; 0                    ; 0                    ; 1                    ; 0                    ;
+; ReadBitstate.state_4 ; 0                    ; 0                    ; 0                    ; 1                    ; 1                    ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------+
+; State Machine - |top|DS18B20:inst2|Readstate                                  ;
++-------------------+-------------------+-------------------+-------------------+
+; Name              ; Readstate.state_0 ; Readstate.state_2 ; Readstate.state_1 ;
++-------------------+-------------------+-------------------+-------------------+
+; Readstate.state_0 ; 0                 ; 0                 ; 0                 ;
+; Readstate.state_1 ; 1                 ; 0                 ; 1                 ;
+; Readstate.state_2 ; 1                 ; 1                 ; 0                 ;
++-------------------+-------------------+-------------------+-------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|DS18B20:inst2|WriteBitstate                                                                                                                                              ;
++-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+; Name                  ; WriteBitstate.state_6 ; WriteBitstate.state_5 ; WriteBitstate.state_4 ; WriteBitstate.state_3 ; WriteBitstate.state_2 ; WriteBitstate.state_1 ; WriteBitstate.state_0 ;
++-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+; WriteBitstate.state_0 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ;
+; WriteBitstate.state_1 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 1                     ;
+; WriteBitstate.state_2 ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 1                     ;
+; WriteBitstate.state_3 ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 1                     ;
+; WriteBitstate.state_4 ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; WriteBitstate.state_5 ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; WriteBitstate.state_6 ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
++-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------+
+; State Machine - |top|DS18B20:inst2|Writestate                                     ;
++--------------------+--------------------+--------------------+--------------------+
+; Name               ; Writestate.state_0 ; Writestate.state_2 ; Writestate.state_1 ;
++--------------------+--------------------+--------------------+--------------------+
+; Writestate.state_0 ; 0                  ; 0                  ; 0                  ;
+; Writestate.state_1 ; 1                  ; 0                  ; 1                  ;
+; Writestate.state_2 ; 1                  ; 1                  ; 0                  ;
++--------------------+--------------------+--------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|DS18B20:inst2|CmdSETstate                                                                                                                                                                                                                                                 ;
++----------------------+----------------------+----------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+
+; Name                 ; CmdSETstate.state_11 ; CmdSETstate.state_10 ; CmdSETstate.state_9 ; CmdSETstate.state_8 ; CmdSETstate.state_7 ; CmdSETstate.state_6 ; CmdSETstate.state_5 ; CmdSETstate.state_4 ; CmdSETstate.state_3 ; CmdSETstate.state_2 ; CmdSETstate.state_1 ; CmdSETstate.state_0 ;
++----------------------+----------------------+----------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+
+; CmdSETstate.state_0  ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ;
+; CmdSETstate.state_1  ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 1                   ;
+; CmdSETstate.state_2  ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 1                   ;
+; CmdSETstate.state_3  ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 1                   ;
+; CmdSETstate.state_4  ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 1                   ;
+; CmdSETstate.state_5  ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ;
+; CmdSETstate.state_6  ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ;
+; CmdSETstate.state_7  ; 0                    ; 0                    ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ;
+; CmdSETstate.state_8  ; 0                    ; 0                    ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ;
+; CmdSETstate.state_9  ; 0                    ; 0                    ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ;
+; CmdSETstate.state_10 ; 0                    ; 1                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ;
+; CmdSETstate.state_11 ; 1                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ;
++----------------------+----------------------+----------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|DS18B20:inst2|Rststate                                                                                                                              ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+
+; Name             ; Rststate.state_7 ; Rststate.state_6 ; Rststate.state_5 ; Rststate.state_4 ; Rststate.state_3 ; Rststate.state_2 ; Rststate.state_1 ; Rststate.state_0 ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+
+; Rststate.state_0 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ;
+; Rststate.state_1 ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 1                ;
+; Rststate.state_2 ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 1                ;
+; Rststate.state_3 ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 1                ;
+; Rststate.state_4 ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 1                ;
+; Rststate.state_5 ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; Rststate.state_6 ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
+; Rststate.state_7 ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; DS18B20:inst2|ReadBitstate~21          ; Lost fanout        ;
+; DS18B20:inst2|ReadBitstate~22          ; Lost fanout        ;
+; DS18B20:inst2|ReadBitstate~24          ; Lost fanout        ;
+; DS18B20:inst2|ReadBitstate~25          ; Lost fanout        ;
+; DS18B20:inst2|ReadBitstate~26          ; Lost fanout        ;
+; DS18B20:inst2|ReadBitstate~27          ; Lost fanout        ;
+; DS18B20:inst2|ReadBitstate~28          ; Lost fanout        ;
+; DS18B20:inst2|ReadBitstate~29          ; Lost fanout        ;
+; DS18B20:inst2|ReadBitstate~30          ; Lost fanout        ;
+; DS18B20:inst2|ReadBitstate~31          ; Lost fanout        ;
+; DS18B20:inst2|ReadBitstate~32          ; Lost fanout        ;
+; DS18B20:inst2|ReadBitstate~33          ; Lost fanout        ;
+; DS18B20:inst2|ReadBitstate~34          ; Lost fanout        ;
+; DS18B20:inst2|ReadBitstate~35          ; Lost fanout        ;
+; DS18B20:inst2|ReadBitstate~36          ; Lost fanout        ;
+; DS18B20:inst2|Readstate~16             ; Lost fanout        ;
+; DS18B20:inst2|Readstate~17             ; Lost fanout        ;
+; DS18B20:inst2|Readstate~18             ; Lost fanout        ;
+; DS18B20:inst2|Readstate~19             ; Lost fanout        ;
+; DS18B20:inst2|Readstate~20             ; Lost fanout        ;
+; DS18B20:inst2|Readstate~21             ; Lost fanout        ;
+; DS18B20:inst2|Readstate~22             ; Lost fanout        ;
+; DS18B20:inst2|Readstate~23             ; Lost fanout        ;
+; DS18B20:inst2|Readstate~24             ; Lost fanout        ;
+; DS18B20:inst2|Readstate~25             ; Lost fanout        ;
+; DS18B20:inst2|Readstate~26             ; Lost fanout        ;
+; DS18B20:inst2|Readstate~27             ; Lost fanout        ;
+; DS18B20:inst2|Readstate~28             ; Lost fanout        ;
+; DS18B20:inst2|Readstate~29             ; Lost fanout        ;
+; DS18B20:inst2|WriteBitstate~28         ; Lost fanout        ;
+; DS18B20:inst2|WriteBitstate~29         ; Lost fanout        ;
+; DS18B20:inst2|WriteBitstate~30         ; Lost fanout        ;
+; DS18B20:inst2|WriteBitstate~31         ; Lost fanout        ;
+; DS18B20:inst2|WriteBitstate~32         ; Lost fanout        ;
+; DS18B20:inst2|Writestate~13            ; Lost fanout        ;
+; DS18B20:inst2|Writestate~14            ; Lost fanout        ;
+; DS18B20:inst2|Writestate~15            ; Lost fanout        ;
+; DS18B20:inst2|CmdSETstate~21           ; Lost fanout        ;
+; DS18B20:inst2|CmdSETstate~22           ; Lost fanout        ;
+; DS18B20:inst2|CmdSETstate~23           ; Lost fanout        ;
+; DS18B20:inst2|CmdSETstate~24           ; Lost fanout        ;
+; DS18B20:inst2|CmdSETstate~25           ; Lost fanout        ;
+; DS18B20:inst2|CmdSETstate~26           ; Lost fanout        ;
+; DS18B20:inst2|CmdSETstate~27           ; Lost fanout        ;
+; DS18B20:inst2|CmdSETstate~28           ; Lost fanout        ;
+; DS18B20:inst2|CmdSETstate~29           ; Lost fanout        ;
+; DS18B20:inst2|CmdSETstate~30           ; Lost fanout        ;
+; DS18B20:inst2|CmdSETstate~31           ; Lost fanout        ;
+; DS18B20:inst2|CmdSETstate~32           ; Lost fanout        ;
+; DS18B20:inst2|CmdSETstate~33           ; Lost fanout        ;
+; DS18B20:inst2|CmdSETstate~34           ; Lost fanout        ;
+; DS18B20:inst2|CmdSETstate~35           ; Lost fanout        ;
+; DS18B20:inst2|CmdSETstate~36           ; Lost fanout        ;
+; DS18B20:inst2|Rststate~23              ; Lost fanout        ;
+; DS18B20:inst2|Rststate~24              ; Lost fanout        ;
+; DS18B20:inst2|Rststate~25              ; Lost fanout        ;
+; DS18B20:inst2|Rststate~26              ; Lost fanout        ;
+; DS18B20:inst2|Rststate~27              ; Lost fanout        ;
+; Total Number of Removed Registers = 58 ;                    ;
++----------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 156   ;
+; Number of registers using Synchronous Clear  ; 25    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 124   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |top|DS18B20:inst2|Write_DS18B20.indcmd[1] ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|DS18B20:inst2|Write_DS18B20.indcmd[3] ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 6 LEs                ; 30 LEs                 ; Yes        ; |top|DS18B20:inst2|CountRbitStep[5]        ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |top|DS18B20:inst2|CountWbitStep[2]        ;
+; 12:1               ; 10 bits   ; 80 LEs        ; 10 LEs               ; 70 LEs                 ; Yes        ; |top|DS18B20:inst2|CountRstStep[7]         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|DS18B20:inst2|CmdSETstate.state_7~0   ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |top|DS18B20:inst2|indcmd~10               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|DS18B20:inst2|Readstate.state_0~0     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |top|DS18B20:inst2|j~6                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|DS18B20:inst2|Writestate.state_0~0    ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |top|DS18B20:inst2|Rststate.state_2~0      ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top|DS18B20:inst2|ReadBitstate.state_3~0  ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |top|DS18B20:inst2|ResultDS18B20~21        ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |top|DS18B20:inst2|WriteBitstate.state_2~0 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DS18B20:inst2 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; state_0        ; 0     ; Untyped                           ;
+; state_1        ; 1     ; Untyped                           ;
+; state_2        ; 2     ; Untyped                           ;
+; state_3        ; 3     ; Untyped                           ;
+; state_4        ; 4     ; Untyped                           ;
+; state_5        ; 5     ; Untyped                           ;
+; state_6        ; 6     ; Untyped                           ;
+; state_7        ; 7     ; Untyped                           ;
+; state_8        ; 8     ; Untyped                           ;
+; state_9        ; 9     ; Untyped                           ;
+; state_10       ; 10    ; Untyped                           ;
+; state_11       ; 11    ; Untyped                           ;
+; state_12       ; 12    ; Untyped                           ;
+; state_13       ; 13    ; Untyped                           ;
+; state_14       ; 14    ; Untyped                           ;
+; state_15       ; 15    ; Untyped                           ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clk_div:inst1 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; DIV            ; 25    ; Untyped                           ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Mon Nov 28 08:40:51 2011
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DS18B20 -c DS18B20
+Info: Found 1 design units, including 1 entities, in source file top.bdf
+    Info: Found entity 1: top
+Info: Found 1 design units, including 1 entities, in source file clk_div.v
+    Info: Found entity 1: clk_div
+Info: Found 1 design units, including 1 entities, in source file DS18B20.v
+    Info: Found entity 1: DS18B20
+Info: Elaborating entity "top" for the top level hierarchy
+Info: Elaborating entity "DS18B20" for hierarchy "DS18B20:inst2"
+Warning (10036): Verilog HDL or VHDL warning at DS18B20.v(427): object "Flag_CmdSET" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at DS18B20.v(89): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at DS18B20.v(103): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at DS18B20.v(132): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at DS18B20.v(146): truncated value with size 32 to match size of target (10)
+Warning (10242): Verilog HDL Function Declaration warning at DS18B20.v(187): variable "indcmd" may have a Don't Care value because it may not be assigned a value in every possible path through the statements preceding its use
+Warning (10230): Verilog HDL assignment warning at DS18B20.v(246): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at DS18B20.v(259): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at DS18B20.v(273): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at DS18B20.v(287): truncated value with size 32 to match size of target (8)
+Warning (10242): Verilog HDL Function Declaration warning at DS18B20.v(190): variable "indcmd" may have a Don't Care value because it may not be assigned a value in every possible path through the statements preceding its use
+Warning (10230): Verilog HDL assignment warning at DS18B20.v(191): truncated value with size 32 to match size of target (4)
+Warning (10776): Verilog HDL warning at DS18B20.v(171): variable indcmd in static task or function Write_DS18B20 may have unintended latch behavior
+Warning (10230): Verilog HDL assignment warning at DS18B20.v(465): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at DS18B20.v(478): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at DS18B20.v(379): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at DS18B20.v(394): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at DS18B20.v(407): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at DS18B20.v(329): truncated value with size 32 to match size of target (4)
+Warning (10235): Verilog HDL Always Construct warning at DS18B20.v(59): variable "Result" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DS18B20.v(63): variable "inter_bus_in" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info: Elaborating entity "clk_div" for hierarchy "clk_div:inst1"
+Info: State machine "|top|DS18B20:inst2|ReadBitstate" contains 5 states
+Info: State machine "|top|DS18B20:inst2|Readstate" contains 3 states
+Info: State machine "|top|DS18B20:inst2|WriteBitstate" contains 7 states
+Info: State machine "|top|DS18B20:inst2|Writestate" contains 3 states
+Info: State machine "|top|DS18B20:inst2|CmdSETstate" contains 12 states
+Info: State machine "|top|DS18B20:inst2|Rststate" contains 8 states
+Info: Selected Auto state machine encoding method for state machine "|top|DS18B20:inst2|ReadBitstate"
+Info: Encoding result for state machine "|top|DS18B20:inst2|ReadBitstate"
+    Info: Completed encoding using 5 state bits
+        Info: Encoded state bit "DS18B20:inst2|ReadBitstate.state_3"
+        Info: Encoded state bit "DS18B20:inst2|ReadBitstate.state_2"
+        Info: Encoded state bit "DS18B20:inst2|ReadBitstate.state_1"
+        Info: Encoded state bit "DS18B20:inst2|ReadBitstate.state_0"
+        Info: Encoded state bit "DS18B20:inst2|ReadBitstate.state_4"
+    Info: State "|top|DS18B20:inst2|ReadBitstate.state_0" uses code string "00000"
+    Info: State "|top|DS18B20:inst2|ReadBitstate.state_1" uses code string "00110"
+    Info: State "|top|DS18B20:inst2|ReadBitstate.state_2" uses code string "01010"
+    Info: State "|top|DS18B20:inst2|ReadBitstate.state_3" uses code string "10010"
+    Info: State "|top|DS18B20:inst2|ReadBitstate.state_4" uses code string "00011"
+Info: Selected Auto state machine encoding method for state machine "|top|DS18B20:inst2|Readstate"
+Info: Encoding result for state machine "|top|DS18B20:inst2|Readstate"
+    Info: Completed encoding using 3 state bits
+        Info: Encoded state bit "DS18B20:inst2|Readstate.state_0"
+        Info: Encoded state bit "DS18B20:inst2|Readstate.state_2"
+        Info: Encoded state bit "DS18B20:inst2|Readstate.state_1"
+    Info: State "|top|DS18B20:inst2|Readstate.state_0" uses code string "000"
+    Info: State "|top|DS18B20:inst2|Readstate.state_1" uses code string "101"
+    Info: State "|top|DS18B20:inst2|Readstate.state_2" uses code string "110"
+Info: Selected Auto state machine encoding method for state machine "|top|DS18B20:inst2|WriteBitstate"
+Info: Encoding result for state machine "|top|DS18B20:inst2|WriteBitstate"
+    Info: Completed encoding using 7 state bits
+        Info: Encoded state bit "DS18B20:inst2|WriteBitstate.state_6"
+        Info: Encoded state bit "DS18B20:inst2|WriteBitstate.state_5"
+        Info: Encoded state bit "DS18B20:inst2|WriteBitstate.state_4"
+        Info: Encoded state bit "DS18B20:inst2|WriteBitstate.state_3"
+        Info: Encoded state bit "DS18B20:inst2|WriteBitstate.state_2"
+        Info: Encoded state bit "DS18B20:inst2|WriteBitstate.state_1"
+        Info: Encoded state bit "DS18B20:inst2|WriteBitstate.state_0"
+    Info: State "|top|DS18B20:inst2|WriteBitstate.state_0" uses code string "0000000"
+    Info: State "|top|DS18B20:inst2|WriteBitstate.state_1" uses code string "0000011"
+    Info: State "|top|DS18B20:inst2|WriteBitstate.state_2" uses code string "0000101"
+    Info: State "|top|DS18B20:inst2|WriteBitstate.state_3" uses code string "0001001"
+    Info: State "|top|DS18B20:inst2|WriteBitstate.state_4" uses code string "0010001"
+    Info: State "|top|DS18B20:inst2|WriteBitstate.state_5" uses code string "0100001"
+    Info: State "|top|DS18B20:inst2|WriteBitstate.state_6" uses code string "1000001"
+Info: Selected Auto state machine encoding method for state machine "|top|DS18B20:inst2|Writestate"
+Info: Encoding result for state machine "|top|DS18B20:inst2|Writestate"
+    Info: Completed encoding using 3 state bits
+        Info: Encoded state bit "DS18B20:inst2|Writestate.state_0"
+        Info: Encoded state bit "DS18B20:inst2|Writestate.state_2"
+        Info: Encoded state bit "DS18B20:inst2|Writestate.state_1"
+    Info: State "|top|DS18B20:inst2|Writestate.state_0" uses code string "000"
+    Info: State "|top|DS18B20:inst2|Writestate.state_1" uses code string "101"
+    Info: State "|top|DS18B20:inst2|Writestate.state_2" uses code string "110"
+Info: Selected Auto state machine encoding method for state machine "|top|DS18B20:inst2|CmdSETstate"
+Info: Encoding result for state machine "|top|DS18B20:inst2|CmdSETstate"
+    Info: Completed encoding using 12 state bits
+        Info: Encoded state bit "DS18B20:inst2|CmdSETstate.state_11"
+        Info: Encoded state bit "DS18B20:inst2|CmdSETstate.state_10"
+        Info: Encoded state bit "DS18B20:inst2|CmdSETstate.state_9"
+        Info: Encoded state bit "DS18B20:inst2|CmdSETstate.state_8"
+        Info: Encoded state bit "DS18B20:inst2|CmdSETstate.state_7"
+        Info: Encoded state bit "DS18B20:inst2|CmdSETstate.state_6"
+        Info: Encoded state bit "DS18B20:inst2|CmdSETstate.state_5"
+        Info: Encoded state bit "DS18B20:inst2|CmdSETstate.state_4"
+        Info: Encoded state bit "DS18B20:inst2|CmdSETstate.state_3"
+        Info: Encoded state bit "DS18B20:inst2|CmdSETstate.state_2"
+        Info: Encoded state bit "DS18B20:inst2|CmdSETstate.state_1"
+        Info: Encoded state bit "DS18B20:inst2|CmdSETstate.state_0"
+    Info: State "|top|DS18B20:inst2|CmdSETstate.state_0" uses code string "000000000000"
+    Info: State "|top|DS18B20:inst2|CmdSETstate.state_1" uses code string "000000000011"
+    Info: State "|top|DS18B20:inst2|CmdSETstate.state_2" uses code string "000000000101"
+    Info: State "|top|DS18B20:inst2|CmdSETstate.state_3" uses code string "000000001001"
+    Info: State "|top|DS18B20:inst2|CmdSETstate.state_4" uses code string "000000010001"
+    Info: State "|top|DS18B20:inst2|CmdSETstate.state_5" uses code string "000000100001"
+    Info: State "|top|DS18B20:inst2|CmdSETstate.state_6" uses code string "000001000001"
+    Info: State "|top|DS18B20:inst2|CmdSETstate.state_7" uses code string "000010000001"
+    Info: State "|top|DS18B20:inst2|CmdSETstate.state_8" uses code string "000100000001"
+    Info: State "|top|DS18B20:inst2|CmdSETstate.state_9" uses code string "001000000001"
+    Info: State "|top|DS18B20:inst2|CmdSETstate.state_10" uses code string "010000000001"
+    Info: State "|top|DS18B20:inst2|CmdSETstate.state_11" uses code string "100000000001"
+Info: Selected Auto state machine encoding method for state machine "|top|DS18B20:inst2|Rststate"
+Info: Encoding result for state machine "|top|DS18B20:inst2|Rststate"
+    Info: Completed encoding using 8 state bits
+        Info: Encoded state bit "DS18B20:inst2|Rststate.state_7"
+        Info: Encoded state bit "DS18B20:inst2|Rststate.state_6"
+        Info: Encoded state bit "DS18B20:inst2|Rststate.state_5"
+        Info: Encoded state bit "DS18B20:inst2|Rststate.state_4"
+        Info: Encoded state bit "DS18B20:inst2|Rststate.state_3"
+        Info: Encoded state bit "DS18B20:inst2|Rststate.state_2"
+        Info: Encoded state bit "DS18B20:inst2|Rststate.state_1"
+        Info: Encoded state bit "DS18B20:inst2|Rststate.state_0"
+    Info: State "|top|DS18B20:inst2|Rststate.state_0" uses code string "00000000"
+    Info: State "|top|DS18B20:inst2|Rststate.state_1" uses code string "00000011"
+    Info: State "|top|DS18B20:inst2|Rststate.state_2" uses code string "00000101"
+    Info: State "|top|DS18B20:inst2|Rststate.state_3" uses code string "00001001"
+    Info: State "|top|DS18B20:inst2|Rststate.state_4" uses code string "00010001"
+    Info: State "|top|DS18B20:inst2|Rststate.state_5" uses code string "00100001"
+    Info: State "|top|DS18B20:inst2|Rststate.state_6" uses code string "01000001"
+    Info: State "|top|DS18B20:inst2|Rststate.state_7" uses code string "10000001"
+Warning: Removed always-enabled tri-state buffer DS18B20:inst2|data[7] feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DS18B20:inst2|data[6] feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DS18B20:inst2|data[5] feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DS18B20:inst2|data[4] feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DS18B20:inst2|data[3] feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DS18B20:inst2|data[2] feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DS18B20:inst2|data[1] feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer DS18B20:inst2|data[0] feeding logic, open-drain buffer, or output pin
+Info: 58 registers lost all their fanouts during netlist optimizations. The first 58 are displayed below.
+    Info: Register "DS18B20:inst2|ReadBitstate~21" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|ReadBitstate~22" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|ReadBitstate~24" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|ReadBitstate~25" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|ReadBitstate~26" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|ReadBitstate~27" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|ReadBitstate~28" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|ReadBitstate~29" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|ReadBitstate~30" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|ReadBitstate~31" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|ReadBitstate~32" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|ReadBitstate~33" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|ReadBitstate~34" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|ReadBitstate~35" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|ReadBitstate~36" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Readstate~16" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Readstate~17" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Readstate~18" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Readstate~19" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Readstate~20" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Readstate~21" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Readstate~22" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Readstate~23" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Readstate~24" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Readstate~25" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Readstate~26" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Readstate~27" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Readstate~28" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Readstate~29" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|WriteBitstate~28" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|WriteBitstate~29" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|WriteBitstate~30" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|WriteBitstate~31" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|WriteBitstate~32" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Writestate~13" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Writestate~14" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Writestate~15" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|CmdSETstate~21" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|CmdSETstate~22" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|CmdSETstate~23" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|CmdSETstate~24" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|CmdSETstate~25" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|CmdSETstate~26" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|CmdSETstate~27" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|CmdSETstate~28" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|CmdSETstate~29" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|CmdSETstate~30" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|CmdSETstate~31" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|CmdSETstate~32" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|CmdSETstate~33" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|CmdSETstate~34" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|CmdSETstate~35" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|CmdSETstate~36" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Rststate~23" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Rststate~24" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Rststate~25" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Rststate~26" lost all its fanouts during netlist optimizations.
+    Info: Register "DS18B20:inst2|Rststate~27" lost all its fanouts during netlist optimizations.
+Info: Implemented 294 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 8 output pins
+    Info: Implemented 1 bidirectional pins
+    Info: Implemented 283 logic cells
+Info: Generated suppressed messages file D:/EPM240_570/EPM240_570_DVD/HDL Code/verilog/EX16/DS18B20/DS18B20.map.smsg
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 29 warnings
+    Info: Allocated 143 megabytes of memory during processing
+    Info: Processing ended: Mon Nov 28 08:40:56 2011
+    Info: Elapsed time: 00:00:05
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/EPM240_570/EPM240_570_DVD/HDL Code/verilog/EX16/DS18B20/DS18B20.map.smsg.
+
+

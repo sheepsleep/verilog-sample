@@ -1,0 +1,265 @@
+Version 7.2 Build 151 09/26/2007 SJ Full Version
+39
+2304
+OFF
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+UART
+# storage
+db|UART.(0).cnf
+db|UART.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+UART.v
+9fe531747ceed937f91c0327cbc9765
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# hierarchies {
+|
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+START_BITS1DATA_BITS8STOP_BITS1CLOCK_FACTOR16START_BITS1DATA_BITS8STOP_BITS1CLOCK_FACTOR16
+# end
+# entity
+clock_gen_select
+# storage
+db|UART.(1).cnf
+db|UART.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+clock_gen_select.v
+1faa1c24d28a3585e52a80d2edd72351
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# hierarchies {
+clock_gen_select:clock_unit
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+DDS_PRESCALE_BITS3DDS_PRESCALE_BITS3DDS_BITS6DDS_BITS6DDS_BITS6
+# end
+# entity
+rs232tx
+# storage
+db|UART.(2).cnf
+db|UART.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+rs232tx.v
+3395e9726fd6cbcc571e662aba476ea7
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# user_parameter {
+START_BITS_PP
+1
+PARAMETER_SIGNED_DEC
+USR
+DATA_BITS_PP
+8
+PARAMETER_SIGNED_DEC
+USR
+STOP_BITS_PP
+1
+PARAMETER_SIGNED_DEC
+USR
+CLOCK_FACTOR_PP
+16
+PARAMETER_SIGNED_DEC
+USR
+TX_BIT_COUNT_BITS_PP
+4
+PARAMETER_SIGNED_DEC
+DEF
+m1_idle
+0
+PARAMETER_SIGNED_DEC
+DEF
+m1_waiting
+1
+PARAMETER_SIGNED_DEC
+DEF
+m1_sending
+3
+PARAMETER_SIGNED_DEC
+DEF
+m1_sending_last_bit
+2
+PARAMETER_SIGNED_DEC
+DEF
+}
+# include_file {
+rs232rx.v
+1e7b5bf856b75d311af25de4bf0ba52
+}
+# hierarchies {
+rs232tx:rs232_tx_block
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+TOTAL_BITSSTART_BITS_PP + DATA_BITS_PP + STOP_BITS_PPTOTAL_BITSSTART_BITS_PP + DATA_BITS_PP + STOP_BITS_PPTOTAL_BITSSTART_BITS_PP + DATA_BITS_PP + STOP_BITS_PPTOTAL_BITSSTART_BITS_PP + DATA_BITS_PP + STOP_BITS_PPTOTAL_BITSSTART_BITS_PP + DATA_BITS_PP + STOP_BITS_PP
+# end
+# entity
+rs232rx
+# storage
+db|UART.(3).cnf
+db|UART.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+rs232rx.v
+1e7b5bf856b75d311af25de4bf0ba52
+7
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+}
+# user_parameter {
+START_BITS_PP
+1
+PARAMETER_SIGNED_DEC
+USR
+DATA_BITS_PP
+8
+PARAMETER_SIGNED_DEC
+USR
+STOP_BITS_PP
+1
+PARAMETER_SIGNED_DEC
+USR
+CLOCK_FACTOR_PP
+16
+PARAMETER_SIGNED_DEC
+USR
+m1_idle
+0
+PARAMETER_SIGNED_DEC
+DEF
+m1_start
+1
+PARAMETER_SIGNED_DEC
+DEF
+m1_shift
+3
+PARAMETER_SIGNED_DEC
+DEF
+m1_over_run
+2
+PARAMETER_SIGNED_DEC
+DEF
+m1_under_run
+4
+PARAMETER_SIGNED_DEC
+DEF
+m1_all_low
+5
+PARAMETER_SIGNED_DEC
+DEF
+m1_extra_1
+6
+PARAMETER_SIGNED_DEC
+DEF
+m1_extra_2
+7
+PARAMETER_SIGNED_DEC
+DEF
+m2_data_ready_ack
+0
+PARAMETER_SIGNED_DEC
+DEF
+m2_data_ready_flag
+1
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+rs232rx:rs232_rx_block
+}
+# lmf
+c:|altera|72|quartus|lmf|
+d41d8cd98f0b24e980998ecf8427e
+# macro_sequence
+TOTAL_BITSSTART_BITS_PP + DATA_BITS_PP + STOP_BITS_PPTOTAL_BITSSTART_BITS_PP + DATA_BITS_PP + STOP_BITS_PPTOTAL_BITSSTART_BITS_PP + DATA_BITS_PP + STOP_BITS_PP
+# end
+# complete
+
